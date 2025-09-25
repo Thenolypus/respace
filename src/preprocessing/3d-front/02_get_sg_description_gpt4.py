@@ -7,6 +7,7 @@ import numpy as np
 import trimesh
 from tqdm import tqdm
 import concurrent.futures
+from dotenv import load_dotenv
 import threading
 import time
 
@@ -161,7 +162,8 @@ def process_asset(index, asset, total):
 gpt4v_prompt = "Please provide a concise JSON object of the furniture item in the image using 'style', 'color', 'material', 'characteristics', and 'summary' as keys. Describe the style, noting any blends of design elements. Specify the materials used for different components (if applicable). List the key characteristics, including the shape, design features, and any distinctive elements or decorative accents. If there are multiple values for a key, use a list of strings. DO NOT build a nested JSON. The summary compactly captures the essence of the furniture’s style, functionality, and aesthetic appeal, emphasizing its unique attributes. This description should clearly differentiate this piece from others while succinctly capturing its essential properties and we will use it for object retrieval, so it should be as accurate as possible, keyword-heavy, but just be one extremely short sentence. You are an interior designer EXPERT."
 gpt4v_postfix = "Only output the JSON as a plain string and nothing else."
 
-openai_client = OpenAI(api_key = "sk-proj-n0LSwBDfjFbxT6Xx4KkwT3BlbkFJM1qUnlM8RaaXcO5A6TCz")
+load_dotenv(".env.local")
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 PTH_DATASET = "/Volumes/apollo11/data/3D-FUTURE-assets/"
 
