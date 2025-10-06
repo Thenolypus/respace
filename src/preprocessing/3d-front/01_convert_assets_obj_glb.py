@@ -101,15 +101,16 @@ def convert_object(pth_src_file, pth_texture):
 		bpy.ops.wm.read_factory_settings(use_empty=True)
 
 
-obj_ids = [ 
+# obj_ids = [ 
 	# "/Users/mnbucher/Downloads/3D-FUTURE-model-part1/3996590b-84d5-4d8a-bf02-29b81cf02a3a" 
 	# "0e743639-2b66-49e3-bb44-6e9fe1a7960f",
-	"3f012ebe-d552-40be-b18a-b9450b107996",
-	"7f414777-fced-4e4f-b770-22a74a75a137",
-	"85813056-b5ba-47e8-a940-9c3540ea9cb1",
-]
+	# "3f012ebe-d552-40be-b18a-b9450b107996",
+	# "7f414777-fced-4e4f-b770-22a74a75a137",
+	# "85813056-b5ba-47e8-a940-9c3540ea9cb1",
+# ]
 
-pth_root = "/Volumes/apollo11/data/3D-FUTURE-assets/"
+load_dotenv(".env")
+pth_root = os.getenv("PTH_3DFUTURE_ASSETS")
 obj_ids = get_folder_names(pth_root)
 
 # print(len(obj_ids))
@@ -119,12 +120,7 @@ for obj_id in tqdm(obj_ids):
 
 	pth_tgt = pth_root + obj_id
 
-	# tgt_pth = "/Users/mnbucher/git/stan-24-sgllm/src/frontend/sgllm-frontend-vite/public/sample-obj-v3"
 	pth_src_file = pth_tgt + "/raw_model.obj"
 	pth_texture = pth_tgt + '/texture.png'
 
 	convert_object(pth_src_file, pth_texture)
-
-	# break
-
-	# exit()
