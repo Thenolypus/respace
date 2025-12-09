@@ -26,6 +26,19 @@ Scene synthesis and editing has emerged as a promising direction in computer gra
 - **Preference Alignment**: GRPO training with reward function involving geometric and semantic constraints
 - **Voxelization-Based Loss**: Fine-grained evaluation beyond 3D bounding boxes
 
+## Comparison With Recent Methods
+
+| Method | Non-Rectangular Layouts | Explicit Object Semantics | Text-Driven Editing | Trained Placement | Asset Sampling |
+|--------|:----------------------:|:-------------------------:|:-------------------:|:-----------------:|:--------------:|
+| ATISS | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Mi-Diff | ✅ | ❌ | ❌ | ✅ | ❌ |
+| LayoutGPT | ❌ | ✅ | ❌ | ❌ | ❌ |
+| LayoutVLM | ❌ | ✅ | ❌ | ❌ | ❌ |
+| InstructScene | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Ctrl-Room | ✅ | ❌ | ❌ | ✅ | ❌ |
+| SceneWeaver | ❌ | ✅ | ❌ | ✅ | ❌ |
+| **ReSpace (ours)** | ✅ | ✅ | ✅ | ✅ | ✅ |
+
 ## ReSpace: Framework Overview
 
 <div align="center">
