@@ -1,0 +1,80 @@
+[project]
+name = "stan24sgllm"
+version = "0.1"
+requires-python = ">=3.11,<3.12"
+
+dependencies = [
+    # Core ML
+    "torch==2.9.1",
+    "torchvision==0.24.1",
+    "torchaudio==2.9.1",
+    "transformers>=4.56.0",
+    "accelerate>=1.0",
+    "peft>=0.15",
+    "trl==0.15.2",
+    "safetensors>=0.4",
+    "datasets>=3.0",
+    # Inference
+    "vllm>=0.15.1",
+    # 3D / Geometry
+    "trimesh>=4.5",
+    "manifold3d>=2.5",
+    "shapely>=2.0",
+    "pyrender>=0.1.45",
+    "pyglet>=2.1",
+    "PyOpenGL>=3.1",
+    # Computer Vision
+    "opencv-python-headless>=4.11",
+    "pillow>=11.0",
+    "imageio>=2.36",
+    # Data / Science
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scipy>=1.13",
+    "scikit-learn>=1.5",
+    # Visualization
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    # Metrics
+    "clean-fid>=0.1.35",
+    # API / Services
+    "openai>=1.52",
+    "wandb>=0.18",
+    "requests>=2.32",
+    # HuggingFace
+    "huggingface-hub>=0.26",
+    "sentencepiece>=0.2",
+    # Utilities
+    "tqdm>=4.66",
+    "pyyaml>=6.0",
+    "tyro>=0.8",
+    "einops>=0.8",
+    "ftfy>=6.3",
+    "python-dotenv>=1.0",
+    "filelock>=3.16",
+    "qwen-vl-utils>=0.0.8",
+    # Video
+    "decord>=0.6",
+    "av>=14.1",
+    # Testing
+    "pytest>=8.3",
+    "bpy>=4.4.0",
+    "triangle>=20250106",
+]
+
+[build-system]
+requires = ["setuptools>=68.0,<81"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src", "src.*"]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
