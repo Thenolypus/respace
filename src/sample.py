@@ -304,9 +304,11 @@ class AssetRetrievalModule(nn.Module):
 			jid_sampled_obj = obj.get("jid")
 
 		asset = self.all_assets_metadata.get(jid_sampled_obj)
+		scale_sampled_obj = None
 		if asset == None:
 			asset = self.all_assets_metadata_scaled.get(jid_sampled_obj)
 			size_sampled_obj = asset.get("size")
+			scale_sampled_obj = asset.get("scale")
 			orig_jid = asset.get("jid")
 			orig_asset = self.all_assets_metadata.get(orig_jid)
 			desc_sampled_obj = orig_asset.get("summary")
@@ -321,6 +323,8 @@ class AssetRetrievalModule(nn.Module):
 			"sampled_asset_size": size_sampled_obj,
 			"uuid": str(uuid.uuid4())
 		})
+		if scale_sampled_obj is not None:
+			new_obj["scale"] = scale_sampled_obj
 
 		if self.do_print:
 			print(obj)

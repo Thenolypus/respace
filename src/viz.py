@@ -360,10 +360,10 @@ def render_single_frame(pyrender_scene, resolution, flags=pyrender.RenderFlags.S
 	
 	raise RuntimeError(f"Failed to render frame after {max_attempts} attempts")
 
-def render_with_retry(pyrender_scene, resolution, pth_output, filename):
+def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_attempts=5):
 	# print("render_with_retry...")
 	attempt = 0
-	while True:  # Infinite attempts
+	while attempt < max_attempts:
 		renderer = None
 		try:
 			# print("attempt:", attempt)
@@ -451,14 +451,7 @@ def render_with_retry(pyrender_scene, resolution, pth_output, filename):
 			os.environ['PYOPENGL_PLATFORM'] = 'egl'
 			# os.environ['__GLX_VENDOR_LIBRARY_NAME'] = 'nvidia'
 
-			try:
-				# print("before offscreen renderer")
-				renderer = pyrender.OffscreenRenderer(*resolution)
-				# print("after offscreen renderer")
-			except Exception as exc:
-				print(exc)
-				traceback.print_exc()
-				# exit()
+			renderer = pyrender.OffscreenRenderer(*resolution)
 
 			# print("OpenGL context:", pyglet.gl.current_context)
 			# print("Current OpenGL Platform:", os.environ.get('PYOPENGL_PLATFORM', 'default'))
@@ -499,11 +492,13 @@ def render_with_retry(pyrender_scene, resolution, pth_output, filename):
 		
 		except Exception as e:
 			print(f"Render attempt {attempt} failed: {e}")
+			traceback.print_exc()
 			time.sleep(0.5)  # Small delay between attempts
 			
 		finally:
 			if renderer is not None:
 				renderer.delete()
+	raise RuntimeError(f"Failed to render after {max_attempts} attempts")
 
 def remove_pyrender_nodes(pyrender_scene):
 	# Remove camera and light

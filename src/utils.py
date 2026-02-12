@@ -46,7 +46,9 @@ def set_seeds(seed, use_determ=True):
 	set_seed(seed) # HF accelerate
 
 def get_pth_mesh(asset_jid):
-	return os.path.join(os.getenv("PTH_3DFUTURE_ASSETS"), asset_jid, "raw_model.glb")
+	# Scaled assets have JIDs like "uuid-(sx)-(sy)-(sz)" — resolve to original UUID folder
+	base_jid = asset_jid[:36]
+	return os.path.join(os.getenv("PTH_3DFUTURE_ASSETS"), base_jid, "raw_model.glb")
 
 def create_floor_plan_polygon(bounds):
 	return Polygon(np.array(bounds)[:, [0, 2]].tolist())
@@ -181,7 +183,7 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False):
 	# else:
 	# 	max_seq_length = 3800
 
-	max_seq_length = 3000
+	max_seq_length = 4000
 	# max_seq_length = 2500
 
 	tokenizer.model_max_length = max_seq_length
@@ -203,7 +205,7 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False):
 			device_map=device_map,
 			# device_map="auto",
 			torch_dtype=torch.bfloat16,
-			attn_implementation="flash_attention_2" if use_gpu else "sdpa",
+			attn_implementation=os.environ.get("ATTN_IMPLEMENTATION", "flash_attention_2" if use_gpu else "sdpa"),
 		)
 
 	return model, tokenizer, max_seq_length
