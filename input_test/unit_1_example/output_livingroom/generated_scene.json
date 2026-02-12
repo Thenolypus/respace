@@ -1,0 +1,595 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -6.0,
+      2.8,
+      3.89
+    ],
+    [
+      -6.0,
+      2.8,
+      -3.89
+    ],
+    [
+      -0.1,
+      2.8,
+      -3.89
+    ],
+    [
+      -0.0,
+      2.8,
+      -0.57
+    ],
+    [
+      2.88,
+      2.8,
+      -0.57
+    ],
+    [
+      2.98,
+      2.8,
+      -2.51
+    ],
+    [
+      6.0,
+      2.8,
+      -2.51
+    ],
+    [
+      6.0,
+      2.8,
+      0.7
+    ],
+    [
+      -2.31,
+      2.8,
+      0.7
+    ],
+    [
+      -2.41,
+      2.8,
+      3.89
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -6.0,
+      0.0,
+      3.89
+    ],
+    [
+      -6.0,
+      0.0,
+      -3.89
+    ],
+    [
+      -0.1,
+      0.0,
+      -3.89
+    ],
+    [
+      -0.0,
+      0.0,
+      -0.57
+    ],
+    [
+      2.88,
+      0.0,
+      -0.57
+    ],
+    [
+      2.98,
+      0.0,
+      -2.51
+    ],
+    [
+      6.0,
+      0.0,
+      -2.51
+    ],
+    [
+      6.0,
+      0.0,
+      0.7
+    ],
+    [
+      -2.31,
+      0.0,
+      0.7
+    ],
+    [
+      -2.41,
+      0.0,
+      3.89
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "A modern minimalist black metal floor lamp with a slim structure, adjustable cylindrical head, and rectangular base, ideal for contemporary interiors.",
+      "pos": [
+        1.05,
+        0.0,
+        3.26
+      ],
+      "rot": [
+        0.0,
+        0.92388,
+        0.0,
+        0.38268
+      ],
+      "size": [
+        0.18,
+        1.45,
+        0.47
+      ],
+      "prompt": "black floor lamp",
+      "sampled_asset_jid": "bfe18da5-7957-48f5-bc09-d9aedd01d631",
+      "sampled_asset_desc": "A modern minimalist black metal floor lamp with a slim structure, adjustable cylindrical head, and rectangular base, ideal for contemporary interiors.",
+      "sampled_asset_size": [
+        0.18073999881744385,
+        1.4544500289372309,
+        0.4728998988866806
+      ],
+      "uuid": "b0ecedbb-ecfd-4257-9dbe-3f39d3753c70"
+    },
+    {
+      "desc": "Contemporary gray and black shoe cabinet with three doors, one drawer, and tapered legs, combining minimalist and modern design elements.",
+      "pos": [
+        -4.01,
+        0.0,
+        3.65
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.4,
+        1.01,
+        0.33
+      ],
+      "prompt": "black shoe cabinet",
+      "sampled_asset_jid": "3982f2ea-5467-472a-9359-b38dd425d4f0",
+      "sampled_asset_desc": "Contemporary gray and black shoe cabinet with three doors, one drawer, and tapered legs, combining minimalist and modern design elements.",
+      "sampled_asset_size": [
+        1.4029200077056885,
+        1.0094399953595712,
+        0.3276800513267517
+      ],
+      "uuid": "5946b83d-e1a5-4e11-b4c7-8d8b22ed49bf"
+    },
+    {
+      "desc": "Modern minimalist lounge chair with blue fabric upholstery, black wooden frame, and brass accents.",
+      "pos": [
+        -3.04,
+        0.0,
+        1.85
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.7,
+        0.93,
+        0.76
+      ],
+      "prompt": "blue lounge chair",
+      "sampled_asset_jid": "dde8dc65-731a-4c19-bf7e-f4ffdd6ae7ba-(0.87)-(1.0)-(0.78)",
+      "sampled_asset_desc": "Modern minimalist lounge chair with blue fabric upholstery, black wooden frame, and brass accents.",
+      "sampled_asset_size": [
+        0.7,
+        0.93,
+        0.76
+      ],
+      "uuid": "f5dc0169-b508-4d28-a7b8-e4bb0cbf0084",
+      "scale": [
+        0.87,
+        1.0,
+        0.78
+      ]
+    },
+    {
+      "desc": "Modern two-seat sofa with gray fabric upholstery, low-profile arms, straight back, and decorative throw pillows.",
+      "pos": [
+        1.0,
+        0.0,
+        1.53
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.85,
+        0.7,
+        0.68
+      ],
+      "prompt": "gray two-seat sofa",
+      "sampled_asset_jid": "04d0f36b-09ea-468c-96f2-d393c8ae8f62",
+      "sampled_asset_desc": "Modern minimalist loveseat sofa with curved backrest, asymmetrical design, gray-black color scheme, fabric upholstery, and metal legs, featuring multiple cushions for added comfort.",
+      "sampled_asset_size": [
+        1.8494900465011597,
+        0.7175470691872761,
+        0.6432940363883972
+      ],
+      "uuid": "7700fce2-ce31-43a4-b409-d9248a1a4bba"
+    },
+    {
+      "desc": "Modern brown wooden coffee table with a rectangular, low-profile design and smooth surface.",
+      "pos": [
+        3.1,
+        0.0,
+        1.5
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.92,
+        0.37,
+        1.36
+      ],
+      "prompt": "low wooden coffee table",
+      "sampled_asset_jid": "64494d83-b25a-4425-b3dc-dc570beb8ca0",
+      "sampled_asset_desc": "Modern brown wooden coffee table with a rectangular, low-profile design and smooth surface.",
+      "sampled_asset_size": [
+        1.9194680452346802,
+        0.3690971050130898,
+        1.3569539785385132
+      ],
+      "uuid": "f39c0407-fd39-4f20-a59b-da79ede9f9a7"
+    },
+    {
+      "desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
+      "pos": [
+        3.2,
+        0.0,
+        0.21
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        2.21,
+        0.91,
+        0.97
+      ],
+      "prompt": "modern brown couch",
+      "sampled_asset_jid": "2d8e7040-14d8-4aba-84ee-356a1eae11e8",
+      "sampled_asset_desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
+      "sampled_asset_size": [
+        2.214682102203369,
+        0.9059539784238559,
+        0.9729260504245758
+      ],
+      "uuid": "580ac213-2fe3-4bb6-8f3c-3fdc1d9b41b1"
+    },
+    {
+      "desc": "Traditional dark brown wooden round end table featuring an ornamental middle support and a lower shelf for added functionality.",
+      "pos": [
+        1.4,
+        0.0,
+        0.21
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.21,
+        0.64,
+        0.22
+      ],
+      "prompt": "round wooden end table",
+      "sampled_asset_jid": "a155a902-6ffc-4f61-9429-59d0717c754e",
+      "sampled_asset_desc": "A traditional dark brown wooden round end table featuring an ornamental middle support and a lower shelf for added functionality.",
+      "sampled_asset_size": [
+        0.20781099796295166,
+        0.6390600278110163,
+        0.21973100304603577
+      ],
+      "uuid": "df6e6c42-f420-4f5a-a68d-03c8cde9686e"
+    },
+    {
+      "desc": "A modern dark brown wooden side table with a round top, curved legs, and a unique crossed base design.",
+      "pos": [
+        -0.88,
+        0.0,
+        0.18
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.4,
+        0.45,
+        0.4
+      ],
+      "prompt": "round wooden side table",
+      "sampled_asset_jid": "040574e6-76f4-45fe-aa00-8f14362b0c10",
+      "sampled_asset_desc": "A modern dark brown wooden side table with a round top, curved legs, and a unique crossed base design.",
+      "sampled_asset_size": [
+        0.39989399909973145,
+        0.45000002707900055,
+        0.39989399909973145
+      ],
+      "uuid": "f778061c-47d4-4294-b564-abb1ca81ba1e"
+    },
+    {
+      "desc": "Classic white leather wingback armchair with rolled arms, curved wooden legs, and an olive green decorative pillow.",
+      "pos": [
+        1.09,
+        0.0,
+        0.2
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.77,
+        0.87,
+        0.8
+      ],
+      "prompt": "white armchair",
+      "sampled_asset_jid": "082f1f77-d72e-431e-9ece-99a6db089a70-(1.02)-(1.0)-(0.99)",
+      "sampled_asset_desc": "Classic white leather wingback armchair with rolled arms, curved wooden legs, and an olive green decorative pillow.",
+      "sampled_asset_size": [
+        0.77,
+        0.87,
+        0.8
+      ],
+      "uuid": "e5fbad47-c500-4573-b98d-c9cf15df264a",
+      "scale": [
+        1.02,
+        1.0,
+        0.99
+      ]
+    },
+    {
+      "desc": "Modern minimalist bed frame with a white finish and contrasting red and gray headboard accent.",
+      "pos": [
+        1.18,
+        0.0,
+        1.46
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.11,
+        1.69,
+        1.18
+      ],
+      "prompt": "white bed frame",
+      "sampled_asset_jid": "56bed37a-c205-40b0-97c2-ffd5c47b1b6c",
+      "sampled_asset_desc": "Modern white bed frame with minimalist design and contrasting red and grey headboard accents for a sleek aesthetic.",
+      "sampled_asset_size": [
+        1.5690270066261292,
+        1.1094399325773239,
+        2.1996400356292725
+      ],
+      "uuid": "72b5618a-1dbf-495c-8eb4-dddd23e80cfd"
+    },
+    {
+      "desc": "Traditional bronze and white ceiling lamp with a fluted glass shade and decorative finial.",
+      "pos": [
+        -3.05,
+        2.51,
+        2.11
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.51,
+        0.29,
+        0.44
+      ],
+      "prompt": "white ceiling lamp",
+      "sampled_asset_jid": "e40258de-5c0c-4ce7-8b85-2953d498ac77",
+      "sampled_asset_desc": "Traditional bronze and white ceiling lamp with a fluted glass shade and decorative finial.",
+      "sampled_asset_size": [
+        0.5057989954948425,
+        0.2927950260891521,
+        0.4381139874458313
+      ],
+      "uuid": "2ae3b46c-1d34-479e-894b-f6193aa7cb2d"
+    },
+    {
+      "desc": "Modern minimalist TV stand with multiple open shelves, drawers, and sleek metal legs in white and gray finish.",
+      "pos": [
+        3.77,
+        0.0,
+        0.46
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.77,
+        0.42,
+        0.38
+      ],
+      "prompt": "white tv stand",
+      "sampled_asset_jid": "4c0af339-2f2e-407c-8c4b-67fb1421efef",
+      "sampled_asset_desc": "Modern minimalist TV stand with multiple open shelves, drawers, and sleek metal legs in white and gray finish.",
+      "sampled_asset_size": [
+        2.7703800201416016,
+        0.4184383491457879,
+        0.37749601900577545
+      ],
+      "uuid": "fdef8777-612e-4c74-a86d-bb1d0689c428"
+    },
+    {
+      "desc": "A modern-traditional white wine cabinet with sliding glass doors, decorative carved details, and open symmetrical shelving.",
+      "pos": [
+        -1.0,
+        0.0,
+        -3.58
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.81,
+        1.21,
+        0.16
+      ],
+      "prompt": "white wine cabinet",
+      "sampled_asset_jid": "beead7bc-e52f-4375-a43b-77d48355716f",
+      "sampled_asset_desc": "A modern-traditional white wine cabinet with sliding glass doors, decorative carved details, and open symmetrical shelving.",
+      "sampled_asset_size": [
+        1.8050440549850464,
+        1.211820001045043,
+        0.15818053483963013
+      ],
+      "uuid": "21ae4cf4-5392-4c91-8abf-7d693bbe024a"
+    },
+    {
+      "desc": "A modern minimalist desk with a dark brown wooden top and drawers, complemented by silver metal leg support and sleek handle-less design.",
+      "pos": [
+        -3.69,
+        0.0,
+        3.04
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.32,
+        0.71,
+        0.57
+      ],
+      "prompt": "wooden desk",
+      "sampled_asset_jid": "9090ae7e-815a-412c-8610-0233ae8b4db5",
+      "sampled_asset_desc": "A modern minimalist desk with a dark brown wooden top and drawers, complemented by silver metal leg support and sleek handle-less design.",
+      "sampled_asset_size": [
+        1.3242820501327515,
+        0.708851001209327,
+        0.5696439743041992
+      ],
+      "uuid": "e6113aa3-508a-40ea-8dfd-6666c0efa6a7"
+    },
+    {
+      "desc": "A modern, minimalistic folding chair with a mint green plastic backrest and rim, white legs, and a cushioned seat for added comfort.",
+      "pos": [
+        0.41,
+        0.0,
+        0.1
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.35,
+        0.56,
+        0.34
+      ],
+      "prompt": "wooden folding chair",
+      "sampled_asset_jid": "8a3a4b1a-0720-458f-af74-0d1c04fd8011",
+      "sampled_asset_desc": "A modern, minimalistic folding chair with a mint green plastic backrest and rim, white legs, and a cushioned seat for added comfort.",
+      "sampled_asset_size": [
+        0.3454599976539612,
+        0.5590500325339658,
+        0.3377600461244583
+      ],
+      "uuid": "a13f8cbf-fad5-4f40-92db-67559f18de79"
+    },
+    {
+      "desc": "A modern minimalist brown wooden shelf with branch-like arms and a sturdy tripod base.",
+      "pos": [
+        0.01,
+        0.0,
+        3.41
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.34,
+        1.76,
+        0.39
+      ],
+      "prompt": "wooden shelf",
+      "sampled_asset_jid": "ce2fddf4-5119-44dc-9b2a-7f8485634b28",
+      "sampled_asset_desc": "A modern minimalist brown wooden shelf with branch-like arms and a sturdy tripod base.",
+      "sampled_asset_size": [
+        0.34095001220703125,
+        1.7618349932395923,
+        0.39123600721359253
+      ],
+      "uuid": "957d8334-cf95-4d47-968b-508aca4bcf4c"
+    },
+    {
+      "desc": "Mid-century modern wooden sideboard with sliding glass doors, three drawers, tapered legs, and open shelving.",
+      "pos": [
+        -4.8,
+        0.0,
+        -3.1
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.8,
+        0.81,
+        0.41
+      ],
+      "prompt": "wooden sideboard",
+      "sampled_asset_jid": "972f278d-f277-4b92-a6ec-6fc99ed7e92e",
+      "sampled_asset_desc": "Mid-century modern wooden sideboard with sliding glass doors, three drawers, tapered legs, and open shelving.",
+      "sampled_asset_size": [
+        1.8002840280532837,
+        0.810625971245357,
+        0.4058000445365906
+      ],
+      "uuid": "ce8ef002-7135-4b90-b391-2e728883915d"
+    }
+  ]
+}

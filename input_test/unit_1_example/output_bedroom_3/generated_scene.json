@@ -1,0 +1,217 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.13,
+      2.8,
+      1.41
+    ],
+    [
+      -2.13,
+      2.8,
+      -1.41
+    ],
+    [
+      2.13,
+      2.8,
+      -1.41
+    ],
+    [
+      2.13,
+      2.8,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.13,
+      0.0,
+      1.41
+    ],
+    [
+      -2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Classic minimalist white wooden six-shelf wardrobe with paneling and base trim.",
+      "pos": [
+        -1.83,
+        0.0,
+        0.65
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.02,
+        2.12,
+        0.43
+      ],
+      "prompt": "classic white wardrobe",
+      "sampled_asset_jid": "98b08568-12ed-4b14-b2d8-4722e4c341ce",
+      "sampled_asset_desc": "Classic minimalist white wooden six-shelf wardrobe with paneling and base trim.",
+      "sampled_asset_size": [
+        1.0193439722061157,
+        2.119409996154996,
+        0.4284438341856003
+      ],
+      "uuid": "2d183854-21dd-414d-9eb2-fd3cd44402ec"
+    },
+    {
+      "desc": "Minimalist modern white coffee table featuring a smooth rectangular top, sleek metal legs, and an open storage cutout design.",
+      "pos": [
+        0.49,
+        0.0,
+        -0.45
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.3,
+        0.35,
+        0.7
+      ],
+      "prompt": "minimalist coffee table",
+      "sampled_asset_jid": "b2547f60-2576-4001-8cf7-831fedeed1ce",
+      "sampled_asset_desc": "Minimalist modern white coffee table featuring a smooth rectangular top, sleek metal legs, and an open storage cutout design.",
+      "sampled_asset_size": [
+        1.2993529438972473,
+        0.349197048135359,
+        0.7000090181827545
+      ],
+      "uuid": "c192bb0e-2013-4992-b16e-54b0478203e4"
+    },
+    {
+      "desc": "Modern double bed with navy blue fabric upholstery, plush cushioning, and a minimalist design highlighted by contrasting orange bedding and metal legs.",
+      "pos": [
+        0.61,
+        0.0,
+        0.35
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.01,
+        1.04,
+        2.49
+      ],
+      "prompt": "modern double bed",
+      "sampled_asset_jid": "9acca3b7-2e72-4308-a359-3a6704fc5ff3-(0.98)-(1.0)-(1.02)",
+      "sampled_asset_desc": "Modern double bed with navy blue fabric upholstery, plush cushioning, and a minimalist design highlighted by contrasting orange bedding and metal legs.",
+      "sampled_asset_size": [
+        2.01,
+        1.04,
+        2.49
+      ],
+      "uuid": "41767bd1-5760-412b-bcad-e0c011d766bc"
+    },
+    {
+      "desc": "A modern cylindrical nightstand with a distressed black and white finish, accented by gold bands and featuring two drawers.",
+      "pos": [
+        -0.5,
+        0.0,
+        1.18
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.38,
+        0.45,
+        0.38
+      ],
+      "prompt": "simple nightstand",
+      "sampled_asset_jid": "5ac8f833-5342-41dc-8906-974efdfe81aa",
+      "sampled_asset_desc": "A modern cylindrical nightstand with a distressed black and white finish, accented by gold bands and featuring two drawers.",
+      "sampled_asset_size": [
+        0.3817879855632782,
+        0.4458940163254983,
+        0.3819819986820221
+      ],
+      "uuid": "229f4e46-9379-470e-ad15-def9cc47e393"
+    },
+    {
+      "desc": "A modern, minimalist lounge chair with light grey fabric upholstery, plush cushion, and rounded wingback design for ultimate comfort and contemporary appeal.",
+      "pos": [
+        1.46,
+        0.0,
+        -0.84
+      ],
+      "rot": [
+        0.0,
+        0.80031,
+        0.0,
+        -0.59863
+      ],
+      "size": [
+        0.56,
+        0.62,
+        0.57
+      ],
+      "prompt": "soft grey lounge chair",
+      "sampled_asset_jid": "a6b44420-4e2a-40f9-ba1f-9f5f51919e89",
+      "sampled_asset_desc": "A modern, minimalist lounge chair with light grey fabric upholstery, plush cushion, and rounded wingback design for ultimate comfort and contemporary appeal.",
+      "sampled_asset_size": [
+        0.556473970413208,
+        0.6150100212958296,
+        0.574891984462738
+      ],
+      "uuid": "a744ee5d-921e-4a90-b4eb-d2c2c2856e13"
+    },
+    {
+      "desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+      "pos": [
+        1.41,
+        0.0,
+        -1.11
+      ],
+      "rot": [
+        0.0,
+        0.00054,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.37,
+        2.0,
+        0.5
+      ],
+      "prompt": "warm wooden sideboard",
+      "sampled_asset_jid": "1b0269b1-902d-455d-8960-367009395233",
+      "sampled_asset_desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+      "sampled_asset_size": [
+        1.3690990209579468,
+        1.998181275097977,
+        0.5013650059700012
+      ],
+      "uuid": "178c71e9-0fab-4e7a-a825-1e9b1553a1b7"
+    }
+  ]
+}

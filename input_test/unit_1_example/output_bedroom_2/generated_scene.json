@@ -1,0 +1,161 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.71,
+      2.8,
+      1.41
+    ],
+    [
+      -1.71,
+      2.8,
+      -1.41
+    ],
+    [
+      1.71,
+      2.8,
+      -1.41
+    ],
+    [
+      1.71,
+      2.8,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.71,
+      0.0,
+      1.41
+    ],
+    [
+      -1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Mid-century modern dark brown wooden nightstand with tapered legs, two drawers, and gold knobs.",
+      "pos": [
+        0.65,
+        0.0,
+        1.19
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.45,
+        0.6,
+        0.35
+      ],
+      "prompt": "modern bedside table",
+      "sampled_asset_jid": "1261c3e5-9d31-4474-abe5-da2c1668ef63",
+      "sampled_asset_desc": "Mid-century modern dark brown wooden nightstand with tapered legs, two drawers, and gold knobs.",
+      "sampled_asset_size": [
+        0.45417800545692444,
+        0.6000499857061472,
+        0.35345399379730225
+      ],
+      "uuid": "9c395a4f-b768-4fcc-b43f-a3eacd6a24be"
+    },
+    {
+      "desc": "Mid-century modern dark brown wooden nightstand with tapered legs, two drawers, and gold knobs.",
+      "pos": [
+        -1.4,
+        0.0,
+        1.19
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.45,
+        0.6,
+        0.35
+      ],
+      "prompt": "rustic wooden nightstand",
+      "sampled_asset_jid": "1261c3e5-9d31-4474-abe5-da2c1668ef63",
+      "sampled_asset_desc": "Mid-century modern dark brown wooden nightstand with tapered legs, two drawers, and gold knobs.",
+      "sampled_asset_size": [
+        0.45417800545692444,
+        0.6000499857061472,
+        0.35345399379730225
+      ],
+      "uuid": "492d7292-fa0e-4105-8fe2-e6621a2f28a9"
+    },
+    {
+      "desc": "Modern minimalist gray fabric L-shaped sofa with padded cushions, metal legs, and decorative throw pillows.",
+      "pos": [
+        -0.48,
+        0.0,
+        0.39
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.0,
+        0.84,
+        1.67
+      ],
+      "prompt": "soft cushion sofa",
+      "sampled_asset_jid": "589d864a-67dd-462b-aa1e-43b3a50d7ba6",
+      "sampled_asset_desc": "Modern minimalist gray fabric L-shaped sofa with padded cushions, metal legs, and decorative throw pillows.",
+      "sampled_asset_size": [
+        3.0001299381256104,
+        0.8356761012109928,
+        1.6730770468711853
+      ],
+      "uuid": "a7889994-c844-42d7-b19b-53243d794ec1"
+    },
+    {
+      "desc": "A traditional vintage white wooden four-poster double bed with a scalloped headboard, decorative carvings, and a multicolored striped bedspread.",
+      "pos": [
+        -0.61,
+        0.0,
+        0.01
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.27,
+        1.97,
+        2.3
+      ],
+      "prompt": "wooden double bed",
+      "sampled_asset_jid": "c809d436-7bb7-42f7-999c-d0b414891ec3-(0.98)-(1.0)-(0.98)",
+      "sampled_asset_desc": "A traditional vintage white wooden four-poster double bed with a scalloped headboard, decorative carvings, and a multicolored striped bedspread.",
+      "sampled_asset_size": [
+        2.27,
+        1.97,
+        2.3
+      ],
+      "uuid": "3d88d204-29de-49f4-ac50-a91ac32ea25b"
+    }
+  ]
+}

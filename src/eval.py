@@ -313,6 +313,7 @@ def voxelize_raw_asset(pth_voxelized_mesh, obj, voxel_size, rotation_matrix=None
 	
 		asset_voxel_matrix = voxelize_mesh_and_get_matrix(asset_mesh, voxel_size)
 
+		os.makedirs(os.path.dirname(pth_voxelized_mesh), exist_ok=True)
 		with open(pth_voxelized_mesh, 'wb') as fp:
 			pickle.dump(asset_voxel_matrix, fp)
 	else:
