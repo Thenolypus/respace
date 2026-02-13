@@ -83,7 +83,7 @@ def render_topdown_bboxes(scene, output_path):
 
 def main():
     input_path = Path("input_test/unit_1_room_1_livingroom.json")
-    output_path = Path("input_test/unit_1_example/output_livingroom")
+    output_path = Path("input_test/3og_example/output_livingroom")
     output_path.mkdir(parents=True, exist_ok=True)
 
     # Load custom floorplan
@@ -101,8 +101,8 @@ def main():
         env_file=".env",
         dataset_room_type="all",
         use_gpu=True,
-        n_bon_sgllm=16,
-        n_bon_assets=1,
+        n_bon_sgllm=8,
+        n_bon_assets=4,
     )
 
     # Generate full scene from custom boundaries

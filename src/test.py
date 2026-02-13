@@ -253,7 +253,7 @@ def run_test_for_addition(scene_after, scene_before_with_assets, n_best_of_n_ass
 		if result['delta_pbl_loss'] < best_result['delta_pbl_loss']:
 			best_result = result
 		
-		return best_result
+		#return best_result
 
 	return best_result
 

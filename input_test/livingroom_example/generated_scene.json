@@ -1,0 +1,305 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -6.0,
+      2.8,
+      6.07
+    ],
+    [
+      -6.0,
+      2.8,
+      -6.07
+    ],
+    [
+      -0.1,
+      2.8,
+      -6.07
+    ],
+    [
+      -0.0,
+      2.8,
+      1.61
+    ],
+    [
+      2.88,
+      2.8,
+      1.61
+    ],
+    [
+      2.98,
+      2.8,
+      -0.34
+    ],
+    [
+      6.0,
+      2.8,
+      -0.34
+    ],
+    [
+      6.0,
+      2.8,
+      2.88
+    ],
+    [
+      -2.31,
+      2.8,
+      2.88
+    ],
+    [
+      -2.41,
+      2.8,
+      6.07
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -6.0,
+      0.0,
+      6.07
+    ],
+    [
+      -6.0,
+      0.0,
+      -6.07
+    ],
+    [
+      -0.1,
+      0.0,
+      -6.07
+    ],
+    [
+      -0.0,
+      0.0,
+      1.61
+    ],
+    [
+      2.88,
+      0.0,
+      1.61
+    ],
+    [
+      2.98,
+      0.0,
+      -0.34
+    ],
+    [
+      6.0,
+      0.0,
+      -0.34
+    ],
+    [
+      6.0,
+      0.0,
+      2.88
+    ],
+    [
+      -2.31,
+      0.0,
+      2.88
+    ],
+    [
+      -2.41,
+      0.0,
+      6.07
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern black sideboard with clean lines, glass doors, and multiple storage compartments emphasizing a minimalist aesthetic.",
+      "pos": [
+        -1.57,
+        0.0,
+        0.41
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.2,
+        1.29,
+        0.42
+      ],
+      "prompt": "black sideboard",
+      "sampled_asset_jid": "7f179935-a6a3-4188-a4ec-e5d734002b07",
+      "sampled_asset_desc": "Modern black sideboard with clean lines, glass doors, and multiple storage compartments emphasizing a minimalist aesthetic.",
+      "sampled_asset_size": [
+        1.2000000476837158,
+        1.288033816308598,
+        0.4200000911951065
+      ],
+      "uuid": "261a501e-1abf-47d7-a203-16e83f2f9703"
+    },
+    {
+      "desc": "Black contemporary armchair with leather upholstery and sleek metal legs featuring tufted backrest and curved armrests for modern elegance and comfort.",
+      "pos": [
+        -3.53,
+        0.0,
+        -0.98
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.77,
+        0.79,
+        0.85
+      ],
+      "prompt": "leather armchair",
+      "sampled_asset_jid": "6ae6cebe-3fb7-48f0-b43a-6e1626ce3f9c",
+      "sampled_asset_desc": "Black contemporary armchair with leather upholstery and sleek metal legs featuring tufted backrest and curved armrests for modern elegance and comfort.",
+      "sampled_asset_size": [
+        0.7701059877872467,
+        0.7874260140760896,
+        0.8453180193901062
+      ],
+      "uuid": "17d6d4a4-f470-4e3f-984f-d6f04d01b6d2"
+    },
+    {
+      "desc": "A modern minimalist dark brown wooden coffee table with a low profile, raised edges, and an open frame design.",
+      "pos": [
+        -4.29,
+        0.0,
+        -2.51
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.0,
+        1.23,
+        1.05
+      ],
+      "prompt": "low brown coffee table",
+      "sampled_asset_jid": "b5c0dec2-fe6f-4f82-b682-413837b9d814",
+      "sampled_asset_desc": "A modern minimalist dark brown wooden coffee table with a low profile, raised edges, and an open frame design.",
+      "sampled_asset_size": [
+        1.0,
+        1.2296359932333019,
+        1.0528419017791748
+      ],
+      "uuid": "996c4198-f174-4d17-9e76-84e82b15463a"
+    },
+    {
+      "desc": "A modern minimalist L-shaped sofa with white fabric upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
+      "pos": [
+        -3.55,
+        0.0,
+        -1.53
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        3.88,
+        0.8,
+        1.93
+      ],
+      "prompt": "modern beige sofa",
+      "sampled_asset_jid": "7c1b5b39-a2eb-4c7b-93cd-36cbe448edf6-(1.24)-(1.0)-(1.27)",
+      "sampled_asset_desc": "A modern L-shaped gray fabric upholstered sofa with a modular design, tufted cushioning, low-profile, and detachable cushions.",
+      "sampled_asset_size": [
+        3.93,
+        0.78,
+        1.95
+      ],
+      "uuid": "abe586da-4008-4179-af7b-eab4b95b156b"
+    },
+    {
+      "desc": "Modern minimalist flush mount square ceiling lamp with sleek lines, black metal frame, and white acrylic diffuser featuring a unique geometric cutout accent.",
+      "pos": [
+        -4.03,
+        2.68,
+        -0.41
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.7,
+        0.12,
+        0.7
+      ],
+      "prompt": "white wall lamp",
+      "sampled_asset_jid": "00221545-8e2c-4266-bb42-f08c4e8d2382",
+      "sampled_asset_desc": "Modern minimalist flush mount square ceiling lamp with sleek lines, black metal frame, and white acrylic diffuser featuring a unique geometric cutout accent.",
+      "sampled_asset_size": [
+        0.699999988079071,
+        0.12072804977450424,
+        0.699999988079071
+      ],
+      "uuid": "eb4e3828-d21c-4cf0-884c-52e996ef3099"
+    },
+    {
+      "desc": "A modern minimalist white wooden bookcase with four glass doors, vertical wood paneling, and raised legs, perfect for elegant storage and display.",
+      "pos": [
+        -5.4,
+        0.0,
+        0.95
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.99,
+        1.98,
+        0.39
+      ],
+      "prompt": "wooden bookcase",
+      "sampled_asset_jid": "283af5a6-560c-4331-bb2a-a02fa8a4e5e2",
+      "sampled_asset_desc": "A modern minimalist white wooden bookcase with four glass doors, vertical wood paneling, and raised legs, perfect for elegant storage and display.",
+      "sampled_asset_size": [
+        0.988548994064331,
+        1.9803049683522929,
+        0.38946500420570374
+      ],
+      "uuid": "35d8f99b-97a3-4014-a641-d8b040bc770f"
+    },
+    {
+      "desc": "A modern minimalist floor lamp featuring a natural wood tripod base, white drum shade, and distinctive red cord, combining simplicity with geometric elegance.",
+      "pos": [
+        -0.51,
+        0.0,
+        -5.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.91,
+        1.85,
+        0.65
+      ],
+      "prompt": "wooden floor lamp",
+      "sampled_asset_jid": "b8ef3b96-e2c0-4f59-ab11-bb53180d3d99-(0.9)-(1.0)-(0.86)",
+      "sampled_asset_desc": "A modern minimalist floor lamp featuring a natural wood tripod base, white drum shade, and distinctive red cord, combining simplicity with geometric elegance.",
+      "sampled_asset_size": [
+        1.91,
+        1.85,
+        0.65
+      ],
+      "uuid": "fb846dc5-4dc7-4723-b27c-123ff0ac0168"
+    }
+  ]
+}

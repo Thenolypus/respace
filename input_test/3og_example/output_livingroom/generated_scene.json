@@ -1,0 +1,320 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -6.0,
+      2.8,
+      6.07
+    ],
+    [
+      -6.0,
+      2.8,
+      -6.07
+    ],
+    [
+      -0.1,
+      2.8,
+      -6.07
+    ],
+    [
+      -0.0,
+      2.8,
+      1.61
+    ],
+    [
+      2.88,
+      2.8,
+      1.61
+    ],
+    [
+      2.98,
+      2.8,
+      -0.34
+    ],
+    [
+      6.0,
+      2.8,
+      -0.34
+    ],
+    [
+      6.0,
+      2.8,
+      2.88
+    ],
+    [
+      -2.31,
+      2.8,
+      2.88
+    ],
+    [
+      -2.41,
+      2.8,
+      6.07
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -6.0,
+      0.0,
+      6.07
+    ],
+    [
+      -6.0,
+      0.0,
+      -6.07
+    ],
+    [
+      -0.1,
+      0.0,
+      -6.07
+    ],
+    [
+      -0.0,
+      0.0,
+      1.61
+    ],
+    [
+      2.88,
+      0.0,
+      1.61
+    ],
+    [
+      2.98,
+      0.0,
+      -0.34
+    ],
+    [
+      6.0,
+      0.0,
+      -0.34
+    ],
+    [
+      6.0,
+      0.0,
+      2.88
+    ],
+    [
+      -2.31,
+      0.0,
+      2.88
+    ],
+    [
+      -2.41,
+      0.0,
+      6.07
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Oriental-style black wood sideboard with silver metal accents, raised edges, ornate details, and central handle.",
+      "pos": [
+        -5.82,
+        0.0,
+        0.49
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.05,
+        1.53,
+        0.32
+      ],
+      "prompt": "black wooden sideboard",
+      "sampled_asset_jid": "ff453a14-c904-48bc-8b79-410a55694cbd",
+      "sampled_asset_desc": "Oriental-style black wood sideboard with silver metal accents, raised edges, ornate details, and central handle.",
+      "sampled_asset_size": [
+        1.0487840175628662,
+        1.5315521358809292,
+        0.3227069526910782
+      ],
+      "uuid": "6b612235-49d1-43b9-8fc7-430a420499d4"
+    },
+    {
+      "desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
+      "pos": [
+        -1.88,
+        0.0,
+        -3.21
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.21,
+        0.91,
+        0.97
+      ],
+      "prompt": "dark brown leather sofa",
+      "sampled_asset_jid": "2d8e7040-14d8-4aba-84ee-356a1eae11e8-(1.0)-(1.0)-(1.03)",
+      "sampled_asset_desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
+      "sampled_asset_size": [
+        2.21,
+        0.91,
+        1.0
+      ],
+      "uuid": "5af0c061-967f-4e20-94bd-8e6864c829d3",
+      "scale": [
+        1.0,
+        1.0,
+        1.03
+      ]
+    },
+    {
+      "desc": "A modern industrial pendant lamp featuring a bronze rectangular metal frame with geometric design and multiple white glass globes for lighting.",
+      "pos": [
+        -3.23,
+        1.63,
+        -3.11
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.02,
+        0.74,
+        0.14
+      ],
+      "prompt": "green glass pendant lamp",
+      "sampled_asset_jid": "a637fc0e-230c-47cf-ae89-ced218c4f4f0",
+      "sampled_asset_desc": "Modern pendant lamp with three clear cylindrical glass shades, brown metal mount, and exposed bulb design.",
+      "sampled_asset_size": [
+        1.0055060386657715,
+        0.7169176296301885,
+        0.14983449131250381
+      ],
+      "uuid": "55208f7e-89f9-484f-951a-593028b25890"
+    },
+    {
+      "desc": "Red contemporary modern armchair with fabric upholstery, wingback design, and slender metal legs offering minimalist elegance.",
+      "pos": [
+        -3.3,
+        0.0,
+        -5.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.89,
+        1.07,
+        0.91
+      ],
+      "prompt": "red modern armchair",
+      "sampled_asset_jid": "142b9425-e37f-433a-b7d9-71586244d638-(1.02)-(1.0)-(0.98)",
+      "sampled_asset_desc": "A modern grey fabric armchair with a high backrest, soft cushion, and tapered wooden legs.",
+      "sampled_asset_size": [
+        0.88,
+        1.04,
+        0.9
+      ],
+      "uuid": "96e8bede-5b9f-4dcd-bb7c-835d76f49b67",
+      "scale": [
+        1.02,
+        1.0,
+        0.98
+      ]
+    },
+    {
+      "desc": "A sleek, modern tall white ceramic vase with varied artificial greenery and hanging vine accents, embodying minimalist elegance and contemporary design.",
+      "pos": [
+        -5.71,
+        0.0,
+        1.33
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.55,
+        1.91,
+        0.42
+      ],
+      "prompt": "white ceramic vase",
+      "sampled_asset_jid": "1c3d431b-8f83-4b64-a4ef-743d4e961f76",
+      "sampled_asset_desc": "A sleek, modern tall white ceramic vase with varied artificial greenery and hanging vine accents, embodying minimalist elegance and contemporary design.",
+      "sampled_asset_size": [
+        0.5476599931716919,
+        1.9101200262841402,
+        0.42142000794410706
+      ],
+      "uuid": "8e9ea03f-3c7e-4593-a9af-ff3ad7f7d2e5"
+    },
+    {
+      "desc": "Mid-century modern minimalist coffee table with a circular top, raised edge, and angular legs made of solid wood.",
+      "pos": [
+        -3.4,
+        0.0,
+        -3.1
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.77,
+        0.39,
+        0.77
+      ],
+      "prompt": "white wooden coffee table",
+      "sampled_asset_jid": "3bfeed24-ef65-45ec-b93f-3d1815947b02",
+      "sampled_asset_desc": "Mid-century modern minimalist coffee table with a circular top, raised edge, and angular legs made of solid wood.",
+      "sampled_asset_size": [
+        0.7718539834022522,
+        0.39424204601546897,
+        0.7718579769134521
+      ],
+      "uuid": "1275148e-d8bb-4711-afc8-0f6a3cbb2e3d"
+    },
+    {
+      "desc": "Mid-century modern dark brown wooden TV stand with tapered legs, open shelving, and multiple drawers featuring clean lines.",
+      "pos": [
+        1.4,
+        0.0,
+        -3.11
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.6,
+        0.5,
+        0.38
+      ],
+      "prompt": "wooden brown tv stand",
+      "sampled_asset_jid": "2c0792d2-d775-4b6b-b941-731fb4c295db-(1.0)-(1.0)-(0.99)",
+      "sampled_asset_desc": "A walnut brown mid-century modern wooden TV stand with a minimalist design featuring open shelves and two side cabinets.",
+      "sampled_asset_size": [
+        1.6,
+        0.5,
+        0.4
+      ],
+      "uuid": "31d45352-d68c-4245-a9a8-612c01b54e55",
+      "scale": [
+        1.0,
+        1.0,
+        0.99
+      ]
+    }
+  ]
+}

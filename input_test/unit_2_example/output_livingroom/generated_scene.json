@@ -1,0 +1,648 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -6.0,
+      2.8,
+      3.89
+    ],
+    [
+      -6.0,
+      2.8,
+      -3.89
+    ],
+    [
+      -2.41,
+      2.8,
+      -3.89
+    ],
+    [
+      -2.31,
+      2.8,
+      -0.7
+    ],
+    [
+      6.0,
+      2.8,
+      -0.7
+    ],
+    [
+      6.0,
+      2.8,
+      2.51
+    ],
+    [
+      2.98,
+      2.8,
+      2.51
+    ],
+    [
+      2.88,
+      2.8,
+      0.57
+    ],
+    [
+      -0.0,
+      2.8,
+      0.57
+    ],
+    [
+      -0.1,
+      2.8,
+      3.89
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -6.0,
+      0.0,
+      3.89
+    ],
+    [
+      -6.0,
+      0.0,
+      -3.89
+    ],
+    [
+      -2.41,
+      0.0,
+      -3.89
+    ],
+    [
+      -2.31,
+      0.0,
+      -0.7
+    ],
+    [
+      6.0,
+      0.0,
+      -0.7
+    ],
+    [
+      6.0,
+      0.0,
+      2.51
+    ],
+    [
+      2.98,
+      0.0,
+      2.51
+    ],
+    [
+      2.88,
+      0.0,
+      0.57
+    ],
+    [
+      -0.0,
+      0.0,
+      0.57
+    ],
+    [
+      -0.1,
+      0.0,
+      3.89
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "A modern minimalist white wooden bar with clean lines and an open design, perfect for contemporary settings.",
+      "pos": [
+        1.27,
+        0.0,
+        2.21
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.7,
+        0.89,
+        0.73
+      ],
+      "prompt": "bar",
+      "sampled_asset_jid": "2f6fe58e-8246-4cda-aebe-c9d57cd165ea",
+      "sampled_asset_desc": "A modern minimalist white wooden bar with clean lines and an open design, perfect for contemporary settings.",
+      "sampled_asset_size": [
+        2.704200029373169,
+        0.8870000518331498,
+        0.7347400784492493
+      ],
+      "uuid": "fffbd9da-c8df-47f4-a0d5-1d4fedf47428"
+    },
+    {
+      "desc": "Modern Mid-Century dark brown wooden barstool with curved seat, tapered legs, and crossbar support.",
+      "pos": [
+        1.31,
+        0.0,
+        1.81
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.51,
+        0.42,
+        0.3
+      ],
+      "prompt": "barstool",
+      "sampled_asset_jid": "f73c58b2-b54e-4a9a-b696-86f747bdcb33",
+      "sampled_asset_desc": "Modern Mid-Century dark brown wooden barstool with curved seat, tapered legs, and crossbar support.",
+      "sampled_asset_size": [
+        0.5055600106716156,
+        0.4191700034971291,
+        0.301800012588501
+      ],
+      "uuid": "c32bb728-8d89-426e-83ef-91974bd946f6"
+    },
+    {
+      "desc": "Contemporary light brown wooden bookcase with minimalist design, featuring open shelves and a bottom cabinet with straightforward knobs.",
+      "pos": [
+        -0.16,
+        0.0,
+        2.06
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.91,
+        2.11,
+        0.41
+      ],
+      "prompt": "bookcase",
+      "sampled_asset_jid": "0c2f5f5b-6ff7-4d35-bec3-39e6458c7c8c-(0.93)-(1.0)-(0.94)",
+      "sampled_asset_desc": "Contemporary light brown wooden bookcase with minimalist design, featuring open shelves and a bottom cabinet with straightforward knobs.",
+      "sampled_asset_size": [
+        0.85,
+        2.11,
+        0.38
+      ],
+      "uuid": "78c67f30-d448-410e-9fcd-866986ee1ad2",
+      "scale": [
+        0.93,
+        1.0,
+        0.94
+      ]
+    },
+    {
+      "desc": "Modern grey metal children cabinet with double doors, ventilation holes, and minimalist design.",
+      "pos": [
+        -5.6,
+        0.0,
+        2.2
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.9,
+        2.4,
+        0.66
+      ],
+      "prompt": "children cabinet",
+      "sampled_asset_jid": "c3c0bef5-d190-4b1e-a2a2-3fe08951fd9a-(0.96)-(1.0)-(0.93)",
+      "sampled_asset_desc": "Modern grey metal children cabinet with double doors, ventilation holes, and minimalist design.",
+      "sampled_asset_size": [
+        0.9,
+        2.4,
+        0.66
+      ],
+      "uuid": "a9285ed5-bb1a-40a6-aa0d-7a1cce88017c",
+      "scale": [
+        0.96,
+        1.0,
+        0.93
+      ]
+    },
+    {
+      "desc": "Classic armchair with modern navy blue fabric and wooden legs, featuring a rounded back and curved armrests.",
+      "pos": [
+        0.51,
+        0.0,
+        0.88
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.83,
+        0.97,
+        0.92
+      ],
+      "prompt": "classic brown armchair",
+      "sampled_asset_jid": "24624dae-698b-4c70-957c-a67531aac5e4",
+      "sampled_asset_desc": "Classic armchair with modern navy blue fabric and wooden legs, featuring a rounded back and curved armrests.",
+      "sampled_asset_size": [
+        0.8332989811897278,
+        0.9669541970361024,
+        0.9165790379047394
+      ],
+      "uuid": "898f612b-48d7-42c2-82d7-a9c41f4e548a"
+    },
+    {
+      "desc": "A sleek, modern double bed with a geometric-patterned fabric headboard and sturdy wooden frame, blending functionality with aesthetic appeal.",
+      "pos": [
+        -5.0,
+        0.0,
+        0.95
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.18,
+        1.05,
+        2.24
+      ],
+      "prompt": "double bed",
+      "sampled_asset_jid": "03fa4e21-d9a2-46e7-8f4f-3375c4eb0ffd",
+      "sampled_asset_desc": "A contemporary minimalist double bed with a straight headboard, simple lines, and a neutral color palette enhanced with decorative pillows.",
+      "sampled_asset_size": [
+        2.183740019798279,
+        1.019079812336713,
+        2.2411000728607178
+      ],
+      "uuid": "7b2c5ffa-acc9-41b9-ac0b-93c83749ae6d"
+    },
+    {
+      "desc": "Contemporary dressing table with a sleek black glass top, round mirror, and dual drawers, featuring minimalist design and functionality.",
+      "pos": [
+        1.4,
+        0.0,
+        2.28
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.0,
+        1.51,
+        0.52
+      ],
+      "prompt": "dresser",
+      "sampled_asset_jid": "e363968d-4177-425d-9fc5-fc572a1f394d-(1.0)-(1.0)-(0.9)",
+      "sampled_asset_desc": "Contemporary dressing table with a sleek black glass top, round mirror, and dual drawers, featuring minimalist design and functionality.",
+      "sampled_asset_size": [
+        1.0,
+        1.51,
+        0.47
+      ],
+      "uuid": "de1cad2c-0c4a-4a5d-ad55-1c9f78106ad3",
+      "scale": [
+        1.0,
+        1.0,
+        0.9
+      ]
+    },
+    {
+      "desc": "A modern minimalist floor lamp featuring a natural wood tripod base, white drum shade, and distinctive red cord, combining simplicity with geometric elegance.",
+      "pos": [
+        5.51,
+        0.0,
+        2.1
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.91,
+        1.85,
+        0.65
+      ],
+      "prompt": "floor lamp",
+      "sampled_asset_jid": "9358cce7-f46b-4776-a543-9b79f5a17016",
+      "sampled_asset_desc": "A modern minimalist floor lamp with a beige fabric cylindrical shade and a brown wooden tripod base featuring clean lines and a simple design.",
+      "sampled_asset_size": [
+        0.5566200017929077,
+        1.160599964005769,
+        0.45113998651504517
+      ],
+      "uuid": "c536c77e-f61a-4756-88f8-0e94d35eedff"
+    },
+    {
+      "desc": "Modern minimalist corner/side table with a square shape, clean lines, wooden frame, and beige inset tabletop.",
+      "pos": [
+        0.4,
+        0.0,
+        2.1
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.5,
+        0.6,
+        0.5
+      ],
+      "prompt": "low wooden side table",
+      "sampled_asset_jid": "56e99f03-de10-4747-be11-c7b420f50a49-(1.19)-(1.0)-(1.18)",
+      "sampled_asset_desc": "This vintage-style wooden corner table features light brown curved legs, a single drawer with a simple knob, and a smooth rectangular top.",
+      "sampled_asset_size": [
+        0.5,
+        0.6,
+        0.5
+      ],
+      "uuid": "8f701129-5db7-477c-9225-ced4112c3810",
+      "scale": [
+        1.19,
+        1.0,
+        1.18
+      ]
+    },
+    {
+      "desc": "Modern three-seat sofa with classic elements featuring gray fabric cushions and a dark brown wooden frame with tapered legs.",
+      "pos": [
+        5.23,
+        0.0,
+        0.01
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        3.02,
+        0.88,
+        1.03
+      ],
+      "prompt": "modern black sofa",
+      "sampled_asset_jid": "22496d43-4610-477a-98d9-fe6e97ede751",
+      "sampled_asset_desc": "Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan.",
+      "sampled_asset_size": [
+        2.9517099857330322,
+        0.933687390468549,
+        1.004141092300415
+      ],
+      "uuid": "f011b6e5-51f1-4d2a-90d2-ffd2fb3486c7"
+    },
+    {
+      "desc": "Mid-century modern walnut nightstand with splayed legs, two drawers, and minimalist design featuring black round drawer pulls.",
+      "pos": [
+        5.31,
+        0.0,
+        2.02
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.63,
+        0.62,
+        0.54
+      ],
+      "prompt": "nightstand",
+      "sampled_asset_jid": "30d524b6-ad13-440f-a1ac-6d564213c2f7-(-1.0)-(1.0)-(1.0)",
+      "sampled_asset_desc": "Mid-century modern walnut nightstand with splayed legs, two drawers, and minimalist design featuring black round drawer pulls.",
+      "sampled_asset_size": [
+        0.63,
+        0.62,
+        0.54
+      ],
+      "uuid": "b1090e24-409e-43d6-8a00-16b1189888e4",
+      "scale": [
+        -1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+      "pos": [
+        1.34,
+        1.65,
+        1.36
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.42,
+        1.12,
+        0.39
+      ],
+      "prompt": "pendant lamp",
+      "sampled_asset_jid": "a7621218-bd3a-48ab-9694-9f307bb4ba1e-(0.95)-(1.0)-(1.03)",
+      "sampled_asset_desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+      "sampled_asset_size": [
+        0.4,
+        1.12,
+        0.4
+      ],
+      "uuid": "f907e1f8-af97-4bf6-b2d4-99eaeef262cd",
+      "scale": [
+        0.95,
+        1.0,
+        1.03
+      ]
+    },
+    {
+      "desc": "Elegant Victorian-style round end table with ornate gold wood detailing and a three-legged pedestal base.",
+      "pos": [
+        2.39,
+        0.0,
+        2.09
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.49,
+        0.74,
+        0.49
+      ],
+      "prompt": "round end table",
+      "sampled_asset_jid": "88e75388-29bc-4ecc-b1d1-16fdddd84006",
+      "sampled_asset_desc": "Traditional elegant round end table with a dark brown wood finish, one drawer with a brass knob, and tapered legs.",
+      "sampled_asset_size": [
+        0.5,
+        0.7200000436667757,
+        0.4991599917411804
+      ],
+      "uuid": "d049069a-2a2b-41d8-abe0-26fcc62f7244"
+    },
+    {
+      "desc": "Modern minimalist shoe cabinet featuring step-like design with white wooden panels, grey accents, and metal handles for ample storage.",
+      "pos": [
+        1.65,
+        0.0,
+        2.26
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.14,
+        1.05,
+        0.34
+      ],
+      "prompt": "shoe cabinet",
+      "sampled_asset_jid": "649b47a1-6a62-4b39-8fc7-5a92c9932a65-(0.99)-(1.0)-(0.99)",
+      "sampled_asset_desc": "Modern minimalist shoe cabinet featuring step-like design with white wooden panels, grey accents, and metal handles for ample storage.",
+      "sampled_asset_size": [
+        1.19,
+        1.05,
+        0.33
+      ],
+      "uuid": "b2a1882a-0726-4284-8ba3-15a2ddd146e4",
+      "scale": [
+        0.99,
+        1.0,
+        0.99
+      ]
+    },
+    {
+      "desc": "Modern minimalist single bed with a rectangular headboard, clean lines, and neutral grey and white palette.",
+      "pos": [
+        4.03,
+        0.0,
+        1.4
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.48,
+        0.98,
+        2.05
+      ],
+      "prompt": "single bed",
+      "sampled_asset_jid": "6748f033-7e07-4ea8-8daf-ffb155b65067",
+      "sampled_asset_desc": "Modern minimalist single bed with a rectangular headboard, clean lines, and neutral grey and white palette.",
+      "sampled_asset_size": [
+        1.4768739938735962,
+        0.9804956057923846,
+        2.0535601377487183
+      ],
+      "uuid": "aba5d0f8-ed81-4aef-b575-f3fd50ec2a6b"
+    },
+    {
+      "desc": "Modern minimalist TV stand with light wood finish, featuring sliding panel doors and open shelving on a floating design.",
+      "pos": [
+        0.01,
+        0.0,
+        -0.05
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        3.07,
+        0.74,
+        0.58
+      ],
+      "prompt": "tv stand",
+      "sampled_asset_jid": "967011ed-753f-4eb2-8505-feefe3f33f88",
+      "sampled_asset_desc": "Modern minimalist TV stand with light wood finish, featuring sliding panel doors and open shelving on a floating design.",
+      "sampled_asset_size": [
+        3.0660998821258545,
+        0.7364649951684292,
+        0.5845299959182739
+      ],
+      "uuid": "e2d35693-c07a-4461-9cac-69db1b41fe43"
+    },
+    {
+      "desc": "This modern minimalist white and gray wardrobe features open shelving, hanging rods, and metal wire baskets, providing efficient and stylish storage for clothing and accessories.",
+      "pos": [
+        -3.4,
+        0.0,
+        2.25
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.48,
+        2.01,
+        0.56
+      ],
+      "prompt": "wardrobe",
+      "sampled_asset_jid": "11f4aa43-c1e0-47e9-b69b-55f052d1a317",
+      "sampled_asset_desc": "This modern minimalist white and gray wardrobe features open shelving, hanging rods, and metal wire baskets, providing efficient and stylish storage for clothing and accessories.",
+      "sampled_asset_size": [
+        1.4843299984931946,
+        2.008060149507017,
+        0.561672031879425
+      ],
+      "uuid": "eb79516b-8885-4651-b0a8-eac0cbd15756"
+    },
+    {
+      "desc": "Sleek black wooden coffee table with round top, vertical slat supports, and a circular base, epitomizing modern minimalist design.",
+      "pos": [
+        1.28,
+        0.0,
+        0.55
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.05,
+        0.52,
+        1.05
+      ],
+      "prompt": "wooden coffee table",
+      "sampled_asset_jid": "7423e139-439d-4675-87ad-0a9221cd03f8",
+      "sampled_asset_desc": "Sleek black wooden coffee table with round top, vertical slat supports, and a circular base, epitomizing modern minimalist design.",
+      "sampled_asset_size": [
+        1.0504469871520996,
+        0.5212393945694203,
+        1.0501310229301453
+      ],
+      "uuid": "61e94e79-98a8-4913-8ed1-a784fa74ddc3"
+    }
+  ]
+}
