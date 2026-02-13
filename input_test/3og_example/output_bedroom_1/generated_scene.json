@@ -1,0 +1,194 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.71,
+      2.8,
+      1.41
+    ],
+    [
+      -1.71,
+      2.8,
+      -1.41
+    ],
+    [
+      1.71,
+      2.8,
+      -1.41
+    ],
+    [
+      1.71,
+      2.8,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.71,
+      0.0,
+      1.41
+    ],
+    [
+      -1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+      "pos": [
+        0.91,
+        0.0,
+        0.65
+      ],
+      "rot": [
+        0.0,
+        0.83359,
+        0.0,
+        -0.55239
+      ],
+      "size": [
+        0.91,
+        0.76,
+        0.77
+      ],
+      "prompt": "black leather armchair",
+      "sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+      "sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+      "sampled_asset_size": [
+        0.9093009829521179,
+        0.7645690013525268,
+        0.7667250037193298
+      ],
+      "uuid": "b65bf62b-e2fc-4073-b08d-54e7625e8c6e"
+    },
+    {
+      "desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+      "pos": [
+        -0.01,
+        0.0,
+        0.09
+      ],
+      "rot": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.8,
+        0.94,
+        0.98
+      ],
+      "prompt": "blue velvet loveseat sofa",
+      "sampled_asset_jid": "650fec0d-8577-4afd-b42a-47bf8132e31c",
+      "sampled_asset_desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+      "sampled_asset_size": [
+        1.80247300863266,
+        0.9449282044079155,
+        0.9838060140609741
+      ],
+      "uuid": "5a881b58-edfe-4d6b-9984-142b3d8fd7cc"
+    },
+    {
+      "desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+      "pos": [
+        1.32,
+        0.0,
+        1.2
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.55,
+        0.45,
+        0.35
+      ],
+      "prompt": "modern glass nightstand",
+      "sampled_asset_jid": "452793a7-feab-4004-b144-fa7e7a6b8705",
+      "sampled_asset_desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+      "sampled_asset_size": [
+        0.5496460199356079,
+        0.4516830276805548,
+        0.3500000238418579
+      ],
+      "uuid": "3c2b30eb-f366-42cf-a867-16f58a98abee"
+    },
+    {
+      "desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+      "pos": [
+        -0.61,
+        0.0,
+        -0.71
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        2.16,
+        2.03,
+        1.35
+      ],
+      "prompt": "white wooden bed",
+      "sampled_asset_jid": "80a2a2a7-bf33-40c6-a4ea-10636436e704",
+      "sampled_asset_desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+      "sampled_asset_size": [
+        2.1634299755096436,
+        2.0323601179903648,
+        1.3468960523605347
+      ],
+      "uuid": "7c2270d2-4ee6-4f0b-91bb-90d98ed7ec5c"
+    },
+    {
+      "desc": "Mid-century modern dark brown wooden coffee table with two drawers, brass knobs, and tapered legs.",
+      "pos": [
+        -0.01,
+        0.0,
+        0.01
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.1,
+        0.45,
+        0.5
+      ],
+      "prompt": "wooden coffee table",
+      "sampled_asset_jid": "4bef5bc5-e8b7-4af6-8bad-1f674f0651c3-(1.93)-(1.0)-(0.87)",
+      "sampled_asset_desc": "Contemporary wooden coffee table with a round top and geometric base, featuring a smooth, natural wood finish and minimalistic design.",
+      "sampled_asset_size": [
+        1.11,
+        0.45,
+        0.5
+      ],
+      "uuid": "45fed55a-9997-4969-bbd1-e6f9efb8131c",
+      "scale": [
+        1.93,
+        1.0,
+        0.87
+      ]
+    }
+  ]
+}

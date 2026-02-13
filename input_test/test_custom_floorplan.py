@@ -82,8 +82,8 @@ def render_topdown_bboxes(scene, output_path):
 
 
 def main():
-    input_path = Path("input_test/unit_1_room_1_livingroom.json")
-    output_path = Path("input_test/3og_example/output_livingroom")
+    input_path = Path("input_test/unit_1_room_4_bedroom.json")
+    output_path = Path("input_test/3og_example/output_bedroom_3")
     output_path.mkdir(parents=True, exist_ok=True)
 
     # Load custom floorplan
