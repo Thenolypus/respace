@@ -488,7 +488,7 @@ def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_atte
 
 			pth_file = pth_output / filename
 			if pth_file.exists():
-				break
+				return  # Success - exit the function
 		
 		except Exception as e:
 			print(f"Render attempt {attempt} failed: {e}")

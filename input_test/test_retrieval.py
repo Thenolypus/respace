@@ -39,9 +39,9 @@ TEST_QUERIES = [
 
 # Paths to generated scene JSONs from the layout test
 LAYOUT_SCENE_PATHS = [
-	Path("input_test/unit_1_example/output_livingroom/generated_scene.json"),
-	Path("input_test/unit_1_example/output_bedroom_2/generated_scene.json"),
-	Path("input_test/unit_1_example/output_bedroom_3/generated_scene.json"),
+	Path("input_test/3og_example/output_livingroom/generated_scene.json")
+	#Path("input_test/unit_1_example/output_bedroom_2/generated_scene.json"),
+	#Path("input_test/unit_1_example/output_bedroom_3/generated_scene.json"),
 ]
 
 
