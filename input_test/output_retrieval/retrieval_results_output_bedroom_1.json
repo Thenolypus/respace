@@ -1,0 +1,465 @@
+{
+  "greedy": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.8,
+        1.41
+      ],
+      [
+        -1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.41
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "pos": [
+          0.91,
+          0.0,
+          0.65
+        ],
+        "rot": [
+          0.0,
+          0.83359,
+          0.0,
+          -0.55239
+        ],
+        "size": [
+          0.91,
+          0.76,
+          0.77
+        ],
+        "prompt": "black leather armchair",
+        "original_sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+        "original_sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "original_sampled_asset_size": [
+          0.9093009829521179,
+          0.7645690013525268,
+          0.7667250037193298
+        ],
+        "sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+        "sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "sampled_asset_size": [
+          0.9093009829521179,
+          0.7645690013525268,
+          0.7667250037193298
+        ],
+        "uuid": "1e81b0af-e1a4-4b53-9733-405186dc712b"
+      },
+      {
+        "desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "pos": [
+          -0.01,
+          0.0,
+          0.09
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.8,
+          0.94,
+          0.98
+        ],
+        "prompt": "blue velvet loveseat sofa",
+        "original_sampled_asset_jid": "650fec0d-8577-4afd-b42a-47bf8132e31c",
+        "original_sampled_asset_desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "original_sampled_asset_size": [
+          1.80247300863266,
+          0.9449282044079155,
+          0.9838060140609741
+        ],
+        "sampled_asset_jid": "650fec0d-8577-4afd-b42a-47bf8132e31c",
+        "sampled_asset_desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "sampled_asset_size": [
+          1.80247300863266,
+          0.9449282044079155,
+          0.9838060140609741
+        ],
+        "uuid": "ddd7ad56-579b-46d4-bec5-18934fcf374c"
+      },
+      {
+        "desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+        "pos": [
+          1.32,
+          0.0,
+          1.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.55,
+          0.45,
+          0.35
+        ],
+        "prompt": "modern glass nightstand",
+        "original_sampled_asset_jid": "452793a7-feab-4004-b144-fa7e7a6b8705",
+        "original_sampled_asset_desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+        "original_sampled_asset_size": [
+          0.5496460199356079,
+          0.4516830276805548,
+          0.3500000238418579
+        ],
+        "sampled_asset_jid": "452793a7-feab-4004-b144-fa7e7a6b8705",
+        "sampled_asset_desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+        "sampled_asset_size": [
+          0.5496460199356079,
+          0.4516830276805548,
+          0.3500000238418579
+        ],
+        "uuid": "fc625c56-1bd8-43de-b9ae-923701af7cbd"
+      },
+      {
+        "desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "pos": [
+          -0.61,
+          0.0,
+          -0.71
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.16,
+          2.03,
+          1.35
+        ],
+        "prompt": "white wooden bed",
+        "original_sampled_asset_jid": "80a2a2a7-bf33-40c6-a4ea-10636436e704",
+        "original_sampled_asset_desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "original_sampled_asset_size": [
+          2.1634299755096436,
+          2.0323601179903648,
+          1.3468960523605347
+        ],
+        "sampled_asset_jid": "80a2a2a7-bf33-40c6-a4ea-10636436e704",
+        "sampled_asset_desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "sampled_asset_size": [
+          2.1634299755096436,
+          2.0323601179903648,
+          1.3468960523605347
+        ],
+        "uuid": "175ba036-0e66-47b9-bcff-c9d27c9854c9"
+      },
+      {
+        "desc": "Mid-century modern dark brown wooden coffee table with two drawers, brass knobs, and tapered legs.",
+        "pos": [
+          -0.01,
+          0.0,
+          0.01
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.1,
+          0.45,
+          0.5
+        ],
+        "prompt": "wooden coffee table",
+        "scale": [
+          1.93,
+          1.0,
+          0.87
+        ],
+        "original_sampled_asset_jid": "4bef5bc5-e8b7-4af6-8bad-1f674f0651c3-(1.93)-(1.0)-(0.87)",
+        "original_sampled_asset_desc": "Contemporary wooden coffee table with a round top and geometric base, featuring a smooth, natural wood finish and minimalistic design.",
+        "original_sampled_asset_size": [
+          1.11,
+          0.45,
+          0.5
+        ],
+        "sampled_asset_jid": "e185dbe5-c6c8-4fcf-864c-527acdbe603a",
+        "sampled_asset_desc": "Mid-century modern dark brown wooden coffee table with two drawers, brass knobs, and tapered legs.",
+        "sampled_asset_size": [
+          1.1001240015029907,
+          0.4500030428146351,
+          0.5001879930496216
+        ],
+        "uuid": "a696573c-f256-4fe9-a4a7-7fa976ff9628"
+      }
+    ]
+  },
+  "stochastic": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.8,
+        1.41
+      ],
+      [
+        -1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.41
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "pos": [
+          0.91,
+          0.0,
+          0.65
+        ],
+        "rot": [
+          0.0,
+          0.83359,
+          0.0,
+          -0.55239
+        ],
+        "size": [
+          0.91,
+          0.76,
+          0.77
+        ],
+        "prompt": "black leather armchair",
+        "original_sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+        "original_sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "original_sampled_asset_size": [
+          0.9093009829521179,
+          0.7645690013525268,
+          0.7667250037193298
+        ],
+        "sampled_asset_jid": "82a6b836-eef5-4d74-9405-e6f3def875d2-(1.09)-(1.0)-(0.9)",
+        "sampled_asset_desc": "This minimalist light grey lazy sofa features a modern round design with plush cushioning, tapered wooden legs, and a decorative butterfly print pillow.",
+        "sampled_asset_size": [
+          0.9,
+          0.75,
+          0.73
+        ],
+        "uuid": "3611d6d5-d33b-48a4-aecb-2a068fc7de4b",
+        "scale": [
+          1.09,
+          1.0,
+          0.9
+        ]
+      },
+      {
+        "desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "pos": [
+          -0.01,
+          0.0,
+          0.09
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.8,
+          0.94,
+          0.98
+        ],
+        "prompt": "blue velvet loveseat sofa",
+        "original_sampled_asset_jid": "650fec0d-8577-4afd-b42a-47bf8132e31c",
+        "original_sampled_asset_desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "original_sampled_asset_size": [
+          1.80247300863266,
+          0.9449282044079155,
+          0.9838060140609741
+        ],
+        "sampled_asset_jid": "be4cdd72-5566-4e84-9023-ae8a2f2d603b",
+        "sampled_asset_desc": "This traditional-contemporary loveseat sofa features upholstered fabric in gray with cushioned seats, rolled arms, and decorative yellow and blue pillows for a blend of comfort and style.",
+        "sampled_asset_size": [
+          1.7701029777526855,
+          0.9351729447623605,
+          0.9385770261287689
+        ],
+        "uuid": "d1804380-9e88-460b-8b08-848f00ac35e5"
+      },
+      {
+        "desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+        "pos": [
+          1.32,
+          0.0,
+          1.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.55,
+          0.45,
+          0.35
+        ],
+        "prompt": "modern glass nightstand",
+        "original_sampled_asset_jid": "452793a7-feab-4004-b144-fa7e7a6b8705",
+        "original_sampled_asset_desc": "This modern minimalist nightstand features a sleek grey metal frame with a glass top and shelf, complemented by elegant golden accents.",
+        "original_sampled_asset_size": [
+          0.5496460199356079,
+          0.4516830276805548,
+          0.3500000238418579
+        ],
+        "sampled_asset_jid": "a2e48bd4-ce55-4cd2-b3d1-5fc18fc0e7a2",
+        "sampled_asset_desc": "This modern minimalist gray and taupe nightstand features clean lines, a rectangular shape, and two drawers with integrated handles.",
+        "sampled_asset_size": [
+          0.5578920245170593,
+          0.4403269767120621,
+          0.3500000238418579
+        ],
+        "uuid": "cae051bb-658b-45d2-a2b2-086df15d2c5d"
+      },
+      {
+        "desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "pos": [
+          -0.61,
+          0.0,
+          -0.71
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.16,
+          2.03,
+          1.35
+        ],
+        "prompt": "white wooden bed",
+        "original_sampled_asset_jid": "80a2a2a7-bf33-40c6-a4ea-10636436e704",
+        "original_sampled_asset_desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "original_sampled_asset_size": [
+          2.1634299755096436,
+          2.0323601179903648,
+          1.3468960523605347
+        ],
+        "sampled_asset_jid": "80a2a2a7-bf33-40c6-a4ea-10636436e704",
+        "sampled_asset_desc": "Classic white wooden bunk bed with ladder, decorative finials, guard rails, and a sturdy frame.",
+        "sampled_asset_size": [
+          2.1634299755096436,
+          2.0323601179903648,
+          1.3468960523605347
+        ],
+        "uuid": "1754ba83-43ec-4b76-ad84-5f85da0da5ae"
+      },
+      {
+        "desc": "Mid-century modern dark brown wooden coffee table with two drawers, brass knobs, and tapered legs.",
+        "pos": [
+          -0.01,
+          0.0,
+          0.01
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.1,
+          0.45,
+          0.5
+        ],
+        "prompt": "wooden coffee table",
+        "scale": [
+          1.45,
+          1.0,
+          1.89
+        ],
+        "original_sampled_asset_jid": "4bef5bc5-e8b7-4af6-8bad-1f674f0651c3-(1.93)-(1.0)-(0.87)",
+        "original_sampled_asset_desc": "Contemporary wooden coffee table with a round top and geometric base, featuring a smooth, natural wood finish and minimalistic design.",
+        "original_sampled_asset_size": [
+          1.11,
+          0.45,
+          0.5
+        ],
+        "sampled_asset_jid": "e185dbe5-c6c8-4fcf-864c-527acdbe603a-(1.45)-(1.0)-(1.89)",
+        "sampled_asset_desc": "Mid-century modern dark brown wooden coffee table with two drawers, brass knobs, and tapered legs.",
+        "sampled_asset_size": [
+          1.6,
+          0.45,
+          0.95
+        ],
+        "uuid": "4669da92-632e-46f9-a78e-06f9fdaaaac7"
+      }
+    ]
+  }
+}

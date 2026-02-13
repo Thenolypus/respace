@@ -1,0 +1,550 @@
+{
+  "greedy": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.87,
+        2.8,
+        1.27
+      ],
+      [
+        -2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        1.27
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.87,
+        0.0,
+        1.27
+      ],
+      [
+        -2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        1.27
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "pos": [
+          2.15,
+          0.0,
+          0.49
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.58,
+          0.81,
+          0.57
+        ],
+        "prompt": "classic chinese chair",
+        "original_sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "original_sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "original_sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "uuid": "92485c93-2895-4a58-a4d4-7140eff0095a"
+      },
+      {
+        "desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "pos": [
+          -0.07,
+          0.0,
+          0.01
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.64,
+          1.0,
+          2.42
+        ],
+        "prompt": "modern king-size bed",
+        "scale": [
+          1.27,
+          1.0,
+          1.03
+        ],
+        "original_sampled_asset_jid": "1a1c11a4-9c90-403c-b7cf-70ee73b58cdd-(1.27)-(1.0)-(1.03)",
+        "original_sampled_asset_desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "original_sampled_asset_size": [
+          2.08,
+          1.0,
+          2.49
+        ],
+        "sampled_asset_jid": "1a1c11a4-9c90-403c-b7cf-70ee73b58cdd",
+        "sampled_asset_desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "sampled_asset_size": [
+          1.64131498336792,
+          1.0021047783461654,
+          2.4185601472854614
+        ],
+        "uuid": "2d96de2e-b4ac-4c92-840d-15276955b020"
+      },
+      {
+        "desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "pos": [
+          0.06,
+          1.53,
+          0.03
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          1.12,
+          0.39
+        ],
+        "prompt": "pendant lamp",
+        "scale": [
+          0.95,
+          1.0,
+          1.03
+        ],
+        "original_sampled_asset_jid": "a7621218-bd3a-48ab-9694-9f307bb4ba1e-(0.95)-(1.0)-(1.03)",
+        "original_sampled_asset_desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "original_sampled_asset_size": [
+          0.4,
+          1.12,
+          0.4
+        ],
+        "sampled_asset_jid": "a7621218-bd3a-48ab-9694-9f307bb4ba1e",
+        "sampled_asset_desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "sampled_asset_size": [
+          0.4232899993658066,
+          1.1197208106514154,
+          0.3929990381002426
+        ],
+        "uuid": "0c5ab2f2-b5bd-4c6d-8607-a7f3d08fcc55"
+      },
+      {
+        "desc": "Elegant vintage-style round end table with a black metal frame and white ceramic top, featuring sleek curves and ornate detailing.",
+        "pos": [
+          -1.65,
+          0.0,
+          -0.9
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.34,
+          1.06,
+          0.34
+        ],
+        "prompt": "round end table",
+        "original_sampled_asset_jid": "475448af-59ea-4c2f-aa3b-9461a10f54d9",
+        "original_sampled_asset_desc": "Elegant vintage-style round end table with a black metal frame and white ceramic top, featuring sleek curves and ornate detailing.",
+        "original_sampled_asset_size": [
+          0.34474800527095795,
+          1.062207487062551,
+          0.34461499750614166
+        ],
+        "sampled_asset_jid": "475448af-59ea-4c2f-aa3b-9461a10f54d9",
+        "sampled_asset_desc": "Elegant vintage-style round end table with a black metal frame and white ceramic top, featuring sleek curves and ornate detailing.",
+        "sampled_asset_size": [
+          0.34474800527095795,
+          1.062207487062551,
+          0.34461499750614166
+        ],
+        "uuid": "2ede0b83-bf77-46a1-8ff9-0a30ee4f2fbf"
+      },
+      {
+        "desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "pos": [
+          -2.04,
+          0.0,
+          0.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.42,
+          0.7,
+          0.32
+        ],
+        "prompt": "sideboard/side cabinet/console table",
+        "original_sampled_asset_jid": "73254188-802f-44ad-b62d-683bbe0b10b2",
+        "original_sampled_asset_desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "original_sampled_asset_size": [
+          1.4205880165100098,
+          0.6992300164858893,
+          0.3200000077486038
+        ],
+        "sampled_asset_jid": "73254188-802f-44ad-b62d-683bbe0b10b2",
+        "sampled_asset_desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "sampled_asset_size": [
+          1.4205880165100098,
+          0.6992300164858893,
+          0.3200000077486038
+        ],
+        "uuid": "9ca312c5-9114-4a60-b860-cd324c3a2ebf"
+      },
+      {
+        "desc": "Modern minimalist wardrobe with geometric patterned sliding doors featuring beige, brown, white, gray, and black laminate panels.",
+        "pos": [
+          2.56,
+          0.0,
+          0.48
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.91,
+          1.16,
+          0.27
+        ],
+        "prompt": "wardrobe",
+        "original_sampled_asset_jid": "685df4a4-cd69-4f0b-82f5-675bd0738881",
+        "original_sampled_asset_desc": "Modern minimalist wardrobe with a two-tone black and white design, featuring sliding doors and clean lines.",
+        "original_sampled_asset_size": [
+          0.9086520075798035,
+          1.15979004940443,
+          0.27396610379219055
+        ],
+        "sampled_asset_jid": "36a8ee08-14c3-4380-ae0e-1a66525aa7f5",
+        "sampled_asset_desc": "Modern minimalist wardrobe with geometric patterned sliding doors featuring beige, brown, white, gray, and black laminate panels.",
+        "sampled_asset_size": [
+          0.9086520075798035,
+          1.15979004940443,
+          0.27396610379219055
+        ],
+        "uuid": "721a6735-f419-477f-b88b-a0eccd1323a6"
+      }
+    ]
+  },
+  "stochastic": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.87,
+        2.8,
+        1.27
+      ],
+      [
+        -2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        1.27
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.87,
+        0.0,
+        1.27
+      ],
+      [
+        -2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        1.27
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "pos": [
+          2.15,
+          0.0,
+          0.49
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.58,
+          0.81,
+          0.57
+        ],
+        "prompt": "classic chinese chair",
+        "original_sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "original_sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "original_sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "sampled_asset_jid": "14e04cfe-53fa-4855-a2de-52521326dee2-(0.99)-(1.0)-(1.02)",
+        "sampled_asset_desc": "Mid-century modern Scandinavian dining chair with a curved backrest, wood frame, cushioned beige fabric seat, and distinctive horizontal cut-outs in dark brown finish.",
+        "sampled_asset_size": [
+          0.6,
+          0.79,
+          0.56
+        ],
+        "uuid": "3cb57415-e225-4d2e-9681-3db98e013122",
+        "scale": [
+          0.99,
+          1.0,
+          1.02
+        ]
+      },
+      {
+        "desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "pos": [
+          -0.07,
+          0.0,
+          0.01
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.64,
+          1.0,
+          2.42
+        ],
+        "prompt": "modern king-size bed",
+        "scale": [
+          1.18,
+          1.0,
+          0.86
+        ],
+        "original_sampled_asset_jid": "1a1c11a4-9c90-403c-b7cf-70ee73b58cdd-(1.27)-(1.0)-(1.03)",
+        "original_sampled_asset_desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "original_sampled_asset_size": [
+          2.08,
+          1.0,
+          2.49
+        ],
+        "sampled_asset_jid": "1a1c11a4-9c90-403c-b7cf-70ee73b58cdd-(1.18)-(1.0)-(0.86)",
+        "sampled_asset_desc": "Modern minimalist king-size bed with black paneled headboard, clean lines, and sleek black and gray bedding.",
+        "sampled_asset_size": [
+          1.94,
+          1.0,
+          2.08
+        ],
+        "uuid": "72fd37e1-c3df-4e08-9d52-725f76f59a31"
+      },
+      {
+        "desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "pos": [
+          0.06,
+          1.53,
+          0.03
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          1.12,
+          0.39
+        ],
+        "prompt": "pendant lamp",
+        "scale": [
+          0.73,
+          1.0,
+          0.73
+        ],
+        "original_sampled_asset_jid": "a7621218-bd3a-48ab-9694-9f307bb4ba1e-(0.95)-(1.0)-(1.03)",
+        "original_sampled_asset_desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "original_sampled_asset_size": [
+          0.4,
+          1.12,
+          0.4
+        ],
+        "sampled_asset_jid": "4bdb8763-e976-43a0-ab37-23bb156cd742-(0.73)-(1.0)-(0.73)",
+        "sampled_asset_desc": "Modern bohemian brown rattan spherical pendant lamp with intricate woven design and metal suspension.",
+        "sampled_asset_size": [
+          0.4,
+          1.15,
+          0.41
+        ],
+        "uuid": "845ff433-9117-4e2e-adaa-c436e935d4a9"
+      },
+      {
+        "desc": "Elegant vintage-style round end table with a black metal frame and white ceramic top, featuring sleek curves and ornate detailing.",
+        "pos": [
+          -1.65,
+          0.0,
+          -0.9
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.34,
+          1.06,
+          0.34
+        ],
+        "prompt": "round end table",
+        "original_sampled_asset_jid": "475448af-59ea-4c2f-aa3b-9461a10f54d9",
+        "original_sampled_asset_desc": "Elegant vintage-style round end table with a black metal frame and white ceramic top, featuring sleek curves and ornate detailing.",
+        "original_sampled_asset_size": [
+          0.34474800527095795,
+          1.062207487062551,
+          0.34461499750614166
+        ],
+        "sampled_asset_jid": "280daff8-2fa7-4043-a7ea-b56785a535c3-(0.99)-(1.12)-(1.0)",
+        "sampled_asset_desc": "Modern black metal rectangular end table with clean lines and a minimalist design.",
+        "sampled_asset_size": [
+          0.35,
+          1.08,
+          0.34
+        ],
+        "uuid": "f2e25dbb-91cd-4c7e-8f07-fc63ea1e5d1b",
+        "scale": [
+          0.99,
+          1.12,
+          1.0
+        ]
+      },
+      {
+        "desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "pos": [
+          -2.04,
+          0.0,
+          0.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.42,
+          0.7,
+          0.32
+        ],
+        "prompt": "sideboard/side cabinet/console table",
+        "original_sampled_asset_jid": "73254188-802f-44ad-b62d-683bbe0b10b2",
+        "original_sampled_asset_desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "original_sampled_asset_size": [
+          1.4205880165100098,
+          0.6992300164858893,
+          0.3200000077486038
+        ],
+        "sampled_asset_jid": "73254188-802f-44ad-b62d-683bbe0b10b2",
+        "sampled_asset_desc": "A sleek modern console table with a black marble top and gold metal frame.",
+        "sampled_asset_size": [
+          1.4205880165100098,
+          0.6992300164858893,
+          0.3200000077486038
+        ],
+        "uuid": "c449e8f0-ee40-4799-a60f-f232e57a131b"
+      },
+      {
+        "desc": "Modern minimalist wardrobe with geometric patterned sliding doors featuring beige, brown, white, gray, and black laminate panels.",
+        "pos": [
+          2.56,
+          0.0,
+          0.48
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.91,
+          1.16,
+          0.27
+        ],
+        "prompt": "wardrobe",
+        "original_sampled_asset_jid": "685df4a4-cd69-4f0b-82f5-675bd0738881",
+        "original_sampled_asset_desc": "Modern minimalist wardrobe with a two-tone black and white design, featuring sliding doors and clean lines.",
+        "original_sampled_asset_size": [
+          0.9086520075798035,
+          1.15979004940443,
+          0.27396610379219055
+        ],
+        "sampled_asset_jid": "36a8ee08-14c3-4380-ae0e-1a66525aa7f5",
+        "sampled_asset_desc": "Modern minimalist wardrobe with geometric patterned sliding doors featuring beige, brown, white, gray, and black laminate panels.",
+        "sampled_asset_size": [
+          0.9086520075798035,
+          1.15979004940443,
+          0.27396610379219055
+        ],
+        "uuid": "b1ea009a-9a45-4bc1-a068-7c6ffa2b1167"
+      }
+    ]
+  }
+}

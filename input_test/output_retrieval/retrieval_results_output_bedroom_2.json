@@ -1,0 +1,320 @@
+{
+  "greedy": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.8,
+        1.41
+      ],
+      [
+        -2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "pos": [
+          0.54,
+          0.0,
+          0.69
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.58,
+          0.81,
+          0.57
+        ],
+        "prompt": "classic chinese chair",
+        "original_sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "original_sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "original_sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "uuid": "e2ed807a-553c-44b9-9dad-b436a6ed5f76"
+      },
+      {
+        "desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+        "pos": [
+          -0.16,
+          0.0,
+          0.24
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.26,
+          0.89,
+          2.26
+        ],
+        "prompt": "modern single bed",
+        "original_sampled_asset_jid": "69a2550c-ec04-44d9-a621-e601330a9cb6",
+        "original_sampled_asset_desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+        "original_sampled_asset_size": [
+          1.2635650038719177,
+          0.8936859737150371,
+          2.258560061454773
+        ],
+        "sampled_asset_jid": "f65434b4-b939-4e48-8780-8bee03ba616a",
+        "sampled_asset_desc": "A modern, minimalist single bed featuring a gray fabric-upholstered headboard, flat base, and metal tapered legs for a sleek and functional design.",
+        "sampled_asset_size": [
+          1.2621099948883057,
+          0.8925298498506891,
+          2.2588601112365723
+        ],
+        "uuid": "38ce9461-f02e-4040-81aa-f1f052794597"
+      },
+      {
+        "desc": "A functional rustic-modern dark brown wooden nightstand with a single drawer and cabinet door featuring metal handles.",
+        "pos": [
+          -1.55,
+          0.0,
+          1.17
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.63,
+          0.73,
+          0.47
+        ],
+        "prompt": "small nightstand",
+        "original_sampled_asset_jid": "b8691383-7782-4e7e-9198-2475e987f082",
+        "original_sampled_asset_desc": "A functional rustic-modern dark brown wooden nightstand with a single drawer and cabinet door featuring metal handles.",
+        "original_sampled_asset_size": [
+          0.6255879998207092,
+          0.7300020023935012,
+          0.4719160199165344
+        ],
+        "sampled_asset_jid": "b8691383-7782-4e7e-9198-2475e987f082",
+        "sampled_asset_desc": "A functional rustic-modern dark brown wooden nightstand with a single drawer and cabinet door featuring metal handles.",
+        "sampled_asset_size": [
+          0.6255879998207092,
+          0.7300020023935012,
+          0.4719160199165344
+        ],
+        "uuid": "e92b9589-502d-4215-92b0-af1ba05602e8"
+      }
+    ]
+  },
+  "stochastic": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.8,
+        1.41
+      ],
+      [
+        -2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "pos": [
+          0.54,
+          0.0,
+          0.69
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.58,
+          0.81,
+          0.57
+        ],
+        "prompt": "classic chinese chair",
+        "original_sampled_asset_jid": "428825d5-0253-4c71-9fe7-5ff834c8264d",
+        "original_sampled_asset_desc": "A Classic Chinese chair with a dark brown wooden frame, curved backrest, straight legs, and a beige fabric cushion.",
+        "original_sampled_asset_size": [
+          0.5824159979820251,
+          0.8112360394393043,
+          0.5659630298614502
+        ],
+        "sampled_asset_jid": "adcaff86-4aa5-43e2-bc95-d7f822f68d01-(0.95)-(1.0)-(0.88)",
+        "sampled_asset_desc": "A mid-century modern minimalist chair with a curved wooden backrest, straight wooden legs, and a dark brown leather seat cushion.",
+        "sampled_asset_size": [
+          0.59,
+          0.82,
+          0.59
+        ],
+        "uuid": "35ce61c1-f74e-4517-bfb5-699b18d3332f",
+        "scale": [
+          0.95,
+          1.0,
+          0.88
+        ]
+      },
+      {
+        "desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+        "pos": [
+          -0.16,
+          0.0,
+          0.24
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.26,
+          0.89,
+          2.26
+        ],
+        "prompt": "modern single bed",
+        "original_sampled_asset_jid": "69a2550c-ec04-44d9-a621-e601330a9cb6",
+        "original_sampled_asset_desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+        "original_sampled_asset_size": [
+          1.2635650038719177,
+          0.8936859737150371,
+          2.258560061454773
+        ],
+        "sampled_asset_jid": "69a2550c-ec04-44d9-a621-e601330a9cb6",
+        "sampled_asset_desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+        "sampled_asset_size": [
+          1.2635650038719177,
+          0.8936859737150371,
+          2.258560061454773
+        ],
+        "uuid": "2c03e494-29ee-4e2b-a5fe-7abfbce4b575"
+      },
+      {
+        "desc": "A functional rustic-modern dark brown wooden nightstand with a single drawer and cabinet door featuring metal handles.",
+        "pos": [
+          -1.55,
+          0.0,
+          1.17
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.63,
+          0.73,
+          0.47
+        ],
+        "prompt": "small nightstand",
+        "original_sampled_asset_jid": "b8691383-7782-4e7e-9198-2475e987f082",
+        "original_sampled_asset_desc": "A functional rustic-modern dark brown wooden nightstand with a single drawer and cabinet door featuring metal handles.",
+        "original_sampled_asset_size": [
+          0.6255879998207092,
+          0.7300020023935012,
+          0.4719160199165344
+        ],
+        "sampled_asset_jid": "a85a3fb5-aa29-430d-90fc-1c1b6e4333b5-(0.84)-(0.92)-(1.0)",
+        "sampled_asset_desc": "A dark brown transitional nightstand with a curved front, three drawers, square metal handles, and sturdy tapered legs.",
+        "sampled_asset_size": [
+          0.64,
+          0.67,
+          0.46
+        ],
+        "uuid": "e28d93b4-cf1e-45e9-8dc0-0e027dec4807",
+        "scale": [
+          0.84,
+          0.92,
+          1.0
+        ]
+      }
+    ]
+  }
+}

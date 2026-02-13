@@ -360,7 +360,7 @@ def render_single_frame(pyrender_scene, resolution, flags=pyrender.RenderFlags.S
 	
 	raise RuntimeError(f"Failed to render frame after {max_attempts} attempts")
 
-def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_attempts=5):
+def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_attempts=5, flip_vertical=False):
 	# print("render_with_retry...")
 	attempt = 0
 	while attempt < max_attempts:
@@ -484,6 +484,9 @@ def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_atte
 				file_type = 'JPEG'
 				img = Image.fromarray(color)
 
+			if flip_vertical:
+				img = img.transpose(Image.FLIP_TOP_BOTTOM)
+
 			img.save(output_file, file_type, quality=95)
 
 			pth_file = pth_output / filename
@@ -516,7 +519,7 @@ def render_both_views(pyrender_scene, resolution, pth_output, base_filename, use
 	# Render top view
 	camera_pose_top = setup_camera(pyrender_scene, resolution, 'top', use_dynamic_zoom, camera_height, scene_span)
 	setup_lighting(pyrender_scene, camera_pose_top)
-	render_with_retry(pyrender_scene, resolution, pth_output / "top", f"{base_filename}.jpg")
+	render_with_retry(pyrender_scene, resolution, pth_output / "top", f"{base_filename}.jpg", flip_vertical=True)
 
 	remove_pyrender_nodes(pyrender_scene)
 	# Render diagonal view
@@ -543,8 +546,14 @@ def render_scene_to_frame(trimesh_scene, resolution, view_type, use_dynamic_zoom
 	# Add camera and lighting
 	camera_pose = setup_camera(pyrender_scene, resolution, view_type, use_dynamic_zoom, camera_height, scene_span)
 	setup_lighting(pyrender_scene, camera_pose)
-	
-	return render_single_frame(pyrender_scene, resolution)
+
+	frame = render_single_frame(pyrender_scene, resolution)
+
+	# Flip top view vertically to correct coordinate mapping
+	if view_type == "top":
+		frame = np.flipud(frame)
+
+	return frame
 
 def setup_trimesh_scene_with_floor(bounds_bottom):
 	trimesh_scene = trimesh.Scene()

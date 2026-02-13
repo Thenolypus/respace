@@ -139,7 +139,7 @@
           1.5315521358809292,
           0.3227069526910782
         ],
-        "uuid": "ad3f4b2e-bf4c-41ea-b68c-cc1868bc7af1"
+        "uuid": "ad4fd32d-ba84-4e3b-b474-1820aa05f992"
       },
       {
         "desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
@@ -179,7 +179,7 @@
           0.9059539784238559,
           0.9729260504245758
         ],
-        "uuid": "9320171f-6645-452e-93c1-00d93d9b2b56"
+        "uuid": "431e772c-7eb4-4469-ae79-bdcfdd9949c6"
       },
       {
         "desc": "A modern industrial pendant lamp featuring a bronze rectangular metal frame with geometric design and multiple white glass globes for lighting.",
@@ -214,7 +214,7 @@
           0.741519993026325,
           0.1441938504576683
         ],
-        "uuid": "2cc3f51e-4c00-458e-997d-6ca362f0be1d"
+        "uuid": "2071703a-ed3e-4e0d-ab49-b448ea5f6f65"
       },
       {
         "desc": "Red contemporary modern armchair with fabric upholstery, wingback design, and slender metal legs offering minimalist elegance.",
@@ -254,7 +254,7 @@
           1.06,
           0.9
         ],
-        "uuid": "688ef989-cfc8-4f12-8f46-fe1fa909a38d"
+        "uuid": "037dfa76-1acc-4629-98ba-29819a7417af"
       },
       {
         "desc": "A sleek, modern tall white ceramic vase with varied artificial greenery and hanging vine accents, embodying minimalist elegance and contemporary design.",
@@ -289,7 +289,7 @@
           1.9101200262841402,
           0.42142000794410706
         ],
-        "uuid": "c92b9fee-73fc-444a-8d20-6334eaecf79b"
+        "uuid": "4fba455a-a1a9-450a-9081-108f3aab7154"
       },
       {
         "desc": "Mid-century modern minimalist coffee table with a circular top, raised edge, and angular legs made of solid wood.",
@@ -324,7 +324,7 @@
           0.39424204601546897,
           0.7718579769134521
         ],
-        "uuid": "f468d5eb-4aee-49ab-8f2a-01df464d4de9"
+        "uuid": "78cc8292-241e-437b-a4ac-94380a4db90e"
       },
       {
         "desc": "Mid-century modern dark brown wooden TV stand with tapered legs, open shelving, and multiple drawers featuring clean lines.",
@@ -364,7 +364,7 @@
           0.5000013270638419,
           0.3793089985847473
         ],
-        "uuid": "525e216a-5331-4fbb-ac48-ef4c2f1ece34"
+        "uuid": "6e602758-bcfc-4052-93cd-41918d8fbf41"
       }
     ]
   },
@@ -508,7 +508,7 @@
           1.5315521358809292,
           0.3227069526910782
         ],
-        "uuid": "ae3ad1d0-6661-48a1-abe9-d2905c2886c2"
+        "uuid": "0d984f3a-9d27-4aa0-8c87-f283ae6fab05"
       },
       {
         "desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
@@ -532,7 +532,7 @@
         "scale": [
           1.0,
           1.0,
-          1.01
+          1.03
         ],
         "original_sampled_asset_jid": "2d8e7040-14d8-4aba-84ee-356a1eae11e8-(1.0)-(1.0)-(1.03)",
         "original_sampled_asset_desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
@@ -541,14 +541,14 @@
           0.91,
           1.0
         ],
-        "sampled_asset_jid": "7c562d19-717f-4b7e-a961-4b04d042a224-(1.0)-(1.0)-(1.01)",
-        "sampled_asset_desc": "A dusty pink, contemporary three-seat sofa with a curved back, slim metal legs, flared arms, plush cushions, and accent pillows.",
+        "sampled_asset_jid": "2d8e7040-14d8-4aba-84ee-356a1eae11e8",
+        "sampled_asset_desc": "Modern three-seat sofa with classic tufting, brown leather upholstery, and contrasting cushions.",
         "sampled_asset_size": [
-          2.2,
-          0.91,
-          0.97
+          2.214682102203369,
+          0.9059539784238559,
+          0.9729260504245758
         ],
-        "uuid": "71fc1696-33d1-4408-a6f7-8434ce437cae"
+        "uuid": "3cbf2b21-5b8e-4241-98ec-2504c61bf257"
       },
       {
         "desc": "A modern industrial pendant lamp featuring a bronze rectangular metal frame with geometric design and multiple white glass globes for lighting.",
@@ -576,14 +576,19 @@
           0.7169176296301885,
           0.14983449131250381
         ],
-        "sampled_asset_jid": "84f0d3cf-35a6-4a54-98f2-3ead4cd5e59a",
+        "sampled_asset_jid": "84f0d3cf-35a6-4a54-98f2-3ead4cd5e59a-(0.84)-(1.0)-(6.0)",
         "sampled_asset_desc": "A modern industrial pendant lamp featuring a bronze rectangular metal frame with geometric design and multiple white glass globes for lighting.",
         "sampled_asset_size": [
-          1.02456796169281,
-          0.741519993026325,
-          0.1441938504576683
+          0.86,
+          0.74,
+          0.87
         ],
-        "uuid": "4d572974-eb40-4f61-9617-f8331a0c1a77"
+        "uuid": "24a11983-ff6a-452a-9197-19c19d356c50",
+        "scale": [
+          0.84,
+          1.0,
+          6.0
+        ]
       },
       {
         "desc": "Red contemporary modern armchair with fabric upholstery, wingback design, and slender metal legs offering minimalist elegance.",
@@ -605,9 +610,9 @@
         ],
         "prompt": "red modern armchair",
         "scale": [
-          0.54,
+          1.09,
           1.0,
-          0.87
+          0.92
         ],
         "original_sampled_asset_jid": "142b9425-e37f-433a-b7d9-71586244d638-(1.02)-(1.0)-(0.98)",
         "original_sampled_asset_desc": "A modern grey fabric armchair with a high backrest, soft cushion, and tapered wooden legs.",
@@ -616,14 +621,14 @@
           1.04,
           0.9
         ],
-        "sampled_asset_jid": "3b24e2fc-2f7f-49b3-bf76-81b226a74046-(0.54)-(1.0)-(0.87)",
-        "sampled_asset_desc": "Contemporary minimalist pendant lamp with black metal crisscross wires creating a geometric design with multiple light pods.",
+        "sampled_asset_jid": "d5dd7553-d4f7-44b2-bf12-9d452e47eb06-(1.09)-(1.0)-(0.92)",
+        "sampled_asset_desc": "Modern wingback armchair with red textured fabric, tall backrest, padded arms, and elegant wooden legs.",
         "sampled_asset_size": [
-          0.89,
-          1.04,
-          0.89
+          0.9,
+          1.06,
+          0.9
         ],
-        "uuid": "82a58daa-0ed1-4a7a-9f85-cb3ea5d8c7ca"
+        "uuid": "62460d95-6c2e-4cff-adef-61f17c21a411"
       },
       {
         "desc": "A sleek, modern tall white ceramic vase with varied artificial greenery and hanging vine accents, embodying minimalist elegance and contemporary design.",
@@ -651,14 +656,19 @@
           1.9101200262841402,
           0.42142000794410706
         ],
-        "sampled_asset_jid": "38b1011c-7c71-4c0f-ae0d-f448baad0297",
-        "sampled_asset_desc": "A contemporary, minimalist brown wooden ladder-style bookcase featuring five open shelves and a slim profile.",
+        "sampled_asset_jid": "1c3d431b-8f83-4b64-a4ef-743d4e961f76-(0.73)-(0.73)-(0.73)",
+        "sampled_asset_desc": "A sleek, modern tall white ceramic vase with varied artificial greenery and hanging vine accents, embodying minimalist elegance and contemporary design.",
         "sampled_asset_size": [
-          0.5927420258522034,
-          1.9110590113863282,
-          0.415814071893692
+          0.4,
+          1.39,
+          0.31
         ],
-        "uuid": "06fc051f-43eb-4fa0-ad72-9436e17651fd"
+        "uuid": "db033ec4-c0ff-4dda-b06a-a6ab40c2237a",
+        "scale": [
+          0.73,
+          0.73,
+          0.73
+        ]
       },
       {
         "desc": "Mid-century modern minimalist coffee table with a circular top, raised edge, and angular legs made of solid wood.",
@@ -686,19 +696,14 @@
           0.39424204601546897,
           0.7718579769134521
         ],
-        "sampled_asset_jid": "1125b207-30eb-41f8-9164-05630e87f80d-(2.06)-(1.0)-(2.38)",
-        "sampled_asset_desc": "Modern black and gold metal coffee table with glass top, dual levels, and sleek minimalist design.",
+        "sampled_asset_jid": "290b55d4-8db2-40d1-aba9-95e39a9a041e",
+        "sampled_asset_desc": "A modern minimalist round ceiling lamp with a fabric diffuser and black accent lines.",
         "sampled_asset_size": [
-          0.8,
-          0.39,
-          0.77
+          0.776524007320404,
+          0.3850449784539185,
+          0.7789599895477295
         ],
-        "uuid": "219d5a0e-2926-43be-8f6b-0dc33beb9357",
-        "scale": [
-          2.06,
-          1.0,
-          2.38
-        ]
+        "uuid": "8e7adf65-66d4-4d16-8a74-b55f4a3fc827"
       },
       {
         "desc": "Mid-century modern dark brown wooden TV stand with tapered legs, open shelving, and multiple drawers featuring clean lines.",
@@ -738,7 +743,7 @@
           0.46,
           0.4
         ],
-        "uuid": "26328f1c-ecc7-4d66-9b1b-744e039f9b9a"
+        "uuid": "b3f4c35f-2621-4387-a880-b5fd427de235"
       }
     ]
   }
