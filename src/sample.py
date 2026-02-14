@@ -242,13 +242,8 @@ class AssetRetrievalModule(nn.Module):
 
 	def forward_batch(self, query_texts, query_sizes):
 
-		# print("before text embeddings")
-
 		query_embeds = self.get_text_embeddings(query_texts)
-		# print("after text embeds")
-
 		semantic_sims = self.compute_semantic_similarities(query_embeds)
-		# print("after semantic sims")
 
 		query_sizes = torch.tensor(query_sizes)
 		if self.accelerator:
@@ -258,38 +253,61 @@ class AssetRetrievalModule(nn.Module):
 
 		size_sims = self.compute_size_similarities(query_sizes)
 
-		# print("after size sims")
-
 		weighted_sims = self.lambd * semantic_sims + (1 - self.lambd) * size_sims
 		probs = self.compute_final_probabilities(weighted_sims)
 
-		# print("after final probs")
+		# Store intermediates for diagnostics
+		self._last_semantic_sims = semantic_sims
+		self._last_size_sims = size_sims
+		self._last_weighted_sims = weighted_sims
 
 		return probs
 
-	def create_sampled_obj(self, obj, probs, is_greedy_sampling):
+	def create_sampled_obj(self, obj, probs, is_greedy_sampling, query_idx=None):
 
 		if self.do_print:
-			print(f"sampling obj with desc: {obj.get('desc')} and size {obj.get('size')}")
-			n_top = min(5, self.top_k)
+			print(f"\n{'='*90}")
+			print(f"QUERY: \"{obj.get('desc')}\"")
+			print(f"QUERY SIZE: {obj.get('size')}")
+			print(f"{'='*90}")
+
+			n_top = min(10, self.top_k)
 			idxs_top = torch.argsort(probs, descending=True)[:n_top]
-			print("top probs:", torch.sort(probs, descending=True)[0].detach().cpu().numpy()[:n_top].tolist())
-			jids = [ self.all_jids_catalog[idx.item()] for idx in idxs_top ]
-			for idx, jid in zip(idxs_top, jids):
+			n_nonzero = (probs > 0).sum().item()
+			print(f"Candidates surviving top-k/top-p: {n_nonzero}")
+			print(f"Params: lambd={self.lambd.item():.2f}, sigma={self.sigma.item():.4f}, temp={self.temp.item():.2f}, top_k={self.top_k}, top_p={self.top_p}")
+
+			has_intermediates = hasattr(self, '_last_semantic_sims') and query_idx is not None
+
+			if has_intermediates:
+				print(f"\n{'Rank':<5} {'Prob':>8} {'Sem':>8} {'Size':>8} {'Blend':>8}  {'Asset Size':<28} Description")
+				print(f"{'-'*5} {'-'*8} {'-'*8} {'-'*8} {'-'*8}  {'-'*28} {'-'*50}")
+			else:
+				print(f"\n{'Rank':<5} {'Prob':>8}  {'Asset Size':<28} Description")
+				print(f"{'-'*5} {'-'*8}  {'-'*28} {'-'*50}")
+
+			jids = [self.all_jids_catalog[idx.item()] for idx in idxs_top]
+			for rank, (idx, jid) in enumerate(zip(idxs_top, jids)):
 				asset = self.all_assets_metadata.get(jid)
-				if asset == None:
+				if asset is None:
 					asset = self.all_assets_metadata_scaled.get(jid)
-					print(jid, asset)
 					orig_jid = asset.get("jid")
 					orig_asset = self.all_assets_metadata.get(orig_jid)
 					desc = orig_asset.get("summary")
 				else:
 					desc = asset.get("summary")
-				print(f"")
-				print(f"\t idx: [{idx}] — jid: {jid}")
-				print(f"\t desc: {desc}")
-				print(f"\t size: {asset.get('size')}")
-			print("")
+
+				prob_val = probs[idx].item()
+				size_str = str([round(s, 3) for s in asset.get('size')])
+
+				if has_intermediates:
+					sem_val = self._last_semantic_sims[idx, query_idx].item()
+					size_val = self._last_size_sims[idx, query_idx].item()
+					blend_val = self._last_weighted_sims[idx, query_idx].item()
+					print(f"#{rank+1:<4} {prob_val:>8.4f} {sem_val:>8.4f} {size_val:>8.4f} {blend_val:>8.4f}  {size_str:<28} {desc[:70]}")
+				else:
+					print(f"#{rank+1:<4} {prob_val:>8.4f}  {size_str:<28} {desc[:70]}")
+			print()
 
 		# get jid for sampled object but skip if already set (for GT assets)
 		if obj.get("jid") == None:
@@ -372,10 +390,10 @@ class AssetRetrievalModule(nn.Module):
 							"uuid": str(uuid.uuid4())
 						})
 					else:
-						new_obj = self.create_sampled_obj(obj, batch_probs[i], is_greedy_sampling)
+						new_obj = self.create_sampled_obj(obj, batch_probs[i], is_greedy_sampling, query_idx=i)
 						desc_size_map[desc].append(new_obj)
 				else:
-					new_obj = self.create_sampled_obj(obj, batch_probs[i], is_greedy_sampling)
+					new_obj = self.create_sampled_obj(obj, batch_probs[i], is_greedy_sampling, query_idx=i)
 					desc_size_map[desc] = [new_obj]
 
 				sampled_scene["objects"].append(new_obj)
@@ -398,7 +416,7 @@ class AssetRetrievalModule(nn.Module):
 
 			probs = self.forward_batch([desc], [size])
 
-			new_obj = self.create_sampled_obj(last_obj, probs[0], is_greedy_sampling)
+			new_obj = self.create_sampled_obj(last_obj, probs[0], is_greedy_sampling, query_idx=0)
 			sampled_scene["objects"].append(new_obj)
 
 		return sampled_scene
