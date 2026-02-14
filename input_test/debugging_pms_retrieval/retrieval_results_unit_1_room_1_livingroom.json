@@ -1,0 +1,1420 @@
+{
+  "greedy": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        -6.0,
+        2.8,
+        6.07
+      ],
+      [
+        -6.0,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.1,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.0,
+        2.8,
+        1.61
+      ],
+      [
+        2.88,
+        2.8,
+        1.61
+      ],
+      [
+        2.98,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        2.88
+      ],
+      [
+        -2.31,
+        2.8,
+        2.88
+      ],
+      [
+        -2.41,
+        2.8,
+        6.07
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -6.0,
+        0.0,
+        6.07
+      ],
+      [
+        -6.0,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.1,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.0,
+        0.0,
+        1.61
+      ],
+      [
+        2.88,
+        0.0,
+        1.61
+      ],
+      [
+        2.98,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        2.88
+      ],
+      [
+        -2.31,
+        0.0,
+        2.88
+      ],
+      [
+        -2.41,
+        0.0,
+        6.07
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.",
+        "pos": [
+          -1.65,
+          0.0,
+          -5.12
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.58,
+          0.87,
+          0.82
+        ],
+        "prompt": "blue lounge chair/book-chair/computer chair",
+        "scale": [
+          1.0,
+          1.0,
+          0.79
+        ],
+        "original_sampled_asset_jid": "d29c310b-3447-4fed-a240-cd0ea23e12ec-(1.0)-(1.0)-(0.79)",
+        "original_sampled_asset_desc": "A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.",
+        "original_sampled_asset_size": [
+          0.58,
+          0.87,
+          0.65
+        ],
+        "sampled_asset_jid": "d29c310b-3447-4fed-a240-cd0ea23e12ec",
+        "sampled_asset_desc": "A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.",
+        "sampled_asset_size": [
+          0.5822579860687256,
+          0.8688399936742206,
+          0.8199840188026428
+        ],
+        "uuid": "39cb1aa6-05ee-4904-a45f-b13bef0a23bc"
+      },
+      {
+        "desc": "Contemporary nautical loveseat sofa with blue and white stripes, boxy shape, and fabric upholstery.",
+        "pos": [
+          -5.46,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.78,
+          0.84,
+          0.84
+        ],
+        "prompt": "blue loveseat sofa",
+        "original_sampled_asset_jid": "bcfc7aa7-555f-4b9f-b242-2b78b4e6bd7e",
+        "original_sampled_asset_desc": "Modern minimalist beige loveseat sofa with clean lines, high arms, and metal legs.",
+        "original_sampled_asset_size": [
+          1.8007510304450989,
+          0.8378851385823509,
+          0.8784449994564056
+        ],
+        "sampled_asset_jid": "274bd1e2-020a-4f61-9d98-fe792f764ab8",
+        "sampled_asset_desc": "A traditional-contemporary taupe fabric loveseat with contrasting beige piping, skirted base, and decorative cushions, combining comfort with elegant design.",
+        "sampled_asset_size": [
+          1.7546370029449463,
+          0.8507859415184207,
+          0.8341200053691864
+        ],
+        "uuid": "f69c4916-5278-4aaf-bb47-288a3ee4e2be"
+      },
+      {
+        "desc": "Modern minimalist loveseat sofa with dark brown fabric, plush cushions, and wooden legs.",
+        "pos": [
+          -4.4,
+          0.0,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.3,
+          0.81,
+          0.98
+        ],
+        "prompt": "dark brown two-seat sofa",
+        "original_sampled_asset_jid": "12491fd8-0e23-4f2a-bd9a-d1ec4b203565",
+        "original_sampled_asset_desc": "Modern minimalist dark red loveseat sofa with sleek metal legs and a compact, low-profile design.",
+        "original_sampled_asset_size": [
+          2.286479949951172,
+          0.7734979812116833,
+          0.9653699994087219
+        ],
+        "sampled_asset_jid": "6486b048-5518-4561-a3df-5449b3dae62b",
+        "sampled_asset_desc": "Modern minimalist loveseat sofa with dark gray fabric, plush cushions, and wooden legs.",
+        "sampled_asset_size": [
+          2.303849935531616,
+          0.8143053178209811,
+          0.9802040159702301
+        ],
+        "uuid": "03aee2fa-a5ee-4fe4-b288-55df0127313e"
+      },
+      {
+        "desc": "Modern green and black swivel office chair with mesh backrest, padded seat, and four-legged metal base.",
+        "pos": [
+          -3.0,
+          0.0,
+          3.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.69,
+          0.96,
+          0.62
+        ],
+        "prompt": "green lounge chair/book-chair/computer chair",
+        "scale": [
+          0.99,
+          1.0,
+          0.87
+        ],
+        "original_sampled_asset_jid": "6f09d6a0-dcd6-472a-9793-bafc17a8486f-(0.99)-(1.0)-(0.87)",
+        "original_sampled_asset_desc": "Modern light green and white swivel office chair with mesh backrest, padded seat, and four-legged metal base.",
+        "original_sampled_asset_size": [
+          0.69,
+          0.96,
+          0.61
+        ],
+        "sampled_asset_jid": "6f09d6a0-dcd6-472a-9793-bafc17a8486f-(0.99)-(1.0)-(0.87)",
+        "sampled_asset_desc": "Modern light green and white swivel office chair with mesh backrest, padded seat, and four-legged metal base.",
+        "sampled_asset_size": [
+          0.69,
+          0.96,
+          0.61
+        ],
+        "uuid": "4cbac80e-01c7-4615-bd63-0e4cba946940"
+      },
+      {
+        "desc": "A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.",
+        "pos": [
+          -3.55,
+          0.0,
+          4.21
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.63,
+          0.76,
+          0.61
+        ],
+        "prompt": "grey lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "3c163dbf-1558-4a9e-8690-f3c7126d1f29",
+        "original_sampled_asset_desc": "A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.",
+        "original_sampled_asset_size": [
+          0.631727010011673,
+          0.761026721651433,
+          0.6055450141429901
+        ],
+        "sampled_asset_jid": "3c163dbf-1558-4a9e-8690-f3c7126d1f29",
+        "sampled_asset_desc": "A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.",
+        "sampled_asset_size": [
+          0.631727010011673,
+          0.761026721651433,
+          0.6055450141429901
+        ],
+        "uuid": "fa08dac6-3e62-4700-9f95-1011f9a948b2"
+      },
+      {
+        "desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "pos": [
+          -1.0,
+          0.0,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.8,
+          0.94,
+          0.98
+        ],
+        "prompt": "grey loveseat sofa",
+        "scale": [
+          0.77,
+          1.0,
+          0.92
+        ],
+        "original_sampled_asset_jid": "147c6e84-4be0-42dc-8182-b067d0fac836-(0.77)-(1.0)-(0.92)",
+        "original_sampled_asset_desc": "Gray tufted classic-modern loveseat sofa with rolled arms, wooden legs, and included throw pillows.",
+        "original_sampled_asset_size": [
+          1.84,
+          0.94,
+          1.01
+        ],
+        "sampled_asset_jid": "650fec0d-8577-4afd-b42a-47bf8132e31c",
+        "sampled_asset_desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "sampled_asset_size": [
+          1.80247300863266,
+          0.9449282044079155,
+          0.9838060140609741
+        ],
+        "uuid": "81ab775a-0e07-4e8f-9cfb-a6d8a9aaafc3"
+      },
+      {
+        "desc": "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.",
+        "pos": [
+          -1.65,
+          0.0,
+          1.88
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.66,
+          1.08,
+          0.79
+        ],
+        "prompt": "red lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "f07659e7-cb2e-4a07-9fbd-397b33b9360b",
+        "original_sampled_asset_desc": "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.",
+        "original_sampled_asset_size": [
+          0.6563040018081665,
+          1.0817240648089683,
+          0.7894400656223297
+        ],
+        "sampled_asset_jid": "f07659e7-cb2e-4a07-9fbd-397b33b9360b",
+        "sampled_asset_desc": "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.",
+        "sampled_asset_size": [
+          0.6563040018081665,
+          1.0817240648089683,
+          0.7894400656223297
+        ],
+        "uuid": "54a5a7f2-bbac-4dc1-9d0b-c81a50d929cb"
+      },
+      {
+        "desc": "Red contemporary loveseat sofa with curved arms, tufted seating, contrasting multicolor pillows, and sleek wooden legs.",
+        "pos": [
+          -5.41,
+          0.0,
+          -1.11
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.71,
+          0.61,
+          0.8
+        ],
+        "prompt": "red loveseat sofa",
+        "original_sampled_asset_jid": "03b201b3-3fd5-4b0c-9e59-96d75e6934ec",
+        "original_sampled_asset_desc": "A contemporary dark gray three-seat sofa with a curved backrest, plaid and solid cushions, and wooden tapered legs.",
+        "original_sampled_asset_size": [
+          1.7383780479431152,
+          0.6489103959756903,
+          0.7900960445404053
+        ],
+        "sampled_asset_jid": "ee2879d2-1c30-4669-9936-9beb37b38026",
+        "sampled_asset_desc": "A contemporary gray upholstered loveseat sofa with a curved back, tapered wood legs, and checkered accent pillows, perfect for modern living spaces.",
+        "sampled_asset_size": [
+          1.7383780479431152,
+          0.649229528818978,
+          0.7900960445404053
+        ],
+        "uuid": "9ffb4de2-5d38-4b83-bfa8-bfbe40b23f1c"
+      },
+      {
+        "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "pos": [
+          -5.7,
+          0.0,
+          0.86
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "prompt": "round end table",
+        "scale": [
+          1.02,
+          1.0,
+          1.02
+        ],
+        "original_sampled_asset_jid": "575a5bec-20b9-4769-8cd7-d5d243cb19eb-(1.02)-(1.0)-(1.02)",
+        "original_sampled_asset_desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "original_sampled_asset_size": [
+          0.43,
+          0.63,
+          0.43
+        ],
+        "sampled_asset_jid": "575a5bec-20b9-4769-8cd7-d5d243cb19eb",
+        "sampled_asset_desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "sampled_asset_size": [
+          0.419048011302948,
+          0.6291589695122184,
+          0.419048011302948
+        ],
+        "uuid": "8235be65-7b6b-45d0-8e8a-04ac070f0ff2"
+      },
+      {
+        "desc": "Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.",
+        "pos": [
+          -3.36,
+          0.0,
+          2.4
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.8,
+          0.9,
+          0.73
+        ],
+        "prompt": "white armchair",
+        "original_sampled_asset_jid": "d398b084-03cb-4457-bb44-da73540ee796",
+        "original_sampled_asset_desc": "A contemporary gray fabric armchair with a minimalist design featuring a wide backrest, sleek black legs, and contrasting white armrests.",
+        "original_sampled_asset_size": [
+          0.8136380016803741,
+          0.9134303751998232,
+          0.7469080090522766
+        ],
+        "sampled_asset_jid": "1ea4a9a2-e029-4cb1-9fcd-fb7a8f0edce5",
+        "sampled_asset_desc": "Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.",
+        "sampled_asset_size": [
+          0.8044449985027313,
+          0.9042159920574607,
+          0.7263799607753754
+        ],
+        "uuid": "239f9ad5-4abf-4d3c-94d0-2b53c6620c90"
+      },
+      {
+        "desc": "A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.",
+        "pos": [
+          -5.73,
+          0.0,
+          4.26
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          3.05,
+          2.48,
+          0.35
+        ],
+        "prompt": "white lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "8e2dc0e3-d513-4fc9-911c-dccbbe635b11",
+        "original_sampled_asset_desc": "This modern minimalist wine cabinet features a blend of gray and white, constructed with wood and metal, incorporating numerous compartments, open shelves, wine bottle holders, a glass rack, cabinets with doors, and glass panes for versatile storage and display.",
+        "original_sampled_asset_size": [
+          2.8949999809265137,
+          2.450000050016782,
+          0.635919988155365
+        ],
+        "sampled_asset_jid": "0bf32fa7-5ecb-4416-bb6c-d27c0e67a59b",
+        "sampled_asset_desc": "A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.",
+        "sampled_asset_size": [
+          3.049999952316284,
+          2.480000032344507,
+          0.3515600562095642
+        ],
+        "uuid": "29757900-1ae8-426d-9374-894ef07db188"
+      },
+      {
+        "desc": "Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.",
+        "pos": [
+          -5.71,
+          0.0,
+          4.26
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.73,
+          1.9,
+          0.49
+        ],
+        "prompt": "wooden bookcase/jewelry armoire",
+        "scale": [
+          0.75,
+          1.0,
+          0.82
+        ],
+        "original_sampled_asset_jid": "6bb592ac-81c2-4df6-8f2e-ee2c42de67cc-(0.75)-(1.0)-(0.82)",
+        "original_sampled_asset_desc": "This modern, minimalist dark brown wooden bookcase/jewelry armoire features tall open shelves, two drawers, and two lower cabinets, blending functionality with a sleek design.",
+        "original_sampled_asset_size": [
+          0.6,
+          1.72,
+          0.38
+        ],
+        "sampled_asset_jid": "34effa56-12d3-4e76-84d7-80ac93173625",
+        "sampled_asset_desc": "Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.",
+        "sampled_asset_size": [
+          1.7250200510025024,
+          1.902560012272863,
+          0.4885800778865814
+        ],
+        "uuid": "d032d34b-c736-4641-ab7c-9a8a9060b944"
+      },
+      {
+        "desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "pos": [
+          -3.4,
+          0.0,
+          -3.51
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.33,
+          0.45,
+          1.34
+        ],
+        "prompt": "wooden coffee table",
+        "scale": [
+          0.9,
+          1.0,
+          0.56
+        ],
+        "original_sampled_asset_jid": "0ddbb652-14e3-4e01-8fd5-aae213910ac2-(0.9)-(1.0)-(0.56)",
+        "original_sampled_asset_desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "original_sampled_asset_size": [
+          1.2,
+          0.45,
+          0.75
+        ],
+        "sampled_asset_jid": "0ddbb652-14e3-4e01-8fd5-aae213910ac2",
+        "sampled_asset_desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "sampled_asset_size": [
+          1.3347560167312622,
+          0.45075811830242074,
+          1.3392080068588257
+        ],
+        "uuid": "8a9e4eb2-e80a-47a0-9247-0835fecaff7e"
+      },
+      {
+        "desc": "Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.",
+        "pos": [
+          -5.68,
+          0.0,
+          0.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.61,
+          0.54,
+          0.35
+        ],
+        "prompt": "wooden side table",
+        "scale": [
+          0.97,
+          1.0,
+          0.65
+        ],
+        "original_sampled_asset_jid": "fd1551fb-5b7b-4d10-8e60-9a734269875b-(0.97)-(1.0)-(0.65)",
+        "original_sampled_asset_desc": "A modern minimalist corner/side table featuring a round wooden top and a geometric silver metal frame.",
+        "original_sampled_asset_size": [
+          0.6,
+          0.54,
+          0.4
+        ],
+        "sampled_asset_jid": "c39289a4-8aed-40e9-945b-8069554c9ae7",
+        "sampled_asset_desc": "Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.",
+        "sampled_asset_size": [
+          0.6069560050964355,
+          0.5407980213798496,
+          0.3513360023498535
+        ],
+        "uuid": "ecc0d724-59bc-46a7-a7b1-a67febbf8686"
+      },
+      {
+        "desc": "Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.",
+        "pos": [
+          -4.4,
+          0.0,
+          -0.86
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.53,
+          0.66,
+          0.5
+        ],
+        "prompt": "yellow armchair",
+        "original_sampled_asset_jid": "66ccbe15-ce7c-4f9c-b640-d557289ae5a1",
+        "original_sampled_asset_desc": "Mid-century modern mustard yellow fabric armchair with curved backrest, button tufting, and tapered wooden legs.",
+        "original_sampled_asset_size": [
+          0.5067989826202393,
+          0.6593009929934279,
+          0.5148400664329529
+        ],
+        "sampled_asset_jid": "0fb25207-a5bf-45cc-8b52-cce170f682da",
+        "sampled_asset_desc": "Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.",
+        "sampled_asset_size": [
+          0.5341799855232239,
+          0.6627786910015061,
+          0.5041520297527313
+        ],
+        "uuid": "e0362be5-a2fd-4e86-aab2-ac7197481916"
+      },
+      {
+        "desc": "A mustard yellow loveseat sofa with a classic rolled arms, tufted backrest, and included throw pillows, blending traditional and modern design elements.",
+        "pos": [
+          -3.4,
+          0.0,
+          -5.56
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.06,
+          0.95,
+          0.91
+        ],
+        "prompt": "yellow loveseat sofa",
+        "original_sampled_asset_jid": "58438343-a954-4e16-aa5d-80f00ed5a0b0",
+        "original_sampled_asset_desc": "A contemporary minimalist loveseat sofa with red leather upholstery and a sturdy dark wood frame featuring boxy shapes and solid design elements.",
+        "original_sampled_asset_size": [
+          2.09500789642334,
+          0.9232500548045195,
+          0.9344439804553986
+        ],
+        "sampled_asset_jid": "dbc49bb6-e9a0-4ffb-8fce-c4abfe1d0bf1-(0.88)-(1.0)-(0.86)",
+        "sampled_asset_desc": "Beige loveseat sofa with traditional rolled arms, tufted back, modern decorative pillows, and nailhead trim for a stylish yet classic appeal.",
+        "sampled_asset_size": [
+          2.06,
+          0.94,
+          0.93
+        ],
+        "uuid": "75bff182-8eb9-47bf-9fb1-fa4905a5f0f9",
+        "scale": [
+          0.88,
+          1.0,
+          0.86
+        ]
+      }
+    ]
+  },
+  "stochastic": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        -6.0,
+        2.8,
+        6.07
+      ],
+      [
+        -6.0,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.1,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.0,
+        2.8,
+        1.61
+      ],
+      [
+        2.88,
+        2.8,
+        1.61
+      ],
+      [
+        2.98,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        2.88
+      ],
+      [
+        -2.31,
+        2.8,
+        2.88
+      ],
+      [
+        -2.41,
+        2.8,
+        6.07
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -6.0,
+        0.0,
+        6.07
+      ],
+      [
+        -6.0,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.1,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.0,
+        0.0,
+        1.61
+      ],
+      [
+        2.88,
+        0.0,
+        1.61
+      ],
+      [
+        2.98,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        2.88
+      ],
+      [
+        -2.31,
+        0.0,
+        2.88
+      ],
+      [
+        -2.41,
+        0.0,
+        6.07
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.",
+        "pos": [
+          -1.65,
+          0.0,
+          -5.12
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.58,
+          0.87,
+          0.82
+        ],
+        "prompt": "blue lounge chair/book-chair/computer chair",
+        "scale": [
+          1.0,
+          1.0,
+          0.79
+        ],
+        "original_sampled_asset_jid": "d29c310b-3447-4fed-a240-cd0ea23e12ec-(1.0)-(1.0)-(0.79)",
+        "original_sampled_asset_desc": "A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.",
+        "original_sampled_asset_size": [
+          0.58,
+          0.87,
+          0.65
+        ],
+        "sampled_asset_jid": "ef95daa9-89ba-4b05-9594-40257e0e9a0f",
+        "sampled_asset_desc": "Modern dark gray armchair with a minimalist design featuring straight lines, angular armrests, high back, and tapered wooden legs.",
+        "sampled_asset_size": [
+          0.6281499862670898,
+          0.8310355186404195,
+          0.8288710415363312
+        ],
+        "uuid": "5fa9e1c5-0ab0-45b9-b8fc-8fd4b8d225ca"
+      },
+      {
+        "desc": "Contemporary nautical loveseat sofa with blue and white stripes, boxy shape, and fabric upholstery.",
+        "pos": [
+          -5.46,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.78,
+          0.84,
+          0.84
+        ],
+        "prompt": "blue loveseat sofa",
+        "original_sampled_asset_jid": "bcfc7aa7-555f-4b9f-b242-2b78b4e6bd7e",
+        "original_sampled_asset_desc": "Modern minimalist beige loveseat sofa with clean lines, high arms, and metal legs.",
+        "original_sampled_asset_size": [
+          1.8007510304450989,
+          0.8378851385823509,
+          0.8784449994564056
+        ],
+        "sampled_asset_jid": "7fb021fa-9d67-4193-9b65-e6895d1dc071",
+        "sampled_asset_desc": "A traditional dark brown wooden desk with a rectangular shape and turned decorative legs.",
+        "sampled_asset_size": [
+          1.7603280544281006,
+          0.8129730084910989,
+          0.8060640096664429
+        ],
+        "uuid": "df29052c-ef6b-43ec-bbca-67af9e513fea"
+      },
+      {
+        "desc": "Modern minimalist loveseat sofa with dark brown fabric, plush cushions, and wooden legs.",
+        "pos": [
+          -4.4,
+          0.0,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.3,
+          0.81,
+          0.98
+        ],
+        "prompt": "dark brown two-seat sofa",
+        "original_sampled_asset_jid": "12491fd8-0e23-4f2a-bd9a-d1ec4b203565",
+        "original_sampled_asset_desc": "Modern minimalist dark red loveseat sofa with sleek metal legs and a compact, low-profile design.",
+        "original_sampled_asset_size": [
+          2.286479949951172,
+          0.7734979812116833,
+          0.9653699994087219
+        ],
+        "sampled_asset_jid": "66dc3538-e02c-46d3-aa7e-f486dc97d406",
+        "sampled_asset_desc": "Olive green modern loveseat sofa with curved arms, plush cushions, and sleek black metal legs.",
+        "sampled_asset_size": [
+          2.28617000579834,
+          0.8166380008119152,
+          0.9875390529632568
+        ],
+        "uuid": "62ff79f5-c967-46cd-943d-bd93c0f8142e"
+      },
+      {
+        "desc": "Modern green and black swivel office chair with mesh backrest, padded seat, and four-legged metal base.",
+        "pos": [
+          -3.0,
+          0.0,
+          3.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.69,
+          0.96,
+          0.62
+        ],
+        "prompt": "green lounge chair/book-chair/computer chair",
+        "scale": [
+          0.99,
+          1.0,
+          0.87
+        ],
+        "original_sampled_asset_jid": "6f09d6a0-dcd6-472a-9793-bafc17a8486f-(0.99)-(1.0)-(0.87)",
+        "original_sampled_asset_desc": "Modern light green and white swivel office chair with mesh backrest, padded seat, and four-legged metal base.",
+        "original_sampled_asset_size": [
+          0.69,
+          0.96,
+          0.61
+        ],
+        "sampled_asset_jid": "acc96964-39e3-40e6-9d05-d17eb0011090",
+        "sampled_asset_desc": "Modern ergonomic dining chair with a black mesh backrest, padded seat, and gray metal legs, designed for comfort and support.",
+        "sampled_asset_size": [
+          0.669510006904602,
+          0.9314300251644454,
+          0.6623200476169586
+        ],
+        "uuid": "97455819-9270-4227-89ce-90b30f6d8c50"
+      },
+      {
+        "desc": "A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.",
+        "pos": [
+          -3.55,
+          0.0,
+          4.21
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.63,
+          0.76,
+          0.61
+        ],
+        "prompt": "grey lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "3c163dbf-1558-4a9e-8690-f3c7126d1f29",
+        "original_sampled_asset_desc": "A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.",
+        "original_sampled_asset_size": [
+          0.631727010011673,
+          0.761026721651433,
+          0.6055450141429901
+        ],
+        "sampled_asset_jid": "08c6a3a9-e786-4991-9b07-da8689405c80",
+        "sampled_asset_desc": "Modern gray office lounge chair with cushioned curved armrests and a sturdy black metal four-legged base.",
+        "sampled_asset_size": [
+          0.6205009818077087,
+          0.756356797850458,
+          0.5896560549736023
+        ],
+        "uuid": "832ddca3-c69a-4f23-aaec-32579192e66b"
+      },
+      {
+        "desc": "A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+        "pos": [
+          -1.0,
+          0.0,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.8,
+          0.94,
+          0.98
+        ],
+        "prompt": "grey loveseat sofa",
+        "scale": [
+          0.78,
+          1.0,
+          0.97
+        ],
+        "original_sampled_asset_jid": "147c6e84-4be0-42dc-8182-b067d0fac836-(0.77)-(1.0)-(0.92)",
+        "original_sampled_asset_desc": "Gray tufted classic-modern loveseat sofa with rolled arms, wooden legs, and included throw pillows.",
+        "original_sampled_asset_size": [
+          1.84,
+          0.94,
+          1.01
+        ],
+        "sampled_asset_jid": "80044f0e-0052-4e23-9107-e8af7a343c67-(0.78)-(1.0)-(0.97)",
+        "sampled_asset_desc": "This elegant three-seat sofa features a transitional design with a curved backrest, gray fabric upholstery, black wood trim, and decorative pillows.",
+        "sampled_asset_size": [
+          1.84,
+          0.96,
+          1.0
+        ],
+        "uuid": "0ebd74fa-7010-40aa-b5ce-4f21f21ee801"
+      },
+      {
+        "desc": "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.",
+        "pos": [
+          -1.65,
+          0.0,
+          1.88
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.66,
+          1.08,
+          0.79
+        ],
+        "prompt": "red lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "f07659e7-cb2e-4a07-9fbd-397b33b9360b",
+        "original_sampled_asset_desc": "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.",
+        "original_sampled_asset_size": [
+          0.6563040018081665,
+          1.0817240648089683,
+          0.7894400656223297
+        ],
+        "sampled_asset_jid": "f19b9d22-37fd-41b8-9b97-4079aaad89d2",
+        "sampled_asset_desc": "Modern lounge chair with high backrest, attached head cushion, woven fabric and leather accents, cushioned seating, and metal legs.",
+        "sampled_asset_size": [
+          0.6203689873218536,
+          1.0627939423007202,
+          0.7735381126403809
+        ],
+        "uuid": "a9cebfbb-6bbd-4ac6-a92d-da580664fb37"
+      },
+      {
+        "desc": "Red contemporary loveseat sofa with curved arms, tufted seating, contrasting multicolor pillows, and sleek wooden legs.",
+        "pos": [
+          -5.41,
+          0.0,
+          -1.11
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.71,
+          0.61,
+          0.8
+        ],
+        "prompt": "red loveseat sofa",
+        "original_sampled_asset_jid": "03b201b3-3fd5-4b0c-9e59-96d75e6934ec",
+        "original_sampled_asset_desc": "A contemporary dark gray three-seat sofa with a curved backrest, plaid and solid cushions, and wooden tapered legs.",
+        "original_sampled_asset_size": [
+          1.7383780479431152,
+          0.6489103959756903,
+          0.7900960445404053
+        ],
+        "sampled_asset_jid": "5c226f2b-aad3-4371-a3f9-ea2ee9a63327",
+        "sampled_asset_desc": "A modern minimalist grey fabric loveseat sofa with a boxy design, detachable cushions, and short black legs perfect for contemporary spaces.",
+        "sampled_asset_size": [
+          1.7056180238723755,
+          0.5967840193033673,
+          0.7151520550251007
+        ],
+        "uuid": "fdfcc6fc-0c66-4650-9edd-d7de86b59c9a"
+      },
+      {
+        "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "pos": [
+          -5.7,
+          0.0,
+          0.86
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "prompt": "round end table",
+        "scale": [
+          0.96,
+          1.0,
+          0.96
+        ],
+        "original_sampled_asset_jid": "575a5bec-20b9-4769-8cd7-d5d243cb19eb-(1.02)-(1.0)-(1.02)",
+        "original_sampled_asset_desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "original_sampled_asset_size": [
+          0.43,
+          0.63,
+          0.43
+        ],
+        "sampled_asset_jid": "575a5bec-20b9-4769-8cd7-d5d243cb19eb-(0.96)-(1.0)-(0.96)",
+        "sampled_asset_desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "sampled_asset_size": [
+          0.4,
+          0.63,
+          0.4
+        ],
+        "uuid": "6f172f98-bfa3-4815-98b1-c87de8812634"
+      },
+      {
+        "desc": "Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.",
+        "pos": [
+          -3.36,
+          0.0,
+          2.4
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.8,
+          0.9,
+          0.73
+        ],
+        "prompt": "white armchair",
+        "original_sampled_asset_jid": "d398b084-03cb-4457-bb44-da73540ee796",
+        "original_sampled_asset_desc": "A contemporary gray fabric armchair with a minimalist design featuring a wide backrest, sleek black legs, and contrasting white armrests.",
+        "original_sampled_asset_size": [
+          0.8136380016803741,
+          0.9134303751998232,
+          0.7469080090522766
+        ],
+        "sampled_asset_jid": "ee4276f9-d7fd-4dbf-8eda-840f9ad597b1-(0.88)-(1.0)-(0.72)",
+        "sampled_asset_desc": "A modern industrial black metal pendant lamp with multiple adjustable arms and white glass shades, offering a minimalist yet versatile lighting solution.",
+        "sampled_asset_size": [
+          0.8,
+          0.89,
+          0.71
+        ],
+        "uuid": "1894f349-4965-4181-85f3-54804a695ffa",
+        "scale": [
+          0.88,
+          1.0,
+          0.72
+        ]
+      },
+      {
+        "desc": "A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.",
+        "pos": [
+          -5.73,
+          0.0,
+          4.26
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          3.05,
+          2.48,
+          0.35
+        ],
+        "prompt": "white lounge chair/book-chair/computer chair",
+        "original_sampled_asset_jid": "8e2dc0e3-d513-4fc9-911c-dccbbe635b11",
+        "original_sampled_asset_desc": "This modern minimalist wine cabinet features a blend of gray and white, constructed with wood and metal, incorporating numerous compartments, open shelves, wine bottle holders, a glass rack, cabinets with doors, and glass panes for versatile storage and display.",
+        "original_sampled_asset_size": [
+          2.8949999809265137,
+          2.450000050016782,
+          0.635919988155365
+        ],
+        "sampled_asset_jid": "47ae69d1-fd20-43bb-8744-e1b2ce98aff4",
+        "sampled_asset_desc": "A modern black shelf with open metal framing, blending minimalist and functional design elements, featuring symmetrical open shelves and closed wood cabinets for versatile storage.",
+        "sampled_asset_size": [
+          3.015000104904175,
+          2.400000107447095,
+          0.32000017166137695
+        ],
+        "uuid": "9cdbbaec-da94-4577-bc1f-760902983f34"
+      },
+      {
+        "desc": "Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.",
+        "pos": [
+          -5.71,
+          0.0,
+          4.26
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.73,
+          1.9,
+          0.49
+        ],
+        "prompt": "wooden bookcase/jewelry armoire",
+        "scale": [
+          0.75,
+          1.0,
+          0.82
+        ],
+        "original_sampled_asset_jid": "6bb592ac-81c2-4df6-8f2e-ee2c42de67cc-(0.75)-(1.0)-(0.82)",
+        "original_sampled_asset_desc": "This modern, minimalist dark brown wooden bookcase/jewelry armoire features tall open shelves, two drawers, and two lower cabinets, blending functionality with a sleek design.",
+        "original_sampled_asset_size": [
+          0.6,
+          1.72,
+          0.38
+        ],
+        "sampled_asset_jid": "34effa56-12d3-4e76-84d7-80ac93173625",
+        "sampled_asset_desc": "Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.",
+        "sampled_asset_size": [
+          1.7250200510025024,
+          1.902560012272863,
+          0.4885800778865814
+        ],
+        "uuid": "04cb73ff-13ba-4682-a386-d755087db633"
+      },
+      {
+        "desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "pos": [
+          -3.4,
+          0.0,
+          -3.51
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.33,
+          0.45,
+          1.34
+        ],
+        "prompt": "wooden coffee table",
+        "scale": [
+          0.9,
+          1.0,
+          0.56
+        ],
+        "original_sampled_asset_jid": "0ddbb652-14e3-4e01-8fd5-aae213910ac2-(0.9)-(1.0)-(0.56)",
+        "original_sampled_asset_desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "original_sampled_asset_size": [
+          1.2,
+          0.45,
+          0.75
+        ],
+        "sampled_asset_jid": "0ddbb652-14e3-4e01-8fd5-aae213910ac2",
+        "sampled_asset_desc": "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.",
+        "sampled_asset_size": [
+          1.3347560167312622,
+          0.45075811830242074,
+          1.3392080068588257
+        ],
+        "uuid": "a7bf4006-aced-434e-abd9-28f72e58fe93"
+      },
+      {
+        "desc": "Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.",
+        "pos": [
+          -5.68,
+          0.0,
+          0.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.61,
+          0.54,
+          0.35
+        ],
+        "prompt": "wooden side table",
+        "scale": [
+          0.97,
+          1.0,
+          0.65
+        ],
+        "original_sampled_asset_jid": "fd1551fb-5b7b-4d10-8e60-9a734269875b-(0.97)-(1.0)-(0.65)",
+        "original_sampled_asset_desc": "A modern minimalist corner/side table featuring a round wooden top and a geometric silver metal frame.",
+        "original_sampled_asset_size": [
+          0.6,
+          0.54,
+          0.4
+        ],
+        "sampled_asset_jid": "da932df7-3477-44fc-8eab-ec9bc4aeee8c",
+        "sampled_asset_desc": "A contemporary minimalist light wood tone nightstand with a single drawer, tapered legs, and a sleek metal knob.",
+        "sampled_asset_size": [
+          0.596534013748169,
+          0.5398860116456357,
+          0.3818100243806839
+        ],
+        "uuid": "e3c2b70c-31a4-47b9-8c6a-24eacdb992cc"
+      },
+      {
+        "desc": "Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.",
+        "pos": [
+          -4.4,
+          0.0,
+          -0.86
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.53,
+          0.66,
+          0.5
+        ],
+        "prompt": "yellow armchair",
+        "original_sampled_asset_jid": "66ccbe15-ce7c-4f9c-b640-d557289ae5a1",
+        "original_sampled_asset_desc": "Mid-century modern mustard yellow fabric armchair with curved backrest, button tufting, and tapered wooden legs.",
+        "original_sampled_asset_size": [
+          0.5067989826202393,
+          0.6593009929934279,
+          0.5148400664329529
+        ],
+        "sampled_asset_jid": "745becf8-704d-40fa-bf25-b434a44f385d",
+        "sampled_asset_desc": "An elegant gold metal pendant lamp combining traditional charm with modern aesthetics featuring an ornate looping design and eight-light candle-style arrangement.",
+        "sampled_asset_size": [
+          0.5323599874973297,
+          0.6568599678284954,
+          0.5324499905109406
+        ],
+        "uuid": "cb05da58-0491-4cfb-a8f5-b440c6b57ec3"
+      },
+      {
+        "desc": "A mustard yellow loveseat sofa with a classic rolled arms, tufted backrest, and included throw pillows, blending traditional and modern design elements.",
+        "pos": [
+          -3.4,
+          0.0,
+          -5.56
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.06,
+          0.95,
+          0.91
+        ],
+        "prompt": "yellow loveseat sofa",
+        "original_sampled_asset_jid": "58438343-a954-4e16-aa5d-80f00ed5a0b0",
+        "original_sampled_asset_desc": "A contemporary minimalist loveseat sofa with red leather upholstery and a sturdy dark wood frame featuring boxy shapes and solid design elements.",
+        "original_sampled_asset_size": [
+          2.09500789642334,
+          0.9232500548045195,
+          0.9344439804553986
+        ],
+        "sampled_asset_jid": "2632ec72-e319-469a-a01e-21b0e1038a18",
+        "sampled_asset_desc": "Contemporary minimalist loveseat sofa with olive green fabric cushions, taupe body, and slim metal legs.",
+        "sampled_asset_size": [
+          2.0170741081237793,
+          0.9195360240991555,
+          0.9085239768028259
+        ],
+        "uuid": "1a496a11-4d3d-4fbf-ae89-a0107885e6a3"
+      }
+    ]
+  }
+}

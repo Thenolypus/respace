@@ -1,0 +1,325 @@
+{
+  "greedy": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.8,
+        1.41
+      ],
+      [
+        -2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A modern minimalist black leather armchair with padded seating, cushioned backrest, and wooden legs, featuring squared armrests.",
+        "pos": [
+          1.39,
+          0.0,
+          0.45
+        ],
+        "rot": [
+          0.0,
+          0.92388,
+          0.0,
+          -0.38268
+        ],
+        "size": [
+          0.82,
+          0.78,
+          0.9
+        ],
+        "prompt": "leather armchair",
+        "original_sampled_asset_jid": "3da11e21-92d3-4543-b342-105c324c39c8",
+        "original_sampled_asset_desc": "A modern minimalist black leather armchair with padded seating, cushioned backrest, and wooden legs, featuring squared armrests.",
+        "original_sampled_asset_size": [
+          0.8158980011940002,
+          0.7759308511595009,
+          0.8999170362949371
+        ],
+        "sampled_asset_jid": "3da11e21-92d3-4543-b342-105c324c39c8",
+        "sampled_asset_desc": "A modern minimalist black leather armchair with padded seating, cushioned backrest, and wooden legs, featuring squared armrests.",
+        "sampled_asset_size": [
+          0.8158980011940002,
+          0.7759308511595009,
+          0.8999170362949371
+        ],
+        "uuid": "760c3eeb-8439-4e81-9847-a0f1d052545c"
+      },
+      {
+        "desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
+        "pos": [
+          0.11,
+          0.0,
+          0.26
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.78,
+          1.08,
+          2.29
+        ],
+        "prompt": "modern single bed",
+        "original_sampled_asset_jid": "57f08c70-969f-4320-9fc4-fb83447094e8",
+        "original_sampled_asset_desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
+        "original_sampled_asset_size": [
+          1.775987982749939,
+          1.0768698915351465,
+          2.2870900630950928
+        ],
+        "sampled_asset_jid": "57f08c70-969f-4320-9fc4-fb83447094e8",
+        "sampled_asset_desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
+        "sampled_asset_size": [
+          1.775987982749939,
+          1.0768698915351465,
+          2.2870900630950928
+        ],
+        "uuid": "deb9030d-3beb-4832-8b38-00b436300159"
+      },
+      {
+        "desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+        "pos": [
+          1.41,
+          0.0,
+          -1.05
+        ],
+        "rot": [
+          0.0,
+          0.00054,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.37,
+          2.0,
+          0.5
+        ],
+        "prompt": "wooden sideboard",
+        "original_sampled_asset_jid": "1b0269b1-902d-455d-8960-367009395233",
+        "original_sampled_asset_desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+        "original_sampled_asset_size": [
+          1.3690990209579468,
+          1.998181275097977,
+          0.5013650059700012
+        ],
+        "sampled_asset_jid": "1b0269b1-902d-455d-8960-367009395233",
+        "sampled_asset_desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+        "sampled_asset_size": [
+          1.3690990209579468,
+          1.998181275097977,
+          0.5013650059700012
+        ],
+        "uuid": "6eb1b609-c2d0-429e-bb9b-1a3a1f515cd4"
+      }
+    ]
+  },
+  "stochastic": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.8,
+        1.41
+      ],
+      [
+        -2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        -1.41
+      ],
+      [
+        2.13,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A modern minimalist black leather armchair with padded seating, cushioned backrest, and wooden legs, featuring squared armrests.",
+        "pos": [
+          1.39,
+          0.0,
+          0.45
+        ],
+        "rot": [
+          0.0,
+          0.92388,
+          0.0,
+          -0.38268
+        ],
+        "size": [
+          0.82,
+          0.78,
+          0.9
+        ],
+        "prompt": "leather armchair",
+        "original_sampled_asset_jid": "3da11e21-92d3-4543-b342-105c324c39c8",
+        "original_sampled_asset_desc": "A modern minimalist black leather armchair with padded seating, cushioned backrest, and wooden legs, featuring squared armrests.",
+        "original_sampled_asset_size": [
+          0.8158980011940002,
+          0.7759308511595009,
+          0.8999170362949371
+        ],
+        "sampled_asset_jid": "3062da49-9d90-3894-8c6a-207b131a7f1f-(1.01)-(1.0)-(1.1)",
+        "sampled_asset_desc": "Modern black leather swivel chair with geometric backrest and minimalist metal base.",
+        "sampled_asset_size": [
+          0.82,
+          0.78,
+          0.89
+        ],
+        "uuid": "003ea363-d2b2-420b-9124-a5e3e7b0a958",
+        "scale": [
+          1.01,
+          1.0,
+          1.1
+        ]
+      },
+      {
+        "desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
+        "pos": [
+          0.11,
+          0.0,
+          0.26
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.78,
+          1.08,
+          2.29
+        ],
+        "prompt": "modern single bed",
+        "original_sampled_asset_jid": "57f08c70-969f-4320-9fc4-fb83447094e8",
+        "original_sampled_asset_desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
+        "original_sampled_asset_size": [
+          1.775987982749939,
+          1.0768698915351465,
+          2.2870900630950928
+        ],
+        "sampled_asset_jid": "3c52cc2f-a786-438d-bea6-92cdafacefbc-(0.72)-(1.0)-(1.02)",
+        "sampled_asset_desc": "This king-size bed features a modern minimalist style with a gray upholstered fabric, a padded headboard, and sleek wooden legs, ideal for contemporary bedrooms.",
+        "sampled_asset_size": [
+          1.8,
+          1.06,
+          2.31
+        ],
+        "uuid": "974140a2-8570-4dda-b525-d8bf37c1c1a3",
+        "scale": [
+          0.72,
+          1.0,
+          1.02
+        ]
+      },
+      {
+        "desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+        "pos": [
+          1.41,
+          0.0,
+          -1.05
+        ],
+        "rot": [
+          0.0,
+          0.00054,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.37,
+          2.0,
+          0.5
+        ],
+        "prompt": "wooden sideboard",
+        "original_sampled_asset_jid": "1b0269b1-902d-455d-8960-367009395233",
+        "original_sampled_asset_desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
+        "original_sampled_asset_size": [
+          1.3690990209579468,
+          1.998181275097977,
+          0.5013650059700012
+        ],
+        "sampled_asset_jid": "82f392c4-3d5c-4559-a3ee-5c643500585e-(0.77)-(1.0)-(0.75)",
+        "sampled_asset_desc": "A beige and brown rustic-traditional wooden wardrobe featuring textured panels, multiple doors, and bottom drawers for ample storage.",
+        "sampled_asset_size": [
+          1.41,
+          2.04,
+          0.56
+        ],
+        "uuid": "7c9364dc-348c-4205-b452-d5d966e1d80e",
+        "scale": [
+          0.77,
+          1.0,
+          0.75
+        ]
+      }
+    ]
+  }
+}
