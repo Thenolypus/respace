@@ -79,16 +79,20 @@ DEFAULT_DATASET_ROOM_TYPE = "all"
 
 def render_topdown_bboxes(scene, output_path):
     """Render a 2D top-down view of the floor plan with furniture bounding boxes."""
-    fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+    objects = scene.get("objects", [])
+
+    fig, (ax, ax_legend) = plt.subplots(1, 2, figsize=(16, 10),
+                                         gridspec_kw={"width_ratios": [3, 1]})
 
     floor_verts = [(v[0], v[2]) for v in scene["bounds_bottom"]]
     floor_poly = MplPolygon(floor_verts, closed=True, fill=True,
-                            facecolor="#f5deb3", edgecolor="black", linewidth=2, label="Floor")
+                            facecolor="#f5deb3", edgecolor="black", linewidth=2)
     ax.add_patch(floor_poly)
 
     colors = plt.cm.tab10.colors
+    legend_entries = []
 
-    for i, obj in enumerate(scene.get("objects", [])):
+    for i, obj in enumerate(objects):
         pos = obj["pos"]
         size = obj["size"]
         rot = obj.get("rot", [0, 0, 0, 1])
@@ -116,16 +120,40 @@ def render_topdown_bboxes(scene, output_path):
                                facecolor=(*color, 0.4), edgecolor=color, linewidth=1.5)
         ax.add_patch(bbox_poly)
 
-        desc = obj.get("desc", f"obj_{i}")
-        ax.text(cx, cz, desc, fontsize=7, ha="center", va="center",
+        # Place a number label on the bbox instead of the full description
+        ax.text(cx, cz, str(i), fontsize=8, ha="center", va="center",
                 color="black", fontweight="bold")
+
+        desc = obj.get("desc", f"obj_{i}")
+        legend_entries.append((i, color, desc))
 
     ax.set_aspect("equal")
     ax.autoscale_view()
     ax.set_xlabel("X (meters)")
     ax.set_ylabel("Z (meters)")
-    ax.set_title(f"Top-down layout: {scene.get('room_type', 'room')} ({len(scene.get('objects', []))} objects)")
+    ax.set_title(f"Top-down layout: {scene.get('room_type', 'room')} ({len(objects)} objects)")
     ax.grid(True, alpha=0.3)
+
+    # Build legend table on the right panel
+    ax_legend.axis("off")
+    ax_legend.set_title("Legend", fontsize=12, fontweight="bold")
+
+    if legend_entries:
+        col_labels = ["#", "Color", "Description"]
+        cell_text = [[str(idx), "", desc] for idx, _, desc in legend_entries]
+        cell_colors = [["white", (*c, 0.4), "white"] for _, c, _ in legend_entries]
+
+        table = ax_legend.table(
+            cellText=cell_text,
+            colLabels=col_labels,
+            cellColours=cell_colors,
+            colColours=["#dddddd"] * 3,
+            loc="upper center",
+            cellLoc="left",
+        )
+        table.auto_set_font_size(False)
+        table.set_fontsize(8)
+        table.scale(1, 1.4)
 
     out_file = output_path / "floorplan_bboxes.png"
     fig.savefig(out_file, dpi=150, bbox_inches="tight")
