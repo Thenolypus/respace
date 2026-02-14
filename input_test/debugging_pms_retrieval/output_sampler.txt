@@ -1,0 +1,354 @@
+==========================================================================================
+QUERY: "A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow."
+QUERY SIZE: [0.66, 1.08, 0.79]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.3092   0.8948   1.0000   0.9474  [0.656, 1.082, 0.789]        A modern minimalist red wooden lounge chair with a spindle backrest, c
+#2      0.0665   0.5538   0.7261   0.6400  [0.66, 1.04, 0.79]           Modern, minimalist gray lounge chair with ergonomic design, featuring 
+#3      0.0550   0.4481   0.7558   0.6019  [0.65, 1.06, 0.76]           A modern, minimalist lounge chair with a high backrest, light gray lea
+#4      0.0510   0.5033   0.6703   0.5868  [0.68, 1.043, 0.787]         Mid-century modern chair with rustic wood frame, brown fabric upholste
+#5      0.0417   0.4233   0.6703   0.5468  [0.681, 1.079, 0.746]        Traditional upholstered dining chair with dark wood frame, arched back
+#6      0.0401   0.8948   0.1827   0.5387  [0.68, 1.08, 0.7]            A modern minimalist red wooden lounge chair with a spindle backrest, c
+#7      0.0389   0.4465   0.6188   0.5326  [0.62, 1.063, 0.774]         Modern lounge chair with high backrest, attached head cushion, woven f
+#8      0.0363   0.3538   0.6839   0.5188  [0.654, 1.048, 0.756]        Elegant classic dining chair with blue leather upholstery, white woode
+#9      0.0362   0.4427   0.5945   0.5186  [0.647, 1.119, 0.765]        Classic high-back armchair with button-tufted black leather upholstery
+#10     0.0352   0.3681   0.6570   0.5125  [0.67, 1.06, 0.75]           An elegant Baroque-inspired lounge chair with ornate carvings, black a
+
+{'desc': 'A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.', 'pos': [-1.65, 0.0, 1.88], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.66, 1.08, 0.79], 'prompt': 'red lounge chair/book-chair/computer chair', 'original_sampled_asset_jid': 'f07659e7-cb2e-4a07-9fbd-397b33b9360b', 'original_sampled_asset_desc': 'A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.', 'original_sampled_asset_size': [0.6563040018081665, 1.0817240648089683, 0.7894400656223297]}
+
+
+
+==========================================================================================
+QUERY: "Red contemporary loveseat sofa with curved arms, tufted seating, contrasting multicolor pillows, and sleek wooden legs."
+QUERY SIZE: [1.71, 0.61, 0.8]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1157   0.5151   0.5945   0.5548  [1.738, 0.649, 0.79]         A contemporary gray upholstered loveseat sofa with a curved back, tape
+#2      0.1116   0.2927   0.8025   0.5476  [1.724, 0.638, 0.785]        Modern three-seat sofa with charcoal gray leather upholstery, ribbed d
+#3      0.0927   0.4263   0.5945   0.5104  [1.738, 0.649, 0.79]         A contemporary dark gray three-seat sofa with a curved backrest, plaid
+#4      0.0711   0.3978   0.5169   0.4573  [1.728, 0.635, 0.75]         Chesterfield loveseat sofa with taupe fabric upholstery, tufted tight 
+#5      0.0534   0.4929   0.3073   0.4001  [1.7, 0.644, 0.874]          Traditional gray loveseat sofa with fabric upholstery, rolled arms, tu
+#6      0.0499   0.4595   0.3135   0.3865  [1.744, 0.676, 0.805]        Modern minimalist dark green loveseat sofa with tufted fabric upholste
+#7      0.0492   0.2503   0.5169   0.3836  [1.75, 0.6, 0.76]            A contemporary dark gray leather three-seat sofa with modular design, 
+#8      0.0435   0.4667   0.2516   0.3591  [1.754, 0.585, 0.728]        A modern, contemporary dark gray velvet two-seat sofa with a distincti
+#9      0.0419   0.4516   0.2516   0.3516  [1.73, 0.62, 0.72]           Modern gray loveseat sofa with cushioned back, two-tone pillows, and w
+#10     0.0412   0.4244   0.2725   0.3485  [1.706, 0.597, 0.715]        A modern minimalist grey fabric loveseat sofa with a boxy design, deta
+
+{'desc': 'Red contemporary loveseat sofa with curved arms, tufted seating, contrasting multicolor pillows, and sleek wooden legs.', 'pos': [-5.41, 0.0, -1.11], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'size': [1.71, 0.61, 0.8], 'prompt': 'red loveseat sofa', 'original_sampled_asset_jid': '03b201b3-3fd5-4b0c-9e59-96d75e6934ec', 'original_sampled_asset_desc': 'A contemporary dark gray three-seat sofa with a curved backrest, plaid and solid cushions, and wooden tapered legs.', 'original_sampled_asset_size': [1.7383780479431152, 0.6489103959756903, 0.7900960445404053]}
+
+
+
+==========================================================================================
+QUERY: "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf."
+QUERY SIZE: [0.42, 0.63, 0.42]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1426   0.8723   1.0000   0.9362  [0.419, 0.629, 0.419]        Classic gray round end table with ornate carved details, four curved l
+#2      0.1293   0.8723   0.9608   0.9166  [0.43, 0.63, 0.43]           Classic gray round end table with ornate carved details, four curved l
+#3      0.0985   0.8723   0.8521   0.8622  [0.4, 0.63, 0.4]             Classic gray round end table with ornate carved details, four curved l
+#4      0.0738   0.6478   0.9608   0.8043  [0.42, 0.64, 0.41]           A traditional dark brown wooden round end table featuring an ornamenta
+#5      0.0475   0.4326   1.0000   0.7163  [0.42, 0.63, 0.42]           A modern industrial corner side table with a minimalist metal three-le
+#6      0.0459   0.4772   0.9418   0.7095  [0.43, 0.64, 0.41]           A contemporary minimalist side table featuring a black round wooden to
+#7      0.0440   0.5668   0.8353   0.7010  [0.4, 0.621, 0.4]            Distressed white round end table with a rustic-modern blend, featuring
+#8      0.0431   0.4326   0.9608   0.6967  [0.43, 0.63, 0.43]           A modern industrial corner side table with a minimalist metal three-le
+#9      0.0391   0.4495   0.9048   0.6772  [0.4, 0.63, 0.41]            Vintage French Country nightstand with a natural wood top, white body,
+#10     0.0382   0.4401   0.9048   0.6725  [0.4, 0.63, 0.41]            Contemporary mustard yellow round nightstand with metal X-shaped legs,
+
+{'desc': 'Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.', 'pos': [-5.7, 0.0, 0.86], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.42, 0.63, 0.42], 'prompt': 'round end table', 'scale': [1.02, 1.0, 1.02], 'original_sampled_asset_jid': '575a5bec-20b9-4769-8cd7-d5d243cb19eb-(1.02)-(1.0)-(1.02)', 'original_sampled_asset_desc': 'Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.', 'original_sampled_asset_size': [0.43, 0.63, 0.43]}
+
+
+
+==========================================================================================
+QUERY: "Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion."
+QUERY SIZE: [0.8, 0.9, 0.73]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1758   0.8291   1.0000   0.9146  [0.804, 0.904, 0.726]        Modern minimalist armchair with beige fabric upholstery, dark brown wo
+#2      0.0887   0.8291   0.7261   0.7776  [0.84, 0.9, 0.73]            Modern minimalist armchair with beige fabric upholstery, dark brown wo
+#3      0.0574   0.4946   0.8869   0.6907  [0.814, 0.913, 0.747]        A contemporary gray fabric armchair with a minimalist design featuring
+#4      0.0559   0.4287   0.9418   0.6852  [0.81, 0.91, 0.72]           Modern armchair with a brown leather exterior and houndstooth fabric c
+#5      0.0509   0.4812   0.8521   0.6667  [0.82, 0.9, 0.75]            Modern dark blue fabric upholstered armchair with a minimalist low bac
+#6      0.0486   0.4280   0.8869   0.6575  [0.78, 0.89, 0.72]           A modern mid-century dining chair with a light grey upholstered seat a
+#7      0.0483   0.4601   0.8521   0.6561  [0.779, 0.881, 0.732]        A modern, mid-century gray fabric armchair with a curved backrest, ope
+#8      0.0483   0.4933   0.8187   0.6560  [0.831, 0.891, 0.728]        Modern lounge chair with tufted light brown fabric upholstery and wood
+#9      0.0476   0.4541   0.8521   0.6531  [0.825, 0.9, 0.753]          A white traditional-modern armchair with curved arms and turned dark b
+#10     0.0415   0.3994   0.8521   0.6258  [0.784, 0.884, 0.732]        A contemporary black leather armchair with sleek lines, high backrest,
+
+{'desc': 'Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.', 'pos': [-3.36, 0.0, 2.4], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.8, 0.9, 0.73], 'prompt': 'white armchair', 'original_sampled_asset_jid': 'd398b084-03cb-4457-bb44-da73540ee796', 'original_sampled_asset_desc': 'A contemporary gray fabric armchair with a minimalist design featuring a wide backrest, sleek black legs, and contrasting white armrests.', 'original_sampled_asset_size': [0.8136380016803741, 0.9134303751998232, 0.7469080090522766]}
+
+
+
+==========================================================================================
+QUERY: "A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options."
+QUERY SIZE: [3.05, 2.48, 0.35]
+==========================================================================================
+Candidates surviving top-k/top-p: 18
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.3980   0.7760   1.0000   0.8880  [3.05, 2.48, 0.352]          A contemporary minimalist bookcase with multiple open shelves and gray
+#2      0.0758   0.4011   0.7118   0.5564  [3.041, 2.52, 0.353]         Modern classic wine cooler with wood cabinets, marble backsplash, meta
+#3      0.0526   0.5598   0.4066   0.4832  [3.1, 2.501, 0.308]          Modern minimalist bookcase with geometric dividers, open shelves, and 
+#4      0.0496   0.5366   0.4066   0.4716  [3.08, 2.42, 0.35]           Modern minimalist wine cabinet with extensive storage, white and gray 
+#5      0.0411   0.4996   0.3679   0.4337  [3.0, 2.53, 0.35]            A stylish contemporary wine cooler with Asian design elements, featuri
+#6      0.0379   0.6416   0.1940   0.4178  [3.015, 2.4, 0.32]           A modern black shelf with open metal framing, blending minimalist and 
+#7      0.0357   0.5842   0.2276   0.4059  [2.997, 2.55, 0.35]          A contemporary, minimalist dark brown wooden bookcase with open shelvi
+#8      0.0336   0.6214   0.1653   0.3933  [3.0, 2.4, 0.338]            Modern minimalist bookcase and jewelry armoire featuring black and woo
+#9      0.0325   0.5725   0.2019   0.3872  [3.01, 2.4, 0.35]            Modern dark brown wood bookcase with a grid pattern and minimalist des
+#10     0.0303   0.5663   0.1791   0.3727  [3.1, 2.42, 0.4]             Modern minimalist bookcase and jewelry armoire with natural wood, whit
+
+{'desc': 'A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.', 'pos': [-5.73, 0.0, 4.26], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'size': [3.05, 2.48, 0.35], 'prompt': 'white lounge chair/book-chair/computer chair', 'original_sampled_asset_jid': '8e2dc0e3-d513-4fc9-911c-dccbbe635b11', 'original_sampled_asset_desc': 'This modern minimalist wine cabinet features a blend of gray and white, constructed with wood and metal, incorporating numerous compartments, open shelves, wine bottle holders, a glass rack, cabinets with doors, and glass panes for versatile storage and display.', 'original_sampled_asset_size': [2.8949999809265137, 2.450000050016782, 0.635919988155365]}
+
+
+
+==========================================================================================
+QUERY: "Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves."
+QUERY SIZE: [1.73, 1.9, 0.49]
+==========================================================================================
+Candidates surviving top-k/top-p: 17
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.3004   0.8724   1.0000   0.9362  [1.725, 1.903, 0.489]        Modern minimalist bookcase/jewelry armoire combining white and dark br
+#2      0.2313   0.7679   1.0000   0.8840  [1.725, 1.903, 0.489]        Modern minimalist bookcase/jewelry armoire with black and white wooden
+#3      0.1497   0.5938   1.0000   0.7969  [1.725, 1.903, 0.489]        Modern wardrobe with a dual-tone design featuring two doors and centra
+#4      0.0696   0.4847   0.8025   0.6436  [1.74, 1.87, 0.5]            This modern minimalist gold wardrobe features a metal frame with mesh 
+#5      0.0221   0.8283   0.0000   0.4141  [2.101, 2.336, 0.559]        Contemporary and minimalistic tall wooden bookcase-jewelry armoire wit
+#6      0.0210   0.4626   0.3465   0.4045  [1.72, 1.86, 0.55]           An elegant baroque-modern wardrobe with intricate ornate carvings, whi
+#7      0.0203   0.7954   0.0000   0.3977  [0.734, 0.744, 0.118]        A modern, minimalist bookcase/jewelry armoire with an asymmetrical des
+#8      0.0197   0.6269   0.1557   0.3913  [1.779, 1.982, 0.512]        Elegant black wood bookcase or jewelry armoire combining traditional c
+#9      0.0187   0.4539   0.3073   0.3806  [1.8, 1.91, 0.46]            Contemporary brown fabric wardrobe with white polka dots, featuring pa
+#10     0.0186   0.4987   0.2618   0.3803  [1.7, 1.825, 0.456]          Contemporary children's cabinet with light and dark gray wooden segmen
+
+{'desc': 'Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.', 'pos': [-5.71, 0.0, 4.26], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'size': [1.73, 1.9, 0.49], 'prompt': 'wooden bookcase/jewelry armoire', 'scale': [0.75, 1.0, 0.82], 'original_sampled_asset_jid': '6bb592ac-81c2-4df6-8f2e-ee2c42de67cc-(0.75)-(1.0)-(0.82)', 'original_sampled_asset_desc': 'This modern, minimalist dark brown wooden bookcase/jewelry armoire features tall open shelves, two drawers, and two lower cabinets, blending functionality with a sleek design.', 'original_sampled_asset_size': [0.6, 1.72, 0.38]}
+
+
+
+==========================================================================================
+QUERY: "Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors."
+QUERY SIZE: [1.33, 0.45, 1.34]
+==========================================================================================
+Candidates surviving top-k/top-p: 18
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.2721   0.7372   1.0000   0.8686  [1.335, 0.451, 1.339]        Rustic brown wooden coffee table with two spacious drawers and round m
+#2      0.1729   0.7372   0.8187   0.7780  [1.32, 0.45, 1.31]           Rustic brown wooden coffee table with two spacious drawers and round m
+#3      0.1180   0.4423   0.9608   0.7016  [1.34, 0.45, 1.35]           Classic baroque-style dark brown wooden coffee table with ornate carvi
+#4      0.0726   0.4528   0.7558   0.6043  [1.35, 0.42, 1.35]           A modern-industrial coffee table with a rectangular glass top and a st
+#5      0.0424   0.4449   0.5488   0.4968  [1.318, 0.4, 1.315]          A sleek, rose gold metal coffee table with a modern, curvilinear desig
+#6      0.0350   0.4301   0.4868   0.4584  [1.334, 0.511, 1.337]        A modern minimalist black desk with a circular tiered design, geometri
+#7      0.0316   0.4449   0.4317   0.4383  [1.32, 0.4, 1.3]             A sleek, rose gold metal coffee table with a modern, curvilinear desig
+#8      0.0275   0.4524   0.3679   0.4101  [1.34, 0.52, 1.34]           A minimalist mid-century modern round wooden coffee table with a tripo
+#9      0.0269   0.7372   0.0743   0.4058  [1.24, 0.45, 1.27]           Rustic brown wooden coffee table with two spacious drawers and round m
+#10     0.0223   0.7372   0.0000   0.3686  [1.35, 0.45, 0.79]           Rustic brown wooden coffee table with two spacious drawers and round m
+
+{'desc': 'Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.', 'pos': [-3.4, 0.0, -3.51], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [1.33, 0.45, 1.34], 'prompt': 'wooden coffee table', 'scale': [0.9, 1.0, 0.56], 'original_sampled_asset_jid': '0ddbb652-14e3-4e01-8fd5-aae213910ac2-(0.9)-(1.0)-(0.56)', 'original_sampled_asset_desc': 'Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.', 'original_sampled_asset_size': [1.2, 0.45, 0.75]}
+
+
+
+==========================================================================================
+QUERY: "Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs."
+QUERY SIZE: [0.61, 0.54, 0.35]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.2007   0.7995   1.0000   0.8997  [0.607, 0.541, 0.351]        Mid-century modern wooden side table with a natural finish, round tabl
+#2      0.0785   0.6055   0.8187   0.7121  [0.597, 0.54, 0.382]         A contemporary minimalist light wood tone nightstand with a single dra
+#3      0.0727   0.4324   0.9608   0.6966  [0.61, 0.53, 0.36]           Traditional vintage dressing chair with brown wooden curved legs, deco
+#4      0.0632   0.5017   0.8353   0.6685  [0.588, 0.534, 0.373]        Sleek modern corner table with dark brown wood, minimalist X-shaped le
+#5      0.0569   0.3908   0.9048   0.6478  [0.6, 0.52, 0.35]            Modern black sideboard with geometric design, multi-level open shelves
+#6      0.0530   0.5113   0.7558   0.6335  [0.604, 0.511, 0.371]        Modern minimalist nightstand with two drawers, hidden handles, and met
+#7      0.0506   0.2877   0.9608   0.6242  [0.6, 0.53, 0.35]            Modern minimalist black wood and white marble sideboard with open shel
+#8      0.0448   0.6055   0.5945   0.6000  [0.6, 0.54, 0.4]             A contemporary minimalist light wood tone nightstand with a single dra
+#9      0.0440   0.6100   0.5827   0.5964  [0.6, 0.55, 0.4]             Mid-Century Modern nightstand with light wood finish, geometric cutout
+#10     0.0389   0.6468   0.4966   0.5717  [0.6, 0.51, 0.4]             A mid-century modern nightstand featuring a sleek two-tone design with
+
+{'desc': 'Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.', 'pos': [-5.68, 0.0, 0.0], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.61, 0.54, 0.35], 'prompt': 'wooden side table', 'scale': [0.97, 1.0, 0.65], 'original_sampled_asset_jid': 'fd1551fb-5b7b-4d10-8e60-9a734269875b-(0.97)-(1.0)-(0.65)', 'original_sampled_asset_desc': 'A modern minimalist corner/side table featuring a round wooden top and a geometric silver metal frame.', 'original_sampled_asset_size': [0.6, 0.54, 0.4]}
+
+
+
+==========================================================================================
+QUERY: "Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs."
+QUERY SIZE: [0.53, 0.66, 0.5]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1571   0.8134   1.0000   0.9067  [0.534, 0.663, 0.504]        Mid-century modern mustard yellow armchair with button-tufted backrest
+#2      0.1133   0.7776   0.9048   0.8412  [0.507, 0.659, 0.515]        Mid-century modern mustard yellow fabric armchair with curved backrest
+#3      0.0551   0.4897   0.9048   0.6973  [0.535, 0.644, 0.5]          Modern lounge chair with a curved wooden backrest, clean lines, tapere
+#4      0.0495   0.4467   0.9048   0.6758  [0.52, 0.68, 0.5]            This modern minimalist light brown wooden coffee table features a uniq
+#5      0.0471   0.4448   0.8869   0.6658  [0.51, 0.65, 0.51]           A contemporary gray upholstered dining chair with sleek black wooden l
+#6      0.0458   0.4159   0.9048   0.6604  [0.53, 0.65, 0.52]           A modern minimalist pendant lamp featuring concentric gold metal rings
+#7      0.0437   0.3780   0.9231   0.6506  [0.53, 0.64, 0.5]            A dark brown minimalist modern wooden side table with a sleek rectangu
+#8      0.0434   0.4637   0.8353   0.6495  [0.514, 0.683, 0.489]        A modern minimalist black wooden armchair with a distinctive open and 
+#9      0.0434   0.4637   0.8353   0.6495  [0.55, 0.68, 0.49]           A modern minimalist black wooden armchair with a distinctive open and 
+#10     0.0416   0.4297   0.8521   0.6409  [0.55, 0.68, 0.5]            A contemporary pendant lamp blending modern and mid-century styles, fe
+
+{'desc': 'Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.', 'pos': [-4.4, 0.0, -0.86], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.53, 0.66, 0.5], 'prompt': 'yellow armchair', 'original_sampled_asset_jid': '66ccbe15-ce7c-4f9c-b640-d557289ae5a1', 'original_sampled_asset_desc': 'Mid-century modern mustard yellow fabric armchair with curved backrest, button tufting, and tapered wooden legs.', 'original_sampled_asset_size': [0.5067989826202393, 0.6593009929934279, 0.5148400664329529]}
+
+
+
+==========================================================================================
+QUERY: "A mustard yellow loveseat sofa with a classic rolled arms, tufted backrest, and included throw pillows, blending traditional and modern design elements."
+QUERY SIZE: [2.06, 0.95, 0.91]
+==========================================================================================
+Candidates surviving top-k/top-p: 18
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Blend  Asset Size                   Description
+----- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1318   0.6978   0.9048   0.8013  [2.06, 0.94, 0.93]           Beige loveseat sofa with traditional rolled arms, tufted back, modern 
+#2      0.1231   0.6336   0.9418   0.7877  [2.07, 0.94, 0.92]           Gray tufted classic-modern loveseat sofa with rolled arms, wooden legs
+#3      0.0822   0.4527   0.9608   0.7068  [2.056, 0.958, 0.905]        Modern minimalist loveseat sofa with a gray fabric cushion, black meta
+#4      0.0739   0.6002   0.7711   0.6856  [2.06, 0.98, 0.89]           Beige fabric loveseat with traditional rolled arms, nailhead trim, tur
+#5      0.0696   0.4600   0.8869   0.6735  [2.078, 0.957, 0.903]        A modern minimalist three-seat sofa with gray fabric, button-tufted ba
+#6      0.0669   0.6336   0.6977   0.6656  [2.1, 0.94, 0.92]            Gray tufted classic-modern loveseat sofa with rolled arms, wooden legs
+#7      0.0659   0.6138   0.7118   0.6628  [2.096, 0.948, 0.9]          A contemporary blue loveseat sofa with plush cushions, wooden legs, an
+#8      0.0570   0.5113   0.7558   0.6336  [2.05, 0.92, 0.89]           A contemporary black loveseat sofa with cushioned backrests, wooden le
+#9      0.0433   0.4736   0.6839   0.5788  [2.05, 0.92, 0.94]           A contemporary gray three-seat sofa with minimalist design, fabric uph
+#10     0.0413   0.4268   0.7118   0.5693  [2.077, 0.927, 0.937]        Traditional rustic three-seat sofa with green fabric cushions and stur
+
+{'desc': 'A mustard yellow loveseat sofa with a classic rolled arms, tufted backrest, and included throw pillows, blending traditional and modern design elements.', 'pos': [-3.4, 0.0, -5.56], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [2.06, 0.95, 0.91], 'prompt': 'yellow loveseat sofa', 'original_sampled_asset_jid': '58438343-a954-4e16-aa5d-80f00ed5a0b0', 'original_sampled_asset_desc': 'A contemporary minimalist loveseat sofa with red leather upholstery and a sturdy dark wood frame featuring boxy shapes and solid design elements.', 'original_sampled_asset_size': [2.09500789642334, 0.9232500548045195, 0.9344439804553986]}
+
+
+================================================================================
+
+--- GREEDY RESULTS unit_1_room_1_livingroom ---
+
+[0] Query: A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.
+    Query size:    [0.58, 0.87, 0.82]
+    Retrieved JID: d29c310b-3447-4fed-a240-cd0ea23e12ec
+    Retrieved desc: A Mid-century Modern minimalistic high-back lounge chair with a cushioned dark blue fabric seat and natural wood frame.
+    Retrieved size: [0.5822579860687256, 0.8688399936742206, 0.8199840188026428]
+    Original JID:  d29c310b-3447-4fed-a240-cd0ea23e12ec-(1.0)-(1.0)-(0.79)  (DIFFERENT)
+
+[1] Query: Contemporary nautical loveseat sofa with blue and white stripes, boxy shape, and fabric upholstery.
+    Query size:    [1.78, 0.84, 0.84]
+    Retrieved JID: 274bd1e2-020a-4f61-9d98-fe792f764ab8
+    Retrieved desc: A traditional-contemporary taupe fabric loveseat with contrasting beige piping, skirted base, and decorative cushions, combining comfort with elegant design.
+    Retrieved size: [1.7546370029449463, 0.8507859415184207, 0.8341200053691864]
+    Original JID:  bcfc7aa7-555f-4b9f-b242-2b78b4e6bd7e  (DIFFERENT)
+
+[2] Query: Modern minimalist loveseat sofa with dark brown fabric, plush cushions, and wooden legs.
+    Query size:    [2.3, 0.81, 0.98]
+    Retrieved JID: 6486b048-5518-4561-a3df-5449b3dae62b
+    Retrieved desc: Modern minimalist loveseat sofa with dark gray fabric, plush cushions, and wooden legs.
+    Retrieved size: [2.303849935531616, 0.8143053178209811, 0.9802040159702301]
+    Original JID:  12491fd8-0e23-4f2a-bd9a-d1ec4b203565  (DIFFERENT)
+
+[3] Query: Modern green and black swivel office chair with mesh backrest, padded seat, and four-legged metal base.
+    Query size:    [0.69, 0.96, 0.62]
+    Retrieved JID: 6f09d6a0-dcd6-472a-9793-bafc17a8486f-(0.99)-(1.0)-(0.87)
+    Retrieved desc: Modern light green and white swivel office chair with mesh backrest, padded seat, and four-legged metal base.
+    Retrieved size: [0.69, 0.96, 0.61]
+    Original JID:  6f09d6a0-dcd6-472a-9793-bafc17a8486f-(0.99)-(1.0)-(0.87)  (MATCH)
+
+[4] Query: A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.
+    Query size:    [0.63, 0.76, 0.61]
+    Retrieved JID: 3c163dbf-1558-4a9e-8690-f3c7126d1f29
+    Retrieved desc: A modern minimalist grey fabric office chair featuring a padded seat and back, integrated armrests, chrome swivel base with caster wheels, and adjustable height functionality.
+    Retrieved size: [0.631727010011673, 0.761026721651433, 0.6055450141429901]
+    Original JID:  3c163dbf-1558-4a9e-8690-f3c7126d1f29  (MATCH)
+
+[5] Query: A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.
+    Query size:    [1.8, 0.94, 0.98]
+    Retrieved JID: 650fec0d-8577-4afd-b42a-47bf8132e31c
+    Retrieved desc: A stylish modern mid-century gray loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.
+    Retrieved size: [1.80247300863266, 0.9449282044079155, 0.9838060140609741]
+    Original JID:  147c6e84-4be0-42dc-8182-b067d0fac836-(0.77)-(1.0)-(0.92)  (DIFFERENT)
+
+[6] Query: A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.
+    Query size:    [0.66, 1.08, 0.79]
+    Retrieved JID: f07659e7-cb2e-4a07-9fbd-397b33b9360b
+    Retrieved desc: A modern minimalist red wooden lounge chair with a spindle backrest, curved armrests, brown leather cushion, and pillow.
+    Retrieved size: [0.6563040018081665, 1.0817240648089683, 0.7894400656223297]
+    Original JID:  f07659e7-cb2e-4a07-9fbd-397b33b9360b  (MATCH)
+
+[7] Query: Red contemporary loveseat sofa with curved arms, tufted seating, contrasting multicolor pillows, and sleek wooden legs.
+    Query size:    [1.71, 0.61, 0.8]
+    Retrieved JID: ee2879d2-1c30-4669-9936-9beb37b38026
+    Retrieved desc: A contemporary gray upholstered loveseat sofa with a curved back, tapered wood legs, and checkered accent pillows, perfect for modern living spaces.
+    Retrieved size: [1.7383780479431152, 0.649229528818978, 0.7900960445404053]
+    Original JID:  03b201b3-3fd5-4b0c-9e59-96d75e6934ec  (DIFFERENT)
+
+[8] Query: Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.
+    Query size:    [0.42, 0.63, 0.42]
+    Retrieved JID: 575a5bec-20b9-4769-8cd7-d5d243cb19eb
+    Retrieved desc: Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.
+    Retrieved size: [0.419048011302948, 0.6291589695122184, 0.419048011302948]
+    Original JID:  575a5bec-20b9-4769-8cd7-d5d243cb19eb-(1.02)-(1.0)-(1.02)  (DIFFERENT)
+
+[9] Query: Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.
+    Query size:    [0.8, 0.9, 0.73]
+    Retrieved JID: 1ea4a9a2-e029-4cb1-9fcd-fb7a8f0edce5
+    Retrieved desc: Modern minimalist armchair with beige fabric upholstery, dark brown wooden frame, and a purple decorative cushion.
+    Retrieved size: [0.8044449985027313, 0.9042159920574607, 0.7263799607753754]
+    Original JID:  d398b084-03cb-4457-bb44-da73540ee796  (DIFFERENT)
+
+[10] Query: A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.
+    Query size:    [3.05, 2.48, 0.35]
+    Retrieved JID: 0bf32fa7-5ecb-4416-bb6c-d27c0e67a59b
+    Retrieved desc: A contemporary minimalist bookcase with multiple open shelves and gray-accented cabinet doors, providing both display and hidden storage options.
+    Retrieved size: [3.049999952316284, 2.480000032344507, 0.3515600562095642]
+    Original JID:  8e2dc0e3-d513-4fc9-911c-dccbbe635b11  (DIFFERENT)
+
+[11] Query: Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.
+    Query size:    [1.73, 1.9, 0.49]
+    Retrieved JID: 34effa56-12d3-4e76-84d7-80ac93173625
+    Retrieved desc: Modern minimalist bookcase/jewelry armoire combining white and dark brown wood with metal handles, featuring two doors and four central open shelves.
+    Retrieved size: [1.7250200510025024, 1.902560012272863, 0.4885800778865814]
+    Original JID:  6bb592ac-81c2-4df6-8f2e-ee2c42de67cc-(0.75)-(1.0)-(0.82)  (DIFFERENT)
+
+[12] Query: Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.
+    Query size:    [1.33, 0.45, 1.34]
+    Retrieved JID: 0ddbb652-14e3-4e01-8fd5-aae213910ac2
+    Retrieved desc: Rustic brown wooden coffee table with two spacious drawers and round metal knobs, perfect for cozy interiors.
+    Retrieved size: [1.3347560167312622, 0.45075811830242074, 1.3392080068588257]
+    Original JID:  0ddbb652-14e3-4e01-8fd5-aae213910ac2-(0.9)-(1.0)-(0.56)  (DIFFERENT)
+
+[13] Query: Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.
+    Query size:    [0.61, 0.54, 0.35]
+    Retrieved JID: c39289a4-8aed-40e9-945b-8069554c9ae7
+    Retrieved desc: Mid-century modern wooden side table with a natural finish, round tabletop, and three tapered legs.
+    Retrieved size: [0.6069560050964355, 0.5407980213798496, 0.3513360023498535]
+    Original JID:  fd1551fb-5b7b-4d10-8e60-9a734269875b-(0.97)-(1.0)-(0.65)  (DIFFERENT)
+
+[14] Query: Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.
+    Query size:    [0.53, 0.66, 0.5]
+    Retrieved JID: 0fb25207-a5bf-45cc-8b52-cce170f682da
+    Retrieved desc: Mid-century modern mustard yellow armchair with button-tufted backrest, rolled arms, and tapered wooden legs.
+    Retrieved size: [0.5341799855232239, 0.6627786910015061, 0.5041520297527313]
+    Original JID:  66ccbe15-ce7c-4f9c-b640-d557289ae5a1  (DIFFERENT)
+
+[15] Query: A mustard yellow loveseat sofa with a classic rolled arms, tufted backrest, and included throw pillows, blending traditional and modern design elements.
+    Query size:    [2.06, 0.95, 0.91]
+    Retrieved JID: dbc49bb6-e9a0-4ffb-8fce-c4abfe1d0bf1-(0.88)-(1.0)-(0.86)
+    Retrieved desc: Beige loveseat sofa with traditional rolled arms, tufted back, modern decorative pillows, and nailhead trim for a stylish yet classic appeal.
+    Retrieved size: [2.06, 0.94, 0.93]
+    Original JID:  58438343-a954-4e16-aa5d-80f00ed5a0b0  (DIFFERENT)
