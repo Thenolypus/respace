@@ -1,13 +1,33 @@
 """
-Test script: Generate furniture layout from a custom floorplan and visualize as bounding boxes.
-Usage: ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan
+Test script: Generate furniture layouts from custom floorplans in batch.
+
+Directory structure:
+  input_test/
+    <unit_folder>/          e.g. "unit_1"
+      room_a.json
+      room_b.json
+      ...
+
+Output structure (written inside the unit folder):
+  input_test/
+    <unit_folder>/
+      <room_a>/
+        generated_scene.json
+        floorplan_bboxes.png
+      <room_b>/
+        generated_scene.json
+        floorplan_bboxes.png
+
+Usage:
+  ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan --unit unit_1
+  ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan --unit unit_1 --match-room-type
 """
 
 import json
 import sys
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 from matplotlib.patches import Polygon as MplPolygon
 from pathlib import Path
 from dotenv import load_dotenv
@@ -16,36 +36,69 @@ load_dotenv(".env")
 
 from src.respace import ReSpace
 
+# ============================================================================ #
+# CONFIGURATION -- tweak these to improve layout quality                       #
+# ============================================================================ #
+
+MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
+ENV_FILE = ".env"
+
+# Best-of-N for the SG-LLM placement model. Higher = more candidates, better
+# spatial layouts but slower. Default 8, try 16-32 for small/tricky rooms.
+N_BON_SGLLM = 8
+
+# Best-of-N for asset retrieval. Higher = better size/style match.
+# 1 = greedy (fast), 4-8 = stochastic (better quality).
+N_BON_ASSETS = 4
+
+# Number of few-shot (ICL) examples injected into the vanilla LLM prompt.
+# More examples = stronger guidance on what furniture belongs in a given room
+# size. 0 disables ICL entirely. Try 3-5 for better results.
+K_FEW_SHOT_SAMPLES = 2
+
+# Whether to sample object count proportionally to floor area (True) or
+# uniformly within the valid range for that floor area bin (False).
+DO_PROP_SAMPLING = True
+
+# Whether to include in-context learning examples in the vanilla LLM prompt.
+DO_ICL = True
+
+# Whether to constrain the vanilla LLM to known furniture class labels.
+DO_CLASS_LABELS = True
+
+# Use vLLM for inference (requires vllm installed and enough GPU memory).
+USE_VLLM = False
+
+# Default dataset_room_type when --match-room-type is NOT used.
+# "all" uses the full mixed dataset; "bedroom", "livingroom", etc. restricts
+# the training stats and few-shot examples to that room type only.
+DEFAULT_DATASET_ROOM_TYPE = "all"
+
+# ============================================================================ #
+
 
 def render_topdown_bboxes(scene, output_path):
     """Render a 2D top-down view of the floor plan with furniture bounding boxes."""
     fig, ax = plt.subplots(1, 1, figsize=(10, 10))
 
-    # Draw floor boundary (use x,z from bounds_bottom)
     floor_verts = [(v[0], v[2]) for v in scene["bounds_bottom"]]
     floor_poly = MplPolygon(floor_verts, closed=True, fill=True,
                             facecolor="#f5deb3", edgecolor="black", linewidth=2, label="Floor")
     ax.add_patch(floor_poly)
 
-    # Color palette for objects
     colors = plt.cm.tab10.colors
 
     for i, obj in enumerate(scene.get("objects", [])):
-        pos = obj["pos"]      # [x, y, z] - y is up
-        size = obj["size"]    # [width, height, depth]
-        rot = obj.get("rot", [0, 0, 0, 1])  # quaternion [x, y, z, w]
+        pos = obj["pos"]
+        size = obj["size"]
+        rot = obj.get("rot", [0, 0, 0, 1])
 
-        # Top-down: use x,z plane. Size: width=size[0], depth=size[2]
         w, d = size[0], size[2]
         cx, cz = pos[0], pos[2]
 
-        # Compute yaw from quaternion (rotation around y-axis)
-        # yaw = atan2(2*(w*y + x*z), 1 - 2*(y^2 + z^2)) but for y-axis rotation:
         qx, qy, qz, qw = rot
         yaw = np.arctan2(2 * (qw * qy + qx * qz), 1 - 2 * (qy**2 + qz**2))
-        angle_deg = np.degrees(yaw)
 
-        # Create rotated rectangle corners
         corners = np.array([
             [-w/2, -d/2],
             [ w/2, -d/2],
@@ -63,7 +116,6 @@ def render_topdown_bboxes(scene, output_path):
                                facecolor=(*color, 0.4), edgecolor=color, linewidth=1.5)
         ax.add_patch(bbox_poly)
 
-        # Label
         desc = obj.get("desc", f"obj_{i}")
         ax.text(cx, cz, desc, fontsize=7, ha="center", va="center",
                 color="black", fontweight="bold")
@@ -81,60 +133,120 @@ def render_topdown_bboxes(scene, output_path):
     print(f"Saved visualization to {out_file}")
 
 
-def main():
-    input_path = Path("input_test/unit_1_room_4_bedroom.json")
-    output_path = Path("input_test/3og_example/output_bedroom_3")
-    output_path.mkdir(parents=True, exist_ok=True)
-
-    # Load custom floorplan
-    with open(input_path) as f:
+def process_room(respace, room_json_path, output_dir):
+    """Run inference on a single room JSON and save results."""
+    with open(room_json_path) as f:
         scene = json.load(f)
 
-    print(f"Loaded floorplan: {input_path}")
-    print(f"Room type: {scene['room_type']}")
-    print(f"Boundary vertices: {len(scene['bounds_bottom'])}")
+    room_type = scene.get("room_type", "room")
+    print(f"  Room type: {room_type}")
+    print(f"  Boundary vertices: {len(scene['bounds_bottom'])}")
 
-    # Initialize ReSpace pipeline
-    print("Initializing ReSpace pipeline...")
-    respace = ReSpace(
-        model_id="gradient-spaces/respace-sg-llm-1.5b",
-        env_file=".env",
-        dataset_room_type="all",
-        use_gpu=True,
-        n_bon_sgllm=8,
-        n_bon_assets=4,
-    )
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Generate full scene from custom boundaries
-    print("Generating furniture layout...")
     result_scene, is_success = respace.generate_full_scene(
-        room_type=scene["room_type"],
+        room_type=room_type,
         scene_bounds_only=scene,
-        pth_viz_output=output_path,
+        pth_viz_output=output_dir,
     )
 
     if not is_success:
-        print("FAILED: Scene generation was not successful.")
-        sys.exit(1)
+        print(f"  FAILED: generation unsuccessful for {room_json_path.name}")
+        return False
 
     n_objects = len(result_scene.get("objects", []))
-    print(f"Generated {n_objects} objects")
-
-    # Print placed objects
+    print(f"  Generated {n_objects} objects")
     for i, obj in enumerate(result_scene["objects"]):
-        print(f"  [{i}] {obj.get('desc', 'unknown'):30s}  pos={obj['pos']}  size={obj['size']}")
+        print(f"    [{i}] {obj.get('desc', 'unknown'):40s}  pos={obj['pos']}  size={obj['size']}")
 
-    # Save generated scene JSON
-    scene_out_path = output_path / "generated_scene.json"
-    with open(scene_out_path, "w") as f:
+    scene_out = output_dir / "generated_scene.json"
+    with open(scene_out, "w") as f:
         json.dump(result_scene, f, indent=2)
-    print(f"Saved scene JSON to {scene_out_path}")
+    print(f"  Saved scene JSON to {scene_out}")
 
-    # Render 2D top-down bounding box visualization (no OpenGL/EGL needed)
-    print("Rendering bounding box visualization...")
-    render_topdown_bboxes(result_scene, output_path)
+    render_topdown_bboxes(result_scene, output_dir)
+    return True
 
-    print("Done!")
+
+def main():
+    parser = argparse.ArgumentParser(description="Batch generate furniture layouts from room JSONs.")
+    parser.add_argument("--unit", required=True,
+                        help="Name of the unit subfolder inside input_test/ (e.g. 'unit_1')")
+    parser.add_argument("--match-room-type", action="store_true",
+                        help="Re-initialize ReSpace per room type so dataset_room_type matches "
+                             "each room's type (bedroom, livingroom, etc.). Slower but produces "
+                             "room-type-specific few-shot examples and class labels.")
+    args = parser.parse_args()
+
+    base_dir = Path("input_test")
+    unit_dir = base_dir / args.unit
+    if not unit_dir.is_dir():
+        print(f"ERROR: unit directory not found: {unit_dir}")
+        sys.exit(1)
+
+    room_files = sorted(unit_dir.glob("*.json"))
+    if not room_files:
+        print(f"ERROR: no .json files found in {unit_dir}")
+        sys.exit(1)
+
+    print(f"Found {len(room_files)} room(s) in {unit_dir}:")
+    for f in room_files:
+        print(f"  - {f.name}")
+
+    if args.match_room_type:
+        # Group rooms by room_type, init a separate ReSpace per type
+        rooms_by_type = {}
+        for rf in room_files:
+            with open(rf) as f:
+                rt = json.load(f).get("room_type", "all")
+            rooms_by_type.setdefault(rt, []).append(rf)
+
+        for room_type, files in rooms_by_type.items():
+            print(f"\n{'=' * 60}")
+            print(f"Initializing ReSpace for room type: {room_type}")
+            print(f"{'=' * 60}")
+            respace = ReSpace(
+                model_id=MODEL_ID,
+                env_file=ENV_FILE,
+                dataset_room_type=room_type,
+                use_gpu=True,
+                n_bon_sgllm=N_BON_SGLLM,
+                n_bon_assets=N_BON_ASSETS,
+                do_prop_sampling_for_prompt=DO_PROP_SAMPLING,
+                do_icl_for_prompt=DO_ICL,
+                do_class_labels_for_prompt=DO_CLASS_LABELS,
+                k_few_shot_samples=K_FEW_SHOT_SAMPLES,
+                use_vllm=USE_VLLM,
+            )
+
+            for rf in files:
+                stem = rf.stem
+                output_dir = unit_dir / stem
+                print(f"\n--- Processing: {rf.name} -> {output_dir} ---")
+                process_room(respace, rf, output_dir)
+    else:
+        print(f"\nInitializing ReSpace (dataset_room_type={DEFAULT_DATASET_ROOM_TYPE})...")
+        respace = ReSpace(
+            model_id=MODEL_ID,
+            env_file=ENV_FILE,
+            dataset_room_type=DEFAULT_DATASET_ROOM_TYPE,
+            use_gpu=True,
+            n_bon_sgllm=N_BON_SGLLM,
+            n_bon_assets=N_BON_ASSETS,
+            do_prop_sampling_for_prompt=DO_PROP_SAMPLING,
+            do_icl_for_prompt=DO_ICL,
+            do_class_labels_for_prompt=DO_CLASS_LABELS,
+            k_few_shot_samples=K_FEW_SHOT_SAMPLES,
+            use_vllm=USE_VLLM,
+        )
+
+        for rf in room_files:
+            stem = rf.stem
+            output_dir = unit_dir / stem
+            print(f"\n--- Processing: {rf.name} -> {output_dir} ---")
+            process_room(respace, rf, output_dir)
+
+    print("\nAll done!")
 
 
 if __name__ == "__main__":
