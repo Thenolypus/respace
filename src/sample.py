@@ -1,6 +1,6 @@
 import json
 import numpy as np
-from transformers import AutoTokenizer, SiglipTextModel, SiglipTextConfig
+from transformers import AutoTokenizer, Siglip2TextModel
 import pdb
 import pickle
 import torch
@@ -29,11 +29,8 @@ class AssetRetrievalModule(nn.Module):
 		self.all_assets_metadata = json.load(open(os.getenv("PTH_ASSETS_METADATA")))
 		self.all_assets_metadata_scaled = json.load(open(os.getenv("PTH_ASSETS_METADATA_SCALED")))
 
-		# config = SiglipTextConfig.from_pretrained("google/siglip-so400m-patch14-384")
-		# config.max_position_embeddings = 64
-		# self.siglip_model = SiglipTextModel.from_pretrained("google/siglip-so400m-patch14-384", config=config)
-		self.siglip_model = SiglipTextModel.from_pretrained("google/siglip-so400m-patch14-384")
-		self.siglip_tokenizer = AutoTokenizer.from_pretrained("google/siglip-so400m-patch14-384")
+		self.siglip_model = Siglip2TextModel.from_pretrained("google/siglip2-so400m-patch14-384")
+		self.siglip_tokenizer = AutoTokenizer.from_pretrained("google/siglip2-so400m-patch14-384")
 		
 		with open(os.getenv("PTH_ASSETS_EMBED"), 'rb') as fp: 
 			model_info_martin_embeds = pickle.load(fp)
