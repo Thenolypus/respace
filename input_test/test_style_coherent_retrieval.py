@@ -40,9 +40,9 @@ def get_asset_style_fields(jid, metadata, metadata_scaled):
 		orig_jid = scaled.get("jid")
 		asset = metadata.get(orig_jid, {})
 
-	colors = {c.lower().strip() for c in asset.get("color", [])}
-	styles = {s.lower().strip() for s in asset.get("style", [])}
-	materials = {m.lower().strip() for m in asset.get("material", [])}
+	colors = {c.lower().strip() for c in (asset.get("color") or [])}
+	styles = {s.lower().strip() for s in (asset.get("style") or [])}
+	materials = {m.lower().strip() for m in (asset.get("material") or [])}
 	return colors, styles, materials
 
 
@@ -98,13 +98,23 @@ def compute_style_similarities(
 # Description stripping                                                        #
 # --------------------------------------------------------------------------- #
 
-def strip_desc_to_category(desc):
+def strip_desc_to_category(obj):
 	"""
 	Strip a full asset description to just the furniture category.
-	Uses simple_descs mapping if available, otherwise falls back to
-	extracting the last noun-phrase-ish segment.
+
+	Strategy (in priority order):
+	1. Use the 'prompt' field if present (e.g. "floor standing lamp") -- this is
+	   the short category-level label from the SG-LLM pipeline.
+	2. Look up the 'desc' in the simple_descs mapping.
+	3. Fall back to the original desc unchanged.
 	"""
-	# We load the simple_descs mapping once (cached via default arg)
+	# 1. Use prompt field (always a short category-level string)
+	prompt = obj.get("prompt")
+	if prompt:
+		return prompt
+
+	# 2. Try simple_descs mapping
+	desc = obj.get("desc", "")
 	if not hasattr(strip_desc_to_category, "_map"):
 		try:
 			import os
@@ -118,7 +128,7 @@ def strip_desc_to_category(desc):
 	if desc in strip_desc_to_category._map:
 		return strip_desc_to_category._map[desc]
 
-	# Fallback: return the original desc (no stripping available)
+	# 3. Fallback
 	return desc
 
 
@@ -161,7 +171,7 @@ def sample_scene_with_style_coherence(
 		size = obj.get("size", [])
 
 		# Optionally strip to category-only description
-		query_desc = strip_desc_to_category(desc) if do_strip_descs else desc
+		query_desc = strip_desc_to_category(obj) if do_strip_descs else desc
 
 		if do_print:
 			print(f"\n{'='*90}")
