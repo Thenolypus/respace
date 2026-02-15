@@ -72,7 +72,7 @@
           1.25,
           0.34
         ],
-        "uuid": "7a447eabd3ef4f2bb4e1fe8ed38de755",
+        "uuid": "6cc84324fa1c451b9f69893fcaa8eaec",
         "scale": [
           0.98,
           1.0,
@@ -105,7 +105,7 @@
           0.8602359642860016,
           0.7986480295658112
         ],
-        "uuid": "c3584e87f6ce4560a90bcceb0fc0e9cc",
+        "uuid": "ce95d3cc1e134f6581ed9b58988531da",
         "scale": [
           1.17,
           1.0,
@@ -138,7 +138,7 @@
           1.4577679296380666,
           1.993894100189209
         ],
-        "uuid": "fdb3f19b276b42cab7df8c7da868e460"
+        "uuid": "4b2ca86ab9e14d5d8721881fc38ef0e1"
       },
       {
         "desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
@@ -166,7 +166,7 @@
           0.7890509839576882,
           0.4781000018119812
         ],
-        "uuid": "c24cfe64ffed4c5989bc943f41437ec0",
+        "uuid": "272db61ab6b54c8d8e31d711fc10e91e",
         "scale": [
           0.77,
           1.0,
@@ -248,7 +248,7 @@
           1.25,
           0.34
         ],
-        "uuid": "dd46bbab-ea96-4540-8eb1-40195265153b",
+        "uuid": "1a0301dc-9f80-41c0-ab7e-5000024bf5a6",
         "scale": [
           0.98,
           1.0,
@@ -281,7 +281,7 @@
           0.8602359642860016,
           0.7986480295658112
         ],
-        "uuid": "e827ec84-99e7-4662-9c7d-57abd514ff95",
+        "uuid": "4b4e6f7c-e37f-4b5b-9c26-a0f39858618c",
         "scale": [
           1.17,
           1.0,
@@ -314,7 +314,7 @@
           1.4577679296380666,
           1.993894100189209
         ],
-        "uuid": "84e19519-87e1-4e17-bed2-d4a259dd41f0"
+        "uuid": "73bdd8c7-817b-4161-844c-42d31e5bba4d"
       },
       {
         "desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
@@ -342,7 +342,7 @@
           0.7890509839576882,
           0.4781000018119812
         ],
-        "uuid": "85d15317-75a1-48a4-835c-6b2a88f112c7",
+        "uuid": "05a0e025-3f7b-4324-9f36-02e14b692253",
         "scale": [
           0.77,
           1.0,
@@ -352,8 +352,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.3,
+    "lambda_style": 0.5,
     "strip_descs": true,
-    "greedy": true
+    "greedy": true,
+    "category_constrained": true
   }
 }

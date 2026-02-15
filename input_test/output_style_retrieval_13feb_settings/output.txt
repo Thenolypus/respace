@@ -1,6 +1,6 @@
-(respace) seanthen@Then-HP-Laptop-15s-eq1xxx:~/Documents/MA_Repos/respace$ uv run python -m input_test.test_style_coherent_retrieval --unit 13feb_settings --render --lambda-style 0.3
+seanthen@Then-HP-Laptop-15s-eq1xxx:~/Documents/MA_Repos/respace$ uv run python -m input_test.test_style_coherent_retrieval --unit 13feb_settings --render --lambda-style 0.5
 Uninstalled 2 packages in 25ms
-Installed 2 packages in 26ms
+Installed 2 packages in 28ms
 Found 4 generated scene(s):
   - input_test/13feb_settings/unit_1_room_1_livingroom/generated_scene.json
   - input_test/13feb_settings/unit_1_room_2_bedroom/generated_scene.json
@@ -15,7 +15,7 @@ shapes:  (38529, 1152) (38529, 3) 38529
 ##########################################################################################
 # Processing: input_test/13feb_settings/unit_1_room_1_livingroom/generated_scene.json
 # Room: unit_1_room_1_livingroom
-# lambda_style=0.3, strip_descs=True
+# lambda_style=0.5, strip_descs=True, category_constrained=True
 ##########################################################################################
 
 ==========================================================================================
@@ -24,6 +24,7 @@ OBJECT [0]
   Stripped desc:  "black footstool"
   Size: [0.55, 0.47, 0.5]
   Selected so far: 0 assets
+  Query category: footstool
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
 Weights: sem=0.500, size=0.500, style=0.000
@@ -31,14 +32,14 @@ Weights: sem=0.500, size=0.500, style=0.000
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
 #1      0.0916   0.4268   1.0000   1.0000   0.7134  black,gold           industrial,modern         A modern industrial footstool with a black metal f
-#2      0.0667   0.3580   0.9418   1.0000   0.6499  e,h,i,t,w            ,,,a,d,e,i,l,m,n,o,r,s,t  A modern, minimalist white wooden corner table wit
-#3      0.0614   0.3621   0.9048   1.0000   0.6335  a,b,c,k,l            a,b,e,o,q,r,u             Ornate black Baroque-style corner table with intri
+#2      0.0667   0.3580   0.9418   1.0000   0.6499  white                minimalist,modern         A modern, minimalist white wooden corner table wit
+#3      0.0614   0.3621   0.9048   1.0000   0.6335  black                baroque                   Ornate black Baroque-style corner table with intri
 #4      0.0607   0.4268   0.8353   1.0000   0.6310  black,gold           industrial,modern         A modern industrial footstool with a black metal f
 #5      0.0588   0.3445   0.9048   1.0000   0.6247  black,gray           minimalist,modern         A modern minimalist cylindrical marble side table 
 #6      0.0551   0.3367   0.8869   1.0000   0.6118  black                minimalist,modern         A sleek, black, modern minimalist dining chair wit
 #7      0.0536   0.4255   0.7866   1.0000   0.6061  dark brown           classic,victorian         Elegant Victorian-style wooden footstool with orna
-#8      0.0531   0.2476   0.9608   1.0000   0.6042  bronze,brown         ,a,c,e,h,i,l,m,n,o,p,r,s  A contemporary pendant lamp with a rustic touch, f
-#9      0.0520   0.3978   0.8025   1.0000   0.6002  black,gray           ,,,a,d,e,i,l,m,n,o,r,s,t  This modern minimalist corner table features a sle
+#8      0.0531   0.2476   0.9608   1.0000   0.6042  bronze,brown         contemporary with rustic  A contemporary pendant lamp with a rustic touch, f
+#9      0.0520   0.3978   0.8025   1.0000   0.6002  black,gray           minimalist,modern         This modern minimalist corner table features a sle
 #10     0.0503   0.3848   0.8025   1.0000   0.5937  black                minimalist,modern         Modern minimalist black coffee table with wood and
 
   >> SELECTED: A modern industrial footstool with a black metal frame and gold X-brac
@@ -50,25 +51,26 @@ OBJECT [1]
   Stripped desc:  "floor standing lamp"
   Size: [0.36, 1.66, 0.31]
   Selected so far: 1 assets
+  Query category: lamp
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0790   0.4727   0.7558   0.5500   0.5950  gold                 minimalist,modern         A modern minimalist gold metal floor lamp with dua
-#2      0.0767   0.4640   0.9048   0.3667   0.5891  gold,white           minimalist,modern         A modern minimalist floor lamp with a gold metal s
-#3      0.0761   0.4954   0.7118   0.5500   0.5875  black                minimalist,modern         A modern minimalist black metal floor lamp featuri
-#4      0.0731   0.4727   0.7118   0.5500   0.5796  gold                 minimalist,modern         A modern minimalist gold metal floor lamp with dua
-#5      0.0600   0.5302   0.7558   0.3000   0.5401  a,b,c,k,l            minimalist,modern         A sleek, minimalist black metal floor lamp with a 
-#6      0.0545   0.4618   0.7118   0.3667   0.5208  gold,white           minimalist,modern         A modern minimalist floor lamp with a gold metal f
-#7      0.0540   0.5063   0.6977   0.3250   0.5189  frosted glass,gold,  minimalist,modern         Modern minimalist floor lamp with frosted glass sh
-#8      0.0501   0.4513   0.5599   0.5000   0.5039  black,gold,pink      classic,modern            A modern floor lamp with a pink cylindrical fabric
-#9      0.0466   0.4900   0.5945   0.3667   0.4896  black,grey           contemporary,industrial   A contemporary-industrial floor lamp with a tall, 
-#10     0.0455   0.5104   0.5599   0.3667   0.4846  gold,white           minimalist,modern         Elegant modern minimalist floor lamp with gold met
+#1      0.0956   0.4640   0.9048   1.0000   0.6844  gold,white           minimalist,modern         A modern minimalist floor lamp with a gold metal s
+#2      0.0777   0.5302   0.7558   1.0000   0.6430  black                minimalist,modern         A sleek, minimalist black metal floor lamp with a 
+#3      0.0673   0.4727   0.7558   1.0000   0.6142  gold                 minimalist,modern         A modern minimalist gold metal floor lamp with dua
+#4      0.0638   0.4954   0.7118   1.0000   0.6036  black                minimalist,modern         A modern minimalist black metal floor lamp featuri
+#5      0.0633   0.5063   0.6977   1.0000   0.6020  frosted glass,gold,  minimalist,modern         Modern minimalist floor lamp with frosted glass sh
+#6      0.0603   0.4727   0.7118   1.0000   0.5922  gold                 minimalist,modern         A modern minimalist gold metal floor lamp with dua
+#7      0.0598   0.4972   0.6839   1.0000   0.5905  black,blue,white     asian-inspired,modern     Modern Asian-inspired floor lamp with geometric me
+#8      0.0587   0.4618   0.7118   1.0000   0.5868  gold,white           minimalist,modern         A modern minimalist floor lamp with a gold metal f
+#9      0.0524   0.5685   0.5599   1.0000   0.5642  white                minimalist,modern         A minimalist modern floor lamp featuring a slim me
+#10     0.0524   0.5685   0.5599   1.0000   0.5642  white                minimalist,modern         A minimalist modern floor lamp featuring a slim me
 
-  >> SELECTED: A modern minimalist gold metal floor lamp with dual light bulbs, cylin
-     Colors: ['gold']  Styles: ['minimalist', 'modern']  Materials: ['metal']
+  >> SELECTED: A modern minimalist floor lamp with a gold metal spherical shade and s
+     Colors: ['gold', 'white']  Styles: ['minimalist', 'modern']  Materials: ['glass', 'metal']
 
 ==========================================================================================
 OBJECT [2]
@@ -76,22 +78,23 @@ OBJECT [2]
   Stripped desc:  "low wooden coffee table"
   Size: [1.3, 0.4, 0.7]
   Selected so far: 2 assets
+  Query category: table
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0687   0.5581   1.0000   0.3833   0.6603  black,brown          industrial,modern         Industrial-modern coffee table with a thick wooden
-#2      0.0669   0.3984   0.9802   0.5750   0.6550  black,gold           contemporary,modern       Modern black and gold metal coffee table with glas
-#3      0.0669   0.3984   0.9802   0.5750   0.6550  black,gold           contemporary,modern       Modern black and gold metal coffee table with glas
-#4      0.0647   0.3324   0.9418   0.6750   0.6485  black,gold           minimalist,modern         Modern minimalist black metal and glass coffee tab
-#5      0.0646   0.4209   0.9802   0.5250   0.6479  black                minimalist,modern         A modern minimalist black metal coffee table with 
-#6      0.0640   0.5371   0.9802   0.3833   0.6461  black,light brown    minimalist,modern         This modern minimalist coffee table features a spl
-#7      0.0624   0.4410   0.7261   0.7750   0.6410  gold                 minimalist,modern         A modern, minimalist gold metal coffee table with 
-#8      0.0586   0.3984   0.9048   0.5750   0.6286  black,gold           contemporary,modern       Modern black and gold metal coffee table with glas
-#9      0.0513   0.5181   0.9231   0.3250   0.6019  black                ,,,a,d,e,i,l,m,n,o,r,s,t  A modern, minimalist black metal coffee table with
-#10     0.0501   0.4628   1.0000   0.2833   0.5970  black,white          minimalist,modern         Modern minimalist coffee table with black and whit
+#1      0.0710   0.5581   1.0000   1.0000   0.7791  black,brown          industrial,modern         Industrial-modern coffee table with a thick wooden
+#2      0.0641   0.5371   0.9802   1.0000   0.7587  black,light brown    minimalist,modern         This modern minimalist coffee table features a spl
+#3      0.0615   0.5006   1.0000   1.0000   0.7503  black,white          modern                    A modern, two-toned black and white rectangular te
+#4      0.0577   0.5143   0.9608   1.0000   0.7376  brown                contemporary,modern       A contemporary modern rectangular brown wooden cof
+#5      0.0560   0.4628   1.0000   1.0000   0.7314  black,white          minimalist,modern         Modern minimalist coffee table with black and whit
+#6      0.0560   0.4628   1.0000   1.0000   0.7314  black,white          minimalist,modern         Modern minimalist coffee table with black and whit
+#7      0.0533   0.4628   0.9802   1.0000   0.7215  black,white          minimalist,modern         Modern minimalist coffee table with black and whit
+#8      0.0530   0.5181   0.9231   1.0000   0.7206  black                minimalist,modern         A modern, minimalist black metal coffee table with
+#9      0.0524   0.5134   0.9231   1.0000   0.7182  dark brown,gray,lig  contemporary,modern       A modern coffee table with a dark brown rectangula
+#10     0.0506   0.5181   0.9048   1.0000   0.7115  black                minimalist,modern         A modern, minimalist black metal coffee table with
 
   >> SELECTED: Industrial-modern coffee table with a thick wooden top, black metal ba
      Colors: ['black', 'brown']  Styles: ['industrial', 'modern']  Materials: ['metal', 'wood']
@@ -102,22 +105,23 @@ OBJECT [3]
   Stripped desc:  "modern grey couch"
   Size: [2.01, 0.89, 0.85]
   Selected so far: 3 assets
+  Query category: sofa
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1122   0.4953   0.9802   0.1778   0.5697  black,green,grey,or  contemporary,modern       Modern three-seat sofa with grey fabric, wooden le
-#2      0.0659   0.3524   0.9048   0.0778   0.4634  blue,brown           ,a,d,e,h,i,l,m,n,o,r,s,t  Modern three-seat sofa with a minimalist wooden fr
-#3      0.0628   0.3601   0.8025   0.1556   0.4536  brown,multicolor     modern,transitional       A modern transitional brown leather loveseat with 
-#4      0.0620   0.3700   0.6570   0.3056   0.4511  dark green,gold      minimalist,modern         Modern minimalist dark green velvet loveseat sofa 
-#5      0.0618   0.4562   0.8025   0.0333   0.4505  blue,brown,grey,yel  ,a,c,d,e,f,g,h,i,l,m,n,o  Versatile contemporary grey three-seat sofa with c
-#6      0.0560   0.4424   0.6839   0.1222   0.4309  dark brown,grey      classic,modern            Classic-modern three-seat sofa with a grey fabric 
-#7      0.0541   0.5711   0.4966   0.1667   0.4237  gray                 minimalist,modern         Modern gray loveseat sofa with minimalist design, 
-#8      0.0522   0.4841   0.6065   0.1167   0.4167  colorful pillows,gr  minimalist,modern,sleek   A modern, minimalist three-seat sofa with a sleek 
-#9      0.0486   0.3500   0.6570   0.1667   0.4025  navy blue            minimalist,modern         Modern minimalist navy blue velvet loveseat with p
-#10     0.0483   0.3674   0.5599   0.2556   0.4012  lime green           minimalist,modern         A modern minimalist lime green two-seater lounge c
+#1      0.1435   0.4953   0.9802   1.0000   0.7377  black,green,grey,or  contemporary,modern       Modern three-seat sofa with grey fabric, wooden le
+#2      0.0834   0.4562   0.8025   1.0000   0.6293  blue,brown,grey,yel  contemporary with elemen  Versatile contemporary grey three-seat sofa with c
+#3      0.0831   0.3524   0.9048   1.0000   0.6286  blue,brown           modern with minimalist e  Modern three-seat sofa with a minimalist wooden fr
+#4      0.0656   0.3601   0.8025   1.0000   0.5813  brown,multicolor     modern,transitional       A modern transitional brown leather loveseat with 
+#5      0.0599   0.4424   0.6839   1.0000   0.5631  dark brown,grey      classic,modern            Classic-modern three-seat sofa with a grey fabric 
+#6      0.0548   0.4841   0.6065   1.0000   0.5453  colorful pillows,gr  minimalist,modern,sleek   A modern, minimalist three-seat sofa with a sleek 
+#7      0.0518   0.5711   0.4966   1.0000   0.5339  gray                 minimalist,modern         Modern gray loveseat sofa with minimalist design, 
+#8      0.0468   0.3700   0.6570   1.0000   0.5135  dark green,gold      minimalist,modern         Modern minimalist dark green velvet loveseat sofa 
+#9      0.0445   0.3500   0.6570   1.0000   0.5035  navy blue            minimalist,modern         Modern minimalist navy blue velvet loveseat with p
+#10     0.0417   0.3989   0.5827   1.0000   0.4908  beige                minimalist,modern         Modern minimalist beige loveseat sofa with clean l
 
   >> SELECTED: Modern three-seat sofa with grey fabric, wooden legs, and diverse deco
      Colors: ['black', 'green', 'grey', 'orange', 'white']  Styles: ['contemporary', 'modern']  Materials: ['fabric', 'wood']
@@ -128,25 +132,26 @@ OBJECT [4]
   Stripped desc:  "pendant lamp"
   Size: [0.16, 0.78, 0.16]
   Selected so far: 4 assets
+  Query category: lamp
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.250, size=0.250, style=0.500
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0840   0.5430   1.0000   0.2750   0.6225  black                ,,,a,d,e,i,l,m,n,o,r,s,t  Industrial-modern pendant lamp with black metal ca
-#2      0.0806   0.5354   0.9048   0.3667   0.6141  black                minimalist,modern         A modern minimalist rectangular black pendant lamp
-#3      0.0698   0.5176   0.9231   0.2708   0.5855  clear,gold           luxurious,modern          A modern and luxurious pendant lamp featuring a go
-#4      0.0684   0.4031   0.9608   0.3470   0.5815  black,clear,gold     contemporary,mid-century  A modern mid-century pendant lamp with black metal
-#5      0.0655   0.5354   0.7866   0.3667   0.5727  black                minimalist,modern         A modern minimalist rectangular black pendant lamp
-#6      0.0601   0.5149   0.8869   0.2167   0.5557  black,white          ,,,-,a,d,e,i,m,n,o,p,r,s  A modern Asian-inspired pendant lamp with black me
-#7      0.0539   0.5371   0.8025   0.2167   0.5339  clear,white          minimalist,modern         Modern minimalist pendant lamp with a cylindrical 
-#8      0.0509   0.4038   0.9418   0.1708   0.5222  gold,pink            ,,,a,d,e,g,l,m,n,o,r      A modern glam pendant lamp featuring a gold circul
-#9      0.0474   0.3787   0.8187   0.2970   0.5082  black,purple,silver  contemporary,modern       A modern, contemporary pendant lamp featuring five
-#10     0.0453   0.4463   0.9048   0.0875   0.4992  gray,white           a,c,e,m,n,o,p,r,t,y       A modern cylindrical pendant lamp in gray metal wi
+#1      0.0581   0.4268   0.6065   0.8000   0.6583  gold,white           industrial,modern         A modern industrial gold metal pendant lamp with a
+#2      0.0547   0.5858   0.0000   1.0000   0.6465  gold,white           minimalist,modern         This modern minimalist pendant lamp features a sle
+#3      0.0547   0.5858   0.0000   1.0000   0.6465  gold,white           minimalist,modern         This modern minimalist pendant lamp features a sle
+#4      0.0542   0.5780   0.0000   1.0000   0.6445  gold,white           minimalist,modern         This pendant lamp features a modern minimalist des
+#5      0.0542   0.5780   0.0000   1.0000   0.6445  gold,white           minimalist,modern         This pendant lamp features a modern minimalist des
+#6      0.0531   0.5439   0.0180   1.0000   0.6405  gold,white           minimalist,modern         A modern minimalist pendant lamp with a white cone
+#7      0.0526   0.5546   0.0000   1.0000   0.6386  gold,white           minimalist,modern         A modern minimalist gold pendant lamp with multipl
+#8      0.0526   0.5546   0.0000   1.0000   0.6386  gold,white           minimalist,modern         A modern minimalist gold pendant lamp with multipl
+#9      0.0519   0.5439   0.0000   1.0000   0.6360  gold,white           minimalist,modern         A modern minimalist pendant lamp with a white cone
+#10     0.0519   0.5439   0.0000   1.0000   0.6360  gold,white           minimalist,modern         A modern minimalist pendant lamp with a white cone
 
-  >> SELECTED: Industrial-modern pendant lamp with black metal cage design and cylind
-     Colors: ['black']  Styles: ['', ',', 'a', 'd', 'e', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u']  Materials: ['metal']
+  >> SELECTED: A modern industrial gold metal pendant lamp with a circular design, 12
+     Colors: ['gold', 'white']  Styles: ['industrial', 'modern']  Materials: ['glass', 'metal']
 
 ==========================================================================================
 OBJECT [5]
@@ -154,25 +159,26 @@ OBJECT [5]
   Stripped desc:  "round end table"
   Size: [0.42, 0.63, 0.42]
   Selected so far: 5 assets
+  Query category: end_table
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0842   0.4725   1.0000   0.4333   0.6454  black,silver         industrial,modern         A modern industrial corner side table with a minim
-#2      0.0787   0.4725   0.9608   0.4333   0.6316  black,silver         industrial,modern         A modern industrial corner side table with a minim
-#3      0.0660   0.4171   0.9418   0.4033   0.5966  black,gold           contemporary,minimalist   A contemporary minimalist side table featuring a b
-#4      0.0650   0.4725   0.8521   0.4333   0.5936  black,silver         industrial,modern         A modern industrial corner side table with a minim
-#5      0.0540   0.4574   0.8025   0.3847   0.5564  black                a,c,e,m,n,o,p,r,t,y       Curved black metal contemporary side table with op
-#6      0.0532   0.5519   0.9608   0.0800   0.5534  dark brown           ,a,c,d,e,f,h,i,l,n,o,r,s  A traditional dark brown wooden round end table fe
-#7      0.0519   0.3849   0.8025   0.4433   0.5486  black,gold           modern,oriental           A modern Oriental side table with black wood const
-#8      0.0498   0.4463   0.9048   0.2243   0.5402  black,metallic gold  ,,,-,a,c,d,e,i,m,n,o,p,r  Contemporary mustard yellow round nightstand with 
-#9      0.0496   0.4725   0.6977   0.4333   0.5396  black,silver         industrial,modern         A modern industrial corner side table with a minim
-#10     0.0491   0.4456   0.7558   0.3900   0.5375  black,white          industrial,modern         Innovative modern-industrial pendant lamp with geo
+#1      0.0763   0.5519   0.9608   1.0000   0.7563  dark brown           traditional with orienta  A traditional dark brown wooden round end table fe
+#2      0.0690   0.4725   1.0000   1.0000   0.7362  black,silver         industrial,modern         A modern industrial corner side table with a minim
+#3      0.0658   0.4925   0.9608   1.0000   0.7266  natural wood         mid-century modern        Mid-century modern corner table with a natural woo
+#4      0.0626   0.4725   0.9608   1.0000   0.7166  black,silver         industrial,modern         A modern industrial corner side table with a minim
+#5      0.0595   0.5778   0.8353   1.0000   0.7065  distressed white     modern,rustic             Distressed white round end table with a rustic-mod
+#6      0.0572   0.4925   0.9048   1.0000   0.6987  natural wood         mid-century modern        Mid-century modern corner table with a natural woo
+#7      0.0520   0.4171   0.9418   1.0000   0.6794  black,gold           contemporary,minimalist   A contemporary minimalist side table featuring a b
+#8      0.0518   0.4163   0.9418   1.0000   0.6790  gold,green           modern                    Modern corner table with a green marble cylindrica
+#9      0.0510   0.4463   0.9048   1.0000   0.6756  black,metallic gold  contemporary,mid-century  Contemporary mustard yellow round nightstand with 
+#10     0.0501   0.4925   0.8521   1.0000   0.6723  natural wood         mid-century modern        Mid-century modern corner table with a natural woo
 
-  >> SELECTED: A modern industrial corner side table with a minimalist metal three-le
-     Colors: ['black', 'silver']  Styles: ['industrial', 'modern']  Materials: ['metal']
+  >> SELECTED: A traditional dark brown wooden round end table featuring an ornamenta
+     Colors: ['dark brown']  Styles: ['traditional with oriental influences']  Materials: ['wood']
 
 ==========================================================================================
 OBJECT [6]
@@ -180,22 +186,23 @@ OBJECT [6]
   Stripped desc:  "tv stand"
   Size: [1.83, 0.48, 0.36]
   Selected so far: 6 assets
+  Query category: tvstand
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0834   0.5037   0.8869   0.4306   0.6159  black,gold           luxury,modern             Modern luxury TV stand with geometric pattern, bla
-#2      0.0777   0.5905   0.6839   0.5194   0.6019  black                industrial,modern         Black TV stand with a modern industrial style feat
-#3      0.0671   0.5669   0.8025   0.3103   0.5724  black,brown,white    ,,,a,d,e,i,l,m,n,o,r,s,t  A modern minimalist TV stand with a blend of wood 
-#4      0.0671   0.5669   0.8025   0.3103   0.5724  black,brown,white    ,,,a,d,e,i,l,m,n,o,r,s,t  A modern minimalist TV stand with a blend of wood 
-#5      0.0657   0.4697   0.7558   0.4639   0.5681  black,gold           contemporary,modern       Modern black TV stand with sleek lines, geometric 
-#6      0.0560   0.5905   0.4966   0.5194   0.5363  black                industrial,modern         Black TV stand with a modern industrial style feat
-#7      0.0520   0.5524   0.8187   0.1389   0.5216  light brown          minimalist,modern         This modern, minimalist TV stand features a light 
-#8      0.0500   0.5037   0.5945   0.4306   0.5135  black,gold           luxury,modern             Modern luxury TV stand with geometric pattern, bla
-#9      0.0482   0.4894   0.8025   0.1801   0.5062  brown,gray           ,,,-,a,c,d,e,i,l,m,n,o,r  Mid-century modern TV stand with industrial elemen
-#10     0.0474   0.6027   0.7558   0.0917   0.5030  brown                mid-century modern,minim  A mid-century modern minimalist brown wooden TV st
+#1      0.0689   0.5037   0.8869   1.0000   0.6953  black,gold           luxury,modern             Modern luxury TV stand with geometric pattern, bla
+#2      0.0656   0.5524   0.8187   1.0000   0.6856  light brown          minimalist,modern         This modern, minimalist TV stand features a light 
+#3      0.0653   0.5669   0.8025   1.0000   0.6847  black,brown,white    minimalist,modern         A modern minimalist TV stand with a blend of wood 
+#4      0.0653   0.5669   0.8025   1.0000   0.6847  black,brown,white    minimalist,modern         A modern minimalist TV stand with a blend of wood 
+#5      0.0644   0.5447   0.8187   1.0000   0.6817  natural wood         mid-century modern        A sleek mid-century modern TV stand with a natural
+#6      0.0636   0.6027   0.7558   1.0000   0.6793  brown                mid-century modern,minim  A mid-century modern minimalist brown wooden TV st
+#7      0.0625   0.3911   0.9608   1.0000   0.6759  walnut brown         minimalist,modern         Modern walnut brown TV stand with minimalist desig
+#8      0.0611   0.3424   1.0000   1.0000   0.6712  grey,off-white,waln  mid-century modern        Mid-century modern TV stand with walnut finish, fe
+#9      0.0538   0.4894   0.8025   1.0000   0.6459  brown,gray           industrial,mid-century m  Mid-century modern TV stand with industrial elemen
+#10     0.0520   0.3911   0.8869   1.0000   0.6390  walnut brown         minimalist,modern         Modern walnut brown TV stand with minimalist desig
 
   >> SELECTED: Modern luxury TV stand with geometric pattern, black and gold colors, 
      Colors: ['black', 'gold']  Styles: ['luxury', 'modern']  Materials: ['metal', 'wood']
@@ -206,22 +213,23 @@ OBJECT [7]
   Stripped desc:  "white leather armchair"
   Size: [0.93, 0.96, 1.0]
   Selected so far: 7 assets
+  Query category: armchair
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1074   0.5080   1.0000   0.2667   0.6078  black,dark grey      contemporary,modern       This modern contemporary armchair features quilted
-#2      0.0940   0.2687   0.9608   0.5024   0.5810  black,gold           geometric,modern          Modern geometric black and gold metal pendant lamp
-#3      0.0850   0.4221   0.8869   0.3429   0.5610  black,gray           minimalist,modern         This modern minimalist lounge chair features a gra
-#4      0.0760   0.4481   0.9608   0.1512   0.5385  brown,dark grey,lig  minimalistic,modern       Modern minimalistic armchair with light beige fabr
-#5      0.0527   0.3071   0.8025   0.2571   0.4655  black,cream          contemporary,minimalist   This contemporary pendant lamp features six fabric
-#6      0.0478   0.3540   0.6977   0.2595   0.4459  bronze,white         industrial,modern         This modern industrial pendant lamp features geome
-#7      0.0475   0.3613   0.5169   0.4571   0.4445  black,bronze         industrial,modern         Modern industrial pendant lamp with a linear metal
-#8      0.0456   0.2952   0.5599   0.4571   0.4364  black                geometric,modern          Modern geometric black metal pendant lamp with fac
-#9      0.0456   0.3171   0.6440   0.3333   0.4364  black,brown          minimalist,modern         Modern minimalist lounge chair with squared brown 
-#10     0.0452   0.3132   0.6839   0.2857   0.4347  black,dark brown     contemporary,modern       Contemporary black leather lounge chair with curve
+#1      0.1403   0.5080   1.0000   1.0000   0.7540  black,dark grey      contemporary,modern       This modern contemporary armchair features quilted
+#2      0.1095   0.4481   0.9608   1.0000   0.7045  brown,dark grey,lig  minimalistic,modern       Modern minimalistic armchair with light beige fabr
+#3      0.0853   0.4221   0.8869   1.0000   0.6545  black,gray           minimalist,modern         This modern minimalist lounge chair features a gra
+#4      0.0699   0.2687   0.9608   1.0000   0.6147  black,gold           geometric,modern          Modern geometric black and gold metal pendant lamp
+#5      0.0633   0.4778   0.7118   1.0000   0.5948  brown                modern                    A modern brown leather armchair with plush cushion
+#6      0.0518   0.3071   0.8025   1.0000   0.5548  black,cream          contemporary,minimalist   This contemporary pendant lamp features six fabric
+#7      0.0460   0.4430   0.6188   1.0000   0.5309  blue                 contemporary,transitiona  A contemporary-transitional blue fabric armchair w
+#8      0.0448   0.3540   0.6977   1.0000   0.5258  bronze,white         industrial,modern         This modern industrial pendant lamp features geome
+#9      0.0393   0.2430   0.7558   1.0000   0.4994  dark gray,teal (pil  contemporary,modern       A modern high-back armchair with dark gray fabric,
+#10     0.0391   0.3132   0.6839   1.0000   0.4985  black,dark brown     contemporary,modern       Contemporary black leather lounge chair with curve
 
   >> SELECTED: This modern contemporary armchair features quilted dark grey fabric up
      Colors: ['black', 'dark grey']  Styles: ['contemporary', 'modern']  Materials: ['fabric', 'leather']
@@ -231,16 +239,16 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 ==========================================================================================
 [0] A modern industrial footstool with a black metal frame and g
      Colors: ['black', 'gold']  Styles: ['industrial', 'modern']
-[1] A modern minimalist gold metal floor lamp with dual light bu
-     Colors: ['gold']  Styles: ['minimalist', 'modern']
+[1] A modern minimalist floor lamp with a gold metal spherical s
+     Colors: ['gold', 'white']  Styles: ['minimalist', 'modern']
 [2] Industrial-modern coffee table with a thick wooden top, blac
      Colors: ['black', 'brown']  Styles: ['industrial', 'modern']
 [3] Modern three-seat sofa with grey fabric, wooden legs, and di
      Colors: ['black', 'green', 'grey', 'orange', 'white']  Styles: ['contemporary', 'modern']
-[4] Industrial-modern pendant lamp with black metal cage design 
-     Colors: ['black']  Styles: ['', ',', 'a', 'd', 'e', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u']
-[5] A modern industrial corner side table with a minimalist meta
-     Colors: ['black', 'silver']  Styles: ['industrial', 'modern']
+[4] A modern industrial gold metal pendant lamp with a circular 
+     Colors: ['gold', 'white']  Styles: ['industrial', 'modern']
+[5] A traditional dark brown wooden round end table featuring an
+     Colors: ['dark brown']  Styles: ['traditional with oriental influences']
 [6] Modern luxury TV stand with geometric pattern, black and gol
      Colors: ['black', 'gold']  Styles: ['luxury', 'modern']
 [7] This modern contemporary armchair features quilted dark grey
@@ -261,9 +269,9 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 [3] Modern three-seat sofa with grey fabric, wooden legs, and di
      Colors: ['black', 'green', 'grey', 'orange', 'white']  Styles: ['contemporary', 'modern']
 [4] Industrial-modern pendant lamp with black metal cage design 
-     Colors: ['black']  Styles: ['', ',', 'a', 'd', 'e', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u']
+     Colors: ['black']  Styles: ['industrial', 'modern']
 [5] Classic gray round end table with ornate carved details, fou
-     Colors: ['gray']  Styles: ['a', 'c', 'i', 'l', 's']
+     Colors: ['gray']  Styles: ['classic']
 [6] Mid-century modern TV stand with walnut finish, featuring tw
      Colors: ['grey', 'off-white', 'walnut']  Styles: ['mid-century modern']
 [7] This modern contemporary armchair features quilted dark grey
@@ -278,7 +286,7 @@ Saved renders to input_test/output_style_retrieval_13feb_settings/unit_1_room_1_
 ##########################################################################################
 # Processing: input_test/13feb_settings/unit_1_room_2_bedroom/generated_scene.json
 # Room: unit_1_room_2_bedroom
-# lambda_style=0.3, strip_descs=True
+# lambda_style=0.5, strip_descs=True, category_constrained=True
 ##########################################################################################
 
 ==========================================================================================
@@ -287,6 +295,7 @@ OBJECT [0]
   Stripped desc:  "black wooden bed frame"
   Size: [2.3, 0.78, 2.42]
   Selected so far: 0 assets
+  Query category: bed
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
 Weights: sem=0.500, size=0.500, style=0.000
@@ -294,9 +303,9 @@ Weights: sem=0.500, size=0.500, style=0.000
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
 #1      0.2924   0.4684   1.0000   1.0000   0.7342  charcoal,dark brown  minimalist,modern         Modern minimalist king-size bed with dark brown fa
-#2      0.1185   0.6105   0.4966   1.0000   0.5535  a,b,c,k,l            d,e,m,n,o,r               Modern black wooden bed frame with minimalist rect
+#2      0.1185   0.6105   0.4966   1.0000   0.5535  black                modern                    Modern black wooden bed frame with minimalist rect
 #3      0.0563   0.4028   0.4066   1.0000   0.4047  black,white          minimalist,modern         Modern minimalist bed with tufted black headboard 
-#4      0.0357   0.5161   0.1108   1.0000   0.3135  gray,natural wood    d,e,m,n,o,r               Modern King-size bed with a wooden headboard, gray
+#4      0.0357   0.5161   0.1108   1.0000   0.3135  gray,natural wood    modern                    Modern King-size bed with a wooden headboard, gray
 #5      0.0336   0.6029   0.0000   1.0000   0.3015  black,dark brown,te  minimalist,modern         Modern minimalist king-size bed with dark brown wo
 #6      0.0334   0.6011   0.0000   1.0000   0.3006  natural wood         farmhouse,rustic          A rustic farmhouse-style bed frame featuring natur
 #7      0.0334   0.6011   0.0000   1.0000   0.3006  natural wood         farmhouse,rustic          A rustic farmhouse-style bed frame featuring natur
@@ -313,25 +322,26 @@ OBJECT [1]
   Stripped desc:  "blue velvet lounge chair"
   Size: [0.8, 0.81, 0.75]
   Selected so far: 1 assets
+  Query category: chair
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0791   0.3221   0.9608   0.4667   0.5890  beige,dark brown     minimalist,modern         Modern minimalist lounge chair with rectangular da
-#2      0.0771   0.4635   0.9048   0.3500   0.5839  dark brown           mid-century modern,minim  Mid-century modern dark brown lounge chair with wo
-#3      0.0765   0.3221   0.9418   0.4667   0.5823  beige,dark brown     minimalist,modern         Modern minimalist lounge chair with rectangular da
-#4      0.0564   0.3969   0.8353   0.3000   0.5213  brown,grey           minimalist,modern         Modern minimalist armchair with grey fabric cushio
-#5      0.0557   0.3396   1.0000   0.1667   0.5189  black,brown          mid-century,modern        A modern mid-century lounge chair with a brown vel
-#6      0.0554   0.5204   0.8521   0.1250   0.5179  blue,dark brown,gre  ,a,c,d,e,h,i,l,m,n,o,p,r  A contemporary dining chair featuring a blue plush
-#7      0.0536   0.5183   0.9418   0.0000   0.5110  b,e,g,i              ,,,a,d,e,i,l,m,n,o,r,s,t  A modern, minimalist armchair featuring a beige fa
-#8      0.0522   0.4393   0.5488   0.5333   0.5058  dark brown,natural   minimalist,modern         A modern minimalist armchair with a natural wood f
-#9      0.0511   0.4198   0.7558   0.3000   0.5015  beige,light wood     minimalist,modern         A modern minimalist armchair with a light wood fra
-#10     0.0491   0.5051   0.9048   0.0000   0.4935  dark grey,grey       contemporary,mid-century  This contemporary mid-century modern armchair feat
+#1      0.0797   0.5183   0.9418   1.0000   0.7301  beige                minimalist,modern         A modern, minimalist armchair featuring a beige fa
+#2      0.0703   0.5051   0.9048   1.0000   0.7050  dark grey,grey       contemporary,mid-century  This contemporary mid-century modern armchair feat
+#3      0.0640   0.5204   0.8521   1.0000   0.6863  blue,dark brown,gre  contemporary with modern  A contemporary dining chair featuring a blue plush
+#4      0.0633   0.4635   0.9048   1.0000   0.6842  dark brown           mid-century modern,minim  Mid-century modern dark brown lounge chair with wo
+#5      0.0589   0.3396   1.0000   1.0000   0.6698  black,brown          mid-century,modern        A modern mid-century lounge chair with a brown vel
+#6      0.0517   0.3821   0.9048   1.0000   0.6434  gold                 art deco,modern           This modern Art Deco pendant lamp features an intr
+#7      0.0511   0.3221   0.9608   1.0000   0.6414  beige,dark brown     minimalist,modern         Modern minimalist lounge chair with rectangular da
+#8      0.0508   0.3568   0.9231   1.0000   0.6400  light pink           contemporary,modern       Modern light pink lounge chair with a curved backr
+#9      0.0492   0.2869   0.9802   1.0000   0.6335  bronze,gray          contemporary,modern       A contemporary-modern lounge chair with a curved s
+#10     0.0488   0.3221   0.9418   1.0000   0.6319  beige,dark brown     minimalist,modern         Modern minimalist lounge chair with rectangular da
 
-  >> SELECTED: Modern minimalist lounge chair with rectangular dark brown metal frame
-     Colors: ['beige', 'dark brown']  Styles: ['minimalist', 'modern']  Materials: ['fabric cushion', 'metal frame']
+  >> SELECTED: A modern, minimalist armchair featuring a beige fabric cushion and a s
+     Colors: ['beige']  Styles: ['minimalist', 'modern']  Materials: ['fabric', 'wood']
 
 ==========================================================================================
 OBJECT [2]
@@ -339,25 +349,26 @@ OBJECT [2]
   Stripped desc:  "green glass pendant lamp"
   Size: [0.84, 1.03, 0.84]
   Selected so far: 2 assets
+  Query category: lamp
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0672   0.4416   0.8869   0.2833   0.5500  beige,white          industrial,minimalist,mo  A modern industrial pendant lamp featuring a cylin
-#2      0.0643   0.4862   0.8025   0.3000   0.5410  clear,gold           minimalist,modern         A modern minimalist pendant lamp featuring an elon
-#3      0.0637   0.3972   0.8869   0.3000   0.5395  black,silver         minimalist,modern         Modern and minimalist pendant lamp with a rectangu
-#4      0.0621   0.4622   1.0000   0.0750   0.5343  brown,clear          contemporary,industrial,  A modern industrial pendant lamp featuring a circu
-#5      0.0583   0.4438   0.9608   0.1000   0.5216  black,chrome         industrial,modern         A modern industrial black metal pendant lamp with 
-#6      0.0580   0.4622   0.9608   0.0750   0.5205  brown,clear          contemporary,industrial,  A modern industrial pendant lamp featuring a circu
-#7      0.0563   0.4898   0.9802   0.0000   0.5145  black                contemporary,industrial   This black metal contemporary industrial pendant l
-#8      0.0561   0.3358   0.9608   0.2000   0.5138  black,gold           contemporary,minimalist,  Modern adjustable pendant lamp with branching blac
-#9      0.0553   0.2609   0.9418   0.3000   0.5109  gray                 minimalist,modern         Modern, minimalist gray lounge chair with ergonomi
-#10     0.0526   0.4898   0.9418   0.0000   0.5010  black                contemporary,industrial   This black metal contemporary industrial pendant l
+#1      0.0781   0.4898   0.9802   1.0000   0.7350  black                contemporary,industrial   This black metal contemporary industrial pendant l
+#2      0.0766   0.4622   1.0000   1.0000   0.7311  brown,clear          contemporary,industrial,  A modern industrial pendant lamp featuring a circu
+#3      0.0710   0.4898   0.9418   1.0000   0.7158  black                contemporary,industrial   This black metal contemporary industrial pendant l
+#4      0.0695   0.4622   0.9608   1.0000   0.7115  brown,clear          contemporary,industrial,  A modern industrial pendant lamp featuring a circu
+#5      0.0664   0.4438   0.9608   1.0000   0.7023  black,chrome         industrial,modern         A modern industrial black metal pendant lamp with 
+#6      0.0604   0.4622   0.9048   1.0000   0.6835  brown,clear          contemporary,industrial,  A modern industrial pendant lamp featuring a circu
+#7      0.0549   0.4416   0.8869   1.0000   0.6643  beige,white          industrial,minimalist,mo  A modern industrial pendant lamp featuring a cylin
+#8      0.0507   0.3358   0.9608   1.0000   0.6483  black,gold           contemporary,minimalist,  Modern adjustable pendant lamp with branching blac
+#9      0.0497   0.4862   0.8025   1.0000   0.6444  clear,gold           minimalist,modern         A modern minimalist pendant lamp featuring an elon
+#10     0.0491   0.3972   0.8869   1.0000   0.6421  black,silver         minimalist,modern         Modern and minimalist pendant lamp with a rectangu
 
-  >> SELECTED: A modern industrial pendant lamp featuring a cylindrical fabric shade 
-     Colors: ['beige', 'white']  Styles: ['industrial', 'minimalist', 'modern']  Materials: ['fabric', 'metal']
+  >> SELECTED: This black metal contemporary industrial pendant lamp features a geome
+     Colors: ['black']  Styles: ['contemporary', 'industrial']  Materials: ['metal']
 
 ==========================================================================================
 OBJECT [3]
@@ -365,25 +376,26 @@ OBJECT [3]
   Stripped desc:  "small round coffee table"
   Size: [1.05, 0.52, 1.05]
   Selected so far: 3 assets
+  Query category: table
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0744   0.4596   0.8521   0.0917   0.4866  natural wood         mid-century modern,minim  A minimalist mid-century modern round wooden coffe
-#2      0.0655   0.1877   0.9231   0.2417   0.4613  black,gold,white     industrial,modern         Modern industrial black and gold pendant lamp with
-#3      0.0655   0.3941   0.9231   0.0000   0.4610  a,g,r,y              d,e,m,n,o,r               Modern gray coffee table with a round wooden top a
-#4      0.0642   0.2748   0.9048   0.1472   0.4570  light wood,white     classic,minimalist        A minimalist classic wardrobe with a light wood fr
-#5      0.0631   0.2964   1.0000   0.0000   0.4538  black                ,,,a,d,e,i,l,m,n,o,r,s,t  Sleek black wooden coffee table with round top, ve
-#6      0.0613   0.4061   0.6977   0.2056   0.4480  silver,wood tone     contemporary,minimalist,  A modern minimalist pendant lamp featuring a polis
-#7      0.0582   0.3965   0.7866   0.0778   0.4374  gold,white           contemporary,luxurious    A contemporary luxurious round tea table featuring
-#8      0.0559   0.3513   0.8353   0.0472   0.4295  black,brown          contemporary,industrial   A contemporary industrial coffee table with a hexa
-#9      0.0545   0.3627   0.8353   0.0167   0.4243  black,gold           ,,,a,c,d,e,m,n,o,r,t      A modern Art Deco round corner table with a glass 
-#10     0.0514   0.3122   0.6188   0.2889   0.4125  black,gold           minimalist,modern         A modern minimalist round tea table with a black c
+#1      0.0914   0.3941   0.9231   1.0000   0.6586  gray                 modern                    Modern gray coffee table with a round wooden top a
+#2      0.0901   0.4596   0.8521   1.0000   0.6559  natural wood         mid-century modern,minim  A minimalist mid-century modern round wooden coffe
+#3      0.0867   0.2964   1.0000   1.0000   0.6482  black                minimalist,modern         Sleek black wooden coffee table with round top, ve
+#4      0.0678   0.3627   0.8353   1.0000   0.5990  black,gold           art deco,modern           A modern Art Deco round corner table with a glass 
+#5      0.0659   0.3513   0.8353   1.0000   0.5933  black,brown          contemporary,industrial   A contemporary industrial coffee table with a hexa
+#6      0.0654   0.3965   0.7866   1.0000   0.5916  gold,white           contemporary,luxurious    A contemporary luxurious round tea table featuring
+#7      0.0648   0.2748   0.9048   1.0000   0.5898  light wood,white     classic,minimalist        A minimalist classic wardrobe with a light wood fr
+#8      0.0545   0.1877   0.9231   1.0000   0.5554  black,gold,white     industrial,modern         Modern industrial black and gold pendant lamp with
+#9      0.0536   0.4061   0.6977   1.0000   0.5519  silver,wood tone     contemporary,minimalist,  A modern minimalist pendant lamp featuring a polis
+#10     0.0494   0.2363   0.8353   1.0000   0.5358  black,white          minimalist,modern         A modern, round minimalist black and white marble 
 
-  >> SELECTED: A minimalist mid-century modern round wooden coffee table with a tripo
-     Colors: ['natural wood']  Styles: ['mid-century modern', 'minimalist']  Materials: ['wood']
+  >> SELECTED: Modern gray coffee table with a round wooden top and metal geometric b
+     Colors: ['gray']  Styles: ['modern']  Materials: ['metal', 'wood']
 
 ==========================================================================================
 OBJECT [4]
@@ -391,22 +403,23 @@ OBJECT [4]
   Stripped desc:  "white modern sideboard"
   Size: [0.9, 0.69, 0.25]
   Selected so far: 4 assets
+  Query category: sideboard
 ==========================================================================================
-Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Candidates surviving top-k/top-p: 18
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1746   0.5138   1.0000   0.3125   0.6236  white                minimalist,modern         White modern minimalist sideboard with three handl
-#2      0.0693   0.4982   0.7558   0.0000   0.4389  e,h,i,t,w            d,e,m,n,o,r               Modern white children's cabinet featuring clothing
-#3      0.0669   0.2218   0.9048   0.1250   0.4318  black,bronze         industrial,modern         Modern industrial semi-circle metal pendant lamp w
-#4      0.0662   0.5221   0.4966   0.2438   0.4297  dark brown           contemporary,minimalist   This contemporary minimalist dark brown wooden dra
-#5      0.0539   0.2379   0.8353   0.0437   0.3887  black,gold           contemporary,industrial   A contemporary industrial pendant lamp with a blac
-#6      0.0538   0.4594   0.5599   0.1042   0.3880  natural wood,yellow  ,,,a,d,e,f,i,l,m,n,o,p,r  A modern minimalist wooden hexagonal shelf with pl
-#7      0.0535   0.3757   0.5945   0.1583   0.3871  black,white          industrial,modern         Industrial modern dome-shaped pendant lamp with a 
-#8      0.0436   0.5063   0.4404   0.0500   0.3464  brown                d,e,m,n,o,r               Modern wood floating shelf with a minimalist desig
-#9      0.0383   0.6066   0.0000   0.3604   0.3204  dark brown,grey,whi  minimalist,modern         This modern minimalist sideboard features a blend 
-#10     0.0380   0.5678   0.0000   0.4000   0.3187  dark brown           minimalist,modern         This modern minimalist dark brown wooden sideboard
+#1      0.2176   0.5138   1.0000   1.0000   0.7569  white                minimalist,modern         White modern minimalist sideboard with three handl
+#2      0.1137   0.4982   0.7558   1.0000   0.6270  white                modern                    Modern white children's cabinet featuring clothing
+#3      0.0827   0.2218   0.9048   1.0000   0.5633  black,bronze         industrial,modern         Modern industrial semi-circle metal pendant lamp w
+#4      0.0723   0.2379   0.8353   1.0000   0.5366  black,gold           contemporary,industrial   A contemporary industrial pendant lamp with a blac
+#5      0.0632   0.4594   0.5599   1.0000   0.5097  natural wood,yellow  minimalist,modern,playfu  A modern minimalist wooden hexagonal shelf with pl
+#6      0.0631   0.5221   0.4966   1.0000   0.5094  dark brown           contemporary,minimalist   This contemporary minimalist dark brown wooden dra
+#7      0.0559   0.3757   0.5945   1.0000   0.4851  black,white          industrial,modern         Industrial modern dome-shaped pendant lamp with a 
+#8      0.0527   0.5063   0.4404   1.0000   0.4734  brown                modern                    Modern wood floating shelf with a minimalist desig
+#9      0.0381   0.3198   0.4966   1.0000   0.4082  gold                 geometric,modern          A modern geometric pendant lamp with a gold metal 
+#10     0.0326   0.3054   0.4493   1.0000   0.3773  clear,gold           contemporary,modern       Modern pendant lamp with gold metal frame and clea
 
   >> SELECTED: White modern minimalist sideboard with three handle-less drawers and d
      Colors: ['white']  Styles: ['minimalist', 'modern']  Materials: ['laminate', 'wood']
@@ -416,12 +429,12 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 ==========================================================================================
 [0] Modern minimalist king-size bed with dark brown fabric uphol
      Colors: ['charcoal', 'dark brown']  Styles: ['minimalist', 'modern']
-[1] Modern minimalist lounge chair with rectangular dark brown m
-     Colors: ['beige', 'dark brown']  Styles: ['minimalist', 'modern']
-[2] A modern industrial pendant lamp featuring a cylindrical fab
-     Colors: ['beige', 'white']  Styles: ['industrial', 'minimalist', 'modern']
-[3] A minimalist mid-century modern round wooden coffee table wi
-     Colors: ['natural wood']  Styles: ['mid-century modern', 'minimalist']
+[1] A modern, minimalist armchair featuring a beige fabric cushi
+     Colors: ['beige']  Styles: ['minimalist', 'modern']
+[2] This black metal contemporary industrial pendant lamp featur
+     Colors: ['black']  Styles: ['contemporary', 'industrial']
+[3] Modern gray coffee table with a round wooden top and metal g
+     Colors: ['gray']  Styles: ['modern']
 [4] White modern minimalist sideboard with three handle-less dra
      Colors: ['white']  Styles: ['minimalist', 'modern']
 
@@ -438,7 +451,7 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 [2] A modern industrial pendant lamp featuring a circular brown 
      Colors: ['brown', 'clear']  Styles: ['contemporary', 'industrial', 'modern']
 [3] Sleek black wooden coffee table with round top, vertical sla
-     Colors: ['black']  Styles: ['', ',', 'a', 'd', 'e', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't']
+     Colors: ['black']  Styles: ['minimalist', 'modern']
 [4] White modern minimalist sideboard with three handle-less dra
      Colors: ['white']  Styles: ['minimalist', 'modern']
 
@@ -451,7 +464,7 @@ Saved renders to input_test/output_style_retrieval_13feb_settings/unit_1_room_2_
 ##########################################################################################
 # Processing: input_test/13feb_settings/unit_1_room_3_bedroom/generated_scene.json
 # Room: unit_1_room_3_bedroom
-# lambda_style=0.3, strip_descs=True
+# lambda_style=0.5, strip_descs=True, category_constrained=True
 ##########################################################################################
 
 ==========================================================================================
@@ -460,6 +473,7 @@ OBJECT [0]
   Stripped desc:  "leather armchair"
   Size: [0.82, 0.78, 0.9]
   Selected so far: 0 assets
+  Query category: armchair
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
 Weights: sem=0.500, size=0.500, style=0.000
@@ -469,11 +483,11 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 #1      0.0827   0.4259   1.0000   1.0000   0.7130  black                minimalist,modern         A modern minimalist black leather armchair with pa
 #2      0.0676   0.5099   0.8353   1.0000   0.6726  dark brown,natural   minimalist,modern         A modern minimalist armchair with a natural wood f
 #3      0.0658   0.4299   0.9048   1.0000   0.6674  dark grey            classic,contemporary      Stylish dark grey armchair with tufted upholstery,
-#4      0.0646   0.3470   0.9802   1.0000   0.6636  a,b,c,k,l            ,,,a,c,d,e,m,n,o,p,r,t,y  Modern black leather swivel chair with geometric b
-#5      0.0569   0.5204   0.7558   1.0000   0.6381  ,,,a,d,e,g,k,l,n,o,  ,-,c,d,e,i,m,n,o,r,t,u,y  This modern mid-century armchair features dark gre
+#4      0.0646   0.3470   0.9802   1.0000   0.6636  black                contemporary,modern       Modern black leather swivel chair with geometric b
+#5      0.0569   0.5204   0.7558   1.0000   0.6381  dark grey,natural w  modern mid-century        This modern mid-century armchair features dark gre
 #6      0.0563   0.4533   0.8187   1.0000   0.6360  light gray           minimalist,modern         Modern minimalist light gray armchair with a cushi
 #7      0.0562   0.3297   0.9418   1.0000   0.6357  beige                contemporary,minimalist   A contemporary minimalist beige fabric armchair wi
-#8      0.0561   0.6001   0.6703   1.0000   0.6352  black,gray           ,,,a,c,e,i,l,m,n,o,p,r,s  This contemporary minimalist chair features a blac
+#8      0.0561   0.6001   0.6703   1.0000   0.6352  black,gray           contemporary,minimalist   This contemporary minimalist chair features a blac
 #9      0.0555   0.4312   0.8353   1.0000   0.6332  beige,light wood     minimalist,modern         A modern minimalist armchair with a light wood fra
 #10     0.0505   0.2872   0.9418   1.0000   0.6145  floral patterned cu  bohemian,mid-century mod  A bohemian mid-century modern rattan lounge chair 
 
@@ -486,25 +500,26 @@ OBJECT [1]
   Stripped desc:  "modern single bed"
   Size: [1.78, 1.08, 2.29]
   Selected so far: 1 assets
+  Query category: bed
 ==========================================================================================
-Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Candidates surviving top-k/top-p: 18
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1191   0.4209   0.8869   0.5500   0.6227  black,grey           minimalist,modern         A modern, minimalist king-size bed featuring black
-#2      0.0778   0.4787   1.0000   0.0667   0.5376  beige,dark gray      d,e,m,n,o,r               Modern dark gray single bed with an upholstered he
-#3      0.0640   0.3903   0.9048   0.1500   0.4983  blue,white           modern                    Modern blue fabric upholstered bed with minimalist
-#4      0.0579   0.5231   0.7866   0.0667   0.4784  gray,white           ,,,a,d,e,i,l,m,n,o,r,s,t  This king-size bed features a modern minimalist st
-#5      0.0471   0.4909   0.4148   0.4000   0.4370  natural wood         minimalist,modern         Modern minimalist wooden bed with a rectangular sh
-#6      0.0466   0.3854   0.0000   1.0000   0.4349  black                minimalist,modern         Modern minimalist black barstool with a sleek desi
-#7      0.0460   0.4352   0.0000   0.9333   0.4323  black                minimalist,modern         Modern minimalist black leather L-shaped sofa with
-#8      0.0460   0.4352   0.0000   0.9333   0.4323  black                minimalist,modern         Modern minimalist black leather L-shaped sofa with
-#9      0.0460   0.4352   0.0000   0.9333   0.4323  black                minimalist,modern         Modern minimalist black leather L-shaped sofa with
-#10     0.0460   0.4352   0.0000   0.9333   0.4323  black                minimalist,modern         Modern minimalist black leather L-shaped sofa with
+#1      0.1845   0.4787   1.0000   1.0000   0.7394  beige,dark gray      modern                    Modern dark gray single bed with an upholstered he
+#2      0.1209   0.5231   0.7866   1.0000   0.6549  gray,white           minimalist,modern         This king-size bed features a modern minimalist st
+#3      0.1203   0.4209   0.8869   1.0000   0.6539  black,grey           minimalist,modern         A modern, minimalist king-size bed featuring black
+#4      0.1166   0.3903   0.9048   1.0000   0.6476  blue,white           modern                    Modern blue fabric upholstered bed with minimalist
+#5      0.0448   0.3528   0.5599   1.0000   0.4564  beige,brown,cream,m  contemporary,minimalist   Contemporary minimalist king-size bed with beige u
+#6      0.0440   0.4909   0.4148   1.0000   0.4528  natural wood         minimalist,modern         Modern minimalist wooden bed with a rectangular sh
+#7      0.0416   0.3231   0.5599   1.0000   0.4415  light gray,teal      minimalist,modern         Minimalist modern single bed featuring a teal fabr
+#8      0.0416   0.4421   0.4404   1.0000   0.4413  brown,gray           minimalist,modern         Modern minimalist king-size bed with a wood frame,
+#9      0.0381   0.4412   0.4066   1.0000   0.4239  blue,multicolor,whi  children's,playful        A playful children's single bed featuring a car-th
+#10     0.0347   0.4909   0.3198   1.0000   0.4053  natural wood         minimalist,modern         Modern minimalist wooden bed with a rectangular sh
 
-  >> SELECTED: A modern, minimalist king-size bed featuring black fabric upholstery a
-     Colors: ['black', 'grey']  Styles: ['minimalist', 'modern']  Materials: ['fabric upholstery', 'wooden legs']
+  >> SELECTED: Modern dark gray single bed with an upholstered headboard and minimali
+     Colors: ['beige', 'dark gray']  Styles: ['modern']  Materials: ['fabric', 'wood']
 
 ==========================================================================================
 OBJECT [2]
@@ -512,22 +527,23 @@ OBJECT [2]
   Stripped desc:  "wooden sideboard"
   Size: [1.37, 2.0, 0.5]
   Selected so far: 2 assets
+  Query category: sideboard
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1045   0.4986   1.0000   0.0333   0.5345  brown,cream          farmhouse,rustic          A rustic farmhouse sideboard with a two-tier desig
-#2      0.0878   0.4477   0.9802   0.0000   0.4998  ,,,b,d,e,n,o,r,w     ,,,a,d,e,i,l,m,n,o,r,s,t  Minimalist modern brown wooden open back bookcase 
-#3      0.0508   0.4510   0.0000   0.7750   0.3904  black                minimalist,modern         Modern minimalist black barstool with a sleek desi
-#4      0.0485   0.4809   0.0000   0.7083   0.3808  black                minimalist,modern         This modern minimalist black chest of drawers feat
-#5      0.0485   0.4809   0.0000   0.7083   0.3808  black                minimalist,modern         This modern minimalist black chest of drawers feat
-#6      0.0485   0.4809   0.0000   0.7083   0.3808  black                minimalist,modern         This modern minimalist black chest of drawers feat
-#7      0.0485   0.4809   0.0000   0.7083   0.3808  black                minimalist,modern         This modern minimalist black chest of drawers feat
-#8      0.0485   0.4809   0.0000   0.7083   0.3808  black                minimalist,modern         This modern minimalist black chest of drawers feat
-#9      0.0479   0.4596   0.0000   0.7250   0.3784  black                minimalist,modern         Elegant black wooden sideboard with a minimalist m
-#10     0.0475   0.4125   0.0000   0.7750   0.3769  black                minimalist,modern         A modern and minimalist lounge chair featuring a b
+#1      0.2691   0.4986   1.0000   1.0000   0.7493  brown,cream          farmhouse,rustic          A rustic farmhouse sideboard with a two-tier desig
+#2      0.2255   0.4477   0.9802   1.0000   0.7140  brown,wooden         minimalist,modern         Minimalist modern brown wooden open back bookcase 
+#3      0.0484   0.4986   0.3135   1.0000   0.4061  brown,cream          farmhouse,rustic          A rustic farmhouse sideboard with a two-tier desig
+#4      0.0395   0.4986   0.2322   1.0000   0.3654  brown,cream          farmhouse,rustic          A rustic farmhouse sideboard with a two-tier desig
+#5      0.0370   0.1981   0.5066   1.0000   0.3524  light wood,silver    functional,modern         A modern, functional light wood desk with open she
+#6      0.0285   0.3435   0.2567   1.0000   0.3001  beige,brown          rustic,traditional        A beige and brown rustic-traditional wooden wardro
+#7      0.0276   0.5871   0.0000   1.0000   0.2935                                                 
+#8      0.0276   0.5871   0.0000   1.0000   0.2935                                                 
+#9      0.0274   0.3386   0.2466   1.0000   0.2926  white                minimalist,modern         This modern, minimalist white wardrobe features th
+#10     0.0274   0.5846   0.0000   1.0000   0.2923  natural wood         farmhouse,rustic          A rustic farmhouse-style bed frame featuring natur
 
   >> SELECTED: A rustic farmhouse sideboard with a two-tier design featuring cream-co
      Colors: ['brown', 'cream']  Styles: ['farmhouse', 'rustic']  Materials: ['glass', 'wood']
@@ -537,8 +553,8 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 ==========================================================================================
 [0] A modern minimalist black leather armchair with padded seati
      Colors: ['black']  Styles: ['minimalist', 'modern']
-[1] A modern, minimalist king-size bed featuring black fabric up
-     Colors: ['black', 'grey']  Styles: ['minimalist', 'modern']
+[1] Modern dark gray single bed with an upholstered headboard an
+     Colors: ['beige', 'dark gray']  Styles: ['modern']
 [2] A rustic farmhouse sideboard with a two-tier design featurin
      Colors: ['brown', 'cream']  Styles: ['farmhouse', 'rustic']
 
@@ -551,7 +567,7 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 [0] A modern minimalist black leather armchair with padded seati
      Colors: ['black']  Styles: ['minimalist', 'modern']
 [1] Modern dark gray single bed with an upholstered headboard an
-     Colors: ['beige', 'dark gray']  Styles: ['d', 'e', 'm', 'n', 'o', 'r']
+     Colors: ['beige', 'dark gray']  Styles: ['modern']
 [2] A rustic farmhouse sideboard with a two-tier design featurin
      Colors: ['brown', 'cream']  Styles: ['farmhouse', 'rustic']
 
@@ -564,7 +580,7 @@ Saved renders to input_test/output_style_retrieval_13feb_settings/unit_1_room_3_
 ##########################################################################################
 # Processing: input_test/13feb_settings/unit_1_room_4_bedroom/generated_scene.json
 # Room: unit_1_room_4_bedroom
-# lambda_style=0.3, strip_descs=True
+# lambda_style=0.5, strip_descs=True, category_constrained=True
 ##########################################################################################
 
 ==========================================================================================
@@ -573,6 +589,7 @@ OBJECT [0]
   Stripped desc:  "black floor lamp"
   Size: [0.49, 1.25, 0.34]
   Selected so far: 0 assets
+  Query category: lamp
 ==========================================================================================
 Candidates surviving top-k/top-p: 18
 Weights: sem=0.500, size=0.500, style=0.000
@@ -582,11 +599,11 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 #1      0.2554   0.5317   1.0000   1.0000   0.7658  black,brass          contemporary,mid-century  A Mid-Century Modern black and brass floor lamp wi
 #2      0.1245   0.5871   0.6570   1.0000   0.6221  black,metallic       contemporary,modern       Modern black metal floor lamp with slender design 
 #3      0.0760   0.1418   0.9048   1.0000   0.5233  beige,natural wood   minimalist,modern         A modern, minimalist wooden shelf with a natural w
-#4      0.0573   0.5871   0.3465   1.0000   0.4668  black                d,e,m,n,o,r               A modern black metal floor lamp with an angular fr
+#4      0.0573   0.5871   0.3465   1.0000   0.4668  black                modern                    A modern black metal floor lamp with an angular fr
 #5      0.0568   0.2735   0.6570   1.0000   0.4653  natural wood,white   mid-century,modern        Modern mid-century sideboard with glass front, she
 #6      0.0545   0.4463   0.4677   1.0000   0.4570  black                minimalistic,modern       A sleek, modern black metal T-shaped garment rack 
 #7      0.0419   0.2814   0.5273   1.0000   0.4044  blue,orange,purple,  modern,playful            A modern, playful, wall-mounted children's cabinet
-#8      0.0403   0.2102   0.5827   1.0000   0.3965  blue                 d,e,m,n,o,r               A sleek blue metal modern corner/side table with a
+#8      0.0403   0.2102   0.5827   1.0000   0.3965  blue                 modern                    A sleek blue metal modern corner/side table with a
 #9      0.0341   0.5317   0.1940   1.0000   0.3628  black,brass          contemporary,mid-century  A Mid-Century Modern black and brass floor lamp wi
 #10     0.0329   0.3517   0.3606   1.0000   0.3561  dark brown           minimalist,modern         A sleek, dark brown, tall, modern, minimalist wood
 
@@ -599,25 +616,26 @@ OBJECT [1]
   Stripped desc:  "red loveseat sofa"
   Size: [2.1, 0.87, 0.82]
   Selected so far: 1 assets
+  Query category: sofa
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.0828   0.4709   0.8869   0.0000   0.4753  beige,wood brown     ,-,c,d,e,f,h,i,l,m,n,o,r  A modern beige loveseat sofa featuring a wooden fr
-#2      0.0733   0.4124   0.8187   0.0667   0.4509  a,b,c,k,l            minimalist,modern         A modern and minimalist black loveseat sofa with p
-#3      0.0631   0.2415   0.8187   0.1667   0.4211  gold,white           contemporary,modern       Contemporary rectangular dining table with a white
-#4      0.0587   0.4055   0.7558   0.0000   0.4064  b,e,g,i              minimalist,modern         Modern minimalist beige loveseat sofa with clean l
-#5      0.0563   0.3667   0.7711   0.0000   0.3982  dark brown,ivory     modern,traditional        Modern-traditional dark brown wood convertible cou
-#6      0.0548   0.3922   0.6440   0.1000   0.3927  beige,multi-colored  contemporary,transitiona  A contemporary transitional beige three-seat sofa 
-#7      0.0541   0.2577   0.0000   1.0000   0.3902  black,brass          contemporary,mid-century  A Mid-Century Modern black and brass floor lamp wi
-#8      0.0541   0.2577   0.0000   1.0000   0.3902  black,brass          contemporary,mid-century  A Mid-Century Modern black and brass floor lamp wi
-#9      0.0541   0.2577   0.0000   1.0000   0.3902  black,brass          contemporary,mid-century  A Mid-Century Modern black and brass floor lamp wi
-#10     0.0519   0.3769   0.6570   0.0667   0.3819  b,n,o,r,w            industrial,modern         Modern industrial brown leather loveseat sofa with
+#1      0.1266   0.4709   0.8869   1.0000   0.6789  beige,wood brown     modern with mid-century   A modern beige loveseat sofa featuring a wooden fr
+#2      0.0922   0.4124   0.8187   1.0000   0.6156  black                minimalist,modern         A modern and minimalist black loveseat sofa with p
+#3      0.0774   0.4055   0.7558   1.0000   0.5806  beige                minimalist,modern         Modern minimalist beige loveseat sofa with clean l
+#4      0.0730   0.3667   0.7711   1.0000   0.5689  dark brown,ivory     modern,traditional        Modern-traditional dark brown wood convertible cou
+#5      0.0602   0.2415   0.8187   1.0000   0.5301  gold,white           contemporary,modern       Contemporary rectangular dining table with a white
+#6      0.0566   0.3922   0.6440   1.0000   0.5181  beige,multi-colored  contemporary,transitiona  A contemporary transitional beige three-seat sofa 
+#7      0.0563   0.3769   0.6570   1.0000   0.5170  brown                industrial,modern         Modern industrial brown leather loveseat sofa with
+#8      0.0471   0.3184   0.6440   1.0000   0.4812  light blue,multicol  modern,scandinavian       A contemporary light blue three-seat sofa with fab
+#9      0.0428   0.4833   0.4404   1.0000   0.4619  dark wood,red        contemporary,minimalist   A contemporary minimalist loveseat sofa with red l
+#10     0.0415   0.2004   0.7118   1.0000   0.4561  black,blue,gray,whi  contemporary,modern       Modern contemporary loveseat sofa with white fabri
 
   >> SELECTED: A modern beige loveseat sofa featuring a wooden frame, boxy shape, cus
-     Colors: ['beige', 'wood brown']  Styles: ['', '-', 'c', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u', 'w', 'y']  Materials: ['fabric upholstery', 'wooden frame']
+     Colors: ['beige', 'wood brown']  Styles: ['modern with mid-century influences']  Materials: ['fabric upholstery', 'wooden frame']
 
 ==========================================================================================
 OBJECT [2]
@@ -625,22 +643,23 @@ OBJECT [2]
   Stripped desc:  "white single bed"
   Size: [1.52, 1.46, 1.99]
   Selected so far: 2 assets
+  Query category: bed
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1295   0.3310   1.0000   0.0000   0.4658  blue,white           modern,traditional        Modern traditional single bed with white wood fram
-#2      0.0912   0.2436   0.8869   0.0000   0.3957  blue                 classic,traditional       Traditional classic king-size blue wooden bed with
-#3      0.0569   0.3319   0.4148   0.1333   0.3014  beige,dark brown     contemporary,modern       Modern king-size bed with a dark wooden frame, rec
-#4      0.0521   0.4688   0.2322   0.1286   0.2839  black,blue,red,yell  ,,,a,c,e,h,i,m,n,o,p,r,t  A king-sized contemporary bed with a distinctive s
-#5      0.0502   0.3612   0.0000   0.5000   0.2764  beige,wood brown     ,-,c,d,e,f,h,i,l,m,n,o,r  A modern beige loveseat sofa featuring a wooden fr
-#6      0.0471   0.6556   0.0000   0.1143   0.2637  pink,purple,white    ,a,c,e,f,g,h,i,l,m,n,o,p  This single bed features a blend of contemporary a
-#7      0.0470   0.2635   0.3465   0.1658   0.2632  beige,dark brown     ,,,a,c,d,i,l,n,o,r,s,t,u  King-size bed with traditional rustic style, dark 
-#8      0.0451   0.5697   0.0000   0.1850   0.2549  beige,black,gray     a,c,e,m,n,o,p,r,t,y       A contemporary single bed with a padded headboard,
-#9      0.0451   0.5697   0.0000   0.1850   0.2549  beige,black,gray     a,c,e,m,n,o,p,r,t,y       A contemporary single bed with a padded headboard,
-#10     0.0451   0.3813   0.3465   0.0000   0.2547  cream,dark brown     classic,traditional       Traditional dark wood bed with a cream tufted leat
+#1      0.2127   0.3310   1.0000   1.0000   0.6655  blue,white           modern,traditional        Modern traditional single bed with white wood fram
+#2      0.1289   0.2436   0.8869   1.0000   0.5653  blue                 classic,traditional       Traditional classic king-size blue wooden bed with
+#3      0.0494   0.3319   0.4148   1.0000   0.3734  beige,dark brown     contemporary,modern       Modern king-size bed with a dark wooden frame, rec
+#4      0.0471   0.3813   0.3465   1.0000   0.3639  cream,dark brown     classic,traditional       Traditional dark wood bed with a cream tufted leat
+#5      0.0440   0.4688   0.2322   1.0000   0.3505  black,blue,red,yell  contemporary,thematic     A king-sized contemporary bed with a distinctive s
+#6      0.0399   0.6413   0.0207   1.0000   0.3310  white                modern,rustic             This single bed features a white wooden constructi
+#7      0.0399   0.4823   0.1791   1.0000   0.3307  white                colonial,traditional      Elegant white wooden bed frame with an arched head
+#8      0.0393   0.6556   0.0000   1.0000   0.3278  pink,purple,white    contemporary with a touc  This single bed features a blend of contemporary a
+#9      0.0388   0.6499   0.0000   1.0000   0.3250  grey,white           contemporary,minimalist   A contemporary minimalist white platform bed with 
+#10     0.0379   0.6413   0.0001   1.0000   0.3207  white                modern,rustic             This single bed features a white wooden constructi
 
   >> SELECTED: Modern traditional single bed with white wood frame, arched design, bl
      Colors: ['blue', 'white']  Styles: ['modern', 'traditional']  Materials: ['wood']
@@ -651,25 +670,26 @@ OBJECT [3]
   Stripped desc:  "wooden sideboard"
   Size: [1.34, 0.79, 0.48]
   Selected so far: 3 assets
+  Query category: sideboard
 ==========================================================================================
 Candidates surviving top-k/top-p: 19
-Weights: sem=0.350, size=0.350, style=0.300
+Weights: sem=0.500, size=0.500, style=0.000
 
 Rank      Prob      Sem     Size    Style    Blend  Colors               Styles                    Description
 ----- -------- -------- -------- -------- --------  -------------------- ------------------------- --------------------------------------------------
-#1      0.1111   0.4146   1.0000   0.0915   0.5226  brown,natural wood   ,a,c,d,i,l,n,r,s,t,u      Rustic industrial sideboard with natural wood fini
-#2      0.0796   0.3810   0.8353   0.1000   0.4557  walnut brown         mid-century modern,minim  A minimalist mid-century modern walnut brown woode
-#3      0.0703   0.3100   0.8353   0.1000   0.4308  dark brown           classic,traditional       Traditional wooden sideboard with four drawers, pa
-#4      0.0656   0.3943   0.7118   0.1000   0.4171  dark brown           classic,traditional       A traditional dark brown wooden desk with a rectan
-#5      0.0570   0.3827   0.6570   0.0833   0.3889  dark wood,gold acce  ,,,a,c,d,i,l,n,o,r,s,t    Classic dark wooden chest of drawers with six comp
-#6      0.0511   0.4319   0.5599   0.0667   0.3671  dark brown,light br  d,e,m,n,o,r               Modern dark and light brown wooden sideboard with 
-#7      0.0501   0.3952   0.5066   0.1591   0.3634  black                a,d,i,l,n,o,r,t           Traditional black wood sideboard with glass-panele
-#8      0.0497   0.3391   0.5945   0.1167   0.3618  white                minimalist,modern         Modern minimalist white desk with metal frame, woo
-#9      0.0445   0.2390   0.5599   0.2000   0.3396  black,white          d,e,m,n,o,r               Modern two-tone wood and metal rectangular chest w
-#10     0.0442   0.2316   0.6065   0.1500   0.3383  black                contemporary,minimalist   Elegant black contemporary minimalist desk with ta
+#1      0.1534   0.4146   1.0000   1.0000   0.7073  brown,natural wood   rustic industrial         Rustic industrial sideboard with natural wood fini
+#2      0.0934   0.3810   0.8353   1.0000   0.6081  walnut brown         mid-century modern,minim  A minimalist mid-century modern walnut brown woode
+#3      0.0782   0.3100   0.8353   1.0000   0.5726  dark brown           classic,traditional       Traditional wooden sideboard with four drawers, pa
+#4      0.0709   0.3943   0.7118   1.0000   0.5530  dark brown           classic,traditional       A traditional dark brown wooden desk with a rectan
+#5      0.0601   0.3827   0.6570   1.0000   0.5199  dark wood,gold acce  classic,traditional       Classic dark wooden chest of drawers with six comp
+#6      0.0533   0.4319   0.5599   1.0000   0.4959  dark brown,light br  modern                    Modern dark and light brown wooden sideboard with 
+#7      0.0461   0.3391   0.5945   1.0000   0.4668  white                minimalist,modern         Modern minimalist white desk with metal frame, woo
+#8      0.0436   0.4147   0.4966   1.0000   0.4557  dark brown           transitional              Transitional dark brown wood sideboard with geomet
+#9      0.0426   0.3952   0.5066   1.0000   0.4509  black                traditional               Traditional black wood sideboard with glass-panele
+#10     0.0390   0.4602   0.4066   1.0000   0.4334  brown                minimalist,modern         A modern minimalist brown wooden coffee table with
 
   >> SELECTED: Rustic industrial sideboard with natural wood finish, mesh door, and m
-     Colors: ['brown', 'natural wood']  Styles: ['', 'a', 'c', 'd', 'i', 'l', 'n', 'r', 's', 't', 'u']  Materials: ['mesh', 'metal', 'wood']
+     Colors: ['brown', 'natural wood']  Styles: ['rustic industrial']  Materials: ['mesh', 'metal', 'wood']
 
 ==========================================================================================
   unit_1_room_4_bedroom - style-coherent (greedy)
@@ -677,11 +697,11 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 [0] A Mid-Century Modern black and brass floor lamp with adjusta
      Colors: ['black', 'brass']  Styles: ['contemporary', 'mid-century modern']
 [1] A modern beige loveseat sofa featuring a wooden frame, boxy 
-     Colors: ['beige', 'wood brown']  Styles: ['', '-', 'c', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u', 'w', 'y']
+     Colors: ['beige', 'wood brown']  Styles: ['modern with mid-century influences']
 [2] Modern traditional single bed with white wood frame, arched 
      Colors: ['blue', 'white']  Styles: ['modern', 'traditional']
 [3] Rustic industrial sideboard with natural wood finish, mesh d
-     Colors: ['brown', 'natural wood']  Styles: ['', 'a', 'c', 'd', 'i', 'l', 'n', 'r', 's', 't', 'u']
+     Colors: ['brown', 'natural wood']  Styles: ['rustic industrial']
 
 
 --- Baseline (original system, no style bias) ---
@@ -692,11 +712,11 @@ Rank      Prob      Sem     Size    Style    Blend  Colors               Styles 
 [0] A Mid-Century Modern black and brass floor lamp with adjusta
      Colors: ['black', 'brass']  Styles: ['contemporary', 'mid-century modern']
 [1] A modern beige loveseat sofa featuring a wooden frame, boxy 
-     Colors: ['beige', 'wood brown']  Styles: ['', '-', 'c', 'd', 'e', 'f', 'h', 'i', 'l', 'm', 'n', 'o', 'r', 's', 't', 'u', 'w', 'y']
+     Colors: ['beige', 'wood brown']  Styles: ['modern with mid-century influences']
 [2] Modern traditional single bed with white wood frame, arched 
      Colors: ['blue', 'white']  Styles: ['modern', 'traditional']
 [3] Rustic industrial sideboard with natural wood finish, mesh d
-     Colors: ['brown', 'natural wood']  Styles: ['', 'a', 'c', 'd', 'i', 'l', 'n', 'r', 's', 't', 'u']
+     Colors: ['brown', 'natural wood']  Styles: ['rustic industrial']
 
 Saved comparison to input_test/output_style_retrieval_13feb_settings/unit_1_room_4_bedroom/retrieval_comparison.json
 Rendering scene: style_coherent_unit_1_room_4_bedroom ...

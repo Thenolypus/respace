@@ -132,7 +132,7 @@
           0.4699640397739131,
           0.49974799156188965
         ],
-        "uuid": "78062ea224f0421c802febbb5e36c18e"
+        "uuid": "9dacb67b619c472bb85099a8c13b8d1e"
       },
       {
         "desc": "Modern minimalist floor-standing pendant lamp with brass metal pole, round base, and white glass spherical shade.",
@@ -153,19 +153,14 @@
           0.31
         ],
         "prompt": "floor standing lamp",
-        "sampled_asset_jid": "03389e6b-2555-41c4-9b75-08e6b7629f0b-(1.08)-(1.0)-(1.0)",
-        "sampled_asset_desc": "A modern minimalist gold metal floor lamp with dual light bulbs, cylindrical stems, and a round base, featuring a sleek and elegant design.",
+        "sampled_asset_jid": "1608d999-c959-48fd-b6bd-b078531aa430",
+        "sampled_asset_desc": "A modern minimalist floor lamp with a gold metal spherical shade and slim stand, featuring a circular base and geometric elements.",
         "sampled_asset_size": [
-          0.37,
-          1.68,
-          0.34
+          0.37097999453544617,
+          1.6836399958719892,
+          0.311379998922348
         ],
-        "uuid": "0bc1480cbc2f438294e3097364f68c1e",
-        "scale": [
-          1.08,
-          1.0,
-          1.0
-        ]
+        "uuid": "9318020c5f854b34a8e9461e2fabfe3b"
       },
       {
         "desc": "Modern minimalist coffee table with dark brown wooden structure, sleek design, open shelf, closed compartments, and copper metal supports.",
@@ -193,7 +188,7 @@
           0.4,
           0.7
         ],
-        "uuid": "1f0999a4b2f04d349e5f2d1ae51d97d1",
+        "uuid": "349452d80e2e41ae9f58fef0c488b89e",
         "scale": [
           1.34,
           1.0,
@@ -226,7 +221,7 @@
           0.9034300139707643,
           0.8505240082740784
         ],
-        "uuid": "bc4038be6c604842a74b394a3a1e2f68",
+        "uuid": "82645f2203f740ffa38326d4377e2cb9",
         "scale": [
           0.86,
           1.0,
@@ -252,14 +247,19 @@
           0.16
         ],
         "prompt": "pendant lamp",
-        "sampled_asset_jid": "443da456-d458-4d43-aa07-639f5076448a",
-        "sampled_asset_desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
+        "sampled_asset_jid": "f91cfa55-133f-4a61-b54d-a2ad69106b79-(0.17)-(1.0)-(0.17)",
+        "sampled_asset_desc": "A modern industrial gold metal pendant lamp with a circular design, 12 cylinder glass shades, and a suspended framework.",
         "sampled_asset_size": [
-          0.1612050011754036,
-          0.7756339968369894,
-          0.1612129956483841
+          0.16,
+          0.73,
+          0.16
         ],
-        "uuid": "9e2aefa1510741a69637cd0f738f47de"
+        "uuid": "ffeb7d9aba8042bdb5a5e1d383576ebf",
+        "scale": [
+          0.17,
+          1.0,
+          0.17
+        ]
       },
       {
         "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
@@ -280,18 +280,18 @@
           0.42
         ],
         "prompt": "round end table",
-        "sampled_asset_jid": "da8570b9-119e-4a21-a23b-ca8b94000c30-(0.96)-(1.0)-(0.97)",
-        "sampled_asset_desc": "A modern industrial corner side table with a minimalist metal three-legged base and round metallic tabletop.",
+        "sampled_asset_jid": "a155a902-6ffc-4f61-9429-59d0717c754e-(2.01)-(1.0)-(1.88)",
+        "sampled_asset_desc": "A traditional dark brown wooden round end table featuring an ornamental middle support and a lower shelf for added functionality.",
         "sampled_asset_size": [
           0.42,
-          0.63,
-          0.42
+          0.64,
+          0.41
         ],
-        "uuid": "7db572cfe2b84cc9b62bb3c3050561c6",
+        "uuid": "0be8a0225b044d22bd1bf51affad8e37",
         "scale": [
-          0.96,
+          2.01,
           1.0,
-          0.97
+          1.88
         ]
       },
       {
@@ -320,7 +320,7 @@
           0.49,
           0.35
         ],
-        "uuid": "57fadae4e9f74a07812bdfa55b70fa04",
+        "uuid": "6c87b1f5d5b14f1593fc922fdf7b0811",
         "scale": [
           1.01,
           1.0,
@@ -353,7 +353,7 @@
           0.9567519026130746,
           0.9963570237159729
         ],
-        "uuid": "d46a02571dce4bd49a9202d4ba260db1"
+        "uuid": "305abd6b40d14ff781befa89365e8bf6"
       }
     ]
   },
@@ -490,7 +490,7 @@
           0.4699640397739131,
           0.49974799156188965
         ],
-        "uuid": "d4d15412-3f42-4058-9b41-7b22aedc3750"
+        "uuid": "619765e8-451b-47cb-baf8-70e85309f0e2"
       },
       {
         "desc": "Modern minimalist floor-standing pendant lamp with brass metal pole, round base, and white glass spherical shade.",
@@ -518,7 +518,7 @@
           1.6836399958719892,
           0.311379998922348
         ],
-        "uuid": "141b6bad-e13a-4542-8c68-559cfb604a37"
+        "uuid": "bcc0831a-d68b-4077-86e0-a5d71e673d34"
       },
       {
         "desc": "Modern minimalist coffee table with dark brown wooden structure, sleek design, open shelf, closed compartments, and copper metal supports.",
@@ -546,7 +546,7 @@
           0.41,
           0.7
         ],
-        "uuid": "175e3e06-eb47-4833-8a99-0008641ee412",
+        "uuid": "213c2a40-65a1-42a0-85fa-484c3c2e237a",
         "scale": [
           0.92,
           1.0,
@@ -579,7 +579,7 @@
           0.9034300139707643,
           0.8505240082740784
         ],
-        "uuid": "7d34663e-4abc-4245-a891-f333f7254cdf",
+        "uuid": "1ef79ec3-4214-48c1-b0c8-ad677a043e2e",
         "scale": [
           0.86,
           1.0,
@@ -612,7 +612,7 @@
           0.7756339968369894,
           0.1612129956483841
         ],
-        "uuid": "2b758cd8-73cc-4e92-827c-3129b9eba4cd"
+        "uuid": "d9b06a38-ebd0-4a90-8259-eaf9ca32dd25"
       },
       {
         "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
@@ -640,7 +640,7 @@
           0.6291589695122184,
           0.419048011302948
         ],
-        "uuid": "157e3cf9-4708-4305-a918-71253a03b64a",
+        "uuid": "9349556a-8e5f-45eb-ad69-199b71f60728",
         "scale": [
           2.01,
           1.0,
@@ -673,7 +673,7 @@
           0.4811309999159299,
           0.3627380132675171
         ],
-        "uuid": "ee59b596-8b87-43c8-9cda-49431a3737aa",
+        "uuid": "5fbf9014-c0e5-4dc9-9ca6-942ab884d82c",
         "scale": [
           1.0,
           1.0,
@@ -706,13 +706,14 @@
           0.9567519026130746,
           0.9963570237159729
         ],
-        "uuid": "9eba6e75-4235-41e3-8843-71a5ccb0d73e"
+        "uuid": "408f57ed-6ab6-48a4-a3a8-621047c136cd"
       }
     ]
   },
   "params": {
-    "lambda_style": 0.3,
+    "lambda_style": 0.5,
     "strip_descs": true,
-    "greedy": true
+    "greedy": true,
+    "category_constrained": true
   }
 }

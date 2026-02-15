@@ -72,7 +72,7 @@
           0.7759308511595009,
           0.8999170362949371
         ],
-        "uuid": "7287325f66924b828a2ed5e837251302"
+        "uuid": "033c85f56778422a9a55d1b6f885f1e0"
       },
       {
         "desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
@@ -93,19 +93,14 @@
           2.29
         ],
         "prompt": "modern single bed",
-        "sampled_asset_jid": "5159ffde-a7c7-4d2c-8b07-8c4d088487ee-(0.84)-(1.13)-(0.99)",
-        "sampled_asset_desc": "A modern, minimalist king-size bed featuring black fabric upholstery and sturdy wooden legs, embodying clean lines and a low-profile design.",
+        "sampled_asset_jid": "57f08c70-969f-4320-9fc4-fb83447094e8",
+        "sampled_asset_desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
         "sampled_asset_size": [
-          1.79,
-          1.07,
-          2.31
+          1.775987982749939,
+          1.0768698915351465,
+          2.2870900630950928
         ],
-        "uuid": "07929823e6a748c789bbeb067854293e",
-        "scale": [
-          0.84,
-          1.13,
-          0.99
-        ]
+        "uuid": "a99a9d1645424d5380c0cfecba609e90"
       },
       {
         "desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
@@ -133,7 +128,7 @@
           1.998181275097977,
           0.5013650059700012
         ],
-        "uuid": "f54139fb78d74457b2b48917742622ea"
+        "uuid": "e0a8b37d50844b88a0c7e9f323c893b9"
       }
     ]
   },
@@ -210,7 +205,7 @@
           0.7759308511595009,
           0.8999170362949371
         ],
-        "uuid": "dffd2cb5-1367-4274-9280-f52162b90413"
+        "uuid": "8aebe7b2-d495-4ac2-94d0-2d42363f3491"
       },
       {
         "desc": "Modern dark gray single bed with an upholstered headboard and minimalist design.",
@@ -238,7 +233,7 @@
           1.0768698915351465,
           2.2870900630950928
         ],
-        "uuid": "4d3a7ff5-2985-4801-90c5-5fc12aabe78d"
+        "uuid": "070f74a6-f733-4e09-bd02-5412a79db2f4"
       },
       {
         "desc": "A rustic farmhouse sideboard with a two-tier design featuring cream-colored wood, glass-paneled upper doors, wooden lower doors, a built-in wine rack, and distinctive wooden knobs.",
@@ -266,13 +261,14 @@
           1.998181275097977,
           0.5013650059700012
         ],
-        "uuid": "c5977bf7-5064-4ce6-bf5f-da111419ac10"
+        "uuid": "fb6f5355-efc9-4938-be67-432dfa575646"
       }
     ]
   },
   "params": {
-    "lambda_style": 0.3,
+    "lambda_style": 0.5,
     "strip_descs": true,
-    "greedy": true
+    "greedy": true,
+    "category_constrained": true
   }
 }
