@@ -229,6 +229,13 @@ def sample_scene_with_style_coherence(
 		# Optionally strip to category-only description
 		query_desc = strip_desc_to_category(obj) if do_strip_descs else desc
 
+		# Determine query category early so we can print it
+		query_category = None
+		if category_constrained:
+			query_category = simple_descs.get(desc, None)
+			if query_category is None:
+				query_category = simple_descs.get(obj.get("sampled_asset_desc", ""), None)
+
 		if do_print:
 			print(f"\n{'='*90}")
 			print(f"OBJECT [{obj_idx}]")
@@ -253,15 +260,6 @@ def sample_scene_with_style_coherence(
 		size_sims = retrieval.compute_size_similarities(query_size_t).squeeze(1)  # (n_assets,)
 
 		# Step 2: Compute style similarity vs. already-selected assets
-		# Determine query category for category-constrained comparison
-		query_category = None
-		if category_constrained:
-			# Use simple_descs to get the category of the query object's desc
-			query_category = simple_descs.get(desc, None)
-			# If desc not found and we have sampled_asset_desc from a prior run, try that
-			if query_category is None:
-				query_category = simple_descs.get(obj.get("sampled_asset_desc", ""), None)
-
 		style_scores = compute_style_similarities(
 			all_jids, selected_jids, metadata, metadata_scaled,
 			simple_descs=simple_descs if category_constrained else None,
