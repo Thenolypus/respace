@@ -30,6 +30,15 @@ from src.sample import AssetRetrievalModule
 # Style similarity helpers                                                     #
 # --------------------------------------------------------------------------- #
 
+def _parse_field(val):
+	"""Parse a metadata field that may be a list or a comma-separated string."""
+	if val is None:
+		return set()
+	if isinstance(val, str):
+		return {v.lower().strip() for v in val.split(",") if v.strip()}
+	return {v.lower().strip() for v in val if v}
+
+
 def get_asset_style_fields(jid, metadata, metadata_scaled):
 	"""Return (color_set, style_set, material_set) for a given asset JID."""
 	asset = metadata.get(jid)
@@ -40,10 +49,24 @@ def get_asset_style_fields(jid, metadata, metadata_scaled):
 		orig_jid = scaled.get("jid")
 		asset = metadata.get(orig_jid, {})
 
-	colors = {c.lower().strip() for c in (asset.get("color") or [])}
-	styles = {s.lower().strip() for s in (asset.get("style") or [])}
-	materials = {m.lower().strip() for m in (asset.get("material") or [])}
+	colors = _parse_field(asset.get("color"))
+	styles = _parse_field(asset.get("style"))
+	materials = _parse_field(asset.get("material"))
 	return colors, styles, materials
+
+
+def get_asset_category(jid, metadata, metadata_scaled, simple_descs):
+	"""Get the furniture category for an asset (e.g. 'sofa', 'lamp', 'table')."""
+	asset = metadata.get(jid)
+	if asset is None:
+		scaled = metadata_scaled.get(jid)
+		if scaled is None:
+			return "unknown"
+		orig_jid = scaled.get("jid")
+		asset = metadata.get(orig_jid, {})
+
+	summary = asset.get("summary", "")
+	return simple_descs.get(summary, "unknown")
 
 
 def jaccard(set_a, set_b):
@@ -61,6 +84,8 @@ def compute_style_similarities(
 	selected_jids,
 	metadata,
 	metadata_scaled,
+	simple_descs=None,
+	query_category=None,
 	w_color=0.5,
 	w_style=0.3,
 	w_material=0.2,
@@ -68,14 +93,30 @@ def compute_style_similarities(
 	"""
 	Compute style similarity for every candidate against already-selected assets.
 
-	For each candidate, similarity is averaged across all selected assets.
+	If query_category is provided, only compares against selected assets of the
+	same category (e.g. lamp vs lamp, sofa vs sofa). If no same-category assets
+	have been selected yet, returns uniform scores (no bias).
+
 	Returns a numpy array of shape (n_candidates,).
 	"""
 	if not selected_jids:
 		return np.ones(len(candidate_jids), dtype=np.float32)
 
-	# Pre-fetch style fields for selected assets
-	selected_fields = [get_asset_style_fields(j, metadata, metadata_scaled) for j in selected_jids]
+	# Filter selected assets to same category if requested
+	if query_category and simple_descs:
+		same_cat_jids = [
+			j for j in selected_jids
+			if get_asset_category(j, metadata, metadata_scaled, simple_descs) == query_category
+		]
+	else:
+		same_cat_jids = selected_jids
+
+	# No same-category assets selected yet -- no style bias for this object
+	if not same_cat_jids:
+		return np.ones(len(candidate_jids), dtype=np.float32)
+
+	# Pre-fetch style fields for the comparison set
+	selected_fields = [get_asset_style_fields(j, metadata, metadata_scaled) for j in same_cat_jids]
 
 	scores = np.zeros(len(candidate_jids), dtype=np.float32)
 	for i, cand_jid in enumerate(candidate_jids):
@@ -143,13 +184,15 @@ def sample_scene_with_style_coherence(
 	is_greedy_sampling=True,
 	do_strip_descs=True,
 	do_print=True,
+	category_constrained=True,
 ):
 	"""
 	Sample assets for a scene with autoregressive style coherence.
 
 	1. For each object (in order):
 	   a. Compute semantic + size similarities (existing system).
-	   b. Compute style similarity vs. already-selected assets.
+	   b. Compute style similarity vs. already-selected assets of the same
+	      furniture category (if category_constrained=True).
 	   c. Blend: final = lam_sem * sem + lam_size * size + lam_style * style
 	      where lam_sem + lam_size are re-scaled from the original lambda
 	      to sum to (1 - lambda_style).
@@ -163,6 +206,19 @@ def sample_scene_with_style_coherence(
 	metadata = retrieval.all_assets_metadata
 	metadata_scaled = retrieval.all_assets_metadata_scaled
 	all_jids = retrieval.all_jids_catalog
+
+	# Load simple_descs for category lookup
+	simple_descs = {}
+	if category_constrained:
+		try:
+			import os
+			pth = os.getenv("PTH_ASSETS_METADATA_SIMPLE_DESCS",
+							"data/metadata/model_info_3dfuture_assets_simple_descs.json")
+			with open(pth) as f:
+				simple_descs = json.load(f)
+		except Exception:
+			print("WARNING: Could not load simple_descs, disabling category-constrained style")
+			category_constrained = False
 
 	orig_lambd = retrieval.lambd.item()
 
@@ -181,6 +237,8 @@ def sample_scene_with_style_coherence(
 				print(f"  Stripped desc:  \"{query_desc}\"")
 			print(f"  Size: {size}")
 			print(f"  Selected so far: {len(selected_jids)} assets")
+			if category_constrained:
+				print(f"  Query category: {query_category or 'unknown'}")
 			print(f"{'='*90}")
 
 		# Step 1: Get semantic + size similarities from existing system
@@ -195,14 +253,28 @@ def sample_scene_with_style_coherence(
 		size_sims = retrieval.compute_size_similarities(query_size_t).squeeze(1)  # (n_assets,)
 
 		# Step 2: Compute style similarity vs. already-selected assets
+		# Determine query category for category-constrained comparison
+		query_category = None
+		if category_constrained:
+			# Use simple_descs to get the category of the query object's desc
+			query_category = simple_descs.get(desc, None)
+			# If desc not found and we have sampled_asset_desc from a prior run, try that
+			if query_category is None:
+				query_category = simple_descs.get(obj.get("sampled_asset_desc", ""), None)
+
 		style_scores = compute_style_similarities(
-			all_jids, selected_jids, metadata, metadata_scaled
+			all_jids, selected_jids, metadata, metadata_scaled,
+			simple_descs=simple_descs if category_constrained else None,
+			query_category=query_category,
 		)
 		style_sims = torch.tensor(style_scores, device=semantic_sims.device)
 
+		# Check if style bias is active (not uniform 1.0 scores)
+		style_is_active = not (style_sims == 1.0).all().item()
+
 		# Step 3: Blend
-		if len(selected_jids) == 0:
-			# First object: no style bias, use original weights
+		if not style_is_active:
+			# No style bias: first object or no same-category assets selected yet
 			weighted_sims = orig_lambd * semantic_sims + (1 - orig_lambd) * size_sims
 			effective_style_weight = 0.0
 		else:
@@ -361,6 +433,8 @@ def main():
 						help="Render 3D scenes with retrieved assets")
 	parser.add_argument("--stochastic", action="store_true",
 						help="Use stochastic sampling instead of greedy")
+	parser.add_argument("--no-category-constraint", action="store_true",
+						help="Compare style against ALL selected assets, not just same category")
 	args = parser.parse_args()
 
 	base_dir = Path("input_test")
@@ -399,7 +473,7 @@ def main():
 		print(f"\n{'#'*90}")
 		print(f"# Processing: {scene_path}")
 		print(f"# Room: {room_name}")
-		print(f"# lambda_style={args.lambda_style}, strip_descs={not args.no_strip}")
+		print(f"# lambda_style={args.lambda_style}, strip_descs={not args.no_strip}, category_constrained={not args.no_category_constraint}")
 		print(f"{'#'*90}")
 
 		with open(scene_path) as f:
@@ -418,6 +492,7 @@ def main():
 			is_greedy_sampling=not args.stochastic,
 			do_strip_descs=not args.no_strip,
 			do_print=True,
+			category_constrained=not args.no_category_constraint,
 		)
 
 		# Print summary
@@ -440,6 +515,7 @@ def main():
 				"lambda_style": args.lambda_style,
 				"strip_descs": not args.no_strip,
 				"greedy": not args.stochastic,
+				"category_constrained": not args.no_category_constraint,
 			},
 		}
 		out_file = room_output / "retrieval_comparison.json"
