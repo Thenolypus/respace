@@ -88,7 +88,29 @@ class AssetRetrievalModule(nn.Module):
 		self.all_embeds_catalog = torch.nn.functional.normalize(all_embeds, p=2, dim=1)
 		self.all_sizes_catalog = all_sizes
 		self.all_jids_catalog = all_jids
-		
+		self.jid_to_idx = {jid: i for i, jid in enumerate(all_jids)}
+
+		# Load style-only embeddings
+		with open(os.getenv("PTH_ASSETS_EMBED_STYLE"), 'rb') as fp:
+			model_info_style_embeds = pickle.load(fp)
+
+		all_style_embeds = np.array(model_info_style_embeds.get("embeds"))
+		all_style_sizes_prod = np.prod(model_info_style_embeds.get("sizes"), axis=1)
+		all_style_jids = np.array(model_info_style_embeds.get("jids"))[all_style_sizes_prod < size_prod_threshold].tolist()
+		all_style_embeds = all_style_embeds[all_style_sizes_prod < size_prod_threshold, :]
+
+		assert all_style_jids == all_jids, "Style and full embedding JIDs must match after filtering"
+
+		all_style_embeds = torch.tensor(all_style_embeds)
+		if self.accelerator:
+			all_style_embeds = all_style_embeds.to(self.accelerator.device)
+		else:
+			all_style_embeds = all_style_embeds.to(dvc)
+		self.all_style_embeds_catalog = torch.nn.functional.normalize(all_style_embeds, p=2, dim=1)
+
+		# Load simple descriptions for category stripping
+		self.simple_descs = json.load(open(os.getenv("PTH_ASSETS_METADATA_SIMPLE_DESCS")))
+
 		# Learnable parameters
 		self.lambd = torch.tensor(lambd)
 		self.sigma = torch.tensor(sigma)
@@ -107,7 +129,7 @@ class AssetRetrievalModule(nn.Module):
 		# print(f"idx [{self.accelerator.process_index if self.accelerator else None}] — before siglip tokenizer")
 		# print(txts)
 		try:
-			inputs = self.siglip_tokenizer(txts, truncation=True, padding="max_length", return_tensors="pt", return_attention_mask=True)
+			inputs = self.siglip_tokenizer(txts, truncation=True, padding="max_length", max_length=64, return_tensors="pt", return_attention_mask=True)
 
 			if self.accelerator:
 				inputs = {k: v.to(self.accelerator.device) for k, v in inputs.items()}
@@ -275,10 +297,15 @@ class AssetRetrievalModule(nn.Module):
 			print(f"Params: lambd={self.lambd.item():.2f}, sigma={self.sigma.item():.4f}, temp={self.temp.item():.2f}, top_k={self.top_k}, top_p={self.top_p}")
 
 			has_intermediates = hasattr(self, '_last_semantic_sims') and query_idx is not None
+			has_style = hasattr(self, '_last_style_sims') and self._last_style_sims is not None
 
 			if has_intermediates:
-				print(f"\n{'Rank':<5} {'Prob':>8} {'Sem':>8} {'Size':>8} {'Blend':>8}  {'Asset Size':<28} Description")
-				print(f"{'-'*5} {'-'*8} {'-'*8} {'-'*8} {'-'*8}  {'-'*28} {'-'*50}")
+				if has_style:
+					print(f"\n{'Rank':<5} {'Prob':>8} {'Sem':>8} {'Size':>8} {'Style':>8} {'Blend':>8}  {'Asset Size':<28} Description")
+					print(f"{'-'*5} {'-'*8} {'-'*8} {'-'*8} {'-'*8} {'-'*8}  {'-'*28} {'-'*50}")
+				else:
+					print(f"\n{'Rank':<5} {'Prob':>8} {'Sem':>8} {'Size':>8} {'Blend':>8}  {'Asset Size':<28} Description")
+					print(f"{'-'*5} {'-'*8} {'-'*8} {'-'*8} {'-'*8}  {'-'*28} {'-'*50}")
 			else:
 				print(f"\n{'Rank':<5} {'Prob':>8}  {'Asset Size':<28} Description")
 				print(f"{'-'*5} {'-'*8}  {'-'*28} {'-'*50}")
@@ -301,7 +328,11 @@ class AssetRetrievalModule(nn.Module):
 					sem_val = self._last_semantic_sims[idx, query_idx].item()
 					size_val = self._last_size_sims[idx, query_idx].item()
 					blend_val = self._last_weighted_sims[idx, query_idx].item()
-					print(f"#{rank+1:<4} {prob_val:>8.4f} {sem_val:>8.4f} {size_val:>8.4f} {blend_val:>8.4f}  {size_str:<28} {desc[:70]}")
+					if has_style:
+						style_val = self._last_style_sims[idx, query_idx].item()
+						print(f"#{rank+1:<4} {prob_val:>8.4f} {sem_val:>8.4f} {size_val:>8.4f} {style_val:>8.4f} {blend_val:>8.4f}  {size_str:<28} {desc[:70]}")
+					else:
+						print(f"#{rank+1:<4} {prob_val:>8.4f} {sem_val:>8.4f} {size_val:>8.4f} {blend_val:>8.4f}  {size_str:<28} {desc[:70]}")
 				else:
 					print(f"#{rank+1:<4} {prob_val:>8.4f}  {size_str:<28} {desc[:70]}")
 			print()
@@ -421,6 +452,136 @@ class AssetRetrievalModule(nn.Module):
 	@staticmethod
 	def calculate_size_difference(size1, size2):
 		return np.linalg.norm(np.array(size1) - np.array(size2))
+
+	def strip_desc_to_category(self, obj):
+		"""Strip a full SG-LLM description to just the furniture category."""
+		prompt = obj.get("prompt")
+		if prompt:
+			return prompt
+		desc = obj.get("desc", "")
+		if desc in self.simple_descs:
+			return self.simple_descs[desc]
+		return desc
+
+	def compute_style_similarity(self, selected_style_embeds):
+		"""
+		Cosine similarity of each catalog asset against the mean style
+		of previously selected assets.
+
+		Args:
+			selected_style_embeds: (n_selected, embed_dim) L2-normalized
+		Returns:
+			(n_assets,) cosine similarities
+		"""
+		mean_style = selected_style_embeds.mean(dim=0)
+		mean_style = torch.nn.functional.normalize(mean_style, p=2, dim=0)
+		return torch.matmul(self.all_style_embeds_catalog, mean_style)
+
+	def sample_all_assets_style_coherent(self, scene, lambda_style=0.2,
+										 is_greedy_sampling=True, user_prompt=None):
+		"""
+		Sample assets with autoregressive style coherence.
+
+		Object [0] (no user prompt): full description + size, no style bias.
+		Object [0] (with user prompt) and Object [1]+: category-only description
+		+ size + style similarity against previously selected assets.
+		"""
+		sampled_scene = copy.deepcopy(scene)
+		sampled_scene["objects"] = []
+		selected_style_embeds = []
+		desc_size_map = {}
+
+		# User prompt as persistent style anchor
+		if user_prompt is not None:
+			user_embed = self.get_text_embeddings([user_prompt])
+			user_embed = torch.nn.functional.normalize(user_embed, p=2, dim=1)
+			selected_style_embeds.append(user_embed.squeeze(0))
+
+		orig_lambd = self.lambd.item()
+
+		for obj_idx, obj in enumerate(scene.get("objects", [])):
+			desc = obj.get("desc", "")
+			size = obj.get("size", [])
+			is_first_object = (obj_idx == 0 and user_prompt is None)
+
+			# Semantic similarity
+			if is_first_object:
+				query_desc = desc
+			else:
+				query_desc = self.strip_desc_to_category(obj)
+
+			query_embeds = self.get_text_embeddings([query_desc])
+			semantic_sims = self.compute_semantic_similarities(query_embeds).squeeze(1)
+
+			# Size similarity
+			query_size_t = torch.tensor([size])
+			if self.accelerator:
+				query_size_t = query_size_t.to(self.accelerator.device)
+			else:
+				query_size_t = query_size_t.to(self.dvc)
+			size_sims = self.compute_size_similarities(query_size_t).squeeze(1)
+
+			# Blend
+			if is_first_object:
+				weighted_sims = orig_lambd * semantic_sims + (1 - orig_lambd) * size_sims
+				self._last_style_sims = None
+			else:
+				style_embeds_tensor = torch.stack(selected_style_embeds, dim=0)
+				style_sims = self.compute_style_similarity(style_embeds_tensor)
+
+				remaining = 1.0 - lambda_style
+				lam_sem = orig_lambd * remaining
+				lam_size = (1 - orig_lambd) * remaining
+				weighted_sims = lam_sem * semantic_sims + lam_size * size_sims + lambda_style * style_sims
+				self._last_style_sims = style_sims.unsqueeze(1)
+
+			# Store intermediates for diagnostics
+			self._last_semantic_sims = semantic_sims.unsqueeze(1)
+			self._last_size_sims = size_sims.unsqueeze(1)
+			self._last_weighted_sims = weighted_sims.unsqueeze(1)
+
+			# Top-k/top-p filtering
+			probs = self.compute_final_probabilities(weighted_sims.unsqueeze(1))
+			probs = probs.squeeze(0)
+
+			# Deduplication
+			if desc in desc_size_map:
+				matching_obj = None
+				for sampled_obj in desc_size_map[desc]:
+					if self.calculate_size_difference(size, sampled_obj["sampled_asset_size"]) <= self.asset_size_threshold:
+						matching_obj = sampled_obj
+						break
+				if matching_obj:
+					new_obj = copy.deepcopy(obj)
+					new_obj.update({
+						"sampled_asset_jid": matching_obj["sampled_asset_jid"],
+						"sampled_asset_desc": matching_obj["sampled_asset_desc"],
+						"sampled_asset_size": matching_obj["sampled_asset_size"],
+						"uuid": str(uuid.uuid4())
+					})
+					jid = matching_obj["sampled_asset_jid"]
+					idx_in_catalog = self.jid_to_idx[jid]
+					selected_style_embeds.append(self.all_style_embeds_catalog[idx_in_catalog])
+					sampled_scene["objects"].append(new_obj)
+					continue
+
+			# Sample
+			new_obj = self.create_sampled_obj(obj, probs, is_greedy_sampling, query_idx=0)
+
+			if desc in desc_size_map:
+				desc_size_map[desc].append(new_obj)
+			else:
+				desc_size_map[desc] = [new_obj]
+
+			# Track selected style embedding
+			jid_sampled = new_obj["sampled_asset_jid"]
+			idx_in_catalog = self.jid_to_idx[jid_sampled]
+			selected_style_embeds.append(self.all_style_embeds_catalog[idx_in_catalog])
+
+			sampled_scene["objects"].append(new_obj)
+
+		self._last_style_sims = None
+		return sampled_scene
 
 # **********************************************************************************************************
 
