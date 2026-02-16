@@ -18,7 +18,7 @@ import torch
 import numpy as np
 import pickle
 import json
-from transformers import AutoTokenizer, Siglip2TextModel
+from transformers import AutoTokenizer, SiglipTextModel
 from tqdm import tqdm
 from dotenv import load_dotenv
 import os
@@ -75,7 +75,7 @@ print(f"Using device: {device}")
 all_assets_metadata = json.load(open(os.getenv("PTH_ASSETS_METADATA")))
 all_assets_metadata_scaled = json.load(open(os.getenv("PTH_ASSETS_METADATA_SCALED")))
 
-siglip_model = Siglip2TextModel.from_pretrained("google/siglip2-so400m-patch14-384")
+siglip_model = SiglipTextModel.from_pretrained("google/siglip2-so400m-patch14-384")
 siglip_tokenizer = AutoTokenizer.from_pretrained("google/siglip2-so400m-patch14-384")
 
 all_jids = []
