@@ -103,7 +103,7 @@ for i in range(min(5, len(all_style_strings))):
 	print(f"  [{i}] {asset.get('summary', '')[:60]}")
 	print(f"       style string: \"{all_style_strings[i]}\"")
 
-all_embeds = get_batch_embeds(all_style_strings)
+all_embeds = get_batch_embeds(all_style_strings, device=device)
 
 # Handle scaled assets: reuse the original asset's style embedding
 for key, val in tqdm(all_assets_metadata_scaled.items()):

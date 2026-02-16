@@ -51,7 +51,7 @@ for key, val in tqdm(all_assets_metadata.items()):
 	all_sizes.append([round(elem, 2) for elem in val.get("size")])
 	all_summaries.append(val.get("summary"))
 
-all_embeds = get_batch_embeds(all_summaries)
+all_embeds = get_batch_embeds(all_summaries, device=device)
 
 for key, val in tqdm(all_assets_metadata_scaled.items()):
 	idx_orig_asset = all_jids.index(val.get("jid"))
