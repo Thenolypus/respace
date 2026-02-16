@@ -1,0 +1,369 @@
+{
+  "style_coherent": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.87,
+        2.8,
+        1.27
+      ],
+      [
+        -2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        1.27
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.87,
+        0.0,
+        1.27
+      ],
+      [
+        -2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        1.27
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Mid-Century Modern black and brass floor lamp with adjustable, directional lighting and a sleek, contemporary design.",
+        "pos": [
+          -1.6,
+          0.0,
+          -1.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.49,
+          1.25,
+          0.34
+        ],
+        "prompt": "black floor lamp",
+        "sampled_asset_jid": "71ab8f57-0cf2-4efb-83bd-6d87258622a6-(0.98)-(1.0)-(1.39)",
+        "sampled_asset_desc": "A Mid-Century Modern black and brass floor lamp with adjustable, directional lighting and a sleek, contemporary design.",
+        "sampled_asset_size": [
+          0.49,
+          1.25,
+          0.34
+        ],
+        "uuid": "e9dab5c1-dce6-484b-8615-f5eef116daf7",
+        "scale": [
+          0.98,
+          1.0,
+          1.39
+        ]
+      },
+      {
+        "desc": "A modern minimalist loveseat sofa with red fabric upholstery, curved backrest, thin metal legs, and decorative multicolor cushions.",
+        "pos": [
+          -2.0,
+          0.0,
+          0.2
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.1,
+          0.87,
+          0.82
+        ],
+        "prompt": "red loveseat sofa",
+        "sampled_asset_jid": "0aa20dad-4049-4ebb-b7a5-e00eb76ff5e9",
+        "sampled_asset_desc": "A modern beige loveseat sofa featuring a wooden frame, boxy shape, cushioned seating, and low-profile arms accentuated with decorative throw pillows.",
+        "sampled_asset_size": [
+          2.1081440448760986,
+          0.8602359642860016,
+          0.7986480295658112
+        ],
+        "uuid": "a247025e-76a3-406e-b68f-bbdfeabb6be1",
+        "scale": [
+          1.17,
+          1.0,
+          0.91
+        ]
+      },
+      {
+        "desc": "Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding.",
+        "pos": [
+          -0.53,
+          0.0,
+          0.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.52,
+          1.46,
+          1.99
+        ],
+        "prompt": "white single bed",
+        "sampled_asset_jid": "1c2a2b53-fed2-49f7-b0ae-f40028fd1c44-(0.8)-(1.0)-(0.87)",
+        "sampled_asset_desc": "Traditional classic king-size blue wooden bed with decorative headboard, paneled footboard, and turned spindle finials.",
+        "sampled_asset_size": [
+          1.5,
+          1.47,
+          2.0
+        ],
+        "uuid": "6ce9bce1-6320-40d9-b7ac-df94c8fba950",
+        "scale": [
+          0.8,
+          1.0,
+          0.87
+        ]
+      },
+      {
+        "desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
+        "pos": [
+          -0.48,
+          0.0,
+          -0.98
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.34,
+          0.79,
+          0.48
+        ],
+        "prompt": "wooden sideboard",
+        "sampled_asset_jid": "199de94a-82c0-38e4-9475-de998fb04054",
+        "sampled_asset_desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
+        "sampled_asset_size": [
+          1.339110016822815,
+          0.7890509839576882,
+          0.4781000018119812
+        ],
+        "uuid": "a8ac8f2c-ee7a-4881-b1ab-0b05744dbb04",
+        "scale": [
+          0.77,
+          1.0,
+          1.23
+        ]
+      }
+    ]
+  },
+  "baseline": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.87,
+        2.8,
+        1.27
+      ],
+      [
+        -2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        -1.27
+      ],
+      [
+        2.87,
+        2.8,
+        1.27
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.87,
+        0.0,
+        1.27
+      ],
+      [
+        -2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        -1.27
+      ],
+      [
+        2.87,
+        0.0,
+        1.27
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A Mid-Century Modern black and brass floor lamp with adjustable, directional lighting and a sleek, contemporary design.",
+        "pos": [
+          -1.6,
+          0.0,
+          -1.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.49,
+          1.25,
+          0.34
+        ],
+        "prompt": "black floor lamp",
+        "sampled_asset_jid": "71ab8f57-0cf2-4efb-83bd-6d87258622a6-(0.98)-(1.0)-(1.39)",
+        "sampled_asset_desc": "A Mid-Century Modern black and brass floor lamp with adjustable, directional lighting and a sleek, contemporary design.",
+        "sampled_asset_size": [
+          0.49,
+          1.25,
+          0.34
+        ],
+        "uuid": "1c7bbc12-1367-4307-989a-4337ebd3407f",
+        "scale": [
+          0.98,
+          1.0,
+          1.39
+        ]
+      },
+      {
+        "desc": "A modern minimalist loveseat sofa with red fabric upholstery, curved backrest, thin metal legs, and decorative multicolor cushions.",
+        "pos": [
+          -2.0,
+          0.0,
+          0.2
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.1,
+          0.87,
+          0.82
+        ],
+        "prompt": "red loveseat sofa",
+        "sampled_asset_jid": "0aa20dad-4049-4ebb-b7a5-e00eb76ff5e9",
+        "sampled_asset_desc": "A modern beige loveseat sofa featuring a wooden frame, boxy shape, cushioned seating, and low-profile arms accentuated with decorative throw pillows.",
+        "sampled_asset_size": [
+          2.1081440448760986,
+          0.8602359642860016,
+          0.7986480295658112
+        ],
+        "uuid": "db4f65e5-8097-487a-a58d-1e0f2ad5c6c8",
+        "scale": [
+          1.17,
+          1.0,
+          0.91
+        ]
+      },
+      {
+        "desc": "Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding.",
+        "pos": [
+          -0.53,
+          0.0,
+          0.2
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.52,
+          1.46,
+          1.99
+        ],
+        "prompt": "white single bed",
+        "sampled_asset_jid": "1c2a2b53-fed2-49f7-b0ae-f40028fd1c44-(0.8)-(1.0)-(0.87)",
+        "sampled_asset_desc": "Traditional classic king-size blue wooden bed with decorative headboard, paneled footboard, and turned spindle finials.",
+        "sampled_asset_size": [
+          1.5,
+          1.47,
+          2.0
+        ],
+        "uuid": "9bb6e133-294a-4d74-8c00-f920b97e8787",
+        "scale": [
+          0.8,
+          1.0,
+          0.87
+        ]
+      },
+      {
+        "desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
+        "pos": [
+          -0.48,
+          0.0,
+          -0.98
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.34,
+          0.79,
+          0.48
+        ],
+        "prompt": "wooden sideboard",
+        "sampled_asset_jid": "199de94a-82c0-38e4-9475-de998fb04054",
+        "sampled_asset_desc": "Rustic industrial sideboard with natural wood finish, mesh door, and metal accents offering practical storage.",
+        "sampled_asset_size": [
+          1.339110016822815,
+          0.7890509839576882,
+          0.4781000018119812
+        ],
+        "uuid": "77c1b7b8-016b-402b-95e9-74f85c017775",
+        "scale": [
+          0.77,
+          1.0,
+          1.23
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.3,
+    "greedy": true,
+    "user_prompt": null
+  }
+}

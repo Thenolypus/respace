@@ -1,0 +1,405 @@
+{
+  "style_coherent": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.8,
+        1.41
+      ],
+      [
+        -1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.41
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist king-size bed with dark brown fabric upholstery, low-profile wooden frame, and sleek design.",
+        "pos": [
+          0.45,
+          0.0,
+          0.16
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.3,
+          0.78,
+          2.42
+        ],
+        "prompt": "black wooden bed frame",
+        "sampled_asset_jid": "8d4810de-1c7b-4ace-b9b3-edf23619b063",
+        "sampled_asset_desc": "Modern minimalist king-size bed with dark brown fabric upholstery, low-profile wooden frame, and sleek design.",
+        "sampled_asset_size": [
+          2.298889994621277,
+          0.7766077188498457,
+          2.415320038795471
+        ],
+        "uuid": "58cd5bc1-ce80-4d3d-a426-4ae8b5dfb4d2"
+      },
+      {
+        "desc": "A modern mid-century lounge chair with a brown velvet fabric seating and curved backrest, framed in black wood with tapered legs and slim armrests.",
+        "pos": [
+          -1.1,
+          0.0,
+          0.3
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.8,
+          0.81,
+          0.75
+        ],
+        "prompt": "blue velvet lounge chair",
+        "sampled_asset_jid": "72faa6ff-caa5-4036-94b0-b18d220fd65c-(1.0)-(1.0)-(0.99)",
+        "sampled_asset_desc": "Modern minimalist lounge chair with rectangular dark brown metal frame and beige fabric cushions.",
+        "sampled_asset_size": [
+          0.79,
+          0.8,
+          0.75
+        ],
+        "uuid": "c82e3ed4-ed8b-4ff1-8ea4-d7e6836b92b9",
+        "scale": [
+          1.0,
+          1.0,
+          0.99
+        ]
+      },
+      {
+        "desc": "A modern industrial pendant lamp featuring a circular brown metal frame with clear glass tube accents and central light bulbs, exemplifying geometric and contemporary design.",
+        "pos": [
+          0.09,
+          1.87,
+          -0.09
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.84,
+          1.03,
+          0.84
+        ],
+        "prompt": "green glass pendant lamp",
+        "sampled_asset_jid": "4bf7f34e-9f1a-4448-9228-fd523ddcdbef-(0.68)-(1.0)-(0.68)",
+        "sampled_asset_desc": "A modern industrial black metal pendant lamp with fabric shades, 12 lights, decorative chains, and hanging pendants.",
+        "sampled_asset_size": [
+          0.85,
+          1.03,
+          0.85
+        ],
+        "uuid": "b1422754-0b4d-4745-8b5d-74dbe328b659",
+        "scale": [
+          0.68,
+          1.0,
+          0.68
+        ]
+      },
+      {
+        "desc": "Sleek black wooden coffee table with round top, vertical slat supports, and a circular base, epitomizing modern minimalist design.",
+        "pos": [
+          0.25,
+          0.0,
+          0.25
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.05,
+          0.52,
+          1.05
+        ],
+        "prompt": "small round coffee table",
+        "sampled_asset_jid": "a00198d3-e618-45ba-9900-c4a216380943",
+        "sampled_asset_desc": "A contemporary industrial coffee table with a hexagonal shape, open metal frame, and marble-patterned wood surfaces featuring a two-tier design.",
+        "sampled_asset_size": [
+          1.054229974746704,
+          0.546387103546996,
+          1.053812026977539
+        ],
+        "uuid": "bbcae449-f0fb-49ce-9600-6942c3d7fc95"
+      },
+      {
+        "desc": "White modern minimalist sideboard with three handle-less drawers and doors featuring clean lines and a rectangular shape.",
+        "pos": [
+          -0.65,
+          0.0,
+          -1.19
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.9,
+          0.69,
+          0.25
+        ],
+        "prompt": "white modern sideboard",
+        "sampled_asset_jid": "fb17ffa2-7ee0-4c65-a86f-c3c9b6c61c2c-(1.65)-(1.0)-(2.28)",
+        "sampled_asset_desc": "Modern industrial semi-circle metal pendant lamp with black frame, exposed bronze fittings, and filament-style bulbs.",
+        "sampled_asset_size": [
+          0.9,
+          0.68,
+          0.23
+        ],
+        "uuid": "3b37866b-0e34-44a9-98cf-b02d6171197c",
+        "scale": [
+          1.65,
+          1.0,
+          2.28
+        ]
+      }
+    ]
+  },
+  "baseline": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.8,
+        1.41
+      ],
+      [
+        -1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        -1.41
+      ],
+      [
+        1.71,
+        2.8,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.41
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist king-size bed with dark brown fabric upholstery, low-profile wooden frame, and sleek design.",
+        "pos": [
+          0.45,
+          0.0,
+          0.16
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.3,
+          0.78,
+          2.42
+        ],
+        "prompt": "black wooden bed frame",
+        "sampled_asset_jid": "8d4810de-1c7b-4ace-b9b3-edf23619b063",
+        "sampled_asset_desc": "Modern minimalist king-size bed with dark brown fabric upholstery, low-profile wooden frame, and sleek design.",
+        "sampled_asset_size": [
+          2.298889994621277,
+          0.7766077188498457,
+          2.415320038795471
+        ],
+        "uuid": "ace397f7-063d-4b5d-90ef-7f7d4d51b53e"
+      },
+      {
+        "desc": "A modern mid-century lounge chair with a brown velvet fabric seating and curved backrest, framed in black wood with tapered legs and slim armrests.",
+        "pos": [
+          -1.1,
+          0.0,
+          0.3
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.8,
+          0.81,
+          0.75
+        ],
+        "prompt": "blue velvet lounge chair",
+        "sampled_asset_jid": "8118a31b-f6c2-41cf-8dc0-bd72fe26a369",
+        "sampled_asset_desc": "A contemporary-modern lounge chair with a curved slatted bronze metal frame, gray fabric cushioning, and decorative accent pillows.",
+        "sampled_asset_size": [
+          0.7994630038738251,
+          0.79624897766484,
+          0.7536220252513885
+        ],
+        "uuid": "887de8b1-70a5-4225-a1fc-16c8a00e7532"
+      },
+      {
+        "desc": "A modern industrial pendant lamp featuring a circular brown metal frame with clear glass tube accents and central light bulbs, exemplifying geometric and contemporary design.",
+        "pos": [
+          0.09,
+          1.87,
+          -0.09
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.84,
+          1.03,
+          0.84
+        ],
+        "prompt": "green glass pendant lamp",
+        "sampled_asset_jid": "4bf7f34e-9f1a-4448-9228-fd523ddcdbef-(0.68)-(1.0)-(0.68)",
+        "sampled_asset_desc": "A modern industrial black metal pendant lamp with fabric shades, 12 lights, decorative chains, and hanging pendants.",
+        "sampled_asset_size": [
+          0.85,
+          1.03,
+          0.85
+        ],
+        "uuid": "e7dc7ad0-a6f8-4796-8e0f-33c9c5d1ebf8",
+        "scale": [
+          0.68,
+          1.0,
+          0.68
+        ]
+      },
+      {
+        "desc": "Sleek black wooden coffee table with round top, vertical slat supports, and a circular base, epitomizing modern minimalist design.",
+        "pos": [
+          0.25,
+          0.0,
+          0.25
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.05,
+          0.52,
+          1.05
+        ],
+        "prompt": "small round coffee table",
+        "sampled_asset_jid": "7423e139-439d-4675-87ad-0a9221cd03f8",
+        "sampled_asset_desc": "Sleek black wooden coffee table with round top, vertical slat supports, and a circular base, epitomizing modern minimalist design.",
+        "sampled_asset_size": [
+          1.0504469871520996,
+          0.5212393945694203,
+          1.0501310229301453
+        ],
+        "uuid": "8d7d4a56-adaf-42eb-a6dc-c01975f9fec0"
+      },
+      {
+        "desc": "White modern minimalist sideboard with three handle-less drawers and doors featuring clean lines and a rectangular shape.",
+        "pos": [
+          -0.65,
+          0.0,
+          -1.19
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.9,
+          0.69,
+          0.25
+        ],
+        "prompt": "white modern sideboard",
+        "sampled_asset_jid": "b9e73c7a-7d71-495f-896f-359e5305f6c7",
+        "sampled_asset_desc": "White modern minimalist sideboard with three handle-less drawers and doors featuring clean lines and a rectangular shape.",
+        "sampled_asset_size": [
+          0.9003999829292297,
+          0.6939700336379229,
+          0.2502000480890274
+        ],
+        "uuid": "f6e30efd-4a51-42a0-b430-6c5184496990"
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.5,
+    "greedy": true,
+    "user_prompt": null
+  }
+}

@@ -1,0 +1,723 @@
+{
+  "style_coherent": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        -6.0,
+        2.8,
+        6.07
+      ],
+      [
+        -6.0,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.1,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.0,
+        2.8,
+        1.61
+      ],
+      [
+        2.88,
+        2.8,
+        1.61
+      ],
+      [
+        2.98,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        2.88
+      ],
+      [
+        -2.31,
+        2.8,
+        2.88
+      ],
+      [
+        -2.41,
+        2.8,
+        6.07
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -6.0,
+        0.0,
+        6.07
+      ],
+      [
+        -6.0,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.1,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.0,
+        0.0,
+        1.61
+      ],
+      [
+        2.88,
+        0.0,
+        1.61
+      ],
+      [
+        2.98,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        2.88
+      ],
+      [
+        -2.31,
+        0.0,
+        2.88
+      ],
+      [
+        -2.41,
+        0.0,
+        6.07
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A modern industrial footstool with a black metal frame and gold X-brace design, featuring sleek lines and a rectangular shape.",
+        "pos": [
+          -2.56,
+          0.0,
+          -2.8
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.55,
+          0.47,
+          0.5
+        ],
+        "prompt": "black footstool",
+        "sampled_asset_jid": "6e759989-7f12-4dc1-abb0-21509b653712",
+        "sampled_asset_desc": "A modern industrial footstool with a black metal frame and gold X-brace design, featuring sleek lines and a rectangular shape.",
+        "sampled_asset_size": [
+          0.5450620055198669,
+          0.4699640397739131,
+          0.49974799156188965
+        ],
+        "uuid": "f3151fbb-42e7-4bcc-ba74-4faf505ebf6f"
+      },
+      {
+        "desc": "Modern minimalist floor-standing pendant lamp with brass metal pole, round base, and white glass spherical shade.",
+        "pos": [
+          -4.4,
+          0.9,
+          4.02
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.36,
+          1.66,
+          0.31
+        ],
+        "prompt": "floor standing lamp",
+        "sampled_asset_jid": "b0068432-f33f-4e20-b495-bfeccacb597f",
+        "sampled_asset_desc": "A sleek, minimalist black metal floor lamp with a slim profile, angled shaft, and circular elements, ideal for contemporary interiors.",
+        "sampled_asset_size": [
+          0.3412199914455414,
+          1.6707099804939167,
+          0.3412199914455414
+        ],
+        "uuid": "85e797c2-4911-45eb-ad27-b8162ad242f4"
+      },
+      {
+        "desc": "Modern minimalist coffee table with dark brown wooden structure, sleek design, open shelf, closed compartments, and copper metal supports.",
+        "pos": [
+          -4.3,
+          0.0,
+          -3.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.3,
+          0.4,
+          0.7
+        ],
+        "prompt": "low wooden coffee table",
+        "sampled_asset_jid": "0db6e62d-bc8e-4768-8548-f0ebbec2f9d1-(1.2)-(1.0)-(0.96)",
+        "sampled_asset_desc": "A modern minimalist black metal coffee table with a nesting design, open-frame base, and sleek round top.",
+        "sampled_asset_size": [
+          1.3,
+          0.41,
+          0.7
+        ],
+        "uuid": "771e3909-d37f-49ea-83fc-f33ccd5474ab",
+        "scale": [
+          1.2,
+          1.0,
+          0.96
+        ]
+      },
+      {
+        "desc": "Modern three-seat sofa with grey fabric, wooden legs, clean lines, and decorative orange and yellow pillows for a stylish and comfortable seating solution.",
+        "pos": [
+          -0.78,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.01,
+          0.89,
+          0.85
+        ],
+        "prompt": "modern grey couch",
+        "sampled_asset_jid": "b7f716e2-70f6-4382-bacb-1c1ae7c9c234",
+        "sampled_asset_desc": "Modern three-seat sofa with a minimalist wooden frame and blue cushioned upholstery.",
+        "sampled_asset_size": [
+          1.9907699823379517,
+          0.8804799895551696,
+          0.8547999858856201
+        ],
+        "uuid": "c50690ec-5ee2-4eae-b3ad-4baa0d40cf30",
+        "scale": [
+          0.86,
+          1.0,
+          0.94
+        ]
+      },
+      {
+        "desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
+        "pos": [
+          -3.56,
+          1.79,
+          -3.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.16,
+          0.78,
+          0.16
+        ],
+        "prompt": "pendant lamp",
+        "sampled_asset_jid": "443da456-d458-4d43-aa07-639f5076448a",
+        "sampled_asset_desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
+        "sampled_asset_size": [
+          0.1612050011754036,
+          0.7756339968369894,
+          0.1612129956483841
+        ],
+        "uuid": "e8affe30-6e54-4cf1-8d3a-93fb2c56d2c1"
+      },
+      {
+        "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "pos": [
+          -5.7,
+          0.0,
+          0.4
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "prompt": "round end table",
+        "sampled_asset_jid": "da8570b9-119e-4a21-a23b-ca8b94000c30-(0.96)-(1.0)-(0.97)",
+        "sampled_asset_desc": "A modern industrial corner side table with a minimalist metal three-legged base and round metallic tabletop.",
+        "sampled_asset_size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "uuid": "cce0efcc-6f4c-4d67-be89-5a903bc45ba1",
+        "scale": [
+          0.96,
+          1.0,
+          0.97
+        ]
+      },
+      {
+        "desc": "Mid-century modern TV stand with walnut finish, featuring two drawers, sliding doors in grey and off-white, and distinctive angled legs for a minimalist aesthetic.",
+        "pos": [
+          -5.81,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.83,
+          0.48,
+          0.36
+        ],
+        "prompt": "tv stand",
+        "sampled_asset_jid": "105e7d2a-0dee-4970-b963-7e2fa121660c-(1.04)-(1.0)-(0.87)",
+        "sampled_asset_desc": "A sleek mid-century modern TV stand with a natural wood finish, open shelf, two cabinets, and minimalist design.",
+        "sampled_asset_size": [
+          1.8,
+          0.48,
+          0.35
+        ],
+        "uuid": "432bfa37-3c04-4922-8825-672d844a8f95",
+        "scale": [
+          1.04,
+          1.0,
+          0.87
+        ]
+      },
+      {
+        "desc": "This modern contemporary armchair features quilted dark grey fabric upholstery with a curved backrest, enhanced by a black leather base, offering both style and comfort.",
+        "pos": [
+          -3.51,
+          0.0,
+          -5.2
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.93,
+          0.96,
+          1.0
+        ],
+        "prompt": "white leather armchair",
+        "sampled_asset_jid": "faa6f628-cd9f-439a-9dc2-c483c9c3854f-(1.38)-(1.0)-(1.49)",
+        "sampled_asset_desc": "Modern geometric black and gold metal pendant lamp with a faceted shade and central light bulb.",
+        "sampled_asset_size": [
+          0.94,
+          0.96,
+          1.01
+        ],
+        "uuid": "80c0aac6-e67b-44e9-97a4-c285e11ded0c",
+        "scale": [
+          1.38,
+          1.0,
+          1.49
+        ]
+      }
+    ]
+  },
+  "baseline": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        -6.0,
+        2.8,
+        6.07
+      ],
+      [
+        -6.0,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.1,
+        2.8,
+        -6.07
+      ],
+      [
+        -0.0,
+        2.8,
+        1.61
+      ],
+      [
+        2.88,
+        2.8,
+        1.61
+      ],
+      [
+        2.98,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        -0.34
+      ],
+      [
+        6.0,
+        2.8,
+        2.88
+      ],
+      [
+        -2.31,
+        2.8,
+        2.88
+      ],
+      [
+        -2.41,
+        2.8,
+        6.07
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -6.0,
+        0.0,
+        6.07
+      ],
+      [
+        -6.0,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.1,
+        0.0,
+        -6.07
+      ],
+      [
+        -0.0,
+        0.0,
+        1.61
+      ],
+      [
+        2.88,
+        0.0,
+        1.61
+      ],
+      [
+        2.98,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        -0.34
+      ],
+      [
+        6.0,
+        0.0,
+        2.88
+      ],
+      [
+        -2.31,
+        0.0,
+        2.88
+      ],
+      [
+        -2.41,
+        0.0,
+        6.07
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A modern industrial footstool with a black metal frame and gold X-brace design, featuring sleek lines and a rectangular shape.",
+        "pos": [
+          -2.56,
+          0.0,
+          -2.8
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.55,
+          0.47,
+          0.5
+        ],
+        "prompt": "black footstool",
+        "sampled_asset_jid": "6e759989-7f12-4dc1-abb0-21509b653712",
+        "sampled_asset_desc": "A modern industrial footstool with a black metal frame and gold X-brace design, featuring sleek lines and a rectangular shape.",
+        "sampled_asset_size": [
+          0.5450620055198669,
+          0.4699640397739131,
+          0.49974799156188965
+        ],
+        "uuid": "6ccbff69-50ed-4607-a8b8-adc228e351da"
+      },
+      {
+        "desc": "Modern minimalist floor-standing pendant lamp with brass metal pole, round base, and white glass spherical shade.",
+        "pos": [
+          -4.4,
+          0.9,
+          4.02
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.36,
+          1.66,
+          0.31
+        ],
+        "prompt": "floor standing lamp",
+        "sampled_asset_jid": "1608d999-c959-48fd-b6bd-b078531aa430",
+        "sampled_asset_desc": "A modern minimalist floor lamp with a gold metal spherical shade and slim stand, featuring a circular base and geometric elements.",
+        "sampled_asset_size": [
+          0.37097999453544617,
+          1.6836399958719892,
+          0.311379998922348
+        ],
+        "uuid": "cd2896a1-1956-46c9-acae-511da3ce1a1a"
+      },
+      {
+        "desc": "Modern minimalist coffee table with dark brown wooden structure, sleek design, open shelf, closed compartments, and copper metal supports.",
+        "pos": [
+          -4.3,
+          0.0,
+          -3.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.3,
+          0.4,
+          0.7
+        ],
+        "prompt": "low wooden coffee table",
+        "sampled_asset_jid": "d81215e3-542e-498d-b675-3ca3dbd44fb8",
+        "sampled_asset_desc": "A modern, two-toned black and white rectangular tea table with a sleek, minimalist design, clean lines, and a stable base.",
+        "sampled_asset_size": [
+          1.3021600246429443,
+          0.3964700319862544,
+          0.704039990901947
+        ],
+        "uuid": "959c6075-d239-47e1-bf4b-b39349e8b374",
+        "scale": [
+          0.92,
+          1.0,
+          0.85
+        ]
+      },
+      {
+        "desc": "Modern three-seat sofa with grey fabric, wooden legs, clean lines, and decorative orange and yellow pillows for a stylish and comfortable seating solution.",
+        "pos": [
+          -0.78,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.01,
+          0.89,
+          0.85
+        ],
+        "prompt": "modern grey couch",
+        "sampled_asset_jid": "2403c725-cec6-46ba-8d43-b7b87834a71a",
+        "sampled_asset_desc": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests.",
+        "sampled_asset_size": [
+          2.0125640630722046,
+          0.9034300139707643,
+          0.8505240082740784
+        ],
+        "uuid": "be5ae1ac-de2c-4d9c-bb15-d8713501f562",
+        "scale": [
+          0.86,
+          1.0,
+          0.94
+        ]
+      },
+      {
+        "desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
+        "pos": [
+          -3.56,
+          1.79,
+          -3.55
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.16,
+          0.78,
+          0.16
+        ],
+        "prompt": "pendant lamp",
+        "sampled_asset_jid": "443da456-d458-4d43-aa07-639f5076448a",
+        "sampled_asset_desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
+        "sampled_asset_size": [
+          0.1612050011754036,
+          0.7756339968369894,
+          0.1612129956483841
+        ],
+        "uuid": "281b15c0-cddd-406a-a72d-94a899a4db2b"
+      },
+      {
+        "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+        "pos": [
+          -5.7,
+          0.0,
+          0.4
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "prompt": "round end table",
+        "sampled_asset_jid": "da8570b9-119e-4a21-a23b-ca8b94000c30-(0.96)-(1.0)-(0.97)",
+        "sampled_asset_desc": "A modern industrial corner side table with a minimalist metal three-legged base and round metallic tabletop.",
+        "sampled_asset_size": [
+          0.42,
+          0.63,
+          0.42
+        ],
+        "uuid": "06f910ad-0e61-4d80-80df-538d91ceae3a",
+        "scale": [
+          0.96,
+          1.0,
+          0.97
+        ]
+      },
+      {
+        "desc": "Mid-century modern TV stand with walnut finish, featuring two drawers, sliding doors in grey and off-white, and distinctive angled legs for a minimalist aesthetic.",
+        "pos": [
+          -5.81,
+          0.0,
+          -3.5
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.83,
+          0.48,
+          0.36
+        ],
+        "prompt": "tv stand",
+        "sampled_asset_jid": "b5a0e912-d7ab-4aae-974e-2e383ea8e4c8",
+        "sampled_asset_desc": "A modern minimalist TV stand with a blend of wood and metal, featuring clean lines, a mix of brown and white tones, open shelf, and closed cabinets.",
+        "sampled_asset_size": [
+          1.8600000143051147,
+          0.4700000081054734,
+          0.35270000994205475
+        ],
+        "uuid": "294d371a-7039-4be6-ae83-c84a74d6541c",
+        "scale": [
+          1.0,
+          1.0,
+          0.97
+        ]
+      },
+      {
+        "desc": "This modern contemporary armchair features quilted dark grey fabric upholstery with a curved backrest, enhanced by a black leather base, offering both style and comfort.",
+        "pos": [
+          -3.51,
+          0.0,
+          -5.2
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.93,
+          0.96,
+          1.0
+        ],
+        "prompt": "white leather armchair",
+        "sampled_asset_jid": "faa6f628-cd9f-439a-9dc2-c483c9c3854f-(1.38)-(1.0)-(1.49)",
+        "sampled_asset_desc": "Modern geometric black and gold metal pendant lamp with a faceted shade and central light bulb.",
+        "sampled_asset_size": [
+          0.94,
+          0.96,
+          1.01
+        ],
+        "uuid": "74f215ba-2523-419c-8d2e-0dda17d908b8",
+        "scale": [
+          1.38,
+          1.0,
+          1.49
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.3,
+    "greedy": true,
+    "user_prompt": null
+  }
+}
