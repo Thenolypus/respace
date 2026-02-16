@@ -510,6 +510,23 @@ class AssetRetrievalModule(nn.Module):
 			else:
 				query_desc = self.strip_desc_to_category(obj)
 
+			# Print diagnostic header
+			if self.do_print:
+				print(f"\n{'='*90}")
+				print(f"OBJECT [{obj_idx}]")
+				print(f"  Original desc: \"{desc}\"")
+				if not is_first_object:
+					print(f"  Category query: \"{query_desc}\"")
+					print(f"  Style bias: ACTIVE (comparing against {len(selected_style_embeds)} selected asset(s))")
+				elif user_prompt is not None:
+					print(f"  Category query: \"{query_desc}\"")
+					print(f"  Style bias: ACTIVE (user prompt anchor)")
+				else:
+					print(f"  Semantic query: FULL description (style seed)")
+					print(f"  Style bias: NONE (first object)")
+				print(f"  Size: {size}")
+				print(f"{'='*90}")
+
 			query_embeds = self.get_text_embeddings([query_desc])
 			semantic_sims = self.compute_semantic_similarities(query_embeds).squeeze(1)
 
@@ -582,6 +599,155 @@ class AssetRetrievalModule(nn.Module):
 
 		self._last_style_sims = None
 		return sampled_scene
+
+	def sample_all_assets_style_coherent_cross_scene(
+		self, scene, lambda_style=0.2, is_greedy_sampling=True,
+		user_prompt=None, initial_style_embeds=None,
+	):
+		"""
+		Sample assets with style coherence, accepting cross-scene style context.
+
+		When initial_style_embeds is provided (from a previously processed room),
+		ALL objects -- including object[0] -- use the 3-metric blend:
+		  semantic + size + style.
+		Object[0] still uses the full description for semantics but also receives
+		the style bias from the cross-scene embeddings.
+
+		Args:
+			scene: dict with "objects" list
+			lambda_style: weight for style coherence term
+			is_greedy_sampling: greedy vs stochastic
+			user_prompt: optional style prompt anchor
+			initial_style_embeds: list[Tensor] style embeddings from prior rooms
+
+		Returns:
+			(sampled_scene, selected_style_embeds) -- the scene and the collected
+			style embeddings so they can be forwarded to the next room.
+		"""
+		sampled_scene = copy.deepcopy(scene)
+		sampled_scene["objects"] = []
+		selected_style_embeds = list(initial_style_embeds) if initial_style_embeds else []
+		desc_size_map = {}
+		has_cross_scene_context = bool(initial_style_embeds)
+
+		# User prompt as persistent style anchor
+		if user_prompt is not None:
+			user_embed = self.get_text_embeddings([user_prompt])
+			user_embed = torch.nn.functional.normalize(user_embed, p=2, dim=1)
+			selected_style_embeds.append(user_embed.squeeze(0))
+
+		orig_lambd = self.lambd.item()
+
+		for obj_idx, obj in enumerate(scene.get("objects", [])):
+			desc = obj.get("desc", "")
+			size = obj.get("size", [])
+
+			# With cross-scene context, even object[0] gets style bias.
+			# Without it, object[0] is the style seed (no bias) unless user_prompt.
+			use_style_bias = (
+				len(selected_style_embeds) > 0
+				and (obj_idx > 0 or has_cross_scene_context or user_prompt is not None)
+			)
+
+			# Semantic query: first object uses full desc, rest use category-only
+			if obj_idx == 0 and user_prompt is None and not has_cross_scene_context:
+				query_desc = desc
+			else:
+				query_desc = self.strip_desc_to_category(obj)
+
+			# Print diagnostic header
+			if self.do_print:
+				print(f"\n{'='*90}")
+				print(f"OBJECT [{obj_idx}]")
+				print(f"  Original desc: \"{desc}\"")
+				if use_style_bias:
+					src = []
+					if has_cross_scene_context:
+						src.append("cross-scene")
+					if user_prompt is not None:
+						src.append("user prompt")
+					if obj_idx > 0:
+						src.append("in-room")
+					print(f"  Category query: \"{query_desc}\"")
+					print(f"  Style bias: ACTIVE ({', '.join(src)}) -- {len(selected_style_embeds)} embedding(s)")
+				else:
+					print(f"  Semantic query: FULL description (style seed)")
+					print(f"  Style bias: NONE (first object, no cross-scene context)")
+				print(f"  Size: {size}")
+				print(f"{'='*90}")
+
+			query_embeds = self.get_text_embeddings([query_desc])
+			semantic_sims = self.compute_semantic_similarities(query_embeds).squeeze(1)
+
+			# Size similarity
+			query_size_t = torch.tensor([size])
+			if self.accelerator:
+				query_size_t = query_size_t.to(self.accelerator.device)
+			else:
+				query_size_t = query_size_t.to(self.dvc)
+			size_sims = self.compute_size_similarities(query_size_t).squeeze(1)
+
+			# Blend
+			if use_style_bias:
+				style_embeds_tensor = torch.stack(selected_style_embeds, dim=0)
+				style_sims = self.compute_style_similarity(style_embeds_tensor)
+
+				remaining = 1.0 - lambda_style
+				lam_sem = orig_lambd * remaining
+				lam_size = (1 - orig_lambd) * remaining
+				weighted_sims = lam_sem * semantic_sims + lam_size * size_sims + lambda_style * style_sims
+				self._last_style_sims = style_sims.unsqueeze(1)
+			else:
+				weighted_sims = orig_lambd * semantic_sims + (1 - orig_lambd) * size_sims
+				self._last_style_sims = None
+
+			# Store intermediates for diagnostics
+			self._last_semantic_sims = semantic_sims.unsqueeze(1)
+			self._last_size_sims = size_sims.unsqueeze(1)
+			self._last_weighted_sims = weighted_sims.unsqueeze(1)
+
+			# Top-k/top-p filtering
+			probs = self.compute_final_probabilities(weighted_sims.unsqueeze(1))
+			probs = probs.squeeze(0)
+
+			# Deduplication
+			if desc in desc_size_map:
+				matching_obj = None
+				for sampled_obj in desc_size_map[desc]:
+					if self.calculate_size_difference(size, sampled_obj["sampled_asset_size"]) <= self.asset_size_threshold:
+						matching_obj = sampled_obj
+						break
+				if matching_obj:
+					new_obj = copy.deepcopy(obj)
+					new_obj.update({
+						"sampled_asset_jid": matching_obj["sampled_asset_jid"],
+						"sampled_asset_desc": matching_obj["sampled_asset_desc"],
+						"sampled_asset_size": matching_obj["sampled_asset_size"],
+						"uuid": str(uuid.uuid4())
+					})
+					jid = matching_obj["sampled_asset_jid"]
+					idx_in_catalog = self.jid_to_idx[jid]
+					selected_style_embeds.append(self.all_style_embeds_catalog[idx_in_catalog])
+					sampled_scene["objects"].append(new_obj)
+					continue
+
+			# Sample
+			new_obj = self.create_sampled_obj(obj, probs, is_greedy_sampling, query_idx=0)
+
+			if desc in desc_size_map:
+				desc_size_map[desc].append(new_obj)
+			else:
+				desc_size_map[desc] = [new_obj]
+
+			# Track selected style embedding
+			jid_sampled = new_obj["sampled_asset_jid"]
+			idx_in_catalog = self.jid_to_idx[jid_sampled]
+			selected_style_embeds.append(self.all_style_embeds_catalog[idx_in_catalog])
+
+			sampled_scene["objects"].append(new_obj)
+
+		self._last_style_sims = None
+		return sampled_scene, selected_style_embeds
 
 # **********************************************************************************************************
 
