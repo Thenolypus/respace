@@ -21,6 +21,7 @@ Output structure (written inside the unit folder):
 Usage:
   ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan --unit unit_1
   ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan --unit unit_1 --match-room-type
+  ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.test_custom_floorplan --unit unit_1 --checkpoint ckpts/a8b667b0-9d2e-4c24-8278-f063f30be13d/checkpoint-best
 """
 
 import json
@@ -204,6 +205,9 @@ def main():
                         help="Re-initialize ReSpace per room type so dataset_room_type matches "
                              "each room's type (bedroom, livingroom, etc.). Slower but produces "
                              "room-type-specific few-shot examples and class labels.")
+    parser.add_argument("--checkpoint", type=str, default=None,
+                        help="Path to local checkpoint directory to use instead of default MODEL_ID "
+                             "(e.g. 'ckpts/a8b667b0-9d2e-4c24-8278-f063f30be13d/checkpoint-best')")
     args = parser.parse_args()
 
     base_dir = Path("input_test")
@@ -217,6 +221,9 @@ def main():
         print(f"ERROR: no .json files found in {unit_dir}")
         sys.exit(1)
 
+    # Determine which model to use
+    model_path = args.checkpoint if args.checkpoint else MODEL_ID
+    print(f"Model: {model_path}")
     print(f"Found {len(room_files)} room(s) in {unit_dir}:")
     for f in room_files:
         print(f"  - {f.name}")
@@ -234,7 +241,7 @@ def main():
             print(f"Initializing ReSpace for room type: {room_type}")
             print(f"{'=' * 60}")
             respace = ReSpace(
-                model_id=MODEL_ID,
+                model_id=model_path,
                 env_file=ENV_FILE,
                 dataset_room_type=room_type,
                 use_gpu=True,
@@ -255,7 +262,7 @@ def main():
     else:
         print(f"\nInitializing ReSpace (dataset_room_type={DEFAULT_DATASET_ROOM_TYPE})...")
         respace = ReSpace(
-            model_id=MODEL_ID,
+            model_id=model_path,
             env_file=ENV_FILE,
             dataset_room_type=DEFAULT_DATASET_ROOM_TYPE,
             use_gpu=True,
