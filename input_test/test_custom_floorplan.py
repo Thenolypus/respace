@@ -27,6 +27,7 @@ Usage:
 import json
 import sys
 import argparse
+import textwrap
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon as MplPolygon
@@ -141,7 +142,11 @@ def render_topdown_bboxes(scene, output_path):
 
     if legend_entries:
         col_labels = ["#", "Color", "Description"]
-        cell_text = [[str(idx), "", desc] for idx, _, desc in legend_entries]
+        max_desc_chars = 30
+        cell_text = [
+            [str(idx), "", "\n".join(textwrap.wrap(desc, max_desc_chars))]
+            for idx, _, desc in legend_entries
+        ]
         cell_colors = [["white", (*c, 0.4), "white"] for _, c, _ in legend_entries]
 
         table = ax_legend.table(
@@ -151,10 +156,15 @@ def render_topdown_bboxes(scene, output_path):
             colColours=["#dddddd"] * 3,
             loc="upper center",
             cellLoc="left",
+            colWidths=[0.08, 0.1, 0.82],
         )
         table.auto_set_font_size(False)
         table.set_fontsize(8)
-        table.scale(1, 1.4)
+
+        # Scale row height based on number of wrapped lines
+        for (row, col), cell in table.get_celld().items():
+            n_lines = cell.get_text().get_text().count("\n") + 1
+            cell.set_height(0.05 * n_lines)
 
     out_file = output_path / "floorplan_bboxes.png"
     fig.savefig(out_file, dpi=150, bbox_inches="tight")

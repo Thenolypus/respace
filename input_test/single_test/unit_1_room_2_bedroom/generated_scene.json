@@ -1,0 +1,161 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.71,
+      2.6,
+      1.41
+    ],
+    [
+      -1.71,
+      2.6,
+      -1.41
+    ],
+    [
+      1.71,
+      2.6,
+      -1.41
+    ],
+    [
+      1.71,
+      2.6,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.71,
+      0.0,
+      1.41
+    ],
+    [
+      -1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      -1.41
+    ],
+    [
+      1.71,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Classic wooden wardrobe with glass sliding doors and intricately carved floral details, blending traditional design elements.",
+      "pos": [
+        -1.35,
+        0.0,
+        0.11
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.5,
+        2.33,
+        0.75
+      ],
+      "prompt": "classic wardrobe",
+      "sampled_asset_jid": "12c73c31-4b45-42c9-ab98-268efb9768af",
+      "sampled_asset_desc": "Classic wooden wardrobe with glass sliding doors and intricately carved floral details, blending traditional design elements.",
+      "sampled_asset_size": [
+        2.497879981994629,
+        2.3272406676937862,
+        0.7482089996337891
+      ],
+      "uuid": "46893c87-5b71-45d4-b106-3588bb224fd2"
+    },
+    {
+      "desc": "Modern light gray single bed with fabric upholstery, tapered wooden legs, and minimalist rectangular headboard.",
+      "pos": [
+        -0.18,
+        0.0,
+        0.24
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.26,
+        0.89,
+        2.26
+      ],
+      "prompt": "modern single bed",
+      "sampled_asset_jid": "c7947b48-4d66-4e28-b120-a2db2304b614",
+      "sampled_asset_desc": "A modern minimalist single bed with dark gray fabric upholstery, metal legs, and accented with throw pillows and a knitted blanket.",
+      "sampled_asset_size": [
+        1.2802300453186035,
+        0.9489298557164147,
+        2.219249963760376
+      ],
+      "uuid": "a7994d7b-0262-480b-ac08-d359452a3150"
+    },
+    {
+      "desc": "A modern, minimalist white pendant lamp with a sleek, cylindrical shape and a hanging suspension.",
+      "pos": [
+        0.0,
+        1.01,
+        -0.16
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.27,
+        1.59,
+        0.27
+      ],
+      "prompt": "pendant lamp",
+      "sampled_asset_jid": "00da6e71-e633-480c-9102-5e1f5423cf5d",
+      "sampled_asset_desc": "A modern, minimalist white pendant lamp with a sleek, cylindrical shape and a hanging suspension.",
+      "sampled_asset_size": [
+        0.2682719975709915,
+        1.5949704472737096,
+        0.2684299945831299
+      ],
+      "uuid": "23e07f45-369d-4dab-9830-8a86d148dddf"
+    },
+    {
+      "desc": "Tall minimalist rectangular end table in beige wood with open shelving and top box storage.",
+      "pos": [
+        1.41,
+        0.0,
+        1.05
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.4,
+        1.2,
+        0.4
+      ],
+      "prompt": "round end table",
+      "sampled_asset_jid": "5e1becdc-0f4e-4f2a-a8b7-4f8ba0e28f24",
+      "sampled_asset_desc": "Tall minimalist rectangular end table in beige wood with open shelving and top box storage.",
+      "sampled_asset_size": [
+        0.40002599358558655,
+        1.2000000627087797,
+        0.4000260829925537
+      ],
+      "uuid": "419ed080-5abe-499b-ad78-2ab8031ec68a"
+    }
+  ]
+}
