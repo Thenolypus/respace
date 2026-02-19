@@ -162,7 +162,7 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False, u
 	tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 	model_type = ""
-	if "ckpts" in model_id:
+	if os.path.isdir(model_id):
 		config = json.load(open(f"{model_id}/config.json"))
 		model_type = config["model_type"]
 	elif model_id == "gradient-spaces/respace-sg-llm-1.5b":
@@ -387,18 +387,18 @@ def init_wandb(args, accelerator, resume_id=None):
 		wandb.config.update(args)
 
 def get_sft_model(model_id, args, accelerator):
-	is_lora_model = os.path.exists(f"./ckpts/{args.test_ckpt}/adapter_config.json")
+	is_lora_model = os.path.exists(f"{args.ckpt_dir}/{args.test_ckpt}/adapter_config.json")
 
 	if is_lora_model:
 		print(f"[ idx {accelerator.process_index} ] found LoRA model, loading with PEFT")
 
 		# TODO: DOES NOT WORK YET !!
 
-		model, _, max_seq_length = get_model(f"./ckpts/{args.test_ckpt}", args.use_gpu, accelerator)
+		model, _, max_seq_length = get_model(f"{args.ckpt_dir}/{args.test_ckpt}", args.use_gpu, accelerator)
 		
 		# model = model.merge_and_unload()
 
-		# adapter_config = json.load(open(f"./ckpts/{args.test_ckpt}/adapter_config.json"))
+		# adapter_config = json.load(open(f"{args.ckpt_dir}/{args.test_ckpt}/adapter_config.json"))
 		# lora_rank = adapter_config["r"]
 		# lora_alpha = adapter_config["lora_alpha"]
 
@@ -414,7 +414,7 @@ def get_sft_model(model_id, args, accelerator):
 		# print(f"[ idx {accelerator.process_index} ] loading peft adapter weights...")
 		# torch.cuda.empty_cache()
 		# model.load_adapter(
-		# 	f"./ckpts/{args.test_ckpt}",
+		# 	f"{args.ckpt_dir}/{args.test_ckpt}",
 		# 	adapter_name="default",
 		# 	# device_map=({"": accelerator.device}),
 		# 	# device_map="auto",  # Try auto device mapping
@@ -427,7 +427,7 @@ def get_sft_model(model_id, args, accelerator):
 		return model, max_seq_length, None, None
 
 	else:
-		model, _, max_seq_length = get_model(f"./ckpts/{args.test_ckpt}", args.use_gpu, accelerator)
+		model, _, max_seq_length = get_model(f"{args.ckpt_dir}/{args.test_ckpt}", args.use_gpu, accelerator)
 
 		print(f"[ idx {accelerator.process_index}] dense model loaded successfully")
 

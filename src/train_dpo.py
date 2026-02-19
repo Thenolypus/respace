@@ -301,7 +301,7 @@ def run_dpo_training(model_id, tokenizer, accelerator, dataset_train, dataset_va
 	# with 3 gpus and bs 8 and gas 4 we have 60 steps per epoch so we eval every 15% of the epoch
 
 	dpo_config = OnlineDPOConfig(
-		output_dir=f"./ckpts/{args.jid}",
+		output_dir=f"{args.ckpt_dir}/{args.jid}",
 		logging_dir=f"./logs/{args.jid}",
 		
 		num_train_epochs=args.epochs if not args.do_sanity_check else 2,

@@ -79,7 +79,7 @@ def run_sft_training(model, model_id, max_seq_length, tokenizer, accelerator, da
 
 	sft_config = SFTConfig(
 		# neftune_noise_alpha=5,
-		output_dir=f"./ckpts/{args.jid}",
+		output_dir=f"{args.ckpt_dir}/{args.jid}",
 		logging_dir=f"./logs/{args.jid}",
 
 		max_seq_length=max_seq_length,

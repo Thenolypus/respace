@@ -92,7 +92,7 @@ def main(args):
 	
 	# set ckpt path
 	if args.model_id is not None:
-		model_id = f"./ckpts/{args.model_id}"
+		model_id = f"{args.ckpt_dir}/{args.model_id}"
 	else:
 		model_id = None
 	
@@ -210,5 +210,7 @@ if __name__ == "__main__":
 	parser.add_argument("--use-vllm", action="store_true", default=False, help="Use vLLM for faster inference")
 
 	parser.add_argument("--icl-k", type=int, default=10)
+
+	parser.add_argument('--ckpt-dir', type=str, default='/workspace/checkpoints', help='base directory for saving/loading checkpoints')
 
 	main(parser.parse_args())

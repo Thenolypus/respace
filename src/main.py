@@ -39,7 +39,7 @@ def main(args):
 		raise ValueError("cannot resume without specifying --jid")
 	
 	if args.resume:
-		resume_checkpoint_path = f"./ckpts/{args.jid}/checkpoint-last"
+		resume_checkpoint_path = f"{args.ckpt_dir}/{args.jid}/checkpoint-last"
 		if not os.path.exists(resume_checkpoint_path):
 			raise ValueError(f"cannot resume: checkpoint {resume_checkpoint_path} does not exist")
 		print(f"resuming training from {resume_checkpoint_path}")
@@ -77,7 +77,7 @@ def main(args):
 		exit()
 
 	if args.test_ckpt is not None:
-		model_id = f"./ckpts/{args.test_ckpt}"
+		model_id = f"{args.ckpt_dir}/{args.test_ckpt}"
 	else:
 		if args.llm == "llama-3.2-1B":
 			model_id = "meta-llama/Llama-3.2-1B-Instruct"
@@ -200,5 +200,7 @@ if __name__ == "__main__":
 	parser.add_argument('--vllm-port', type=str)
 
 	parser.add_argument('--resume', action='store_true', default=False)
+
+	parser.add_argument('--ckpt-dir', type=str, default='/workspace/checkpoints', help='base directory for saving/loading checkpoints')
 
 	main(parser.parse_args())

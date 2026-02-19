@@ -108,7 +108,7 @@ class CustomTrainerCallback(TrainerCallback):
 	def _run_evaluation(self, state, virtual_epoch=None, metrics=None):
 		# Your existing evaluation code from on_evaluate
 		current_epoch = int(math.ceil(state.epoch)) if virtual_epoch is None else virtual_epoch
-		checkpoint_dir_last = f"./ckpts/{self.cli_args.jid}/checkpoint-last"
+		checkpoint_dir_last = f"{self.cli_args.ckpt_dir}/{self.cli_args.jid}/checkpoint-last"
 		
 		if self.accelerator.is_main_process:
 			print(f"running custom eval at epoch {current_epoch})")
@@ -171,7 +171,7 @@ class CustomTrainerCallback(TrainerCallback):
 		if self.accelerator.is_main_process:
 			if val_delta_pbl_loss < self.best_val_delta_pbl_loss:
 				self.best_val_delta_pbl_loss = val_delta_pbl_loss
-				checkpoint_dir = f"./ckpts/{self.cli_args.jid}/checkpoint-best"
+				checkpoint_dir = f"{self.cli_args.ckpt_dir}/{self.cli_args.jid}/checkpoint-best"
 				save_model_and_config(checkpoint_dir, self.accelerator, self.trainer.model, self.trainer.processing_class)
 				print("checkpoint-best saved!")
 				metadata = {

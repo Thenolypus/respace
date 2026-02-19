@@ -317,7 +317,7 @@ def run_grpo_training(model_id, tokenizer, accelerator, dataset_train, dataset_v
 	log_every_n_steps = 5
 
 	grpo_config = GRPOConfig(
-		output_dir=f"./ckpts/{args.jid}",
+		output_dir=f"{args.ckpt_dir}/{args.jid}",
 		logging_dir=f"./logs/{args.jid}",
 
 		num_train_epochs=args.epochs if not args.do_sanity_check else 1,

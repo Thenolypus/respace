@@ -465,7 +465,7 @@ def run_test(model, tokenizer, accelerator, dvc, dataset_split, room_type, datas
 	subset_dataset = dataset.select(range(start_idx, end_idx))
 	batch_size = min(len(subset_dataset), args.test_bs)
 
-	pth_metrics = f"./ckpts/{args.jid}/metrics_{dataset_split}.json"
+	pth_metrics = f"{args.ckpt_dir}/{args.jid}/metrics_{dataset_split}.json"
 	initialize_file(pth_metrics, accelerator.process_index)
 
 	subset_num_valid_instrs_by_pbl = torch.zeros(1, device=accelerator.device)
@@ -632,7 +632,7 @@ def run_test(model, tokenizer, accelerator, dvc, dataset_split, room_type, datas
 		print("==== ============================================================== ====")
 
 		# write final metrics to file
-		pth_final_metrics = f"./ckpts/{args.jid}/metrics_{dataset_split}_final.json"
+		pth_final_metrics = f"{args.ckpt_dir}/{args.jid}/metrics_{dataset_split}_final.json"
 		initialize_file(pth_final_metrics, accelerator.process_index)
 		write_dict_to_file(pth_final_metrics, aggregated_metrics)
 
