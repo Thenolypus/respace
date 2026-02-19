@@ -1,9 +1,11 @@
+import os
+os.environ["PYOPENGL_PLATFORM"] = "osmesa"
+
 import numpy as np
 import trimesh
 import pyrender
 from PIL import Image
 from pathlib import Path
-import os
 import json
 from trimesh.transformations import quaternion_matrix, translation_matrix
 from dotenv import load_dotenv
