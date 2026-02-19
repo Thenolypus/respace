@@ -211,7 +211,9 @@ def ensure_order_of_keys_for_sg_input_dict(sg_input, do_keep_jids=False):
 	sg_input_ordered["room_type"] = sg_input.get("room_type")
 	sg_input_ordered["bounds_top"] = sg_input.get("bounds_top")
 	sg_input_ordered["bounds_bottom"] = sg_input.get("bounds_bottom")
-	
+	if sg_input.get("openings"):
+		sg_input_ordered["openings"] = sg_input.get("openings")
+
 	# for each object in the scene, ensure fixed order such that we always have "desc", "size", "pos", "rot":
 	objects_ordered = []
 	for obj in sg_input.get("objects"):

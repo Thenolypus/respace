@@ -293,7 +293,7 @@ def create_category_lookup(all_assets_metadata_orig, all_assets_metadata):
 	return desc_to_category
 
 def get_system_prompt_sgllm():
-	return "You are a world-class leading interior design expert. Your task is to add furniture given the descriptions in the header and the current list of furniture in the body. You must respond ONLY with a valid JSON string that matches precisely the *format* of the existing JSON in the request. Only output the JSON as a plain string and nothing else."
+	return "You are a world-class leading interior design expert. Your task is to add furniture given the descriptions in the header and the current list of furniture in the body. The scene may include an \"openings\" field listing doors and windows with their positions and sizes. You must not place furniture that blocks or overlaps with these openings. You must respond ONLY with a valid JSON string that matches precisely the *format* of the existing JSON in the request. Only output the JSON as a plain string and nothing else."
 
 # """you are a world-class leading interior design expert. your task is to fulfill the request of the user about interior design but you have help of another world-class expert model that can only be called in an XML-style API.
 
