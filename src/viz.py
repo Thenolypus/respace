@@ -1,9 +1,6 @@
 import os
-os.environ["PYOPENGL_PLATFORM"] = "osmesa"
-
 import numpy as np
 import trimesh
-import pyrender
 from PIL import Image
 from pathlib import Path
 import json
@@ -31,20 +28,23 @@ import math
 from src.utils import get_pth_mesh, create_floor_plan_polygon, remove_and_recreate_folder, precompute_fid_scores_for_caching, get_pths_dataset_split, get_model, get_test_instrs_all
 from src.dataset import load_train_val_test_datasets, create_full_scene_from_before_and_added, create_instruction_from_scene, process_scene_sample
 
-# Add this before your rendering code
-import ctypes
-from OpenGL.GL import glGenTextures
-from OpenGL.GL import GLuint
+pyrender = None
 
-# Monkey patch the problematic function
-def patched_glGenTextures(count, textures):
-	textures_array = (GLuint * count)()
-	glGenTextures(count, textures_array)
-	return textures_array[0]
-
-# Replace the original function
-import OpenGL.GL
-OpenGL.GL.glGenTextures = patched_glGenTextures
+def _ensure_pyrender():
+	global pyrender
+	if pyrender is not None:
+		return
+	os.environ['PYOPENGL_PLATFORM'] = 'egl'
+	import pyrender as _pyrender
+	pyrender = _pyrender
+	# Monkey patch glGenTextures
+	from OpenGL.GL import glGenTextures, GLuint
+	import OpenGL.GL
+	def patched_glGenTextures(count, textures):
+		textures_array = (GLuint * count)()
+		glGenTextures(count, textures_array)
+		return textures_array[0]
+	OpenGL.GL.glGenTextures = patched_glGenTextures
 
 def fix_textures(mesh, mesh_path):
 	# print("fixing mesh...")
@@ -109,6 +109,7 @@ def load_mesh_with_transform(mesh_path, position=None, rotation=None, scale=None
 	return mesh
 
 def setup_camera(scene, resolution, view_type, use_dynamic_zoom, camera_height, scene_span):
+	_ensure_pyrender()
 	fov = np.pi / 4.0
 	camera = pyrender.PerspectiveCamera(yfov=np.pi/4.0, znear=0.05, zfar=100.0)
 	scene_x, scene_y, scene_z = scene_span
@@ -172,6 +173,7 @@ def setup_camera(scene, resolution, view_type, use_dynamic_zoom, camera_height, 
 	return camera_pose
 
 def setup_lighting(scene, camera_pose):
+	_ensure_pyrender()
 	light = pyrender.DirectionalLight(color=np.ones(3), intensity=5.0)
 	#light_pose = np.eye(4)
 	#light_pose[:3, :3] = camera_pose[:3, :3]  # Keep camera orientation
@@ -266,6 +268,7 @@ def create_floor_slab(bounds_bottom):
 	return floor_mesh
 
 def create_pyrender_scene_from_trimesh(trimesh_scene, bg_color=None):
+	_ensure_pyrender()
 	pyrender_scene = pyrender.Scene(bg_color=bg_color)
 	for node_name in trimesh_scene.graph.nodes_geometry:
 		geom_name = trimesh_scene.graph[node_name][1]
@@ -333,11 +336,11 @@ def add_objects_to_trimesh_scene(trimesh_scene, objects, show_bboxes=False, show
 				bound_mesh = create_bbox(size=[0.1, 0.1, 0.1], pos=bound, rot=None, color=[1.0, 0.0, 0.0, 0.7])
 				trimesh_scene.add_geometry(bound_mesh)
 
-def render_single_frame(pyrender_scene, resolution, flags=pyrender.RenderFlags.SHADOWS_DIRECTIONAL, max_attempts=3):
+def render_single_frame(pyrender_scene, resolution, flags=None, max_attempts=3):
+	_ensure_pyrender()
+	if flags is None:
+		flags = pyrender.RenderFlags.SHADOWS_DIRECTIONAL
 	attempt = 0
-	# OpenGL.GL.glGenTextures = patched_glGenTextures
-	import os
-	os.environ['PYOPENGL_PLATFORM'] = 'egl'
 	while attempt < max_attempts:
 		renderer = None
 		try:
@@ -363,95 +366,12 @@ def render_single_frame(pyrender_scene, resolution, flags=pyrender.RenderFlags.S
 	raise RuntimeError(f"Failed to render frame after {max_attempts} attempts")
 
 def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_attempts=5, flip_vertical=False):
-	# print("render_with_retry...")
+	_ensure_pyrender()
 	attempt = 0
 	while attempt < max_attempts:
 		renderer = None
 		try:
-			# print("attempt:", attempt)
 			attempt += 1
-
-			# import pyglet
-			# pyglet.options['headless'] = True
-			
-			# ml load py-pyopengl/3.1.5_py39
-
-
-			### ***
-
-			# import os
-			# import pyrender
-			# from pyrender.constants import (TARGET_OPEN_GL_MAJOR, TARGET_OPEN_GL_MINOR,
-			# 							MIN_OPEN_GL_MAJOR, MIN_OPEN_GL_MINOR)
-			# from importlib import import_module
-			# pyglet_platform = import_module('pyrender.platforms.pyglet_platform')
-
-			# os.environ['DISPLAY'] = ':9925'
-			
-			# import pyglet
-			# pyglet.options['shadow_window'] = False
-			# pyglet.options['headless'] = True
-			# pyglet.options['headless_device'] = 0
-
-			# def patched_init_context(self):
-			# 	import pyglet
-			# 	pyglet.options['shadow_window'] = False
-			# 	pyglet.options['debug_x11'] = True  # Enable X11 debugging
-			# 	pyglet.options['debug_gl'] = True   # Enable OpenGL debugging
-				
-			# def patched_init_context(self):
-			# 	import pyglet
-			# 	pyglet.options['shadow_window'] = False
-
-			# 	try:
-			# 		pyglet.lib.x11.xlib.XInitThreads()
-			# 	except Exception:
-			# 		pass
-
-			# 	self._window = None
-			# 	confs = [pyglet.gl.Config(sample_buffers=1, samples=4,
-			# 							depth_size=24,
-			# 							double_buffer=True,
-			# 							major_version=TARGET_OPEN_GL_MAJOR,
-			# 							minor_version=TARGET_OPEN_GL_MINOR),
-			# 			pyglet.gl.Config(depth_size=24,
-			# 							double_buffer=True,
-			# 							major_version=TARGET_OPEN_GL_MAJOR,
-			# 							minor_version=TARGET_OPEN_GL_MINOR),
-			# 			pyglet.gl.Config(sample_buffers=1, samples=4,
-			# 							depth_size=24,
-			# 							double_buffer=True,
-			# 							major_version=MIN_OPEN_GL_MAJOR,
-			# 							minor_version=MIN_OPEN_GL_MINOR),
-			# 			pyglet.gl.Config(depth_size=24,
-			# 							double_buffer=True,
-			# 							major_version=MIN_OPEN_GL_MAJOR,
-			# 							minor_version=MIN_OPEN_GL_MINOR)]
-			# 	error = None
-			# 	for conf in confs:
-			# 		try:
-			# 			self._window = pyglet.window.Window(config=conf, visible=False,
-			# 												resizable=False,
-			# 												width=1, height=1)
-			# 			break
-			# 		except pyglet.window.NoSuchConfigException as e:
-			# 			error = e
-			# 			traceback.print_exc()
-
-			# 	if not self._window:
-			# 		raise ValueError(
-			# 			'Failed to initialize Pyglet window with an OpenGL >= 3+ '
-			# 			'context. If you\'re logged in via SSH, ensure that you\'re '
-			# 			'running your script with vglrun (i.e. VirtualGL). The '
-			# 			'internal error message was "{}"'.format(error)
-			# 		)
-
-			# pyglet_platform.PygletPlatform.init_context = patched_init_context
-
-			### ****
-			import os
-			os.environ['PYOPENGL_PLATFORM'] = 'egl'
-			# os.environ['__GLX_VENDOR_LIBRARY_NAME'] = 'nvidia'
 
 			renderer = pyrender.OffscreenRenderer(*resolution)
 
@@ -506,6 +426,7 @@ def render_with_retry(pyrender_scene, resolution, pth_output, filename, max_atte
 	raise RuntimeError(f"Failed to render after {max_attempts} attempts")
 
 def remove_pyrender_nodes(pyrender_scene):
+	_ensure_pyrender()
 	# Remove camera and light
 	nodes_to_remove = []
 	for node in pyrender_scene.nodes:
