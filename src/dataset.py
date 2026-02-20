@@ -461,17 +461,17 @@ def format_and_tokenize(tokenizer, full_sample_instr, sample_sg_output_full, max
 
 	return tokenized_inputs, length
 
-def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_augm=False, do_full_sg_outputs=False, do_keep_jids=False):
-	while True:
+def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_augm=False, do_full_sg_outputs=False, do_keep_jids=False, max_retries=10):
+	for attempt in range(max_retries):
 		# Create instruction from scene
 		sample = create_instruction_from_scene(orig_sample, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_keep_jids=do_keep_jids)
-	
+
 		# Apply data augmentation if enabled
 		if sample.get("split") == "train" and do_augm:
 			sample_sg_input, sample_sg_output_add = do_random_augm_on_sgs(sample)
 		else:
 			sample_sg_input, sample_sg_output_add = sample["sg_input"], sample["sg_output_add"]
-		
+
 		# Prepare the scene output/completion
 		if do_full_sg_outputs:
 			scene = json.loads(sample_sg_input)
@@ -479,7 +479,7 @@ def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, al
 			completion = json.dumps(scene)
 		else:
 			completion = sample_sg_output_add
-		
+
 		# Build the full instruction
 		full_sample_instr = build_full_instruction_from_prompt(sample["prompt"], sample_sg_input)
 
@@ -489,8 +489,10 @@ def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, al
 		if tok_length <= (max_seq_length - 150):
 			break
 		else:
-			print(f"sample exceeded max length ({tok_length} > {max_seq_length}-150), # of objects: {len(json.loads(sample_sg_input).get('objects'))}, retrying...")
-	
+			print(f"sample exceeded max length ({tok_length} > {max_seq_length}-150), # of objects: {len(json.loads(sample_sg_input).get('objects'))}, retrying ({attempt+1}/{max_retries})...")
+	else:
+		print(f"WARNING: sample still exceeds max length after {max_retries} retries ({tok_length} tokens), will be truncated")
+
 	return full_sample_instr, completion, sample["prompt"], sample
 		
 def format_with_chat_template(tokenizer, prompt, completion=None):
