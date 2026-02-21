@@ -1,0 +1,211 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        2.18,
+        2.6,
+        -1.47
+      ],
+      [
+        2.18,
+        2.6,
+        1.47
+      ],
+      [
+        -2.18,
+        2.6,
+        1.47
+      ],
+      [
+        -2.18,
+        2.6,
+        -1.47
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        2.18,
+        0.0,
+        -1.47
+      ],
+      [
+        2.18,
+        0.0,
+        1.47
+      ],
+      [
+        -2.18,
+        0.0,
+        1.47
+      ],
+      [
+        -2.18,
+        0.0,
+        -1.47
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "This modern minimalist Scandinavian wardrobe features light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod.",
+        "pos": [
+          -1.83,
+          0.0,
+          0.59
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.54,
+          2.0,
+          0.61
+        ],
+        "prompt": "modern scandinavian wardrobe",
+        "sampled_asset_jid": "4916690c-14c3-475e-8139-602258aa7f21",
+        "sampled_asset_desc": "Dark brown wood wardrobe with three doors, minimalistic modern-classic blend, panel detailing, and metal knob accents.",
+        "sampled_asset_size": [
+          1.559999942779541,
+          1.972000025510395,
+          0.6000000238418579
+        ],
+        "uuid": "f88f9f01-79f6-442c-b8df-3c9a35ee5b10"
+      },
+      {
+        "desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+        "pos": [
+          0.01,
+          1.41,
+          0.03
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.41,
+          1.03,
+          1.34
+        ],
+        "prompt": "simple pendant lamp",
+        "sampled_asset_jid": "c82426a8-b300-4082-8be3-fae454dbd511",
+        "sampled_asset_desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+        "sampled_asset_size": [
+          1.4145780205726624,
+          1.0281919339904562,
+          1.3354629874229431
+        ],
+        "uuid": "18df4483-133d-4b01-9704-0a2e0ab66b3a",
+        "scale": [
+          1.34,
+          1.0,
+          1.25
+        ]
+      },
+      {
+        "desc": "A rustic cottage-style wooden nightstand featuring birdhouse-shaped drawers, a natural wood finish, and an open lower shelf.",
+        "pos": [
+          1.51,
+          0.0,
+          1.18
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.49,
+          0.59,
+          0.33
+        ],
+        "prompt": "small wooden nightstand",
+        "sampled_asset_jid": "860e8155-3bdb-470d-b373-d6df09805a15",
+        "sampled_asset_desc": "A rustic cottage-style wooden nightstand featuring birdhouse-shaped drawers, a natural wood finish, and an open lower shelf.",
+        "sampled_asset_size": [
+          0.48587000370025635,
+          0.5901050014362088,
+          0.3324640095233917
+        ],
+        "uuid": "d8e7aaea-492a-4459-b5c8-5d2f83511b0f"
+      },
+      {
+        "desc": "Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding.",
+        "pos": [
+          0.2,
+          0.0,
+          0.4
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.52,
+          1.46,
+          1.99
+        ],
+        "prompt": "white wooden single bed",
+        "sampled_asset_jid": "1c2a2b53-fed2-49f7-b0ae-f40028fd1c44-(0.8)-(1.0)-(0.87)",
+        "sampled_asset_desc": "Traditional classic king-size blue wooden bed with decorative headboard, paneled footboard, and turned spindle finials.",
+        "sampled_asset_size": [
+          1.5,
+          1.47,
+          2.0
+        ],
+        "uuid": "c20363e6-93d3-4ed0-bcd7-3f12bdfb49a4",
+        "scale": [
+          0.8,
+          1.0,
+          0.87
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -1.07,
+          1.05,
+          -1.57
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.5,
+          1.6,
+          1.73
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 2,
+    "is_anchor": false,
+    "n_prior_style_embeds": 17,
+    "n_new_style_embeds": 4,
+    "n_total_unit_style_embeds": 21
+  }
+}

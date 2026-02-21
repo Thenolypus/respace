@@ -1,0 +1,199 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.18,
+      2.6,
+      1.47
+    ],
+    [
+      -2.18,
+      2.6,
+      -1.47
+    ],
+    [
+      2.18,
+      2.6,
+      -1.47
+    ],
+    [
+      2.18,
+      2.6,
+      1.47
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.18,
+      0.0,
+      1.47
+    ],
+    [
+      -2.18,
+      0.0,
+      -1.47
+    ],
+    [
+      2.18,
+      0.0,
+      -1.47
+    ],
+    [
+      2.18,
+      0.0,
+      1.47
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist floor lamp with tripod metal base and white drum fabric shade featuring geometric design and sleek lines.",
+      "pos": [
+        1.35,
+        0.0,
+        1.09
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.52,
+        1.74,
+        0.5
+      ],
+      "prompt": "floor lamp",
+      "sampled_asset_jid": "dbd8e7c4-bece-4af3-a84d-36069aa6f2e4",
+      "sampled_asset_desc": "Modern minimalist floor lamp with a cylindrical black fabric shade, slim gold metal pole, and round base.",
+      "sampled_asset_size": [
+        0.4979500025510788,
+        1.735160001874335,
+        0.4979500025510788
+      ],
+      "uuid": "8c16659c-73f3-4dd5-98fb-dfd71fc19b0a"
+    },
+    {
+      "desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
+      "pos": [
+        0.17,
+        0.0,
+        0.44
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.71,
+        0.97,
+        1.96
+      ],
+      "prompt": "minimalist single bed",
+      "sampled_asset_jid": "3f3e9fe3-3db0-407b-9956-57025c5b7e6d",
+      "sampled_asset_desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
+      "sampled_asset_size": [
+        1.7059959769248962,
+        0.967167976038084,
+        1.9624310731887817
+      ],
+      "uuid": "9444ca08-d39a-4662-a567-6f533c9289f4"
+    },
+    {
+      "desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
+      "pos": [
+        -1.9,
+        0.0,
+        0.44
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.31,
+        0.74,
+        0.32
+      ],
+      "prompt": "modern scandinavian wardrobe",
+      "sampled_asset_jid": "0ea463c5-c7b3-4a8d-93b4-dbc6b0f356eb-(0.54)-(1.0)-(1.55)",
+      "sampled_asset_desc": "Modern black metal pendant lamp with organic shapes, adjustable cords, and cluster design.",
+      "sampled_asset_size": [
+        0.35,
+        0.74,
+        0.35
+      ],
+      "uuid": "63d6d07a-0a1c-4cd6-9a96-e90f73ef4ac1",
+      "scale": [
+        0.54,
+        1.0,
+        1.55
+      ]
+    },
+    {
+      "desc": "Sleek modern nightstand with a minimalist black design, featuring a single drawer, open shelf, and thin metal legs.",
+      "pos": [
+        -1.1,
+        0.0,
+        1.19
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.52,
+        0.65,
+        0.48
+      ],
+      "prompt": "simple white nightstand",
+      "sampled_asset_jid": "b0986d32-f7d9-4d15-af08-88b9fae12b70-(0.98)-(1.0)-(1.0)",
+      "sampled_asset_desc": "An industrial-vintage beige nightstand with three leather-handled drawers, gold metal rivet d\u00e9cor, and corner reinforcements.",
+      "sampled_asset_size": [
+        0.53,
+        0.64,
+        0.44
+      ],
+      "uuid": "cc87629f-d617-4326-93bd-f2114839e8eb",
+      "scale": [
+        0.98,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        1.07,
+        1.05,
+        -1.59
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -0.5,
+        1.6,
+        1.71
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}

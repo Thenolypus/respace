@@ -1,0 +1,194 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.77,
+      2.6,
+      1.47
+    ],
+    [
+      -1.77,
+      2.6,
+      -1.47
+    ],
+    [
+      1.77,
+      2.6,
+      -1.47
+    ],
+    [
+      1.77,
+      2.6,
+      1.47
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.77,
+      0.0,
+      1.47
+    ],
+    [
+      -1.77,
+      0.0,
+      -1.47
+    ],
+    [
+      1.77,
+      0.0,
+      -1.47
+    ],
+    [
+      1.77,
+      0.0,
+      1.47
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern gray floor lamp with a metal slatted hourglass shape and a central glass-encased bulb.",
+      "pos": [
+        1.4,
+        0.0,
+        1.21
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.21,
+        0.59,
+        0.21
+      ],
+      "prompt": "gray modern floor lamp",
+      "sampled_asset_jid": "1c7492dc-e70e-4559-a02c-6fb0481db600-(1.06)-(1.0)-(1.06)",
+      "sampled_asset_desc": "Modern gray floor lamp with a metal slatted hourglass shape and a central glass-encased bulb.",
+      "sampled_asset_size": [
+        0.21,
+        0.59,
+        0.21
+      ],
+      "uuid": "aa5d015f-8e1e-43d5-b0ef-1c3ab46b6c9b",
+      "scale": [
+        1.06,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "desc": "Classic grey wooden wardrobe with 4 louvered doors, crown molding, and base plinth.",
+      "pos": [
+        -1.44,
+        0.0,
+        0.38
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.04,
+        2.25,
+        0.65
+      ],
+      "prompt": "louvered wooden wardrobe",
+      "sampled_asset_jid": "53726e19-edc8-41b6-bad0-c04809ab5702",
+      "sampled_asset_desc": "A rustic wooden wardrobe with louvered doors, double-tiered storage, and decorative crown, offering a timeless and functional design.",
+      "sampled_asset_size": [
+        2.0350000858306885,
+        2.250000024536817,
+        0.6499999761581421
+      ],
+      "uuid": "ab6a99c7-78c1-4c6f-95f5-20d41e39d02b"
+    },
+    {
+      "desc": "Mid-Century Modern minimalist nightstand with natural wood frame, white drawer, and tapered legs.",
+      "pos": [
+        -0.6,
+        0.0,
+        1.32
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.4,
+        0.55,
+        0.32
+      ],
+      "prompt": "mid-century modern wooden nightstand",
+      "sampled_asset_jid": "bb9598e5-69bc-46e9-90c6-c6fb93f96ed1",
+      "sampled_asset_desc": "Mid-Century Modern minimalist nightstand with natural wood frame, white drawer, and tapered legs.",
+      "sampled_asset_size": [
+        0.40000200271606445,
+        0.5500000236437153,
+        0.3221140056848526
+      ],
+      "uuid": "c71d37a5-711e-4448-bf63-edc14a3db6ec"
+    },
+    {
+      "desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+      "pos": [
+        0.27,
+        0.0,
+        0.4
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.36,
+        0.85,
+        2.16
+      ],
+      "prompt": "white wooden single bed",
+      "sampled_asset_jid": "43d85f7d-19d1-4a0c-90b9-ff054351a284",
+      "sampled_asset_desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+      "sampled_asset_size": [
+        1.3596479892730713,
+        0.8488339998094787,
+        2.16238009929657
+      ],
+      "uuid": "c4cdbdeb-1e5a-4667-90a9-d6f5d185279a"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        0.69,
+        1.05,
+        -1.59
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -0.17,
+        1.6,
+        1.71
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}

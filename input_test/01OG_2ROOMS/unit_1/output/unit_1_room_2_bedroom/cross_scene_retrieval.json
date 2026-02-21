@@ -1,0 +1,206 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.77,
+        2.6,
+        1.47
+      ],
+      [
+        -1.77,
+        2.6,
+        -1.47
+      ],
+      [
+        1.77,
+        2.6,
+        -1.47
+      ],
+      [
+        1.77,
+        2.6,
+        1.47
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.77,
+        0.0,
+        1.47
+      ],
+      [
+        -1.77,
+        0.0,
+        -1.47
+      ],
+      [
+        1.77,
+        0.0,
+        -1.47
+      ],
+      [
+        1.77,
+        0.0,
+        1.47
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern gray floor lamp with a metal slatted hourglass shape and a central glass-encased bulb.",
+        "pos": [
+          1.4,
+          0.0,
+          1.21
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.21,
+          0.59,
+          0.21
+        ],
+        "prompt": "gray modern floor lamp",
+        "sampled_asset_jid": "951871ef-d526-4e96-b188-3380b2146431-(0.41)-(1.0)-(1.37)",
+        "sampled_asset_desc": "Innovative modern-industrial pendant lamp with geometric angular design, minimalist exposed metal and plastic structure, and integrated LED lighting.",
+        "sampled_asset_size": [
+          0.2,
+          0.61,
+          0.2
+        ],
+        "uuid": "28ff98be-d139-4b49-a664-989caaf982df",
+        "scale": [
+          0.41,
+          1.0,
+          1.37
+        ]
+      },
+      {
+        "desc": "Classic grey wooden wardrobe with 4 louvered doors, crown molding, and base plinth.",
+        "pos": [
+          -1.44,
+          0.0,
+          0.38
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.04,
+          2.25,
+          0.65
+        ],
+        "prompt": "louvered wooden wardrobe",
+        "sampled_asset_jid": "53726e19-edc8-41b6-bad0-c04809ab5702",
+        "sampled_asset_desc": "A rustic wooden wardrobe with louvered doors, double-tiered storage, and decorative crown, offering a timeless and functional design.",
+        "sampled_asset_size": [
+          2.0350000858306885,
+          2.250000024536817,
+          0.6499999761581421
+        ],
+        "uuid": "739dfcd9-3541-46eb-ae27-69f9d73d2574"
+      },
+      {
+        "desc": "Mid-Century Modern minimalist nightstand with natural wood frame, white drawer, and tapered legs.",
+        "pos": [
+          -0.6,
+          0.0,
+          1.32
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.4,
+          0.55,
+          0.32
+        ],
+        "prompt": "mid-century modern wooden nightstand",
+        "sampled_asset_jid": "d6f7948a-b64f-43b7-9da5-a826001b76b2",
+        "sampled_asset_desc": "Vintage-inspired white canvas newspaper holder with black text, rustic rope handles, and grommet accents.",
+        "sampled_asset_size": [
+          0.39013999700546265,
+          0.5493400208524513,
+          0.29572001099586487
+        ],
+        "uuid": "94a7a47b-e447-4506-9527-9fdfefc41fa3"
+      },
+      {
+        "desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+        "pos": [
+          0.27,
+          0.0,
+          0.4
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.36,
+          0.85,
+          2.16
+        ],
+        "prompt": "white wooden single bed",
+        "sampled_asset_jid": "43d85f7d-19d1-4a0c-90b9-ff054351a284",
+        "sampled_asset_desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+        "sampled_asset_size": [
+          1.3596479892730713,
+          0.8488339998094787,
+          2.16238009929657
+        ],
+        "uuid": "33d3f6ca-be5c-4020-a7ae-8dbd386b6c7f"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.69,
+          1.05,
+          -1.59
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -0.17,
+          1.6,
+          1.71
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 2,
+    "is_anchor": false,
+    "n_prior_style_embeds": 11,
+    "n_new_style_embeds": 4,
+    "n_total_unit_style_embeds": 15
+  }
+}

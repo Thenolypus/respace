@@ -1,0 +1,183 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        1.77,
+        2.6,
+        -1.47
+      ],
+      [
+        1.77,
+        2.6,
+        1.47
+      ],
+      [
+        -1.77,
+        2.6,
+        1.47
+      ],
+      [
+        -1.77,
+        2.6,
+        -1.47
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        1.77,
+        0.0,
+        -1.47
+      ],
+      [
+        1.77,
+        0.0,
+        1.47
+      ],
+      [
+        -1.77,
+        0.0,
+        1.47
+      ],
+      [
+        -1.77,
+        0.0,
+        -1.47
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Mid-Century Modern nightstand with light wood finish, geometric cutout handle, and angled legs.",
+        "pos": [
+          -0.98,
+          0.0,
+          1.14
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.62,
+          0.55,
+          0.6
+        ],
+        "prompt": "light wood mid-century nightstand",
+        "sampled_asset_jid": "0ac76760-7f74-45ce-8c78-761c131f5b19-(0.62)-(1.0)-(0.7)",
+        "sampled_asset_desc": "A chic Mid-Century Modern meets Contemporary ceiling lamp with spherical glass shades and a black metal structure.",
+        "sampled_asset_size": [
+          0.6,
+          0.53,
+          0.6
+        ],
+        "uuid": "867192da-e230-43b1-a15e-3e4ccc27e34c",
+        "scale": [
+          0.62,
+          1.0,
+          0.7
+        ]
+      },
+      {
+        "desc": "A modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents.",
+        "pos": [
+          -0.85,
+          0.0,
+          -1.13
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.35,
+          0.59,
+          0.36
+        ],
+        "prompt": "low-profile modern scandinavian floor lamp",
+        "sampled_asset_jid": "754c6d41-d2bb-4a38-88d1-e6f7d4815c1b",
+        "sampled_asset_desc": "Modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents.",
+        "sampled_asset_size": [
+          0.3538399934768677,
+          0.5947100061418205,
+          0.3637999892234802
+        ],
+        "uuid": "c1c80794-98db-4682-b6fe-b46a171bf355"
+      },
+      {
+        "desc": "Modern single bed with a white wood frame, upholstered headboard, and contrasting green and gray bedding.",
+        "pos": [
+          0.26,
+          0.0,
+          0.31
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.26,
+          0.9,
+          2.0
+        ],
+        "prompt": "white modern scandinavian bed",
+        "sampled_asset_jid": "5c12bb5b-3ae0-4e07-acba-059ac03f0850-(1.0)-(0.91)-(0.97)",
+        "sampled_asset_desc": "Classic wooden single bed featuring a high headboard, low footboard, and minimalist design with clean lines.",
+        "sampled_asset_size": [
+          1.24,
+          0.91,
+          2.01
+        ],
+        "uuid": "b0289907-7e8c-495f-8c72-c2917df6c26f",
+        "scale": [
+          1.0,
+          0.91,
+          0.97
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -0.69,
+          1.05,
+          -1.57
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.17,
+          1.6,
+          1.73
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 3,
+    "is_anchor": false,
+    "n_prior_style_embeds": 21,
+    "n_new_style_embeds": 3,
+    "n_total_unit_style_embeds": 24
+  }
+}

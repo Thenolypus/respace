@@ -1,0 +1,211 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.18,
+        2.6,
+        1.47
+      ],
+      [
+        -2.18,
+        2.6,
+        -1.47
+      ],
+      [
+        2.18,
+        2.6,
+        -1.47
+      ],
+      [
+        2.18,
+        2.6,
+        1.47
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.18,
+        0.0,
+        1.47
+      ],
+      [
+        -2.18,
+        0.0,
+        -1.47
+      ],
+      [
+        2.18,
+        0.0,
+        -1.47
+      ],
+      [
+        2.18,
+        0.0,
+        1.47
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist floor lamp with tripod metal base and white drum fabric shade featuring geometric design and sleek lines.",
+        "pos": [
+          1.35,
+          0.0,
+          1.09
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.52,
+          1.74,
+          0.5
+        ],
+        "prompt": "floor lamp",
+        "sampled_asset_jid": "4583809b-afc1-4d29-a9cd-4170bda1e2f2",
+        "sampled_asset_desc": "Modern minimalist floor lamp with tripod metal base and white drum fabric shade featuring geometric design and sleek lines.",
+        "sampled_asset_size": [
+          0.5217199921607971,
+          1.7370599692047417,
+          0.5014600157737732
+        ],
+        "uuid": "4e2187bd-1568-4f7c-b350-e14d65719cbc"
+      },
+      {
+        "desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
+        "pos": [
+          0.17,
+          0.0,
+          0.44
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.71,
+          0.97,
+          1.96
+        ],
+        "prompt": "minimalist single bed",
+        "sampled_asset_jid": "3f3e9fe3-3db0-407b-9956-57025c5b7e6d",
+        "sampled_asset_desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
+        "sampled_asset_size": [
+          1.7059959769248962,
+          0.967167976038084,
+          1.9624310731887817
+        ],
+        "uuid": "3eca62d1-0c7e-4837-86b6-a9a4a71bf174"
+      },
+      {
+        "desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
+        "pos": [
+          -1.9,
+          0.0,
+          0.44
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          0.31,
+          0.74,
+          0.32
+        ],
+        "prompt": "modern scandinavian wardrobe",
+        "sampled_asset_jid": "991d3592-60e5-4516-8df0-feb3971efa67",
+        "sampled_asset_desc": "Modern industrial black metal pendant lamp with a mesh design and slightly flared shape.",
+        "sampled_asset_size": [
+          0.3211199939250946,
+          0.741639978310559,
+          0.3211199939250946
+        ],
+        "uuid": "fc9e8a46-0776-41a4-aa44-74c7df30fd6a",
+        "scale": [
+          0.54,
+          1.0,
+          1.55
+        ]
+      },
+      {
+        "desc": "Sleek modern nightstand with a minimalist black design, featuring a single drawer, open shelf, and thin metal legs.",
+        "pos": [
+          -1.1,
+          0.0,
+          1.19
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.52,
+          0.65,
+          0.48
+        ],
+        "prompt": "simple white nightstand",
+        "sampled_asset_jid": "5ac4d3c3-386f-4a6e-a60f-58667b14e1dd",
+        "sampled_asset_desc": "A vintage-style pendant lamp with antique brass metal, glass shades, and ornate curved arms featuring six candle-style light fixtures.",
+        "sampled_asset_size": [
+          0.5317400097846985,
+          0.6516600251197815,
+          0.4741399884223938
+        ],
+        "uuid": "3ce8e866-fa6d-4a41-8e1b-ae582f820eeb",
+        "scale": [
+          0.98,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          1.07,
+          1.05,
+          -1.59
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -0.5,
+          1.6,
+          1.71
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 3,
+    "is_anchor": false,
+    "n_prior_style_embeds": 15,
+    "n_new_style_embeds": 4,
+    "n_total_unit_style_embeds": 19
+  }
+}

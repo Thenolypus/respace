@@ -1,0 +1,850 @@
+======================================================================
+STAGE 2: Cross-scene Style-coherent Asset Retrieval
+======================================================================
+Device: cuda
+Initializing AssetRetrievalModule...
+removed 216 assets with size > 100
+shapes:  (38529, 1152) (38529, 3) 38529
+
+######################################################################
+# Room [0]: unit_2_room_1_livingroom
+# Type: livingroom
+# lambda_style=0.2, mode=greedy
+# Role: STYLE ANCHOR
+# user_prompt="modern scandinavian"
+######################################################################
+
+==========================================================================================
+OBJECT [0]
+  Original desc: "Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish."
+  Category query: " minimalist metal legs tv stand"
+  Style bias: ACTIVE (user prompt) -- 1 embedding(s)
+  Size: [1.6, 0.43, 0.38]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish."
+QUERY SIZE: [1.6, 0.43, 0.38]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0797   0.3848   1.0000   0.6064   0.6752  [1.6, 0.429, 0.38]           Modern TV stand with a minimalist rectangular wooden design and slim m
+#2      0.0710   0.5502   0.8521   0.4555   0.6521  [1.6, 0.409, 0.36]           Minimalist modern TV stand with walnut and white finish, featuring two
+#3      0.0699   0.5833   0.8521   0.3728   0.6488  [1.62, 0.429, 0.355]         A modern, minimalist TV stand made of metal and wood featuring a recta
+#4      0.0672   0.4472   0.9048   0.5014   0.6411  [1.6, 0.419, 0.4]            Modern minimalist TV stand with open shelving and dual drawers featuri
+#5      0.0620   0.5502   0.7118   0.6002   0.6248  [1.564, 0.42, 0.384]         A sleek mid-century modern TV stand in walnut brown with four drawers,
+#6      0.0599   0.4405   0.8869   0.4354   0.6181  [1.61, 0.45, 0.37]           A sleek modern black TV stand with geometric paneling and metallic acc
+#7      0.0578   0.5357   0.7118   0.5603   0.6110  [1.63, 0.45, 0.4]            Modern black TV stand with sleek design, four drawers, and tapered met
+#8      0.0571   0.3523   0.9048   0.5285   0.6086  [1.6, 0.42, 0.4]             Traditional meets contemporary TV stand with mint green body, dark bro
+#9      0.0541   0.4648   0.7711   0.5173   0.5978  [1.6, 0.4, 0.4]              A modern, minimalist TV stand with a wood top and white laminate body
+#10     0.0541   0.4648   0.7711   0.5173   0.5978  [1.6, 0.4, 0.4]              A modern, minimalist TV stand with a wood top and white laminate body
+
+{'desc': 'Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish.', 'pos': [-0.45, 0.0, 3.19], 'rot': [0.0, -0.70711, 0.0, 0.70711], 'size': [1.6, 0.43, 0.38], 'prompt': ' minimalist metal legs tv stand', 'sampled_asset_jid': '5921e731-07e7-42be-9b2b-b7e7025de569', 'sampled_asset_desc': 'Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish.', 'sampled_asset_size': [1.6002909541130066, 0.42906101413859865, 0.3800860047340393], 'uuid': '7109bd64-ea84-48f5-ad03-1ea674315f19'}
+
+
+
+==========================================================================================
+OBJECT [1]
+  Original desc: "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage."
+  Category query: "ample storage cabinet"
+  Style bias: ACTIVE (user prompt, in-room) -- 2 embedding(s)
+  Size: [1.21, 0.22, 0.26]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage."
+QUERY SIZE: [1.21, 0.22, 0.26]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1407   0.4149   1.0000   0.6053   0.6870  [1.21, 0.22, 0.26]           A modern minimalist children's cabinet with a natural wood base, featu
+#2      0.0759   0.3252   0.7118   0.7431   0.5634  [1.2, 0.22, 0.3]             A modern, minimalist gray metal shelf featuring a rectangular shape wi
+#3      0.0717   0.6843   0.5066   0.3792   0.5522  [1.177, 0.221, 0.306]        A stylish assortment of contemporary high-heeled shoes and a classic o
+#4      0.0707   0.4169   0.5945   0.7237   0.5493  [1.205, 0.249, 0.295]        A modern, minimalist dark brown wooden footstool with sleek design, a
+#5      0.0592   0.3493   0.6065   0.6573   0.5138  [1.259, 0.222, 0.262]        Modern minimalist metal and glass pendant lamp with a satin nickel fin
+#6      0.0544   0.6843   0.3679   0.3792   0.4967  [1.18, 0.18, 0.31]           A stylish assortment of contemporary high-heeled shoes and a classic o
+#7      0.0483   0.7936   0.0000   0.7787   0.4732  [0.854, 1.688, 0.371]
+#8      0.0483   0.7936   0.0000   0.7787   0.4732  [0.573, 1.458, 0.802]
+#9      0.0429   0.4149   0.4066   0.6053   0.4496  [1.15, 0.22, 0.228]          A modern minimalist children's cabinet with a natural wood base, featu
+#10     0.0424   0.7165   0.0000   0.8033   0.4472  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+
+{'desc': "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage.", 'pos': [-3.73, 0.0, 2.69], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'size': [1.21, 0.22, 0.26], 'prompt': 'ample storage cabinet', 'sampled_asset_jid': '6e7451e5-66d5-4682-b1b9-572c5b1160f5-(1.05)-(1.0)-(1.16)', 'sampled_asset_desc': "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage.", 'sampled_asset_size': [1.21, 0.22, 0.26], 'uuid': '004cf1f4-e0ae-4889-8233-a1ac8999a489', 'scale': [1.05, 1.0, 1.16]}
+
+
+
+==========================================================================================
+OBJECT [2]
+  Original desc: "A contemporary minimalist dark gray armchair with fabric upholstery, a wooden frame, foam padding, and a boxy, low-profile design featuring smooth curves and tailored seams."
+  Category query: "dark wood armchair"
+  Style bias: ACTIVE (user prompt, in-room) -- 3 embedding(s)
+  Size: [0.97, 0.88, 0.92]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A contemporary minimalist dark gray armchair with fabric upholstery, a wooden frame, foam padding, and a boxy, low-profile design featuring smooth curves and tailored seams."
+QUERY SIZE: [0.97, 0.88, 0.92]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0759   0.4782   1.0000   0.4912   0.6895  [0.97, 0.88, 0.92]           A contemporary minimalist dark gray armchair with fabric upholstery, a
+#2      0.0678   0.3920   0.9048   0.7402   0.6668  [0.979, 0.882, 0.944]        Modern armchair with gray fabric, curved padded backrest, and metal sw
+#3      0.0626   0.4805   0.8353   0.6237   0.6510  [0.94, 0.88, 0.92]           Modern pendant lamp with three gold metal arms and clear hanging glass
+#4      0.0589   0.4888   0.7711   0.6737   0.6387  [0.955, 0.883, 0.953]        This modern glamorous ceiling lamp features a multi-tiered geometric d
+#5      0.0574   0.3485   0.8869   0.6976   0.6337  [0.98, 0.86, 0.93]           Industrial modern circular pendant lamp with matte black metal frame,
+#6      0.0533   0.5035   0.6977   0.6920   0.6189  [0.966, 0.915, 0.893]        A modern retro coral pink armchair with curved armrests, wooden legs,
+#7      0.0527   0.5167   0.6440   0.7602   0.6163  [0.943, 0.85, 0.94]          Gray mid-century modern armchair with fabric upholstery, tufted seat a
+#8      0.0523   0.4631   0.7118   0.7260   0.6152  [0.93, 0.88, 0.93]           Modern gold pendant lamp with integrated LED lights and a unique curve
+#9      0.0491   0.3403   0.8187   0.6935   0.6023  [0.94, 0.87, 0.92]           Modern minimalist armchair featuring a natural wood frame with grid cu
+#10     0.0486   0.2044   0.9802   0.6322   0.6003  [0.97, 0.89, 0.92]           Modern retro lounge chair with a tufted high backrest, cushioned seat,
+
+{'desc': 'A contemporary minimalist dark gray armchair with fabric upholstery, a wooden frame, foam padding, and a boxy, low-profile design featuring smooth curves and tailored seams.', 'pos': [1.06, 0.0, 5.43], 'rot': [0.0, 1.0, 0.0, 0.0], 'size': [0.97, 0.88, 0.92], 'prompt': 'dark wood armchair', 'sampled_asset_jid': '1d24fd7b-4ed9-474e-8155-ce0d9def78b7-(1.25)-(1.0)-(0.99)', 'sampled_asset_desc': 'Elegant high-back armchair with tufted, buttoned upholstery and classic modern design featuring decorative nailhead trim and dark wooden legs.', 'sampled_asset_size': [0.98, 0.88, 0.88], 'uuid': '52b85efd-cbb1-4f0a-a052-2ab221601b0c', 'scale': [1.25, 1.0, 0.99]}
+
+
+
+==========================================================================================
+OBJECT [3]
+  Original desc: "Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan."
+  Category query: "gray fabric sofa"
+  Style bias: ACTIVE (user prompt, in-room) -- 4 embedding(s)
+  Size: [2.95, 0.93, 1.0]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan."
+QUERY SIZE: [2.95, 0.93, 1.0]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1026   0.3475   1.0000   0.6508   0.6691  [2.952, 0.934, 1.004]        Modern three-seat sofa with gray fabric upholstery, high armrests, met
+#2      0.0923   0.5561   0.6570   0.8134   0.6479  [2.956, 0.89, 0.981]         Modern gray three-seat sofa with fabric upholstery, tufted cushion, lo
+#3      0.0741   0.5285   0.5945   0.7734   0.6039  [2.953, 0.935, 0.952]        Contemporary three-seat sofa with gray fabric upholstery, low-profile
+#4      0.0683   0.4587   0.7558   0.5088   0.5876  [2.97, 0.96, 0.99]           A stylish contemporary three-seat leather sofa with dark gray upholste
+#5      0.0662   0.4116   0.6977   0.6891   0.5815  [2.975, 0.925, 0.972]        Modern three-seat sofa with classic rolled arms, leather upholstery, a
+#6      0.0625   0.4361   0.6440   0.6886   0.5698  [2.972, 0.897, 1.026]        A modern minimalist two-seater loveseat with grey fabric cushions, bro
+#7      0.0586   0.5054   0.5169   0.7400   0.5569  [2.935, 0.948, 1.048]        Modern green three-seat sofa with plush cushions, throw pillows, and s
+#8      0.0466   0.4389   0.5066   0.6645   0.5111  [2.924, 0.886, 0.97]         Modern three-seat beige fabric sofa with wide armrests and assorted ac
+#9      0.0463   0.2922   0.5945   0.7761   0.5099  [2.91, 0.92, 0.97]           A sleek, contemporary dark gray three-seat sofa with a minimalist desi
+#10     0.0462   0.2441   0.7118   0.6355   0.5094  [2.956, 0.891, 1.001]        A contemporary navy blue three-seat sofa with a tufted seat, cushioned
+
+{'desc': 'Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan.', 'pos': [2.97, 0.0, 3.31], 'rot': [0.0, -0.70711, 0.0, 0.70711], 'size': [2.95, 0.93, 1.0], 'prompt': 'gray fabric sofa', 'sampled_asset_jid': '22496d43-4610-477a-98d9-fe6e97ede751', 'sampled_asset_desc': 'Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan.', 'sampled_asset_size': [2.9517099857330322, 0.933687390468549, 1.004141092300415], 'uuid': '56bc72ab-a97e-4a57-865d-94cee8c35504'}
+
+
+
+==========================================================================================
+OBJECT [4]
+  Original desc: "Modern minimalist coffee table with a white lacquer top, a geometric wood base, and clean lines for a sleek and functional design."
+  Category query: "low profile coffee table"
+  Style bias: ACTIVE (user prompt, in-room) -- 5 embedding(s)
+  Size: [1.2, 0.46, 0.8]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern minimalist coffee table with a white lacquer top, a geometric wood base, and clean lines for a sleek and functional design."
+QUERY SIZE: [1.2, 0.46, 0.8]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0843   0.4506   0.9802   0.7695   0.7262  [1.2, 0.45, 0.8]             A modern minimalist square wooden side table with a smooth brown finis
+#2      0.0811   0.4097   1.0000   0.7727   0.7184  [1.2, 0.46, 0.8]             A contemporary minimalist coffee table with a rectangular wooden frame
+#3      0.0788   0.4898   0.9048   0.7743   0.7127  [1.18, 0.45, 0.8]            Modern rectangular coffee table with block design, two-tone wood color
+#4      0.0744   0.5438   0.8187   0.7812   0.7012  [1.17, 0.47, 0.8]            A traditional dark brown wooden coffee table with carved legs and intr
+#5      0.0741   0.4291   0.9802   0.6833   0.7004  [1.2, 0.45, 0.8]             Classic baroque-style dark brown wooden coffee table with ornate carvi
+#6      0.0626   0.3096   1.0000   0.7138   0.6666  [1.202, 0.46, 0.8]           Modern minimalist coffee table with a white lacquer top, a geometric w
+#7      0.0517   0.4711   0.7261   0.7475   0.6284  [1.2, 0.5, 0.8]              Modern minimalist black metal and glass coffee table with sleek lines
+#8      0.0490   0.4635   0.6703   0.8204   0.6176  [1.16, 0.46, 0.82]           Industrial rustic coffee table with wooden top, wagon wheel legs, and
+#9      0.0477   0.5016   0.6977   0.6633   0.6124  [1.207, 0.42, 0.806]         A modern minimalist nested coffee table set with round black wooden fr
+#10     0.0464   0.5438   0.5827   0.7812   0.6069  [1.15, 0.47, 0.792]          A traditional dark brown wooden coffee table with carved legs and intr
+
+{'desc': 'Modern minimalist coffee table with a white lacquer top, a geometric wood base, and clean lines for a sleek and functional design.', 'pos': [1.05, 0.0, 3.31], 'rot': [0.0, -0.70711, 0.0, 0.70711], 'size': [1.2, 0.46, 0.8], 'prompt': 'low profile coffee table', 'sampled_asset_jid': '5c6a1cd0-5f6b-42b3-96ef-fc1e4ef7d067-(1.67)-(1.0)-(1.83)', 'sampled_asset_desc': 'Modern minimalist black metal and glass coffee table with sleek lines and three-tier design.', 'sampled_asset_size': [1.2, 0.5, 0.8], 'uuid': '1017fcab-6583-42e2-8ce9-64362dd68e8c', 'scale': [1.67, 1.0, 1.83]}
+
+
+
+==========================================================================================
+OBJECT [5]
+  Original desc: "Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade."
+  Category query: "modern metal floor lamp"
+  Style bias: ACTIVE (user prompt, in-room) -- 6 embedding(s)
+  Size: [0.74, 1.37, 0.2]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade."
+QUERY SIZE: [0.74, 1.37, 0.2]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.2154   0.5309   1.0000   0.7671   0.7658  [0.74, 1.37, 0.2]            Modern black arched floor lamp with sleek metal construction and cylin
+#2      0.0700   0.4195   0.5599   0.7464   0.5411  [0.761, 1.403, 0.24]         Unique robot-shaped bookcase with whimsical modern design, featuring l
+#3      0.0488   0.3882   0.3985   0.7704   0.4688  [0.73, 1.43, 0.23]           This minimalist grey metal pendant lamp features a sleek cylindrical d
+#4      0.0461   0.7023   0.0000   0.8831   0.4575  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#5      0.0432   0.7560   0.0000   0.7114   0.4447  [0.854, 1.688, 0.371]
+#6      0.0432   0.7560   0.0000   0.7114   0.4447  [0.573, 1.458, 0.802]
+#7      0.0417   0.6646   0.0000   0.8576   0.4374  [3.119, 0.907, 1.932]        Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#8      0.0417   0.6646   0.0000   0.8576   0.4374  [3.4, 0.91, 1.55]            Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#9      0.0417   0.6646   0.0000   0.8576   0.4374  [2.84, 0.91, 1.49]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#10     0.0417   0.6646   0.0000   0.8576   0.4374  [3.12, 0.91, 1.93]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+
+{'desc': 'Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade.', 'pos': [2.7, 0.0, 5.05], 'rot': [0.0, 0.9683, 0.0, 0.2499], 'size': [0.74, 1.37, 0.2], 'prompt': 'modern metal floor lamp', 'sampled_asset_jid': '9cc468cf-95b5-4b01-9094-749ce36bd600-(0.98)-(1.0)-(0.59)', 'sampled_asset_desc': 'Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade.', 'sampled_asset_size': [0.74, 1.37, 0.2], 'uuid': '6f2cbd13-08d9-4d7a-97bc-dc65b75457ba', 'scale': [0.98, 1.0, 0.59]}
+
+
+
+==========================================================================================
+OBJECT [6]
+  Original desc: "Modern industrial pendant lamp with three cylindrical glass shades, black metal mount, and adjustable cords."
+  Category query: "pendant lamp"
+  Style bias: ACTIVE (user prompt, in-room) -- 7 embedding(s)
+  Size: [0.9, 0.86, 0.13]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern industrial pendant lamp with three cylindrical glass shades, black metal mount, and adjustable cords."
+QUERY SIZE: [0.9, 0.86, 0.13]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1652   0.5204   1.0000   0.7183   0.7518  [0.9, 0.861, 0.133]          Modern industrial pendant lamp with three cylindrical glass shades, bl
+#2      0.0933   0.4533   0.7558   0.7698   0.6376  [0.89, 0.88, 0.1]            A contemporary white metal pendant lamp with a minimalist caged design
+#3      0.0682   0.3222   0.7261   0.7781   0.5749  [0.94, 0.86, 0.13]           Modern geometric wall art with a chevron pattern in dark brown wood fr
+#4      0.0621   0.5788   0.4493   0.7235   0.5560  [0.896, 0.84, 0.066]         A contemporary minimalist metal and plastic frame with a central suppo
+#5      0.0610   0.2646   0.7866   0.6608   0.5527  [0.92, 0.88, 0.15]           A sleek modern minimalist black and gold metal pendant lamp with a sli
+#6      0.0569   0.4965   0.5169   0.6655   0.5384  [0.92, 0.88, 0.18]           A contemporary and elegant pendant lamp with gold metal framework, whi
+#7      0.0498   0.4657   0.4677   0.6922   0.5118  [0.886, 0.873, 0.075]        Modern industrial pendant lamp with a linear design, featuring dual bu
+#8      0.0463   0.5727   0.2516   0.8374   0.4972  [0.91, 0.78, 0.11]           Industrial-modern pendant lamp with black metal cage design and cylind
+#9      0.0393   0.5456   0.2369   0.7573   0.4645  [0.88, 0.94, 0.15]           Modern industrial pendant lamp with a linear metal structure, bronze c
+#10     0.0391   0.7169   0.0000   0.8850   0.4637  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+
+{'desc': 'Modern industrial pendant lamp with three cylindrical glass shades, black metal mount, and adjustable cords.', 'pos': [1.01, 1.52, 3.25], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.9, 0.86, 0.13], 'prompt': 'pendant lamp', 'sampled_asset_jid': '84213a41-9152-49c3-9663-7a7817572638-(1.54)-(1.0)-(1.26)', 'sampled_asset_desc': 'A sleek modern minimalist black and gold metal pendant lamp with a slim disc shape and adjustable suspension.', 'sampled_asset_size': [0.92, 0.88, 0.15], 'uuid': '1307445f-9544-498e-beef-b1e098f26641', 'scale': [1.54, 1.0, 1.26]}
+
+
+
+==========================================================================================
+OBJECT [7]
+  Original desc: "Modern minimalist armchair with a gray wooden frame and light beige fabric upholstery featuring an open arm design and tapered legs."
+  Category query: "plush seat armchair"
+  Style bias: ACTIVE (user prompt, in-room) -- 8 embedding(s)
+  Size: [0.82, 0.85, 0.88]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern minimalist armchair with a gray wooden frame and light beige fabric upholstery featuring an open arm design and tapered legs."
+QUERY SIZE: [0.82, 0.85, 0.88]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0714   0.4225   0.9048   0.8022   0.6914  [0.818, 0.827, 0.886]        A modern-contemporary dark gray fabric armchair with plush cushions, s
+#2      0.0642   0.2934   0.9608   0.8410   0.6699  [0.82, 0.84, 0.87]           A modern, minimalist dark gray armchair with smooth fabric upholstery,
+#3      0.0619   0.2546   1.0000   0.8050   0.6628  [0.822, 0.85, 0.884]         Modern minimalist armchair with a gray wooden frame and light beige fa
+#4      0.0589   0.5254   0.8025   0.6082   0.6528  [0.833, 0.878, 0.888]        This elegant armchair combines traditional and rustic design with a cu
+#5      0.0578   0.5180   0.7118   0.7860   0.6491  [0.78, 0.85, 0.87]           A modern, minimalistic black metal pendant lamp with a sleek and geome
+#6      0.0562   0.4261   0.8025   0.7595   0.6433  [0.833, 0.879, 0.889]        A classic French provincial armchair with curved wooden legs, grey fab
+#7      0.0531   0.3949   0.8025   0.7657   0.6321  [0.833, 0.878, 0.888]        A vintage-inspired blue fabric armchair with curved wooden legs, a hig
+#8      0.0509   0.4699   0.6977   0.7818   0.6234  [0.86, 0.84, 0.87]           Modern-classic black leather armchair with cushioned tub shape, rounde
+#9      0.0508   0.5306   0.6703   0.7145   0.6233  [0.797, 0.851, 0.837]        A modern mid-century dark brown leather armchair with tufted backrest,
+#10     0.0506   0.3789   0.8025   0.7484   0.6222  [0.833, 0.878, 0.888]        A vintage Victorian red fabric armchair with curved wooden legs, nailh
+
+{'desc': 'Modern minimalist armchair with a gray wooden frame and light beige fabric upholstery featuring an open arm design and tapered legs.', 'pos': [1.06, 0.0, 1.5], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.82, 0.85, 0.88], 'prompt': 'plush seat armchair', 'sampled_asset_jid': '060f87eb-3b9b-4131-b045-e7a8578e8c1d', 'sampled_asset_desc': 'A modern mid-century dark brown leather armchair with tufted backrest, padded armrests, and silver adjustable five-point metal swivel base.', 'sampled_asset_size': [0.7972510159015656, 0.8511039461300243, 0.8370970189571381], 'uuid': 'fc397b9b-c0e8-4f7c-b7fe-4d5df556801c'}
+
+
+
+==========================================================================================
+OBJECT [8]
+  Original desc: "This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design."
+  Category query: "round wooden-top table"
+  Style bias: ACTIVE (user prompt, in-room) -- 9 embedding(s)
+  Size: [2.61, 0.75, 0.96]
+==========================================================================================
+
+==========================================================================================
+QUERY: "This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design."
+QUERY SIZE: [2.61, 0.75, 0.96]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1427   0.5954   1.0000   0.8606   0.8103  [2.606, 0.752, 0.963]        This modern-industrial dining table features a sleek wooden top with s
+#2      0.0676   0.2951   0.9608   0.7922   0.6608  [2.61, 0.74, 0.95]           This modern three-seat sofa features a sleek, rectangular form with gr
+#3      0.0660   0.3534   0.9048   0.7632   0.6559  [2.63, 0.76, 0.96]           A modern, black fabric three-seat sofa with plush cushions and gold-co
+#4      0.0618   0.3757   0.8025   0.8581   0.6429  [2.58, 0.76, 0.95]           Modern minimalist three-seat sofa with gray fabric cushions, black woo
+#5      0.0606   0.4899   0.7262   0.7631   0.6390  [2.57, 0.755, 0.962]         Contemporary gray three-seat sofa with minimalist design, featuring lo
+#6      0.0574   0.3534   0.8353   0.7632   0.6281  [2.629, 0.764, 0.982]        A modern, black fabric three-seat sofa with plush cushions and gold-co
+#7      0.0559   0.4662   0.6839   0.8139   0.6228  [2.62, 0.78, 0.93]           Modern minimalist black loveseat sofa with fabric upholstery, metal ac
+#8      0.0509   0.2951   0.8187   0.7922   0.6040  [2.611, 0.74, 0.988]         This modern three-seat sofa features a sleek, rectangular form with gr
+#9      0.0440   0.5153   0.5066   0.8307   0.5749  [2.656, 0.749, 0.991]        A sleek and minimalist black metal dining table with a rectangular sha
+#10     0.0435   0.3863   0.6570   0.7774   0.5728  [2.624, 0.732, 0.916]        A modern, minimalist light gray fabric-upholstered three-seat sofa wit
+
+{'desc': 'This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design.', 'pos': [1.01, 0.0, 3.24], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [2.61, 0.75, 0.96], 'prompt': 'round wooden-top table', 'sampled_asset_jid': 'df67f0bf-1b5d-4413-96d3-b90ec572ba26', 'sampled_asset_desc': 'This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design.', 'sampled_asset_size': [2.6064999103546143, 0.7518400905835136, 0.9631680846214294], 'uuid': 'f53ab427-fbc4-4414-90e4-351194aa64a6'}
+
+
+
+==========================================================================================
+OBJECT [9]
+  Original desc: "Modern silver display stand with a minimalist tilted frame, sturdy base, and metal pole ideal for sleek presentations."
+  Category query: "silver stand"
+  Style bias: ACTIVE (user prompt, in-room) -- 10 embedding(s)
+  Size: [0.48, 0.54, 0.37]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern silver display stand with a minimalist tilted frame, sturdy base, and metal pole ideal for sleek presentations."
+QUERY SIZE: [0.48, 0.54, 0.37]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0787   0.5514   1.0000   0.7461   0.7698  [0.48, 0.54, 0.37]           Modern silver display stand with a minimalist tilted frame, sturdy bas
+#2      0.0702   0.5147   0.9802   0.7459   0.7471  [0.48, 0.55, 0.37]           A white wooden nightstand blending contemporary and vintage styles, fe
+#3      0.0632   0.6259   0.8025   0.7733   0.7260  [0.45, 0.53, 0.36]           A cream-colored, round wooden nightstand with a single drawer, open lo
+#4      0.0603   0.5240   0.8521   0.8304   0.7166  [0.48, 0.52, 0.39]           Modern minimalist cylindrical nightstand with a sleek black and dark g
+#5      0.0583   0.5240   0.8353   0.8304   0.7098  [0.5, 0.52, 0.36]            Modern minimalist cylindrical nightstand with a sleek black and dark g
+#6      0.0571   0.4455   0.9802   0.6771   0.7057  [0.48, 0.536, 0.357]         A modern, minimalistic tapered glass vase in a gold metal stand, offer
+#7      0.0571   0.4455   0.9802   0.6771   0.7057  [0.48, 0.54, 0.36]           A modern, minimalistic tapered glass vase in a gold metal stand, offer
+#8      0.0564   0.4266   0.9418   0.7794   0.7032  [0.469, 0.547, 0.365]        Modern minimalist white wood corner side table with angled legs and si
+#9      0.0532   0.5140   0.8025   0.8248   0.6916  [0.491, 0.533, 0.402]        A sleek black modern minimalist corner side table featuring an elevate
+#10     0.0499   0.5479   0.7711   0.7562   0.6788  [0.48, 0.56, 0.4]            A stylish Mid-Century Modern nightstand with black wood finish, walnut
+
+{'desc': 'Modern silver display stand with a minimalist tilted frame, sturdy base, and metal pole ideal for sleek presentations.', 'pos': [-0.55, 0.0, 5.16], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.48, 0.54, 0.37], 'prompt': 'silver stand', 'sampled_asset_jid': '879812cc-973d-4c7c-ad38-76262208230a-(0.75)-(1.0)-(0.73)', 'sampled_asset_desc': 'This modern minimalist charcoal grey nightstand features a sleek design with two spacious drawers, clean lines, and stylish metal handles.', 'sampled_asset_size': [0.45, 0.55, 0.33], 'uuid': 'a7b25058-bf36-44c4-a797-12410c41bbc1', 'scale': [0.75, 1.0, 0.73]}
+
+
+
+==========================================================================================
+OBJECT [10]
+  Original desc: "Modern brown wooden footstool with a minimalistic, long rectangular design featuring black metal legs for contemporary living spaces."
+  Category query: "wooden footstool"
+  Style bias: ACTIVE (user prompt, in-room) -- 11 embedding(s)
+  Size: [1.6, 0.13, 0.2]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern brown wooden footstool with a minimalistic, long rectangular design featuring black metal legs for contemporary living spaces."
+QUERY SIZE: [1.6, 0.13, 0.2]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1787   0.3069   1.0000   0.8955   0.7019  [1.6, 0.13, 0.2]             Modern brown wooden footstool with a minimalistic, long rectangular de
+#2      0.0503   0.6821   0.0000   0.8770   0.4482  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#3      0.0479   0.7595   0.0000   0.6729   0.4384  [0.854, 1.688, 0.371]
+#4      0.0479   0.7595   0.0000   0.6729   0.4384  [0.573, 1.458, 0.802]
+#5      0.0473   0.6636   0.0000   0.8538   0.4362  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+#6      0.0455   0.6563   0.0000   0.8278   0.4281  [0.67, 0.422, 0.501]         Modern industrial barstool featuring a brown fabric cushion, gray conc
+#7      0.0454   0.6453   0.0000   0.8487   0.4278  [1.255, 0.468, 1.111]        Traditional rustic coffee table featuring a dark brown wooden top and
+#8      0.0450   0.6378   0.0000   0.8556   0.4263  [3.119, 0.907, 1.932]        Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#9      0.0450   0.6378   0.0000   0.8556   0.4263  [3.4, 0.91, 1.55]            Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#10     0.0450   0.6378   0.0000   0.8556   0.4263  [2.84, 0.91, 1.49]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+
+{'desc': 'Modern brown wooden footstool with a minimalistic, long rectangular design featuring black metal legs for contemporary living spaces.', 'pos': [1.11, 0.0, 5.06], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [1.6, 0.13, 0.2], 'prompt': 'wooden footstool', 'sampled_asset_jid': '98db53f6-cd94-47c4-9501-cbda43a5cee5-(0.99)-(1.0)-(1.06)', 'sampled_asset_desc': 'A white wooden desk with French Provincial and Rococo design elements, featuring curved legs, intricate carvings, and three drawers.', 'sampled_asset_size': [1.64, 0.7, 0.86], 'uuid': '49d6753b-bcf4-4541-8436-21f063d09eaa', 'scale': [0.99, 1.0, 1.06]}
+
+
+
+==========================================================================================
+OBJECT [11]
+  Original desc: "Mid-century modern corner/side table with a natural wood finish, featuring a round top, conical pedestal base, and wooden tripod legs."
+  Category query: "wooden leg side table"
+  Style bias: ACTIVE (user prompt, in-room) -- 12 embedding(s)
+  Size: [0.61, 0.6, 0.6]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Mid-century modern corner/side table with a natural wood finish, featuring a round top, conical pedestal base, and wooden tripod legs."
+QUERY SIZE: [0.61, 0.6, 0.6]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0675   0.4666   1.0000   0.8463   0.7559  [0.607, 0.6, 0.6]            Modern corner/side table with a semi-circular wooden top and a sleek g
+#2      0.0639   0.5109   0.9608   0.7827   0.7452  [0.6, 0.61, 0.6]             Innovative modern-industrial pendant lamp with geometric angular desig
+#3      0.0592   0.4517   0.9802   0.7860   0.7299  [0.612, 0.602, 0.606]        Sophisticated vintage-style coffee table with black and silver accents
+#4      0.0579   0.5807   0.8025   0.8604   0.7254  [0.636, 0.585, 0.606]        This modern industrial black coffee table features a metal constructio
+#5      0.0568   0.4908   0.9048   0.8171   0.7217  [0.6, 0.58, 0.6]             Mid-Century Modern wooden corner table with minimalist design, tapered
+#6      0.0561   0.5003   0.9048   0.7851   0.7191  [0.6, 0.62, 0.6]             Irregular wood top side table with minimalist tripod metal legs and co
+#7      0.0550   0.4831   0.9048   0.7992   0.7150  [0.6, 0.58, 0.6]             A traditional-meets-modern corner table featuring a square shape, turn
+#8      0.0546   0.4423   0.9608   0.7611   0.7135  [0.612, 0.586, 0.612]        A modern minimalist coffee table with a round glass top and open-frame
+#9      0.0541   0.4457   0.9608   0.7460   0.7118  [0.599, 0.603, 0.594]        Traditional brown wooden corner table with a rectangular shape, smooth
+#10     0.0527   0.4530   0.8869   0.8524   0.7064  [0.621, 0.593, 0.621]        A sleek, modern black metal side table featuring a minimalist round to
+
+{'desc': 'Mid-century modern corner/side table with a natural wood finish, featuring a round top, conical pedestal base, and wooden tripod legs.', 'pos': [3.55, 0.0, 5.6], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.61, 0.6, 0.6], 'prompt': 'wooden leg side table', 'sampled_asset_jid': '5d133cfc-f99f-4fc0-b5c8-a45a212e1de6', 'sampled_asset_desc': 'A vintage beige corner table featuring classic wooden curved legs, ornate carvings, and a marble top.', 'sampled_asset_size': [0.596373975276947, 0.578119970218065, 0.5991399884223938], 'uuid': '201b83eb-6780-4881-98e8-78c348ec40df'}
+
+
+
+  Room contributed 12 new style embeddings
+  Unit-wide total: 12 style embeddings
+  [0] Modern TV stand with a minimalist rectangular wooden design
+  [1] A modern minimalist children's cabinet with a natural wood b
+  [2] A contemporary minimalist dark gray armchair with fabric uph
+  [3] Modern three-seat sofa with gray fabric upholstery, high arm
+  [4] A modern minimalist square wooden side table with a smooth b
+  [5] Modern black arched floor lamp with sleek metal construction
+  [6] Modern industrial pendant lamp with three cylindrical glass
+  [7] A modern-contemporary dark gray fabric armchair with plush c
+  [8] This modern-industrial dining table features a sleek wooden
+  [9] Modern silver display stand with a minimalist tilted frame,
+  [10] Modern brown wooden footstool with a minimalistic, long rect
+  [11] Modern corner/side table with a semi-circular wooden top and
+  Saved: input_test/01OG_2ROOMS/unit_2/output/unit_2_room_1_livingroom/cross_scene_retrieval.json
+
+######################################################################
+# Room [1]: unit_2_room_2_bathroom
+# Type: bathroom
+# lambda_style=0.2, mode=greedy
+# Role: CROSS-SCENE BIASED (12 embeddings from prior rooms)
+# user_prompt="modern scandinavian"
+######################################################################
+
+==========================================================================================
+OBJECT [0]
+  Original desc: "A modern bathroom vanity with integrated ceramic sink and faucet"
+  Category query: "A modern bathroom vanity with integrated ceramic sink and faucet"
+  Style bias: ACTIVE (cross-scene, user prompt) -- 13 embedding(s)
+  Size: [0.8, 0.85, 0.5]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern bathroom vanity with integrated ceramic sink and faucet"
+QUERY SIZE: [0.8, 0.85, 0.5]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0938   0.5328   0.6839   0.7858   0.6438  [0.83, 0.88, 0.51]           Contemporary industrial dressing table with sleek minimalist design, f
+#2      0.0931   0.3893   0.8353   0.7631   0.6424  [0.817, 0.861, 0.479]        This modern children’s cabinet features a playful face design with whi
+#3      0.0850   0.5925   0.5827   0.7700   0.6241  [0.755, 0.864, 0.508]        This traditional Asian-style dark brown wooden chest features three dr
+#4      0.0684   0.4691   0.5488   0.8681   0.5808  [0.79, 0.83, 0.45]           A sleek black wooden chest of drawers with a contemporary classic styl
+#5      0.0568   0.4570   0.6065   0.5900   0.5434  [0.8, 0.8, 0.5]              A modern armchair with eclectic patterns, gray fabric upholstery, and
+#6      0.0504   0.3478   0.5488   0.8050   0.5196  [0.85, 0.86, 0.52]           Modern white drawer chest with a clean rectangular shape, featuring th
+#7      0.0475   0.4934   0.4404   0.6720   0.5079  [0.8, 0.81, 0.45]            A modern geometric white wooden drawer chest with gold-accented handle
+#8      0.0468   0.5525   0.3753   0.6673   0.5046  [0.86, 0.82, 0.48]           A hand-painted Oriental nightstand with three drawers, twisted columns
+#9      0.0465   0.4645   0.4232   0.7427   0.5036  [0.75, 0.88, 0.47]           A Baroque-style dark brown wooden chest with three drawers, gold ring
+#10     0.0447   0.5461   0.2894   0.8068   0.4956  [0.87, 0.87, 0.47]           Contemporary coffee table with sleek design, chrome accents, and pract
+
+{'size': [0.8, 0.85, 0.5], 'pos': [0.0, 0.0, 0.98], 'rot': [0.0, -1.0, 0.0, 0.0], 'desc': 'A modern bathroom vanity with integrated ceramic sink and faucet'}
+
+
+
+==========================================================================================
+OBJECT [1]
+  Original desc: "A rectangular wall-mounted bathroom mirror with minimalist frame"
+  Category query: "A rectangular wall-mounted bathroom mirror with minimalist frame"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 14 embedding(s)
+  Size: [0.6, 0.8, 0.05]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A rectangular wall-mounted bathroom mirror with minimalist frame"
+QUERY SIZE: [0.6, 0.8, 0.05]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1123   0.5017   0.8187   0.7165   0.6715  [0.61, 0.8, 0.02]            A visually striking modern abstract painting with geometric patterns i
+#2      0.0954   0.5310   0.6977   0.7372   0.6389  [0.599, 0.774, 0.022]        Modern grey plastic wall decor with an oval shape and smooth texture.
+#3      0.0873   0.3284   0.9048   0.6387   0.6210  [0.598, 0.825, 0.039]        A contemporary artistic wall art piece featuring a detailed pomegranat
+#4      0.0744   0.2777   0.9048   0.5803   0.5891  [0.598, 0.825, 0.039]        A modern, multicolored plastic cube with interlocking parts and a play
+#5      0.0703   0.2446   0.9048   0.5897   0.5777  [0.598, 0.825, 0.039]        Modern artistic framed art featuring a minimalist watermelon slice and
+#6      0.0549   0.3555   0.5599   0.8104   0.5282  [0.6, 0.75, 0.025]           Modern framed artwork with abstract portrait in black and white, featu
+#7      0.0451   0.3436   0.5066   0.7442   0.4889  [0.55, 0.8, 0.02]            Modern abstract wall art on framed black and gold canvas with intricat
+#8      0.0427   0.7488   0.0000   0.8920   0.4779  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#9      0.0424   0.4035   0.3753   0.8255   0.4766  [0.54, 0.83, 0.03]           A Modern Classical beige and cream wooden panel door with a textured p
+#10     0.0380   0.7049   0.0000   0.8639   0.4547  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+
+{'desc': 'A rectangular wall-mounted bathroom mirror with minimalist frame', 'size': [0.6, 0.8, 0.05], 'pos': [0.0, 1.4, 1.205], 'rot': [0.0, -1.0, 0.0, 0.0]}
+
+
+
+==========================================================================================
+OBJECT [2]
+  Original desc: "A modern white ceramic toilet"
+  Category query: "A modern white ceramic toilet"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 15 embedding(s)
+  Size: [0.4, 0.45, 0.65]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern white ceramic toilet"
+QUERY SIZE: [0.4, 0.45, 0.65]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0946   0.4759   0.5945   0.7794   0.5841  [0.43, 0.46, 0.61]           Modern minimalist gray and white striped fabric footstool with padded
+#2      0.0768   0.3767   0.6703   0.6173   0.5423  [0.42, 0.45, 0.69]           A whimsical pink leather kids bed with wooden legs and playful horned
+#3      0.0692   0.3754   0.5599   0.7370   0.5215  [0.38, 0.4, 0.65]            Modern whimsical bear-shaped lazy sofa with gray textured fabric and w
+#4      0.0511   0.5340   0.2276   0.7807   0.4608  [0.4, 0.5, 0.58]             A minimalist modern white wooden L-shaped corner/side table featuring
+#5      0.0502   0.3922   0.3679   0.7665   0.4573  [0.448, 0.494, 0.618]        Modern minimalist nesting corner table with rounded edges, natural woo
+#6      0.0502   0.7004   0.0000   0.8857   0.4573  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#7      0.0489   0.6293   0.1409   0.7208   0.4522  [0.44, 0.44, 0.56]           An antique-inspired light gray wooden nightstand with two drawers, an
+#8      0.0487   0.7952   0.0000   0.6661   0.4513  [0.573, 1.458, 0.802]
+#9      0.0487   0.7952   0.0000   0.6661   0.4513  [0.854, 1.688, 0.371]
+#10     0.0466   0.6762   0.0000   0.8593   0.4423  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+
+{'size': [0.4, 0.45, 0.65], 'pos': [0.525, 0.0, 0.404], 'rot': [0.0, -0.70711, 0.0, 0.70711], 'desc': 'A modern white ceramic toilet'}
+
+
+
+==========================================================================================
+OBJECT [3]
+  Original desc: "A modern white freestanding bathtub"
+  Category query: "A modern white freestanding bathtub"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 16 embedding(s)
+  Size: [1.7, 0.6, 0.75]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern white freestanding bathtub"
+QUERY SIZE: [1.7, 0.6, 0.75]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1213   0.4072   0.8187   0.8197   0.6543  [1.706, 0.597, 0.715]        A modern minimalist grey fabric loveseat sofa with a boxy design, deta
+#2      0.1105   0.5393   0.6440   0.8117   0.6357  [1.73, 0.62, 0.72]           Modern gray loveseat sofa with cushioned back, two-tone pillows, and w
+#3      0.0696   0.4010   0.5945   0.7246   0.5431  [1.75, 0.6, 0.76]            A contemporary dark gray leather three-seat sofa with modular design,
+#4      0.0683   0.2475   0.6977   0.8067   0.5394  [1.728, 0.635, 0.75]         Chesterfield loveseat sofa with taupe fabric upholstery, tufted tight
+#5      0.0464   0.3243   0.4868   0.6893   0.4623  [1.724, 0.638, 0.785]        Modern three-seat sofa with charcoal gray leather upholstery, ribbed d
+#6      0.0447   0.6958   0.0000   0.8815   0.4546  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#7      0.0437   0.6928   0.0907   0.6836   0.4501  [1.66, 0.7, 0.77]            A white wooden desk with French Provincial and Rococo design elements,
+#8      0.0430   0.6928   0.0821   0.6836   0.4467  [1.66, 0.7, 0.78]            A white wooden desk with French Provincial and Rococo design elements,
+#9      0.0422   0.3704   0.3198   0.8351   0.4431  [1.738, 0.649, 0.79]         A contemporary dark gray three-seat sofa with a curved backrest, plaid
+#10     0.0412   0.6666   0.0000   0.8586   0.4384  [3.119, 0.907, 1.932]        Modern beige L-shaped sectional sofa with cushioned backrest and minim
+
+{'size': [1.7, 0.6, 0.75], 'pos': [-0.475, 0.0, -0.246], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'desc': 'A modern white freestanding bathtub'}
+
+
+
+==========================================================================================
+OBJECT [4]
+  Original desc: "A soft rectangular bathroom rug mat"
+  Category query: "A soft rectangular bathroom rug mat"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 17 embedding(s)
+  Size: [0.8, 0.02, 0.5]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A soft rectangular bathroom rug mat"
+QUERY SIZE: [0.8, 0.02, 0.5]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0882   0.6290   0.3753   0.7636   0.5545  [0.771, 0.044, 0.557]        A modern gray high-pile synthetic fiber rectangular rug with a fluffy,
+#2      0.0537   0.6986   0.0000   0.8789   0.4552  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#3      0.0521   0.6884   0.0000   0.8688   0.4491  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+#4      0.0513   0.6827   0.0000   0.8642   0.4459  [3.119, 0.907, 1.932]        Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#5      0.0513   0.6827   0.0000   0.8642   0.4459  [3.4, 0.91, 1.55]            Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#6      0.0513   0.6827   0.0000   0.8642   0.4459  [2.84, 0.91, 1.49]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#7      0.0513   0.6827   0.0000   0.8642   0.4459  [3.12, 0.91, 1.93]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#8      0.0506   0.2747   0.4404   0.7856   0.4432  [0.786, 0.082, 0.522]        Modern and contemporary ceiling lamp with organic shapes, smooth light
+#9      0.0500   0.6743   0.0000   0.8565   0.4410  [2.505, 1.065, 2.26]         This king-size bed features a modern minimalist style with a gray upho
+#10     0.0500   0.6743   0.0000   0.8565   0.4410  [2.0, 1.06, 2.17]            This king-size bed features a modern minimalist style with a gray upho
+
+{'desc': 'A soft rectangular bathroom rug mat', 'size': [0.8, 0.02, 0.5], 'pos': [0.2, 0.0, -0.246], 'rot': [0.0, 0.70711, 0.0, 0.70711]}
+
+
+
+  Room contributed 5 new style embeddings
+  Unit-wide total: 17 style embeddings
+  [0] Contemporary industrial dressing table with sleek minimalist
+  [1] A visually striking modern abstract painting with geometric
+  [2] Modern minimalist gray and white striped fabric footstool wi
+  [3] A modern minimalist grey fabric loveseat sofa with a boxy de
+  [4] A modern gray high-pile synthetic fiber rectangular rug with
+  Saved: input_test/01OG_2ROOMS/unit_2/output/unit_2_room_2_bathroom/cross_scene_retrieval.json
+
+######################################################################
+# Room [2]: unit_2_room_3_bedroom
+# Type: bedroom
+# lambda_style=0.2, mode=greedy
+# Role: CROSS-SCENE BIASED (17 embeddings from prior rooms)
+# user_prompt="modern scandinavian"
+######################################################################
+
+==========================================================================================
+OBJECT [0]
+  Original desc: "This modern minimalist Scandinavian wardrobe features light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod."
+  Category query: "modern scandinavian wardrobe"
+  Style bias: ACTIVE (cross-scene, user prompt) -- 18 embedding(s)
+  Size: [1.54, 2.0, 0.61]
+==========================================================================================
+
+==========================================================================================
+QUERY: "This modern minimalist Scandinavian wardrobe features light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod."
+QUERY SIZE: [1.54, 2.0, 0.61]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1224   0.6496   0.7558   0.8074   0.7236  [1.56, 1.972, 0.6]           Dark brown wood wardrobe with three doors, minimalistic modern-classic
+#2      0.0776   0.6006   0.6065   0.7486   0.6326  [1.54, 2.05, 0.61]           This modern minimalist wardrobe features light wood with sliding doors
+#3      0.0680   0.5034   0.6570   0.7097   0.6061  [1.523, 2.042, 0.618]        Elegant Baroque-style brown dressing table with ornate silver accents,
+#4      0.0650   0.3919   0.6977   0.8068   0.5972  [1.573, 1.97, 0.608]         A contemporary light grey wooden wardrobe with three-panel doors, meta
+#5      0.0648   0.4583   0.6570   0.7512   0.5964  [1.5, 2.02, 0.6]             Classic-modern white wooden wardrobe with decorative carving, metal ha
+#6      0.0613   0.4014   0.6570   0.8101   0.5854  [1.5, 2.023, 0.595]          Modern dark brown wooden wardrobe with three doors, two drawers, clean
+#7      0.0603   0.3734   0.7118   0.7401   0.5821  [1.5, 2.0, 0.6]              Modern minimalist wardrobe with contrasting colors, sliding doors, int
+#8      0.0560   0.4312   0.6977   0.5790   0.5673  [1.54, 1.971, 0.582]         Elegant vintage-style wooden wine cooler with hand-painted nature scen
+#9      0.0538   0.3502   0.7118   0.6712   0.5590  [1.5, 2.0, 0.6]              Modern contemporary wardrobe with dark wood, white panels, sliding doo
+#10     0.0490   0.5136   0.5169   0.6417   0.5405  [1.5, 2.01, 0.65]            Dark brown wooden wardrobe with multiple doors and drawers featuring b
+
+{'desc': 'This modern minimalist Scandinavian wardrobe features light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod.', 'pos': [-1.83, 0.0, 0.59], 'rot': [0.0, 0.70711, 0.0, 0.70711], 'size': [1.54, 2.0, 0.61], 'prompt': 'modern scandinavian wardrobe', 'sampled_asset_jid': '4916690c-14c3-475e-8139-602258aa7f21', 'sampled_asset_desc': 'Dark brown wood wardrobe with three doors, minimalistic modern-classic blend, panel detailing, and metal knob accents.', 'sampled_asset_size': [1.559999942779541, 1.972000025510395, 0.6000000238418579], 'uuid': '913bbbf9-35e9-44a6-a9d1-86051d3d1b03'}
+
+
+
+==========================================================================================
+OBJECT [1]
+  Original desc: "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures."
+  Category query: "simple pendant lamp"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 19 embedding(s)
+  Size: [1.41, 1.03, 1.34]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures."
+QUERY SIZE: [1.41, 1.03, 1.34]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1509   0.4059   1.0000   0.7502   0.7124  [1.415, 1.028, 1.335]        A modern gold and silver metal pendant lamp featuring a geometric stru
+#2      0.1343   0.3832   0.9418   0.7952   0.6890  [1.42, 1.04, 1.33]           Industrial-modern pendant lamp trio with geometric wireframe metal sha
+#3      0.0640   0.4609   0.4771   0.8287   0.5409  [1.42, 1.09, 1.34]           Black metal modern minimalist pendant lamp with an asymmetrical geomet
+#4      0.0455   0.7370   0.0000   0.8883   0.4724  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#5      0.0425   0.7126   0.0000   0.8686   0.4588  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+#6      0.0408   0.6948   0.0000   0.8638   0.4507  [3.119, 0.907, 1.932]        Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#7      0.0408   0.6948   0.0000   0.8638   0.4507  [3.4, 0.91, 1.55]            Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#8      0.0408   0.6948   0.0000   0.8638   0.4507  [2.84, 0.91, 1.49]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#9      0.0408   0.6948   0.0000   0.8638   0.4507  [3.12, 0.91, 1.93]           Modern beige L-shaped sectional sofa with cushioned backrest and minim
+#10     0.0406   0.7929   0.0000   0.6634   0.4498  [0.573, 1.458, 0.802]
+
+{'desc': 'A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.', 'pos': [0.01, 1.41, 0.03], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [1.41, 1.03, 1.34], 'prompt': 'simple pendant lamp', 'sampled_asset_jid': '2a89f148-8de5-4100-a6f4-e0019bd6e57b-(1.34)-(1.0)-(1.25)', 'sampled_asset_desc': 'Elegant traditional baroque pendant lamp with an antique brass finish, featuring multiple ornate arms and candle-shaped lights for classic ambiance.', 'sampled_asset_size': [1.41, 1.12, 1.34], 'uuid': 'e70cb1a7-9a04-4aeb-a186-9c3804b0c1b8', 'scale': [1.34, 1.0, 1.25]}
+
+
+
+==========================================================================================
+OBJECT [2]
+  Original desc: "A rustic cottage-style wooden nightstand featuring birdhouse-shaped drawers, a natural wood finish, and an open lower shelf."
+  Category query: "small wooden nightstand"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 20 embedding(s)
+  Size: [0.49, 0.59, 0.33]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A rustic cottage-style wooden nightstand featuring birdhouse-shaped drawers, a natural wood finish, and an open lower shelf."
+QUERY SIZE: [0.49, 0.59, 0.33]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1013   0.5192   1.0000   0.7668   0.7610  [0.486, 0.59, 0.332]         A rustic cottage-style wooden nightstand featuring birdhouse-shaped dr
+#2      0.0761   0.6443   0.7711   0.6894   0.7040  [0.49, 0.61, 0.3]            A minimalist white ceramic vase, tall, narrow, and smooth, embodying s
+#3      0.0753   0.5116   0.8353   0.8159   0.7019  [0.47, 0.57, 0.34]           Modern minimalistic nightstand with a light gray leather-textured surf
+#4      0.0636   0.5126   0.7866   0.7408   0.6679  [0.51, 0.61, 0.31]           A white, contemporary Baroque nightstand with curved legs, wave-like m
+#5      0.0631   0.4435   0.8521   0.7410   0.6665  [0.468, 0.593, 0.314]        Modern minimalist nightstand featuring a black and beige wooden body w
+#6      0.0536   0.4357   0.7558   0.7869   0.6339  [0.46, 0.61, 0.34]           A modern, dark gray, metal nightstand with two drawers, silver integra
+#7      0.0525   0.4221   0.7558   0.7918   0.6295  [0.51, 0.58, 0.36]           This modern minimalist corner/side table features a round black metal
+#8      0.0496   0.3586   0.7558   0.8633   0.6184  [0.48, 0.56, 0.31]           Contemporary cylindrical dark brown wooden stool featuring openwork ge
+#9      0.0463   0.2549   0.8353   0.8425   0.6046  [0.511, 0.608, 0.32]         Modern minimalist magazine holder with a beige metal frame, brown fabr
+#10     0.0460   0.4468   0.6839   0.7551   0.6033  [0.5, 0.565, 0.359]          A rustic-modern wooden nightstand with a single drawer featuring an or
+
+{'desc': 'A rustic cottage-style wooden nightstand featuring birdhouse-shaped drawers, a natural wood finish, and an open lower shelf.', 'pos': [1.51, 0.0, 1.18], 'rot': [0.0, 1.0, 0.0, 0.0], 'size': [0.49, 0.59, 0.33], 'prompt': 'small wooden nightstand', 'sampled_asset_jid': '05667d56-f53a-4d86-a7ab-382140d2eeaa', 'sampled_asset_desc': 'Classic dark brown wooden nightstand with three metal-handled drawers and tapered legs, blending traditional sophistication with practical storage.', 'sampled_asset_size': [0.5000060200691223, 0.6000000363541247, 0.39000600576400757], 'uuid': '3f50a459-0843-4c40-903d-67166a220d4f'}
+
+
+
+==========================================================================================
+OBJECT [3]
+  Original desc: "Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding."
+  Category query: "white wooden single bed"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 21 embedding(s)
+  Size: [1.52, 1.46, 1.99]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding."
+QUERY SIZE: [1.52, 1.46, 1.99]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1193   0.3669   0.8869   0.7242   0.6464  [1.5, 1.47, 2.0]             Traditional classic king-size blue wooden bed with decorative headboar
+#2      0.0968   0.1458   1.0000   0.7310   0.6045  [1.519, 1.458, 1.994]        Modern traditional single bed with white wood frame, arched design, bl
+#3      0.0556   0.4786   0.3465   0.8175   0.4935  [1.448, 1.456, 2.007]        King-size bed with traditional rustic style, dark brown wood frame, hi
+#4      0.0538   0.3985   0.4148   0.8082   0.4869  [1.5, 1.52, 2.01]            Modern king-size bed with a dark wooden frame, rectangular headboard,
+#5      0.0500   0.7337   0.0000   0.8945   0.4724  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#6      0.0482   0.5723   0.1620   0.8558   0.4649  [1.49, 1.37, 2.0]            Contemporary minimalist King-size bed with a sleek contrasting rectang
+#7      0.0451   0.6936   0.0000   0.8715   0.4517  [2.64, 2.175, 0.509]         A modern minimalist gray wooden bookcase/jewelry armoire featuring ope
+#8      0.0446   0.7250   0.0000   0.7975   0.4495  [1.031, 0.723, 1.031]        A modern round glass dining table with an X-shaped dark brown wooden b
+#9      0.0442   0.6938   0.0000   0.8519   0.4479  [2.505, 1.065, 2.26]         This king-size bed features a modern minimalist style with a gray upho
+#10     0.0442   0.6938   0.0000   0.8519   0.4479  [2.0, 1.06, 2.17]            This king-size bed features a modern minimalist style with a gray upho
+
+{'desc': 'Modern traditional single bed with white wood frame, arched design, blue panel slats, and striped bedding.', 'pos': [0.2, 0.0, 0.4], 'rot': [0.0, 1.0, 0.0, 0.0], 'size': [1.52, 1.46, 1.99], 'prompt': 'white wooden single bed', 'sampled_asset_jid': '1c2a2b53-fed2-49f7-b0ae-f40028fd1c44-(0.8)-(1.0)-(0.87)', 'sampled_asset_desc': 'Traditional classic king-size blue wooden bed with decorative headboard, paneled footboard, and turned spindle finials.', 'sampled_asset_size': [1.5, 1.47, 2.0], 'uuid': '80ca962b-8b99-4740-9547-f6a2d7880795', 'scale': [0.8, 1.0, 0.87]}
+
+
+
+  Room contributed 4 new style embeddings
+  Unit-wide total: 21 style embeddings
+  [0] Dark brown wood wardrobe with three doors, minimalistic mode
+  [1] A modern gold and silver metal pendant lamp featuring a geom
+  [2] A rustic cottage-style wooden nightstand featuring birdhouse
+  [3] Traditional classic king-size blue wooden bed with decorativ
+  Saved: input_test/01OG_2ROOMS/unit_2/output/unit_2_room_3_bedroom/cross_scene_retrieval.json
+
+######################################################################
+# Room [3]: unit_2_room_4_bedroom
+# Type: bedroom
+# lambda_style=0.2, mode=greedy
+# Role: CROSS-SCENE BIASED (21 embeddings from prior rooms)
+# user_prompt="modern scandinavian"
+######################################################################
+
+==========================================================================================
+OBJECT [0]
+  Original desc: "Mid-Century Modern nightstand with light wood finish, geometric cutout handle, and angled legs."
+  Category query: "light wood mid-century nightstand"
+  Style bias: ACTIVE (cross-scene, user prompt) -- 22 embedding(s)
+  Size: [0.62, 0.55, 0.6]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Mid-Century Modern nightstand with light wood finish, geometric cutout handle, and angled legs."
+QUERY SIZE: [0.62, 0.55, 0.6]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0675   0.6533   0.8521   0.8159   0.7654  [0.6, 0.53, 0.6]             A chic Mid-Century Modern meets Contemporary ceiling lamp with spheric
+#2      0.0615   0.5366   0.9231   0.8157   0.7470  [0.6, 0.55, 0.6]             Modern corner/side table with clean lines, square shape, metal frame a
+#3      0.0574   0.4845   0.9608   0.7749   0.7331  [0.61, 0.55, 0.61]           A transitional gray wooden nightstand with a black marble top, two dra
+#4      0.0553   0.5063   0.8869   0.8423   0.7258  [0.61, 0.53, 0.61]           A minimalist modern gray metal corner side table with a rectangular op
+#5      0.0548   0.5077   0.9048   0.7938   0.7238  [0.599, 0.556, 0.599]        A contemporary minimalist round gold metal side table featuring U-shap
+#6      0.0547   0.4644   0.9418   0.8043   0.7233  [0.613, 0.54, 0.613]         A modern minimalist corner/side table featuring a round wooden top and
+#7      0.0545   0.3856   1.0000   0.8421   0.7227  [0.621, 0.549, 0.6]          Mid-Century Modern nightstand with light wood finish, geometric cutout
+#8      0.0518   0.5202   0.8353   0.8511   0.7124  [0.628, 0.574, 0.578]        A Mid-Century Modern Scandinavian wooden corner table with triangular
+#9      0.0512   0.4470   0.9231   0.8102   0.7101  [0.616, 0.551, 0.618]        A black contemporary minimalist wooden corner table with square shape,
+#10     0.0509   0.4832   0.8521   0.8738   0.7089  [0.6, 0.565, 0.6]            A dark brown wood Mid-Century Modern corner table with tapered legs an
+
+{'desc': 'Mid-Century Modern nightstand with light wood finish, geometric cutout handle, and angled legs.', 'pos': [-0.98, 0.0, 1.14], 'rot': [0.0, 1.0, 0.0, 0.0], 'size': [0.62, 0.55, 0.6], 'prompt': 'light wood mid-century nightstand', 'sampled_asset_jid': 'ea30661d-7921-40b0-965c-3a0715440ab9', 'sampled_asset_desc': 'Modern corner/side table with clean lines, square shape, metal frame and dark brown wooden top.', 'sampled_asset_size': [0.6000000238418579, 0.5500000345703011, 0.6000000536441803], 'uuid': '2983c738-4036-4f48-8131-8319403cb17e'}
+
+
+
+==========================================================================================
+OBJECT [1]
+  Original desc: "A modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents."
+  Category query: "low-profile modern scandinavian floor lamp"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 23 embedding(s)
+  Size: [0.35, 0.59, 0.36]
+==========================================================================================
+
+==========================================================================================
+QUERY: "A modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents."
+QUERY SIZE: [0.35, 0.59, 0.36]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.0649   0.3112   1.0000   0.8745   0.6994  [0.354, 0.595, 0.364]        Modern Scandinavian floor lamp with a dark brown fabric shade, natural
+#2      0.0642   0.4537   0.9048   0.7691   0.6972  [0.35, 0.57, 0.35]           Modern industrial pendant lamp with three clear glass bulbs, brass hol
+#3      0.0620   0.4537   0.8869   0.7691   0.6901  [0.34, 0.57, 0.35]           Modern industrial pendant lamp with three clear glass bulbs, brass hol
+#4      0.0591   0.4209   0.8869   0.7876   0.6806  [0.369, 0.585, 0.366]        A contemporary minimalist pendant lamp with a rustic wooden slatted ge
+#5      0.0581   0.4849   0.8187   0.7791   0.6773  [0.363, 0.625, 0.363]        Antique vintage round end table with dark brown wood, featuring elegan
+#6      0.0543   0.3519   0.8869   0.8405   0.6636  [0.34, 0.6, 0.34]            A modern, minimalist black metal bookcase with an asymmetrical, angula
+#7      0.0523   0.4449   0.8187   0.7529   0.6560  [0.363, 0.625, 0.363]        Elegant vintage round end table with black wooden frame, curved legs,
+#8      0.0516   0.5022   0.7558   0.7515   0.6535  [0.38, 0.61, 0.35]           A modern, teal-colored metal side table with a round tabletop and cone
+#9      0.0513   0.4924   0.7118   0.8532   0.6523  [0.38, 0.61, 0.38]           Industrial rustic three-tier shelf with black riveted metal frame and
+#10     0.0513   0.4849   0.7558   0.7791   0.6521  [0.37, 0.62, 0.37]           Antique vintage round end table with dark brown wood, featuring elegan
+
+{'desc': 'A modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents.', 'pos': [-0.85, 0.0, -1.13], 'rot': [0.0, 0.0, 0.0, 1.0], 'size': [0.35, 0.59, 0.36], 'prompt': 'low-profile modern scandinavian floor lamp', 'sampled_asset_jid': '754c6d41-d2bb-4a38-88d1-e6f7d4815c1b', 'sampled_asset_desc': 'Modern Scandinavian floor lamp with a dark brown fabric shade, natural wood tripod base, and minimalist accents.', 'sampled_asset_size': [0.3538399934768677, 0.5947100061418205, 0.3637999892234802], 'uuid': '9b4f0424-946c-46b4-8ceb-58620febe463'}
+
+
+
+==========================================================================================
+OBJECT [2]
+  Original desc: "Modern single bed with a white wood frame, upholstered headboard, and contrasting green and gray bedding."
+  Category query: "white modern scandinavian bed"
+  Style bias: ACTIVE (cross-scene, user prompt, in-room) -- 24 embedding(s)
+  Size: [1.26, 0.9, 2.0]
+==========================================================================================
+
+==========================================================================================
+QUERY: "Modern single bed with a white wood frame, upholstered headboard, and contrasting green and gray bedding."
+QUERY SIZE: [1.26, 0.9, 2.0]
+==========================================================================================
+Candidates surviving top-k/top-p: 19
+Params: lambd=0.50, sigma=0.0500, temp=0.20, top_k=20, top_p=0.95
+
+Rank      Prob      Sem     Size    Style    Blend  Asset Size                   Description
+----- -------- -------- -------- -------- --------  ---------------------------- --------------------------------------------------
+#1      0.1435   0.5376   0.8869   0.7475   0.7193  [1.24, 0.91, 2.01]           Classic wooden single bed featuring a high headboard, low footboard, a
+#2      0.0947   0.5094   0.6839   0.7947   0.6363  [1.288, 0.906, 2.026]        Modern single bed with upholstered fabric, sleek gray and black design
+#3      0.0850   0.1573   1.0000   0.7585   0.6146  [1.258, 0.902, 2.001]        Modern single bed with a white wood frame, upholstered headboard, and
+#4      0.0802   0.4559   0.7118   0.6791   0.6029  [1.299, 0.91, 2.002]         Modern children's bed featuring a natural wood finish, yellow slatted
+#5      0.0697   0.4276   0.5945   0.8307   0.5750  [1.254, 0.904, 2.048]        A modern, minimalist dark brown wooden bed with a high headboard and p
+#6      0.0430   0.2121   0.6065   0.7548   0.4784  [1.296, 0.898, 2.033]        Contemporary kids bed with a minimalist metal frame in purple, polka d
+#7      0.0409   0.7222   0.0000   0.8969   0.4683  [1.226, 2.108, 0.459]        This modern wood shelf features an asymmetrical design with a curved s
+#8      0.0377   0.4347   0.2516   0.8876   0.4520  [1.277, 0.822, 1.986]        Modern single bed with brown wooden slatted headboard, beige bedding,
+#9      0.0372   0.7831   0.0000   0.6813   0.4495  [0.573, 1.458, 0.802]
+#10     0.0372   0.7831   0.0000   0.6813   0.4495  [0.854, 1.688, 0.371]
+
+{'desc': 'Modern single bed with a white wood frame, upholstered headboard, and contrasting green and gray bedding.', 'pos': [0.26, 0.0, 0.31], 'rot': [0.0, 1.0, 0.0, 0.0], 'size': [1.26, 0.9, 2.0], 'prompt': 'white modern scandinavian bed', 'sampled_asset_jid': '782c10fe-dec8-442e-bc32-4f13993aaa00', 'sampled_asset_desc': 'Modern single bed with a white wood frame, upholstered headboard, and contrasting green and gray bedding.', 'sampled_asset_size': [1.2576179504394531, 0.9018150071014901, 2.000606060028076], 'uuid': '2d6df753-6a37-4c54-ba6c-73ddaf88437c'}
+
+
+
+  Room contributed 3 new style embeddings
+  Unit-wide total: 24 style embeddings
+  [0] A chic Mid-Century Modern meets Contemporary ceiling lamp wi
+  [1] Modern Scandinavian floor lamp with a dark brown fabric shad
+  [2] Classic wooden single bed featuring a high headboard, low fo
+  Saved: input_test/01OG_2ROOMS/unit_2/output/unit_2_room_4_bedroom/cross_scene_retrieval.json
+
+Stage 2 complete: 4 room(s) with assets retrieved.
+Total style embeddings accumulated: 24

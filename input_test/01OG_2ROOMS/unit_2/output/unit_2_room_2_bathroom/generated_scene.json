@@ -1,0 +1,159 @@
+{
+  "room_type": "bathroom",
+  "bounds_top": [
+    [
+      0.85,
+      2.6,
+      1.23
+    ],
+    [
+      -0.85,
+      2.6,
+      1.23
+    ],
+    [
+      -0.85,
+      2.6,
+      -1.23
+    ],
+    [
+      0.85,
+      2.6,
+      -1.23
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      0.85,
+      0.0,
+      1.23
+    ],
+    [
+      -0.85,
+      0.0,
+      1.23
+    ],
+    [
+      -0.85,
+      0.0,
+      -1.23
+    ],
+    [
+      0.85,
+      0.0,
+      -1.23
+    ]
+  ],
+  "objects": [
+    {
+      "size": [
+        0.8,
+        0.85,
+        0.5
+      ],
+      "pos": [
+        0.0,
+        0.0,
+        0.98
+      ],
+      "rot": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "desc": "A modern bathroom vanity with integrated ceramic sink and faucet"
+    },
+    {
+      "desc": "A rectangular wall-mounted bathroom mirror with minimalist frame",
+      "size": [
+        0.6,
+        0.8,
+        0.05
+      ],
+      "pos": [
+        0.0,
+        1.4,
+        1.205
+      ],
+      "rot": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "size": [
+        0.4,
+        0.45,
+        0.65
+      ],
+      "pos": [
+        0.525,
+        0.0,
+        0.404
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "desc": "A modern white ceramic toilet"
+    },
+    {
+      "size": [
+        1.7,
+        0.6,
+        0.75
+      ],
+      "pos": [
+        -0.475,
+        0.0,
+        -0.246
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "desc": "A modern white freestanding bathtub"
+    },
+    {
+      "desc": "A soft rectangular bathroom rug mat",
+      "size": [
+        0.8,
+        0.02,
+        0.5
+      ],
+      "pos": [
+        0.2,
+        0.0,
+        -0.246
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -0.37,
+        1.05,
+        -1.35
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    }
+  ]
+}

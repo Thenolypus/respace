@@ -1,0 +1,572 @@
+{
+  "cross_scene_style": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        3.93,
+        2.6,
+        6.04
+      ],
+      [
+        -3.93,
+        2.6,
+        6.04
+      ],
+      [
+        -3.93,
+        2.6,
+        2.36
+      ],
+      [
+        -0.74,
+        2.6,
+        2.3
+      ],
+      [
+        -0.74,
+        2.6,
+        -6.04
+      ],
+      [
+        2.57,
+        2.6,
+        -6.04
+      ],
+      [
+        2.57,
+        2.6,
+        -2.92
+      ],
+      [
+        0.62,
+        2.6,
+        -2.87
+      ],
+      [
+        0.62,
+        2.6,
+        0.0
+      ],
+      [
+        3.93,
+        2.6,
+        0.05
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        3.93,
+        0.0,
+        6.04
+      ],
+      [
+        -3.93,
+        0.0,
+        6.04
+      ],
+      [
+        -3.93,
+        0.0,
+        2.36
+      ],
+      [
+        -0.74,
+        0.0,
+        2.3
+      ],
+      [
+        -0.74,
+        0.0,
+        -6.04
+      ],
+      [
+        2.57,
+        0.0,
+        -6.04
+      ],
+      [
+        2.57,
+        0.0,
+        -2.92
+      ],
+      [
+        0.62,
+        0.0,
+        -2.87
+      ],
+      [
+        0.62,
+        0.0,
+        0.0
+      ],
+      [
+        3.93,
+        0.0,
+        0.05
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish.",
+        "pos": [
+          -0.45,
+          0.0,
+          3.19
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.6,
+          0.43,
+          0.38
+        ],
+        "prompt": " minimalist metal legs tv stand",
+        "sampled_asset_jid": "5921e731-07e7-42be-9b2b-b7e7025de569",
+        "sampled_asset_desc": "Modern TV stand with a minimalist rectangular wooden design and slim metal legs featuring clean lines and a walnut finish.",
+        "sampled_asset_size": [
+          1.6002909541130066,
+          0.42906101413859865,
+          0.3800860047340393
+        ],
+        "uuid": "7cf9e4cd-c9e0-4725-b6e7-f055487acc02"
+      },
+      {
+        "desc": "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage.",
+        "pos": [
+          -3.73,
+          0.0,
+          2.69
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.21,
+          0.22,
+          0.26
+        ],
+        "prompt": "ample storage cabinet",
+        "sampled_asset_jid": "6e7451e5-66d5-4682-b1b9-572c5b1160f5-(1.05)-(1.0)-(1.16)",
+        "sampled_asset_desc": "A modern minimalist children's cabinet with a natural wood base, featuring a linear open shelf adorned with colorful decorative items and functional storage.",
+        "sampled_asset_size": [
+          1.21,
+          0.22,
+          0.26
+        ],
+        "uuid": "24fe7e3f-cb5f-4fac-b60d-5552e56bfe6a",
+        "scale": [
+          1.05,
+          1.0,
+          1.16
+        ]
+      },
+      {
+        "desc": "A contemporary minimalist dark gray armchair with fabric upholstery, a wooden frame, foam padding, and a boxy, low-profile design featuring smooth curves and tailored seams.",
+        "pos": [
+          1.06,
+          0.0,
+          5.43
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.97,
+          0.88,
+          0.92
+        ],
+        "prompt": "dark wood armchair",
+        "sampled_asset_jid": "66b7ebc2-54a3-408c-b7c6-d6d066b847cb-(1.32)-(1.0)-(1.12)",
+        "sampled_asset_desc": "A contemporary minimalist dark gray armchair with fabric upholstery, a wooden frame, foam padding, and a boxy, low-profile design featuring smooth curves and tailored seams.",
+        "sampled_asset_size": [
+          0.97,
+          0.88,
+          0.92
+        ],
+        "uuid": "85d0d88d-47b6-4416-9f52-9060d6bee88e",
+        "scale": [
+          1.32,
+          1.0,
+          1.12
+        ]
+      },
+      {
+        "desc": "Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan.",
+        "pos": [
+          2.97,
+          0.0,
+          3.31
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          2.95,
+          0.93,
+          1.0
+        ],
+        "prompt": "gray fabric sofa",
+        "sampled_asset_jid": "22496d43-4610-477a-98d9-fe6e97ede751",
+        "sampled_asset_desc": "Modern three-seat sofa with gray fabric upholstery, high armrests, metal legs, and contrasting cushions in gray, black, and tan.",
+        "sampled_asset_size": [
+          2.9517099857330322,
+          0.933687390468549,
+          1.004141092300415
+        ],
+        "uuid": "83af4c8c-d55f-4b1c-8aec-d2c0f17b6ce3"
+      },
+      {
+        "desc": "Modern minimalist coffee table with a white lacquer top, a geometric wood base, and clean lines for a sleek and functional design.",
+        "pos": [
+          1.05,
+          0.0,
+          3.31
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.2,
+          0.46,
+          0.8
+        ],
+        "prompt": "low profile coffee table",
+        "sampled_asset_jid": "d0bc1c47-f480-49b3-86ec-f4cd89e04db7-(2.4)-(1.0)-(1.6)",
+        "sampled_asset_desc": "A modern minimalist square wooden side table with a smooth brown finish and straight legs.",
+        "sampled_asset_size": [
+          1.2,
+          0.45,
+          0.8
+        ],
+        "uuid": "f6102c9b-599b-4de8-873b-b92e5d838278",
+        "scale": [
+          2.4,
+          1.0,
+          1.6
+        ]
+      },
+      {
+        "desc": "Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade.",
+        "pos": [
+          2.7,
+          0.0,
+          5.05
+        ],
+        "rot": [
+          0.0,
+          0.9683,
+          0.0,
+          0.2499
+        ],
+        "size": [
+          0.74,
+          1.37,
+          0.2
+        ],
+        "prompt": "modern metal floor lamp",
+        "sampled_asset_jid": "9cc468cf-95b5-4b01-9094-749ce36bd600-(0.98)-(1.0)-(0.59)",
+        "sampled_asset_desc": "Modern black arched floor lamp with sleek metal construction and cylindrical fabric shade.",
+        "sampled_asset_size": [
+          0.74,
+          1.37,
+          0.2
+        ],
+        "uuid": "0263e8ae-37c1-4553-9045-b76abb1baecd",
+        "scale": [
+          0.98,
+          1.0,
+          0.59
+        ]
+      },
+      {
+        "desc": "Modern industrial pendant lamp with three cylindrical glass shades, black metal mount, and adjustable cords.",
+        "pos": [
+          1.01,
+          1.52,
+          3.25
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.9,
+          0.86,
+          0.13
+        ],
+        "prompt": "pendant lamp",
+        "sampled_asset_jid": "8e7862c4-2a9f-4e9e-ba9b-04c7503695d0",
+        "sampled_asset_desc": "Modern industrial pendant lamp with three cylindrical glass shades, black metal mount, and adjustable cords.",
+        "sampled_asset_size": [
+          0.8999999761581421,
+          0.8613869331311435,
+          0.13333170115947723
+        ],
+        "uuid": "ca742236-bf5c-4f21-9ff4-8b8a7c8064aa",
+        "scale": [
+          1.54,
+          1.0,
+          1.26
+        ]
+      },
+      {
+        "desc": "Modern minimalist armchair with a gray wooden frame and light beige fabric upholstery featuring an open arm design and tapered legs.",
+        "pos": [
+          1.06,
+          0.0,
+          1.5
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.82,
+          0.85,
+          0.88
+        ],
+        "prompt": "plush seat armchair",
+        "sampled_asset_jid": "7b3b539e-2acb-4007-81e0-da88a7eaba78",
+        "sampled_asset_desc": "A modern-contemporary dark gray fabric armchair with plush cushions, slim wooden legs, decorative ruched arm detailing, and an accent pillow for added flair.",
+        "sampled_asset_size": [
+          0.8180440068244934,
+          0.8272910803080435,
+          0.8861140310764313
+        ],
+        "uuid": "4e20e2eb-4a7b-416a-a5f9-6c508db2f869"
+      },
+      {
+        "desc": "This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design.",
+        "pos": [
+          1.01,
+          0.0,
+          3.24
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.61,
+          0.75,
+          0.96
+        ],
+        "prompt": "round wooden-top table",
+        "sampled_asset_jid": "df67f0bf-1b5d-4413-96d3-b90ec572ba26",
+        "sampled_asset_desc": "This modern-industrial dining table features a sleek wooden top with sharp edges paired with sturdy black metal legs, combining functionality with minimalist design.",
+        "sampled_asset_size": [
+          2.6064999103546143,
+          0.7518400905835136,
+          0.9631680846214294
+        ],
+        "uuid": "438c70a6-b095-4df8-923a-9219f466eca4"
+      },
+      {
+        "desc": "Modern silver display stand with a minimalist tilted frame, sturdy base, and metal pole ideal for sleek presentations.",
+        "pos": [
+          -0.55,
+          0.0,
+          5.16
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.48,
+          0.54,
+          0.37
+        ],
+        "prompt": "silver stand",
+        "sampled_asset_jid": "c0fcfc2e-beb2-4b6d-a864-25a8db2b38dd-(2.26)-(1.0)-(1.6)",
+        "sampled_asset_desc": "Modern silver display stand with a minimalist tilted frame, sturdy base, and metal pole ideal for sleek presentations.",
+        "sampled_asset_size": [
+          0.48,
+          0.54,
+          0.37
+        ],
+        "uuid": "2c9ca4ae-27cb-4d6a-b159-125d6e7891eb",
+        "scale": [
+          2.26,
+          1.0,
+          1.6
+        ]
+      },
+      {
+        "desc": "Modern brown wooden footstool with a minimalistic, long rectangular design featuring black metal legs for contemporary living spaces.",
+        "pos": [
+          1.11,
+          0.0,
+          5.06
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.6,
+          0.13,
+          0.2
+        ],
+        "prompt": "wooden footstool",
+        "sampled_asset_jid": "d7313fb2-845a-42b1-9a78-3116034d3569",
+        "sampled_asset_desc": "Modern brown wooden footstool with a minimalistic, long rectangular design featuring black metal legs for contemporary living spaces.",
+        "sampled_asset_size": [
+          1.600000023841858,
+          0.13000000270592071,
+          0.20000000298023224
+        ],
+        "uuid": "8bdb995a-7ad8-4bef-9967-57764fe91753",
+        "scale": [
+          0.99,
+          1.0,
+          1.06
+        ]
+      },
+      {
+        "desc": "Mid-century modern corner/side table with a natural wood finish, featuring a round top, conical pedestal base, and wooden tripod legs.",
+        "pos": [
+          3.55,
+          0.0,
+          5.6
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.61,
+          0.6,
+          0.6
+        ],
+        "prompt": "wooden leg side table",
+        "sampled_asset_jid": "0aa39c88-36ae-4283-aa17-6bfe912f7b01",
+        "sampled_asset_desc": "Modern corner/side table with a semi-circular wooden top and a sleek geometric metal base.",
+        "sampled_asset_size": [
+          0.6071799993515015,
+          0.6004300253343597,
+          0.6000000536441803
+        ],
+        "uuid": "83ac3d6d-53ad-41a7-8048-1589999829b3"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -0.89,
+          1.05,
+          -0.35
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          -0.89,
+          1.05,
+          -4.93
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          2.72,
+          1.05,
+          -4.74
+        ],
+        "size": [
+          0.3,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          1.35,
+          1.05,
+          -2.79
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -2.48,
+          1.6,
+          6.11
+        ],
+        "size": [
+          1.66,
+          1.4,
+          0.1
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          1.7,
+          1.6,
+          6.11
+        ],
+        "size": [
+          3.16,
+          1.4,
+          0.1
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 0,
+    "is_anchor": true,
+    "n_prior_style_embeds": 0,
+    "n_new_style_embeds": 12,
+    "n_total_unit_style_embeds": 12
+  }
+}

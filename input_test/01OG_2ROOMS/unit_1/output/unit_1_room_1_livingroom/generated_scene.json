@@ -1,0 +1,372 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      3.93,
+      2.6,
+      6.04
+    ],
+    [
+      -3.93,
+      2.6,
+      6.04
+    ],
+    [
+      -3.93,
+      2.6,
+      0.05
+    ],
+    [
+      -0.62,
+      2.6,
+      -0.0
+    ],
+    [
+      -0.62,
+      2.6,
+      -2.87
+    ],
+    [
+      -2.57,
+      2.6,
+      -2.92
+    ],
+    [
+      -2.57,
+      2.6,
+      -6.04
+    ],
+    [
+      0.74,
+      2.6,
+      -6.04
+    ],
+    [
+      0.74,
+      2.6,
+      2.3
+    ],
+    [
+      3.93,
+      2.6,
+      2.36
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      3.93,
+      0.0,
+      6.04
+    ],
+    [
+      -3.93,
+      0.0,
+      6.04
+    ],
+    [
+      -3.93,
+      0.0,
+      0.05
+    ],
+    [
+      -0.62,
+      0.0,
+      -0.0
+    ],
+    [
+      -0.62,
+      0.0,
+      -2.87
+    ],
+    [
+      -2.57,
+      0.0,
+      -2.92
+    ],
+    [
+      -2.57,
+      0.0,
+      -6.04
+    ],
+    [
+      0.74,
+      0.0,
+      -6.04
+    ],
+    [
+      0.74,
+      0.0,
+      2.3
+    ],
+    [
+      3.93,
+      0.0,
+      2.36
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist lounge chair with beige leather upholstery, cushioned seat, curved high backrest, and slim tapered black wooden legs.",
+      "pos": [
+        -1.55,
+        0.0,
+        1.88
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.57,
+        1.01,
+        0.6
+      ],
+      "prompt": "beige modern lounge chair",
+      "sampled_asset_jid": "daf598b2-80f4-4282-9369-0f4b544249a5-(0.63)-(0.63)-(0.63)",
+      "sampled_asset_desc": "Modern potted plant with lifelike green leaves in a glossy black ceramic pot.",
+      "sampled_asset_size": [
+        0.59,
+        1.0,
+        0.58
+      ],
+      "uuid": "307bd63c-a7c8-48ab-81e0-68a75983a659",
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    {
+      "desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
+      "pos": [
+        1.61,
+        0.0,
+        3.45
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.15,
+        0.32,
+        0.89
+      ],
+      "prompt": "dark wood coffee table",
+      "sampled_asset_jid": "eb3e7ea0-e2de-48ef-8c0a-8953b51399bf",
+      "sampled_asset_desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
+      "sampled_asset_size": [
+        1.1456799507141113,
+        0.3216980653755428,
+        0.8947499990463257
+      ],
+      "uuid": "b174aeef-9e8a-43d4-8557-412f5675681d"
+    },
+    {
+      "desc": "A stylish mid-century modern and minimalist sideboard with a dark wood frame, multi-colored drawers, open storage, and black tapered metal legs.",
+      "pos": [
+        -3.7,
+        0.0,
+        3.3
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.42,
+        1.06,
+        0.33
+      ],
+      "prompt": "light grey modern sideboard",
+      "sampled_asset_jid": "e344ad1f-8dad-484c-a673-a25db3a441d6",
+      "sampled_asset_desc": "Mid-Century Modern sideboard with contemporary elements features wood construction, walnut frame, white and gray drawers, dark blue cabinet, and sleek tapered metal legs.",
+      "sampled_asset_size": [
+        0.42087599635124207,
+        1.0609640264353857,
+        0.33328598737716675
+      ],
+      "uuid": "b28eae29-271a-48a4-b53d-6039daa9df23"
+    },
+    {
+      "desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+      "pos": [
+        1.5,
+        1.56,
+        3.4
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.41,
+        1.03,
+        1.34
+      ],
+      "prompt": "round metal pendant light",
+      "sampled_asset_jid": "c82426a8-b300-4082-8be3-fae454dbd511",
+      "sampled_asset_desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+      "sampled_asset_size": [
+        1.4145780205726624,
+        1.0281919339904562,
+        1.3354629874229431
+      ],
+      "uuid": "b62ebe4f-ad5c-4445-95ee-7ff68179cfbc"
+    },
+    {
+      "desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
+      "pos": [
+        1.55,
+        0.0,
+        3.5
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.88,
+        0.92,
+        1.95
+      ],
+      "prompt": "white minimalist sofa",
+      "sampled_asset_jid": "6a99dcbc-c816-4d34-a746-6a2e58d9c30b-(-1.0)-(1)-(1)",
+      "sampled_asset_desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
+      "sampled_asset_size": [
+        3.88,
+        0.92,
+        1.95
+      ],
+      "uuid": "53915d0d-5cde-47d1-b800-9cdea67a9488",
+      "scale": [
+        -1.0,
+        1,
+        1
+      ]
+    },
+    {
+      "desc": "A modern TV stand featuring a long rectangular design with black, beige, and brown color tones, multiple drawers, central cabinets, geometric handles, and slim legs.",
+      "pos": [
+        1.5,
+        0.0,
+        0.08
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.13,
+        0.46,
+        0.41
+      ],
+      "prompt": "wooden frame modern tv stand",
+      "sampled_asset_jid": "4b0d7eb3-a00e-4211-bac0-a21513cc55c6-(0.4)-(1.0)-(0.82)",
+      "sampled_asset_desc": "Modern minimalist dark brown wooden TV stand with open shelves, center drawer, and detachable side tables exhibiting clean lines and sleek design.",
+      "sampled_asset_size": [
+        1.12,
+        0.4,
+        0.41
+      ],
+      "uuid": "90b938dd-f64c-483e-b2f3-be5ca848cb3d",
+      "scale": [
+        0.4,
+        1.0,
+        0.82
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -2.74,
+        1.05,
+        -4.74
+      ],
+      "size": [
+        0.3,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -1.37,
+        1.05,
+        -2.79
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        0.87,
+        1.05,
+        -0.35
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        0.87,
+        1.05,
+        -4.93
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        2.46,
+        1.6,
+        6.11
+      ],
+      "size": [
+        1.66,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -1.72,
+        1.6,
+        6.11
+      ],
+      "size": [
+        3.16,
+        1.4,
+        0.1
+      ]
+    }
+  ]
+}

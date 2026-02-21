@@ -1,0 +1,384 @@
+{
+  "cross_scene_style": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        3.93,
+        2.6,
+        6.04
+      ],
+      [
+        -3.93,
+        2.6,
+        6.04
+      ],
+      [
+        -3.93,
+        2.6,
+        0.05
+      ],
+      [
+        -0.62,
+        2.6,
+        -0.0
+      ],
+      [
+        -0.62,
+        2.6,
+        -2.87
+      ],
+      [
+        -2.57,
+        2.6,
+        -2.92
+      ],
+      [
+        -2.57,
+        2.6,
+        -6.04
+      ],
+      [
+        0.74,
+        2.6,
+        -6.04
+      ],
+      [
+        0.74,
+        2.6,
+        2.3
+      ],
+      [
+        3.93,
+        2.6,
+        2.36
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        3.93,
+        0.0,
+        6.04
+      ],
+      [
+        -3.93,
+        0.0,
+        6.04
+      ],
+      [
+        -3.93,
+        0.0,
+        0.05
+      ],
+      [
+        -0.62,
+        0.0,
+        -0.0
+      ],
+      [
+        -0.62,
+        0.0,
+        -2.87
+      ],
+      [
+        -2.57,
+        0.0,
+        -2.92
+      ],
+      [
+        -2.57,
+        0.0,
+        -6.04
+      ],
+      [
+        0.74,
+        0.0,
+        -6.04
+      ],
+      [
+        0.74,
+        0.0,
+        2.3
+      ],
+      [
+        3.93,
+        0.0,
+        2.36
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist lounge chair with beige leather upholstery, cushioned seat, curved high backrest, and slim tapered black wooden legs.",
+        "pos": [
+          -1.55,
+          0.0,
+          1.88
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.57,
+          1.01,
+          0.6
+        ],
+        "prompt": "beige modern lounge chair",
+        "sampled_asset_jid": "5e11bbde-097c-4511-bf7a-16bedc856b03",
+        "sampled_asset_desc": "A modern barstool with a sleek minimalist design featuring a high backrest and dark colors.",
+        "sampled_asset_size": [
+          0.563256025314331,
+          1.0300531068869532,
+          0.5945529937744141
+        ],
+        "uuid": "5d99d0ec-22a5-4245-b546-108b29260057",
+        "scale": [
+          0.63,
+          0.63,
+          0.63
+        ]
+      },
+      {
+        "desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
+        "pos": [
+          1.61,
+          0.0,
+          3.45
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.15,
+          0.32,
+          0.89
+        ],
+        "prompt": "dark wood coffee table",
+        "sampled_asset_jid": "eb3e7ea0-e2de-48ef-8c0a-8953b51399bf",
+        "sampled_asset_desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
+        "sampled_asset_size": [
+          1.1456799507141113,
+          0.3216980653755428,
+          0.8947499990463257
+        ],
+        "uuid": "37d2f16b-e979-4627-89a8-716b671f66fe"
+      },
+      {
+        "desc": "A stylish mid-century modern and minimalist sideboard with a dark wood frame, multi-colored drawers, open storage, and black tapered metal legs.",
+        "pos": [
+          -3.7,
+          0.0,
+          3.3
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          0.42,
+          1.06,
+          0.33
+        ],
+        "prompt": "light grey modern sideboard",
+        "sampled_asset_jid": "c6b5cd1a-3e5e-4499-8d75-69562e7826a0",
+        "sampled_asset_desc": "A stylish mid-century modern and minimalist sideboard with a dark wood frame, multi-colored drawers, open storage, and black tapered metal legs.",
+        "sampled_asset_size": [
+          0.42087599635124207,
+          1.0609640264353857,
+          0.33328598737716675
+        ],
+        "uuid": "d5fc34fd-a772-4048-aa8d-2a3172ea4899"
+      },
+      {
+        "desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+        "pos": [
+          1.5,
+          1.56,
+          3.4
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.41,
+          1.03,
+          1.34
+        ],
+        "prompt": "round metal pendant light",
+        "sampled_asset_jid": "c82426a8-b300-4082-8be3-fae454dbd511",
+        "sampled_asset_desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+        "sampled_asset_size": [
+          1.4145780205726624,
+          1.0281919339904562,
+          1.3354629874229431
+        ],
+        "uuid": "c7656189-f8cb-4ee7-a64f-b1ee42613195"
+      },
+      {
+        "desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
+        "pos": [
+          1.55,
+          0.0,
+          3.5
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          3.88,
+          0.92,
+          1.95
+        ],
+        "prompt": "white minimalist sofa",
+        "sampled_asset_jid": "6a99dcbc-c816-4d34-a746-6a2e58d9c30b",
+        "sampled_asset_desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
+        "sampled_asset_size": [
+          3.8832600116729736,
+          0.9188998639947386,
+          1.9540799856185913
+        ],
+        "uuid": "99f1bc19-c794-43e2-824b-386ba86b0994",
+        "scale": [
+          -1.0,
+          1,
+          1
+        ]
+      },
+      {
+        "desc": "A modern TV stand featuring a long rectangular design with black, beige, and brown color tones, multiple drawers, central cabinets, geometric handles, and slim legs.",
+        "pos": [
+          1.5,
+          0.0,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.13,
+          0.46,
+          0.41
+        ],
+        "prompt": "wooden frame modern tv stand",
+        "sampled_asset_jid": "0c075bb6-83b9-464d-9220-820e67274c05-(0.51)-(1.0)-(0.99)",
+        "sampled_asset_desc": "A modern TV stand featuring a long rectangular design with black, beige, and brown color tones, multiple drawers, central cabinets, geometric handles, and slim legs.",
+        "sampled_asset_size": [
+          1.13,
+          0.46,
+          0.41
+        ],
+        "uuid": "cc37405c-0e63-46ed-b93e-6c4f23ce8fb6",
+        "scale": [
+          0.51,
+          1.0,
+          0.99
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -2.74,
+          1.05,
+          -4.74
+        ],
+        "size": [
+          0.3,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          -1.37,
+          1.05,
+          -2.79
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          0.87,
+          1.05,
+          -0.35
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          0.87,
+          1.05,
+          -4.93
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          2.46,
+          1.6,
+          6.11
+        ],
+        "size": [
+          1.66,
+          1.4,
+          0.1
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -1.72,
+          1.6,
+          6.11
+        ],
+        "size": [
+          3.16,
+          1.4,
+          0.1
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.2,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 0,
+    "is_anchor": true,
+    "n_prior_style_embeds": 0,
+    "n_new_style_embeds": 6,
+    "n_total_unit_style_embeds": 6
+  }
+}
