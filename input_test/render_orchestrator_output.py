@@ -16,6 +16,9 @@ Usage:
 import json
 import argparse
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 from src.viz import render_scene_and_export
 
