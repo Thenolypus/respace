@@ -157,6 +157,13 @@ class ReSpace:
 
 # task
 - composing a list of commands to fulfill the user request via <add> and <remove> commands. ideally, you reflect the existing objects in the scenegraph, if one is given.
+- if the prompt specifies a style, all furniture should match that style.
+
+# room size awareness
+- pay attention to the room dimensions in the prompt. for small rooms (under 15 sq m), prioritize essential furniture only.
+- for small bedrooms (under 15 sq m): use a single bed or twin bed instead of a king or queen bed. do not add coffee tables or sofas. stick to bed, nightstand, and wardrobe/dresser.
+- for small rooms in general: avoid adding redundant seating (e.g. both a sofa and multiple chairs) or large furniture that would not realistically fit.
+- you MUST produce exactly the number of objects requested in the prompt. do not add more or fewer.
 
 # adding
 - if the user wants to add one or multiple objects, you create an <add> command for every object/furniture and add it to the list in "commands".
@@ -403,15 +410,25 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 			gc.collect()
 			torch.cuda.empty_cache()
 	
-	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None):
+	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None, style_prompt=None):
 		
 		self.dataset_stats_for_prompt = self._prepare_dataset_stats_for_object_sampler(room_type)
 		self.floor_object_sampler = FloorObjectSampler(self.dataset_stats_for_prompt.get("floor_area_n_objects"))
 		
-		floor_area = create_floor_plan_polygon(scene_bounds_only.get("bounds_bottom")).area
-			
+		floor_poly = create_floor_plan_polygon(scene_bounds_only.get("bounds_bottom"))
+		floor_area = floor_poly.area
+
+		# Compute fill ratio: how much of the bounding box the polygon actually covers
+		bounds_arr = np.array(scene_bounds_only["bounds_bottom"])
+		bbox_area = float((bounds_arr[:, 0].max() - bounds_arr[:, 0].min()) * (bounds_arr[:, 2].max() - bounds_arr[:, 2].min()))
+		fill_ratio = floor_area / bbox_area if bbox_area > 0 else 1.0
+
 		if n_objects == None:
 			n_objects = self.floor_object_sampler.sample_obj_count_for_floor_area(floor_area, do_prop_sampling=self.do_prop_sampling_for_prompt)[0]
+			# Scale down object count for non-rectangular rooms (L-shapes, etc.)
+			if fill_ratio < 0.95:
+				n_objects = max(1, int(n_objects * fill_ratio))
+				print(f"  Non-rectangular room (fill_ratio={fill_ratio:.2f}): adjusted n_objects to {n_objects}")
 		
 		# sample few-shot examples from training set
 		few_shot_samples = None
@@ -422,17 +439,30 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 			print("ERROR: floor_object_sampler is None and n_objects is None. Please provide a valid number of objects or re-initialize the floor_object_sampler by providing a dataset during initialization.")
 			return None
 		
-		prompt = f"create a {room_type if room_type != None else 'room'} with {n_objects} objects."
+		# Compute actual polygon dimensions via minimum bounding rectangle
+		min_rect = floor_poly.minimum_rotated_rectangle
+		rect_coords = list(min_rect.exterior.coords)
+		edge1 = np.linalg.norm(np.array(rect_coords[1]) - np.array(rect_coords[0]))
+		edge2 = np.linalg.norm(np.array(rect_coords[2]) - np.array(rect_coords[1]))
+		room_width = float(max(edge1, edge2))
+		room_depth = float(min(edge1, edge2))
+
+		n_vertices = len(scene_bounds_only["bounds_bottom"])
+		shape_hint = "" if n_vertices == 4 else f" the room is non-rectangular ({n_vertices} boundary vertices)."
+
+		prompt = f"create a {room_type if room_type != None else 'room'} with {n_objects} objects. the room is approximately {room_width:.1f}m x {room_depth:.1f}m ({floor_area:.1f} sq m).{shape_hint}"
+		if style_prompt:
+			prompt += f" style: {style_prompt}."
 
 		if scene_bounds_only == None:
 			scene_bounds_only = self._sample_random_bounds(self.dataset_train, room_type)
 		
 		system_prompt = self._get_system_prompt_zeroshot_handle_user_instr(few_shot_samples=few_shot_samples)
 
-		return self.handle_prompt(prompt, scene_bounds_only, system_prompt, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output)
+		return self.handle_prompt(prompt, scene_bounds_only, system_prompt=system_prompt, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output)
 		
 		
-	def handle_prompt(self, prompt, current_scene=None, room_type=None, do_rendering_with_object_count=False, pth_viz_output=None):
+	def handle_prompt(self, prompt, current_scene=None, room_type=None, do_rendering_with_object_count=False, pth_viz_output=None, system_prompt=None):
 
 		if current_scene == None:
 			current_scene = self._sample_random_bounds(self.dataset_train, room_type)
@@ -448,7 +478,8 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 
 		query = self._build_full_query_for_zeroshot_model(prompt, scenegraph=current_scene)
 
-		system_prompt = self._get_system_prompt_zeroshot_handle_user_instr(few_shot_samples=None)
+		if system_prompt is None:
+			system_prompt = self._get_system_prompt_zeroshot_handle_user_instr(few_shot_samples=None)
 
 		messages = [
 			{"role": "system", "content": system_prompt},
