@@ -46,72 +46,39 @@
   ],
   "objects": [
     {
-      "desc": "Modern gray floor lamp with a metal slatted hourglass shape and a central glass-encased bulb.",
+      "desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
       "pos": [
         1.4,
         0.0,
-        1.21
-      ],
-      "rot": [
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "size": [
-        0.21,
-        0.59,
-        0.21
-      ],
-      "prompt": "gray modern floor lamp",
-      "sampled_asset_jid": "1c7492dc-e70e-4559-a02c-6fb0481db600-(1.06)-(1.0)-(1.06)",
-      "sampled_asset_desc": "Modern gray floor lamp with a metal slatted hourglass shape and a central glass-encased bulb.",
-      "sampled_asset_size": [
-        0.21,
-        0.59,
-        0.21
-      ],
-      "uuid": "aa5d015f-8e1e-43d5-b0ef-1c3ab46b6c9b",
-      "scale": [
-        1.06,
-        1.0,
-        1.06
-      ]
-    },
-    {
-      "desc": "Classic grey wooden wardrobe with 4 louvered doors, crown molding, and base plinth.",
-      "pos": [
-        -1.44,
-        0.0,
-        0.38
+        0.59
       ],
       "rot": [
         0.0,
         0.70711,
         0.0,
-        0.70711
+        -0.70711
       ],
       "size": [
-        2.04,
-        2.25,
-        0.65
+        1.26,
+        0.5,
+        0.26
       ],
-      "prompt": "louvered wooden wardrobe",
-      "sampled_asset_jid": "53726e19-edc8-41b6-bad0-c04809ab5702",
-      "sampled_asset_desc": "A rustic wooden wardrobe with louvered doors, double-tiered storage, and decorative crown, offering a timeless and functional design.",
+      "prompt": "light wood wardrobe",
+      "sampled_asset_jid": "02a64bc1-70d6-4da7-98c8-19038cfe95ec",
+      "sampled_asset_desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
       "sampled_asset_size": [
-        2.0350000858306885,
-        2.250000024536817,
-        0.6499999761581421
+        1.2616759538650513,
+        0.49560599982298115,
+        0.2578040212392807
       ],
-      "uuid": "ab6a99c7-78c1-4c6f-95f5-20d41e39d02b"
+      "uuid": "c99fcb85-e541-432d-b0da-60121010d20b"
     },
     {
-      "desc": "Mid-Century Modern minimalist nightstand with natural wood frame, white drawer, and tapered legs.",
+      "desc": "A modern rectangular nightstand with a black and white checkered fabric panel, two drawers, and sleek tapered legs.",
       "pos": [
-        -0.6,
+        0.68,
         0.0,
-        1.32
+        1.24
       ],
       "rot": [
         0.0,
@@ -120,47 +87,52 @@
         0.0
       ],
       "size": [
-        0.4,
+        0.53,
         0.55,
-        0.32
+        0.45
       ],
-      "prompt": "mid-century modern wooden nightstand",
-      "sampled_asset_jid": "bb9598e5-69bc-46e9-90c6-c6fb93f96ed1",
-      "sampled_asset_desc": "Mid-Century Modern minimalist nightstand with natural wood frame, white drawer, and tapered legs.",
+      "prompt": "small dark wood nightstand",
+      "sampled_asset_jid": "53eaf7fe-a4f0-47b8-8e8d-8892794398bf-(0.85)-(1.0)-(0.83)",
+      "sampled_asset_desc": "A classic white wooden nightstand with ornate black metal handles, two drawers, and curved legs.",
       "sampled_asset_size": [
-        0.40000200271606445,
-        0.5500000236437153,
-        0.3221140056848526
+        0.55,
+        0.53,
+        0.44
       ],
-      "uuid": "c71d37a5-711e-4448-bf63-edc14a3db6ec"
+      "uuid": "97b13b50-4d53-4ad3-b4a4-eb0162ec49b7",
+      "scale": [
+        0.85,
+        1.0,
+        0.83
+      ]
     },
     {
-      "desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+      "desc": "Modern minimalist king-size bed with a white slatted wooden headboard, striped and floral cushions, and neutral bedding for a sleek and comfortable look.",
       "pos": [
-        0.27,
+        -0.51,
         0.0,
-        0.4
+        0.21
       ],
       "rot": [
         0.0,
-        0.70711,
+        1.0,
         0.0,
-        0.70711
+        0.0
       ],
       "size": [
-        1.36,
-        0.85,
-        2.16
+        2.02,
+        0.98,
+        2.36
       ],
-      "prompt": "white wooden single bed",
-      "sampled_asset_jid": "43d85f7d-19d1-4a0c-90b9-ff054351a284",
-      "sampled_asset_desc": "A classic-modern single bed with a solid wood base, arched wooden headboard, and neutral color bedding with decorative pillows.",
+      "prompt": "white minimalist bed",
+      "sampled_asset_jid": "92ce4988-7ee2-43ae-bbf0-14ca93b8aceb",
+      "sampled_asset_desc": "Modern mid-century double bed with slatted headboard, tapered legs, and minimalist design in dark brown wood and gray fabric.",
       "sampled_asset_size": [
-        1.3596479892730713,
-        0.8488339998094787,
-        2.16238009929657
+        2.050920009613037,
+        0.9658900199522904,
+        2.3636999130249023
       ],
-      "uuid": "c4cdbdeb-1e5a-4667-90a9-d6f5d185279a"
+      "uuid": "098f715e-e6a1-4f6c-aea5-45970195e3d0"
     }
   ],
   "openings": [

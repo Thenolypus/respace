@@ -46,100 +46,100 @@
   ],
   "objects": [
     {
-      "desc": "Modern minimalist floor lamp with tripod metal base and white drum fabric shade featuring geometric design and sleek lines.",
-      "pos": [
-        1.35,
-        0.0,
-        1.09
-      ],
-      "rot": [
-        0.0,
-        1.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        0.52,
-        1.74,
-        0.5
-      ],
-      "prompt": "floor lamp",
-      "sampled_asset_jid": "dbd8e7c4-bece-4af3-a84d-36069aa6f2e4",
-      "sampled_asset_desc": "Modern minimalist floor lamp with a cylindrical black fabric shade, slim gold metal pole, and round base.",
-      "sampled_asset_size": [
-        0.4979500025510788,
-        1.735160001874335,
-        0.4979500025510788
-      ],
-      "uuid": "8c16659c-73f3-4dd5-98fb-dfd71fc19b0a"
-    },
-    {
-      "desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
-      "pos": [
-        0.17,
-        0.0,
-        0.44
-      ],
-      "rot": [
-        0.0,
-        1.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        1.71,
-        0.97,
-        1.96
-      ],
-      "prompt": "minimalist single bed",
-      "sampled_asset_jid": "3f3e9fe3-3db0-407b-9956-57025c5b7e6d",
-      "sampled_asset_desc": "A modern minimalist single bed with a dark gray upholstered fabric and black metal legs, featuring a rectangular headboard.",
-      "sampled_asset_size": [
-        1.7059959769248962,
-        0.967167976038084,
-        1.9624310731887817
-      ],
-      "uuid": "9444ca08-d39a-4662-a567-6f533c9289f4"
-    },
-    {
       "desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
       "pos": [
-        -1.9,
+        1.9,
         0.0,
-        0.44
+        0.56
       ],
       "rot": [
         0.0,
         0.70711,
         0.0,
-        0.70711
+        -0.70711
       ],
       "size": [
         0.31,
         0.74,
         0.32
       ],
-      "prompt": "modern scandinavian wardrobe",
-      "sampled_asset_jid": "0ea463c5-c7b3-4a8d-93b4-dbc6b0f356eb-(0.54)-(1.0)-(1.55)",
-      "sampled_asset_desc": "Modern black metal pendant lamp with organic shapes, adjustable cords, and cluster design.",
+      "prompt": "scandinavian wardrobe",
+      "sampled_asset_jid": "be16ce5b-3558-49aa-9e10-ffd10cb2666d",
+      "sampled_asset_desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
       "sampled_asset_size": [
-        0.35,
-        0.74,
-        0.35
+        0.31156599521636963,
+        0.739967000809373,
+        0.32440201938152313
       ],
-      "uuid": "63d6d07a-0a1c-4cd6-9a96-e90f73ef4ac1",
-      "scale": [
-        0.54,
+      "uuid": "40a6610d-e585-466f-8c65-893a6a97ac4a"
+    },
+    {
+      "desc": "Modern industrial pendant lamp with a linear metal structure, bronze cylindrical lights, and adjustable suspension for distinctive geometric lighting.",
+      "pos": [
+        0.18,
+        1.2,
+        0.04
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.66,
+        0.94,
+        0.2
+      ],
+      "prompt": "simple pendant light",
+      "sampled_asset_jid": "352eb2b1-5fb9-4b3c-8253-ddd5462f7747-(0.6)-(1.0)-(5.27)",
+      "sampled_asset_desc": "Modern industrial pendant lamp with a linear metal structure, bronze cylindrical lights, and adjustable suspension for distinctive geometric lighting.",
+      "sampled_asset_size": [
         1.0,
-        1.55
+        0.94,
+        1.05
+      ],
+      "uuid": "8cbad07e-1700-4da3-8b92-b01817073a6c",
+      "scale": [
+        0.6,
+        1.0,
+        5.27
       ]
     },
     {
-      "desc": "Sleek modern nightstand with a minimalist black design, featuring a single drawer, open shelf, and thin metal legs.",
+      "desc": "This corner/side table features a minimalist modern design with a natural wood tone, glass top, and a slatted lower shelf for added functionality.",
       "pos": [
-        -1.1,
+        -1.55,
         0.0,
-        1.19
+        1.2
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.35,
+        0.45,
+        0.35
+      ],
+      "prompt": "small scandinavian side table",
+      "sampled_asset_jid": "90daab82-8a2e-4d46-8fff-1bf44f6723bf",
+      "sampled_asset_desc": "Sleek modern side table featuring a brushed metallic finish with an hourglass shape and minimalist design, perfect for contemporary spaces.",
+      "sampled_asset_size": [
+        0.33943799138069153,
+        0.4463970190345252,
+        0.3397800326347351
+      ],
+      "uuid": "ef9f4027-5a57-4de5-8ffc-11397b954a5c"
+    },
+    {
+      "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+      "pos": [
+        0.11,
+        0.0,
+        0.31
       ],
       "rot": [
         0.0,
@@ -148,24 +148,52 @@
         0.0
       ],
       "size": [
-        0.52,
-        0.65,
-        0.48
+        2.02,
+        0.79,
+        2.17
       ],
-      "prompt": "simple white nightstand",
-      "sampled_asset_jid": "b0986d32-f7d9-4d15-af08-88b9fae12b70-(0.98)-(1.0)-(1.0)",
-      "sampled_asset_desc": "An industrial-vintage beige nightstand with three leather-handled drawers, gold metal rivet d\u00e9cor, and corner reinforcements.",
+      "prompt": "white modern bed",
+      "sampled_asset_jid": "71c4791c-25f1-4fa7-ba4c-0287c9dd81ad-(0.99)-(1.0)-(0.98)",
+      "sampled_asset_desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
       "sampled_asset_size": [
-        0.53,
-        0.64,
+        2.0,
+        0.79,
+        2.12
+      ],
+      "uuid": "46c9576e-3824-4620-a900-9e54ba33cb26",
+      "scale": [
+        0.99,
+        1.0,
+        0.98
+      ]
+    },
+    {
+      "desc": "Vintage-style wooden nightstand in rosewood with natural wood top, featuring a single paneled cabinet door, open shelf, round knob handle, and metal hinges.",
+      "pos": [
+        1.51,
+        0.0,
+        1.28
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.58,
+        0.66,
         0.44
       ],
-      "uuid": "cc87629f-d617-4326-93bd-f2114839e8eb",
-      "scale": [
-        0.98,
-        1.0,
-        1.0
-      ]
+      "prompt": "wooden nightstand",
+      "sampled_asset_jid": "ee70905c-37a8-4661-93cc-92f23e9453a5",
+      "sampled_asset_desc": "Vintage-style wooden nightstand in rosewood with natural wood top, featuring a single paneled cabinet door, open shelf, round knob handle, and metal hinges.",
+      "sampled_asset_size": [
+        0.5799999833106995,
+        0.6602560913587254,
+        0.4422299861907959
+      ],
+      "uuid": "44e7be87-0131-4c2d-b93b-faeeca422647"
     }
   ],
   "openings": [

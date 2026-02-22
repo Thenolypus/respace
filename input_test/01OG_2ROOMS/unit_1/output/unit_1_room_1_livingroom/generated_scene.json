@@ -106,11 +106,11 @@
   ],
   "objects": [
     {
-      "desc": "Modern minimalist lounge chair with beige leather upholstery, cushioned seat, curved high backrest, and slim tapered black wooden legs.",
+      "desc": "A modern grey armchair with a curved backrest, padded armrests, and a minimalist leather and metal design.",
       "pos": [
-        -1.55,
+        1.51,
         0.0,
-        1.88
+        0.81
       ],
       "rot": [
         0.0,
@@ -119,59 +119,31 @@
         1.0
       ],
       "size": [
-        0.57,
-        1.01,
-        0.6
+        1.03,
+        0.79,
+        0.9
       ],
-      "prompt": "beige modern lounge chair",
-      "sampled_asset_jid": "daf598b2-80f4-4282-9369-0f4b544249a5-(0.63)-(0.63)-(0.63)",
-      "sampled_asset_desc": "Modern potted plant with lifelike green leaves in a glossy black ceramic pot.",
+      "prompt": "curved armrest armchair",
+      "sampled_asset_jid": "5a2bd3ba-50ca-4bae-95a1-81f1151f0d3b-(1.2)-(1.0)-(1.04)",
+      "sampled_asset_desc": "A gray modern armchair with leather upholstery, curved armrests, streamlined design, padded seat, and narrow metal legs.",
       "sampled_asset_size": [
-        0.59,
-        1.0,
-        0.58
+        1.04,
+        0.82,
+        0.91
       ],
-      "uuid": "307bd63c-a7c8-48ab-81e0-68a75983a659",
+      "uuid": "d1ddd9a6-6034-49e7-8036-638111433761",
       "scale": [
-        0.63,
-        0.63,
-        0.63
+        1.2,
+        1.0,
+        1.04
       ]
     },
     {
-      "desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
+      "desc": "A contemporary dark grey three-seat sofa with fabric upholstery, wooden legs, and multi-colored decorative pillows.",
       "pos": [
-        1.61,
+        0.09,
         0.0,
-        3.45
-      ],
-      "rot": [
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "size": [
-        1.15,
-        0.32,
-        0.89
-      ],
-      "prompt": "dark wood coffee table",
-      "sampled_asset_jid": "eb3e7ea0-e2de-48ef-8c0a-8953b51399bf",
-      "sampled_asset_desc": "A modern round coffee table with a dark wood top, silver geometric metal legs, and a minimalist integrated lower shelf.",
-      "sampled_asset_size": [
-        1.1456799507141113,
-        0.3216980653755428,
-        0.8947499990463257
-      ],
-      "uuid": "b174aeef-9e8a-43d4-8557-412f5675681d"
-    },
-    {
-      "desc": "A stylish mid-century modern and minimalist sideboard with a dark wood frame, multi-colored drawers, open storage, and black tapered metal legs.",
-      "pos": [
-        -3.7,
-        0.0,
-        3.3
+        3.4
       ],
       "rot": [
         0.0,
@@ -180,87 +152,64 @@
         0.70711
       ],
       "size": [
-        0.42,
-        1.06,
-        0.33
+        2.33,
+        0.87,
+        0.91
       ],
-      "prompt": "light grey modern sideboard",
-      "sampled_asset_jid": "e344ad1f-8dad-484c-a673-a25db3a441d6",
-      "sampled_asset_desc": "Mid-Century Modern sideboard with contemporary elements features wood construction, walnut frame, white and gray drawers, dark blue cabinet, and sleek tapered metal legs.",
+      "prompt": "dark grey rectangular sofa",
+      "sampled_asset_jid": "5aa84345-6b02-4d43-b87f-eed0af5c3db8-(1.01)-(1.0)-(0.98)",
+      "sampled_asset_desc": "A contemporary dark grey three-seat sofa with fabric upholstery, wooden legs, and multi-colored decorative pillows.",
       "sampled_asset_size": [
-        0.42087599635124207,
-        1.0609640264353857,
-        0.33328598737716675
+        2.36,
+        0.87,
+        0.89
       ],
-      "uuid": "b28eae29-271a-48a4-b53d-6039daa9df23"
+      "uuid": "832ac137-27eb-446e-a582-1c0eca64bdc0",
+      "scale": [
+        1.01,
+        1.0,
+        0.98
+      ]
     },
     {
-      "desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+      "desc": "Modern minimalist TV stand featuring a low profile with clean lines, dark wood top, gray body, open shelf and two side cabinets.",
       "pos": [
-        1.5,
-        1.56,
+        -0.35,
+        0.0,
         3.4
       ],
       "rot": [
         0.0,
+        0.70711,
         0.0,
-        0.0,
-        1.0
+        0.70711
       ],
       "size": [
-        1.41,
-        1.03,
-        1.34
+        3.0,
+        0.44,
+        0.44
       ],
-      "prompt": "round metal pendant light",
-      "sampled_asset_jid": "c82426a8-b300-4082-8be3-fae454dbd511",
-      "sampled_asset_desc": "A modern gold and silver metal pendant lamp featuring a geometric structure with multiple arms and circular light fixtures.",
+      "prompt": "dark wood tv stand",
+      "sampled_asset_jid": "54aac193-b73b-4c2d-aaa7-ba78c974318f-(0.58)-(1.0)-(0.74)",
+      "sampled_asset_desc": "Modern minimalist TV stand featuring a low profile with clean lines, dark wood top, gray body, open shelf and two side cabinets.",
       "sampled_asset_size": [
-        1.4145780205726624,
-        1.0281919339904562,
-        1.3354629874229431
+        1.74,
+        0.44,
+        0.33
       ],
-      "uuid": "b62ebe4f-ad5c-4445-95ee-7ff68179cfbc"
-    },
-    {
-      "desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
-      "pos": [
-        1.55,
-        0.0,
-        3.5
-      ],
-      "rot": [
-        0.0,
-        1.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        3.88,
-        0.92,
-        1.95
-      ],
-      "prompt": "white minimalist sofa",
-      "sampled_asset_jid": "6a99dcbc-c816-4d34-a746-6a2e58d9c30b-(-1.0)-(1)-(1)",
-      "sampled_asset_desc": "A modern minimalist L-shaped sofa with white upholstery, dark wood frame, accent pillows, and central storage unit for functional elegance.",
-      "sampled_asset_size": [
-        3.88,
-        0.92,
-        1.95
-      ],
-      "uuid": "53915d0d-5cde-47d1-b800-9cdea67a9488",
+      "uuid": "e91cb9dc-cf86-4a8e-adff-37afd0b40d30",
       "scale": [
-        -1.0,
-        1,
-        1
+        0.58,
+        1.0,
+        0.74
       ]
     },
     {
-      "desc": "A modern TV stand featuring a long rectangular design with black, beige, and brown color tones, multiple drawers, central cabinets, geometric handles, and slim legs.",
+      "desc": "Industrial contemporary stool with dark green fabric seat, gray metal frame, triangular base, and footrest bar.",
       "pos": [
-        1.5,
+        0.49,
         0.0,
-        0.08
+        -3.1
       ],
       "rot": [
         0.0,
@@ -269,23 +218,145 @@
         1.0
       ],
       "size": [
-        1.13,
-        0.46,
-        0.41
+        0.35,
+        0.44,
+        0.35
       ],
-      "prompt": "wooden frame modern tv stand",
-      "sampled_asset_jid": "4b0d7eb3-a00e-4211-bac0-a21513cc55c6-(0.4)-(1.0)-(0.82)",
-      "sampled_asset_desc": "Modern minimalist dark brown wooden TV stand with open shelves, center drawer, and detachable side tables exhibiting clean lines and sleek design.",
+      "prompt": "gray stool",
+      "sampled_asset_jid": "5a066efb-314d-3f13-98b4-0fa4ec7c32ad-(0.79)-(1.0)-(0.79)",
+      "sampled_asset_desc": "Contemporary round footstool with a white base, brown padded top, and a minimalist design.",
       "sampled_asset_size": [
-        1.12,
-        0.4,
-        0.41
+        0.36,
+        0.45,
+        0.36
       ],
-      "uuid": "90b938dd-f64c-483e-b2f3-be5ca848cb3d",
+      "uuid": "30662e1c-b655-4c21-a7a4-79d9ce584cd0",
       "scale": [
-        0.4,
+        0.79,
         1.0,
-        0.82
+        0.79
+      ]
+    },
+    {
+      "desc": "This modern minimalist light brown wooden coffee table features a unique hexagonal shape with tiered design and complementary heights, perfect for compact spaces.",
+      "pos": [
+        1.36,
+        0.0,
+        3.4
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.64,
+        0.68,
+        0.72
+      ],
+      "prompt": "light wooden coffee table",
+      "sampled_asset_jid": "5233c862-4429-499c-957d-7ea65ded072b",
+      "sampled_asset_desc": "This modern minimalist light brown wooden coffee table features a unique hexagonal shape with tiered design and complementary heights, perfect for compact spaces.",
+      "sampled_asset_size": [
+        0.6398789882659912,
+        0.6817170180356698,
+        0.71937096118927
+      ],
+      "uuid": "4d5e8fdf-0a7e-49d9-aa1b-b32cfa92009a"
+    },
+    {
+      "desc": "A stylish modern mid-century grey loveseat sofa with fabric upholstery, wooden legs, angular armrests, loose back cushions, and an attached headrest pillow.",
+      "pos": [
+        3.1,
+        0.0,
+        3.36
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.8,
+        0.94,
+        0.98
+      ],
+      "prompt": "modern grey loveseat",
+      "sampled_asset_jid": "6c6d7462-349a-4ef1-b50d-b1fa13038c21-(0.99)-(1.0)-(1.0)",
+      "sampled_asset_desc": "A modern minimalist loveseat sofa with a beige cushioned seat and back, complemented by a curved brown wooden frame and a decorative pillow.",
+      "sampled_asset_size": [
+        1.74,
+        0.92,
+        1.0
+      ],
+      "uuid": "b95f3cee-6c64-4d5f-bc3b-965c96a2aaa2",
+      "scale": [
+        0.99,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "desc": "Contemporary pendant lamp with geometric black metal frame and multiple white rectangular fabric shades for a modern aesthetic.",
+      "pos": [
+        1.36,
+        1.41,
+        3.36
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.83,
+        1.19,
+        1.96
+      ],
+      "prompt": "pendant lamp",
+      "sampled_asset_jid": "8bfa48ae-42e9-4e5d-b151-e6acfe3cde0c",
+      "sampled_asset_desc": "Contemporary pendant lamp with geometric black metal frame and multiple white rectangular fabric shades for a modern aesthetic.",
+      "sampled_asset_size": [
+        0.8305760025978088,
+        1.1937870464687492,
+        1.9623780846595764
+      ],
+      "uuid": "2e99a4e8-c083-4326-bd00-1029e3f47859"
+    },
+    {
+      "desc": "Minimalist contemporary pendant lamp with a dome shape, interwoven wooden strips, and suspended design.",
+      "pos": [
+        0.0,
+        1.73,
+        4.13
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.39,
+        0.87,
+        0.39
+      ],
+      "prompt": "wooden pendant",
+      "sampled_asset_jid": "8b847a09-1736-476f-8aba-ba6da836c998-(0.97)-(1.0)-(0.97)",
+      "sampled_asset_desc": "Minimalist contemporary pendant lamp with a dome shape, interwoven wooden strips, and suspended design.",
+      "sampled_asset_size": [
+        0.38,
+        0.87,
+        0.38
+      ],
+      "uuid": "b7f8ae3b-d43e-4d61-b66e-7c5d79a3832c",
+      "scale": [
+        0.97,
+        1.0,
+        0.97
       ]
     }
   ],

@@ -64,19 +64,14 @@
           0.0
         ],
         "desc": "A modern bathroom vanity with integrated ceramic sink and faucet",
-        "sampled_asset_jid": "9ec3b578-c1f6-46c3-8fc4-08aeb8749fac-(0.57)-(1.0)-(0.79)",
-        "sampled_asset_desc": "Contemporary industrial dressing table with sleek minimalist design, featuring brown wood top, white drawers, and gray metal legs.",
+        "sampled_asset_jid": "6747b64d-5360-46ed-a9ed-fa6de85ff7a2",
+        "sampled_asset_desc": "This modern children\u2019s cabinet features a playful face design with white and blue colors, rounded edges, and a ceramic sink on top, making it both functional and fun.",
         "sampled_asset_size": [
-          0.83,
-          0.88,
-          0.51
+          0.817328006029129,
+          0.8609198881968041,
+          0.4794849753379822
         ],
-        "uuid": "7b7ebc14-da9a-4813-84b7-ef283343f60e",
-        "scale": [
-          0.57,
-          1.0,
-          0.79
-        ]
+        "uuid": "94adca74-5943-40a8-8dcb-fa8c23342626"
       },
       {
         "desc": "A rectangular wall-mounted bathroom mirror with minimalist frame",
@@ -96,19 +91,14 @@
           0.0,
           0.0
         ],
-        "sampled_asset_jid": "d689b740-4e99-4d78-9435-1f16388964a8-(0.78)-(0.78)-(0.78)",
-        "sampled_asset_desc": "A visually striking modern abstract painting with geometric patterns in black, white, and gray, framed in wood.",
+        "sampled_asset_jid": "fbc3b33f-87d1-44e0-b15d-d3e63d5193e5",
+        "sampled_asset_desc": "A contemporary artistic wall art piece featuring a detailed pomegranate grenade fusion on a dark background with a navy blue frame.",
         "sampled_asset_size": [
-          0.61,
-          0.8,
-          0.02
+          0.597760021686554,
+          0.8248800053900226,
+          0.03869999945163727
         ],
-        "uuid": "f13ef6b1-46e5-45f8-bb38-cdbed8de7c82",
-        "scale": [
-          0.78,
-          0.78,
-          0.78
-        ]
+        "uuid": "621f4d8a-2f5f-4de5-a2fa-6e40ecd0b3bd"
       },
       {
         "size": [
@@ -128,18 +118,18 @@
           0.70711
         ],
         "desc": "A modern white ceramic toilet",
-        "sampled_asset_jid": "2f75dae4-23a3-4d8b-9c09-60755a2d098d-(0.62)-(1.0)-(0.89)",
-        "sampled_asset_desc": "Modern minimalist gray and white striped fabric footstool with padded seat and exposed wooden frame.",
+        "sampled_asset_jid": "2046ba7f-06bc-4183-88ed-e0b1b35fd1fb-(0.84)-(0.84)-(0.84)",
+        "sampled_asset_desc": "A whimsical pink leather kids bed with wooden legs and playful horned animal shape, combining fun design with functionality.",
         "sampled_asset_size": [
-          0.43,
-          0.46,
-          0.61
+          0.42,
+          0.45,
+          0.69
         ],
-        "uuid": "74f2493b-a1fa-43f9-9d71-6c955b7cda31",
+        "uuid": "39a864b3-4090-4992-b750-016169d8c7d8",
         "scale": [
-          0.62,
-          1.0,
-          0.89
+          0.84,
+          0.84,
+          0.84
         ]
       },
       {
@@ -167,7 +157,7 @@
           0.5967840193033673,
           0.7151520550251007
         ],
-        "uuid": "06b03ac9-38de-42fa-90dd-507c6a6dc82d"
+        "uuid": "b77ef925-bdce-496a-adff-4cbcc18357fb"
       },
       {
         "desc": "A soft rectangular bathroom rug mat",
@@ -187,14 +177,14 @@
           0.0,
           0.70711
         ],
-        "sampled_asset_jid": "749e447b-24fa-43a3-8a9d-c6b808c98b2d",
-        "sampled_asset_desc": "A modern gray high-pile synthetic fiber rectangular rug with a fluffy, soft texture.",
+        "sampled_asset_jid": "f9b9fd34-31ca-49d1-85ac-6a0aa1f5c986",
+        "sampled_asset_desc": "Modern and contemporary ceiling lamp with organic shapes, smooth light wood and white finish, and integrated LED lighting.",
         "sampled_asset_size": [
-          0.7711399793624878,
-          0.04448002070835422,
-          0.5567600131034851
+          0.7857800126075745,
+          0.0815900309980524,
+          0.5220400094985962
         ],
-        "uuid": "0c1720c6-4356-4fbe-874b-36d8b8a07cbb"
+        "uuid": "9682d240-7004-4e62-ab45-a92928db82f9"
       }
     ],
     "openings": [
@@ -219,8 +209,8 @@
     "user_prompt": "modern scandinavian",
     "room_order": 1,
     "is_anchor": false,
-    "n_prior_style_embeds": 6,
+    "n_prior_style_embeds": 8,
     "n_new_style_embeds": 5,
-    "n_total_unit_style_embeds": 11
+    "n_total_unit_style_embeds": 13
   }
 }
