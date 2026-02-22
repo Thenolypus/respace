@@ -15,7 +15,7 @@ def get_batch_embeds(texts, batch_size=32, device='cuda'):
 	
 	for i in tqdm(range(0, len(texts), batch_size)):
 		batch_texts = texts[i:i + batch_size]
-		inputs = siglip_tokenizer(batch_texts, padding="max_length", max_length=64, return_tensors="pt", truncation=True)
+		inputs = siglip_tokenizer(batch_texts, padding="max_length", max_length=64, return_tensors="pt", truncation=True, return_attention_mask=True)
 
 		inputs = {k: v.to(device) for k, v in inputs.items()}
 
