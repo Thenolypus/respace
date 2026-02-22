@@ -483,8 +483,8 @@ class AssetRetrievalModule(nn.Module):
 		Sample assets with autoregressive style coherence.
 
 		Object [0] (no user prompt): full description + size, no style bias.
-		Object [0] (with user prompt) and Object [1]+: category-only description
-		+ size + style similarity against previously selected assets.
+		Object [1]+: full description + size + style similarity against
+		previously selected assets.
 		"""
 		sampled_scene = copy.deepcopy(scene)
 		sampled_scene["objects"] = []
@@ -504,25 +504,19 @@ class AssetRetrievalModule(nn.Module):
 			size = obj.get("size", [])
 			is_first_object = (obj_idx == 0 and user_prompt is None)
 
-			# Semantic similarity
-			if is_first_object:
-				query_desc = desc
-			else:
-				query_desc = self.strip_desc_to_category(obj)
+			# Semantic similarity: always use full description
+			query_desc = desc
 
 			# Print diagnostic header
 			if self.do_print:
 				print(f"\n{'='*90}")
 				print(f"OBJECT [{obj_idx}]")
-				print(f"  Original desc: \"{desc}\"")
+				print(f"  Semantic query: \"{query_desc}\"")
 				if not is_first_object:
-					print(f"  Category query: \"{query_desc}\"")
 					print(f"  Style bias: ACTIVE (comparing against {len(selected_style_embeds)} selected asset(s))")
 				elif user_prompt is not None:
-					print(f"  Category query: \"{query_desc}\"")
 					print(f"  Style bias: ACTIVE (user prompt anchor)")
 				else:
-					print(f"  Semantic query: FULL description (style seed)")
 					print(f"  Style bias: NONE (first object)")
 				print(f"  Size: {size}")
 				print(f"{'='*90}")
@@ -603,6 +597,7 @@ class AssetRetrievalModule(nn.Module):
 	def sample_all_assets_style_coherent_cross_scene(
 		self, scene, lambda_style=0.2, is_greedy_sampling=True,
 		user_prompt=None, initial_style_embeds=None,
+		use_category_only=False,
 	):
 		"""
 		Sample assets with style coherence, accepting cross-scene style context.
@@ -610,8 +605,6 @@ class AssetRetrievalModule(nn.Module):
 		When initial_style_embeds is provided (from a previously processed room),
 		ALL objects -- including object[0] -- use the 3-metric blend:
 		  semantic + size + style.
-		Object[0] still uses the full description for semantics but also receives
-		the style bias from the cross-scene embeddings.
 
 		Args:
 			scene: dict with "objects" list
@@ -619,6 +612,8 @@ class AssetRetrievalModule(nn.Module):
 			is_greedy_sampling: greedy vs stochastic
 			user_prompt: optional style prompt anchor
 			initial_style_embeds: list[Tensor] style embeddings from prior rooms
+			use_category_only: if True, use stripped category for semantic query
+				instead of full description (except first object without context)
 
 		Returns:
 			(sampled_scene, selected_style_embeds) -- the scene and the collected
@@ -649,17 +644,21 @@ class AssetRetrievalModule(nn.Module):
 				and (obj_idx > 0 or has_cross_scene_context or user_prompt is not None)
 			)
 
-			# Semantic query: first object uses full desc, rest use category-only
-			if obj_idx == 0 and user_prompt is None and not has_cross_scene_context:
-				query_desc = desc
-			else:
+			# Semantic query: full desc or category-only
+			if use_category_only and (obj_idx > 0 or has_cross_scene_context or user_prompt is not None):
 				query_desc = self.strip_desc_to_category(obj)
+			else:
+				query_desc = desc
 
 			# Print diagnostic header
 			if self.do_print:
 				print(f"\n{'='*90}")
 				print(f"OBJECT [{obj_idx}]")
-				print(f"  Original desc: \"{desc}\"")
+				if query_desc != desc:
+					print(f"  Original desc: \"{desc}\"")
+					print(f"  Category query: \"{query_desc}\"")
+				else:
+					print(f"  Semantic query: \"{query_desc}\"")
 				if use_style_bias:
 					src = []
 					if has_cross_scene_context:
@@ -668,10 +667,8 @@ class AssetRetrievalModule(nn.Module):
 						src.append("user prompt")
 					if obj_idx > 0:
 						src.append("in-room")
-					print(f"  Category query: \"{query_desc}\"")
 					print(f"  Style bias: ACTIVE ({', '.join(src)}) -- {len(selected_style_embeds)} embedding(s)")
 				else:
-					print(f"  Semantic query: FULL description (style seed)")
 					print(f"  Style bias: NONE (first object, no cross-scene context)")
 				print(f"  Size: {size}")
 				print(f"{'='*90}")

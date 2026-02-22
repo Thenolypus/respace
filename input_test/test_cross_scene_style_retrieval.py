@@ -127,6 +127,8 @@ def main():
 						help="Use stochastic sampling instead of greedy")
 	parser.add_argument("--user-prompt", type=str, default=None,
 						help="Optional style prompt to anchor all selections (e.g. 'modern industrial dark metal')")
+	parser.add_argument("--full-desc", action="store_true",
+						help="Use full descriptions for semantic query (default: category-only)")
 	args = parser.parse_args()
 
 	base_dir = Path("input_test")
@@ -173,10 +175,11 @@ def main():
 		room_name = scene_path.parent.name
 		is_anchor = (room_idx == 0)
 
+		sem_mode = "full-desc" if args.full_desc else "category-only"
 		print(f"\n{'#'*90}")
 		print(f"# Room [{room_idx}]: {room_name}")
 		print(f"# Source: {scene_path}")
-		print(f"# lambda_style={args.lambda_style}")
+		print(f"# lambda_style={args.lambda_style}, semantic={sem_mode}")
 		if is_anchor:
 			print(f"# Role: STYLE ANCHOR (living room)")
 		else:
@@ -203,6 +206,7 @@ def main():
 			is_greedy_sampling=not args.stochastic,
 			user_prompt=args.user_prompt,
 			initial_style_embeds=initial_embeds,
+			use_category_only=not args.full_desc,
 		)
 
 		# Collect only the NEW embeddings from this room (skip the ones we passed in)

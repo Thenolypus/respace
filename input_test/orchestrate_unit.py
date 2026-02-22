@@ -496,6 +496,7 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic):
             is_greedy_sampling=not stochastic,
             user_prompt=style_prompt,
             initial_style_embeds=initial_embeds,
+            use_category_only=True,
         )
 
         # Collect only new embeddings from this room
