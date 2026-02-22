@@ -71,7 +71,7 @@
           0.8609198881968041,
           0.4794849753379822
         ],
-        "uuid": "94adca74-5943-40a8-8dcb-fa8c23342626"
+        "uuid": "12b499fb-d8f3-49f6-8a51-6c1c5a51aa68"
       },
       {
         "desc": "A rectangular wall-mounted bathroom mirror with minimalist frame",
@@ -98,7 +98,7 @@
           0.8248800053900226,
           0.03869999945163727
         ],
-        "uuid": "621f4d8a-2f5f-4de5-a2fa-6e40ecd0b3bd"
+        "uuid": "b684ce9d-ef39-4925-95a2-61c719835ec4"
       },
       {
         "size": [
@@ -125,7 +125,7 @@
           0.45,
           0.69
         ],
-        "uuid": "39a864b3-4090-4992-b750-016169d8c7d8",
+        "uuid": "ddb9f7cc-80c3-483f-9210-9f8ba0401b20",
         "scale": [
           0.84,
           0.84,
@@ -157,7 +157,7 @@
           0.5967840193033673,
           0.7151520550251007
         ],
-        "uuid": "b77ef925-bdce-496a-adff-4cbcc18357fb"
+        "uuid": "5cea744f-cb2a-4750-9376-b960c552eafd"
       },
       {
         "desc": "A soft rectangular bathroom rug mat",
@@ -184,7 +184,7 @@
           0.0815900309980524,
           0.5220400094985962
         ],
-        "uuid": "9682d240-7004-4e62-ab45-a92928db82f9"
+        "uuid": "0e40c6cd-1f2f-4eeb-87a8-416e856283be"
       }
     ],
     "openings": [
@@ -204,13 +204,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.2,
+    "lambda_style": 0.1,
     "greedy": true,
     "user_prompt": "modern scandinavian",
     "room_order": 1,
     "is_anchor": false,
-    "n_prior_style_embeds": 8,
+    "n_prior_style_embeds": 13,
     "n_new_style_embeds": 5,
-    "n_total_unit_style_embeds": 13
+    "n_total_unit_style_embeds": 18
   }
 }

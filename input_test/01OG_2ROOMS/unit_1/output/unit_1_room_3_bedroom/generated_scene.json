@@ -46,11 +46,72 @@
   ],
   "objects": [
     {
-      "desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
+      "desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
       "pos": [
-        1.9,
+        0.95,
         0.0,
-        0.56
+        -1.16
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.55,
+        0.47,
+        0.44
+      ],
+      "prompt": "dark gray minimalist nightstand",
+      "sampled_asset_jid": "cede2c1a-8176-438d-84e8-7952434327b7",
+      "sampled_asset_desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
+      "sampled_asset_size": [
+        0.5532119870185852,
+        0.4728720318976469,
+        0.4425700157880783
+      ],
+      "uuid": "5a59c63b-d367-467c-bc7e-cf04877c7d0b"
+    },
+    {
+      "desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
+      "pos": [
+        -1.52,
+        0.0,
+        -1.16
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.55,
+        0.47,
+        0.44
+      ],
+      "prompt": "light wood minimalist nightstand",
+      "sampled_asset_jid": "afcf6dfd-730f-4ba1-b8c2-158804fb6886-(1.1)-(1.0)-(1.03)",
+      "sampled_asset_desc": "Modern minimalist light gray nightstand with rounded edges, two handle-less drawers, and a wood grain finish.",
+      "sampled_asset_size": [
+        0.55,
+        0.46,
+        0.45
+      ],
+      "uuid": "24cdb326-25b6-4790-958c-f5372fcccf5a",
+      "scale": [
+        1.1,
+        1.0,
+        1.03
+      ]
+    },
+    {
+      "desc": "A traditional dark brown wooden wardrobe with rectangular shape, two doors, clean lines, and small round handles.",
+      "pos": [
+        1.89,
+        0.0,
+        -0.49
       ],
       "rot": [
         0.0,
@@ -59,26 +120,26 @@
         -0.70711
       ],
       "size": [
-        0.31,
-        0.74,
-        0.32
-      ],
-      "prompt": "scandinavian wardrobe",
-      "sampled_asset_jid": "be16ce5b-3558-49aa-9e10-ffd10cb2666d",
-      "sampled_asset_desc": "A contemporary light blue wooden wardrobe with sliding doors featuring a colorful playful print of clouds and airplanes, ideal for adding a whimsical touch to any room.",
-      "sampled_asset_size": [
-        0.31156599521636963,
-        0.739967000809373,
-        0.32440201938152313
-      ],
-      "uuid": "40a6610d-e585-466f-8c65-893a6a97ac4a"
-    },
-    {
-      "desc": "Modern industrial pendant lamp with a linear metal structure, bronze cylindrical lights, and adjustable suspension for distinctive geometric lighting.",
-      "pos": [
-        0.18,
         1.2,
-        0.04
+        1.97,
+        0.59
+      ],
+      "prompt": "small white wardrobe",
+      "sampled_asset_jid": "69e41e39-4b12-4ac1-a5d2-40c7e633aa9a",
+      "sampled_asset_desc": "A traditional dark brown wooden wardrobe with rectangular shape, two doors, clean lines, and small round handles.",
+      "sampled_asset_size": [
+        1.2000340223312378,
+        1.9700000534481976,
+        0.5899789929389954
+      ],
+      "uuid": "db52f924-f937-441b-ba6c-eb9aad06367f"
+    },
+    {
+      "desc": "Contemporary white pendant lamp with cylindrical fabric panels and a minimalistic, soft-textured design.",
+      "pos": [
+        0.31,
+        1.34,
+        -0.05
       ],
       "rot": [
         0.0,
@@ -87,31 +148,26 @@
         1.0
       ],
       "size": [
-        1.66,
-        0.94,
-        0.2
+        0.5,
+        1.26,
+        0.5
       ],
-      "prompt": "simple pendant light",
-      "sampled_asset_jid": "352eb2b1-5fb9-4b3c-8253-ddd5462f7747-(0.6)-(1.0)-(5.27)",
-      "sampled_asset_desc": "Modern industrial pendant lamp with a linear metal structure, bronze cylindrical lights, and adjustable suspension for distinctive geometric lighting.",
+      "prompt": "white pendant lamp",
+      "sampled_asset_jid": "edf114fc-9811-45ff-acd1-8a7fa7b6b9cb",
+      "sampled_asset_desc": "Modern Scandinavian pendant lamp with a geometric layered wooden and metal structure, featuring a brown to white gradient and decorative slats for ambient lighting.",
       "sampled_asset_size": [
-        1.0,
-        0.94,
-        1.05
+        0.5226539969444275,
+        1.2599778559815604,
+        0.5226539969444275
       ],
-      "uuid": "8cbad07e-1700-4da3-8b92-b01817073a6c",
-      "scale": [
-        0.6,
-        1.0,
-        5.27
-      ]
+      "uuid": "bdbc8020-a01d-4951-92bf-f491e22a659b"
     },
     {
-      "desc": "This corner/side table features a minimalist modern design with a natural wood tone, glass top, and a slatted lower shelf for added functionality.",
+      "desc": "Modern king-size bed with a tufted headboard, tapered legs, and a brown and grey color scheme.",
       "pos": [
-        -1.55,
+        -0.21,
         0.0,
-        1.2
+        -0.27
       ],
       "rot": [
         0.0,
@@ -120,80 +176,24 @@
         1.0
       ],
       "size": [
-        0.35,
-        0.45,
-        0.35
+        1.57,
+        0.87,
+        2.01
       ],
-      "prompt": "small scandinavian side table",
-      "sampled_asset_jid": "90daab82-8a2e-4d46-8fff-1bf44f6723bf",
-      "sampled_asset_desc": "Sleek modern side table featuring a brushed metallic finish with an hourglass shape and minimalist design, perfect for contemporary spaces.",
+      "prompt": "white wooden bed",
+      "sampled_asset_jid": "3db8d396-f996-45ef-b4e0-95dd9ffdde2c-(0.73)-(1.0)-(0.93)",
+      "sampled_asset_desc": "Minimalist king-size bed with white wood frame and light gray fabric headboard for a clean, contemporary look.",
       "sampled_asset_size": [
-        0.33943799138069153,
-        0.4463970190345252,
-        0.3397800326347351
+        1.59,
+        0.91,
+        2.06
       ],
-      "uuid": "ef9f4027-5a57-4de5-8ffc-11397b954a5c"
-    },
-    {
-      "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
-      "pos": [
-        0.11,
-        0.0,
-        0.31
-      ],
-      "rot": [
-        0.0,
-        1.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        2.02,
-        0.79,
-        2.17
-      ],
-      "prompt": "white modern bed",
-      "sampled_asset_jid": "71c4791c-25f1-4fa7-ba4c-0287c9dd81ad-(0.99)-(1.0)-(0.98)",
-      "sampled_asset_desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
-      "sampled_asset_size": [
-        2.0,
-        0.79,
-        2.12
-      ],
-      "uuid": "46c9576e-3824-4620-a900-9e54ba33cb26",
+      "uuid": "7d23cc8c-3c65-4329-9d1c-2258d8a9a6f5",
       "scale": [
-        0.99,
+        0.73,
         1.0,
-        0.98
+        0.93
       ]
-    },
-    {
-      "desc": "Vintage-style wooden nightstand in rosewood with natural wood top, featuring a single paneled cabinet door, open shelf, round knob handle, and metal hinges.",
-      "pos": [
-        1.51,
-        0.0,
-        1.28
-      ],
-      "rot": [
-        0.0,
-        1.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        0.58,
-        0.66,
-        0.44
-      ],
-      "prompt": "wooden nightstand",
-      "sampled_asset_jid": "ee70905c-37a8-4661-93cc-92f23e9453a5",
-      "sampled_asset_desc": "Vintage-style wooden nightstand in rosewood with natural wood top, featuring a single paneled cabinet door, open shelf, round knob handle, and metal hinges.",
-      "sampled_asset_size": [
-        0.5799999833106995,
-        0.6602560913587254,
-        0.4422299861907959
-      ],
-      "uuid": "44e7be87-0131-4c2d-b93b-faeeca422647"
     }
   ],
   "openings": [

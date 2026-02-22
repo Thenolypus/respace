@@ -46,39 +46,11 @@
   ],
   "objects": [
     {
-      "desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
+      "desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
       "pos": [
-        1.4,
+        0.55,
         0.0,
-        0.59
-      ],
-      "rot": [
-        0.0,
-        0.70711,
-        0.0,
-        -0.70711
-      ],
-      "size": [
-        1.26,
-        0.5,
-        0.26
-      ],
-      "prompt": "light wood wardrobe",
-      "sampled_asset_jid": "02a64bc1-70d6-4da7-98c8-19038cfe95ec",
-      "sampled_asset_desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
-      "sampled_asset_size": [
-        1.2616759538650513,
-        0.49560599982298115,
-        0.2578040212392807
-      ],
-      "uuid": "c99fcb85-e541-432d-b0da-60121010d20b"
-    },
-    {
-      "desc": "A modern rectangular nightstand with a black and white checkered fabric panel, two drawers, and sleek tapered legs.",
-      "pos": [
-        0.68,
-        0.0,
-        1.24
+        1.19
       ],
       "rot": [
         0.0,
@@ -87,31 +59,26 @@
         0.0
       ],
       "size": [
-        0.53,
         0.55,
-        0.45
-      ],
-      "prompt": "small dark wood nightstand",
-      "sampled_asset_jid": "53eaf7fe-a4f0-47b8-8e8d-8892794398bf-(0.85)-(1.0)-(0.83)",
-      "sampled_asset_desc": "A classic white wooden nightstand with ornate black metal handles, two drawers, and curved legs.",
-      "sampled_asset_size": [
-        0.55,
-        0.53,
+        0.47,
         0.44
       ],
-      "uuid": "97b13b50-4d53-4ad3-b4a4-eb0162ec49b7",
-      "scale": [
-        0.85,
-        1.0,
-        0.83
-      ]
+      "prompt": "low-profile dark wood nightstand",
+      "sampled_asset_jid": "75aca66b-7852-4d21-938b-d6cb9ea77002",
+      "sampled_asset_desc": "Modern minimalist dark brown wooden nightstand with two drawers and metal knobs.",
+      "sampled_asset_size": [
+        0.5710359811782837,
+        0.47005099731526867,
+        0.44704802334308624
+      ],
+      "uuid": "a146d7dc-e6a8-4874-8e9d-7c9e6b3f5f11"
     },
     {
-      "desc": "Modern minimalist king-size bed with a white slatted wooden headboard, striped and floral cushions, and neutral bedding for a sleek and comfortable look.",
+      "desc": "Modern minimalist single bed with a rectangular headboard, clean lines, and neutral grey and white palette.",
       "pos": [
-        -0.51,
+        -0.55,
         0.0,
-        0.21
+        0.34
       ],
       "rot": [
         0.0,
@@ -120,19 +87,19 @@
         0.0
       ],
       "size": [
-        2.02,
+        1.48,
         0.98,
-        2.36
+        2.05
       ],
-      "prompt": "white minimalist bed",
-      "sampled_asset_jid": "92ce4988-7ee2-43ae-bbf0-14ca93b8aceb",
-      "sampled_asset_desc": "Modern mid-century double bed with slatted headboard, tapered legs, and minimalist design in dark brown wood and gray fabric.",
+      "prompt": "modern scandinavian minimalist bed",
+      "sampled_asset_jid": "67da2b33-aa93-4df6-921a-d26e42feb1d7",
+      "sampled_asset_desc": "A modern minimalist single bed featuring a white wooden frame with blue and red panel accents and a curved headboard and footboard.",
       "sampled_asset_size": [
-        2.050920009613037,
-        0.9658900199522904,
-        2.3636999130249023
+        1.5525429844856262,
+        1.0106181924384146,
+        1.9938940405845642
       ],
-      "uuid": "098f715e-e6a1-4f6c-aea5-45970195e3d0"
+      "uuid": "9bb3480f-7895-453d-8cfb-b451c0bf9252"
     }
   ],
   "openings": [

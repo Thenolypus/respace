@@ -47,72 +47,11 @@
     ],
     "objects": [
       {
-        "desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
+        "desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
         "pos": [
-          1.4,
-          0.0,
-          0.59
-        ],
-        "rot": [
-          0.0,
-          0.70711,
-          0.0,
-          -0.70711
-        ],
-        "size": [
-          1.26,
-          0.5,
-          0.26
-        ],
-        "prompt": "light wood wardrobe",
-        "sampled_asset_jid": "02a64bc1-70d6-4da7-98c8-19038cfe95ec",
-        "sampled_asset_desc": "A minimalist classic wardrobe with a light wood frame, white ornate panel doors, and decorative metal handles.",
-        "sampled_asset_size": [
-          1.2616759538650513,
-          0.49560599982298115,
-          0.2578040212392807
-        ],
-        "uuid": "2e716d88-5615-436b-b3b5-35e14b8f811d"
-      },
-      {
-        "desc": "A modern rectangular nightstand with a black and white checkered fabric panel, two drawers, and sleek tapered legs.",
-        "pos": [
-          0.68,
-          0.0,
-          1.24
-        ],
-        "rot": [
-          0.0,
-          1.0,
-          0.0,
-          0.0
-        ],
-        "size": [
-          0.53,
           0.55,
-          0.45
-        ],
-        "prompt": "small dark wood nightstand",
-        "sampled_asset_jid": "d78e2754-80aa-458d-95db-e7ef03b34984",
-        "sampled_asset_desc": "Contemporary minimalist square side table with a geometric pattern, smooth lacquer surface, and a blend of gray and beige tones.",
-        "sampled_asset_size": [
-          0.5330420136451721,
-          0.5580050003419004,
-          0.44621598720550537
-        ],
-        "uuid": "41d4a195-9e43-44a0-8c3b-b0f966f2b008",
-        "scale": [
-          0.85,
-          1.0,
-          0.83
-        ]
-      },
-      {
-        "desc": "Modern minimalist king-size bed with a white slatted wooden headboard, striped and floral cushions, and neutral bedding for a sleek and comfortable look.",
-        "pos": [
-          -0.51,
           0.0,
-          0.21
+          1.19
         ],
         "rot": [
           0.0,
@@ -121,19 +60,47 @@
           0.0
         ],
         "size": [
-          2.02,
-          0.98,
-          2.36
+          0.55,
+          0.47,
+          0.44
         ],
-        "prompt": "white minimalist bed",
-        "sampled_asset_jid": "4efa29ba-9633-4dfa-bae3-76dde466850c",
-        "sampled_asset_desc": "Modern minimalist king-size bed with a white slatted wooden headboard, striped and floral cushions, and neutral bedding for a sleek and comfortable look.",
+        "prompt": "low-profile dark wood nightstand",
+        "sampled_asset_jid": "cede2c1a-8176-438d-84e8-7952434327b7",
+        "sampled_asset_desc": "Modern minimalist nightstand with dark brown wood frame, charcoal gray drawers, and metal legs.",
         "sampled_asset_size": [
-          2.0221800804138184,
-          0.9797620471018149,
-          2.3578901290893555
+          0.5532119870185852,
+          0.4728720318976469,
+          0.4425700157880783
         ],
-        "uuid": "11af652d-fed6-4a33-abd8-38b54117ff6f"
+        "uuid": "7df5ae51-5319-41ba-8e29-42f4e3e6000a"
+      },
+      {
+        "desc": "Modern minimalist single bed with a rectangular headboard, clean lines, and neutral grey and white palette.",
+        "pos": [
+          -0.55,
+          0.0,
+          0.34
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.48,
+          0.98,
+          2.05
+        ],
+        "prompt": "modern scandinavian minimalist bed",
+        "sampled_asset_jid": "6748f033-7e07-4ea8-8daf-ffb155b65067",
+        "sampled_asset_desc": "Modern minimalist single bed with a rectangular headboard, clean lines, and neutral grey and white palette.",
+        "sampled_asset_size": [
+          1.4768739938735962,
+          0.9804956057923846,
+          2.0535601377487183
+        ],
+        "uuid": "c1e89a87-147c-4e2e-aba3-5f9ee7e4246d"
       }
     ],
     "openings": [
@@ -166,13 +133,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.2,
+    "lambda_style": 0.1,
     "greedy": true,
     "user_prompt": "modern scandinavian",
     "room_order": 2,
     "is_anchor": false,
-    "n_prior_style_embeds": 13,
-    "n_new_style_embeds": 3,
-    "n_total_unit_style_embeds": 16
+    "n_prior_style_embeds": 18,
+    "n_new_style_embeds": 2,
+    "n_total_unit_style_embeds": 20
   }
 }
