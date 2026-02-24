@@ -1,0 +1,255 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      1.27,
+      2.6,
+      2.87
+    ],
+    [
+      -1.27,
+      2.6,
+      2.87
+    ],
+    [
+      -1.27,
+      2.6,
+      -2.87
+    ],
+    [
+      1.27,
+      2.6,
+      -2.87
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      1.27,
+      0.0,
+      2.87
+    ],
+    [
+      -1.27,
+      0.0,
+      2.87
+    ],
+    [
+      -1.27,
+      0.0,
+      -2.87
+    ],
+    [
+      1.27,
+      0.0,
+      -2.87
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern Scandinavian dressing table with dark brown wood, round mirror, gold accents, and two drawers.",
+      "pos": [
+        0.94,
+        0.0,
+        2.13
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.15,
+        1.59,
+        0.48
+      ],
+      "prompt": "gray scandinavian dresser",
+      "sampled_asset_jid": "733121d8-f413-3a27-8b33-6b2732527389-(1.24)-(1.08)-(1.06)",
+      "sampled_asset_desc": "A modern rectangular wall-mounted sideboard with asymmetric geometric shelves finished in white-gray laminate, featuring nine compartments.",
+      "sampled_asset_size": [
+        1.2,
+        1.59,
+        0.45
+      ],
+      "uuid": "2b9db83b-3dc7-44a9-bcd2-100538bb7f82",
+      "scale": [
+        1.24,
+        1.08,
+        1.06
+      ]
+    },
+    {
+      "desc": "Modern minimalist nightstand with light gray and pastel blue two-tone drawers, leather pull handles, and natural wood top and base.",
+      "pos": [
+        1.0,
+        0.0,
+        0.79
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.58,
+        0.5,
+        0.45
+      ],
+      "prompt": "gray scandinavian nightstand",
+      "sampled_asset_jid": "8bcfbbc3-fb54-46d6-b9f6-8029c2fbb3b1",
+      "sampled_asset_desc": "Modern minimalist nightstand with light grey and pastel blue two-tone drawers, leather pull handles, and natural wood top and base.",
+      "sampled_asset_size": [
+        0.582065999507904,
+        0.5029889797928808,
+        0.448778972029686
+      ],
+      "uuid": "25c34708-2ed4-4c9b-b87c-1c426d765217"
+    },
+    {
+      "desc": "A modern, minimalist black metal stool with a round top and distinctive triangular legs featuring geometric cutouts and a matte finish.",
+      "pos": [
+        0.48,
+        0.0,
+        1.81
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.63,
+        0.57,
+        0.58
+      ],
+      "prompt": "gray scandinavian stool",
+      "sampled_asset_jid": "20256e43-e58d-42d6-8f21-0810936def36-(1.35)-(1.0)-(1.25)",
+      "sampled_asset_desc": "Elegant modern Art Deco pendant lamp featuring a circular layered design with gold and gray vertical metal and glass rods.",
+      "sampled_asset_size": [
+        0.62,
+        0.58,
+        0.57
+      ],
+      "uuid": "60b66ea7-814a-465f-9167-56ecf419a333",
+      "scale": [
+        1.35,
+        1.0,
+        1.25
+      ]
+    },
+    {
+      "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+      "pos": [
+        0.09,
+        0.0,
+        -0.45
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.02,
+        0.79,
+        2.17
+      ],
+      "prompt": "white modern bed",
+      "sampled_asset_jid": "71c4791c-25f1-4fa7-ba4c-0287c9dd81ad",
+      "sampled_asset_desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+      "sampled_asset_size": [
+        2.0176661014556885,
+        0.7892649888417083,
+        2.1671810150146484
+      ],
+      "uuid": "401ece1c-d1c2-472f-8fc4-3e5bcc5f4a88"
+    },
+    {
+      "desc": "Minimalist Scandinavian pendant lamp with a wooden shade, glass diffuser, and fabric cord, perfect for soft ambient lighting.",
+      "pos": [
+        0.02,
+        1.8,
+        -0.11
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.09,
+        0.79,
+        0.09
+      ],
+      "prompt": "white scandinavian lamp",
+      "sampled_asset_jid": "173eb984-a4e8-4907-9353-4ecc1977237f",
+      "sampled_asset_desc": "A modern cylindrical pendant lamp in gray metal with a unique cut-out design revealing a white glass interior for a contemporary look.",
+      "sampled_asset_size": [
+        0.07998000085353851,
+        0.7779570252092551,
+        0.07997999712824821
+      ],
+      "uuid": "ba61fc93-bd89-476d-a539-f29936e99237"
+    },
+    {
+      "desc": "A contemporary wardrobe with clean lines, a white and dark wood color scheme, featuring multiple compartments, open shelves, and an integrated wine rack.",
+      "pos": [
+        0.11,
+        0.0,
+        2.51
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.18,
+        2.4,
+        0.35
+      ],
+      "prompt": "white scandinavian wardrobe",
+      "sampled_asset_jid": "9f60056d-5e15-454d-8668-a5d670a16bde",
+      "sampled_asset_desc": "A contemporary wardrobe with clean lines, a white and dark wood color scheme, featuring multiple compartments, open shelves, and an integrated wine rack.",
+      "sampled_asset_size": [
+        3.180000066757202,
+        2.4040000570811513,
+        0.35000017285346985
+      ],
+      "uuid": "57e60991-3854-40bd-9f42-296336a3c357"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        0.71,
+        1.05,
+        -3.06
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -1.42,
+        1.6,
+        1.61
+      ],
+      "size": [
+        0.1,
+        1.4,
+        1.66
+      ]
+    }
+  ]
+}

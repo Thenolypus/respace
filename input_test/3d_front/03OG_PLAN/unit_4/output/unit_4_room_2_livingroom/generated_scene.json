@@ -1,0 +1,459 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -0.57,
+      2.6,
+      -6.47
+    ],
+    [
+      0.7,
+      2.6,
+      -6.47
+    ],
+    [
+      0.7,
+      2.6,
+      1.84
+    ],
+    [
+      3.89,
+      2.6,
+      1.94
+    ],
+    [
+      3.89,
+      2.6,
+      6.47
+    ],
+    [
+      -0.97,
+      2.6,
+      6.47
+    ],
+    [
+      -1.07,
+      2.6,
+      3.99
+    ],
+    [
+      -3.89,
+      2.6,
+      3.99
+    ],
+    [
+      -3.89,
+      2.6,
+      -0.37
+    ],
+    [
+      -0.57,
+      2.6,
+      -0.47
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -0.57,
+      0.0,
+      -6.47
+    ],
+    [
+      0.7,
+      0.0,
+      -6.47
+    ],
+    [
+      0.7,
+      0.0,
+      1.84
+    ],
+    [
+      3.89,
+      0.0,
+      1.94
+    ],
+    [
+      3.89,
+      0.0,
+      6.47
+    ],
+    [
+      -0.97,
+      0.0,
+      6.47
+    ],
+    [
+      -1.07,
+      0.0,
+      3.99
+    ],
+    [
+      -3.89,
+      0.0,
+      3.99
+    ],
+    [
+      -3.89,
+      0.0,
+      -0.37
+    ],
+    [
+      -0.57,
+      0.0,
+      -0.47
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Elegant Baroque nightstand with ornate carvings, curved legs, and a single drawer in cream ivory finish.",
+      "pos": [
+        0.45,
+        0.0,
+        5.8
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.47,
+        0.56,
+        0.47
+      ],
+      "prompt": "curved-leg nightstand",
+      "sampled_asset_jid": "5e4c8a81-79dd-43c2-a117-f3b9bda9e560",
+      "sampled_asset_desc": "Elegant Baroque nightstand with ornate carvings, curved legs, and a single drawer in cream ivory finish.",
+      "sampled_asset_size": [
+        0.47041600942611694,
+        0.5627690102707561,
+        0.47041600942611694
+      ],
+      "uuid": "53a15754-3669-447e-a5fa-e85de6dc171e"
+    },
+    {
+      "desc": "Modern minimalist gold pendant lamp with circular metal frame and crystal accents.",
+      "pos": [
+        0.81,
+        1.75,
+        4.35
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.92,
+        0.85,
+        0.92
+      ],
+      "prompt": "gold modern pendant lamp",
+      "sampled_asset_jid": "ed3f4f51-8748-4296-8f61-ef733510b31b-(1.11)-(1.0)-(5.23)",
+      "sampled_asset_desc": "Modern gold pendant lamp with integrated LED lights and a unique curved design.",
+      "sampled_asset_size": [
+        0.93,
+        0.88,
+        0.93
+      ],
+      "uuid": "3126f683-0df2-4113-ba2e-89019bbec11b",
+      "scale": [
+        1.11,
+        1.0,
+        5.23
+      ]
+    },
+    {
+      "desc": "Modern minimalist rectangular coffee table with a dual-tone sliding top, metal accents, and an elevated base.",
+      "pos": [
+        -0.04,
+        0.0,
+        -3.02
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.94,
+        0.28,
+        0.92
+      ],
+      "prompt": "low-profile modern wood coffee table",
+      "sampled_asset_jid": "24ae86f8-6a16-49a3-b0e9-f35bfe9dfb3f-(0.87)-(1.0)-(1.03)",
+      "sampled_asset_desc": "This modern minimalist coffee table features a split-level wooden top in light brown and open black metal base.",
+      "sampled_asset_size": [
+        1.23,
+        0.41,
+        0.85
+      ],
+      "uuid": "5d0f4a43-d03c-4ecd-9f92-9eccc727b1d9",
+      "scale": [
+        0.87,
+        1.0,
+        1.03
+      ]
+    },
+    {
+      "desc": "Modern Scandinavian sideboard combining natural wood and glass with multiple storage options including open shelves and closed cabinets in a two-tone design.",
+      "pos": [
+        0.56,
+        0.0,
+        4.49
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.2,
+        1.37,
+        0.42
+      ],
+      "prompt": "modern scandinavian-style sideboard",
+      "sampled_asset_jid": "5f0f922f-25a5-47e4-a205-5b77447f5413",
+      "sampled_asset_desc": "Modern sideboard blending natural wood tones with vibrant accents, featuring both open shelving and closed storage, complemented by wooden knobs and tapered legs.",
+      "sampled_asset_size": [
+        1.2000000476837158,
+        1.371680277826215,
+        0.4231330454349518
+      ],
+      "uuid": "af58d53b-2266-4a3e-a9e0-97f48ac9ae41"
+    },
+    {
+      "desc": "Modern TV stand with a light wood finish, glass side shelves, and a sliding central compartment for sleek, efficient storage.",
+      "pos": [
+        -0.31,
+        0.0,
+        -3.11
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.79,
+        0.35,
+        0.34
+      ],
+      "prompt": "modern wood tv stand",
+      "sampled_asset_jid": "c5331dd5-8bcb-41e3-8fb3-bc5b48cb5b2b",
+      "sampled_asset_desc": "A modern minimalist TV stand with natural wood finish, featuring sleek lines, open side compartments, and a rectangular shape for contemporary aesthetics.",
+      "sampled_asset_size": [
+        1.7859200239181519,
+        0.3516800212922204,
+        0.3424000144004822
+      ],
+      "uuid": "05b81adc-d691-4634-97eb-ab37d51ac616"
+    },
+    {
+      "desc": "Scandinavian-inspired modern dining chair with a natural wood frame, curved Y-shaped backrest, and handwoven black rope seat.",
+      "pos": [
+        1.1,
+        0.0,
+        4.75
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.56,
+        0.83,
+        0.6
+      ],
+      "prompt": "scandinavian-modern wood chair",
+      "sampled_asset_jid": "01fe3767-6f21-49cf-b8da-e16b53267dc8-(1.17)-(1.0)-(1.06)",
+      "sampled_asset_desc": "Minimalist modern dining chair with natural wood frame and black leather seat, featuring a straight backrest and clean lines.",
+      "sampled_asset_size": [
+        0.56,
+        0.84,
+        0.6
+      ],
+      "uuid": "3ce702f7-d805-4c6f-84cb-a40ec54a6c91",
+      "scale": [
+        1.17,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "desc": "A contemporary three-seat sofa with light grey fabric, modern clean lines, plush cushions, tapered legs, and accent pillows in dark green and charcoal.",
+      "pos": [
+        0.26,
+        0.0,
+        -3.01
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.11,
+        0.78,
+        0.77
+      ],
+      "prompt": "scandinavian-style sofa",
+      "sampled_asset_jid": "4f8af693-6ae1-4f10-974e-0a6c6494c24a",
+      "sampled_asset_desc": "A contemporary black three-seat sofa with a curved backrest, straight arms, brown and black throw pillows, and tapered legs.",
+      "sampled_asset_size": [
+        2.1022499799728394,
+        0.7490516591642518,
+        0.7168070375919342
+      ],
+      "uuid": "242c7819-c1d7-4c8e-bdfc-6e30c87806ba"
+    },
+    {
+      "desc": "A modern pendant lamp featuring a round design with delicate blue and white feather accents and a distinctive golden wavy metal frame.",
+      "pos": [
+        1.38,
+        1.61,
+        -3.5
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.83,
+        0.99,
+        0.83
+      ],
+      "prompt": "silver modern pendant lamp",
+      "sampled_asset_jid": "d6141075-cfb2-4347-9d9a-7e657ede7276-(1.25)-(1.0)-(1.09)",
+      "sampled_asset_desc": "A contemporary, copper-finished, multi-arm pendant lamp with white glass orb bulbs, blending modern and industrial aesthetics.",
+      "sampled_asset_size": [
+        0.85,
+        0.99,
+        0.82
+      ],
+      "uuid": "ced89c9c-f7fd-42e0-9dde-f728212515a5",
+      "scale": [
+        1.25,
+        1.0,
+        1.09
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        0.91,
+        1.05,
+        -5.38
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        0.18,
+        1.05,
+        -6.75
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.45
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        0.91,
+        1.05,
+        -0.8
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -0.73,
+        1.05,
+        -2.64
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -0.73,
+        1.05,
+        -3.87
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        4.21,
+        1.6,
+        3.48
+      ],
+      "size": [
+        0.46,
+        1.4,
+        1.5
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        2.26,
+        1.6,
+        6.79
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -2.72,
+        1.6,
+        4.11
+      ],
+      "size": [
+        1.66,
+        1.4,
+        0.1
+      ]
+    }
+  ]
+}

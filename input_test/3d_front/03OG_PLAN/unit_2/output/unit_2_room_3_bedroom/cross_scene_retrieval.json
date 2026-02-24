@@ -1,0 +1,183 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.6,
+        1.41
+      ],
+      [
+        -2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "pos": [
+          0.19,
+          1.51,
+          0.08
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.42,
+          1.12,
+          0.39
+        ],
+        "prompt": "pendant lamp",
+        "sampled_asset_jid": "a7621218-bd3a-48ab-9694-9f307bb4ba1e",
+        "sampled_asset_desc": "Contemporary pendant lamp featuring gold and white circular disks, blending modern and minimalist design with a floating geometric aesthetic.",
+        "sampled_asset_size": [
+          0.4232899993658066,
+          1.1197208106514154,
+          0.3929990381002426
+        ],
+        "uuid": "274e0fab-973e-4b3b-a167-01a09d47d847",
+        "scale": [
+          0.95,
+          1.0,
+          1.02
+        ]
+      },
+      {
+        "desc": "Modern black wooden nightstand with round tabletop, single drawer, and circular bottom shelf.",
+        "pos": [
+          1.5,
+          0.0,
+          -1.18
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.48,
+          0.6,
+          0.48
+        ],
+        "prompt": "small nightstand with drawer",
+        "sampled_asset_jid": "dc3da40f-423f-42b3-b6e3-adc0096feaa6",
+        "sampled_asset_desc": "A modern minimalist square side table with a gold metal open frame and gray glass top, featuring sleek geometric design.",
+        "sampled_asset_size": [
+          0.47999998927116394,
+          0.5978549900051764,
+          0.4800000339746475
+        ],
+        "uuid": "cbd4ee49-6c42-4a49-9013-a2a92fe1f222"
+      },
+      {
+        "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+        "pos": [
+          0.11,
+          0.0,
+          -0.31
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          2.02,
+          0.79,
+          2.17
+        ],
+        "prompt": "white modern bed",
+        "sampled_asset_jid": "71c4791c-25f1-4fa7-ba4c-0287c9dd81ad",
+        "sampled_asset_desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+        "sampled_asset_size": [
+          2.0176661014556885,
+          0.7892649888417083,
+          2.1671810150146484
+        ],
+        "uuid": "825df3a7-f1b7-4220-9c7c-5c81c0de7a6e",
+        "scale": [
+          0.99,
+          1.0,
+          0.99
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -1.07,
+          1.05,
+          -1.6
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.62,
+          1.6,
+          1.7
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 3,
+    "is_anchor": false,
+    "n_prior_style_embeds": 17,
+    "n_new_style_embeds": 3,
+    "n_total_unit_style_embeds": 20
+  }
+}

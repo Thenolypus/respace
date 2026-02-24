@@ -1,0 +1,267 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.27,
+        2.6,
+        -2.87
+      ],
+      [
+        1.27,
+        2.6,
+        -2.87
+      ],
+      [
+        1.27,
+        2.6,
+        2.87
+      ],
+      [
+        -1.27,
+        2.6,
+        2.87
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.27,
+        0.0,
+        -2.87
+      ],
+      [
+        1.27,
+        0.0,
+        -2.87
+      ],
+      [
+        1.27,
+        0.0,
+        2.87
+      ],
+      [
+        -1.27,
+        0.0,
+        2.87
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "pos": [
+          0.71,
+          0.0,
+          2.04
+        ],
+        "rot": [
+          0.0,
+          0.92388,
+          0.0,
+          -0.38268
+        ],
+        "size": [
+          0.91,
+          0.76,
+          0.77
+        ],
+        "prompt": "leather armchair",
+        "sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+        "sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+        "sampled_asset_size": [
+          0.9093009829521179,
+          0.7645690013525268,
+          0.7667250037193298
+        ],
+        "uuid": "1c1e714c-9e8c-4b86-87de-d0058ae08013"
+      },
+      {
+        "desc": "A modern minimalist black rectangular coffee table with gold metallic trim and a sleek, solid construction.",
+        "pos": [
+          -0.5,
+          0.0,
+          0.25
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.27,
+          0.43,
+          0.54
+        ],
+        "prompt": "low-profile coffee table",
+        "sampled_asset_jid": "3d751664-e48a-4742-9557-6c3d19cd241c",
+        "sampled_asset_desc": "A modern minimalist black rectangular coffee table with gold metallic trim and a sleek, solid construction.",
+        "sampled_asset_size": [
+          1.2666319608688354,
+          0.430161049184294,
+          0.5364300310611725
+        ],
+        "uuid": "ebf26e83-f8ec-4a6f-b4f7-25782f8092d1"
+      },
+      {
+        "desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+        "pos": [
+          -0.78,
+          0.0,
+          2.07
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.38,
+          1.67,
+          0.38
+        ],
+        "prompt": "metal floor lamp",
+        "sampled_asset_jid": "ecbea001-df66-44c1-8515-d02f253b6c8f-(1.01)-(1.0)-(1.01)",
+        "sampled_asset_desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+        "sampled_asset_size": [
+          0.38,
+          1.67,
+          0.38
+        ],
+        "uuid": "86772e6b-0573-4a92-a82e-0ca54827dfb7",
+        "scale": [
+          1.01,
+          1.0,
+          1.01
+        ]
+      },
+      {
+        "desc": "Modern minimalist nightstand with light grey and pastel blue two-tone drawers, leather pull handles, and natural wood top and base.",
+        "pos": [
+          -1.0,
+          0.0,
+          1.59
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          0.58,
+          0.5,
+          0.45
+        ],
+        "prompt": "oak wood minimalist nightstand",
+        "sampled_asset_jid": "5eea9ea7-f143-47f1-97d9-3fb4a3a98703-(1.04)-(1.0)-(0.82)",
+        "sampled_asset_desc": "A minimalist modern gray nightstand with an open shelf and movable casters.",
+        "sampled_asset_size": [
+          0.57,
+          0.5,
+          0.45
+        ],
+        "uuid": "d1eb79eb-dc5f-453b-9e74-a775433cd610",
+        "scale": [
+          1.04,
+          1.0,
+          0.82
+        ]
+      },
+      {
+        "desc": "Traditional white wardrobe with paneled doors, metal handles, multiple drawers, and a central open shelf for versatile storage.",
+        "pos": [
+          -0.31,
+          0.0,
+          -2.54
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.87,
+          2.34,
+          0.63
+        ],
+        "prompt": "small white wardrobe",
+        "sampled_asset_jid": "60c22b15-4d9b-4783-a069-1e8cab3d2bb2",
+        "sampled_asset_desc": "Traditional white wardrobe with paneled doors, metal handles, multiple drawers, and a central open shelf for versatile storage.",
+        "sampled_asset_size": [
+          1.8730920553207397,
+          2.3399999379867094,
+          0.6309421062469482
+        ],
+        "uuid": "f3bac1cc-14e6-496c-84e8-f0a8854275a0"
+      },
+      {
+        "desc": "Modern industrial single bed with a slender metal frame, navy blue and white printed bedding, and curved headboard for a sophisticated look.",
+        "pos": [
+          -0.14,
+          0.0,
+          0.48
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.39,
+          1.14,
+          2.08
+        ],
+        "prompt": "white modern single bed",
+        "sampled_asset_jid": "02dabe94-29fe-4f44-a7b0-8d12b6281806",
+        "sampled_asset_desc": "Modern minimalist king-size bed with a padded headboard, layered pastel bedding, and a skirted base.",
+        "sampled_asset_size": [
+          1.3687229752540588,
+          1.153898044408379,
+          2.1160900592803955
+        ],
+        "uuid": "b5c72906-fa7e-4705-a0c9-9f8d16398c74"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -0.71,
+          1.05,
+          -3.03
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          1.42,
+          1.6,
+          1.65
+        ],
+        "size": [
+          0.1,
+          1.4,
+          1.66
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 4,
+    "is_anchor": false,
+    "n_prior_style_embeds": 23,
+    "n_new_style_embeds": 6,
+    "n_total_unit_style_embeds": 29
+  }
+}

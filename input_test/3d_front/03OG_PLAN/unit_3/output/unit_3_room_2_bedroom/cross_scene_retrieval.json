@@ -1,0 +1,163 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.6,
+        1.41
+      ],
+      [
+        -2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern minimalist king-size wooden bed with integrated floating side tables and clean, low-profile design.",
+        "pos": [
+          -0.51,
+          0.0,
+          0.33
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.73,
+          0.94,
+          2.1
+        ],
+        "prompt": "low-profile wooden bed",
+        "sampled_asset_jid": "bcb9884d-d032-40df-b2e1-c2bb467a02e8",
+        "sampled_asset_desc": "Modern minimalist king-size wooden bed with integrated floating side tables and clean, low-profile design.",
+        "sampled_asset_size": [
+          2.7286579608917236,
+          0.9446100174299801,
+          2.09600293636322
+        ],
+        "uuid": "58390e73-cd55-44ca-a2b6-51539843130e"
+      },
+      {
+        "desc": "Mid-century modern wooden nightstand with a single drawer, open shelf, and tapered legs for a minimalist yet functional design.",
+        "pos": [
+          0.64,
+          0.0,
+          1.19
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.4,
+          0.5,
+          0.35
+        ],
+        "prompt": "white modern nightstand",
+        "sampled_asset_jid": "fa9229b4-7d48-40f2-adef-ceccab8697f5-(1.02)-(1.0)-(0.96)",
+        "sampled_asset_desc": "A modern dark grey fabric-covered nightstand with a rectangular shape, two open shelves, and tapered wooden legs, offering a minimalistic design.",
+        "sampled_asset_size": [
+          0.4,
+          0.5,
+          0.35
+        ],
+        "uuid": "d132cd68-fa34-404a-981a-1b440fd29a55",
+        "scale": [
+          1.02,
+          1.0,
+          0.96
+        ]
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -1.04,
+          1.05,
+          -1.6
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -2.42,
+          1.6,
+          0.06
+        ],
+        "size": [
+          0.46,
+          1.4,
+          1.5
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.61,
+          1.6,
+          1.7
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 1,
+    "is_anchor": false,
+    "n_prior_style_embeds": 6,
+    "n_new_style_embeds": 2,
+    "n_total_unit_style_embeds": 8
+  }
+}

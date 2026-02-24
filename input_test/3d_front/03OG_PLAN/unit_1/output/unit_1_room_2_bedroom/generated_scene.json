@@ -1,0 +1,260 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.13,
+      2.6,
+      1.41
+    ],
+    [
+      -2.13,
+      2.6,
+      -1.41
+    ],
+    [
+      2.13,
+      2.6,
+      -1.41
+    ],
+    [
+      2.13,
+      2.6,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.13,
+      0.0,
+      1.41
+    ],
+    [
+      -2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "A modern rustic armchair with openwork wooden armrests and cushioned seating in grey and beige fabrics.",
+      "pos": [
+        -1.51,
+        0.0,
+        -0.98
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.94,
+        0.77,
+        0.85
+      ],
+      "prompt": "modern, gray, wooden armchair",
+      "sampled_asset_jid": "103e839a-537c-4ea0-aebf-8c1e79fd1349-(1.14)-(1.0)-(0.93)",
+      "sampled_asset_desc": "A modern minimalist armchair with a natural wood frame and dark brown cushioned seating, emphasizing simplicity and comfort.",
+      "sampled_asset_size": [
+        0.92,
+        0.76,
+        0.85
+      ],
+      "uuid": "1eaa2ee0-7fcf-4d4f-a83a-c382ae14ec4a",
+      "scale": [
+        1.14,
+        1.0,
+        0.93
+      ]
+    },
+    {
+      "desc": "Classic white wooden wardrobe with double doors, open shelving, hanging rod, drawers, and decorative handles.",
+      "pos": [
+        1.8,
+        0.0,
+        0.45
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        -0.70711
+      ],
+      "size": [
+        2.01,
+        2.39,
+        0.65
+      ],
+      "prompt": "simple, white, wooden wardrobe",
+      "sampled_asset_jid": "f817d13d-a2ff-43b5-8ecc-9507987ce825",
+      "sampled_asset_desc": "Classic white wooden wardrobe with double doors, open shelving, hanging rod, drawers, and decorative handles.",
+      "sampled_asset_size": [
+        2.006380081176758,
+        2.3907798742206268,
+        0.6539708077907562
+      ],
+      "uuid": "711f31a5-a786-4405-b49c-a90682a308b3"
+    },
+    {
+      "desc": "A sophisticated modern-transitional nightstand in dark gray wood with silver trim, a single drawer, elegant geometry, and elevated legs.",
+      "pos": [
+        0.87,
+        0.0,
+        1.03
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.59,
+        0.59,
+        0.45
+      ],
+      "prompt": "small, gray, wooden nightstand",
+      "sampled_asset_jid": "cd813c3a-95a6-49cc-8450-c0d2e007a941",
+      "sampled_asset_desc": "Elegant baroque-style white and gold nightstand with intricate carvings, curved legs, and ornate detailing.",
+      "sampled_asset_size": [
+        0.6022999882698059,
+        0.584599974215962,
+        0.4339900016784668
+      ],
+      "uuid": "0c9d9ead-9a6b-4b89-91ca-1dfdd97cf4a3"
+    },
+    {
+      "desc": "A modern minimalist rectangular coffee table featuring a geometric design with contrasting black and white marble slabs.",
+      "pos": [
+        -0.21,
+        0.0,
+        -0.01
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.32,
+        0.27,
+        0.72
+      ],
+      "prompt": "small, white, wooden coffee table",
+      "sampled_asset_jid": "0f3ad2d0-9f46-4fa4-999b-bcdced69f8e9-(0.85)-(1.0)-(0.69)",
+      "sampled_asset_desc": "Modern minimalist black coffee table with glossy finish, rotatable top section, and dual-tier design.",
+      "sampled_asset_size": [
+        1.31,
+        0.23,
+        0.73
+      ],
+      "uuid": "dcf8c371-37ee-4c62-aa19-1d5f2f051e3e",
+      "scale": [
+        0.85,
+        1.0,
+        0.69
+      ]
+    },
+    {
+      "desc": "Modern minimalist white wood corner side table with angled legs and single drawer, featuring a clean geometric design.",
+      "pos": [
+        -1.53,
+        0.0,
+        0.71
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.47,
+        0.55,
+        0.36
+      ],
+      "prompt": "small, white, wooden side table",
+      "sampled_asset_jid": "05faf43b-c747-468c-a863-4a00b8761b9d-(0.85)-(1.0)-(0.77)",
+      "sampled_asset_desc": "Modern minimalist navy blue wooden side table with clean lines and distinctive leg cutouts.",
+      "sampled_asset_size": [
+        0.44,
+        0.54,
+        0.38
+      ],
+      "uuid": "fbc6428c-a007-495b-9327-f91f29fec228",
+      "scale": [
+        0.85,
+        1.0,
+        0.77
+      ]
+    },
+    {
+      "desc": "Modern minimalist king-size bed with light brown wooden frame, slatted headboard, and plain design.",
+      "pos": [
+        -0.25,
+        0.0,
+        0.31
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.84,
+        1.25,
+        2.2
+      ],
+      "prompt": "white, minimalist wooden bed",
+      "sampled_asset_jid": "436914ed-ce9d-48a8-8de2-89c3e4e1d83c",
+      "sampled_asset_desc": "Modern minimalist king-size bed with light brown wooden frame, slatted headboard, and plain design.",
+      "sampled_asset_size": [
+        1.8430969715118408,
+        1.2504708648702945,
+        2.2012981176376343
+      ],
+      "uuid": "35d350d6-ee0b-444e-87d8-fd238464ee2e"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        1.06,
+        1.05,
+        -1.6
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -0.51,
+        1.6,
+        1.7
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}

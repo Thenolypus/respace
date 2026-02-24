@@ -1,0 +1,462 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -2.88,
+      2.6,
+      -6.0
+    ],
+    [
+      0.34,
+      2.6,
+      -6.0
+    ],
+    [
+      0.34,
+      2.6,
+      -2.98
+    ],
+    [
+      -1.61,
+      2.6,
+      -2.88
+    ],
+    [
+      -1.51,
+      2.6,
+      0.1
+    ],
+    [
+      6.07,
+      2.6,
+      0.1
+    ],
+    [
+      6.07,
+      2.6,
+      6.0
+    ],
+    [
+      -6.07,
+      2.6,
+      6.0
+    ],
+    [
+      -6.07,
+      2.6,
+      2.41
+    ],
+    [
+      -2.88,
+      2.6,
+      2.31
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.88,
+      0.0,
+      -6.0
+    ],
+    [
+      0.34,
+      0.0,
+      -6.0
+    ],
+    [
+      0.34,
+      0.0,
+      -2.98
+    ],
+    [
+      -1.61,
+      0.0,
+      -2.88
+    ],
+    [
+      -1.51,
+      0.0,
+      0.1
+    ],
+    [
+      6.07,
+      0.0,
+      0.1
+    ],
+    [
+      6.07,
+      0.0,
+      6.0
+    ],
+    [
+      -6.07,
+      0.0,
+      6.0
+    ],
+    [
+      -6.07,
+      0.0,
+      2.41
+    ],
+    [
+      -2.88,
+      0.0,
+      2.31
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "A modern gray L-shaped sofa featuring tufted fabric upholstery, rounded edges, and sleek metal legs.",
+      "pos": [
+        3.05,
+        0.0,
+        3.3
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.01,
+        0.81,
+        1.81
+      ],
+      "prompt": "gray minimalist sofa",
+      "sampled_asset_jid": "bf9ea360-1965-4f09-a8e3-59687062fe27-(1.04)-(1.0)-(0.91)",
+      "sampled_asset_desc": "A modern gray L-shaped sofa with a minimalist metal frame and colorful accent pillows, offering a blend of contemporary aesthetics and comfort.",
+      "sampled_asset_size": [
+        3.0,
+        0.76,
+        1.73
+      ],
+      "uuid": "298a03a9-7ed3-4a74-a750-27b942653139",
+      "scale": [
+        1.04,
+        1.0,
+        0.91
+      ]
+    },
+    {
+      "desc": "Modern industrial brass pendant lamp with geometric design, featuring multiple adjustable arms and white globe glass bulbs.",
+      "pos": [
+        3.03,
+        1.59,
+        2.5
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.92,
+        0.99,
+        1.09
+      ],
+      "prompt": "industrial pendant lamp",
+      "sampled_asset_jid": "24bc76e9-7b52-48ea-92d5-e7cf72b9cf43",
+      "sampled_asset_desc": "Modern industrial brass pendant lamp with geometric design, featuring multiple adjustable arms and white globe glass bulbs.",
+      "sampled_asset_size": [
+        0.921858012676239,
+        0.9890139890485443,
+        1.0890290141105652
+      ],
+      "uuid": "56736520-837d-4137-82af-48e428e140bc"
+    },
+    {
+      "desc": "Contemporary minimalist off-white leather armchair with a high back, winged design, and beige rectangular cushion.",
+      "pos": [
+        0.89,
+        0.0,
+        0.79
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.62,
+        0.76,
+        0.67
+      ],
+      "prompt": "leather armchair",
+      "sampled_asset_jid": "644b7f76-eb3e-49c8-ad9c-810fc403ea52",
+      "sampled_asset_desc": "Contemporary minimalist off-white leather armchair with a high back, winged design, and beige rectangular cushion.",
+      "sampled_asset_size": [
+        0.6221169829368591,
+        0.7639929765797433,
+        0.6661090552806854
+      ],
+      "uuid": "6955ea84-8c4b-4610-9fce-0ccd6fc43a64"
+    },
+    {
+      "desc": "A modern black wooden side table featuring a round top, conical base, and middle support for sleek, contemporary appeal.",
+      "pos": [
+        0.81,
+        0.0,
+        5.8
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.44,
+        0.45,
+        0.44
+      ],
+      "prompt": "modern side table",
+      "sampled_asset_jid": "ea4e06f5-939f-47ff-9df2-be5fdedf5717",
+      "sampled_asset_desc": "This modern black corner/side table features a round metal top, minimalist tripod base, curved legs, and a central support element for sleek, contemporary appeal.",
+      "sampled_asset_size": [
+        0.4395560026168823,
+        0.462202054183833,
+        0.4395560026168823
+      ],
+      "uuid": "9424d69a-3b96-40f1-abc4-ccc0dfa00dcc"
+    },
+    {
+      "desc": "Rustic weathered brown wooden coffee table with two drawers and a lower shelf, featuring a traditional rectangular design and metal drawer pulls.",
+      "pos": [
+        3.59,
+        0.0,
+        3.4
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.58,
+        0.56,
+        1.3
+      ],
+      "prompt": "reclaimed wood coffee table",
+      "sampled_asset_jid": "86ac306d-f0e4-4683-99df-e75d3de32643",
+      "sampled_asset_desc": "A modern minimalist dark brown wooden coffee table with a black metal geometric base, featuring an open compartment and clean, rectangular design.",
+      "sampled_asset_size": [
+        1.2308980226516724,
+        0.41741206480670634,
+        0.5895739793777466
+      ],
+      "uuid": "9e195f42-b4d1-4071-8b33-3fd8dabbe9f9"
+    },
+    {
+      "desc": "This Neoclassical wooden corner cabinet features a blend of brown, white, and gold elements with ornate gold accents, three drawers, white decorative moldings, and turned legs.",
+      "pos": [
+        -2.09,
+        0.0,
+        5.8
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.55,
+        0.7,
+        0.39
+      ],
+      "prompt": "scandinavian wooden cabinet",
+      "sampled_asset_jid": "3f821e1d-2ee9-4d60-85ba-65b6fc77da9c",
+      "sampled_asset_desc": "Rustic grey wooden nightstand with a single drawer, cabinet door, ornate carvings, and turned legs.",
+      "sampled_asset_size": [
+        0.5401340126991272,
+        0.7250267102717771,
+        0.38628798723220825
+      ],
+      "uuid": "59f465da-5051-4eb1-b955-c60bdf34fb65"
+    },
+    {
+      "desc": "Rustic-inspired floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+      "pos": [
+        0.05,
+        0.0,
+        5.06
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.38,
+        1.67,
+        0.38
+      ],
+      "prompt": "textile floor rug",
+      "sampled_asset_jid": "ecbea001-df66-44c1-8515-d02f253b6c8f-(1.01)-(1.0)-(1.01)",
+      "sampled_asset_desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+      "sampled_asset_size": [
+        0.38,
+        1.67,
+        0.38
+      ],
+      "uuid": "3cf235d7-d911-4725-b582-18ef519b6759",
+      "scale": [
+        1.01,
+        1.0,
+        1.01
+      ]
+    },
+    {
+      "desc": "An Asian-inspired dark brown wooden end table featuring a rectangular frame with geometric cutouts and ornate detailing, complemented by curved legs.",
+      "pos": [
+        -0.66,
+        0.0,
+        1.4
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.35,
+        1.05,
+        0.39
+      ],
+      "prompt": "wooden end table",
+      "sampled_asset_jid": "47f34fa6-cd94-4fac-8a76-7ed660e7718b",
+      "sampled_asset_desc": "An Asian-inspired dark brown wooden end table featuring a rectangular frame with geometric cutouts and ornate detailing, complemented by curved legs.",
+      "sampled_asset_size": [
+        0.35152000188827515,
+        1.0482071832520887,
+        0.38518399000167847
+      ],
+      "uuid": "0256647d-9389-49af-bf61-d7c220b986d5"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -0.82,
+        1.05,
+        -2.77
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        0.56,
+        1.05,
+        -4.71
+      ],
+      "size": [
+        0.3,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -3.06,
+        1.05,
+        -0.32
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -3.06,
+        1.05,
+        -4.94
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        4.08,
+        1.05,
+        -0.07
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -4.65,
+        1.6,
+        6.13
+      ],
+      "size": [
+        1.66,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -0.46,
+        1.6,
+        6.13
+      ],
+      "size": [
+        3.16,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        4.35,
+        1.6,
+        6.13
+      ],
+      "size": [
+        3.16,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        6.21,
+        1.6,
+        2.59
+      ],
+      "size": [
+        0.1,
+        1.4,
+        3.16
+      ]
+    }
+  ]
+}

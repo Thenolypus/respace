@@ -18,27 +18,27 @@ from shapely.geometry import Polygon, Point, LineString
 
 FIXTURES = {
     "sink": {
-        "desc": "A modern bathroom vanity with integrated ceramic sink and faucet",
+        "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",
         "size": [0.8, 0.85, 0.5],
     },
     "mirror": {
-        "desc": "A rectangular wall-mounted bathroom mirror with minimalist frame",
+        "desc": "A modern minimalist wall-mounted mirror accessory",
         "size": [0.6, 0.8, 0.05],
     },
     "toilet": {
-        "desc": "A modern white ceramic toilet",
+        "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank",
         "size": [0.4, 0.45, 0.65],
     },
     "bathtub": {
-        "desc": "A modern white freestanding bathtub",
+        "desc": "A modern minimalist bathtub",
         "size": [1.7, 0.6, 0.75],
     },
     "shower": {
-        "desc": "A modern glass shower enclosure",
+        "desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels",
         "size": [0.9, 2.0, 0.9],
     },
     "rug": {
-        "desc": "A soft rectangular bathroom rug mat",
+        "desc": "A dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style",
         "size": [0.8, 0.02, 0.5],
     },
 }
@@ -111,32 +111,37 @@ def extract_walls(bounds_bottom):
     return walls
 
 
-def map_windows_to_walls(walls, openings):
+def map_openings_to_walls(walls, openings, opening_types=("window",)):
     """
-    For each wall, compute the exclusion zones caused by windows.
+    For each wall, compute the exclusion zones caused by openings.
+
+    Args:
+        walls: list of wall dicts from extract_walls
+        openings: list of opening dicts with type, pos, size
+        opening_types: tuple of opening types to map (e.g. ("window",) or ("window", "door"))
 
     Returns a dict: wall_index -> list of (frac_start, frac_end) representing
-    the fractional range along the wall that is blocked by a window.
-    Each window blocks its span + a small buffer on each side.
+    the fractional range along the wall that is blocked by an opening.
+    Each opening blocks its span + a buffer on each side.
     """
-    WINDOW_BUFFER = 0.15  # extra clearance on each side of the window (meters)
-    windows = [o for o in openings if o["type"] == "window"]
+    BUFFER = 0.15  # extra clearance on each side of the opening (meters)
+    filtered = [o for o in openings if o["type"] in opening_types]
     exclusions = {i: [] for i in range(len(walls))}
 
-    for window in windows:
-        win_pos_xz = np.array([window["pos"][0], window["pos"][2]])
-        # Determine the span of the window along its thin axis
-        win_size = window["size"]
-        # The wide dimension (not thin, not height) is the window's span along the wall
-        thin_axis = 0 if win_size[0] < win_size[2] else 2
-        win_span = win_size[2] if thin_axis == 0 else win_size[0]
+    for opening in filtered:
+        op_pos_xz = np.array([opening["pos"][0], opening["pos"][2]])
+        # Determine the span of the opening along its thin axis
+        op_size = opening["size"]
+        # The wide dimension (not thin, not height) is the opening's span along the wall
+        thin_axis = 0 if op_size[0] < op_size[2] else 2
+        op_span = op_size[2] if thin_axis == 0 else op_size[0]
 
-        # Find which wall this window is on
+        # Find which wall this opening is on
         best_wall_idx = 0
         best_dist = float("inf")
         for i, wall in enumerate(walls):
             line = LineString([wall["start_xz"], wall["end_xz"]])
-            dist = line.distance(Point(win_pos_xz))
+            dist = line.distance(Point(op_pos_xz))
             if dist < best_dist:
                 best_dist = dist
                 best_wall_idx = i
@@ -145,13 +150,13 @@ def map_windows_to_walls(walls, openings):
         wall_vec = wall["end_xz"] - wall["start_xz"]
         wall_len = wall["length"]
 
-        # Project window center onto the wall to get fractional position
-        win_to_start = win_pos_xz - wall["start_xz"]
-        frac_center = np.dot(win_to_start, wall_vec) / (wall_len * wall_len) * wall_len
+        # Project opening center onto the wall to get fractional position
+        op_to_start = op_pos_xz - wall["start_xz"]
+        frac_center = np.dot(op_to_start, wall_vec) / (wall_len * wall_len) * wall_len
         frac_center = frac_center / wall_len
 
-        # Compute blocked range (window half-span + buffer, as fraction of wall)
-        half_blocked = (win_span / 2.0 + WINDOW_BUFFER) / wall_len
+        # Compute blocked range (opening half-span + buffer, as fraction of wall)
+        half_blocked = (op_span / 2.0 + BUFFER) / wall_len
         frac_start = max(0.0, frac_center - half_blocked)
         frac_end = min(1.0, frac_center + half_blocked)
 
@@ -474,8 +479,10 @@ def generate_bathroom_layout(scene):
     door, door_wall_idx = find_door_wall(walls, openings)
     door_pos_xz = np.array([door["pos"][0], door["pos"][2]])
 
-    # Map windows to walls as exclusion zones
-    window_exclusions = map_windows_to_walls(walls, openings)
+    # Map openings to walls as exclusion zones
+    window_exclusions = map_openings_to_walls(walls, openings, opening_types=("window",))
+    # Combined exclusions (windows + doors) for placing fixtures on the door wall
+    all_exclusions = map_openings_to_walls(walls, openings, opening_types=("window", "door"))
 
     # Identify key walls
     opposite_wall_idx = get_opposite_wall(walls, door_wall_idx)
@@ -596,45 +603,62 @@ def generate_bathroom_layout(scene):
         print("WARNING: Could not place toilet on any wall")
 
     # ------------------------------------------------------------------ #
-    # 4. BATHTUB / SHOWER — on the wall with the most remaining space
-    #    Prefer walls that are NOT the door wall.
-    #    Bathtub if wall >= 1.52 m, else shower.
+    # 4. BATHTUB / SHOWER
+    #    Strategy: try shower on the door wall first (next to door, facing
+    #    into the room — visible when entering). If that fails, try
+    #    bathtub/shower on other walls ranked by available space.
     # ------------------------------------------------------------------ #
-    # Rank candidate walls: all except door wall, prefer less-used, longer walls
-    bath_candidates = [
-        i for i in range(len(walls)) if i != door_wall_idx
-    ]
-    bath_candidates.sort(key=lambda i: (
-        len(wall_assignments.get(i, [])),   # fewer fixtures first
-        -walls[i]["length"],                 # longer walls first
-    ))
-
     bath_wall_idx = None
     bath_fixture_key = None
 
-    for bi in bath_candidates:
-        bw = walls[bi]
-        # Pick bathtub or shower based on wall length
-        if bw["length"] >= MIN_WALL_FOR_BATHTUB:
-            try_key = "bathtub"
-            try_size = FIXTURES["bathtub"]["size"]
-        elif bw["length"] >= FIXTURES["shower"]["size"][0] + 0.1:
-            try_key = "shower"
-            try_size = FIXTURES["shower"]["size"]
-        else:
-            continue
-
+    # --- Phase 1: try shower on the door wall (preferred placement) ---
+    door_wall = walls[door_wall_idx]
+    shower_size = FIXTURES["shower"]["size"]
+    if door_wall["length"] >= shower_size[0] + 0.1:
         result, frac = _try_place_on_wall(
-            bw, bi, try_size, window_exclusions,
+            door_wall, door_wall_idx, shower_size, all_exclusions,
             objects, floor_polygon, preferred_frac=0.5,
         )
         if result is not None:
-            result["desc"] = FIXTURES[try_key]["desc"]
+            result["desc"] = FIXTURES["shower"]["desc"]
             objects.append(result)
-            bath_wall_idx = bi
-            bath_fixture_key = try_key
-            mark_wall(bi, try_key)
-            break
+            bath_wall_idx = door_wall_idx
+            bath_fixture_key = "shower"
+            mark_wall(door_wall_idx, "shower")
+
+    # --- Phase 2: fallback to other walls for bathtub/shower ---
+    if bath_wall_idx is None:
+        bath_candidates = [
+            i for i in range(len(walls)) if i != door_wall_idx
+        ]
+        bath_candidates.sort(key=lambda i: (
+            len(wall_assignments.get(i, [])),   # fewer fixtures first
+            -walls[i]["length"],                 # longer walls first
+        ))
+
+        for bi in bath_candidates:
+            bw = walls[bi]
+            attempts = []
+            if bw["length"] >= MIN_WALL_FOR_BATHTUB:
+                attempts.append(("bathtub", FIXTURES["bathtub"]["size"]))
+            if bw["length"] >= shower_size[0] + 0.1:
+                attempts.append(("shower", shower_size))
+
+            for try_key, try_size in attempts:
+                result, frac = _try_place_on_wall(
+                    bw, bi, try_size, window_exclusions,
+                    objects, floor_polygon, preferred_frac=0.5,
+                )
+                if result is not None:
+                    result["desc"] = FIXTURES[try_key]["desc"]
+                    objects.append(result)
+                    bath_wall_idx = bi
+                    bath_fixture_key = try_key
+                    mark_wall(bi, try_key)
+                    break
+
+            if bath_wall_idx is not None:
+                break
 
     if bath_wall_idx is None:
         print("WARNING: Could not place bathtub or shower on any wall")

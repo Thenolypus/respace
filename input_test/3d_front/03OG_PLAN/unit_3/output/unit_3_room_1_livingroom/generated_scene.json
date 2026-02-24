@@ -1,0 +1,372 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      -0.7,
+      2.6,
+      -6.47
+    ],
+    [
+      2.35,
+      2.6,
+      -6.47
+    ],
+    [
+      2.35,
+      2.6,
+      -0.47
+    ],
+    [
+      3.89,
+      2.6,
+      -0.37
+    ],
+    [
+      3.89,
+      2.6,
+      3.99
+    ],
+    [
+      1.07,
+      2.6,
+      3.99
+    ],
+    [
+      0.97,
+      2.6,
+      6.47
+    ],
+    [
+      -3.89,
+      2.6,
+      6.47
+    ],
+    [
+      -3.89,
+      2.6,
+      -1.84
+    ],
+    [
+      -0.7,
+      2.6,
+      -1.94
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -0.7,
+      0.0,
+      -6.47
+    ],
+    [
+      2.35,
+      0.0,
+      -6.47
+    ],
+    [
+      2.35,
+      0.0,
+      -0.47
+    ],
+    [
+      3.89,
+      0.0,
+      -0.37
+    ],
+    [
+      3.89,
+      0.0,
+      3.99
+    ],
+    [
+      1.07,
+      0.0,
+      3.99
+    ],
+    [
+      0.97,
+      0.0,
+      6.47
+    ],
+    [
+      -3.89,
+      0.0,
+      6.47
+    ],
+    [
+      -3.89,
+      0.0,
+      -1.84
+    ],
+    [
+      -0.7,
+      0.0,
+      -1.94
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist white wooden sideboard with brown trim, featuring two doors and three drawers for streamlined storage.",
+      "pos": [
+        0.75,
+        0.0,
+        0.41
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        -0.70711
+      ],
+      "size": [
+        1.57,
+        0.82,
+        0.43
+      ],
+      "prompt": " minimalist white sideboard",
+      "sampled_asset_jid": "04dbb0ae-ef47-4138-9d8d-46dc6057b289-(0.88)-(1.0)-(0.9)",
+      "sampled_asset_desc": "Modern minimalist white wooden sideboard with brown trim, featuring two doors and three drawers for streamlined storage.",
+      "sampled_asset_size": [
+        1.57,
+        0.82,
+        0.43
+      ],
+      "uuid": "ee860f07-7b75-475d-928f-6b9d7940a529",
+      "scale": [
+        0.88,
+        1.0,
+        0.9
+      ]
+    },
+    {
+      "desc": "A modern industrial floor lamp with bronze and silver metal components, featuring a tall cylindrical shape and intricate vertical slat design.",
+      "pos": [
+        -0.2,
+        0.0,
+        5.41
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.29,
+        1.63,
+        0.19
+      ],
+      "prompt": "floor lamp",
+      "sampled_asset_jid": "142fd268-77b9-4a6b-83cf-8cd1fa075118",
+      "sampled_asset_desc": "This contemporary floor lamp features a slim metallic frame with a white cylindrical fabric shade, embodying minimalist elegance and modern simplicity.",
+      "sampled_asset_size": [
+        0.21306000649929047,
+        1.6019500532809214,
+        0.21306001394987106
+      ],
+      "uuid": "1a824082-188a-4404-9ba2-571645fb296a"
+    },
+    {
+      "desc": "This modern minimalist light brown wooden coffee table features a unique hexagonal shape with tiered design and complementary heights, perfect for compact spaces.",
+      "pos": [
+        -0.41,
+        0.0,
+        4.14
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.64,
+        0.68,
+        0.72
+      ],
+      "prompt": "light wood coffee table",
+      "sampled_asset_jid": "70464ae6-cf69-4e9c-ac31-0482d2355288",
+      "sampled_asset_desc": "Modern minimalist beige leather armchair with a boxy design, clean lines, and wooden legs.",
+      "sampled_asset_size": [
+        0.6812020242214203,
+        0.6727960269902145,
+        0.6952340304851532
+      ],
+      "uuid": "7ec2c587-e4dd-421c-b54a-853de00d4616"
+    },
+    {
+      "desc": "Modern minimalist grey fabric three-seat sofa with metal frame, tufted back cushions, and colorful throw pillows.",
+      "pos": [
+        -0.44,
+        0.0,
+        5.5
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.75,
+        0.83,
+        1.04
+      ],
+      "prompt": "low-back grey sofa",
+      "sampled_asset_jid": "062d9bec-df16-4fd6-98ad-57ebc1b71753-(1.0)-(1.0)-(0.98)",
+      "sampled_asset_desc": "Modern minimalist grey fabric three-seat sofa with metal frame, tufted back cushions, and colorful throw pillows.",
+      "sampled_asset_size": [
+        2.75,
+        0.83,
+        1.07
+      ],
+      "uuid": "e2192b43-3a97-4ae8-87eb-370a260834bb",
+      "scale": [
+        1.0,
+        1.0,
+        0.98
+      ]
+    },
+    {
+      "desc": "Classic gray round end table with ornate carved details, four curved legs, and a lower circular shelf.",
+      "pos": [
+        -0.26,
+        0.0,
+        5.3
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.42,
+        0.63,
+        0.42
+      ],
+      "prompt": "small round end table",
+      "sampled_asset_jid": "a155a902-6ffc-4f61-9429-59d0717c754e-(2.01)-(1.0)-(1.88)",
+      "sampled_asset_desc": "A traditional dark brown wooden round end table featuring an ornamental middle support and a lower shelf for added functionality.",
+      "sampled_asset_size": [
+        0.42,
+        0.64,
+        0.41
+      ],
+      "uuid": "1a2f6617-b5bf-40bc-8e77-7e91187b643d",
+      "scale": [
+        2.01,
+        1.0,
+        1.88
+      ]
+    },
+    {
+      "desc": "Contemporary minimalist beige fabric three-seat sofa with black accent pillows and wooden legs.",
+      "pos": [
+        -0.35,
+        0.0,
+        4.13
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.49,
+        0.79,
+        0.87
+      ],
+      "prompt": "two-seat sofa",
+      "sampled_asset_jid": "4f8d1916-ba33-4e11-bcfa-bf21e0c22ae4",
+      "sampled_asset_desc": "A modern, brown fabric three-seat sofa with low-profile wood legs, block arms, and gray contrasting pillows features a contemporary design.",
+      "sampled_asset_size": [
+        2.480870008468628,
+        0.7592899796377708,
+        0.8616560101509094
+      ],
+      "uuid": "c31dbb50-9ca4-41d6-b4a7-195ad290a675"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -0.88,
+        1.05,
+        -5.38
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -0.15,
+        1.05,
+        -6.75
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.45
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -2.23,
+        1.6,
+        6.79
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -4.18,
+        1.6,
+        -0.3
+      ],
+      "size": [
+        0.46,
+        1.4,
+        1.5
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -4.18,
+        1.6,
+        3.48
+      ],
+      "size": [
+        0.46,
+        1.4,
+        1.5
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        2.75,
+        1.6,
+        4.11
+      ],
+      "size": [
+        1.66,
+        1.4,
+        0.1
+      ]
+    }
+  ]
+}

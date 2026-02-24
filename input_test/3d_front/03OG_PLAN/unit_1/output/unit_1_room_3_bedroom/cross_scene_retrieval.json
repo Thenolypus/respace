@@ -1,0 +1,211 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.6,
+        1.41
+      ],
+      [
+        -1.71,
+        2.6,
+        -1.41
+      ],
+      [
+        1.71,
+        2.6,
+        -1.41
+      ],
+      [
+        1.71,
+        2.6,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.41
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        -1.41
+      ],
+      [
+        1.71,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Black contemporary nightstand with a metal latticework design, single drawer, and decorative elements.",
+        "pos": [
+          -0.94,
+          0.0,
+          1.19
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.65,
+          0.56,
+          0.43
+        ],
+        "prompt": "black minimalist nightstand",
+        "sampled_asset_jid": "46b8d0ec-0fb8-419c-9cfb-5be804d483be-(1.28)-(1.0)-(0.9)",
+        "sampled_asset_desc": "Modern minimalist black metal corner side table with a sleek triangular top and slender legs.",
+        "sampled_asset_size": [
+          0.64,
+          0.55,
+          0.43
+        ],
+        "uuid": "6fc7c63f-14cf-4758-9094-d2b419005151",
+        "scale": [
+          1.28,
+          1.0,
+          0.9
+        ]
+      },
+      {
+        "desc": "A modern minimalist wardrobe featuring light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod.",
+        "pos": [
+          -1.38,
+          0.0,
+          0.05
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.54,
+          2.05,
+          0.61
+        ],
+        "prompt": "light wood wardrobe",
+        "sampled_asset_jid": "3c3d634b-c406-4b1a-aec8-00112d424d50",
+        "sampled_asset_desc": "This modern minimalist wardrobe features light wood with sliding doors, metal handles, integrated shelves, drawers, and a hanging rod.",
+        "sampled_asset_size": [
+          1.5400359630584717,
+          2.0504601231601907,
+          0.6100540459156036
+        ],
+        "uuid": "6e591e66-1ae3-4ada-85fa-bb20dc44a0f1"
+      },
+      {
+        "desc": "Modern industrial black metal floor lamp with adjustable arms and three minimalist lampshades.",
+        "pos": [
+          1.18,
+          0.0,
+          0.02
+        ],
+        "rot": [
+          0.0,
+          0.92388,
+          0.0,
+          -0.38268
+        ],
+        "size": [
+          1.11,
+          1.65,
+          0.81
+        ],
+        "prompt": "table lamp",
+        "sampled_asset_jid": "301f56f3-1f87-406f-a2df-cebd939d48fb",
+        "sampled_asset_desc": "Modern industrial black metal floor lamp with adjustable arms and three minimalist lampshades.",
+        "sampled_asset_size": [
+          1.1141400337219238,
+          1.649680048949545,
+          0.8086199760437012
+        ],
+        "uuid": "e9a59367-e602-4352-9e81-40b61e1dde0a",
+        "scale": [
+          1.05,
+          1.0,
+          1.05
+        ]
+      },
+      {
+        "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+        "pos": [
+          0.45,
+          0.0,
+          0.35
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.02,
+          0.79,
+          2.17
+        ],
+        "prompt": "white modern bed",
+        "sampled_asset_jid": "71c4791c-25f1-4fa7-ba4c-0287c9dd81ad",
+        "sampled_asset_desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
+        "sampled_asset_size": [
+          2.0176661014556885,
+          0.7892649888417083,
+          2.1671810150146484
+        ],
+        "uuid": "706ca7eb-d95c-4726-9f11-1e8f13a82582"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.69,
+          1.05,
+          -1.6
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -0.17,
+          1.6,
+          1.7
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 3,
+    "is_anchor": false,
+    "n_prior_style_embeds": 19,
+    "n_new_style_embeds": 4,
+    "n_total_unit_style_embeds": 23
+  }
+}

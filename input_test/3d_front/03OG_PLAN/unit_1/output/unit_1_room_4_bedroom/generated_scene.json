@@ -1,0 +1,245 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.27,
+      2.6,
+      -2.87
+    ],
+    [
+      1.27,
+      2.6,
+      -2.87
+    ],
+    [
+      1.27,
+      2.6,
+      2.87
+    ],
+    [
+      -1.27,
+      2.6,
+      2.87
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.27,
+      0.0,
+      -2.87
+    ],
+    [
+      1.27,
+      0.0,
+      -2.87
+    ],
+    [
+      1.27,
+      0.0,
+      2.87
+    ],
+    [
+      -1.27,
+      0.0,
+      2.87
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+      "pos": [
+        0.71,
+        0.0,
+        2.04
+      ],
+      "rot": [
+        0.0,
+        0.92388,
+        0.0,
+        -0.38268
+      ],
+      "size": [
+        0.91,
+        0.76,
+        0.77
+      ],
+      "prompt": "leather armchair",
+      "sampled_asset_jid": "06658bda-8c15-4b6e-907a-5e0d307adf88",
+      "sampled_asset_desc": "Modern minimalist black leather armchair with cushioned back and slim metal legs.",
+      "sampled_asset_size": [
+        0.9093009829521179,
+        0.7645690013525268,
+        0.7667250037193298
+      ],
+      "uuid": "532d1096-7d4f-46db-bed1-5bc5845f2313"
+    },
+    {
+      "desc": "A modern minimalist black rectangular coffee table with gold metallic trim and a sleek, solid construction.",
+      "pos": [
+        -0.5,
+        0.0,
+        0.25
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.27,
+        0.43,
+        0.54
+      ],
+      "prompt": "low-profile coffee table",
+      "sampled_asset_jid": "3d751664-e48a-4742-9557-6c3d19cd241c",
+      "sampled_asset_desc": "A modern minimalist black rectangular coffee table with gold metallic trim and a sleek, solid construction.",
+      "sampled_asset_size": [
+        1.2666319608688354,
+        0.430161049184294,
+        0.5364300310611725
+      ],
+      "uuid": "22a2ae41-0fe5-4cb7-bfd8-19e9c4a1fda8"
+    },
+    {
+      "desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+      "pos": [
+        -0.78,
+        0.0,
+        2.07
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.38,
+        1.67,
+        0.38
+      ],
+      "prompt": "metal floor lamp",
+      "sampled_asset_jid": "ecbea001-df66-44c1-8515-d02f253b6c8f",
+      "sampled_asset_desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+      "sampled_asset_size": [
+        0.3748999983072281,
+        1.6718900052655954,
+        0.3750299960374832
+      ],
+      "uuid": "77e5fe06-54bf-4c46-afa8-1ef49eb16fc4"
+    },
+    {
+      "desc": "Modern minimalist nightstand with light grey and pastel blue two-tone drawers, leather pull handles, and natural wood top and base.",
+      "pos": [
+        -1.0,
+        0.0,
+        1.59
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.58,
+        0.5,
+        0.45
+      ],
+      "prompt": "oak wood minimalist nightstand",
+      "sampled_asset_jid": "8bcfbbc3-fb54-46d6-b9f6-8029c2fbb3b1",
+      "sampled_asset_desc": "Modern minimalist nightstand with light grey and pastel blue two-tone drawers, leather pull handles, and natural wood top and base.",
+      "sampled_asset_size": [
+        0.582065999507904,
+        0.5029889797928808,
+        0.448778972029686
+      ],
+      "uuid": "556ecec0-c9e6-4f06-8152-92e007d6edec"
+    },
+    {
+      "desc": "Traditional white wardrobe with paneled doors, metal handles, multiple drawers, and a central open shelf for versatile storage.",
+      "pos": [
+        -0.31,
+        0.0,
+        -2.54
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.87,
+        2.34,
+        0.63
+      ],
+      "prompt": "small white wardrobe",
+      "sampled_asset_jid": "60c22b15-4d9b-4783-a069-1e8cab3d2bb2",
+      "sampled_asset_desc": "Traditional white wardrobe with paneled doors, metal handles, multiple drawers, and a central open shelf for versatile storage.",
+      "sampled_asset_size": [
+        1.8730920553207397,
+        2.3399999379867094,
+        0.6309421062469482
+      ],
+      "uuid": "0e4520f8-0b89-4480-9304-41e112e45087"
+    },
+    {
+      "desc": "Modern industrial single bed with a slender metal frame, navy blue and white printed bedding, and curved headboard for a sophisticated look.",
+      "pos": [
+        -0.14,
+        0.0,
+        0.48
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.39,
+        1.14,
+        2.08
+      ],
+      "prompt": "white modern single bed",
+      "sampled_asset_jid": "19d7dbf3-695c-46da-b6bf-e5b67a3e470a",
+      "sampled_asset_desc": "A contemporary single bed with a modern rectangular headboard, textured grey upholstery, beige bedding, and a patterned bed skirt.",
+      "sampled_asset_size": [
+        1.3692219853401184,
+        1.0900100291683685,
+        2.1045801639556885
+      ],
+      "uuid": "1a38b502-179a-408b-a464-e10a0c0169c9"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -0.71,
+        1.05,
+        -3.03
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        1.42,
+        1.6,
+        1.65
+      ],
+      "size": [
+        0.1,
+        1.4,
+        1.66
+      ]
+    }
+  ]
+}

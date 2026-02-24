@@ -1,0 +1,151 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.13,
+      2.6,
+      1.41
+    ],
+    [
+      -2.13,
+      2.6,
+      -1.41
+    ],
+    [
+      2.13,
+      2.6,
+      -1.41
+    ],
+    [
+      2.13,
+      2.6,
+      1.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.13,
+      0.0,
+      1.41
+    ],
+    [
+      -2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      -1.41
+    ],
+    [
+      2.13,
+      0.0,
+      1.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist king-size wooden bed with integrated floating side tables and clean, low-profile design.",
+      "pos": [
+        -0.51,
+        0.0,
+        0.33
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.73,
+        0.94,
+        2.1
+      ],
+      "prompt": "low-profile wooden bed",
+      "sampled_asset_jid": "bcb9884d-d032-40df-b2e1-c2bb467a02e8",
+      "sampled_asset_desc": "Modern minimalist king-size wooden bed with integrated floating side tables and clean, low-profile design.",
+      "sampled_asset_size": [
+        2.7286579608917236,
+        0.9446100174299801,
+        2.09600293636322
+      ],
+      "uuid": "c08c3537-d15a-4741-9da2-adfb53eec95b"
+    },
+    {
+      "desc": "Mid-century modern wooden nightstand with a single drawer, open shelf, and tapered legs for a minimalist yet functional design.",
+      "pos": [
+        0.64,
+        0.0,
+        1.19
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.4,
+        0.5,
+        0.35
+      ],
+      "prompt": "white modern nightstand",
+      "sampled_asset_jid": "056d9c19-ddb8-45d0-bc22-f9c4f0b41962-(1.0)-(1.11)-(1.0)",
+      "sampled_asset_desc": "A modern, minimalist wooden nightstand with a natural finish, featuring a single drawer, open shelf, and integrated drawer handle.",
+      "sampled_asset_size": [
+        0.4,
+        0.5,
+        0.35
+      ],
+      "uuid": "bf23d87a-b97f-4cd9-ae0b-353456b049ac",
+      "scale": [
+        1.0,
+        1.11,
+        1.0
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -1.04,
+        1.05,
+        -1.6
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -2.42,
+        1.6,
+        0.06
+      ],
+      "size": [
+        0.46,
+        1.4,
+        1.5
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        0.61,
+        1.6,
+        1.7
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}
