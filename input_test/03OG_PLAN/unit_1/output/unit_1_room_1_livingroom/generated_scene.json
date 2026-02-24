@@ -1,0 +1,368 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      6.07,
+      2.6,
+      6.0
+    ],
+    [
+      -6.07,
+      2.6,
+      6.0
+    ],
+    [
+      -6.07,
+      2.6,
+      0.1
+    ],
+    [
+      1.61,
+      2.6,
+      0.0
+    ],
+    [
+      1.61,
+      2.6,
+      -2.88
+    ],
+    [
+      -0.34,
+      2.6,
+      -2.98
+    ],
+    [
+      -0.34,
+      2.6,
+      -6.0
+    ],
+    [
+      2.88,
+      2.6,
+      -6.0
+    ],
+    [
+      2.88,
+      2.6,
+      2.31
+    ],
+    [
+      6.07,
+      2.6,
+      2.41
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      6.07,
+      0.0,
+      6.0
+    ],
+    [
+      -6.07,
+      0.0,
+      6.0
+    ],
+    [
+      -6.07,
+      0.0,
+      0.1
+    ],
+    [
+      1.61,
+      0.0,
+      0.0
+    ],
+    [
+      1.61,
+      0.0,
+      -2.88
+    ],
+    [
+      -0.34,
+      0.0,
+      -2.98
+    ],
+    [
+      -0.34,
+      0.0,
+      -6.0
+    ],
+    [
+      2.88,
+      0.0,
+      -6.0
+    ],
+    [
+      2.88,
+      0.0,
+      2.31
+    ],
+    [
+      6.07,
+      0.0,
+      2.41
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "A modern minimalist round coffee table featuring a transparent glass top and natural wood tripod legs.",
+      "pos": [
+        -3.58,
+        0.0,
+        3.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.84,
+        0.37,
+        0.84
+      ],
+      "prompt": "dark wood frame coffee table",
+      "sampled_asset_jid": "d9c65939-d82d-4002-9ae5-0b5ab58ea3cb",
+      "sampled_asset_desc": "Minimalist wooden coffee table with circular top, angular legs, dark walnut finish, and compact size, blending mid-century modern and contemporary design.",
+      "sampled_asset_size": [
+        0.8,
+        0.35,
+        0.85
+      ],
+      "uuid": "8229f09b-e248-4a19-b727-f7bef7d43757"
+    },
+    {
+      "desc": "Modern black cylindrical ceramic pot with lush green artificial plant for a sleek aesthetic.",
+      "pos": [
+        -1.6,
+        0.0,
+        5.3
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.54,
+        1.1,
+        0.58
+      ],
+      "prompt": "hanging plant pot",
+      "sampled_asset_jid": "32fab1e9-4734-49cd-b02d-d6b5423dc2ba",
+      "sampled_asset_desc": "Modern minimalist bookshelf with industrial accents, open shelving, and varied book spines for aesthetic appeal",
+      "sampled_asset_size": [
+        0.17,
+        0.29,
+        0.29
+      ],
+      "uuid": "9a23448a-61e5-40bd-aa16-a533de21f877"
+    },
+    {
+      "desc": "Modern industrial brass pendant lamp with geometric design, featuring multiple adjustable arms and white globe glass bulbs.",
+      "pos": [
+        -3.45,
+        1.59,
+        3.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.92,
+        0.99,
+        1.09
+      ],
+      "prompt": "industrial pendant lamp",
+      "sampled_asset_jid": "cc29bab4-95cf-4ce7-882d-15ded31bcef6",
+      "sampled_asset_desc": "Minimalist geometric modular furniture with triangular and square components in light gray, clean lines, industrial precision",
+      "sampled_asset_size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "uuid": "e596fc0f-4db0-4155-a193-1f7be895c0a1"
+    },
+    {
+      "desc": "Modern minimalist dark gray leather armchair with a rectangular metal frame, clean lines, flat armrests, and a contrasting light gray cushion.",
+      "pos": [
+        -0.91,
+        0.0,
+        1.63
+      ],
+      "rot": [
+        0.0,
+        0.29791,
+        0.0,
+        0.95463
+      ],
+      "size": [
+        0.69,
+        0.85,
+        0.89
+      ],
+      "prompt": "leather armchair",
+      "sampled_asset_jid": "af7211e0-b644-4acb-bbc1-2a294b52b528",
+      "sampled_asset_desc": "Deep blue upholstered mid-century modern Scandinavian-inspired living room armchair with metal frame, wooden armrests, and angled legs for contemporary comfort and aesthetic appeal",
+      "sampled_asset_size": [
+        0.64,
+        0.85,
+        0.86
+      ],
+      "uuid": "0436e320-b08a-4110-84bc-6d1dff9d8e87"
+    },
+    {
+      "desc": "Modern Scandinavian three-seat sofa with light grey fabric upholstery, natural wood accents, straight lines, curved backrest, and minimalist design.",
+      "pos": [
+        -3.57,
+        0.0,
+        5.36
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.02,
+        0.73,
+        0.85
+      ],
+      "prompt": "modern scandinavian grey sofa",
+      "sampled_asset_jid": "af7211e0-b644-4acb-bbc1-2a294b52b528",
+      "sampled_asset_desc": "Deep blue upholstered mid-century modern Scandinavian-inspired living room armchair with metal frame, wooden armrests, and angled legs for contemporary comfort and aesthetic appeal",
+      "sampled_asset_size": [
+        0.64,
+        0.85,
+        0.86
+      ],
+      "uuid": "742dcf32-b4d4-476b-97ec-bf2c527f2332"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        0.82,
+        1.05,
+        -2.8
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -0.56,
+        1.05,
+        -4.75
+      ],
+      "size": [
+        0.3,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        3.06,
+        1.05,
+        -4.94
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        3.06,
+        1.05,
+        -0.36
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        -4.08,
+        1.05,
+        -0.1
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        4.65,
+        1.6,
+        6.1
+      ],
+      "size": [
+        1.66,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -4.35,
+        1.6,
+        6.1
+      ],
+      "size": [
+        3.16,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        0.46,
+        1.6,
+        6.1
+      ],
+      "size": [
+        3.16,
+        1.4,
+        0.1
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -6.21,
+        1.6,
+        2.56
+      ],
+      "size": [
+        0.1,
+        1.4,
+        3.16
+      ]
+    }
+  ]
+}

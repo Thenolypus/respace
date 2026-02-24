@@ -1,0 +1,257 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -2.13,
+        2.6,
+        1.41
+      ],
+      [
+        -2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        -1.41
+      ],
+      [
+        2.13,
+        2.6,
+        1.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -2.13,
+        0.0,
+        1.41
+      ],
+      [
+        -2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        -1.41
+      ],
+      [
+        2.13,
+        0.0,
+        1.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern Scandinavian nightstand with light wood finish, featuring two drawers and a distinctive open shelf inside.",
+        "pos": [
+          0.75,
+          0.0,
+          1.18
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.59,
+          0.58,
+          0.46
+        ],
+        "prompt": " scandinavian style nightstand with drawers",
+        "sampled_asset_jid": "963c476b-25c7-4fbb-a8f1-6f660a302107",
+        "sampled_asset_desc": "Dark brown wood veneer nightstand with curved legs, lower shelf, and modern-traditional fusion for functional bedroom elegance",
+        "sampled_asset_size": [
+          0.6,
+          0.6,
+          0.46
+        ],
+        "uuid": "411b1a8a-13a6-4e4f-a98b-334a880e81dd"
+      },
+      {
+        "desc": "A modern minimalist floor lamp featuring a natural wood tripod base, white drum shade, and distinctive red cord, combining simplicity with geometric elegance.",
+        "pos": [
+          -1.55,
+          0.0,
+          1.09
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.91,
+          1.85,
+          0.65
+        ],
+        "prompt": " minimalist floor lamp",
+        "sampled_asset_jid": "20f16567-b08c-4b05-b2c6-703419d68722",
+        "sampled_asset_desc": "Minimalist retail display rack with grid slots for small product organization, light gray finish, functional and sleek design.",
+        "sampled_asset_size": [
+          1.9,
+          2.0,
+          0.6
+        ],
+        "uuid": "7233d812-3348-4746-928b-3fed5df772b9"
+      },
+      {
+        "desc": "A modern Scandinavian wardrobe featuring a sleek blend of white and dark grey tones, multiple sliding doors, and an integrated wine rack.",
+        "pos": [
+          1.8,
+          0.0,
+          0.46
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "size": [
+          1.8,
+          2.0,
+          0.41
+        ],
+        "prompt": "modern scandinavian wardrobe with sliding doors",
+        "sampled_asset_jid": "20f16567-b08c-4b05-b2c6-703419d68722",
+        "sampled_asset_desc": "Minimalist retail display rack with grid slots for small product organization, light gray finish, functional and sleek design.",
+        "sampled_asset_size": [
+          1.9,
+          2.0,
+          0.6
+        ],
+        "uuid": "09dfbc0f-ed6b-49f9-9c1c-2d89dd64a01c"
+      },
+      {
+        "desc": "This corner/side table features a minimalist modern design with a natural wood tone, glass top, and a slatted lower shelf for added functionality.",
+        "pos": [
+          -1.5,
+          0.0,
+          0.66
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.4,
+          0.45,
+          0.4
+        ],
+        "prompt": "small side table",
+        "sampled_asset_jid": "e52af8d6-5739-4519-845d-345310e37d1c",
+        "sampled_asset_desc": "Scandinavian-industrial minimalist cube storage unit with light wood base, white middle, black top\u2014functional, sleek, modern",
+        "sampled_asset_size": [
+          0.36,
+          0.44,
+          0.36
+        ],
+        "uuid": "3c547747-fa7e-4c54-a700-dc7b68720430"
+      },
+      {
+        "desc": "Modern Scandinavian nightstand with light wood finish, featuring two drawers and a distinctive open shelf inside.",
+        "pos": [
+          -1.8,
+          0.0,
+          1.18
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.59,
+          0.58,
+          0.46
+        ],
+        "prompt": "small white nightstand",
+        "sampled_asset_jid": "963c476b-25c7-4fbb-a8f1-6f660a302107",
+        "sampled_asset_desc": "Dark brown wood veneer nightstand with curved legs, lower shelf, and modern-traditional fusion for functional bedroom elegance",
+        "sampled_asset_size": [
+          0.6,
+          0.6,
+          0.46
+        ],
+        "uuid": "b2212ca6-1cae-4f38-bf37-5c1c1124ae89"
+      },
+      {
+        "desc": "A modern, minimalist single bed with a Scandinavian-inspired white wooden canopy frame and house-shaped design, perfect for various contemporary interiors.",
+        "pos": [
+          -0.4,
+          0.0,
+          0.35
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.54,
+          1.63,
+          1.7
+        ],
+        "prompt": "white modern single bed",
+        "sampled_asset_jid": "f25ef439-0c10-4d50-9d1f-cd9a9eedc4d9",
+        "sampled_asset_desc": "White ceramic modern minimalist planter with lush green fern foliage, distinct for clean lines and organic plant integration.",
+        "sampled_asset_size": [
+          1.39,
+          1.54,
+          1.53
+        ],
+        "uuid": "56693c6c-ef42-4bad-8c39-b8a662a40e1a"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          1.06,
+          1.05,
+          -1.6
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -0.51,
+          1.6,
+          1.7
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 2,
+    "is_anchor": false,
+    "n_prior_style_embeds": 8,
+    "n_new_style_embeds": 6,
+    "n_total_unit_style_embeds": 14
+  }
+}

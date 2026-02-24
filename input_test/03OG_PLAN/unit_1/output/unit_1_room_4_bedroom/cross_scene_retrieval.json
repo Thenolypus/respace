@@ -1,0 +1,257 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.27,
+        2.6,
+        -2.87
+      ],
+      [
+        1.27,
+        2.6,
+        -2.87
+      ],
+      [
+        1.27,
+        2.6,
+        2.87
+      ],
+      [
+        -1.27,
+        2.6,
+        2.87
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.27,
+        0.0,
+        -2.87
+      ],
+      [
+        1.27,
+        0.0,
+        -2.87
+      ],
+      [
+        1.27,
+        0.0,
+        2.87
+      ],
+      [
+        -1.27,
+        0.0,
+        2.87
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "An antique-inspired light gray wooden nightstand with two drawers, an open shelf, ornate accents, and brass knobs.",
+        "pos": [
+          0.95,
+          0.0,
+          1.52
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.3,
+          0.44,
+          0.24
+        ],
+        "prompt": "gray wooden nightstand",
+        "sampled_asset_jid": "1b5ea1d6-7aa0-4ca0-8a5a-1abc85183c65",
+        "sampled_asset_desc": "Modern minimalist teardrop paper lantern with layered construction, tripod base, and metallic accents for contemporary ambient lighting",
+        "sampled_asset_size": [
+          0.25,
+          0.43,
+          0.24
+        ],
+        "uuid": "5157abe9-9a4f-48c3-84ae-37219fb55112"
+      },
+      {
+        "desc": "Modern minimalist floor lamp with a black geometric shade and light wood tripod base featuring curved legs.",
+        "pos": [
+          -0.79,
+          0.0,
+          2.05
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.52,
+          1.55,
+          0.55
+        ],
+        "prompt": "modern black floor lamp",
+        "sampled_asset_jid": "99d616ff-d575-489f-8834-5fe774c5f12e",
+        "sampled_asset_desc": "Modern geometric pendant lights with white metal lattice spheres, varied sizes, minimalist aesthetic for contemporary interiors",
+        "sampled_asset_size": [
+          0.5,
+          1.58,
+          0.5
+        ],
+        "uuid": "47e8c9c5-9506-4294-b83e-bbd163950c47"
+      },
+      {
+        "desc": "A modern minimalist corner/side table with a light wood body and black metal legs, featuring a rectangular shape with rounded edges and slim legs.",
+        "pos": [
+          0.89,
+          0.0,
+          1.88
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.37,
+          0.46,
+          0.35
+        ],
+        "prompt": "modern gray side table",
+        "sampled_asset_jid": "e52af8d6-5739-4519-845d-345310e37d1c",
+        "sampled_asset_desc": "Scandinavian-industrial minimalist cube storage unit with light wood base, white middle, black top\u2014functional, sleek, modern",
+        "sampled_asset_size": [
+          0.36,
+          0.44,
+          0.36
+        ],
+        "uuid": "2d07f58e-b3e4-4ed0-b437-d0ca551260e4"
+      },
+      {
+        "desc": "Scandinavian minimalist lounge chair with a curved wooden backrest, dark grey cushioned seat, and slim legs.",
+        "pos": [
+          0.35,
+          0.0,
+          1.89
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.52,
+          0.68,
+          0.56
+        ],
+        "prompt": "white scandinavian-style chair",
+        "sampled_asset_jid": "5a410783-7817-4f57-8234-1700d87fe107",
+        "sampled_asset_desc": "Modern minimalist white storage cabinet with multiple drawers, circular knobs, and distinctive top cutouts for functional appeal.",
+        "sampled_asset_size": [
+          0.56,
+          0.6,
+          0.56
+        ],
+        "uuid": "f15376aa-674c-4f35-8e50-6ee53d923b61"
+      },
+      {
+        "desc": "This Scandinavian-Minimalist white dressing table features a natural wood finish, smooth rounded edges, and integrated mirror, perfect for modern home decor.",
+        "pos": [
+          0.95,
+          0.0,
+          2.1
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          1.05,
+          1.15,
+          0.46
+        ],
+        "prompt": "white scandinavian-style dresser",
+        "sampled_asset_jid": "3e96aa1f-6c3c-48cd-859d-12143b3c3793",
+        "sampled_asset_desc": "Minimalist modern pendant light with white geometric forms, hanging nylon cords, modular arrangement for contemporary interior design",
+        "sampled_asset_size": [
+          1.05,
+          1.29,
+          0.37
+        ],
+        "uuid": "d669d800-15a5-490a-9bef-de8d812e7668"
+      },
+      {
+        "desc": "Modern minimalistic bed frame with a rectangular headboard and metal legs, featuring a colorful floral bedspread.",
+        "pos": [
+          0.35,
+          0.0,
+          0.19
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          1.46,
+          0.9,
+          2.19
+        ],
+        "prompt": "white modern bed frame",
+        "sampled_asset_jid": "3a2388ce-e736-4565-b160-12f2930bc88f",
+        "sampled_asset_desc": "Modern minimalist bed with low-profile metal frame, rectangular shape, clean lines, and no decorative accents for functional simplicity.",
+        "sampled_asset_size": [
+          1.36,
+          0.74,
+          2.0
+        ],
+        "uuid": "9ff0e082-1e79-4289-9ecc-012239b255d0"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -0.71,
+          1.05,
+          -3.03
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          1.42,
+          1.6,
+          1.65
+        ],
+        "size": [
+          0.1,
+          1.4,
+          1.66
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 4,
+    "is_anchor": false,
+    "n_prior_style_embeds": 19,
+    "n_new_style_embeds": 6,
+    "n_total_unit_style_embeds": 25
+  }
+}

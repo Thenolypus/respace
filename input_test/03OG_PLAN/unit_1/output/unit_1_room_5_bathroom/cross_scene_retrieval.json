@@ -1,0 +1,157 @@
+{
+  "cross_scene_style": {
+    "room_type": "bathroom",
+    "bounds_top": [
+      [
+        0.8,
+        2.6,
+        1.17
+      ],
+      [
+        -0.8,
+        2.6,
+        1.17
+      ],
+      [
+        -0.8,
+        2.6,
+        -1.17
+      ],
+      [
+        0.8,
+        2.6,
+        -1.17
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        0.8,
+        0.0,
+        1.17
+      ],
+      [
+        -0.8,
+        0.0,
+        1.17
+      ],
+      [
+        -0.8,
+        0.0,
+        -1.17
+      ],
+      [
+        0.8,
+        0.0,
+        -1.17
+      ]
+    ],
+    "objects": [
+      {
+        "size": [
+          0.8,
+          0.85,
+          0.5
+        ],
+        "pos": [
+          0.0,
+          0.0,
+          0.92
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "desc": "A modern bathroom vanity with integrated ceramic sink and faucet",
+        "sampled_asset_jid": "a5344dc7-1295-4b60-966f-84f344f06256",
+        "sampled_asset_desc": "Modern minimalist white metal pet feeding cart with curved bowl supports, lower shelf, and caster wheels for mobility",
+        "sampled_asset_size": [
+          0.75,
+          0.86,
+          0.37
+        ],
+        "uuid": "230e53fb-4adb-4d59-add5-861f44ec4ce4"
+      },
+      {
+        "desc": "A rectangular wall-mounted bathroom mirror with minimalist frame",
+        "size": [
+          0.6,
+          0.8,
+          0.05
+        ],
+        "pos": [
+          0.0,
+          1.4,
+          1.145
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "sampled_asset_jid": "eaab98bf-b065-46e0-9ff7-8350b48cc88d",
+        "sampled_asset_desc": "Black frame, black-and-white canal photo, marble-textured wall accessory: modern minimalist with vintage narrative elements",
+        "sampled_asset_size": [
+          0.65,
+          0.89,
+          0.05
+        ],
+        "uuid": "0db8d15c-8505-4300-a9c5-479480b2a203"
+      },
+      {
+        "size": [
+          0.4,
+          0.45,
+          0.65
+        ],
+        "pos": [
+          -0.475,
+          0.0,
+          0.356
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "desc": "A modern white ceramic toilet",
+        "sampled_asset_jid": "9439a10b-59a0-4e3e-b2d2-32fadee0cbd3",
+        "sampled_asset_desc": "Children's whimsical wooden elephant-shaped storage unit with smooth curves, cut-out features, and modular design for playful organization",
+        "sampled_asset_size": [
+          0.39,
+          0.43,
+          0.77
+        ],
+        "uuid": "dae30965-b2bd-4535-bf77-3d6278809558"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.35,
+          1.05,
+          -1.36
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 1,
+    "is_anchor": false,
+    "n_prior_style_embeds": 5,
+    "n_new_style_embeds": 3,
+    "n_total_unit_style_embeds": 8
+  }
+}

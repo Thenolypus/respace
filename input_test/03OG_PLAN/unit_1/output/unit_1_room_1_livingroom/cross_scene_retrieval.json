@@ -1,0 +1,380 @@
+{
+  "cross_scene_style": {
+    "room_type": "livingroom",
+    "bounds_top": [
+      [
+        6.07,
+        2.6,
+        6.0
+      ],
+      [
+        -6.07,
+        2.6,
+        6.0
+      ],
+      [
+        -6.07,
+        2.6,
+        0.1
+      ],
+      [
+        1.61,
+        2.6,
+        0.0
+      ],
+      [
+        1.61,
+        2.6,
+        -2.88
+      ],
+      [
+        -0.34,
+        2.6,
+        -2.98
+      ],
+      [
+        -0.34,
+        2.6,
+        -6.0
+      ],
+      [
+        2.88,
+        2.6,
+        -6.0
+      ],
+      [
+        2.88,
+        2.6,
+        2.31
+      ],
+      [
+        6.07,
+        2.6,
+        2.41
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        6.07,
+        0.0,
+        6.0
+      ],
+      [
+        -6.07,
+        0.0,
+        6.0
+      ],
+      [
+        -6.07,
+        0.0,
+        0.1
+      ],
+      [
+        1.61,
+        0.0,
+        0.0
+      ],
+      [
+        1.61,
+        0.0,
+        -2.88
+      ],
+      [
+        -0.34,
+        0.0,
+        -2.98
+      ],
+      [
+        -0.34,
+        0.0,
+        -6.0
+      ],
+      [
+        2.88,
+        0.0,
+        -6.0
+      ],
+      [
+        2.88,
+        0.0,
+        2.31
+      ],
+      [
+        6.07,
+        0.0,
+        2.41
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "A modern minimalist round coffee table featuring a transparent glass top and natural wood tripod legs.",
+        "pos": [
+          -3.58,
+          0.0,
+          3.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.84,
+          0.37,
+          0.84
+        ],
+        "prompt": "dark wood frame coffee table",
+        "sampled_asset_jid": "b2b38a2e-7401-4a56-b8d8-622cc2e16ac8",
+        "sampled_asset_desc": "Sleeping pod with cylindrical shape, bold black-and-white chevron pattern, and textile surface for modern minimalist design",
+        "sampled_asset_size": [
+          0.83,
+          0.42,
+          0.83
+        ],
+        "uuid": "1a15a67f-7bea-4940-a710-55e7680d4ca5"
+      },
+      {
+        "desc": "Modern black cylindrical ceramic pot with lush green artificial plant for a sleek aesthetic.",
+        "pos": [
+          -1.6,
+          0.0,
+          5.3
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.54,
+          1.1,
+          0.58
+        ],
+        "prompt": "hanging plant pot",
+        "sampled_asset_jid": "7bf3ecd7-5e9d-49c3-943e-5df076c372d4",
+        "sampled_asset_desc": "Minimalist industrial medical service cart with detachable stainless steel tray, tubular aluminum frame, and wheeled mobility for hospital utility",
+        "sampled_asset_size": [
+          0.48,
+          1.16,
+          0.56
+        ],
+        "uuid": "60569b1d-fc3e-4a95-b326-08e73b147e33"
+      },
+      {
+        "desc": "Modern industrial brass pendant lamp with geometric design, featuring multiple adjustable arms and white globe glass bulbs.",
+        "pos": [
+          -3.45,
+          1.59,
+          3.0
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          0.92,
+          0.99,
+          1.09
+        ],
+        "prompt": "industrial pendant lamp",
+        "sampled_asset_jid": "cc29bab4-95cf-4ce7-882d-15ded31bcef6",
+        "sampled_asset_desc": "Minimalist geometric modular furniture with triangular and square components in light gray, clean lines, industrial precision",
+        "sampled_asset_size": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "uuid": "f8ab7daa-da1b-499e-ad63-32299e4539a0"
+      },
+      {
+        "desc": "Modern minimalist dark gray leather armchair with a rectangular metal frame, clean lines, flat armrests, and a contrasting light gray cushion.",
+        "pos": [
+          -0.91,
+          0.0,
+          1.63
+        ],
+        "rot": [
+          0.0,
+          0.29791,
+          0.0,
+          0.95463
+        ],
+        "size": [
+          0.69,
+          0.85,
+          0.89
+        ],
+        "prompt": "leather armchair",
+        "sampled_asset_jid": "af7211e0-b644-4acb-bbc1-2a294b52b528",
+        "sampled_asset_desc": "Deep blue upholstered mid-century modern Scandinavian-inspired living room armchair with metal frame, wooden armrests, and angled legs for contemporary comfort and aesthetic appeal",
+        "sampled_asset_size": [
+          0.64,
+          0.85,
+          0.86
+        ],
+        "uuid": "09a2ef04-00e5-4f17-86e1-574cc86943e8"
+      },
+      {
+        "desc": "Modern Scandinavian three-seat sofa with light grey fabric upholstery, natural wood accents, straight lines, curved backrest, and minimalist design.",
+        "pos": [
+          -3.57,
+          0.0,
+          5.36
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          2.02,
+          0.73,
+          0.85
+        ],
+        "prompt": "modern scandinavian grey sofa",
+        "sampled_asset_jid": "c716d3b3-7134-454c-91e7-8e776b8925fa",
+        "sampled_asset_desc": "Contemporary-mid-century coffee table with light wood top, black metal legs, and minimalist rectangular form for modern interiors.",
+        "sampled_asset_size": [
+          2.01,
+          0.72,
+          0.89
+        ],
+        "uuid": "cb072722-c4b9-453a-b226-81ee7da4be9a"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.82,
+          1.05,
+          -2.8
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          -0.56,
+          1.05,
+          -4.75
+        ],
+        "size": [
+          0.3,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          3.06,
+          1.05,
+          -4.94
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          3.06,
+          1.05,
+          -0.36
+        ],
+        "size": [
+          0.2,
+          2.1,
+          0.95
+        ]
+      },
+      {
+        "type": "door",
+        "pos": [
+          -4.08,
+          1.05,
+          -0.1
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          4.65,
+          1.6,
+          6.1
+        ],
+        "size": [
+          1.66,
+          1.4,
+          0.1
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -4.35,
+          1.6,
+          6.1
+        ],
+        "size": [
+          3.16,
+          1.4,
+          0.1
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.46,
+          1.6,
+          6.1
+        ],
+        "size": [
+          3.16,
+          1.4,
+          0.1
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -6.21,
+          1.6,
+          2.56
+        ],
+        "size": [
+          0.1,
+          1.4,
+          3.16
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 0,
+    "is_anchor": true,
+    "n_prior_style_embeds": 0,
+    "n_new_style_embeds": 5,
+    "n_total_unit_style_embeds": 5
+  }
+}
