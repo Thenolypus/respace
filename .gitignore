@@ -40,3 +40,4 @@ eval/interactive/
 
 dataset-ssr3dfront/
 data/metadata/model_info_3dfuture_assets_embeds.pickle
+data/metadata/model_info_3dfuture_assets_style_embeds.pickle
