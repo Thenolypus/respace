@@ -54,7 +54,7 @@ def get_batch_embeds(texts, batch_size=32, device='cuda'):
 
 	for i in tqdm(range(0, len(texts), batch_size)):
 		batch_texts = texts[i:i + batch_size]
-		inputs = siglip_tokenizer(batch_texts, padding="max_length", max_length=64, return_tensors="pt", truncation=True)
+		inputs = siglip_tokenizer(batch_texts, padding="max_length", max_length=64, return_tensors="pt", truncation=True, return_attention_mask=True)
 		inputs = {k: v.to(device) for k, v in inputs.items()}
 
 		with torch.no_grad():
@@ -122,7 +122,7 @@ model_info_style_embeds = {
 	"embeds": all_embeds
 }
 
-output_path = os.getenv("PTH_ASSETS_EMBED_STYLE", "./data/metadata/model_info_3dfuture_assets_style_embeds.pickle")
+output_path = os.getenv("PTH_ASSETS_EMBED_STYLE")
 with open(output_path, 'wb') as fp:
 	pickle.dump(model_info_style_embeds, fp)
 
