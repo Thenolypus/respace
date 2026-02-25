@@ -1340,6 +1340,233 @@ def create_360_video_voxelization(scene_teaser, pth_folder_fig):
 	print(f"Created voxelization demonstration video at {video_path}")
 	return video_path
 
+def _rotate_point_y(x, z, angle_rad):
+	"""Rotate a point (x, z) around the Y axis by angle_rad."""
+	cos_a = np.cos(angle_rad)
+	sin_a = np.sin(angle_rad)
+	rx = x * cos_a - z * sin_a
+	rz = x * sin_a + z * cos_a
+	return rx, rz
+
+def transform_room_to_unit_space(room_scene, center_offset_x, center_offset_z, rotation_rad):
+	"""Transform a room scene from room-local coordinates back to unit/world space.
+
+	Inverse of the export pipeline: un-rotate then un-center.
+	"""
+	scene = copy.deepcopy(room_scene)
+	neg_rot = -rotation_rad
+
+	def transform_point_3d(pt):
+		x, y, z = pt
+		rx, rz = _rotate_point_y(x, z, neg_rot)
+		return [round(rx + center_offset_x, 3), y, round(rz + center_offset_z, 3)]
+
+	def transform_quat(quat):
+		"""Compose a Y-axis rotation with an existing quaternion [x,y,z,w]."""
+		if quat is None:
+			return None
+		# Build Y-rotation quaternion [x,y,z,w]
+		half = neg_rot / 2.0
+		rot_quat = np.array([0.0, np.sin(half), 0.0, np.cos(half)])
+		# Hamilton product: rot_quat * quat
+		q1, q2 = rot_quat, np.array(quat)
+		w = q1[3]*q2[3] - q1[0]*q2[0] - q1[1]*q2[1] - q1[2]*q2[2]
+		x = q1[3]*q2[0] + q1[0]*q2[3] + q1[1]*q2[2] - q1[2]*q2[1]
+		y = q1[3]*q2[1] - q1[0]*q2[2] + q1[1]*q2[3] + q1[2]*q2[0]
+		z = q1[3]*q2[2] + q1[0]*q2[1] - q1[1]*q2[0] + q1[2]*q2[3]
+		return [round(x, 6), round(y, 6), round(z, 6), round(w, 6)]
+
+	scene["bounds_bottom"] = [transform_point_3d(pt) for pt in scene["bounds_bottom"]]
+	scene["bounds_top"] = [transform_point_3d(pt) for pt in scene["bounds_top"]]
+
+	for obj in scene.get("objects", []):
+		obj["pos"] = transform_point_3d(obj["pos"])
+		if obj.get("rot") is not None:
+			obj["rot"] = transform_quat(obj["rot"])
+
+	for opening in scene.get("openings", []):
+		opening["pos"] = transform_point_3d(opening["pos"])
+
+	return scene
+
+def create_wall_meshes(bounds_bottom, height_m, wall_thickness=0.1, color=[0.85, 0.82, 0.78, 1.0]):
+	"""Create wall meshes by extruding each edge of the room boundary polygon upward."""
+	walls = []
+	n = len(bounds_bottom)
+	for i in range(n):
+		p1 = np.array(bounds_bottom[i])
+		p2 = np.array(bounds_bottom[(i + 1) % n])
+
+		edge = p2 - p1
+		edge_xz = np.array([edge[0], edge[2]])
+		edge_len = np.linalg.norm(edge_xz)
+		if edge_len < 1e-4:
+			continue
+
+		# Normal pointing outward (perpendicular in XZ plane)
+		normal_xz = np.array([edge_xz[1], -edge_xz[0]]) / edge_len
+
+		# Four corners of the wall quad (inner face at boundary, outer face offset by thickness)
+		offset = normal_xz * wall_thickness
+		v0 = [p1[0], 0.0, p1[2]]
+		v1 = [p2[0], 0.0, p2[2]]
+		v2 = [p2[0], height_m, p2[2]]
+		v3 = [p1[0], height_m, p1[2]]
+		v4 = [p1[0] + offset[0], 0.0, p1[2] + offset[1]]
+		v5 = [p2[0] + offset[0], 0.0, p2[2] + offset[1]]
+		v6 = [p2[0] + offset[0], height_m, p2[2] + offset[1]]
+		v7 = [p1[0] + offset[0], height_m, p1[2] + offset[1]]
+
+		vertices = np.array([v0, v1, v2, v3, v4, v5, v6, v7])
+		faces = np.array([
+			[0, 1, 2], [0, 2, 3],  # inner face
+			[5, 4, 7], [5, 7, 6],  # outer face
+			[4, 0, 3], [4, 3, 7],  # left cap
+			[1, 5, 6], [1, 6, 2],  # right cap
+			[3, 2, 6], [3, 6, 7],  # top
+			[4, 5, 1], [4, 1, 0],  # bottom
+		])
+
+		wall = trimesh.Trimesh(vertices=vertices, faces=faces)
+		material = trimesh.visual.material.PBRMaterial(
+			baseColorFactor=color, metallicFactor=0.0, roughnessFactor=1.0
+		)
+		wall.visual = trimesh.visual.TextureVisuals(material=material)
+		wall.fix_normals(multibody=True)
+		walls.append(wall)
+
+	return walls
+
+def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
+						  resolution=(1536, 1024), camera_height=None,
+						  fps=30, video_duration=6.0, bg_color=None,
+						  room_scenes=None):
+	"""Create a 360-degree rotating video of an entire apartment unit.
+
+	Loads all rooms from metadata, transforms them back to unit/world space,
+	and renders a rotating view with floor slabs, walls, and furniture.
+
+	Args:
+		room_scenes: Optional dict mapping room name (e.g. 'unit_1_room_1_livingroom')
+			to a scene dict. When provided, these scenes are used instead of
+			loading from the original room JSON files.
+	"""
+	with open(metadata_path, "r") as f:
+		metadata = json.load(f)
+
+	height_m = metadata.get("default_height_m", 2.6)
+
+	# Find the requested unit
+	unit_entry = None
+	for u in metadata["units"]:
+		if u["unit_id"] == unit_id:
+			unit_entry = u
+			break
+	if unit_entry is None:
+		raise ValueError(f"Unit {unit_id} not found in metadata")
+
+	# Load and transform all rooms to unit space
+	unit_rooms = []
+	for room_meta in unit_entry["rooms"]:
+		room_name = Path(room_meta["output_file"]).stem
+
+		if room_scenes and room_name in room_scenes:
+			room_scene = copy.deepcopy(room_scenes[room_name])
+		else:
+			room_path = os.path.join(floorplan_dir, room_meta["output_file"])
+			with open(room_path, "r") as f:
+				room_scene = json.load(f)
+
+		cx = room_meta["center_offset_m"]["x"]
+		cz = room_meta["center_offset_m"]["z"]
+		rot = room_meta["rotation_rad"]
+
+		transformed = transform_room_to_unit_space(room_scene, cx, cz, rot)
+		unit_rooms.append(transformed)
+
+	# Compute combined bounding box and re-center at origin
+	all_bounds = []
+	for room in unit_rooms:
+		all_bounds.extend(room["bounds_bottom"])
+	all_bounds = np.array(all_bounds)
+
+	min_xz = all_bounds[:, [0, 2]].min(axis=0)
+	max_xz = all_bounds[:, [0, 2]].max(axis=0)
+	center_x = (min_xz[0] + max_xz[0]) / 2.0
+	center_z = (min_xz[1] + max_xz[1]) / 2.0
+
+	# Shift everything to center the unit at origin
+	for room in unit_rooms:
+		for pt in room["bounds_bottom"]:
+			pt[0] -= center_x
+			pt[2] -= center_z
+		for pt in room["bounds_top"]:
+			pt[0] -= center_x
+			pt[2] -= center_z
+		for obj in room.get("objects", []):
+			obj["pos"][0] -= center_x
+			obj["pos"][2] -= center_z
+		for opening in room.get("openings", []):
+			opening["pos"][0] -= center_x
+			opening["pos"][2] -= center_z
+
+	# Compute scene span for camera
+	all_bounds_centered = []
+	for room in unit_rooms:
+		all_bounds_centered.extend(room["bounds_bottom"])
+	all_bounds_centered = np.array(all_bounds_centered)
+
+	x_span = all_bounds_centered[:, 0].max() - all_bounds_centered[:, 0].min()
+	y_span = height_m
+	z_span = all_bounds_centered[:, 2].max() - all_bounds_centered[:, 2].min()
+	scene_span = (x_span, y_span, z_span)
+
+	if camera_height is None:
+		max_span = max(x_span, z_span)
+		camera_height = max(max_span * 1.2, 8.0)
+
+	if bg_color is None:
+		bg_color = np.array([240, 240, 240]) / 255.0
+
+	# Build combined trimesh scene
+	trimesh_scene = trimesh.Scene()
+
+	for room in unit_rooms:
+		# Floor slab
+		floor = create_floor_slab(room["bounds_bottom"])
+		trimesh_scene.add_geometry(floor)
+
+		# Walls
+		wall_meshes = create_wall_meshes(room["bounds_bottom"], height_m)
+		for wall in wall_meshes:
+			trimesh_scene.add_geometry(wall)
+
+		# Furniture objects
+		if room.get("objects"):
+			add_objects_to_trimesh_scene(trimesh_scene, room["objects"])
+
+	# Render 360 video
+	os.makedirs(pth_output, exist_ok=True)
+	total_frames = int(fps * video_duration)
+	video_path = os.path.join(str(pth_output), f"unit_{unit_id}_360.mp4")
+	writer = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, resolution)
+
+	print(f"Creating unit {unit_id} 360 video: {total_frames} frames, {video_duration}s, camera_height={camera_height:.1f}")
+	print(f"Unit span: x={x_span:.1f}m, z={z_span:.1f}m, {len(unit_rooms)} rooms")
+
+	for frame_idx in tqdm(range(total_frames), desc="Rendering unit frames"):
+		angle_degrees = (frame_idx / total_frames) * 360
+		frame = render_frame_at_angle(
+			trimesh_scene, angle_degrees, resolution,
+			camera_height, scene_span, bg_color
+		)
+		frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+		writer.write(frame_bgr)
+
+	writer.release()
+	print(f"Created unit 360 video at {video_path}")
+	return video_path
+
 def create_360_videos_assets(scene_example, camera_height, pth_folder_fig):
     # Setup video parameters
     resolution = (1536, 1024)  # 3:2 aspect ratio

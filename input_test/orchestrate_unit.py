@@ -24,6 +24,7 @@ Manual / flat directory mode (no metadata.json, just room JSONs):
       --style-prompt "modern scandinavian" --render
 """
 
+import os
 import json
 import sys
 import argparse
@@ -47,6 +48,7 @@ from src.bathroom_layout import generate_bathroom_layout
 
 MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
 ENV_FILE = ".env"
+ENV_FILE_BATHROOM = ".env_heg"
 
 # ReSpace layout generation params
 N_BON_SGLLM = 8
@@ -269,7 +271,7 @@ def render_3d_scene(scene_with_assets, output_path, filename):
 # ============================================================================ #
 
 
-def _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=None):
+def _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=None, use_fill_ratio=True):
     """Generate layout for a single non-bathroom room via ReSpace.
 
     Returns (result_scene, success_bool).
@@ -283,6 +285,7 @@ def _generate_single_room(respace, json_path, room_type, scene, room_output, sty
         scene_bounds_only=scene,
         pth_viz_output=room_output,
         style_prompt=style_prompt,
+        use_fill_ratio=use_fill_ratio,
     )
 
     if not is_success:
@@ -320,7 +323,7 @@ def _generate_bathroom(json_path, scene, room_output):
     return result_scene, True
 
 
-def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None):
+def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None, use_fill_ratio=True):
     """Generate furniture layouts for each room.
 
     Bathrooms use the rule-based generator; all other rooms use ReSpace.
@@ -382,7 +385,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                     room_output = output_dir / stem
                     room_output.mkdir(parents=True, exist_ok=True)
 
-                    result_scene, ok = _generate_single_room(respace, json_path, rt, scene, room_output, style_prompt=style_prompt)
+                    result_scene, ok = _generate_single_room(respace, json_path, rt, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
                     if not ok:
                         continue
 
@@ -414,7 +417,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                 room_output = output_dir / stem
                 room_output.mkdir(parents=True, exist_ok=True)
 
-                result_scene, ok = _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=style_prompt)
+                result_scene, ok = _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
                 if not ok:
                     continue
 
@@ -435,25 +438,23 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
 # ============================================================================ #
 
 
-def run_stage2(stage1_results, style_prompt, lambda_style, stochastic):
-    """Retrieve assets with cross-scene style coherence.
+def _load_env(env_file):
+    """Clear asset-related env vars and reload from the given .env file."""
+    asset_keys = [
+        "PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
+        "PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
+        "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
+        "PTH_3DFUTURE_ASSETS",
+    ]
+    for k in asset_keys:
+        os.environ.pop(k, None)
+    load_dotenv(env_file, override=True)
+    print(f"  Loaded env: {env_file}")
 
-    Processes rooms in order (living room first as anchor).
-    Returns list of (room_stem, room_type, sampled_scene, room_output_dir, params).
-    """
-    print(f"\n{'='*70}")
-    print("STAGE 2: Cross-scene Style-coherent Asset Retrieval")
-    print(f"{'='*70}")
 
-    if not stage1_results:
-        print("No rooms to process.")
-        return []
-
-    dvc = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Device: {dvc}")
-
-    print("Initializing AssetRetrievalModule...")
-    retrieval = AssetRetrievalModule(
+def _make_retrieval_module(dvc):
+    """Create a fresh AssetRetrievalModule using current os.environ."""
+    return AssetRetrievalModule(
         lambd=RETRIEVAL_LAMBD,
         sigma=RETRIEVAL_SIGMA,
         temp=RETRIEVAL_TEMP,
@@ -464,11 +465,66 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic):
         do_print=True,
     )
 
-    unit_style_embeds = []
+
+def _run_original_retrieval_for_rooms(entries, retrieval, stochastic, room_idx_offset):
+    """Run original asset retrieval (description + size only) for a list of rooms."""
     results = []
     mode = "stochastic" if stochastic else "greedy"
 
-    for room_idx, (stem, room_type, scene, room_output) in enumerate(stage1_results):
+    for local_idx, (stem, room_type, scene, room_output) in enumerate(entries):
+        room_idx = room_idx_offset + local_idx
+
+        print(f"\n{'#'*70}")
+        print(f"# Room [{room_idx}]: {stem}")
+        print(f"# Type: {room_type}")
+        print(f"# mode={mode} (original sampling)")
+        print(f"{'#'*70}")
+
+        n_objs = len(scene.get("objects", []))
+        if n_objs == 0:
+            print("  No objects in scene, skipping.")
+            continue
+
+        result = retrieval.sample_all_assets(
+            scene,
+            is_greedy_sampling=not stochastic,
+        )
+
+        for i, obj in enumerate(result.get("objects", [])):
+            desc = obj.get("sampled_asset_desc", obj.get("desc", "N/A"))
+            print(f"  [{i}] {desc[:60]}")
+
+        params = {
+            "mode": "original",
+            "greedy": not stochastic,
+            "room_order": room_idx,
+        }
+
+        retrieval_out = {
+            "original_sample": result,
+            "params": params,
+        }
+        out_file = room_output / "original_retrieval.json"
+        with open(out_file, "w") as f:
+            json.dump(retrieval_out, f, indent=2)
+        print(f"  Saved: {out_file}")
+
+        results.append((stem, room_type, result, room_output, params))
+
+    return results
+
+
+def _run_retrieval_for_rooms(entries, retrieval, unit_style_embeds, style_prompt,
+                             lambda_style, stochastic, room_idx_offset):
+    """Run asset retrieval on a list of (stem, room_type, scene, room_output) entries.
+
+    Mutates unit_style_embeds in-place.  Returns list of result tuples.
+    """
+    results = []
+    mode = "stochastic" if stochastic else "greedy"
+
+    for local_idx, (stem, room_type, scene, room_output) in enumerate(entries):
+        room_idx = room_idx_offset + local_idx
         is_anchor = (room_idx == 0)
 
         print(f"\n{'#'*70}")
@@ -536,6 +592,79 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic):
         print(f"  Saved: {out_file}")
 
         results.append((stem, room_type, result, room_output, params))
+
+    return results
+
+
+def run_stage2(stage1_results, style_prompt, lambda_style, stochastic, ori_sample=False):
+    """Retrieve assets for each room.
+
+    When ori_sample=True, uses the original sampling (description + size only).
+    Otherwise uses cross-scene style-coherent retrieval.
+    Bathrooms use assets from .env_heg; all other rooms use .env.
+    Returns list of (room_stem, room_type, sampled_scene, room_output_dir, params).
+    """
+    print(f"\n{'='*70}")
+    if ori_sample:
+        print("STAGE 2: Original Asset Retrieval (description + size)")
+    else:
+        print("STAGE 2: Cross-scene Style-coherent Asset Retrieval")
+    print(f"{'='*70}")
+
+    if not stage1_results:
+        print("No rooms to process.")
+        return []
+
+    dvc = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Device: {dvc}")
+
+    # Split into non-bathroom (default assets) and bathroom (custom assets)
+    default_entries = [(s, rt, sc, ro) for s, rt, sc, ro in stage1_results if rt != "bathroom"]
+    bathroom_entries = [(s, rt, sc, ro) for s, rt, sc, ro in stage1_results if rt == "bathroom"]
+
+    unit_style_embeds = []
+    results = []
+
+    # --- Non-bathroom rooms (use .env) ---
+    if default_entries:
+        print(f"\n--- Asset retrieval for {len(default_entries)} non-bathroom room(s) using {ENV_FILE} ---")
+        _load_env(ENV_FILE)
+        retrieval = _make_retrieval_module(dvc)
+        if ori_sample:
+            res = _run_original_retrieval_for_rooms(
+                default_entries, retrieval, stochastic,
+                room_idx_offset=0,
+            )
+        else:
+            res = _run_retrieval_for_rooms(
+                default_entries, retrieval, unit_style_embeds,
+                style_prompt, lambda_style, stochastic,
+                room_idx_offset=0,
+            )
+        results.extend(res)
+        del retrieval
+
+    # --- Bathroom rooms (use .env_heg) ---
+    if bathroom_entries:
+        print(f"\n--- Asset retrieval for {len(bathroom_entries)} bathroom room(s) using {ENV_FILE_BATHROOM} ---")
+        _load_env(ENV_FILE_BATHROOM)
+        retrieval_bath = _make_retrieval_module(dvc)
+        if ori_sample:
+            res = _run_original_retrieval_for_rooms(
+                bathroom_entries, retrieval_bath, stochastic,
+                room_idx_offset=len(default_entries),
+            )
+        else:
+            res = _run_retrieval_for_rooms(
+                bathroom_entries, retrieval_bath, unit_style_embeds,
+                style_prompt, lambda_style, stochastic,
+                room_idx_offset=len(default_entries),
+            )
+        results.extend(res)
+        del retrieval_bath
+
+    # Restore default env
+    _load_env(ENV_FILE)
 
     print(f"\nStage 2 complete: {len(results)} room(s) with assets retrieved.")
     print(f"Total style embeddings accumulated: {len(unit_style_embeds)}")
@@ -658,14 +787,18 @@ def main():
                         help="Output directory. Defaults to <source-dir>/output/")
     parser.add_argument("--style-prompt", type=str, default=None,
                         help="Style prompt for cross-scene coherence (e.g. 'modern scandinavian')")
-    parser.add_argument("--lambda-style", type=float, default=0.2,
-                        help="Weight for style coherence term (default: 0.2)")
+    parser.add_argument("--lambda-style", type=float, default=0.1,
+                        help="Weight for style coherence term (default: 0.1)")
     parser.add_argument("--checkpoint", type=str, default=None,
                         help="Path to local checkpoint directory")
     parser.add_argument("--match-room-type", action="store_true",
                         help="Init separate ReSpace per room type for type-specific generation")
     parser.add_argument("--stochastic", action="store_true",
                         help="Use stochastic sampling for asset retrieval (default: greedy)")
+    parser.add_argument("--no-fill-ratio", action="store_true",
+                        help="Disable fill_ratio adjustment for non-rectangular rooms")
+    parser.add_argument("--ori-sample", action="store_true",
+                        help="Use original asset sampling (description + size only, no style coherence)")
     parser.add_argument("--render", action="store_true",
                         help="Enable Stage 3 (3D rendering with assets). Off by default.")
     args = parser.parse_args()
@@ -731,7 +864,8 @@ def main():
     # Run pipeline                                                             #
     # ---------------------------------------------------------------------- #
 
-    stage1_results = run_stage1(room_entries, output_dir, model_path, args.match_room_type, style_prompt=args.style_prompt)
+    use_fill_ratio = not args.no_fill_ratio
+    stage1_results = run_stage1(room_entries, output_dir, model_path, args.match_room_type, style_prompt=args.style_prompt, use_fill_ratio=use_fill_ratio)
 
     # Re-order stage1 results: living room first for style anchoring
     living = []
@@ -744,7 +878,7 @@ def main():
             rest.append(entry)
     stage1_ordered = living + rest
 
-    stage2_results = run_stage2(stage1_ordered, args.style_prompt, args.lambda_style, args.stochastic)
+    stage2_results = run_stage2(stage1_ordered, args.style_prompt, args.lambda_style, args.stochastic, ori_sample=args.ori_sample)
 
     if args.render:
         run_stage3(stage2_results)

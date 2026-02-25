@@ -14,6 +14,7 @@ Usage:
   uv run python -m input_test.test_cross_scene_style_retrieval --unit 13feb_settings --user-prompt "modern industrial dark metal"
 """
 
+import os
 import json
 import argparse
 import torch
@@ -23,6 +24,9 @@ from dotenv import load_dotenv
 load_dotenv(".env")
 
 from src.sample import AssetRetrievalModule
+
+ENV_FILE = ".env"
+ENV_FILE_BATHROOM = ".env_heg"
 
 
 # --------------------------------------------------------------------------- #
@@ -90,6 +94,31 @@ def render_scene(scene_with_assets, output_path, filename):
 # Room ordering                                                                #
 # --------------------------------------------------------------------------- #
 
+def _load_env(env_file):
+	"""Clear asset-related env vars and reload from the given .env file."""
+	asset_keys = [
+		"PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
+		"PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
+		"PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
+		"PTH_3DFUTURE_ASSETS",
+	]
+	for k in asset_keys:
+		os.environ.pop(k, None)
+	load_dotenv(env_file, override=True)
+	print(f"  Loaded env: {env_file}")
+
+
+def _is_bathroom(scene_path):
+	"""Check if a scene file belongs to a bathroom room."""
+	name = scene_path.parent.name.lower()
+	if "bathroom" in name:
+		return True
+	with open(scene_path) as f:
+		scene = json.load(f)
+	room_type = scene.get("room_type", "").lower()
+	return "bathroom" in room_type
+
+
 def order_scenes_living_room_first(scene_files):
 	"""
 	Sort scene files so that living room comes first.
@@ -129,6 +158,8 @@ def main():
 						help="Optional style prompt to anchor all selections (e.g. 'modern industrial dark metal')")
 	parser.add_argument("--full-desc", action="store_true",
 						help="Use full descriptions for semantic query (default: category-only)")
+	parser.add_argument("--ori-sample", action="store_true",
+						help="Use original asset sampling (description + size only, no style coherence)")
 	args = parser.parse_args()
 
 	base_dir = Path("input_test")
@@ -154,106 +185,164 @@ def main():
 	dvc = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 	print(f"\nDevice: {dvc}")
 
-	print("Initializing AssetRetrievalModule...")
-	retrieval = AssetRetrievalModule(
-		lambd=0.5,
-		sigma=0.05,
-		temp=0.2,
-		top_p=0.95,
-		top_k=20,
-		asset_size_threshold=0.5,
-		dvc=dvc,
-		do_print=True,
-	)
+	# Split scenes into non-bathroom and bathroom groups
+	default_scenes = []
+	bathroom_scenes = []
+	for scene_path in scene_files:
+		if _is_bathroom(scene_path):
+			bathroom_scenes.append(scene_path)
+		else:
+			default_scenes.append(scene_path)
+
+	# Process non-bathroom first, then bathroom (mirrors orchestrate_unit.py)
+	ordered_groups = []
+	if default_scenes:
+		ordered_groups.append((ENV_FILE, default_scenes))
+	if bathroom_scenes:
+		ordered_groups.append((ENV_FILE_BATHROOM, bathroom_scenes))
+
+	print(f"\nNon-bathroom rooms: {len(default_scenes)}, Bathroom rooms: {len(bathroom_scenes)}")
 
 	# Unit-wide style context -- accumulates across rooms
 	unit_style_embeds = []
 	all_results = {}
 	mode = "stochastic" if args.stochastic else "greedy"
+	room_idx = 0
 
-	for room_idx, scene_path in enumerate(scene_files):
-		room_name = scene_path.parent.name
-		is_anchor = (room_idx == 0)
+	for env_file, group_scenes in ordered_groups:
+		print(f"\n--- Loading assets from {env_file} for {len(group_scenes)} room(s) ---")
+		_load_env(env_file)
 
-		sem_mode = "full-desc" if args.full_desc else "category-only"
-		print(f"\n{'#'*90}")
-		print(f"# Room [{room_idx}]: {room_name}")
-		print(f"# Source: {scene_path}")
-		print(f"# lambda_style={args.lambda_style}, semantic={sem_mode}")
-		if is_anchor:
-			print(f"# Role: STYLE ANCHOR (living room)")
-		else:
-			print(f"# Role: CROSS-SCENE BIASED ({len(unit_style_embeds)} embeddings from prior rooms)")
-		if args.user_prompt:
-			print(f"# user_prompt=\"{args.user_prompt}\"")
-		print(f"{'#'*90}")
-
-		with open(scene_path) as f:
-			scene = json.load(f)
-
-		n_objs = len(scene.get("objects", []))
-		if n_objs == 0:
-			print("  No objects in scene, skipping.")
-			continue
-
-		# For the anchor room, no initial style embeds.
-		# For subsequent rooms, pass the accumulated unit style.
-		initial_embeds = None if is_anchor else list(unit_style_embeds)
-
-		result, room_style_embeds = retrieval.sample_all_assets_style_coherent_cross_scene(
-			scene,
-			lambda_style=args.lambda_style,
-			is_greedy_sampling=not args.stochastic,
-			user_prompt=args.user_prompt,
-			initial_style_embeds=initial_embeds,
-			use_category_only=not args.full_desc,
+		retrieval = AssetRetrievalModule(
+			lambd=0.5,
+			sigma=0.3,
+			temp=0.2,
+			top_p=0.95,
+			top_k=20,
+			asset_size_threshold=0.5,
+			dvc=dvc,
+			do_print=True,
 		)
 
-		# Collect only the NEW embeddings from this room (skip the ones we passed in)
-		n_prior = len(initial_embeds) if initial_embeds else 0
-		if args.user_prompt is not None:
-			n_prior += 1  # user prompt embed was prepended
-		new_embeds = room_style_embeds[n_prior:]
-		unit_style_embeds.extend(new_embeds)
+		for scene_path in group_scenes:
+			room_name = scene_path.parent.name
+			is_anchor = (room_idx == 0)
 
-		print(f"\n  >> Room contributed {len(new_embeds)} new style embeddings")
-		print(f"  >> Unit-wide total: {len(unit_style_embeds)} style embeddings")
+			sem_mode = "full-desc" if args.full_desc else "category-only"
+			print(f"\n{'#'*90}")
+			print(f"# Room [{room_idx}]: {room_name}")
+			print(f"# Source: {scene_path}")
+			print(f"# Assets: {env_file}")
+			if args.ori_sample:
+				print(f"# Mode: ORIGINAL (description + size only)")
+			else:
+				print(f"# lambda_style={args.lambda_style}, semantic={sem_mode}")
+				if is_anchor:
+					print(f"# Role: STYLE ANCHOR (living room)")
+				else:
+					print(f"# Role: CROSS-SCENE BIASED ({len(unit_style_embeds)} embeddings from prior rooms)")
+				if args.user_prompt:
+					print(f"# user_prompt=\"{args.user_prompt}\"")
+			print(f"{'#'*90}")
 
-		# Print summary
-		print_scene_summary(result, f"{room_name} - cross-scene style ({mode})")
+			with open(scene_path) as f:
+				scene = json.load(f)
 
-		# Save per-room results
-		room_output = output_dir / room_name
-		room_output.mkdir(parents=True, exist_ok=True)
-
-		room_results = {
-			"cross_scene_style": result,
-			"params": {
-				"lambda_style": args.lambda_style,
-				"greedy": not args.stochastic,
-				"user_prompt": args.user_prompt,
-				"room_order": room_idx,
-				"is_anchor": is_anchor,
-				"n_prior_style_embeds": n_prior,
-				"n_new_style_embeds": len(new_embeds),
-				"n_total_unit_style_embeds": len(unit_style_embeds),
-			},
-		}
-		out_file = room_output / "cross_scene_retrieval.json"
-		with open(out_file, "w") as f:
-			json.dump(room_results, f, indent=2)
-		print(f"Saved to {out_file}")
-
-		all_results[room_name] = room_results
-
-		# Render
-		if args.render:
-			if not scene.get("bounds_bottom"):
-				print("WARNING: Skipping render -- scene has no bounds_bottom")
+			n_objs = len(scene.get("objects", []))
+			if n_objs == 0:
+				print("  No objects in scene, skipping.")
 				continue
-			render_path = room_output / "render"
-			render_path.mkdir(parents=True, exist_ok=True)
-			render_scene(result, render_path, f"cross_style_{room_name}")
+
+			if args.ori_sample:
+				# Original sampling: description + size only, no style coherence
+				result = retrieval.sample_all_assets(
+					scene,
+					is_greedy_sampling=not args.stochastic,
+				)
+
+				print_scene_summary(result, f"{room_name} - original sampling ({mode})")
+
+				room_output = output_dir / room_name
+				room_output.mkdir(parents=True, exist_ok=True)
+
+				room_results = {
+					"original_sample": result,
+					"params": {
+						"mode": "original",
+						"greedy": not args.stochastic,
+						"room_order": room_idx,
+					},
+				}
+				out_file = room_output / "original_retrieval.json"
+				with open(out_file, "w") as f:
+					json.dump(room_results, f, indent=2)
+				print(f"Saved to {out_file}")
+			else:
+				# Cross-scene style-coherent retrieval
+				# For the anchor room, no initial style embeds.
+				# For subsequent rooms, pass the accumulated unit style.
+				initial_embeds = None if is_anchor else list(unit_style_embeds)
+
+				result, room_style_embeds = retrieval.sample_all_assets_style_coherent_cross_scene(
+					scene,
+					lambda_style=args.lambda_style,
+					is_greedy_sampling=not args.stochastic,
+					user_prompt=args.user_prompt,
+					initial_style_embeds=initial_embeds,
+					use_category_only=not args.full_desc,
+				)
+
+				# Collect only the NEW embeddings from this room (skip the ones we passed in)
+				n_prior = len(initial_embeds) if initial_embeds else 0
+				if args.user_prompt is not None:
+					n_prior += 1  # user prompt embed was prepended
+				new_embeds = room_style_embeds[n_prior:]
+				unit_style_embeds.extend(new_embeds)
+
+				print(f"\n  >> Room contributed {len(new_embeds)} new style embeddings")
+				print(f"  >> Unit-wide total: {len(unit_style_embeds)} style embeddings")
+
+				print_scene_summary(result, f"{room_name} - cross-scene style ({mode})")
+
+				room_output = output_dir / room_name
+				room_output.mkdir(parents=True, exist_ok=True)
+
+				room_results = {
+					"cross_scene_style": result,
+					"params": {
+						"lambda_style": args.lambda_style,
+						"greedy": not args.stochastic,
+						"user_prompt": args.user_prompt,
+						"room_order": room_idx,
+						"is_anchor": is_anchor,
+						"n_prior_style_embeds": n_prior,
+						"n_new_style_embeds": len(new_embeds),
+						"n_total_unit_style_embeds": len(unit_style_embeds),
+					},
+				}
+				out_file = room_output / "cross_scene_retrieval.json"
+				with open(out_file, "w") as f:
+					json.dump(room_results, f, indent=2)
+				print(f"Saved to {out_file}")
+
+			all_results[room_name] = room_results
+
+			# Render
+			if args.render:
+				if not scene.get("bounds_bottom"):
+					print("WARNING: Skipping render -- scene has no bounds_bottom")
+					room_idx += 1
+					continue
+				render_path = room_output / "render"
+				render_path.mkdir(parents=True, exist_ok=True)
+				render_scene(result, render_path, f"cross_style_{room_name}")
+
+			room_idx += 1
+
+		del retrieval
+
+	# Restore default env
+	_load_env(ENV_FILE)
 
 	# Unit summary
 	print(f"\n{'#'*90}")

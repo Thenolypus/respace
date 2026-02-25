@@ -410,7 +410,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 			gc.collect()
 			torch.cuda.empty_cache()
 	
-	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None, style_prompt=None):
+	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None, style_prompt=None, use_fill_ratio=True):
 		
 		self.dataset_stats_for_prompt = self._prepare_dataset_stats_for_object_sampler(room_type)
 		self.floor_object_sampler = FloorObjectSampler(self.dataset_stats_for_prompt.get("floor_area_n_objects"))
@@ -426,7 +426,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 		if n_objects == None:
 			n_objects = self.floor_object_sampler.sample_obj_count_for_floor_area(floor_area, do_prop_sampling=self.do_prop_sampling_for_prompt)[0]
 			# Scale down object count for non-rectangular rooms (L-shapes, etc.)
-			if fill_ratio < 0.95:
+			if use_fill_ratio and fill_ratio < 0.95:
 				n_objects = max(1, int(n_objects * fill_ratio))
 				print(f"  Non-rectangular room (fill_ratio={fill_ratio:.2f}): adjusted n_objects to {n_objects}")
 		
