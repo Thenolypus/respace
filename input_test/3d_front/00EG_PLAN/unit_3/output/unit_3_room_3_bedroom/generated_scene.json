@@ -1,0 +1,237 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.14,
+      2.6,
+      1.42
+    ],
+    [
+      -2.14,
+      2.6,
+      -1.42
+    ],
+    [
+      2.14,
+      2.6,
+      -1.42
+    ],
+    [
+      2.14,
+      2.6,
+      1.42
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.14,
+      0.0,
+      1.42
+    ],
+    [
+      -2.14,
+      0.0,
+      -1.42
+    ],
+    [
+      2.14,
+      0.0,
+      -1.42
+    ],
+    [
+      2.14,
+      0.0,
+      1.42
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist black metal floor lamp with an adjustable arm, cone-shaped shade, and sleek round base.",
+      "pos": [
+        -1.58,
+        0.0,
+        1.2
+      ],
+      "rot": [
+        0.0,
+        0.98159,
+        0.0,
+        0.191
+      ],
+      "size": [
+        0.78,
+        1.68,
+        0.29
+      ],
+      "prompt": "black floor lamp",
+      "sampled_asset_jid": "f614b45f-a82f-4673-ad37-aca17f99d831-(1.05)-(1.0)-(1.13)",
+      "sampled_asset_desc": "Modern minimalist black metal floor lamp with an adjustable arm, cone-shaped shade, and sleek round base.",
+      "sampled_asset_size": [
+        0.76,
+        1.68,
+        0.28
+      ],
+      "uuid": "7d1d4581-d7cb-4e77-9c7a-3f4cd3a29947",
+      "scale": [
+        1.05,
+        1.0,
+        1.13
+      ]
+    },
+    {
+      "desc": "Minimalist gray wardrobe with smooth laminated finish and modern design featuring concealed sliding doors.",
+      "pos": [
+        1.83,
+        0.0,
+        0.05
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        2.98,
+        2.33,
+        0.35
+      ],
+      "prompt": "gray modern scandinavian wardrobe",
+      "sampled_asset_jid": "c96b81b9-51f5-4ac6-b737-8e63d09feee8-(0.48)-(1.0)-(1.34)",
+      "sampled_asset_desc": "Minimalist gray wardrobe with smooth laminated finish and modern design featuring concealed sliding doors.",
+      "sampled_asset_size": [
+        1.43,
+        2.33,
+        0.47
+      ],
+      "uuid": "8da398aa-1095-4c1f-9073-6a0ad274e0f1",
+      "scale": [
+        0.48,
+        1.0,
+        1.34
+      ]
+    },
+    {
+      "desc": "A modern, minimalist light wood and metal nightstand with a rectangular shape and a sleek single drawer.",
+      "pos": [
+        0.96,
+        0.0,
+        1.26
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.6,
+        0.46,
+        0.46
+      ],
+      "prompt": "light wood minimalist nightstand",
+      "sampled_asset_jid": "af69165c-eead-4290-821e-e532868d695a-(1.09)-(1.0)-(1.5)",
+      "sampled_asset_desc": "This contemporary nightstand features dark brown wood with dual drawers and silver metal handles, complemented by a minimalist design and an open middle shelf.",
+      "sampled_asset_size": [
+        0.59,
+        0.45,
+        0.47
+      ],
+      "uuid": "92eb19e7-f9f7-41cf-815a-05dd045bcc08",
+      "scale": [
+        1.09,
+        1.0,
+        1.5
+      ]
+    },
+    {
+      "desc": "A modern, minimalist single bed with a Scandinavian-inspired white wooden canopy frame and house-shaped design, perfect for various contemporary interiors.",
+      "pos": [
+        -0.18,
+        0.0,
+        0.35
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.54,
+        1.63,
+        1.7
+      ],
+      "prompt": "white modern scandinavian bed",
+      "sampled_asset_jid": "68bd1ed3-c256-4d0b-9fd9-b46370b41df0",
+      "sampled_asset_desc": "A modern, minimalist single bed with a Scandinavian-inspired white wooden canopy frame and house-shaped design, perfect for various contemporary interiors.",
+      "sampled_asset_size": [
+        1.53546804189682,
+        1.6265874858363532,
+        1.6988070607185364
+      ],
+      "uuid": "5b0273bc-3a24-4312-a1fb-74aa1698d7e0"
+    },
+    {
+      "desc": "A modern, functional desk featuring a blue metal frame, grey wooden surfaces, adjustable height, built-in drawer, and two overhead shelves ideal for compact spaces.",
+      "pos": [
+        -1.38,
+        0.0,
+        -0.61
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.02,
+        1.88,
+        1.51
+      ],
+      "prompt": "white modern scandinavian desk",
+      "sampled_asset_jid": "552ea208-2c8a-4586-9666-c9e8244f88c5-(0.96)-(1.0)-(1.49)",
+      "sampled_asset_desc": "A modern, functional desk featuring a blue metal frame, grey wooden surfaces, adjustable height, built-in drawer, and two overhead shelves ideal for compact spaces.",
+      "sampled_asset_size": [
+        1.02,
+        1.88,
+        1.51
+      ],
+      "uuid": "6af88d57-9270-4d58-b41a-6ea08d0ebe06",
+      "scale": [
+        0.96,
+        1.0,
+        1.49
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -1.08,
+        1.05,
+        -1.61
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        0.6,
+        1.6,
+        1.69
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -2.14,
+      2.6,
+      1.42
+    ],
+    [
+      -2.14,
+      2.6,
+      -1.42
+    ],
+    [
+      2.14,
+      2.6,
+      -1.42
+    ],
+    [
+      2.14,
+      2.6,
+      1.42
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -2.14,
+      0.0,
+      1.42
+    ],
+    [
+      -2.14,
+      0.0,
+      -1.42
+    ],
+    [
+      2.14,
+      0.0,
+      -1.42
+    ],
+    [
+      2.14,
+      0.0,
+      1.42
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "An antique-inspired light gray wooden nightstand with two drawers, an open shelf, ornate accents, and brass knobs.",
+      "pos": [
+        -0.8,
+        0.0,
+        1.15
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.3,
+        0.44,
+        0.24
+      ],
+      "prompt": "gray wooden nightstand",
+      "sampled_asset_jid": "dd945004-8d4d-45d0-908f-3ff3bd97f9ef",
+      "sampled_asset_desc": "A rustic wooden stool with a round seat, tapered legs, and footrests, embodying a minimalistic design.",
+      "sampled_asset_size": [
+        0.2699500024318695,
+        0.4202060187632837,
+        0.269897997379303
+      ],
+      "uuid": "61dc2225-928e-4d0b-956b-e17da4936531"
+    },
+    {
+      "desc": "White traditional rustic wooden wardrobe with panel design, three doors, and two bottom drawers.",
+      "pos": [
+        1.75,
+        0.0,
+        0.51
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.8,
+        2.07,
+        0.75
+      ],
+      "prompt": "white minimalist wardrobe",
+      "sampled_asset_jid": "18b518d0-aba3-4440-8f3d-acd8ebedacb8",
+      "sampled_asset_desc": "White traditional rustic wooden wardrobe with panel design, three doors, and two bottom drawers.",
+      "sampled_asset_size": [
+        1.7986330389976501,
+        2.074333028125693,
+        0.74509197473526
+      ],
+      "uuid": "761fe92c-c60d-433d-9825-511f2d31a42c"
+    },
+    {
+      "desc": "A modern, minimalist single bed with a Scandinavian-inspired white wooden canopy frame and house-shaped design, perfect for various contemporary interiors.",
+      "pos": [
+        0.4,
+        0.0,
+        0.35
+      ],
+      "rot": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.54,
+        1.63,
+        1.7
+      ],
+      "prompt": "white modern single bed",
+      "sampled_asset_jid": "68bd1ed3-c256-4d0b-9fd9-b46370b41df0",
+      "sampled_asset_desc": "A modern, minimalist single bed with a Scandinavian-inspired white wooden canopy frame and house-shaped design, perfect for various contemporary interiors.",
+      "sampled_asset_size": [
+        1.53546804189682,
+        1.6265874858363532,
+        1.6988070607185364
+      ],
+      "uuid": "757b0f88-bfb2-4749-a0a0-c72d6344e28f"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        1.07,
+        1.05,
+        -1.61
+      ],
+      "size": [
+        0.95,
+        2.1,
+        0.2
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        -0.58,
+        1.6,
+        1.69
+      ],
+      "size": [
+        1.5,
+        1.4,
+        0.46
+      ]
+    }
+  ]
+}

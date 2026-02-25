@@ -1,0 +1,216 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.73,
+        2.6,
+        1.42
+      ],
+      [
+        -1.73,
+        2.6,
+        -1.42
+      ],
+      [
+        1.73,
+        2.6,
+        -1.42
+      ],
+      [
+        1.73,
+        2.6,
+        1.42
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.73,
+        0.0,
+        1.42
+      ],
+      [
+        -1.73,
+        0.0,
+        -1.42
+      ],
+      [
+        1.73,
+        0.0,
+        -1.42
+      ],
+      [
+        1.73,
+        0.0,
+        1.42
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Contemporary ceiling lamp with a minimalist design featuring natural wood accents and a frosted glass diffuser.",
+        "pos": [
+          0.59,
+          2.39,
+          -0.14
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "size": [
+          0.44,
+          0.21,
+          0.44
+        ],
+        "prompt": "ceiling lamp",
+        "sampled_asset_jid": "210bbebc-d2f0-4334-877c-ceedf9e5cfa5-(1.0)-(0.56)-(1.0)",
+        "sampled_asset_desc": "A modern industrial black metal wireframe cylindrical basket with a geometric open structure.",
+        "sampled_asset_size": [
+          0.44,
+          0.2,
+          0.44
+        ],
+        "uuid": "24a59561-c7e8-432e-b646-fd05792ee35e",
+        "scale": [
+          1.0,
+          0.56,
+          1.0
+        ]
+      },
+      {
+        "desc": "Mid-Century Modern nightstand with light wood finish, geometric cutout handle, and angled legs.",
+        "pos": [
+          0.98,
+          0.0,
+          1.14
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.62,
+          0.55,
+          0.6
+        ],
+        "prompt": "light wood nightstand",
+        "sampled_asset_jid": "0e4c4d43-c3fe-4df6-80d1-01cad2dcac84-(1.21)-(1.0)-(1.21)",
+        "sampled_asset_desc": "Classic white wooden corner table with Baroque-style curved legs and ornate scrollwork.",
+        "sampled_asset_size": [
+          0.61,
+          0.55,
+          0.61
+        ],
+        "uuid": "bb94dc36-f175-47b2-ae9f-e82283f551ce",
+        "scale": [
+          1.21,
+          1.0,
+          1.21
+        ]
+      },
+      {
+        "desc": "A modern Scandinavian wardrobe featuring dark brown wood with dual doors, gray handles, and sleek metal legs.",
+        "pos": [
+          1.49,
+          0.0,
+          0.54
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          0.85,
+          1.8,
+          0.45
+        ],
+        "prompt": "modern scandinavian wardrobe",
+        "sampled_asset_jid": "4b1b7c1e-3762-498c-aecd-b5eef1cea2b3-(0.62)-(1.0)-(0.87)",
+        "sampled_asset_desc": "A Victorian-style white wooden dressing table with a tri-fold mirror, turned legs, and four drawers.",
+        "sampled_asset_size": [
+          0.86,
+          1.82,
+          0.44
+        ],
+        "uuid": "428174eb-00ab-48c3-b0cc-6fa626807dd5",
+        "scale": [
+          0.62,
+          1.0,
+          0.87
+        ]
+      },
+      {
+        "desc": "Single modern minimalist bed with a rectangular solid wood frame and smooth finish, featuring a plain solid headboard and footboard.",
+        "pos": [
+          -0.3,
+          0.0,
+          0.42
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "size": [
+          1.56,
+          0.8,
+          2.12
+        ],
+        "prompt": "white minimalist bed",
+        "sampled_asset_jid": "407b59df-eabe-49d1-9952-8747e405711e",
+        "sampled_asset_desc": "Single modern minimalist bed with a rectangular solid wood frame and smooth finish, featuring a plain solid headboard and footboard.",
+        "sampled_asset_size": [
+          1.5613689422607422,
+          0.8007250037388687,
+          2.1246601343154907
+        ],
+        "uuid": "1f429751-dba8-4722-904a-fa93e6506e8f"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          -0.67,
+          1.05,
+          -1.61
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          0.19,
+          1.6,
+          1.69
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 2,
+    "is_anchor": false,
+    "n_prior_style_embeds": 15,
+    "n_new_style_embeds": 4,
+    "n_total_unit_style_embeds": 19
+  }
+}

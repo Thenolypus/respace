@@ -1,0 +1,272 @@
+{
+  "cross_scene_style": {
+    "room_type": "bedroom",
+    "bounds_top": [
+      [
+        -1.71,
+        2.6,
+        1.42
+      ],
+      [
+        -1.71,
+        2.6,
+        -1.42
+      ],
+      [
+        1.71,
+        2.6,
+        -1.42
+      ],
+      [
+        1.71,
+        2.6,
+        1.42
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        -1.71,
+        0.0,
+        1.42
+      ],
+      [
+        -1.71,
+        0.0,
+        -1.42
+      ],
+      [
+        1.71,
+        0.0,
+        -1.42
+      ],
+      [
+        1.71,
+        0.0,
+        1.42
+      ]
+    ],
+    "objects": [
+      {
+        "desc": "Modern Scandinavian nightstand with light wood finish, featuring two drawers and a distinctive open shelf at the back panel.",
+        "pos": [
+          0.95,
+          0.0,
+          1.18
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.6,
+          0.5,
+          0.4
+        ],
+        "prompt": "modern scandinavian nightstand",
+        "sampled_asset_jid": "2924a537-18e9-428d-9922-ab1460e1f58b-(1.26)-(1.0)-(1.05)",
+        "sampled_asset_desc": "A minimalist Mid-century Modern nightstand with natural wood finish, featuring two drawers with cutout handles and tapered legs.",
+        "sampled_asset_size": [
+          0.6,
+          0.5,
+          0.41
+        ],
+        "uuid": "433be284-a62a-414a-a740-83bb36e61b8e",
+        "scale": [
+          1.26,
+          1.0,
+          1.05
+        ]
+      },
+      {
+        "desc": "A sleek, white wooden dressing table with an oval mirror and three drawers featuring modern and contemporary design elements.",
+        "pos": [
+          -0.51,
+          0.0,
+          -1.16
+        ],
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "size": [
+          1.17,
+          1.51,
+          0.44
+        ],
+        "prompt": "scandinavian-style dresser",
+        "sampled_asset_jid": "df95ad28-aa55-4529-a62d-66d04e654fd9",
+        "sampled_asset_desc": "A sleek, white wooden dressing table with an oval mirror and three drawers featuring modern and contemporary design elements.",
+        "sampled_asset_size": [
+          1.1699999570846558,
+          1.5137399600011534,
+          0.4370820224285126
+        ],
+        "uuid": "b52b16bf-daa3-4052-8fbe-9ab5137d54ec"
+      },
+      {
+        "desc": "Single modern minimalist bed with a rectangular solid wood frame and smooth finish, featuring a plain solid headboard and footboard.",
+        "pos": [
+          -0.53,
+          0.0,
+          0.42
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          1.56,
+          0.8,
+          2.12
+        ],
+        "prompt": "scandinavian-style single bed",
+        "sampled_asset_jid": "407b59df-eabe-49d1-9952-8747e405711e",
+        "sampled_asset_desc": "Single modern minimalist bed with a rectangular solid wood frame and smooth finish, featuring a plain solid headboard and footboard.",
+        "sampled_asset_size": [
+          1.5613689422607422,
+          0.8007250037388687,
+          2.1246601343154907
+        ],
+        "uuid": "af83f6fc-1a5b-4225-98d0-e64ba5ebf7e3",
+        "scale": [
+          0.96,
+          0.94,
+          0.94
+        ]
+      },
+      {
+        "desc": "Minimalist contemporary floor lamp with a white metal base and arm, beige fabric conical lampshade, and adjustable features.",
+        "pos": [
+          -0.08,
+          0.0,
+          0.29
+        ],
+        "rot": [
+          0.0,
+          0.92388,
+          0.0,
+          -0.38268
+        ],
+        "size": [
+          1.0,
+          1.53,
+          0.3
+        ],
+        "prompt": "table lamp",
+        "sampled_asset_jid": "09fdda8c-7df0-4af6-ac68-aee7cbead3fb-(1.08)-(1.0)-(1.24)",
+        "sampled_asset_desc": "Minimalist contemporary floor lamp with a white metal base and arm, beige fabric conical lampshade, and adjustable features.",
+        "sampled_asset_size": [
+          1.0,
+          1.53,
+          0.3
+        ],
+        "uuid": "43ca00c6-96b2-4247-abb6-f2af7a6c9a92",
+        "scale": [
+          1.08,
+          1.0,
+          1.24
+        ]
+      },
+      {
+        "desc": "Classic minimalist white wooden six-shelf wardrobe with paneling and base trim.",
+        "pos": [
+          1.43,
+          0.0,
+          0.64
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          -0.70711
+        ],
+        "size": [
+          1.02,
+          2.12,
+          0.43
+        ],
+        "prompt": "white minimalist wardrobe",
+        "sampled_asset_jid": "98b08568-12ed-4b14-b2d8-4722e4c341ce",
+        "sampled_asset_desc": "Classic minimalist white wooden six-shelf wardrobe with paneling and base trim.",
+        "sampled_asset_size": [
+          1.0193439722061157,
+          2.119409996154996,
+          0.4284438341856003
+        ],
+        "uuid": "6ec8441d-d99b-4962-94dc-2b12790c12f2"
+      },
+      {
+        "desc": "Modern white and gold nightstand with geometric circular design and clean lines.",
+        "pos": [
+          -1.44,
+          0.0,
+          1.18
+        ],
+        "rot": [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.58,
+          0.44,
+          0.4
+        ],
+        "prompt": "white modern nightstand",
+        "sampled_asset_jid": "7aa42079-a9b0-449c-8c49-6d8da1ec5b3b",
+        "sampled_asset_desc": "Modern white and gold nightstand with geometric circular design and clean lines.",
+        "sampled_asset_size": [
+          0.5823860168457031,
+          0.4390290233701002,
+          0.4031899869441986
+        ],
+        "uuid": "15c34a1b-a4d2-479c-b494-5e0d2d7c218a"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.7,
+          1.05,
+          -1.61
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      },
+      {
+        "type": "window",
+        "pos": [
+          -0.16,
+          1.6,
+          1.69
+        ],
+        "size": [
+          1.5,
+          1.4,
+          0.46
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 2,
+    "is_anchor": false,
+    "n_prior_style_embeds": 10,
+    "n_new_style_embeds": 6,
+    "n_total_unit_style_embeds": 16
+  }
+}

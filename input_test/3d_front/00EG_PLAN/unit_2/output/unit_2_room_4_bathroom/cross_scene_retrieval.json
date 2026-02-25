@@ -1,0 +1,211 @@
+{
+  "cross_scene_style": {
+    "room_type": "bathroom",
+    "bounds_top": [
+      [
+        0.79,
+        2.6,
+        1.19
+      ],
+      [
+        -0.79,
+        2.6,
+        1.19
+      ],
+      [
+        -0.79,
+        2.6,
+        -1.19
+      ],
+      [
+        0.79,
+        2.6,
+        -1.19
+      ]
+    ],
+    "bounds_bottom": [
+      [
+        0.79,
+        0.0,
+        1.19
+      ],
+      [
+        -0.79,
+        0.0,
+        1.19
+      ],
+      [
+        -0.79,
+        0.0,
+        -1.19
+      ],
+      [
+        0.79,
+        0.0,
+        -1.19
+      ]
+    ],
+    "objects": [
+      {
+        "size": [
+          0.8,
+          0.85,
+          0.5
+        ],
+        "pos": [
+          0.0,
+          0.0,
+          0.94
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",
+        "sampled_asset_jid": "d2773d00-90c5-4180-9641-93c41b9a5aed",
+        "sampled_asset_desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines.",
+        "sampled_asset_size": [
+          0.62,
+          0.17,
+          0.45
+        ],
+        "uuid": "8a2dc225-8db0-48ec-b834-8cee683dfe21"
+      },
+      {
+        "desc": "A modern minimalist wall-mounted mirror accessory",
+        "size": [
+          0.6,
+          0.8,
+          0.05
+        ],
+        "pos": [
+          0.0,
+          1.4,
+          1.165
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "sampled_asset_jid": "eaab98bf-b065-46e0-9ff7-8350b48cc88d",
+        "sampled_asset_desc": "Black frame, black-and-white canal photo, marble-textured wall accessory: modern minimalist with vintage narrative elements",
+        "sampled_asset_size": [
+          0.65,
+          0.89,
+          0.05
+        ],
+        "uuid": "3d9e4f51-8a2d-45ad-8a45-53386f6beeb6"
+      },
+      {
+        "size": [
+          0.4,
+          0.45,
+          0.65
+        ],
+        "pos": [
+          -0.465,
+          0.0,
+          0.372
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank",
+        "sampled_asset_jid": "f633f119-eb78-4eca-b636-117b391b2d07",
+        "sampled_asset_desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank, angular vertical panel, and rounded bowl for sleek functional bathroom design",
+        "sampled_asset_size": [
+          0.48,
+          1.02,
+          0.64
+        ],
+        "uuid": "368203dd-12f5-4173-99f6-4f7a4e815775"
+      },
+      {
+        "size": [
+          0.9,
+          2.0,
+          0.9
+        ],
+        "pos": [
+          0.34,
+          0.0,
+          -0.476
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels",
+        "sampled_asset_jid": "a759a37a-a129-41a2-8797-021764638ae5",
+        "sampled_asset_desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels, white ceramic base, and modular black metal frame for flexible space division",
+        "sampled_asset_size": [
+          1.2,
+          2.14,
+          1.24
+        ],
+        "uuid": "21a78847-82c1-458a-9c2b-510161a049b7"
+      },
+      {
+        "desc": "A dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style",
+        "size": [
+          0.8,
+          0.02,
+          0.5
+        ],
+        "pos": [
+          -0.41,
+          0.0,
+          -0.476
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "sampled_asset_jid": "691dffc9-6eed-4ba4-a274-787b3ea85239",
+        "sampled_asset_desc": "Dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style.",
+        "sampled_asset_size": [
+          2.63,
+          0.02,
+          4.09
+        ],
+        "uuid": "ba18a2fd-1a60-4394-91ed-521004c6fe4a"
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "pos": [
+          0.34,
+          1.05,
+          -1.37
+        ],
+        "size": [
+          0.95,
+          2.1,
+          0.2
+        ]
+      }
+    ]
+  },
+  "params": {
+    "lambda_style": 0.1,
+    "greedy": true,
+    "user_prompt": "modern scandinavian",
+    "room_order": 3,
+    "is_anchor": false,
+    "n_prior_style_embeds": 16,
+    "n_new_style_embeds": 5,
+    "n_total_unit_style_embeds": 21
+  }
+}

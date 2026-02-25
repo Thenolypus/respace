@@ -1,0 +1,255 @@
+{
+  "room_type": "bedroom",
+  "bounds_top": [
+    [
+      -1.42,
+      2.6,
+      -2.21
+    ],
+    [
+      1.42,
+      2.6,
+      -2.21
+    ],
+    [
+      1.42,
+      2.6,
+      2.21
+    ],
+    [
+      -1.42,
+      2.6,
+      2.21
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      -1.42,
+      0.0,
+      -2.21
+    ],
+    [
+      1.42,
+      0.0,
+      -2.21
+    ],
+    [
+      1.42,
+      0.0,
+      2.21
+    ],
+    [
+      -1.42,
+      0.0,
+      2.21
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern minimalist sideboard featuring beige wood construction with black metal legs, clean lines, open shelf, three drawers, and two doors.",
+      "pos": [
+        1.18,
+        0.0,
+        0.3
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.6,
+        0.73,
+        0.4
+      ],
+      "prompt": "modern sideboard",
+      "sampled_asset_jid": "3f63acc6-1241-471b-b4ca-202b5cddd4a0",
+      "sampled_asset_desc": "Modern minimalist sideboard featuring beige wood construction with black metal legs, clean lines, open shelf, three drawers, and two doors.",
+      "sampled_asset_size": [
+        1.600000023841858,
+        0.7300000305854821,
+        0.40000005066394806
+      ],
+      "uuid": "2ad6a9fd-40e9-4218-bdb7-b17278fdbef3"
+    },
+    {
+      "desc": "A pink, industrial modern metal wardrobe with mesh doors and a raised rectangular wireframe design.",
+      "pos": [
+        0.54,
+        0.0,
+        -1.91
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        1.0,
+        1.92,
+        0.54
+      ],
+      "prompt": "modern wardrobe",
+      "sampled_asset_jid": "ffdfd7be-01aa-4445-9ece-546494e97983-(1.04)-(1.0)-(1.05)",
+      "sampled_asset_desc": "A pink, industrial modern metal wardrobe with mesh doors and a raised rectangular wireframe design.",
+      "sampled_asset_size": [
+        1.04,
+        1.92,
+        0.57
+      ],
+      "uuid": "786a58d2-6310-4a39-a45c-c2cefcade98f",
+      "scale": [
+        1.04,
+        1.0,
+        1.05
+      ]
+    },
+    {
+      "desc": "Scandinavian modern pendant lamp with black spherical shades, wood accents, and a matte finish.",
+      "pos": [
+        0.02,
+        1.8,
+        0.26
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.79,
+        0.32,
+        0.79
+      ],
+      "prompt": "scandinavian-style pendant lamp",
+      "sampled_asset_jid": "d8be3f19-74ff-4495-82e7-a69a7f679678",
+      "sampled_asset_desc": "A luxurious, contemporary ceiling lamp with a gold metal frame and clear glass rod accents in a round, tiered design.",
+      "sampled_asset_size": [
+        0.7738420069217682,
+        0.3127069731708616,
+        0.7739419937133789
+      ],
+      "uuid": "7f37522c-00e7-4582-9f66-05d0d2fa3000"
+    },
+    {
+      "desc": "White, modern minimalist rectangular coffee table with clean lines, smooth surface, and straight metal legs.",
+      "pos": [
+        -0.01,
+        0.0,
+        0.4
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.4,
+        0.4,
+        0.8
+      ],
+      "prompt": "simple and low coffee table",
+      "sampled_asset_jid": "a7903e58-7858-4418-a957-2ce88806de53",
+      "sampled_asset_desc": "A modern minimalist black coffee table with a sleek rectangular shape and a low profile, combining wood and metal materials for a chic and functional piece.",
+      "sampled_asset_size": [
+        1.399999976158142,
+        0.4020000393086427,
+        0.8000000417232513
+      ],
+      "uuid": "bd8b505f-7db8-41d1-9d3a-961729671773"
+    },
+    {
+      "desc": "Modern beige nightstand with a fabric finish, open shelf, and minimalist rectangular design.",
+      "pos": [
+        1.08,
+        0.0,
+        1.84
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.58,
+        0.46,
+        0.35
+      ],
+      "prompt": "small and low nightstand",
+      "sampled_asset_jid": "29d5bbf7-f577-4f5c-baa7-1ed3f9817a67",
+      "sampled_asset_desc": "This modern, minimalist white and gray nightstand features rounded corners, two drawers with recessed handles, and a compact, functional design, differentiating it with a smooth, streamlined aesthetic.",
+      "sampled_asset_size": [
+        0.547249972820282,
+        0.4372889864208611,
+        0.3500000238418579
+      ],
+      "uuid": "5be5127c-4fe0-4ac0-824b-5f6a993e2d84"
+    },
+    {
+      "desc": "A modern, minimalist king-size bed featuring layered brown, gray, orange, and white bedding with clean lines and contrasting pillows, blending contemporary design elements.",
+      "pos": [
+        0.15,
+        0.0,
+        0.4
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        1.85,
+        1.24,
+        2.47
+      ],
+      "prompt": "white and minimalist bed",
+      "sampled_asset_jid": "4048fcf9-1937-4a23-af7d-6982626ec2f1-(1.15)-(1.0)-(1.0)",
+      "sampled_asset_desc": "A modern, minimalist king-size bed featuring layered brown, gray, orange, and white bedding with clean lines and contrasting pillows, blending contemporary design elements.",
+      "sampled_asset_size": [
+        2.12,
+        1.24,
+        2.47
+      ],
+      "uuid": "55c8a3db-6513-400c-808c-75ff12c58cb7",
+      "scale": [
+        1.15,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        -1.57,
+        1.05,
+        -1.64
+      ],
+      "size": [
+        0.2,
+        2.1,
+        0.95
+      ]
+    },
+    {
+      "type": "window",
+      "pos": [
+        1.73,
+        1.6,
+        -0.78
+      ],
+      "size": [
+        0.46,
+        1.4,
+        1.5
+      ]
+    }
+  ]
+}
