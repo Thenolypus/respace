@@ -164,8 +164,6 @@ def main():
 
 	base_dir = Path("input_test")
 	unit_dir = base_dir / args.unit
-	output_dir = base_dir / f"output_cross_style_{args.unit}"
-	output_dir.mkdir(parents=True, exist_ok=True)
 
 	# Find all generated_scene.json files
 	scene_files = sorted(unit_dir.glob("*/generated_scene.json"))
@@ -215,7 +213,7 @@ def main():
 
 		retrieval = AssetRetrievalModule(
 			lambd=0.5,
-			sigma=0.3,
+			sigma=0.1,
 			temp=0.2,
 			top_p=0.95,
 			top_k=20,
@@ -262,8 +260,7 @@ def main():
 
 				print_scene_summary(result, f"{room_name} - original sampling ({mode})")
 
-				room_output = output_dir / room_name
-				room_output.mkdir(parents=True, exist_ok=True)
+				room_output = scene_path.parent
 
 				room_results = {
 					"original_sample": result,
@@ -304,8 +301,7 @@ def main():
 
 				print_scene_summary(result, f"{room_name} - cross-scene style ({mode})")
 
-				room_output = output_dir / room_name
-				room_output.mkdir(parents=True, exist_ok=True)
+				room_output = scene_path.parent
 
 				room_results = {
 					"cross_scene_style": result,

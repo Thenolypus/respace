@@ -18,6 +18,7 @@ Usage:
       --skip-rooms
 """
 
+import os
 import json
 import re
 import argparse
@@ -27,6 +28,23 @@ from dotenv import load_dotenv
 load_dotenv(".env")
 
 from src.viz import render_scene_and_export, create_360_video_unit
+
+ENV_FILE = ".env"
+ENV_FILE_BATHROOM = ".env_heg"
+
+ASSET_ENV_KEYS = [
+    "PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
+    "PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
+    "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
+    "PTH_3DFUTURE_ASSETS",
+]
+
+
+def _load_env(env_file):
+    """Clear asset-related env vars and reload from the given .env file."""
+    for k in ASSET_ENV_KEYS:
+        os.environ.pop(k, None)
+    load_dotenv(env_file, override=True)
 
 
 def render_room(scene, render_path, filename, resolution):
@@ -65,6 +83,10 @@ def render_unit_360(output_dir, room_scenes, resolution):
     render_path = output_dir / "unit_360"
     render_path.mkdir(parents=True, exist_ok=True)
 
+    def _switch_env_for_room(room):
+        env_file = ENV_FILE_BATHROOM if room.get("room_type") == "bathroom" else ENV_FILE
+        _load_env(env_file)
+
     print(f"\n--- Unit {unit_id} 360 video ---")
     video_path = create_360_video_unit(
         metadata_path=str(metadata_path),
@@ -73,6 +95,7 @@ def render_unit_360(output_dir, room_scenes, resolution):
         pth_output=render_path,
         resolution=(resolution, resolution),
         room_scenes=room_scenes,
+        pre_room_hook=_switch_env_for_room,
     )
     print(f"  Saved: {video_path}")
 
@@ -124,6 +147,9 @@ def main():
 
         if not args.skip_rooms:
             print(f"\n--- {room_name} ---")
+            room_type = scene.get("room_type", "")
+            env_file = ENV_FILE_BATHROOM if room_type == "bathroom" else ENV_FILE
+            _load_env(env_file)
             room_output = retrieval_path.parent
             render_path = room_output / "render"
             render_path.mkdir(parents=True, exist_ok=True)

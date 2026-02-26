@@ -534,6 +534,10 @@ def render_scene_and_export(scene_with_assets, filename, pth_output, resolution=
 	bounds_bottom = scene_with_assets["bounds_bottom"]
 	trimesh_scene, scene_span = setup_trimesh_scene_with_floor(bounds_bottom)
 
+	if scene_with_assets.get("openings"):
+		for mesh in create_opening_meshes(scene_with_assets["openings"]):
+			trimesh_scene.add_geometry(mesh)
+
 	add_objects_to_trimesh_scene(trimesh_scene, scene_with_assets["objects"], show_bboxes, show_assets, show_assets_voxelized, show_bounds, scene_with_assets.get("bounds_bottom"), scene_with_assets.get("bounds_top"))
 	pyrender_scene = create_pyrender_scene_from_trimesh(trimesh_scene, bg_color=bg_color)
 
@@ -1366,7 +1370,10 @@ def transform_room_to_unit_space(room_scene, center_offset_x, center_offset_z, r
 		if quat is None:
 			return None
 		# Build Y-rotation quaternion [x,y,z,w]
-		half = neg_rot / 2.0
+		# Note: _rotate_point_y uses a 2D rotation convention where angle θ
+		# corresponds to a 3D Y-axis rotation by -θ.  The quaternion must
+		# match that effective direction, so we negate neg_rot here.
+		half = -neg_rot / 2.0
 		rot_quat = np.array([0.0, np.sin(half), 0.0, np.cos(half)])
 		# Hamilton product: rot_quat * quat
 		q1, q2 = rot_quat, np.array(quat)
@@ -1386,8 +1393,41 @@ def transform_room_to_unit_space(room_scene, center_offset_x, center_offset_z, r
 
 	for opening in scene.get("openings", []):
 		opening["pos"] = transform_point_3d(opening["pos"])
+		# Rotate the size extents so the opening box aligns with the rotated wall
+		sx, sy, sz = opening["size"]
+		rsx, rsz = _rotate_point_y(sx, sz, neg_rot)
+		opening["size"] = [abs(round(rsx, 3)), sy, abs(round(rsz, 3))]
 
 	return scene
+
+def create_opening_meshes(openings):
+	"""Create simple colored box meshes for doors (red) and windows (blue)."""
+	COLORS = {
+		"door":   [0.8, 0.2, 0.2, 1.0],
+		"window": [0.3, 0.5, 0.9, 0.8],
+	}
+	meshes = []
+	for opening in openings:
+		opening_type = opening.get("type", "door")
+		color = COLORS.get(opening_type, COLORS["door"])
+		size = opening["size"]
+		pos = opening["pos"]
+
+		box = trimesh.creation.box(extents=size)
+		material = trimesh.visual.material.PBRMaterial(
+			baseColorFactor=color, alphaMode='BLEND',
+			metallicFactor=0.0, roughnessFactor=1.0,
+		)
+		box.visual = trimesh.visual.TextureVisuals(material=material)
+		box.fix_normals(multibody=True)
+
+		transform = np.eye(4)
+		transform[:3, 3] = pos
+		box.apply_transform(transform)
+
+		meshes.append(box)
+	return meshes
+
 
 def create_wall_meshes(bounds_bottom, height_m, wall_thickness=0.1, color=[0.85, 0.82, 0.78, 1.0]):
 	"""Create wall meshes by extruding each edge of the room boundary polygon upward."""
@@ -1440,7 +1480,7 @@ def create_wall_meshes(bounds_bottom, height_m, wall_thickness=0.1, color=[0.85,
 def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 						  resolution=(1536, 1024), camera_height=None,
 						  fps=30, video_duration=6.0, bg_color=None,
-						  room_scenes=None):
+						  room_scenes=None, pre_room_hook=None):
 	"""Create a 360-degree rotating video of an entire apartment unit.
 
 	Loads all rooms from metadata, transforms them back to unit/world space,
@@ -1450,6 +1490,8 @@ def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 		room_scenes: Optional dict mapping room name (e.g. 'unit_1_room_1_livingroom')
 			to a scene dict. When provided, these scenes are used instead of
 			loading from the original room JSON files.
+		pre_room_hook: Optional callable(room_dict) invoked before loading each
+			room's meshes (e.g. to switch asset env vars per room type).
 	"""
 	with open(metadata_path, "r") as f:
 		metadata = json.load(f)
@@ -1474,8 +1516,15 @@ def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 			room_scene = copy.deepcopy(room_scenes[room_name])
 		else:
 			room_path = os.path.join(floorplan_dir, room_meta["output_file"])
+			if not os.path.exists(room_path):
+				print(f"  Skipping {room_name}: file not found at {room_path}")
+				continue
 			with open(room_path, "r") as f:
 				room_scene = json.load(f)
+
+		if not room_scene.get("bounds_bottom"):
+			print(f"  Skipping {room_name}: no floorplan information (bounds_bottom)")
+			continue
 
 		cx = room_meta["center_offset_m"]["x"]
 		cz = room_meta["center_offset_m"]["z"]
@@ -1532,14 +1581,22 @@ def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 	trimesh_scene = trimesh.Scene()
 
 	for room in unit_rooms:
+		if pre_room_hook:
+			pre_room_hook(room)
+
 		# Floor slab
 		floor = create_floor_slab(room["bounds_bottom"])
 		trimesh_scene.add_geometry(floor)
 
 		# Walls
-		wall_meshes = create_wall_meshes(room["bounds_bottom"], height_m)
+		wall_meshes = create_wall_meshes(room["bounds_bottom"], height_m * 0.25)
 		for wall in wall_meshes:
 			trimesh_scene.add_geometry(wall)
+
+		# Openings (doors = red, windows = blue)
+		if room.get("openings"):
+			for mesh in create_opening_meshes(room["openings"]):
+				trimesh_scene.add_geometry(mesh)
 
 		# Furniture objects
 		if room.get("objects"):

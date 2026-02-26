@@ -19,15 +19,11 @@ from shapely.geometry import Polygon, Point, LineString
 FIXTURES = {
     "sink": {
         "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",
-        "size": [0.8, 0.85, 0.5],
-    },
-    "mirror": {
-        "desc": "A modern minimalist wall-mounted mirror accessory",
-        "size": [0.6, 0.8, 0.05],
+        "size": [0.62, 0.17, 0.45],
     },
     "toilet": {
         "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank",
-        "size": [0.4, 0.45, 0.65],
+        "size": [0.48, 1.02, 0.64],
     },
     "bathtub": {
         "desc": "A modern minimalist bathtub",
@@ -35,11 +31,7 @@ FIXTURES = {
     },
     "shower": {
         "desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels",
-        "size": [0.9, 2.0, 0.9],
-    },
-    "rug": {
-        "desc": "A dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style",
-        "size": [0.8, 0.02, 0.5],
+        "size": [1.2, 2.14, 1.24],
     },
 }
 
@@ -55,6 +47,8 @@ MIN_TOILET_CENTERLINE_SIDE = 0.38
 MIN_FIXTURE_CENTER_TO_CENTER = 0.76
 # Minimum gap between any two fixture edges (practical minimum ~10 cm)
 MIN_FIXTURE_EDGE_GAP = 0.10
+# Vertical offset applied to all bathroom fixtures (asset origins are not at floor level)
+BATHROOM_Y_OFFSET = 0.3
 # Minimum wall length to fit a standard bathtub (60 in = 1.52 m)
 MIN_WALL_FOR_BATHTUB = 1.52
 
@@ -442,12 +436,18 @@ def generate_bathroom_layout(scene):
     """
     Generate a bathroom layout with rule-based fixture placement.
 
-    Layout strategy (based on building codes and interior-design best practices):
-      1. Sink + mirror on the wall opposite the door (focal point when entering).
-      2. Toilet on a side wall, as far from the door as possible so it is NOT
-         in the direct line of sight (privacy rule).
-      3. Bathtub / shower on the remaining wall (or shares a wall if only 4 walls).
-      4. Rug in front of the bathtub / shower.
+    Layout strategy — corner-clustering (building codes + interior-design
+    best practices):
+      1. Choose a clustering corner: the corner of the opposite wall that is
+         closest to the door.  This puts the toilet on the near side wall
+         (less visible when looking straight ahead) and the bathtub on the
+         far side wall (least visible from the entry).
+      2. Sink at the edge of the opposite wall, pushed toward the clustering
+         corner (focal point when entering, but offset to free space).
+      3. Bathtub placed next on the adjacent wall opposite the toilet wall
+         (least visible from the door), biased away from the clustering corner.
+      4. Toilet on the adjacent wall that shares the clustering corner,
+         tucked into the extreme corner end (privacy — not visible from door).
 
     Building-code clearances enforced (IRC / IPC / NKBA):
       - 15 in (0.38 m) from toilet centerline to any side wall or fixture.
@@ -495,22 +495,51 @@ def generate_bathroom_layout(scene):
         wall_assignments.setdefault(wall_idx, []).append(key)
 
     # ------------------------------------------------------------------ #
-    # 1. SINK — opposite the door (the "focal point" wall)
+    # 0. CHOOSE CLUSTERING CORNER
+    #    Pick the corner of the opposite wall CLOSEST to the door.
+    #    This puts the toilet on the side wall near the door (less visible
+    #    when looking straight ahead) and the bathtub on the far side wall
+    #    (least visible from the entry).
+    # ------------------------------------------------------------------ #
+    opp_wall = walls[opposite_wall_idx]
+    dist_start = np.linalg.norm(opp_wall["start_xz"] - door_pos_xz)
+    dist_end = np.linalg.norm(opp_wall["end_xz"] - door_pos_xz)
+
+    if dist_start <= dist_end:
+        # Clustering corner is at the start of the opposite wall (frac ~ 0)
+        cluster_corner_xz = opp_wall["start_xz"]
+        sink_preferred_frac_dir = "start"  # push sink toward frac 0
+    else:
+        # Clustering corner is at the end of the opposite wall (frac ~ 1)
+        cluster_corner_xz = opp_wall["end_xz"]
+        sink_preferred_frac_dir = "end"  # push sink toward frac 1
+
+    # ------------------------------------------------------------------ #
+    # 1. SINK — on the opposite wall, pushed toward the clustering corner
     # ------------------------------------------------------------------ #
     sink_size = FIXTURES["sink"]["size"]
     sink_wall_idx = opposite_wall_idx
-    sink_wall = walls[sink_wall_idx]
+    sink_wall = opp_wall
     sink_frac = None
 
-    # Try opposite wall first; fall back to longest adjacent if too short
+    # Compute edge fraction: push toward the corner but respect minimum clearance
+    # Sink only needs half its width + a small buffer from the side wall
+    sink_edge_clearance = (sink_size[0] / 2.0 + 0.05) / opp_wall["length"]
+    if sink_preferred_frac_dir == "start":
+        sink_pref_frac = max(sink_edge_clearance, 0.05)
+    else:
+        sink_pref_frac = min(1.0 - sink_edge_clearance, 0.95)
+
+    # Try opposite wall with corner-biased fraction; fall back to adjacent walls
     candidate_walls = [opposite_wall_idx] + adjacent_indices
     for try_idx in candidate_walls:
         w = walls[try_idx]
         if w["length"] < sink_size[0] + 0.1:
             continue
+        pf = sink_pref_frac if try_idx == opposite_wall_idx else 0.5
         result, frac = _try_place_on_wall(
             w, try_idx, sink_size, window_exclusions,
-            objects, floor_polygon, preferred_frac=0.5,
+            objects, floor_polygon, preferred_frac=pf,
         )
         if result is not None:
             sink_wall_idx = try_idx
@@ -525,36 +554,79 @@ def generate_bathroom_layout(scene):
         raise ValueError("Could not place sink on any wall")
 
     # ------------------------------------------------------------------ #
-    # 2. MIRROR — wall-mounted above the sink (same wall, same fraction)
+    # 2. BATHTUB — placed before the toilet so the largest fixture gets
+    #    first pick of the remaining wall space.
+    #    Goes on the adjacent wall OPPOSITE to the toilet wall candidate
+    #    (i.e. the side wall that is least visible from the door).
     # ------------------------------------------------------------------ #
-    mirror_size = FIXTURES["mirror"]["size"]
-    mirror_offset = mirror_size[2] / 2.0
-    mirror_pos = place_on_wall(sink_wall, sink_frac, mirror_offset, y_pos=1.4)
-    mirror_rot = wall_normal_to_quaternion(sink_wall["normal"])
+    bath_wall_idx = None
+    bath_fixture_key = None
+    bathtub_size = FIXTURES["bathtub"]["size"]
 
-    mirror_obj = {
-        "desc": FIXTURES["mirror"]["desc"],
-        "size": list(mirror_size),
-        "pos": mirror_pos,
-        "rot": mirror_rot,
-    }
-    objects.append(mirror_obj)
-    mark_wall(sink_wall_idx, "mirror")
+    # Identify the adjacent wall sharing the clustering corner (reserved for toilet)
+    def _corner_affinity(idx):
+        w = walls[idx]
+        d_s = np.linalg.norm(w["start_xz"] - cluster_corner_xz)
+        d_e = np.linalg.norm(w["end_xz"] - cluster_corner_xz)
+        return min(d_s, d_e)
+
+    toilet_wall_candidate = min(adjacent_indices, key=_corner_affinity)
+
+    # Build candidate walls: the other adjacent wall first (opposite the
+    # toilet), then remaining walls as fallback.  Never use the toilet wall.
+    bath_candidates = [i for i in adjacent_indices if i != toilet_wall_candidate]
+    bath_candidates += [i for i in range(len(walls))
+                        if i != toilet_wall_candidate and i not in bath_candidates]
+    bath_candidates.sort(key=lambda i: (
+        0 if i != toilet_wall_candidate and i in adjacent_indices else 1,
+        len(wall_assignments.get(i, [])),
+        -walls[i]["length"],
+    ))
+
+    for bi in bath_candidates:
+        bw = walls[bi]
+        excl = all_exclusions if bi == door_wall_idx else window_exclusions
+        if bw["length"] < MIN_WALL_FOR_BATHTUB:
+            continue
+
+        # Push bathtub away from the clustering corner
+        d_s = np.linalg.norm(bw["start_xz"] - cluster_corner_xz)
+        d_e = np.linalg.norm(bw["end_xz"] - cluster_corner_xz)
+        bath_pref = 0.2 if d_s > d_e else 0.8
+
+        result, frac = _try_place_on_wall(
+            bw, bi, bathtub_size, excl,
+            objects, floor_polygon, preferred_frac=bath_pref,
+        )
+        if result is not None:
+            result["desc"] = FIXTURES["bathtub"]["desc"]
+            objects.append(result)
+            bath_wall_idx = bi
+            bath_fixture_key = "bathtub"
+            mark_wall(bi, "bathtub")
+            break
+
+    if bath_wall_idx is None:
+        print("WARNING: Could not place bathtub on any wall")
 
     # ------------------------------------------------------------------ #
-    # 3. TOILET — on an adjacent (side) wall, far from the door
-    #    Privacy rule: never place directly opposite the door.
+    # 3. TOILET — on the adjacent wall sharing the clustering corner,
+    #    tucked into the corner end.
+    #    Privacy rule: not directly opposite the door.
     #    IRC: >= 0.38 m from centerline to nearest side wall.
     # ------------------------------------------------------------------ #
     toilet_size = FIXTURES["toilet"]["size"]
     toilet_wall_idx = None
 
-    # Sort adjacent walls: prefer the one farthest from the door
-    adj_sorted = sorted(
-        adjacent_indices,
-        key=lambda i: np.linalg.norm(walls[i]["center_xz"] - door_pos_xz),
-        reverse=True,
-    )
+    # Find the adjacent wall that shares the clustering corner
+    # (its start or end is closest to cluster_corner_xz)
+    def corner_affinity(adj_idx):
+        w = walls[adj_idx]
+        d_start = np.linalg.norm(w["start_xz"] - cluster_corner_xz)
+        d_end = np.linalg.norm(w["end_xz"] - cluster_corner_xz)
+        return min(d_start, d_end)
+
+    adj_sorted = sorted(adjacent_indices, key=corner_affinity)
 
     for adj_idx in adj_sorted:
         adj_wall = walls[adj_idx]
@@ -562,15 +634,17 @@ def generate_bathroom_layout(scene):
         if adj_wall["length"] < min_len_needed:
             continue
 
-        # Prefer the far end of the wall (away from door)
-        dist_start = np.linalg.norm(adj_wall["start_xz"] - door_pos_xz)
-        dist_end = np.linalg.norm(adj_wall["end_xz"] - door_pos_xz)
+        # Push toilet to the end of the wall nearest the clustering corner
+        d_start = np.linalg.norm(adj_wall["start_xz"] - cluster_corner_xz)
+        d_end = np.linalg.norm(adj_wall["end_xz"] - cluster_corner_xz)
         margin = (MIN_TOILET_CENTERLINE_SIDE + toilet_size[0] / 2.0) / adj_wall["length"]
 
-        if dist_start > dist_end:
-            preferred_frac = max(margin, min(0.9, margin))
+        if d_start <= d_end:
+            # Corner is at start of wall → push fraction toward 0
+            preferred_frac = max(margin, 0.05)
         else:
-            preferred_frac = max(0.1, min(1.0 - margin, 1.0 - margin))
+            # Corner is at end of wall → push fraction toward 1
+            preferred_frac = min(1.0 - margin, 0.95)
 
         result, frac = _try_place_on_wall(
             adj_wall, adj_idx, toilet_size, window_exclusions,
@@ -583,7 +657,7 @@ def generate_bathroom_layout(scene):
             mark_wall(adj_idx, "toilet")
             break
 
-    # Fallback: try same wall as sink but offset (with overlap check this time)
+    # Fallback: try same wall as sink but offset
     if toilet_wall_idx is None:
         for pf in [0.15, 0.85, 0.25, 0.75]:
             if abs(pf - sink_frac) < 0.2:
@@ -603,94 +677,10 @@ def generate_bathroom_layout(scene):
         print("WARNING: Could not place toilet on any wall")
 
     # ------------------------------------------------------------------ #
-    # 4. BATHTUB / SHOWER
-    #    Strategy: try shower on the door wall first (next to door, facing
-    #    into the room — visible when entering). If that fails, try
-    #    bathtub/shower on other walls ranked by available space.
+    # Apply vertical offset (asset origins are not at floor level)
     # ------------------------------------------------------------------ #
-    bath_wall_idx = None
-    bath_fixture_key = None
-
-    # --- Phase 1: try shower on the door wall (preferred placement) ---
-    door_wall = walls[door_wall_idx]
-    shower_size = FIXTURES["shower"]["size"]
-    if door_wall["length"] >= shower_size[0] + 0.1:
-        result, frac = _try_place_on_wall(
-            door_wall, door_wall_idx, shower_size, all_exclusions,
-            objects, floor_polygon, preferred_frac=0.5,
-        )
-        if result is not None:
-            result["desc"] = FIXTURES["shower"]["desc"]
-            objects.append(result)
-            bath_wall_idx = door_wall_idx
-            bath_fixture_key = "shower"
-            mark_wall(door_wall_idx, "shower")
-
-    # --- Phase 2: fallback to other walls for bathtub/shower ---
-    if bath_wall_idx is None:
-        bath_candidates = [
-            i for i in range(len(walls)) if i != door_wall_idx
-        ]
-        bath_candidates.sort(key=lambda i: (
-            len(wall_assignments.get(i, [])),   # fewer fixtures first
-            -walls[i]["length"],                 # longer walls first
-        ))
-
-        for bi in bath_candidates:
-            bw = walls[bi]
-            attempts = []
-            if bw["length"] >= MIN_WALL_FOR_BATHTUB:
-                attempts.append(("bathtub", FIXTURES["bathtub"]["size"]))
-            if bw["length"] >= shower_size[0] + 0.1:
-                attempts.append(("shower", shower_size))
-
-            for try_key, try_size in attempts:
-                result, frac = _try_place_on_wall(
-                    bw, bi, try_size, window_exclusions,
-                    objects, floor_polygon, preferred_frac=0.5,
-                )
-                if result is not None:
-                    result["desc"] = FIXTURES[try_key]["desc"]
-                    objects.append(result)
-                    bath_wall_idx = bi
-                    bath_fixture_key = try_key
-                    mark_wall(bi, try_key)
-                    break
-
-            if bath_wall_idx is not None:
-                break
-
-    if bath_wall_idx is None:
-        print("WARNING: Could not place bathtub or shower on any wall")
-
-    # ------------------------------------------------------------------ #
-    # 5. RUG — in front of the bathtub / shower
-    # ------------------------------------------------------------------ #
-    if bath_wall_idx is not None and bath_fixture_key is not None:
-        bath_obj_placed = next(
-            o for o in objects
-            if o["desc"] == FIXTURES[bath_fixture_key]["desc"]
-        )
-        rug_size = FIXTURES["rug"]["size"]
-        bath_normal = walls[bath_wall_idx]["normal"]
-        bath_pos_xz = np.array([bath_obj_placed["pos"][0], bath_obj_placed["pos"][2]])
-
-        bath_depth = bath_obj_placed["size"][2]
-        # Rug just in front of the bath (edge-to-edge + small gap)
-        rug_offset = bath_depth / 2.0 + rug_size[2] / 2.0 + 0.05
-        rug_pos_xz = bath_pos_xz + bath_normal * rug_offset
-        rug_pos = [round(float(rug_pos_xz[0]), 4), 0.0, round(float(rug_pos_xz[1]), 4)]
-        rug_rot = wall_normal_to_quaternion(bath_normal)
-
-        rug_obj = {
-            "desc": FIXTURES["rug"]["desc"],
-            "size": list(rug_size),
-            "pos": rug_pos,
-            "rot": rug_rot,
-        }
-
-        if check_inside_bounds(rug_obj, floor_polygon):
-            objects.append(rug_obj)
+    for obj in objects:
+        obj["pos"][1] += BATHROOM_Y_OFFSET
 
     # ------------------------------------------------------------------ #
     # Validation pass
