@@ -65,18 +65,18 @@
           0.43
         ],
         "prompt": "gray nightstand",
-        "sampled_asset_jid": "afcf6dfd-730f-4ba1-b8c2-158804fb6886",
-        "sampled_asset_desc": "Modern minimalist light gray nightstand with rounded edges, two handle-less drawers, and a wood grain finish.",
+        "sampled_asset_jid": "b9a31abf-f88f-4c5f-9f39-21b4039283de-(0.64)-(1.0)-(0.94)",
+        "sampled_asset_desc": "Modern black and brown wooden nightstand with a single drawer, rounded corners, and open shelf.",
         "sampled_asset_size": [
-          0.5000200271606445,
-          0.45835102663810456,
-          0.4333500266075134
+          0.51,
+          0.45,
+          0.43
         ],
-        "uuid": "ef3650e3-40e0-43e7-9eff-3575eb1aa1cd",
+        "uuid": "5135787b-e7a8-44d9-b2ff-eaa274a90b2f",
         "scale": [
-          1.01,
+          0.64,
           1.0,
-          1.0
+          0.94
         ]
       },
       {
@@ -98,18 +98,18 @@
           0.89
         ],
         "prompt": "pendant lamp",
-        "sampled_asset_jid": "94935355-4c7a-4f16-8296-851f54151ad7",
-        "sampled_asset_desc": "Modern minimalist coffee table with a round black metal top and a geometric brown wooden base offering a sleek, functional design.",
+        "sampled_asset_jid": "81c358ca-dd9f-4d4d-8e96-664752f15204-(0.45)-(1.0)-(7.42)",
+        "sampled_asset_desc": "A modern minimalist rectangular black pendant lamp made of metal and acrylic with a sleek suspended design.",
         "sampled_asset_size": [
-          0.8874080181121826,
-          0.8086220033339049,
-          0.8873379826545715
+          0.88,
+          0.8,
+          0.89
         ],
-        "uuid": "fad7dd45-a92e-4dbe-a522-73d504b149e0",
+        "uuid": "2258dceb-2295-4fe6-86aa-b0db82b5b1c1",
         "scale": [
-          10.28,
+          0.45,
           1.0,
-          10.28
+          7.42
         ]
       },
       {
@@ -138,7 +138,7 @@
           2.000000021870912,
           0.6132760643959045
         ],
-        "uuid": "b53e39ba-4ddb-4adf-89bf-da5a8c8c0c06"
+        "uuid": "d25fb890-4bb9-43f9-84b5-e445c879c41d"
       },
       {
         "desc": "Modern minimalist single bed with a dark red headboard featuring distinctive horizontal bars and sleek metal legs.",
@@ -166,7 +166,7 @@
           0.9,
           2.08
         ],
-        "uuid": "e2faed21-b678-43d1-a230-8241fdfd17fa",
+        "uuid": "8090ef70-abd6-4ef4-b88c-dc2d6d2903e3",
         "scale": [
           1.07,
           1.0,
@@ -204,13 +204,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 2,
+    "user_prompt": null,
+    "room_order": 1,
     "is_anchor": false,
-    "n_prior_style_embeds": 13,
+    "n_prior_style_embeds": 8,
     "n_new_style_embeds": 4,
-    "n_total_unit_style_embeds": 17
+    "n_total_unit_style_embeds": 12
   }
 }

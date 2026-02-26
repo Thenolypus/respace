@@ -44,103 +44,6 @@
       1.17
     ]
   ],
-  "objects": [
-    {
-      "size": [
-        0.8,
-        0.85,
-        0.5
-      ],
-      "pos": [
-        0.0,
-        0.0,
-        0.92
-      ],
-      "rot": [
-        0.0,
-        -1.0,
-        0.0,
-        0.0
-      ],
-      "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines"
-    },
-    {
-      "desc": "A modern minimalist wall-mounted mirror accessory",
-      "size": [
-        0.6,
-        0.8,
-        0.05
-      ],
-      "pos": [
-        0.0,
-        1.4,
-        1.145
-      ],
-      "rot": [
-        0.0,
-        -1.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "size": [
-        0.4,
-        0.45,
-        0.65
-      ],
-      "pos": [
-        -0.465,
-        0.0,
-        0.356
-      ],
-      "rot": [
-        0.0,
-        0.70711,
-        0.0,
-        0.70711
-      ],
-      "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank"
-    },
-    {
-      "size": [
-        0.9,
-        2.0,
-        0.9
-      ],
-      "pos": [
-        0.34,
-        0.0,
-        -0.468
-      ],
-      "rot": [
-        0.0,
-        -0.70711,
-        0.0,
-        0.70711
-      ],
-      "desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels"
-    },
-    {
-      "desc": "A dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style",
-      "size": [
-        0.8,
-        0.02,
-        0.5
-      ],
-      "pos": [
-        -0.41,
-        0.0,
-        -0.468
-      ],
-      "rot": [
-        0.0,
-        -0.70711,
-        0.0,
-        0.70711
-      ]
-    }
-  ],
   "openings": [
     {
       "type": "door",
@@ -154,6 +57,65 @@
         2.1,
         0.2
       ]
+    }
+  ],
+  "objects": [
+    {
+      "size": [
+        0.62,
+        0.17,
+        0.45
+      ],
+      "pos": [
+        0.43,
+        0.3,
+        0.945
+      ],
+      "rot": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines"
+    },
+    {
+      "size": [
+        1.7,
+        0.6,
+        0.75
+      ],
+      "pos": [
+        -0.415,
+        0.3,
+        -0.234
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "desc": "A modern minimalist bathtub"
+    },
+    {
+      "size": [
+        0.48,
+        1.02,
+        0.64
+      ],
+      "pos": [
+        0.47,
+        0.3,
+        0.316
+      ],
+      "rot": [
+        0.0,
+        -0.70711,
+        0.0,
+        0.70711
+      ],
+      "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank"
     }
   ]
 }

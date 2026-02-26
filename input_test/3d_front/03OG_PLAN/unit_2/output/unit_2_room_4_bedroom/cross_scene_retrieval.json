@@ -72,7 +72,7 @@
           1.5791170768789016,
           0.4702709913253784
         ],
-        "uuid": "b493d8f9-b89d-438c-8f0f-f561db33be5f",
+        "uuid": "d861bde8-cb49-4604-bd18-6bef7ee713ea",
         "scale": [
           1.24,
           1.08,
@@ -105,7 +105,7 @@
           0.5,
           0.45
         ],
-        "uuid": "355997ec-81fc-44a2-86cc-6db864bbd237",
+        "uuid": "116dcf7c-cbc5-4a0b-97a3-248369a12768",
         "scale": [
           1.04,
           1.0,
@@ -138,7 +138,7 @@
           0.5740460340797693,
           0.5779979825019836
         ],
-        "uuid": "610dffb5-d159-478f-bc40-7e45cc009cde",
+        "uuid": "4b26ad74-9498-4d65-b54c-bd581623eca1",
         "scale": [
           1.35,
           1.0,
@@ -171,7 +171,7 @@
           0.7892649888417083,
           2.1671810150146484
         ],
-        "uuid": "a3a81663-6104-4009-8251-05497d6d98e6"
+        "uuid": "6d0b1947-4d6a-4bc1-a76b-4199d5df5301"
       },
       {
         "desc": "Minimalist Scandinavian pendant lamp with a wooden shade, glass diffuser, and fabric cord, perfect for soft ambient lighting.",
@@ -192,14 +192,19 @@
           0.09
         ],
         "prompt": "white scandinavian lamp",
-        "sampled_asset_jid": "a5e064f6-2ea1-4465-9fac-5d694f3a7176",
-        "sampled_asset_desc": "Minimalist Scandinavian pendant lamp with a wooden shade, glass diffuser, and fabric cord, perfect for soft ambient lighting.",
+        "sampled_asset_jid": "443da456-d458-4d43-aa07-639f5076448a-(0.55)-(1.0)-(0.55)",
+        "sampled_asset_desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
         "sampled_asset_size": [
-          0.08747799694538116,
-          0.7895749807357788,
-          0.08747799694538116
+          0.09,
+          0.78,
+          0.09
         ],
-        "uuid": "87273a6c-ba33-4071-8354-c322ebd1c81f"
+        "uuid": "cc8537fa-744a-4c60-8752-348e2fb740d2",
+        "scale": [
+          0.55,
+          1.0,
+          0.55
+        ]
       },
       {
         "desc": "A contemporary wardrobe with clean lines, a white and dark wood color scheme, featuring multiple compartments, open shelves, and an integrated wine rack.",
@@ -227,7 +232,7 @@
           2.4040000570811513,
           0.35000017285346985
         ],
-        "uuid": "1fdf88d4-c105-438d-a8ab-9802c0764149"
+        "uuid": "0e7c9ed9-3f2a-4959-985c-2357e4273d3d"
       }
     ],
     "openings": [
@@ -260,13 +265,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 4,
+    "user_prompt": null,
+    "room_order": 3,
     "is_anchor": false,
-    "n_prior_style_embeds": 20,
+    "n_prior_style_embeds": 15,
     "n_new_style_embeds": 6,
-    "n_total_unit_style_embeds": 26
+    "n_total_unit_style_embeds": 21
   }
 }

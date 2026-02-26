@@ -72,7 +72,7 @@
           1.1197208106514154,
           0.3929990381002426
         ],
-        "uuid": "274e0fab-973e-4b3b-a167-01a09d47d847",
+        "uuid": "60d85936-70d7-4241-854a-bbc12c1ff803",
         "scale": [
           0.95,
           1.0,
@@ -98,14 +98,14 @@
           0.48
         ],
         "prompt": "small nightstand with drawer",
-        "sampled_asset_jid": "dc3da40f-423f-42b3-b6e3-adc0096feaa6",
-        "sampled_asset_desc": "A modern minimalist square side table with a gold metal open frame and gray glass top, featuring sleek geometric design.",
+        "sampled_asset_jid": "138024d2-847c-45fd-b173-7ce070d4b2de",
+        "sampled_asset_desc": "Modern gray leather swivel chair with curved backrest and four-star metal leg design.",
         "sampled_asset_size": [
-          0.47999998927116394,
-          0.5978549900051764,
-          0.4800000339746475
+          0.4779119938611984,
+          0.6068470022691184,
+          0.4673890471458435
         ],
-        "uuid": "cbd4ee49-6c42-4a49-9013-a2a92fe1f222"
+        "uuid": "21be05e3-ae54-412a-a195-d32cbd0478d8"
       },
       {
         "desc": "A modern, minimalistic king-size bed with an asymmetrical headboard, geometric metal legs, and a clean, sleek design in white and beige tones.",
@@ -133,7 +133,7 @@
           0.7892649888417083,
           2.1671810150146484
         ],
-        "uuid": "825df3a7-f1b7-4220-9c7c-5c81c0de7a6e",
+        "uuid": "fa8f7719-1971-422d-a5b1-82b34176a595",
         "scale": [
           0.99,
           1.0,
@@ -171,13 +171,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 3,
+    "user_prompt": null,
+    "room_order": 2,
     "is_anchor": false,
-    "n_prior_style_embeds": 17,
+    "n_prior_style_embeds": 12,
     "n_new_style_embeds": 3,
-    "n_total_unit_style_embeds": 20
+    "n_total_unit_style_embeds": 15
   }
 }

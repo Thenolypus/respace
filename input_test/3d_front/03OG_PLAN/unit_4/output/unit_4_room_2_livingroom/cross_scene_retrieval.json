@@ -125,14 +125,14 @@
           0.47
         ],
         "prompt": "curved-leg nightstand",
-        "sampled_asset_jid": "278bc115-a727-4ff8-abfb-647e45bdab46",
-        "sampled_asset_desc": "Elegant cream-colored Baroque nightstand with ornate carvings, curved scrolled legs, and a single drawer.",
+        "sampled_asset_jid": "5e4c8a81-79dd-43c2-a117-f3b9bda9e560",
+        "sampled_asset_desc": "Elegant Baroque nightstand with ornate carvings, curved legs, and a single drawer in cream ivory finish.",
         "sampled_asset_size": [
-          0.47139398753643036,
-          0.5627716593364198,
-          0.47141000628471375
+          0.47041600942611694,
+          0.5627690102707561,
+          0.47041600942611694
         ],
-        "uuid": "29650b50-d296-4a81-a069-adf166f8841e"
+        "uuid": "15250b65-53bc-4f4d-9b8f-56d2057377a5"
       },
       {
         "desc": "Modern minimalist gold pendant lamp with circular metal frame and crystal accents.",
@@ -160,7 +160,7 @@
           0.84979696886775,
           0.9218150079250336
         ],
-        "uuid": "24ef66da-5321-47fe-9502-0bf17ef18440",
+        "uuid": "d10f4b86-80a7-431a-bea0-456fa38e42e6",
         "scale": [
           1.11,
           1.0,
@@ -193,7 +193,7 @@
           0.27702805126662255,
           0.9160480201244354
         ],
-        "uuid": "09ebc249-a3a0-4ebd-b4a9-be73cf7fef11",
+        "uuid": "11b3bf48-eb71-4767-96c6-9fbaaf915864",
         "scale": [
           0.87,
           1.0,
@@ -226,7 +226,7 @@
           1.371680277826215,
           0.4231330454349518
         ],
-        "uuid": "d2c853af-921a-424b-9d45-75d6103e74cf"
+        "uuid": "632f028e-045c-4562-a5af-012f516fa14b"
       },
       {
         "desc": "Modern TV stand with a light wood finish, glass side shelves, and a sliding central compartment for sleek, efficient storage.",
@@ -254,7 +254,7 @@
           0.3516800212922204,
           0.3424000144004822
         ],
-        "uuid": "686c6f4c-6fc8-4b23-9bdb-d58ea5971ce7"
+        "uuid": "6983e051-decd-4bbe-85cd-96a12ef50040"
       },
       {
         "desc": "Scandinavian-inspired modern dining chair with a natural wood frame, curved Y-shaped backrest, and handwoven black rope seat.",
@@ -275,18 +275,18 @@
           0.6
         ],
         "prompt": "scandinavian-modern wood chair",
-        "sampled_asset_jid": "fabcf4ae-299a-4c44-94c7-cbbe5a5b4765-(0.97)-(1.0)-(1.11)",
-        "sampled_asset_desc": "Scandinavian-inspired modern dining chair with a natural wood frame, curved Y-shaped backrest, and handwoven black rope seat.",
+        "sampled_asset_jid": "01fe3767-6f21-49cf-b8da-e16b53267dc8-(1.17)-(1.0)-(1.06)",
+        "sampled_asset_desc": "Minimalist modern dining chair with natural wood frame and black leather seat, featuring a straight backrest and clean lines.",
         "sampled_asset_size": [
           0.56,
-          0.83,
+          0.84,
           0.6
         ],
-        "uuid": "f3c92bee-ddf3-4b00-8f49-6390ca8ebe2d",
+        "uuid": "4f6dd02d-e280-4b77-85b9-0848d6a5494b",
         "scale": [
-          0.97,
+          1.17,
           1.0,
-          1.11
+          1.06
         ]
       },
       {
@@ -315,7 +315,7 @@
           0.7781000416128503,
           0.7685440182685852
         ],
-        "uuid": "8ebc3927-9a94-4e5c-95a2-6d02e0c8f61f"
+        "uuid": "8112904e-94a2-4148-8510-0652d1c3b3f7"
       },
       {
         "desc": "A modern pendant lamp featuring a round design with delicate blue and white feather accents and a distinctive golden wavy metal frame.",
@@ -343,7 +343,7 @@
           0.9890214307233691,
           0.8251140117645264
         ],
-        "uuid": "fbf39529-e501-4ee0-a5fc-10a83a4d22aa",
+        "uuid": "6540b4d5-8908-4704-9698-939d5d09fbc6",
         "scale": [
           1.25,
           1.0,
@@ -459,9 +459,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 0,
     "is_anchor": true,
     "n_prior_style_embeds": 0,

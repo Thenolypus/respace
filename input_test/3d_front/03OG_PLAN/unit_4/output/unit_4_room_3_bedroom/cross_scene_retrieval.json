@@ -72,7 +72,7 @@
           0.5217499848193814,
           0.38383305072784424
         ],
-        "uuid": "4980aa3a-cd55-4544-9e19-2463266687c7"
+        "uuid": "01ff31b8-f386-4550-8f2d-e0c911b5b8d0"
       },
       {
         "desc": "Modern minimalist dark brown wooden wardrobe with sliding doors and clean lines.",
@@ -100,7 +100,7 @@
           1.7254699718357251,
           0.516746997833252
         ],
-        "uuid": "95a66bb6-599d-4df9-9951-543389f1b81f"
+        "uuid": "cba2b36c-fbd2-40cb-b8db-9706d17e2861"
       },
       {
         "desc": "A modern minimalist cylindrical marble side table featuring a sleek black and gray marbled surface.",
@@ -128,7 +128,7 @@
           0.47,
           0.45
         ],
-        "uuid": "dfe7f45f-e27f-4071-8cc0-1cf2b0e401b1",
+        "uuid": "ef1335be-0174-42e7-b1f2-04192cd13edb",
         "scale": [
           0.82,
           0.88,
@@ -161,7 +161,7 @@
           1.53,
           0.6
         ],
-        "uuid": "cc6767b2-2090-4590-9346-d5fbcd0382aa",
+        "uuid": "da319f8a-bb1d-47e7-84af-50ce73e46f6c",
         "scale": [
           0.88,
           1.0,
@@ -194,7 +194,7 @@
           0.7892649888417083,
           2.1671810150146484
         ],
-        "uuid": "88220e74-3cca-4262-ab44-e1469487b7c4",
+        "uuid": "340d91fe-0a87-445b-96ae-c210ea8810f9",
         "scale": [
           0.99,
           1.0,
@@ -245,9 +245,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 1,
     "is_anchor": false,
     "n_prior_style_embeds": 8,

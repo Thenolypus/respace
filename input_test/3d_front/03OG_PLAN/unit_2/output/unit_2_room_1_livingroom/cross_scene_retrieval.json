@@ -132,7 +132,7 @@
           0.833505009804469,
           1.7872520089149475
         ],
-        "uuid": "fc2d05f6-eb13-4de2-89a5-3059dee38197",
+        "uuid": "b84f00d1-7b1a-4c9b-bcc5-c21b81dbd81c",
         "scale": [
           1.04,
           1.0,
@@ -165,7 +165,7 @@
           0.9890139890485443,
           1.0890290141105652
         ],
-        "uuid": "dfc3a587-d939-44a2-a42e-149cf7ef07bd"
+        "uuid": "5ea432a2-ce81-4397-a0d9-3811979c90c0"
       },
       {
         "desc": "Contemporary minimalist off-white leather armchair with a high back, winged design, and beige rectangular cushion.",
@@ -186,14 +186,14 @@
           0.67
         ],
         "prompt": "leather armchair",
-        "sampled_asset_jid": "644b7f76-eb3e-49c8-ad9c-810fc403ea52",
-        "sampled_asset_desc": "Contemporary minimalist off-white leather armchair with a high back, winged design, and beige rectangular cushion.",
+        "sampled_asset_jid": "f91cecf2-e5ee-43f9-b89c-ca8315ddeda1",
+        "sampled_asset_desc": "Industrial vintage nightstand with leather upholstery, three drawers, and decorative metal accents.",
         "sampled_asset_size": [
-          0.6221169829368591,
-          0.7639929765797433,
-          0.6661090552806854
+          0.6118680238723755,
+          0.7319310366874561,
+          0.6602790355682373
         ],
-        "uuid": "8932f04e-5c1e-48e9-b73c-7e8dbf948887"
+        "uuid": "f354aef9-0e81-4099-b000-a9144341479a"
       },
       {
         "desc": "A modern black wooden side table featuring a round top, conical base, and middle support for sleek, contemporary appeal.",
@@ -214,14 +214,14 @@
           0.44
         ],
         "prompt": "modern side table",
-        "sampled_asset_jid": "8c1d8d81-6e6e-4e50-b127-7d3635f92f5b",
-        "sampled_asset_desc": "A modern glam white tufted lazy sofa with a gold metallic band, providing a chic and comfortable seating option.",
+        "sampled_asset_jid": "63af26e6-4d80-4c6f-b826-4d09c042bc2e",
+        "sampled_asset_desc": "Modern minimalist black metal and glass round three-tier side table with open frame and sleek design.",
         "sampled_asset_size": [
-          0.4383400082588196,
-          0.46147002307754015,
-          0.43910999596118927
+          0.43429601192474365,
+          0.4382580370524902,
+          0.45382601022720337
         ],
-        "uuid": "b8400193-ae20-41db-acb0-ce7b0ff5e9b6"
+        "uuid": "83687dd1-c73a-4cfc-9459-9b1ab3665134"
       },
       {
         "desc": "Rustic weathered brown wooden coffee table with two drawers and a lower shelf, featuring a traditional rectangular design and metal drawer pulls.",
@@ -249,7 +249,7 @@
           0.5589000178211947,
           1.3000500202178955
         ],
-        "uuid": "ffa766d1-5eef-41ed-bfa3-bff98e0e8ea8"
+        "uuid": "fd560ba9-9603-4ad6-bda3-d79e2580a2fa"
       },
       {
         "desc": "This Neoclassical wooden corner cabinet features a blend of brown, white, and gold elements with ornate gold accents, three drawers, white decorative moldings, and turned legs.",
@@ -270,14 +270,19 @@
           0.39
         ],
         "prompt": "scandinavian wooden cabinet",
-        "sampled_asset_jid": "121967de-6952-4d51-96a3-2b2a07ca4097",
-        "sampled_asset_desc": "This Neoclassical wooden corner cabinet features a blend of brown, white, and gold elements with ornate gold accents, three drawers, white decorative moldings, and turned legs.",
+        "sampled_asset_jid": "f91cecf2-e5ee-43f9-b89c-ca8315ddeda1-(0.92)-(1.0)-(0.6)",
+        "sampled_asset_desc": "Industrial vintage nightstand with leather upholstery, three drawers, and decorative metal accents.",
         "sampled_asset_size": [
-          0.5487149953842163,
-          0.7024319665092866,
-          0.3855540156364441
+          0.56,
+          0.73,
+          0.4
         ],
-        "uuid": "05fb4e18-c5b2-4985-bcde-be71dd8b9b51"
+        "uuid": "9e30c6a2-b7dc-4204-a290-f958038a7d51",
+        "scale": [
+          0.92,
+          1.0,
+          0.6
+        ]
       },
       {
         "desc": "Rustic-inspired floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
@@ -298,18 +303,18 @@
           0.38
         ],
         "prompt": "textile floor rug",
-        "sampled_asset_jid": "ecbea001-df66-44c1-8515-d02f253b6c8f-(1.01)-(1.0)-(1.01)",
-        "sampled_asset_desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+        "sampled_asset_jid": "a32fbc3e-32e7-44a9-b947-306c42d3a34d-(0.83)-(1.24)-(0.89)",
+        "sampled_asset_desc": "Modern pendant lamp with transparent glass globes and black cords, exemplifying minimalist design and sophisticated charm.",
         "sampled_asset_size": [
-          0.38,
+          0.4,
           1.67,
-          0.38
+          0.4
         ],
-        "uuid": "332a3021-dc9f-4122-ad6f-626c245f4e77",
+        "uuid": "b30af92c-b273-42c8-9a24-d45d5f1c9b70",
         "scale": [
-          1.01,
-          1.0,
-          1.01
+          0.83,
+          1.24,
+          0.89
         ]
       },
       {
@@ -331,14 +336,19 @@
           0.39
         ],
         "prompt": "wooden end table",
-        "sampled_asset_jid": "47f34fa6-cd94-4fac-8a76-7ed660e7718b",
-        "sampled_asset_desc": "An Asian-inspired dark brown wooden end table featuring a rectangular frame with geometric cutouts and ornate detailing, complemented by curved legs.",
+        "sampled_asset_jid": "4e086af8-0900-4c6d-b535-08c7a936a981-(0.82)-(0.82)-(0.82)",
+        "sampled_asset_desc": "Modern minimalist floor lamp with a white fabric drum shade and brown wooden tripod base featuring an open geometric design.",
         "sampled_asset_size": [
-          0.35152000188827515,
-          1.0482071832520887,
-          0.38518399000167847
+          0.38,
+          1.06,
+          0.38
         ],
-        "uuid": "32b14377-b2d4-46ac-8061-2303e5d0e282"
+        "uuid": "c0eb0534-c2fa-44bf-8948-fc2695b5e167",
+        "scale": [
+          0.82,
+          0.82,
+          0.82
+        ]
       }
     ],
     "openings": [
@@ -462,9 +472,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 0,
     "is_anchor": true,
     "n_prior_style_embeds": 0,

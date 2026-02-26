@@ -72,7 +72,7 @@
           0.7645690013525268,
           0.7667250037193298
         ],
-        "uuid": "1c1e714c-9e8c-4b86-87de-d0058ae08013"
+        "uuid": "7df1c47c-4b8c-4c78-befa-807de5483f74"
       },
       {
         "desc": "A modern minimalist black rectangular coffee table with gold metallic trim and a sleek, solid construction.",
@@ -100,7 +100,7 @@
           0.430161049184294,
           0.5364300310611725
         ],
-        "uuid": "ebf26e83-f8ec-4a6f-b4f7-25782f8092d1"
+        "uuid": "cbe5f672-8a90-4328-b368-68afe76c8de8"
       },
       {
         "desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
@@ -121,18 +121,18 @@
           0.38
         ],
         "prompt": "metal floor lamp",
-        "sampled_asset_jid": "ecbea001-df66-44c1-8515-d02f253b6c8f-(1.01)-(1.0)-(1.01)",
-        "sampled_asset_desc": "Rustic contemporary floor lamp with a branch-like metal stand, leaf accents, fabric cone shade, and round base.",
+        "sampled_asset_jid": "a32fbc3e-32e7-44a9-b947-306c42d3a34d-(0.83)-(1.24)-(0.89)",
+        "sampled_asset_desc": "Modern pendant lamp with transparent glass globes and black cords, exemplifying minimalist design and sophisticated charm.",
         "sampled_asset_size": [
-          0.38,
+          0.4,
           1.67,
-          0.38
+          0.4
         ],
-        "uuid": "86772e6b-0573-4a92-a82e-0ca54827dfb7",
+        "uuid": "6d140bbb-4197-4651-a2d2-e549a35a6852",
         "scale": [
-          1.01,
-          1.0,
-          1.01
+          0.83,
+          1.24,
+          0.89
         ]
       },
       {
@@ -161,7 +161,7 @@
           0.5,
           0.45
         ],
-        "uuid": "d1eb79eb-dc5f-453b-9e74-a775433cd610",
+        "uuid": "60ddd2c4-118a-410b-9bb4-3cd9c9834fa1",
         "scale": [
           1.04,
           1.0,
@@ -194,7 +194,7 @@
           2.3399999379867094,
           0.6309421062469482
         ],
-        "uuid": "f3bac1cc-14e6-496c-84e8-f0a8854275a0"
+        "uuid": "4b0215a8-fa3c-459d-b1a5-e9386ba1d419"
       },
       {
         "desc": "Modern industrial single bed with a slender metal frame, navy blue and white printed bedding, and curved headboard for a sophisticated look.",
@@ -222,7 +222,7 @@
           1.153898044408379,
           2.1160900592803955
         ],
-        "uuid": "b5c72906-fa7e-4705-a0c9-9f8d16398c74"
+        "uuid": "01667868-2acb-4326-9d3e-43795e362a05"
       }
     ],
     "openings": [
@@ -255,13 +255,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 4,
+    "user_prompt": null,
+    "room_order": 3,
     "is_anchor": false,
-    "n_prior_style_embeds": 23,
+    "n_prior_style_embeds": 18,
     "n_new_style_embeds": 6,
-    "n_total_unit_style_embeds": 29
+    "n_total_unit_style_embeds": 24
   }
 }

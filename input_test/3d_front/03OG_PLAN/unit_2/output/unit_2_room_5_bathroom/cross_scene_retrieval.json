@@ -45,148 +45,6 @@
         1.17
       ]
     ],
-    "objects": [
-      {
-        "size": [
-          0.8,
-          0.85,
-          0.5
-        ],
-        "pos": [
-          0.0,
-          0.0,
-          0.92
-        ],
-        "rot": [
-          0.0,
-          -1.0,
-          0.0,
-          0.0
-        ],
-        "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",
-        "sampled_asset_jid": "6747b64d-5360-46ed-a9ed-fa6de85ff7a2",
-        "sampled_asset_desc": "This modern children\u2019s cabinet features a playful face design with white and blue colors, rounded edges, and a ceramic sink on top, making it both functional and fun.",
-        "sampled_asset_size": [
-          0.817328006029129,
-          0.8609198881968041,
-          0.4794849753379822
-        ],
-        "uuid": "c98c302d-1303-4f17-9005-7b2ea9363c7f"
-      },
-      {
-        "desc": "A modern minimalist wall-mounted mirror accessory",
-        "size": [
-          0.6,
-          0.8,
-          0.05
-        ],
-        "pos": [
-          0.0,
-          1.4,
-          1.145
-        ],
-        "rot": [
-          0.0,
-          -1.0,
-          0.0,
-          0.0
-        ],
-        "sampled_asset_jid": "0ea8993b-3e43-49bd-8158-0163a20f1409",
-        "sampled_asset_desc": "A modern, multicolored plastic cube with interlocking parts and a playful geometric design.",
-        "sampled_asset_size": [
-          0.597760021686554,
-          0.8248800053900226,
-          0.03869999945163727
-        ],
-        "uuid": "9ab83500-43ee-474b-9846-8e6f101e64b4"
-      },
-      {
-        "size": [
-          0.4,
-          0.45,
-          0.65
-        ],
-        "pos": [
-          0.475,
-          0.0,
-          0.356
-        ],
-        "rot": [
-          0.0,
-          -0.70711,
-          0.0,
-          0.70711
-        ],
-        "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank",
-        "sampled_asset_jid": "2046ba7f-06bc-4183-88ed-e0b1b35fd1fb-(0.84)-(0.84)-(0.84)",
-        "sampled_asset_desc": "A whimsical pink leather kids bed with wooden legs and playful horned animal shape, combining fun design with functionality.",
-        "sampled_asset_size": [
-          0.42,
-          0.45,
-          0.69
-        ],
-        "uuid": "59cf401c-d252-4584-bdfe-10841ceedaf4",
-        "scale": [
-          0.84,
-          0.84,
-          0.84
-        ]
-      },
-      {
-        "size": [
-          0.9,
-          2.0,
-          0.9
-        ],
-        "pos": [
-          -0.35,
-          0.0,
-          -0.468
-        ],
-        "rot": [
-          0.0,
-          0.70711,
-          0.0,
-          0.70711
-        ],
-        "desc": "Modern minimalist industrial shower enclosure with dark tinted glass panels",
-        "sampled_asset_jid": "20f08b15-7d53-4df6-942e-b4f65491baa6",
-        "sampled_asset_desc": "A modern Bohemian hanging egg chair with neutral wicker, gray cushioned seat, and metal support stand.",
-        "sampled_asset_size": [
-          0.9101200103759766,
-          1.919710024005326,
-          0.9246699810028076
-        ],
-        "uuid": "7d865c9a-f3bf-40e0-95c7-cdb94e67b8f1"
-      },
-      {
-        "desc": "A dark gray textured rectangular textile rug with minimalist geometric design and modern contemporary style",
-        "size": [
-          0.8,
-          0.02,
-          0.5
-        ],
-        "pos": [
-          0.4,
-          0.0,
-          -0.468
-        ],
-        "rot": [
-          0.0,
-          0.70711,
-          0.0,
-          0.70711
-        ],
-        "sampled_asset_jid": "f9b9fd34-31ca-49d1-85ac-6a0aa1f5c986",
-        "sampled_asset_desc": "Modern and contemporary ceiling lamp with organic shapes, smooth light wood and white finish, and integrated LED lighting.",
-        "sampled_asset_size": [
-          0.7857800126075745,
-          0.0815900309980524,
-          0.5220400094985962
-        ],
-        "uuid": "5de20879-37dd-4915-ba03-f83ba6ac535f"
-      }
-    ],
     "openings": [
       {
         "type": "door",
@@ -201,16 +59,99 @@
           0.2
         ]
       }
+    ],
+    "objects": [
+      {
+        "size": [
+          0.62,
+          0.17,
+          0.45
+        ],
+        "pos": [
+          -0.44,
+          0.3,
+          0.945
+        ],
+        "rot": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",
+        "sampled_asset_jid": "d2773d00-90c5-4180-9641-93c41b9a5aed",
+        "sampled_asset_desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines.",
+        "sampled_asset_size": [
+          0.62,
+          0.17,
+          0.45
+        ],
+        "uuid": "58b79a10-a596-4d2f-a3e5-e1fbec9459ef"
+      },
+      {
+        "size": [
+          1.7,
+          0.6,
+          0.75
+        ],
+        "pos": [
+          0.425,
+          0.3,
+          -0.234
+        ],
+        "rot": [
+          0.0,
+          -0.70711,
+          0.0,
+          0.70711
+        ],
+        "desc": "A modern minimalist bathtub",
+        "sampled_asset_jid": "b74bffcf-975d-479d-809c-64f70126107a",
+        "sampled_asset_desc": "White acrylic modern minimalist bathtub with rectangular and rounded-edge variations for versatile bathroom design.",
+        "sampled_asset_size": [
+          1.7,
+          0.6,
+          0.75
+        ],
+        "uuid": "3c6f69c5-27b2-4279-85d9-37d47d618443"
+      },
+      {
+        "size": [
+          0.48,
+          1.02,
+          0.64
+        ],
+        "pos": [
+          -0.48,
+          0.3,
+          0.316
+        ],
+        "rot": [
+          0.0,
+          0.70711,
+          0.0,
+          0.70711
+        ],
+        "desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank",
+        "sampled_asset_jid": "f633f119-eb78-4eca-b636-117b391b2d07",
+        "sampled_asset_desc": "Modern minimalist wall-mounted toilet with concealed ceramic tank, angular vertical panel, and rounded bowl for sleek functional bathroom design",
+        "sampled_asset_size": [
+          0.48,
+          1.02,
+          0.64
+        ],
+        "uuid": "52afd735-4ae5-4af2-aeb7-841653228519"
+      }
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 1,
+    "user_prompt": null,
+    "room_order": 4,
     "is_anchor": false,
-    "n_prior_style_embeds": 8,
-    "n_new_style_embeds": 5,
-    "n_total_unit_style_embeds": 13
+    "n_prior_style_embeds": 21,
+    "n_new_style_embeds": 3,
+    "n_total_unit_style_embeds": 24
   }
 }

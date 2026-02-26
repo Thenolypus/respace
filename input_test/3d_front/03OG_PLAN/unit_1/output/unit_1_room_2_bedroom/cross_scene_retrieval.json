@@ -65,18 +65,18 @@
           0.85
         ],
         "prompt": "modern, gray, wooden armchair",
-        "sampled_asset_jid": "d4c49505-8a5e-4766-b5cb-6b6fe7142292",
-        "sampled_asset_desc": "A modern rustic armchair with openwork wooden armrests and cushioned seating in grey and beige fabrics.",
+        "sampled_asset_jid": "443da456-d458-4d43-aa07-639f5076448a-(5.81)-(1.0)-(5.37)",
+        "sampled_asset_desc": "Industrial-modern pendant lamp with black metal cage design and cylindrical shape.",
         "sampled_asset_size": [
-          0.9415650069713593,
-          0.7678851255193706,
-          0.854712039232254
+          0.94,
+          0.78,
+          0.87
         ],
-        "uuid": "bd2d6da5-6a92-45e3-b02e-b16ed4c76e46",
+        "uuid": "b88a0394-432e-4035-8c13-f5a9d3347359",
         "scale": [
-          1.14,
+          5.81,
           1.0,
-          0.93
+          5.37
         ]
       },
       {
@@ -105,7 +105,7 @@
           2.3907798742206268,
           0.6539708077907562
         ],
-        "uuid": "e0a776d6-87af-4052-b5fe-6c63be56af08"
+        "uuid": "67708c24-44b7-4039-8584-ee18269e9f6b"
       },
       {
         "desc": "A sophisticated modern-transitional nightstand in dark gray wood with silver trim, a single drawer, elegant geometry, and elevated legs.",
@@ -133,7 +133,7 @@
           0.5980759825624773,
           0.4453510344028473
         ],
-        "uuid": "863d791a-3f8c-44f2-96e4-7813aa21d150"
+        "uuid": "1261336e-d264-4c3a-89e2-896a171a9020"
       },
       {
         "desc": "A modern minimalist rectangular coffee table featuring a geometric design with contrasting black and white marble slabs.",
@@ -161,7 +161,7 @@
           0.2736429900454418,
           0.7232820093631744
         ],
-        "uuid": "b558be7a-9626-4b93-9ac3-9d955adabbd8",
+        "uuid": "01effb7f-b51a-4d60-80f0-fd927d09b9fb",
         "scale": [
           0.85,
           1.0,
@@ -187,14 +187,14 @@
           0.36
         ],
         "prompt": "small, white, wooden side table",
-        "sampled_asset_jid": "fa23acbd-54fb-4cd5-9caf-33b7867474c1",
-        "sampled_asset_desc": "Modern minimalist white wood corner side table with angled legs and single drawer, featuring a clean geometric design.",
+        "sampled_asset_jid": "39bef812-22de-4a7a-b717-a89f600f1f6f",
+        "sampled_asset_desc": "A modern, minimalistic tapered glass vase in a gold metal stand, offering elegant and sophisticated accent decor.",
         "sampled_asset_size": [
-          0.4685080051422119,
-          0.5474730254420415,
-          0.36473000049591064
+          0.48010000586509705,
+          0.5363699824920332,
+          0.3565399944782257
         ],
-        "uuid": "62ef8216-7b90-4949-9c15-e804dd2a304d",
+        "uuid": "f5cb9348-f36a-4ddd-803e-1ffdf9f9426b",
         "scale": [
           0.85,
           1.0,
@@ -227,7 +227,7 @@
           1.2504708648702945,
           2.2012981176376343
         ],
-        "uuid": "6c81fcf9-7211-40f7-9535-6a794a71a697"
+        "uuid": "8609f2a9-06bd-4ab9-9009-7c8c0ebef184"
       }
     ],
     "openings": [
@@ -260,13 +260,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 2,
+    "user_prompt": null,
+    "room_order": 1,
     "is_anchor": false,
-    "n_prior_style_embeds": 13,
+    "n_prior_style_embeds": 8,
     "n_new_style_embeds": 6,
-    "n_total_unit_style_embeds": 19
+    "n_total_unit_style_embeds": 14
   }
 }

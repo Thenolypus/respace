@@ -132,7 +132,7 @@
           0.82,
           0.43
         ],
-        "uuid": "cf50446f-89e0-4123-9df4-30386ab19aab",
+        "uuid": "c7b1e554-f0ea-449e-b9b3-42b24da29a50",
         "scale": [
           0.88,
           1.0,
@@ -165,7 +165,7 @@
           1.63,
           0.19
         ],
-        "uuid": "aaddbaaf-ae51-4c7c-b142-f74a0f7d8dd8",
+        "uuid": "015accad-870a-4cb7-bd58-96686148bd86",
         "scale": [
           1.07,
           1.0,
@@ -191,14 +191,19 @@
           0.72
         ],
         "prompt": "light wood coffee table",
-        "sampled_asset_jid": "5233c862-4429-499c-957d-7ea65ded072b",
-        "sampled_asset_desc": "This modern minimalist light brown wooden coffee table features a unique hexagonal shape with tiered design and complementary heights, perfect for compact spaces.",
+        "sampled_asset_jid": "4c9c11ff-f385-4be3-bba4-ccb70ecba2df-(0.81)-(1.0)-(1.01)",
+        "sampled_asset_desc": "A modern minimalist brown synthetic leather lounge chair with geometric design and metal swivel base.",
         "sampled_asset_size": [
-          0.6398789882659912,
-          0.6817170180356698,
-          0.71937096118927
+          0.61,
+          0.69,
+          0.73
         ],
-        "uuid": "25d2337d-6ed0-4cad-8535-cd154a936031"
+        "uuid": "e5dd7b8d-0e64-4df8-8fab-01a79c1aae5d",
+        "scale": [
+          0.81,
+          1.0,
+          1.01
+        ]
       },
       {
         "desc": "Modern minimalist grey fabric three-seat sofa with metal frame, tufted back cushions, and colorful throw pillows.",
@@ -226,7 +231,7 @@
           0.83,
           1.07
         ],
-        "uuid": "2b0a17fc-4109-4050-925e-d79a7b8e92a1",
+        "uuid": "cdf3a286-f5bd-4df3-a8bc-d4a2171d1f4f",
         "scale": [
           1.0,
           1.0,
@@ -252,18 +257,18 @@
           0.42
         ],
         "prompt": "small round end table",
-        "sampled_asset_jid": "da8570b9-119e-4a21-a23b-ca8b94000c30-(0.96)-(1.0)-(0.97)",
-        "sampled_asset_desc": "A modern industrial corner side table with a minimalist metal three-legged base and round metallic tabletop.",
+        "sampled_asset_jid": "bfac22d6-69bc-4439-9d68-f341f17b8858-(0.58)-(1.0)-(0.56)",
+        "sampled_asset_desc": "A contemporary minimalist side table featuring a black round wooden top with geometric gold metal legs for a sleek, modern look.",
         "sampled_asset_size": [
-          0.42,
-          0.63,
-          0.42
+          0.43,
+          0.64,
+          0.41
         ],
-        "uuid": "7a074e6c-f12d-482b-8fff-9bff6ab3f042",
+        "uuid": "f4999cfc-540e-4b1c-bacc-1b58c8731cb0",
         "scale": [
-          0.96,
+          0.58,
           1.0,
-          0.97
+          0.56
         ]
       },
       {
@@ -292,7 +297,7 @@
           0.7944110331690268,
           0.865727037191391
         ],
-        "uuid": "2689fb56-5f09-489d-8b2c-a2f33dfda626"
+        "uuid": "0011d0c9-8cf5-4802-a61f-2639690c077e"
       }
     ],
     "openings": [
@@ -377,9 +382,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 0,
     "is_anchor": true,
     "n_prior_style_embeds": 0,

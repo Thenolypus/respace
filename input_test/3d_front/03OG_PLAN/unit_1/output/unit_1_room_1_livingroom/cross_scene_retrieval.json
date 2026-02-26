@@ -132,7 +132,7 @@
           0.6992300164858893,
           0.3200000077486038
         ],
-        "uuid": "1c3e5744-8179-467b-9f9f-d186edb2b4b2"
+        "uuid": "35279f42-8c3f-4027-a527-581e57b16a75"
       },
       {
         "desc": "Modern minimalist floor lamp with a tall rectangular metal frame and rounded smokey glass shade.",
@@ -160,7 +160,7 @@
           1.17,
           0.35
         ],
-        "uuid": "bf5a698f-3f56-4dcd-8b6c-feab336a7240",
+        "uuid": "6eb00a4e-41a8-4afa-8fd1-c4b6d4ded5ca",
         "scale": [
           0.8,
           0.8,
@@ -193,7 +193,7 @@
           0.73,
           0.4
         ],
-        "uuid": "affca8ad-e6d7-4f75-956d-2e798158a81f",
+        "uuid": "049c770d-a377-478d-9f59-95cbc401df11",
         "scale": [
           0.56,
           1.0,
@@ -226,7 +226,7 @@
           0.13047001748556664,
           0.26034000515937805
         ],
-        "uuid": "811a7b54-2927-4e64-9034-269aebad6eaf"
+        "uuid": "7197a2c6-8807-4dbb-bc45-5b33623a003c"
       },
       {
         "desc": "Modern Scandinavian three-seat sofa with yellow leather cushions, wooden base, and clean lines for a stylish and functional seating solution.",
@@ -254,7 +254,7 @@
           0.87,
           0.9
         ],
-        "uuid": "c1dca281-d5c3-4d7d-8d35-6e19848d849f",
+        "uuid": "9e49c611-5a89-405a-9d80-f790f142497a",
         "scale": [
           0.82,
           1.0,
@@ -280,18 +280,18 @@
           0.81
         ],
         "prompt": "scandinavian minimalist minimalist armchair",
-        "sampled_asset_jid": "ea5bc5fe-3697-4469-bc82-8bd7af443037",
-        "sampled_asset_desc": "A contemporary minimalist armchair with a curved back, black fabric upholstery, dark wood frame, and contrasting trim.",
+        "sampled_asset_jid": "eb8adc45-62a2-46ae-b880-bc79208f4b5c-(5.25)-(1.0)-(5.25)",
+        "sampled_asset_desc": "A modern minimalist black metal pendant lamp with a sleek cubic design.",
         "sampled_asset_size": [
-          0.8019819855690002,
-          0.8964140388831723,
-          0.8058850169181824
+          0.79,
+          0.91,
+          0.79
         ],
-        "uuid": "f95b9c5e-b2b6-43fc-8857-1aaa142d57b1",
+        "uuid": "07977577-8cd5-4834-94fc-92d4dbeca6cb",
         "scale": [
-          0.98,
+          5.25,
           1.0,
-          0.98
+          5.25
         ]
       },
       {
@@ -313,18 +313,18 @@
           0.5
         ],
         "prompt": "scandinavian minimalist side table",
-        "sampled_asset_jid": "a4addf37-1b0c-43d1-9fb1-f272f14cba55-(1.13)-(1.0)-(1.14)",
-        "sampled_asset_desc": "Modern minimalist corner table with a white marble round top and gold metallic rectangular base.",
+        "sampled_asset_jid": "6226c8eb-1c45-4eda-bb03-32c395340a4b-(0.78)-(1.0)-(0.82)",
+        "sampled_asset_desc": "A modern minimalist black metal side table with a triangular top and crossed leg design.",
         "sampled_asset_size": [
-          0.5,
           0.51,
+          0.49,
           0.5
         ],
-        "uuid": "f26f2ebd-939f-45e5-8c06-f5a33fce47d9",
+        "uuid": "11e2e2a1-cbdc-4f8f-ba6e-1965672de954",
         "scale": [
-          1.13,
+          0.78,
           1.0,
-          1.14
+          0.82
         ]
       },
       {
@@ -346,14 +346,14 @@
           0.5
         ],
         "prompt": "scandinavian minimalist wooden side table",
-        "sampled_asset_jid": "a4addf37-1b0c-43d1-9fb1-f272f14cba55-(1.13)-(1.0)-(1.14)",
-        "sampled_asset_desc": "Modern minimalist corner table with a white marble round top and gold metallic rectangular base.",
+        "sampled_asset_jid": "6226c8eb-1c45-4eda-bb03-32c395340a4b-(0.78)-(1.0)-(0.82)",
+        "sampled_asset_desc": "A modern minimalist black metal side table with a triangular top and crossed leg design.",
         "sampled_asset_size": [
-          0.5,
           0.51,
+          0.49,
           0.5
         ],
-        "uuid": "5a8728cb-d47c-4c00-a306-8f578262e607"
+        "uuid": "b83e7f9c-0404-4326-a22e-975a5f4cc1c4"
       }
     ],
     "openings": [
@@ -477,9 +477,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 0,
     "is_anchor": true,
     "n_prior_style_embeds": 0,

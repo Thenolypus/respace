@@ -72,7 +72,7 @@
           0.9446100174299801,
           2.09600293636322
         ],
-        "uuid": "58390e73-cd55-44ca-a2b6-51539843130e"
+        "uuid": "d77c2249-ee9a-40a3-b41b-ca2d6a6e1bee"
       },
       {
         "desc": "Mid-century modern wooden nightstand with a single drawer, open shelf, and tapered legs for a minimalist yet functional design.",
@@ -93,18 +93,18 @@
           0.35
         ],
         "prompt": "white modern nightstand",
-        "sampled_asset_jid": "fa9229b4-7d48-40f2-adef-ceccab8697f5-(1.02)-(1.0)-(0.96)",
-        "sampled_asset_desc": "A modern dark grey fabric-covered nightstand with a rectangular shape, two open shelves, and tapered wooden legs, offering a minimalistic design.",
+        "sampled_asset_jid": "ae8264ab-d7f1-4776-9700-14153a6320a2-(1.0)-(1.41)-(1.0)",
+        "sampled_asset_desc": "Modern-industrial storage boxes in white with gray metal riveted edges and decorative locks.",
         "sampled_asset_size": [
-          0.4,
+          0.42,
           0.5,
           0.35
         ],
-        "uuid": "d132cd68-fa34-404a-981a-1b440fd29a55",
+        "uuid": "1621e506-a4fb-4e57-8b8a-8e5cd5f21c2a",
         "scale": [
-          1.02,
           1.0,
-          0.96
+          1.41,
+          1.0
         ]
       }
     ],
@@ -151,9 +151,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 1,
     "is_anchor": false,
     "n_prior_style_embeds": 6,

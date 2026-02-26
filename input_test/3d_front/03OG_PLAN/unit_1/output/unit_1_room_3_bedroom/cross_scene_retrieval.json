@@ -72,7 +72,7 @@
           0.55,
           0.43
         ],
-        "uuid": "6fc7c63f-14cf-4758-9094-d2b419005151",
+        "uuid": "7df9e3d8-7b54-4be2-a84c-117506806dd2",
         "scale": [
           1.28,
           1.0,
@@ -105,7 +105,7 @@
           2.0504601231601907,
           0.6100540459156036
         ],
-        "uuid": "6e591e66-1ae3-4ada-85fa-bb20dc44a0f1"
+        "uuid": "f9bd779f-32ff-4f60-92ef-bede7d950744"
       },
       {
         "desc": "Modern industrial black metal floor lamp with adjustable arms and three minimalist lampshades.",
@@ -133,7 +133,7 @@
           1.649680048949545,
           0.8086199760437012
         ],
-        "uuid": "e9a59367-e602-4352-9e81-40b61e1dde0a",
+        "uuid": "a9544a4e-1bc7-4c07-a97b-98e836240924",
         "scale": [
           1.05,
           1.0,
@@ -166,7 +166,7 @@
           0.7892649888417083,
           2.1671810150146484
         ],
-        "uuid": "706ca7eb-d95c-4726-9f11-1e8f13a82582"
+        "uuid": "d93f77bf-19e0-4908-8b66-0100a4fe3c46"
       }
     ],
     "openings": [
@@ -199,13 +199,13 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
-    "room_order": 3,
+    "user_prompt": null,
+    "room_order": 2,
     "is_anchor": false,
-    "n_prior_style_embeds": 19,
+    "n_prior_style_embeds": 14,
     "n_new_style_embeds": 4,
-    "n_total_unit_style_embeds": 23
+    "n_total_unit_style_embeds": 18
   }
 }

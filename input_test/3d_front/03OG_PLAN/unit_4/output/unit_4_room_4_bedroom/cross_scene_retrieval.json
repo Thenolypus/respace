@@ -72,7 +72,7 @@
           2.390701953016105,
           0.6498799920082092
         ],
-        "uuid": "1d714658-30ba-42bd-9210-4d4a5c821026",
+        "uuid": "18f3b71d-38f9-41ed-96a3-f174a5784203",
         "scale": [
           1.11,
           1.0,
@@ -105,7 +105,7 @@
           0.4848890435351958,
           0.40099599957466125
         ],
-        "uuid": "a61e21fd-6a46-4ab9-b1e3-41f80cf6fcda",
+        "uuid": "c5672786-bc2b-4784-b999-004840ae92f0",
         "scale": [
           0.97,
           1.0,
@@ -138,7 +138,7 @@
           1.0592799965331494,
           2.3313201665878296
         ],
-        "uuid": "46939747-0d74-447c-b625-56506839c30f"
+        "uuid": "835c92d1-f78e-4aa6-bc9e-daf1f46d33c3"
       }
     ],
     "openings": [
@@ -171,9 +171,9 @@
     ]
   },
   "params": {
-    "lambda_style": 0.1,
+    "lambda_style": 0.2,
     "greedy": true,
-    "user_prompt": "modern scandinavian",
+    "user_prompt": null,
     "room_order": 2,
     "is_anchor": false,
     "n_prior_style_embeds": 13,
