@@ -93,11 +93,19 @@ class ReSpace:
 
 		self.max_n_attempts = 10
 
+	# Room types that have no dedicated dataset split; map to an existing one for stats/filtering.
+	_DATASET_ROOM_TYPE_FALLBACK = {
+		"diningroom": "livingroom",
+	}
+
 	def _prepare_dataset_stats_for_object_sampler(self, gen_room_type=None):
-		if gen_room_type == None:
+		# Use fallback for room types without their own dataset split
+		dataset_filter_type = self._DATASET_ROOM_TYPE_FALLBACK.get(gen_room_type, gen_room_type)
+
+		if dataset_filter_type == None:
 			room_type_filter = "nofilter"
 		else:
-			room_type_filter = gen_room_type
+			room_type_filter = dataset_filter_type
 
 		pth_dataset_stats = os.path.join(os.getenv("PTH_DATASET_CACHE"), f"merged_dataset_stats_{self.dataset_room_type}_{room_type_filter}.pkl")
 
@@ -115,8 +123,8 @@ class ReSpace:
 				"unique_object_classes": set(),
 			}
 
-			if gen_room_type != None:
-				dataset_filtered = self.dataset_train.filter(lambda x: x.get("room_type") == gen_room_type)
+			if dataset_filter_type != None:
+				dataset_filtered = self.dataset_train.filter(lambda x: x.get("room_type") == dataset_filter_type)
 			else:
 				dataset_filtered = self.dataset_train
 
@@ -149,46 +157,32 @@ class ReSpace:
 		return query
 	
 	def _get_system_prompt_zeroshot_handle_user_instr(self, few_shot_samples=None):
-		full_prompt = f"""you are a world-class leading interior design expert. your task is to fulfill the request of the user about interior design but you have help of another world-class expert model that can only be called in an XML-style API.
+		full_prompt = f"""you are an interior design expert. you output ONLY a single JSON object, no explanation, no markdown, no text before or after. your entire response must be valid JSON and nothing else.
+
+# output format
+respond with EXACTLY this JSON structure:
+{{"commands": ["<add>noun phrase</add>", ...]}}
+if you used <remove>, add a "reasoning" key BEFORE "commands":
+{{"reasoning": "...", "commands": ["<remove>...</remove>", "<add>...</add>"]}}
+
+example valid response:
+{{"commands": ["<add>modern gray sofa</add>", "<add>wooden coffee table</add>"]}}
 
 # input
-- <prompt> : the user request
-- <scenegraph> : the current scene will be given as a JSON object. in some cases, there will be no scene graph given, which means there is no "current" scene to work with. the "bounds_top" and "bounds_bottom" keys contain the boundaries as a list of 3D vertices in metric space.
+- <prompt>: the user request.
+- <scenegraph>: optional JSON of the current scene. "bounds_top" and "bounds_bottom" contain boundary vertices in metric space.
 
-# task
-- composing a list of commands to fulfill the user request via <add> and <remove> commands. ideally, you reflect the existing objects in the scenegraph, if one is given.
-- if the prompt specifies a style, all furniture should match that style.
+# rules
+- produce EXACTLY the number of objects requested in the prompt.
+- each <add> description: noun phrase, 2-5 words. first words = color/style/shape, last word = the object. example: "modern gray sofa".
+- if a <scenegraph> has existing objects, match their style in your new <add> descriptions.
+- if the prompt specifies a style, all furniture must match it.
+- <remove> ONLY when the user explicitly asks to remove or swap. NEVER remove to "match style" or replace similar objects. put <remove> commands before <add> commands.
+- for swap/replace: use <remove> first, then <add>.
+- small rooms (under 15 sq m): essential furniture only. small bedrooms: single/twin bed, nightstand, wardrobe only.
+- dining rooms: focus on dining furniture (dining table, dining chairs, sideboard/buffet, cabinet, shelf). do NOT add sofas, TV stands, coffee tables, or other living room furniture.
 
-# room size awareness
-- pay attention to the room dimensions in the prompt. for small rooms (under 15 sq m), prioritize essential furniture only.
-- for small bedrooms (under 15 sq m): use a single bed or twin bed instead of a king or queen bed. do not add coffee tables or sofas. stick to bed, nightstand, and wardrobe/dresser.
-- for small rooms in general: avoid adding redundant seating (e.g. both a sofa and multiple chairs) or large furniture that would not realistically fit.
-- you MUST produce exactly the number of objects requested in the prompt. do not add more or fewer.
-
-# adding
-- if the user wants to add one or multiple objects, you create an <add> command for every object/furniture and add it to the list in "commands".
-- for the description, you should refer to the subject with a maximum of five additional descriptive words. the first words should refer to the color / style / shape / etc., while the last word should always be the main subject. your description must be in 'noun phrase'.
-- if the user request provides an existing scene description provided via <scenegraph>...</scenegraph> and there are existing objects in the scene, you should try to match the style of the existing objects by providing a similar style as part of the description of your commands.
-- if the user provides some requirement about particular furniture that should be present in the room, you should always add these objects via <add> commands.
-- your format should be: <add>description</add>
-- DO NEVER use more than 5 words for each description
-
-# removing / swapping
-- if the user wants to remove one to multiple objects, you add a <remove> command for every object that should be removed.
-- if the user wants to swap or replace furniture, you MUST use <remove> first and then use <add>.
-- if there are similar candidates for removal you should remove the object that matches the description best.
-- your format should be: <remove>description</remove>
-- you can keep the description short here as well
-
-# output
-- the commands are given as a list under the "commands" key where each command follows EXACTLY the format specified above and is given as a string, i.e. "<add>...</add>" or "<remove>...</remove>".
-- if there are remove commands, you always put them BEFORE add commands. 
-- IMPORTANT: you NEVER use the <remove> commands unless the user EXPLICITLY asks for it via swapping or removing objects. you do not make assumptions about this.
-- you NEVER remove objects to "match the style" or if there is already an object in the scene similar to the requested one. a scene can contain as many similar objects as the user wants. you ONLY remove objects if the user explicitly asks for removal or swapping.
-
-- if you use the <remove> command, you MUST provide your reasoning under the "reasoning" key, which comes before the "commands" key in the same JSON object.
-- you always output the final JSON object as a plain string and nothing else. NEVER use markdown.
-"""
+CRITICAL: output the JSON object only. no explanation, no markdown, no extra text."""
 		if self.do_class_labels_for_prompt:
 			prompt_postfix_1 = f"""\n# available object classes
 - you should only pick objects for <add> based on the following high-level abstract classes
@@ -206,13 +200,14 @@ class ReSpace:
 				for obj_prompt in sample:
 					full_prompt += f"<add>{obj_prompt}</add>\n"
 
-		full_prompt += "\nREMINDER: each description in your <add>...</add> commands should be IN NOUN PHRASE WITH 2-3 words AND AT MAXIMUM 5 words"
+		full_prompt += "\nREMINDER: respond with ONLY the JSON object. no other text. each <add> description: noun phrase, 2-5 words."
 
 		return full_prompt
 	
 	def _sample_random_bounds(self, dataset, room_type=None):
-		if room_type != None:
-			dataset_filtered = dataset.filter(lambda x: x.get("room_type") == room_type)
+		filter_type = self._DATASET_ROOM_TYPE_FALLBACK.get(room_type, room_type)
+		if filter_type != None:
+			dataset_filtered = dataset.filter(lambda x: x.get("room_type") == filter_type)
 		else:
 			dataset_filtered = dataset
 		idx = np.random.choice(len(dataset_filtered))

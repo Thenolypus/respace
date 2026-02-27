@@ -99,7 +99,7 @@ def _load_env(env_file):
 	asset_keys = [
 		"PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
 		"PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
-		"PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
+		"PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE", "PTH_ASSETS_EMBED_CATEGORY",
 		"PTH_3DFUTURE_ASSETS",
 	]
 	for k in asset_keys:
@@ -157,7 +157,9 @@ def main():
 	parser.add_argument("--user-prompt", type=str, default=None,
 						help="Optional style prompt to anchor all selections (e.g. 'modern industrial dark metal')")
 	parser.add_argument("--full-desc", action="store_true",
-						help="Use full descriptions for semantic query (default: category-only)")
+						help="Use full descriptions for semantic query (no category stripping)")
+	parser.add_argument("--category-full", action="store_true",
+						help="Category query against full-desc embeddings (legacy, noisy)")
 	parser.add_argument("--ori-sample", action="store_true",
 						help="Use original asset sampling (description + size only, no style coherence)")
 	args = parser.parse_args()
@@ -213,7 +215,7 @@ def main():
 
 		retrieval = AssetRetrievalModule(
 			lambd=0.5,
-			sigma=0.1,
+			sigma=0.05,
 			temp=0.2,
 			top_p=0.95,
 			top_k=20,
@@ -226,7 +228,12 @@ def main():
 			room_name = scene_path.parent.name
 			is_anchor = (room_idx == 0)
 
-			sem_mode = "full-desc" if args.full_desc else "category-only"
+			if args.full_desc:
+				sem_mode = "full-desc"
+			elif args.category_full:
+				sem_mode = "category-full (legacy)"
+			else:
+				sem_mode = "category-only"
 			print(f"\n{'#'*90}")
 			print(f"# Room [{room_idx}]: {room_name}")
 			print(f"# Source: {scene_path}")
@@ -286,7 +293,8 @@ def main():
 					is_greedy_sampling=not args.stochastic,
 					user_prompt=args.user_prompt,
 					initial_style_embeds=initial_embeds,
-					use_category_only=not args.full_desc,
+					use_category_only=not args.full_desc and not args.category_full,
+					use_category_full=args.category_full,
 				)
 
 				# Collect only the NEW embeddings from this room (skip the ones we passed in)

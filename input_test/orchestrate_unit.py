@@ -22,6 +22,14 @@ Manual / flat directory mode (no metadata.json, just room JSONs):
   ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.orchestrate_unit \
       --unit-dir input_test/17feb/unit_1 \
       --style-prompt "modern scandinavian" --render
+
+Batch mode (process all floors and all units under a parent directory):
+  ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.orchestrate_unit \
+      --batch-dir input_test/3d_front/full-fill --no-fill-ratio
+
+  ATTN_IMPLEMENTATION=sdpa uv run python -m input_test.orchestrate_unit \
+      --batch-dir input_test/3d_front/full-fill \
+      --style-prompt "modern scandinavian" --render
 """
 
 import os
@@ -71,17 +79,27 @@ RETRIEVAL_SIZE_THRESHOLD = 0.5
 # Supported room types (others are skipped).
 # Matching is substring-based: "livingroom/diningroom" matches "livingroom".
 # Bathrooms use rule-based generation (src.bathroom_layout), not ReSpace.
-SUPPORTED_ROOM_TYPES = {"livingroom", "bedroom", "bathroom"}
+SUPPORTED_ROOM_TYPES = {"livingroom", "diningroom", "bedroom", "bathroom"}
+
+# Dining rooms have no dedicated dataset split, so we use livingroom stats
+# for the SG-LLM (Stage 2). Stage 1 still sees "diningroom" in the prompt.
+DATASET_ROOM_TYPE_MAP = {
+    "diningroom": "livingroom",
+}
 
 
 def normalize_room_type(raw_type):
     """Map a raw room_type string to a supported canonical type.
 
-    Handles compound types from FloorPlan-Cleaner like "livingroom/diningroom"
-    by checking if any supported type is a substring.
+    Handles compound types from FloorPlan-Cleaner like "livingroom/diningroom".
+    Checks more specific types first (diningroom before livingroom) to avoid
+    "livingroom" matching "livingdiningroom".
     Returns the matched canonical type, or None if unsupported.
     """
     raw_lower = raw_type.lower().replace(" ", "")
+    # Check diningroom before livingroom so "livingdiningroom" doesn't match "livingroom"
+    if "diningroom" in raw_lower and "livingroom" not in raw_lower:
+        return "diningroom"
     for supported in SUPPORTED_ROOM_TYPES:
         if supported in raw_lower:
             return supported
@@ -233,21 +251,25 @@ def render_topdown_bboxes(scene, output_path):
 
 
 def order_rooms_living_first(room_entries):
-    """Sort room entries so living rooms come first (style anchor).
+    """Sort room entries so living/dining rooms come first (style anchor).
 
     Each entry is a tuple of (json_path, room_type, scene_dict).
+    Living rooms first, then dining rooms, then the rest.
     """
     living = []
+    dining = []
     rest = []
     for entry in room_entries:
         rt = entry[1].lower()
         if "livingroom" in rt or "living_room" in rt:
             living.append(entry)
+        elif "diningroom" in rt or "dining_room" in rt:
+            dining.append(entry)
         else:
             rest.append(entry)
-    if not living:
-        print("WARNING: No living room found. Using first room as style anchor.")
-    return living + rest
+    if not living and not dining:
+        print("WARNING: No living/dining room found. Using first room as style anchor.")
+    return living + dining + rest
 
 
 def render_3d_scene(scene_with_assets, output_path, filename):
@@ -365,11 +387,12 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                 rooms_by_type.setdefault(room_type, []).append((json_path, room_type, scene))
 
             for room_type, entries in rooms_by_type.items():
-                print(f"\nInitializing ReSpace for room type: {room_type}")
+                dataset_rt = DATASET_ROOM_TYPE_MAP.get(room_type, room_type)
+                print(f"\nInitializing ReSpace for room type: {room_type} (dataset: {dataset_rt})")
                 respace = ReSpace(
                     model_id=model_path,
                     env_file=ENV_FILE,
-                    dataset_room_type=room_type,
+                    dataset_room_type=dataset_rt,
                     use_gpu=True,
                     n_bon_sgllm=N_BON_SGLLM,
                     n_bon_assets=N_BON_ASSETS,
@@ -443,7 +466,7 @@ def _load_env(env_file):
     asset_keys = [
         "PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
         "PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
-        "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
+        "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE", "PTH_ASSETS_EMBED_CATEGORY",
         "PTH_3DFUTURE_ASSETS",
     ]
     for k in asset_keys:
@@ -742,6 +765,30 @@ def discover_rooms_from_metadata(floorplan_dir, unit_id):
     return room_entries
 
 
+def discover_all_units_from_batch_dir(batch_dir):
+    """Discover all floor folders and their units under a parent directory.
+
+    Scans for subdirectories containing metadata.json, then yields
+    (floorplan_dir, unit_id) for every unit found.
+    Returns list of (floorplan_dir, unit_id, unit_output_dir).
+    """
+    batch_dir = Path(batch_dir)
+    floor_dirs = sorted([d for d in batch_dir.iterdir() if d.is_dir()])
+    units = []
+    for floor_dir in floor_dirs:
+        metadata_path = floor_dir / "metadata.json"
+        if not metadata_path.exists():
+            print(f"SKIP: {floor_dir.name} (no metadata.json)")
+            continue
+        with open(metadata_path) as f:
+            metadata = json.load(f)
+        for u in metadata["units"]:
+            uid = u["unit_id"]
+            unit_output = floor_dir / f"unit_{uid}" / "output"
+            units.append((floor_dir, uid, unit_output))
+    return units
+
+
 def discover_rooms_from_dir(unit_dir):
     """Discover rooms from a flat directory of room JSONs.
 
@@ -768,12 +815,71 @@ def discover_rooms_from_dir(unit_dir):
     return room_entries
 
 
+def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
+                      style_prompt, lambda_style, stochastic, use_fill_ratio,
+                      ori_sample, do_render, source_label):
+    """Run the full pipeline (stage 1-3) for a single unit.
+
+    Returns list of stage2 result tuples.
+    """
+    print(f"\n{'='*70}")
+    print(f"UNIT: {source_label}")
+    print(f"{'='*70}")
+
+    room_entries = order_rooms_living_first(room_entries)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"Model: {model_path}")
+    print(f"Output: {output_dir}")
+    print(f"Style prompt: {style_prompt or '(none)'}")
+    print(f"Render 3D: {do_render}")
+    print(f"Rooms ({len(room_entries)}):")
+    for i, (rf, rt, _) in enumerate(room_entries):
+        tag = " <-- style anchor" if i == 0 else ""
+        print(f"  [{i}] {rf.name} ({rt}){tag}")
+
+    stage1_results = run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
+
+    # Re-order stage1 results: living room first, then dining, then rest
+    living = []
+    dining = []
+    rest = []
+    for entry in stage1_results:
+        stem, rt, scene, room_output = entry
+        if "livingroom" in rt.lower() or "living_room" in rt.lower():
+            living.append(entry)
+        elif "diningroom" in rt.lower() or "dining_room" in rt.lower():
+            dining.append(entry)
+        else:
+            rest.append(entry)
+    stage1_ordered = living + dining + rest
+
+    stage2_results = run_stage2(stage1_ordered, style_prompt, lambda_style, stochastic, ori_sample=ori_sample)
+
+    if do_render:
+        run_stage3(stage2_results)
+
+    print(f"\n{'#'*70}")
+    print(f"# UNIT COMPLETE: {source_label}")
+    print(f"# Output: {output_dir}")
+    print(f"# Rooms processed: {len(stage2_results)}")
+    print(f"{'#'*70}")
+
+    for stem, room_type, scene, room_output, params in stage2_results:
+        n_objs = len(scene.get("objects", []))
+        print(f"  {stem} ({room_type}): {n_objs} objects, "
+              f"anchor={params['is_anchor']}, "
+              f"new_embeds={params['n_new_style_embeds']}")
+
+    return stage2_results
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Orchestrate full pipeline: layout -> asset retrieval -> render."
     )
 
-    # Input source (one of these two modes)
+    # Input source (pick one)
     input_group = parser.add_argument_group("input source (pick one)")
     input_group.add_argument("--floorplan-dir", type=str, default=None,
                              help="FloorPlan-Cleaner output directory (contains metadata.json)")
@@ -781,6 +887,8 @@ def main():
                              help="Unit ID to process (required with --floorplan-dir)")
     input_group.add_argument("--unit-dir", type=str, default=None,
                              help="Flat directory of room JSONs (no metadata.json needed)")
+    input_group.add_argument("--batch-dir", type=str, default=None,
+                             help="Parent directory containing multiple floor folders (each with metadata.json). Processes all floors and all units.")
 
     # Pipeline options
     parser.add_argument("--output-dir", type=str, default=None,
@@ -803,22 +911,77 @@ def main():
                         help="Enable Stage 3 (3D rendering with assets). Off by default.")
     args = parser.parse_args()
 
+    model_path = args.checkpoint if args.checkpoint else MODEL_ID
+    use_fill_ratio = not args.no_fill_ratio
+
     # ---------------------------------------------------------------------- #
     # Validate input mode                                                      #
     # ---------------------------------------------------------------------- #
 
-    if args.floorplan_dir and args.unit_dir:
-        print("ERROR: use --floorplan-dir + --unit OR --unit-dir, not both.")
-        sys.exit(1)
-    if not args.floorplan_dir and not args.unit_dir:
-        print("ERROR: provide either --floorplan-dir + --unit or --unit-dir.")
+    modes_given = sum([
+        bool(args.floorplan_dir),
+        bool(args.unit_dir),
+        bool(args.batch_dir),
+    ])
+    if modes_given != 1:
+        print("ERROR: provide exactly one of --floorplan-dir + --unit, --unit-dir, or --batch-dir.")
         sys.exit(1)
     if args.floorplan_dir and args.unit is None:
         print("ERROR: --unit is required when using --floorplan-dir.")
         sys.exit(1)
 
     # ---------------------------------------------------------------------- #
-    # Discover and filter rooms                                                #
+    # Batch mode                                                               #
+    # ---------------------------------------------------------------------- #
+
+    if args.batch_dir:
+        batch_dir = Path(args.batch_dir)
+        if not batch_dir.is_dir():
+            print(f"ERROR: batch directory not found: {batch_dir}")
+            sys.exit(1)
+
+        units = discover_all_units_from_batch_dir(batch_dir)
+        if not units:
+            print(f"ERROR: no units found under {batch_dir}")
+            sys.exit(1)
+
+        print(f"BATCH MODE: {batch_dir}")
+        print(f"Found {len(units)} unit(s) across {len(set(fp for fp, _, _ in units))} floor(s):")
+        for fp_dir, uid, unit_out in units:
+            print(f"  {fp_dir.name} / unit_{uid} -> {unit_out}")
+
+        all_results = []
+        for fp_dir, uid, unit_out in units:
+            source_label = f"{fp_dir.name}/unit_{uid}"
+            room_entries = discover_rooms_from_metadata(fp_dir, uid)
+            if not room_entries:
+                print(f"SKIP: {source_label} (no supported rooms)")
+                continue
+
+            output_dir = Path(args.output_dir) / fp_dir.name / f"unit_{uid}" / "output" if args.output_dir else unit_out
+
+            results = run_unit_pipeline(
+                room_entries, output_dir, model_path, args.match_room_type,
+                args.style_prompt, args.lambda_style, args.stochastic,
+                use_fill_ratio, args.ori_sample, args.render, source_label,
+            )
+            all_results.append((source_label, results))
+
+        print(f"\n{'#'*70}")
+        print(f"# BATCH COMPLETE")
+        print(f"# Directory: {batch_dir}")
+        print(f"# Units processed: {len(all_results)}")
+        print(f"{'#'*70}")
+        for label, results in all_results:
+            n_rooms = len(results)
+            total_objs = sum(len(sc.get("objects", [])) for _, _, sc, _, _ in results)
+            print(f"  {label}: {n_rooms} rooms, {total_objs} total objects")
+
+        print("\nDone!")
+        return
+
+    # ---------------------------------------------------------------------- #
+    # Single-unit mode                                                         #
     # ---------------------------------------------------------------------- #
 
     if args.floorplan_dir:
@@ -844,61 +1007,12 @@ def main():
         sys.exit(1)
 
     output_dir = Path(args.output_dir) if args.output_dir else default_output
-    output_dir.mkdir(parents=True, exist_ok=True)
-    model_path = args.checkpoint if args.checkpoint else MODEL_ID
 
-    # Order: living room first (style anchor)
-    room_entries = order_rooms_living_first(room_entries)
-
-    print(f"Source: {source_label}")
-    print(f"Model: {model_path}")
-    print(f"Output: {output_dir}")
-    print(f"Style prompt: {args.style_prompt or '(none)'}")
-    print(f"Render 3D: {args.render}")
-    print(f"Rooms ({len(room_entries)}):")
-    for i, (rf, rt, _) in enumerate(room_entries):
-        tag = " <-- style anchor" if i == 0 else ""
-        print(f"  [{i}] {rf.name} ({rt}){tag}")
-
-    # ---------------------------------------------------------------------- #
-    # Run pipeline                                                             #
-    # ---------------------------------------------------------------------- #
-
-    use_fill_ratio = not args.no_fill_ratio
-    stage1_results = run_stage1(room_entries, output_dir, model_path, args.match_room_type, style_prompt=args.style_prompt, use_fill_ratio=use_fill_ratio)
-
-    # Re-order stage1 results: living room first for style anchoring
-    living = []
-    rest = []
-    for entry in stage1_results:
-        stem, rt, scene, room_output = entry
-        if "livingroom" in rt.lower() or "living_room" in rt.lower():
-            living.append(entry)
-        else:
-            rest.append(entry)
-    stage1_ordered = living + rest
-
-    stage2_results = run_stage2(stage1_ordered, args.style_prompt, args.lambda_style, args.stochastic, ori_sample=args.ori_sample)
-
-    if args.render:
-        run_stage3(stage2_results)
-
-    # ---------------------------------------------------------------------- #
-    # Summary                                                                  #
-    # ---------------------------------------------------------------------- #
-
-    print(f"\n{'#'*70}")
-    print(f"# PIPELINE COMPLETE")
-    print(f"# Source: {source_label}")
-    print(f"# Output: {output_dir}")
-    print(f"# Rooms processed: {len(stage2_results)}")
-    print(f"{'#'*70}")
-
-    for stem, room_type, scene, room_output, params in stage2_results:
-        n_objs = len(scene.get("objects", []))
-        print(f"  {stem} ({room_type}): {n_objs} objects, "
-              f"anchor={params['is_anchor']}, "
-              f"new_embeds={params['n_new_style_embeds']}")
+    run_unit_pipeline(
+        room_entries, output_dir, model_path, args.match_room_type,
+        args.style_prompt, args.lambda_style, args.stochastic,
+        use_fill_ratio, args.ori_sample, args.render, source_label,
+    )
 
     print("\nDone!")
 
