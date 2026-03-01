@@ -44,6 +44,12 @@ def rotate_scenegraph(sample_scene, angle_radians):
 	if sample_scene.get("bounds_top"):
 		for key in ["bounds_top", "bounds_bottom"]:
 			sample_scene[key] = [rotate_around_y(point, angle_radians) for point in sample_scene[key]]
+	if sample_scene.get("openings"):
+		is_90_or_270 = abs(angle_radians % np.pi) > 0.01
+		for opening in sample_scene["openings"]:
+			opening["pos"] = rotate_around_y(opening["pos"], angle_radians)
+			if is_90_or_270:
+				opening["size"][0], opening["size"][2] = opening["size"][2], opening["size"][0]
 	if sample_scene.get("objects"):
 		for obj in sample_scene.get("objects"):
 			rotate_obj(obj, angle_radians)
@@ -503,7 +509,7 @@ def format_with_chat_template(tokenizer, prompt, completion=None):
 	if completion is not None:
 		messages.append({"role": "assistant", "content": completion})
 		
-	return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=(True if completion is None else False))
+	return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=(True if completion is None else False), enable_thinking=False)
 
 class SFTSceneDataCollator(DataCollatorForCompletionOnlyLM):
 	def __init__(self, do_augm, response_template, tokenizer, padding_free, max_seq_length, do_simple_descs, do_full_sg_outputs, **kwargs):

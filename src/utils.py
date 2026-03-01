@@ -183,7 +183,7 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False, u
 	# else:
 	# 	max_seq_length = 3800
 
-	max_seq_length = 4000
+	max_seq_length = 6000
 	# max_seq_length = 2500
 
 	tokenizer.model_max_length = max_seq_length
@@ -249,6 +249,10 @@ def cast_scene_floats(scene_json):
 
 def safe_parse_scene(scene_text):
 	try:
+		# Strip Qwen3 think tags if present
+		import re
+		scene_text = re.sub(r'<think>.*?</think>\s*', '', scene_text, flags=re.DOTALL)
+
 		scene_json = json.loads(scene_text)
 
 		if scene_json.get("objects") is None:
