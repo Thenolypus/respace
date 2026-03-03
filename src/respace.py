@@ -27,10 +27,11 @@ from src.vllm_inference import VLLMWrapper
 
 # Model IDs — change these to swap models
 VANILLA_MODEL_ID = "Qwen/Qwen3-4B-Instruct-2507"
+ORI_VANILLA_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 SGLLM_MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
 
 class ReSpace:
-	def __init__(self, model_id=SGLLM_MODEL_ID, env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2, include_openings=False):
+	def __init__(self, model_id=SGLLM_MODEL_ID, env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2, include_openings=False, vanilla_model_id=None):
 
 		load_dotenv(env_file)
 
@@ -46,7 +47,7 @@ class ReSpace:
 		self._sgllm_loaded = False
 
 		# Vanilla LLM: load tokenizer only, then load model weights eagerly (used first)
-		self.vanilla_model_id = VANILLA_MODEL_ID
+		self.vanilla_model_id = vanilla_model_id if vanilla_model_id else VANILLA_MODEL_ID
 		self.vanilla_vllm_engine = None
 		self.vanilla_pipeline = None
 		_, self.vanilla_tokenizer, _ = get_model(self.vanilla_model_id, use_gpu, accelerator=None, do_not_load_hf_model=True)

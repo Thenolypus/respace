@@ -47,7 +47,7 @@ from dotenv import load_dotenv
 
 load_dotenv(".env")
 
-from src.respace import ReSpace
+from src.respace import ReSpace, ORI_VANILLA_MODEL_ID
 from src.sample import AssetRetrievalModule
 from src.bathroom_layout import generate_bathroom_layout
 from src.utils import set_seeds
@@ -64,6 +64,9 @@ ENV_FILE_BATHROOM = ".env_heg"
 N_BON_SGLLM = 8
 N_BON_ASSETS = 4
 K_FEW_SHOT_SAMPLES = 2
+
+# Original ReSpace method params (--ori-method)
+ORI_N_BON_ASSETS = 1
 DO_PROP_SAMPLING = True
 DO_ICL = True
 DO_CLASS_LABELS = True
@@ -347,7 +350,7 @@ def _generate_bathroom(json_path, scene, room_output):
     return result_scene, True
 
 
-def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None, use_fill_ratio=True, include_openings=False):
+def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None, use_fill_ratio=True, include_openings=False, vanilla_model_id=None, n_bon_assets=N_BON_ASSETS):
     """Generate furniture layouts for each room.
 
     Bathrooms use the rule-based generator; all other rooms use ReSpace.
@@ -397,13 +400,14 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                     dataset_room_type=dataset_rt,
                     use_gpu=True,
                     n_bon_sgllm=N_BON_SGLLM,
-                    n_bon_assets=N_BON_ASSETS,
+                    n_bon_assets=n_bon_assets,
                     do_prop_sampling_for_prompt=DO_PROP_SAMPLING,
                     do_icl_for_prompt=DO_ICL,
                     do_class_labels_for_prompt=DO_CLASS_LABELS,
                     k_few_shot_samples=K_FEW_SHOT_SAMPLES,
                     use_vllm=USE_VLLM,
                     include_openings=include_openings,
+                    vanilla_model_id=vanilla_model_id,
                 )
 
                 for json_path, rt, scene in entries:
@@ -434,13 +438,14 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                 dataset_room_type=DEFAULT_DATASET_ROOM_TYPE,
                 use_gpu=True,
                 n_bon_sgllm=N_BON_SGLLM,
-                n_bon_assets=N_BON_ASSETS,
+                n_bon_assets=n_bon_assets,
                 do_prop_sampling_for_prompt=DO_PROP_SAMPLING,
                 do_icl_for_prompt=DO_ICL,
                 do_class_labels_for_prompt=DO_CLASS_LABELS,
                 k_few_shot_samples=K_FEW_SHOT_SAMPLES,
                 use_vllm=USE_VLLM,
                 include_openings=include_openings,
+                vanilla_model_id=vanilla_model_id,
             )
 
             for json_path, room_type, scene in respace_entries:
@@ -833,11 +838,33 @@ def discover_rooms_from_dir(unit_dir):
 
 def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
                       style_prompt, lambda_style, stochastic, use_fill_ratio,
-                      ori_sample, do_render, source_label, include_openings=False):
+                      ori_method, do_render, source_label, include_openings=False):
     """Run the full pipeline (stage 1-3) for a single unit.
 
+    When ori_method=True, replicates the original ReSpace paper:
+      - Vanilla LLM = Meta-Llama-3.1-8B-Instruct
+      - No fill ratio, no openings, no style prompt
+      - Original asset sampling (desc + size only), n_bon_assets=1
     Returns list of stage2 result tuples.
     """
+    # Override settings when replicating original method
+    if ori_method:
+        vanilla_model_id = ORI_VANILLA_MODEL_ID
+        use_fill_ratio = False
+        include_openings = False
+        style_prompt = None
+        n_bon_assets = ORI_N_BON_ASSETS
+        print("[ori-method] Replicating original ReSpace pipeline:")
+        print(f"  Vanilla LLM: {vanilla_model_id}")
+        print(f"  Fill ratio: disabled")
+        print(f"  Architecture openings: disabled")
+        print(f"  Style prompt: disabled")
+        print(f"  n_bon_assets: {n_bon_assets}")
+        print(f"  Asset retrieval: original (desc + size only)")
+    else:
+        vanilla_model_id = None
+        n_bon_assets = N_BON_ASSETS
+
     print(f"\n{'='*70}")
     print(f"UNIT: {source_label}")
     print(f"{'='*70}")
@@ -854,7 +881,7 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
         tag = " <-- style anchor" if i == 0 else ""
         print(f"  [{i}] {rf.name} ({rt}){tag}")
 
-    stage1_results = run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio, include_openings=include_openings)
+    stage1_results = run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio, include_openings=include_openings, vanilla_model_id=vanilla_model_id, n_bon_assets=n_bon_assets)
 
     # Re-order stage1 results: living room first, then dining, then rest
     living = []
@@ -870,7 +897,7 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
             rest.append(entry)
     stage1_ordered = living + dining + rest
 
-    stage2_results = run_stage2(stage1_ordered, style_prompt, lambda_style, stochastic, ori_sample=ori_sample)
+    stage2_results = run_stage2(stage1_ordered, style_prompt, lambda_style, stochastic, ori_sample=ori_method)
 
     if do_render:
         run_stage3(stage2_results)
@@ -883,9 +910,11 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
 
     for stem, room_type, scene, room_output, params in stage2_results:
         n_objs = len(scene.get("objects", []))
-        print(f"  {stem} ({room_type}): {n_objs} objects, "
-              f"anchor={params['is_anchor']}, "
-              f"new_embeds={params['n_new_style_embeds']}")
+        summary = f"  {stem} ({room_type}): {n_objs} objects"
+        if "is_anchor" in params:
+            summary += f", anchor={params['is_anchor']}, new_embeds={params['n_new_style_embeds']}"
+        summary += f", mode={params.get('mode', 'cross-scene')}"
+        print(summary)
 
     return stage2_results
 
@@ -921,8 +950,10 @@ def main():
                         help="Use stochastic sampling for asset retrieval (default: greedy)")
     parser.add_argument("--no-fill-ratio", action="store_true",
                         help="Disable fill_ratio adjustment for non-rectangular rooms")
-    parser.add_argument("--ori-sample", action="store_true",
-                        help="Use original asset sampling (description + size only, no style coherence)")
+    parser.add_argument("--ori-method", action="store_true",
+                        help="Replicate original ReSpace paper: Llama-3.1-8B vanilla LLM, "
+                             "no fill ratio, no architecture openings, no style prompt, "
+                             "original asset sampling (desc + size only), n_bon_assets=1")
     parser.add_argument("--render", action="store_true",
                         help="Enable Stage 3 (3D rendering with assets). Off by default.")
     parser.add_argument("--arch", action="store_true",
@@ -988,7 +1019,7 @@ def main():
             results = run_unit_pipeline(
                 room_entries, output_dir, model_path, args.match_room_type,
                 args.style_prompt, args.lambda_style, args.stochastic,
-                use_fill_ratio, args.ori_sample, args.render, source_label,
+                use_fill_ratio, args.ori_method, args.render, source_label,
                 include_openings=args.arch,
             )
             all_results.append((source_label, results))
@@ -1037,7 +1068,7 @@ def main():
     run_unit_pipeline(
         room_entries, output_dir, model_path, args.match_room_type,
         args.style_prompt, args.lambda_style, args.stochastic,
-        use_fill_ratio, args.ori_sample, args.render, source_label,
+        use_fill_ratio, args.ori_method, args.render, source_label,
         include_openings=args.arch,
     )
 
