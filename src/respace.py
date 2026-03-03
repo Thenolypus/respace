@@ -18,56 +18,41 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Import from your existing utils/modules
-from src.utils import get_model, get_llama_vanilla_pipeline, create_floor_plan_polygon, create_category_lookup
+from src.utils import get_model, get_vanilla_pipeline, create_floor_plan_polygon, create_category_lookup
 from src.sample import AssetRetrievalModule
 from src.dataset import build_full_instruction_from_prompt, sample_prompt, load_train_val_test_datasets
 from src.test import run_instr
 from src.viz import render_full_scene_and_export_with_gif, create_360_video_full
 from src.vllm_inference import VLLMWrapper
 
+# Model IDs — change these to swap models
+VANILLA_MODEL_ID = "Qwen/Qwen3-4B-Instruct-2507"
+SGLLM_MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
+
 class ReSpace:
-	def __init__(self, model_id="gradient-spaces/respace-sg-llm-1.5b", env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2):
+	def __init__(self, model_id=SGLLM_MODEL_ID, env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2, include_openings=False):
 
 		load_dotenv(env_file)
-		
-		# prepare models
-		self.model, self.tokenizer, self.max_seq_length = get_model(model_id, use_gpu, accelerator, do_not_load_hf_model=(use_vllm == True or do_removal_only == True))
-		self.use_vllm = use_vllm
-	
-		# load SG-LLM
-		self.vllm_engine = None
-		if use_vllm and not do_removal_only:
-			try:
-				self.vllm_engine = VLLMWrapper(
-					model_id=model_id,
-					tokenizer=self.tokenizer,
-					gpu_memory_utilization=0.2,
-					max_model_len=self.max_seq_length,
-				)
-				print("SG-LLM: vLLM initialized successfully")
-			except Exception as e:
-				print(f"Failed to initialize vLLM: {e}. Falling back to regular generation.")
-				self.use_vllm = False
 
-		# load zero-shot LLM
-		self.vanilla_model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+		self.use_vllm = use_vllm
+		self.use_gpu = use_gpu
+		self.do_removal_only = do_removal_only
+
+		# SG-LLM: load tokenizer only, defer model weights to first use
+		self.sgllm_model_id = model_id
+		self.model = None
+		self.vllm_engine = None
+		_, self.tokenizer, self.max_seq_length = get_model(model_id, use_gpu, accelerator, do_not_load_hf_model=True)
+		self._sgllm_loaded = False
+
+		# Vanilla LLM: load tokenizer only, then load model weights eagerly (used first)
+		self.vanilla_model_id = VANILLA_MODEL_ID
 		self.vanilla_vllm_engine = None
 		self.vanilla_pipeline = None
 		_, self.vanilla_tokenizer, _ = get_model(self.vanilla_model_id, use_gpu, accelerator=None, do_not_load_hf_model=True)
-		if use_vllm and self.use_vllm:
-			try:
-				self.vanilla_vllm_engine = VLLMWrapper(
-					model_id=self.vanilla_model_id,
-					tokenizer=self.vanilla_tokenizer,
-					gpu_memory_utilization=0.85,
-					max_model_len=5000,
-				)
-				print("Vanilla LLM: vLLM initialized successfully for vanilla pipeline")
-			except Exception as e:
-				print(f"Failed to initialize vLLM for vanilla pipeline: {e}. Using regular pipeline.")
-				self.vanilla_pipeline = get_llama_vanilla_pipeline()
-		else:
-			self.vanilla_pipeline = get_llama_vanilla_pipeline()
+		self._vanilla_loaded = False
+		if not do_removal_only:
+			self._load_vanilla_model()
 
 		# sampling engine
 		if not do_removal_only:
@@ -75,23 +60,87 @@ class ReSpace:
 
 		# floor stats sampler
 		self.all_prompts = json.load(open(os.getenv("PTH_ASSETS_METADATA_PROMPTS")))
-		
+
 		dataset_train, _, _ = load_train_val_test_datasets(room_type=dataset_room_type, use_cached_dataset=True, do_sanity_check=False, accelerator=accelerator)
 		self.dataset_train = dataset_train
 		self.dataset_room_type = dataset_room_type
-		
+
 		self.accelerator = accelerator if accelerator is not None else Accelerator()
 		self.n_bon_sgllm = n_bon_sgllm
 		self.n_bon_assets = n_bon_assets
-		self.use_gpu = use_gpu
 
 		self.do_prop_sampling_for_prompt = do_prop_sampling_for_prompt
 		self.do_icl_for_prompt = do_icl_for_prompt
 		self.do_class_labels_for_prompt = do_class_labels_for_prompt
 		self.k_few_shot_samples = k_few_shot_samples
+		self.include_openings = include_openings
 		self.dataset_stats_for_prompt = None
 
 		self.max_n_attempts = 10
+
+	def _load_vanilla_model(self):
+		if self._vanilla_loaded:
+			return
+		print(f"Loading vanilla LLM: {self.vanilla_model_id}")
+		if self.use_vllm:
+			self.vanilla_vllm_engine = VLLMWrapper(
+				model_id=self.vanilla_model_id,
+				tokenizer=self.vanilla_tokenizer,
+				gpu_memory_utilization=0.85,
+				max_model_len=5000,
+			)
+			print("Vanilla LLM: vLLM initialized successfully")
+		else:
+			self.vanilla_pipeline = get_vanilla_pipeline(self.vanilla_model_id)
+		self._vanilla_loaded = True
+
+	def _unload_vanilla_model(self):
+		if not self._vanilla_loaded:
+			return
+		print("Unloading vanilla LLM from VRAM...")
+		if self.vanilla_vllm_engine is not None:
+			del self.vanilla_vllm_engine.llm
+			del self.vanilla_vllm_engine
+			self.vanilla_vllm_engine = None
+		if self.vanilla_pipeline is not None:
+			del self.vanilla_pipeline
+			self.vanilla_pipeline = None
+		gc.collect()
+		torch.cuda.empty_cache()
+		self._vanilla_loaded = False
+		print("Vanilla LLM unloaded.")
+
+	def _load_sgllm(self):
+		if self._sgllm_loaded:
+			return
+		print(f"Loading SG-LLM: {self.sgllm_model_id}")
+		if self.use_vllm:
+			self.vllm_engine = VLLMWrapper(
+				model_id=self.sgllm_model_id,
+				tokenizer=self.tokenizer,
+				gpu_memory_utilization=0.85,
+				max_model_len=self.max_seq_length,
+			)
+			print("SG-LLM: vLLM initialized successfully")
+		else:
+			self.model, _, _ = get_model(self.sgllm_model_id, self.use_gpu, self.accelerator, do_not_load_hf_model=False)
+		self._sgllm_loaded = True
+
+	def _unload_sgllm(self):
+		if not self._sgllm_loaded:
+			return
+		print("Unloading SG-LLM from VRAM...")
+		if self.vllm_engine is not None:
+			del self.vllm_engine.llm
+			del self.vllm_engine
+			self.vllm_engine = None
+		if self.model is not None:
+			del self.model
+			self.model = None
+		gc.collect()
+		torch.cuda.empty_cache()
+		self._sgllm_loaded = False
+		print("SG-LLM unloaded.")
 
 	# Room types that have no dedicated dataset split; map to an existing one for stats/filtering.
 	_DATASET_ROOM_TYPE_FALLBACK = {
@@ -233,7 +282,7 @@ CRITICAL: output the JSON object only. no explanation, no markdown, no extra tex
 		else:
 			sg_input = sample_sg_input
 
-		full_instruction = build_full_instruction_from_prompt(prompt, sg_input)
+		full_instruction = build_full_instruction_from_prompt(prompt, sg_input, include_openings=self.include_openings)
 		batch_full_instrs = [full_instruction]
 		return batch_full_instrs
 	
@@ -255,6 +304,9 @@ CRITICAL: output the JSON object only. no explanation, no markdown, no extra tex
 		return self.sampling_engine.sample_all_assets(scene_tmp, is_greedy_sampling=is_greedy_sampling)
 	
 	def add_object(self, prompt, current_scene, do_sample_assets_for_input_scene=False, do_rendering_with_object_count=False, temp=None, do_dynamic_temp=True, pth_viz_output=None):
+		if not self._sgllm_loaded:
+			self._unload_vanilla_model()
+			self._load_sgllm()
 		print("adding object...")
 
 		if do_sample_assets_for_input_scene:
@@ -303,6 +355,9 @@ CRITICAL: output the JSON object only. no explanation, no markdown, no extra tex
 			torch.cuda.empty_cache()
 	
 	def remove_object(self, prompt, current_scene, do_rendering_with_object_count=False, do_dynamic_temp=True, pth_viz_output=None, idx=None):
+		if not self._vanilla_loaded:
+			self._unload_sgllm()
+			self._load_vanilla_model()
 		print("removing object...")
 
 		print(f"<remove>{prompt}<remove>")
@@ -348,19 +403,19 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 				print(f"temp: {temp}")
 				torch.use_deterministic_algorithms(False)
 				if self.vanilla_vllm_engine is not None:
-					vllm_prompt = f"<s>[INST] {system_prompt} [/INST]\n\n{query}</s>"
+					vllm_prompt = self.vanilla_tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
 					inputs = self.vanilla_tokenizer(vllm_prompt, return_tensors="pt")
 					input_ids = inputs["input_ids"]
 					attention_mask = inputs["attention_mask"]
-					response = self.vanilla_vllm_engine.generate(
-						input_ids, 
+					results = self.vanilla_vllm_engine.generate(
+						input_ids,
 						attention_mask,
 						max_new_tokens=16384,
 						temperature=temp,
 						top_p=0.95,
 						top_k=50,
 					)
-					# TODO: format correctly for output
+					response = results[0]
 				else:
 					outputs = self.vanilla_pipeline(
 						messages,
@@ -370,8 +425,6 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 					)
 					response = outputs[0]["generated_text"][-1]["content"].strip()
 				torch.use_deterministic_algorithms(True)
-				
-				response = outputs[0]["generated_text"][-1]["content"].strip()
 
 				if response == "nothing removed":
 					print("No object removed.")
@@ -484,11 +537,30 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 		remaining_attempts = copy.copy(self.max_n_attempts)
 		while True:
 			try:
+				# Stage 1: use vanilla LLM to generate commands
+				self._unload_sgllm()
+				self._load_vanilla_model()
+
 				# get list of objects from vanilla pipeline
 				torch.use_deterministic_algorithms(False)
-				outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, temperature=0.7)
+				if self.vanilla_vllm_engine is not None:
+					vllm_prompt = self.vanilla_tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+					inputs = self.vanilla_tokenizer(vllm_prompt, return_tensors="pt")
+					input_ids = inputs["input_ids"]
+					attention_mask = inputs["attention_mask"]
+					results = self.vanilla_vllm_engine.generate(
+						input_ids,
+						attention_mask,
+						max_new_tokens=4096,
+						temperature=0.7,
+						top_p=0.95,
+						top_k=50,
+					)
+					response = results[0]
+				else:
+					outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, temperature=0.7)
+					response = outputs[0]["generated_text"][-1]["content"]
 				torch.use_deterministic_algorithms(True)
-				response = outputs[0]["generated_text"][-1]["content"]
 
 				# Parse response
 				response_json = json.loads(response)
@@ -501,32 +573,56 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 					print("=============================================")
 					print(len(response_json.get("commands")), response_json)
 					print("=============================================")
-					
-					# Process commands one by one
-					print("processing commands...")
-					for command in response_json.get("commands"):
-						if command.startswith("<add>"):
-							prompt = re.search(r'<add>(.*?)</add>', command).group(1).lower()
-							temp = 0.7
-							current_scene, is_success = self.add_object(prompt, current_scene, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output, temp=temp)
-						elif command.startswith("<remove>"):
-							prompt = re.search(r'<remove>(.*?)</remove>', command).group(1).lower()
-							current_scene, is_success = self.remove_object(prompt, current_scene, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output)
-						else:
-							print(f"UNKNOWN COMMAND {command}")
-				
+
+					remove_commands = [c for c in response_json["commands"] if c.startswith("<remove>")]
+					add_commands = [c for c in response_json["commands"] if c.startswith("<add>")]
+
+					# Filter add commands: drop any whose description doesn't
+					# substring-match at least one known asset category.
+					if self.dataset_stats_for_prompt and self.dataset_stats_for_prompt.get("unique_object_classes"):
+						known_categories = self.dataset_stats_for_prompt["unique_object_classes"]
+						filtered_add = []
+						for cmd in add_commands:
+							desc = re.search(r'<add>(.*?)</add>', cmd).group(1).lower()
+							desc_words = desc.split()
+							matched = any(
+								word in cat or cat in desc
+								for word in desc_words
+								for cat in known_categories
+							)
+							if matched:
+								filtered_add.append(cmd)
+							else:
+								print(f"  FILTERED OUT (no category match): {cmd}")
+						add_commands = filtered_add
+
+					# Process removes first (uses vanilla LLM)
+					for command in remove_commands:
+						prompt = re.search(r'<remove>(.*?)</remove>', command).group(1).lower()
+						current_scene, is_success = self.remove_object(prompt, current_scene, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output)
+
+					# Swap models: unload vanilla, load SG-LLM
+					self._unload_vanilla_model()
+					self._load_sgllm()
+
+					# Process adds (uses SG-LLM)
+					for command in add_commands:
+						prompt = re.search(r'<add>(.*?)</add>', command).group(1).lower()
+						temp = 0.7
+						current_scene, is_success = self.add_object(prompt, current_scene, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output, temp=temp)
+
 				if len(current_scene.get("objects")) > 0:
 					print("SUCCESS! after: ", len(current_scene.get("objects")))
 					is_success = True
 					return current_scene, is_success
 				else:
 					print("ERROR: no object was added")
-					
+
 			except Exception as exc:
 				print(f"Error: {exc}")
 				print(f"Response: {response}")
 				traceback.print_exc()
-			
+
 			if remaining_attempts > 0:
 				remaining_attempts -= 1
 				print(f"Retrying... {remaining_attempts} attempts left.")

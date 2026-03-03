@@ -1,3 +1,4 @@
+import re
 import torch
 import numpy as np
 import random
@@ -58,8 +59,7 @@ def remove_and_recreate_folder(pth):
 		shutil.rmtree(pth, ignore_errors=False)
 	os.makedirs(pth, exist_ok=True)
 
-def get_llama_vanilla_pipeline():
-	model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+def get_vanilla_pipeline(model_id="Qwen/Qwen3-4B-Instruct-2507"):
 	pipeline = transformers.pipeline(
 		"text-generation",
 		model=model_id,
@@ -159,7 +159,7 @@ def inherit_props_by_id(scene_before, scene_after):
 def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False, use_qlora=False):
 
 	print(f"get_model(): loading tokenizer for {model_id}")
-	tokenizer = AutoTokenizer.from_pretrained(model_id)
+	tokenizer = AutoTokenizer.from_pretrained(model_id, fix_mistral_regex=True)
 
 	model_type = ""
 	if "ckpts" in model_id:
@@ -249,6 +249,9 @@ def cast_scene_floats(scene_json):
 
 def safe_parse_scene(scene_text):
 	try:
+		# Strip Qwen3 <think>...</think> block if present
+		if "<think>" in scene_text:
+			scene_text = re.sub(r"<think>.*?</think>\s*", "", scene_text, flags=re.DOTALL)
 		scene_json = json.loads(scene_text)
 
 		if scene_json.get("objects") is None:

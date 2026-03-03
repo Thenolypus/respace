@@ -205,13 +205,16 @@ def create_full_scene_from_before_and_added(scene_before, obj_add):
 	scene_after["objects"].append(obj_add)
 	return scene_after
 
-def ensure_order_of_keys_for_sg_input_dict(sg_input, do_keep_jids=False):
+def ensure_order_of_keys_for_sg_input_dict(sg_input, do_keep_jids=False, include_openings=False):
 	sg_input_ordered = {}
 
 	sg_input_ordered["room_type"] = sg_input.get("room_type")
 	sg_input_ordered["bounds_top"] = sg_input.get("bounds_top")
 	sg_input_ordered["bounds_bottom"] = sg_input.get("bounds_bottom")
-	
+
+	if include_openings and sg_input.get("openings"):
+		sg_input_ordered["openings"] = sg_input.get("openings")
+
 	# for each object in the scene, ensure fixed order such that we always have "desc", "size", "pos", "rot":
 	objects_ordered = []
 	for obj in sg_input.get("objects"):
@@ -350,8 +353,8 @@ def load_train_val_test_datasets(lambda_instr_exp=None, use_cached_dataset=True,
 
 	return dataset_train, dataset_val, dataset_test
 
-def build_full_instruction_from_prompt(prompt, sg_input):
-	sg_input_str = json.dumps(ensure_order_of_keys_for_sg_input_dict(json.loads(sg_input)))
+def build_full_instruction_from_prompt(prompt, sg_input, include_openings=False):
+	sg_input_str = json.dumps(ensure_order_of_keys_for_sg_input_dict(json.loads(sg_input), include_openings=include_openings))
 	return f"<instruction>\n\t<add>{prompt}</add>\n</instruction>\n<scenegraph>\n\t{sg_input_str}\n</scenegraph>"
 
 def sample_prompt(all_prompts, jid):

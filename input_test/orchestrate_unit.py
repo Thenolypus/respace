@@ -33,6 +33,7 @@ Batch mode (process all floors and all units under a parent directory):
 """
 
 import os
+import gc
 import json
 import sys
 import argparse
@@ -49,6 +50,7 @@ load_dotenv(".env")
 from src.respace import ReSpace
 from src.sample import AssetRetrievalModule
 from src.bathroom_layout import generate_bathroom_layout
+from src.utils import set_seeds
 
 # ============================================================================ #
 # CONFIGURATION                                                                 #
@@ -345,7 +347,7 @@ def _generate_bathroom(json_path, scene, room_output):
     return result_scene, True
 
 
-def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None, use_fill_ratio=True):
+def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=None, use_fill_ratio=True, include_openings=False):
     """Generate furniture layouts for each room.
 
     Bathrooms use the rule-based generator; all other rooms use ReSpace.
@@ -401,6 +403,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                     do_class_labels_for_prompt=DO_CLASS_LABELS,
                     k_few_shot_samples=K_FEW_SHOT_SAMPLES,
                     use_vllm=USE_VLLM,
+                    include_openings=include_openings,
                 )
 
                 for json_path, rt, scene in entries:
@@ -419,6 +422,10 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
 
                     render_topdown_bboxes(result_scene, room_output)
                     results.append((stem, rt, result_scene, room_output))
+
+                del respace
+                torch.cuda.empty_cache()
+                gc.collect()
         else:
             print(f"\nInitializing ReSpace (dataset_room_type={DEFAULT_DATASET_ROOM_TYPE})")
             respace = ReSpace(
@@ -433,6 +440,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                 do_class_labels_for_prompt=DO_CLASS_LABELS,
                 k_few_shot_samples=K_FEW_SHOT_SAMPLES,
                 use_vllm=USE_VLLM,
+                include_openings=include_openings,
             )
 
             for json_path, room_type, scene in respace_entries:
@@ -451,6 +459,10 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
 
                 render_topdown_bboxes(result_scene, room_output)
                 results.append((stem, room_type, result_scene, room_output))
+
+            del respace
+            torch.cuda.empty_cache()
+            gc.collect()
 
     print(f"\nStage 1 complete: {len(results)} room(s) generated.")
     return results
@@ -666,6 +678,8 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic, ori_sampl
             )
         results.extend(res)
         del retrieval
+        torch.cuda.empty_cache()
+        gc.collect()
 
     # --- Bathroom rooms (use .env_heg) ---
     if bathroom_entries:
@@ -685,6 +699,8 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic, ori_sampl
             )
         results.extend(res)
         del retrieval_bath
+        torch.cuda.empty_cache()
+        gc.collect()
 
     # Restore default env
     _load_env(ENV_FILE)
@@ -817,7 +833,7 @@ def discover_rooms_from_dir(unit_dir):
 
 def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
                       style_prompt, lambda_style, stochastic, use_fill_ratio,
-                      ori_sample, do_render, source_label):
+                      ori_sample, do_render, source_label, include_openings=False):
     """Run the full pipeline (stage 1-3) for a single unit.
 
     Returns list of stage2 result tuples.
@@ -838,7 +854,7 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
         tag = " <-- style anchor" if i == 0 else ""
         print(f"  [{i}] {rf.name} ({rt}){tag}")
 
-    stage1_results = run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
+    stage1_results = run_stage1(room_entries, output_dir, model_path, match_room_type, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio, include_openings=include_openings)
 
     # Re-order stage1 results: living room first, then dining, then rest
     living = []
@@ -909,10 +925,19 @@ def main():
                         help="Use original asset sampling (description + size only, no style coherence)")
     parser.add_argument("--render", action="store_true",
                         help="Enable Stage 3 (3D rendering with assets). Off by default.")
+    parser.add_argument("--arch", action="store_true",
+                        help="Include architectural openings (doors/windows) in the scene graph sent to the SG-LLM. "
+                             "Requires a model trained with openings data.")
+    parser.add_argument("--seed", type=int, default=None,
+                        help="Random seed for reproducibility.")
     args = parser.parse_args()
 
     model_path = args.checkpoint if args.checkpoint else MODEL_ID
     use_fill_ratio = not args.no_fill_ratio
+
+    if args.seed is not None:
+        set_seeds(args.seed)
+        print(f"Seed: {args.seed}")
 
     # ---------------------------------------------------------------------- #
     # Validate input mode                                                      #
@@ -964,6 +989,7 @@ def main():
                 room_entries, output_dir, model_path, args.match_room_type,
                 args.style_prompt, args.lambda_style, args.stochastic,
                 use_fill_ratio, args.ori_sample, args.render, source_label,
+                include_openings=args.arch,
             )
             all_results.append((source_label, results))
 
@@ -1012,6 +1038,7 @@ def main():
         room_entries, output_dir, model_path, args.match_room_type,
         args.style_prompt, args.lambda_style, args.stochastic,
         use_fill_ratio, args.ori_sample, args.render, source_label,
+        include_openings=args.arch,
     )
 
     print("\nDone!")

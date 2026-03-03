@@ -24,6 +24,7 @@ data/3D-FRONT.zip
 data/3D-FUTURE-assets.old
 data/3D-FRONT
 viz_openings
+input_test/3d_front
 
 eval/viz/
 eval/gen/
