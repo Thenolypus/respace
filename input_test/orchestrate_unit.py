@@ -63,7 +63,7 @@ ENV_FILE_BATHROOM = ".env_heg"
 # ReSpace layout generation params
 N_BON_SGLLM = 8
 N_BON_ASSETS = 4
-K_FEW_SHOT_SAMPLES = 2
+K_FEW_SHOT_SAMPLES = 10
 
 # Original ReSpace method params (--ori-method)
 ORI_N_BON_ASSETS = 1
@@ -592,7 +592,7 @@ def _run_retrieval_for_rooms(entries, retrieval, unit_style_embeds, style_prompt
             is_greedy_sampling=not stochastic,
             user_prompt=style_prompt,
             initial_style_embeds=initial_embeds,
-            use_category_only=True,
+            use_category_only=False,
         )
 
         # Collect only new embeddings from this room
@@ -940,8 +940,8 @@ def main():
                         help="Output directory. Defaults to <source-dir>/output/")
     parser.add_argument("--style-prompt", type=str, default=None,
                         help="Style prompt for cross-scene coherence (e.g. 'modern scandinavian')")
-    parser.add_argument("--lambda-style", type=float, default=0.1,
-                        help="Weight for style coherence term (default: 0.1)")
+    parser.add_argument("--lambda-style", type=float, default=0.2,
+                        help="Weight for style coherence term (default: 0.2)")
     parser.add_argument("--checkpoint", type=str, default=None,
                         help="Path to local checkpoint directory")
     parser.add_argument("--match-room-type", action="store_true",

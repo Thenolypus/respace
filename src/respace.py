@@ -212,7 +212,7 @@ class ReSpace:
 # output format
 respond with EXACTLY this JSON structure:
 {{"commands": ["<add>noun phrase</add>", ...]}}
-if you used <remove>, add a "reasoning" key BEFORE "commands":
+add a "reasoning" key BEFORE "commands" and write the reasoning for your choices (2 to 3 sentences max). An example:
 {{"reasoning": "...", "commands": ["<remove>...</remove>", "<add>...</add>"]}}
 
 example valid response:
@@ -223,7 +223,7 @@ example valid response:
 - <scenegraph>: optional JSON of the current scene. "bounds_top" and "bounds_bottom" contain boundary vertices in metric space.
 
 # rules
-- produce EXACTLY the number of objects requested in the prompt.
+- you MUST create a functional room. If the number of objects is too little for a functional room, increase it. If there are too many objects, decrease it.
 - each <add> description: noun phrase, 2-5 words. first words = color/style/shape, last word = the object. example: "modern gray sofa".
 - if a <scenegraph> has existing objects, match their style in your new <add> descriptions.
 - if the prompt specifies a style, all furniture must match it.
@@ -572,7 +572,9 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 					response_json["commands"].sort(key=lambda x: (not x.startswith("<remove>"), x))
 
 					print("=============================================")
-					print(len(response_json.get("commands")), response_json)
+					if response_json.get("reasoning"):
+						print(f"reasoning: {response_json['reasoning']}")
+					print(f"{len(response_json.get('commands'))}: {response_json['commands']}")
 					print("=============================================")
 
 					remove_commands = [c for c in response_json["commands"] if c.startswith("<remove>")]
@@ -580,22 +582,70 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 
 					# Filter add commands: drop any whose description doesn't
 					# substring-match at least one known asset category.
+					# Re-query the LLM for replacements up to max_filter_retries times.
+					max_filter_retries = 3
 					if self.dataset_stats_for_prompt and self.dataset_stats_for_prompt.get("unique_object_classes"):
 						known_categories = self.dataset_stats_for_prompt["unique_object_classes"]
 						filtered_add = []
-						for cmd in add_commands:
-							desc = re.search(r'<add>(.*?)</add>', cmd).group(1).lower()
-							desc_words = desc.split()
-							matched = any(
-								word in cat or cat in desc
-								for word in desc_words
-								for cat in known_categories
+						for filter_attempt in range(max_filter_retries + 1):
+							rejected = []
+							for cmd in add_commands:
+								desc = re.search(r'<add>(.*?)</add>', cmd).group(1).lower()
+								desc_words = desc.split()
+								matched = any(
+									word in cat or cat in desc
+									for word in desc_words
+									for cat in known_categories
+								)
+								if matched:
+									filtered_add.append(cmd)
+								else:
+									rejected.append(cmd)
+									print(f"  FILTERED OUT (no category match): {cmd}")
+
+							if not rejected or filter_attempt == max_filter_retries:
+								break
+
+							# Ask the LLM to replace only the rejected items
+							n_missing = len(rejected)
+							rejected_list = ", ".join(re.search(r'<add>(.*?)</add>', r).group(1) for r in rejected)
+							followup = (
+								f"{rejected_list} were rejected because they don't match any known furniture category."
+								f"Generate exactly {n_missing} replacement <add> commands that DO match the available object classes AND that would compliment the already added objects. "
+								f"Same JSON format. Only output the replacements, not the previously accepted ones."
 							)
-							if matched:
-								filtered_add.append(cmd)
+							messages.append({"role": "assistant", "content": response})
+							messages.append({"role": "user", "content": followup})
+							print(f"  Re-querying LLM for {n_missing} replacement(s) (attempt {filter_attempt + 1}/{max_filter_retries})...")
+
+							torch.use_deterministic_algorithms(False)
+							if self.vanilla_vllm_engine is not None:
+								vllm_prompt = self.vanilla_tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+								inputs = self.vanilla_tokenizer(vllm_prompt, return_tensors="pt")
+								input_ids = inputs["input_ids"]
+								attention_mask = inputs["attention_mask"]
+								results = self.vanilla_vllm_engine.generate(
+									input_ids,
+									attention_mask,
+									max_new_tokens=4096,
+									temperature=0.7,
+									top_p=0.95,
+									top_k=50,
+								)
+								response = results[0]
 							else:
-								print(f"  FILTERED OUT (no category match): {cmd}")
+								outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, temperature=0.7)
+								response = outputs[0]["generated_text"][-1]["content"]
+							torch.use_deterministic_algorithms(True)
+
+							replacement_json = json.loads(response)
+							if replacement_json.get("reasoning"):
+								print(f"  Replacement reasoning: {replacement_json['reasoning']}")
+							add_commands = [c for c in replacement_json.get("commands", []) if c.startswith("<add>")]
+							print(f"  Replacements received: {add_commands}")
+
 						add_commands = filtered_add
+						print(f"  Final ({len(add_commands)}): {add_commands}")
 
 					# Process removes first (uses vanilla LLM)
 					for command in remove_commands:

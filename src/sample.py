@@ -496,17 +496,17 @@ class AssetRetrievalModule(nn.Module):
 
 	def compute_style_similarity(self, selected_style_embeds):
 		"""
-		Cosine similarity of each catalog asset against the mean style
-		of previously selected assets.
+		Cosine similarity of each catalog asset against the last selected
+		asset's style embedding (autoregressive, not averaged).
 
 		Args:
 			selected_style_embeds: (n_selected, embed_dim) L2-normalized
 		Returns:
 			(n_assets,) cosine similarities
 		"""
-		mean_style = selected_style_embeds.mean(dim=0)
-		mean_style = torch.nn.functional.normalize(mean_style, p=2, dim=0)
-		return torch.matmul(self.all_style_embeds_catalog, mean_style)
+		last_style = selected_style_embeds[-1]
+		last_style = torch.nn.functional.normalize(last_style, p=2, dim=0)
+		return torch.matmul(self.all_style_embeds_catalog, last_style)
 
 	def sample_all_assets_style_coherent(self, scene, lambda_style=0.2,
 										 is_greedy_sampling=True, user_prompt=None):
