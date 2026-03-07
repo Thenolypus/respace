@@ -1,9 +1,0 @@
-Results of using 3D-Front assets (aside from bathroom):
-3d_front: category semantics + size + style & scene average
-3d_front_style: category semantics + size + style
-3d_front_full_style: full desc semantics + size (baseline)
-
-Results of using 3D-Front assets with openings (aside from bathroom):
-3df_openings: category semantics + size + style & scene average
-3df_openings_style: category semantics + size + style
-3df_openings_full_style: full desc semantics + size (baseline)

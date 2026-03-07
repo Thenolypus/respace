@@ -59,7 +59,7 @@ def remove_and_recreate_folder(pth):
 		shutil.rmtree(pth, ignore_errors=False)
 	os.makedirs(pth, exist_ok=True)
 
-def get_vanilla_pipeline(model_id="Qwen/Qwen3-4B-Instruct-2507"):
+def get_vanilla_pipeline(model_id="meta-llama/Meta-Llama-3.1-8B-Instruct"):
 	pipeline = transformers.pipeline(
 		"text-generation",
 		model=model_id,
@@ -170,7 +170,8 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False, u
 
 	if "Qwen" in model_id or "qwen" in model_type:
 		print("setting qwen tokenizer settings...")
-		tokenizer.pad_token_id = 151643
+		if tokenizer.pad_token_id is None:
+			tokenizer.pad_token_id = tokenizer.eos_token_id
 	else:
 		# llama3.1
 		tokenizer.pad_token = '<|finetune_right_pad_id|>'
