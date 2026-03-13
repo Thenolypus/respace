@@ -121,35 +121,54 @@ def get_sample_outputs_batch(batch_instrs, model, tokenizer, max_seq_length, acc
 		
 		torch.use_deterministic_algorithms(True)
 	else:
-		# Fallback to regular generation
-		print("Using regular model.generate")
-		gen_kwargs = {
+		# Fallback to regular generation — chunk to avoid VRAM overflow
+		MAX_BATCH = 2
+		total_seqs = all_input_ids.shape[0]
+		print(f"Using regular model.generate (total_seqs={total_seqs}, chunk_size={min(MAX_BATCH, total_seqs)})")
+
+		gen_kwargs_base = {
 			"max_new_tokens": max_tokens,
 			"pad_token_id": tokenizer.pad_token_id,
-			"attention_mask": all_attention_masks,
 			"do_sample": (False if is_greedy_sampling else True),
 			"temperature": temp,
 			"top_k": None if is_greedy_sampling else 50,
 			"top_p": None if is_greedy_sampling else 0.95
 		}
-		
-		torch.use_deterministic_algorithms(False)
-		
-		with torch.inference_mode():
-			with accelerator.no_sync(model):
-				outputs = model.generate(
-					input_ids=all_input_ids, 
-					output_logits=return_logits, 
-					return_dict_in_generate=return_logits,
-					**gen_kwargs
-				)
 
+		torch.use_deterministic_algorithms(False)
+
+		all_chunk_outputs = []
+		all_chunk_output_ids = []
+		all_chunk_logits = []
+
+		for chunk_start in range(0, total_seqs, MAX_BATCH):
+			chunk_end = min(chunk_start + MAX_BATCH, total_seqs)
+			chunk_ids = all_input_ids[chunk_start:chunk_end]
+			chunk_masks = all_attention_masks[chunk_start:chunk_end]
+
+			with torch.inference_mode():
+				with accelerator.no_sync(model):
+					outputs = model.generate(
+						input_ids=chunk_ids,
+						attention_mask=chunk_masks,
+						output_logits=return_logits,
+						return_dict_in_generate=return_logits,
+						**gen_kwargs_base
+					)
+
+			if return_logits:
+				chunk_out_ids = outputs.sequences[:, chunk_ids.shape[-1]:]
+				all_chunk_output_ids.append(chunk_out_ids)
+				all_chunk_logits.append(torch.stack(outputs.scores, dim=1))
+				all_chunk_outputs.extend(tokenizer.batch_decode(chunk_out_ids, skip_special_tokens=True))
+			else:
+				all_chunk_outputs.extend(tokenizer.batch_decode(outputs[:, chunk_ids.shape[-1]:], skip_special_tokens=True))
+
+		all_responses = all_chunk_outputs
 		if return_logits:
-			all_output_ids = outputs.sequences[:, all_input_ids.shape[-1]:]
-			all_responses = tokenizer.batch_decode(all_output_ids, skip_special_tokens=True)
-		else:
-			all_responses = tokenizer.batch_decode(outputs[:, all_input_ids.shape[-1]:], skip_special_tokens=True)
-			
+			all_output_ids = torch.cat(all_chunk_output_ids, dim=0)
+			all_logits_combined = torch.cat(all_chunk_logits, dim=0)
+
 		torch.use_deterministic_algorithms(True)
 
 	end_time = time.time()
@@ -157,8 +176,12 @@ def get_sample_outputs_batch(batch_instrs, model, tokenizer, max_seq_length, acc
 	print(f"finished sampling after {elapsed_time:.4f} s => {elapsed_time / len(all_responses)} s / sample")
 
 	if return_logits:
-		all_logits = torch.stack(outputs.scores, dim=1)
-	
+		# For vLLM path, all_output_ids/all_logits set above; for chunked path, use combined tensors
+		if vllm_engine is not None and vllm_engine.initialized:
+			all_logits = torch.stack(outputs.scores, dim=1)
+		else:
+			all_logits = all_logits_combined
+
 	split_responses, split_output_ids, split_logits = [], [], []
 	idx = 0
 	for n in num_return_sequences:

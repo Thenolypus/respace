@@ -84,12 +84,12 @@ from input_test.orchestrate_unit import (
 EVAL_MODELS = [
     {
         "name": "1_7b",
-        "checkpoint": "ckpts/qwen3_1_7b/old/checkpoint-best",
+        "checkpoint": "ckpts/qwen3_1_7b/checkpoint-best",
         "arch": True,
     },
     {
         "name": "4b",
-        "checkpoint": "ckpts/qwen3_4b/old/checkpoint-best",
+        "checkpoint": "ckpts/qwen3_4b/checkpoint-best",
         "arch": True,
     },
     {
@@ -158,6 +158,46 @@ def get_vanilla_cache_dir(eval_output_dir, floor_name, unit_name):
     return Path(eval_output_dir) / "vanilla_cache" / f"{floor_name}__{unit_name}"
 
 
+# ============================================================================ #
+# Continue / skip logic                                                         #
+# ============================================================================ #
+
+
+def get_completed_rooms_for_model(model_output_dir):
+    """Return set of room stems that already have generated_scene.json."""
+    completed = set()
+    model_dir = Path(model_output_dir)
+    if not model_dir.exists():
+        return completed
+    for room_dir in model_dir.iterdir():
+        if room_dir.is_dir() and (room_dir / "generated_scene.json").exists():
+            completed.add(room_dir.name)
+    return completed
+
+
+def get_cached_vanilla_rooms(vanilla_cache_dir):
+    """Return set of room stems that already have vanilla cache files."""
+    cached = set()
+    cache_dir = Path(vanilla_cache_dir)
+    if not cache_dir.exists():
+        return cached
+    for f in cache_dir.glob("*_vanilla.json"):
+        # stem is e.g. "unit_1_room_1_livingroom_vanilla" -> strip suffix
+        cached.add(f.name.replace("_vanilla.json", ""))
+    return cached
+
+
+def filter_incomplete_rooms(room_entries, completed_stems):
+    """Filter room_entries to only those not yet completed."""
+    remaining = []
+    for rf, rt, sc in room_entries:
+        if rf.stem in completed_stems:
+            print(f"  SKIP (already done): {rf.name}")
+        else:
+            remaining.append((rf, rt, sc))
+    return remaining
+
+
 def load_vanilla_cache(cache_dir, room_stem):
     cache_file = Path(cache_dir) / f"{room_stem}_vanilla.json"
     if cache_file.exists():
@@ -195,6 +235,11 @@ def run_stage1_with_cache(room_entries, output_dir, model_path, style_prompt,
 
     results = []
 
+    # Build unit-wide room type list (non-bathroom) for cross-room awareness
+    unit_room_types = [rt for _, rt, _ in room_entries if rt != "bathroom"]
+    if len(unit_room_types) > 1:
+        print(f"  Unit room context: {unit_room_types}")
+
     # Separate bathrooms
     bathroom_entries = [(jp, rt, sc) for jp, rt, sc in room_entries if rt == "bathroom"]
     respace_entries = [(jp, rt, sc) for jp, rt, sc in room_entries if rt != "bathroom"]
@@ -222,7 +267,8 @@ def run_stage1_with_cache(room_entries, output_dir, model_path, style_prompt,
 
     # --- Other rooms (ReSpace) ---
     if respace_entries:
-        print(f"\nInitializing ReSpace (dataset_room_type={DEFAULT_DATASET_ROOM_TYPE})")
+        skip_vanilla = not is_first_model
+        print(f"\nInitializing ReSpace (dataset_room_type={DEFAULT_DATASET_ROOM_TYPE}, skip_vanilla_load={skip_vanilla})")
         respace = ReSpace(
             model_id=model_path,
             env_file=ENV_FILE,
@@ -236,6 +282,7 @@ def run_stage1_with_cache(room_entries, output_dir, model_path, style_prompt,
             k_few_shot_samples=K_FEW_SHOT_SAMPLES,
             use_vllm=USE_VLLM,
             include_openings=include_openings,
+            skip_vanilla_load=skip_vanilla,
         )
 
         for json_path, room_type, scene in respace_entries:
@@ -255,6 +302,8 @@ def run_stage1_with_cache(room_entries, output_dir, model_path, style_prompt,
                     style_prompt=style_prompt,
                     use_fill_ratio=use_fill_ratio,
                     return_vanilla_commands=True,
+                    unit_room_types=unit_room_types,
+                    vanilla_temp=0.0,
                 )
                 if len(result) == 3:
                     result_scene, is_success, vanilla_cmds = result
@@ -282,6 +331,8 @@ def run_stage1_with_cache(room_entries, output_dir, model_path, style_prompt,
                     style_prompt=style_prompt,
                     use_fill_ratio=use_fill_ratio,
                     cached_vanilla_commands=cached,
+                    unit_room_types=unit_room_types,
+                    vanilla_temp=0.0,
                 )
 
                 if not is_success:
@@ -468,17 +519,32 @@ def main():
                 model_style_prompt = args.style_prompt
                 model_n_bon_assets = N_BON_ASSETS
 
+            model_output_dir = eval_output_dir / model_name / floor_name / unit_name
+            model_output_dir.mkdir(parents=True, exist_ok=True)
+
+            # --- Continue logic: skip rooms already completed for this model ---
+            completed = get_completed_rooms_for_model(model_output_dir)
+            model_room_entries = filter_incomplete_rooms(room_entries, completed)
+
+            if not model_room_entries:
+                print(f"\n  SKIP MODEL {model_name}: all {len(room_entries)} room(s) already completed for {floor_name}/{unit_name}")
+                continue
+
+            # For vanilla cache on first model: check which rooms still need caching
+            if is_first_model:
+                cached_vanilla = get_cached_vanilla_rooms(vanilla_cache_dir)
+                uncached_count = sum(1 for rf, _, _ in model_room_entries if rf.stem not in cached_vanilla)
+                print(f"  Vanilla cache: {len(cached_vanilla)} cached, {uncached_count} remaining")
+
             print(f"\n{'='*70}")
             print(f"MODEL: {model_name} ({model_path})")
             print(f"  arch={include_openings}, first_model={is_first_model}, ori_method={ori_method}")
+            print(f"  rooms: {len(model_room_entries)}/{len(room_entries)} remaining")
             print(f"{'='*70}")
 
             # Reset seed before each model so SG-LLM placement is reproducible per model
             if args.seed is not None:
                 set_seeds(args.seed)
-
-            model_output_dir = eval_output_dir / model_name / floor_name / unit_name
-            model_output_dir.mkdir(parents=True, exist_ok=True)
 
             # Copy metadata.json from source floor dir into the model's floor dir
             src_metadata = unit_path.parent / "metadata.json"
@@ -489,7 +555,7 @@ def main():
 
             # Stage 1
             stage1_results = run_stage1_with_cache(
-                room_entries, model_output_dir, model_path,
+                model_room_entries, model_output_dir, model_path,
                 model_style_prompt, model_use_fill_ratio, include_openings,
                 vanilla_cache_dir, is_first_model,
                 n_bon_assets=model_n_bon_assets,

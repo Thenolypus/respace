@@ -36,6 +36,7 @@ import os
 import gc
 import json
 import sys
+import time
 import argparse
 import textwrap
 import numpy as np
@@ -52,6 +53,11 @@ from src.sample import AssetRetrievalModule
 from src.bathroom_layout import generate_bathroom_layout
 from src.utils import set_seeds
 
+def _fmt_time(seconds):
+    m, s = divmod(int(seconds), 60)
+    return f"{m}m {s}s" if m else f"{s}s"
+
+
 # ============================================================================ #
 # CONFIGURATION                                                                 #
 # ============================================================================ #
@@ -62,7 +68,7 @@ ENV_FILE_BATHROOM = ".env_heg"
 
 # ReSpace layout generation params
 N_BON_SGLLM = 8
-N_BON_ASSETS = 4
+N_BON_ASSETS = 1
 K_FEW_SHOT_SAMPLES = 2
 
 # Original ReSpace method params (--ori-method)
@@ -298,7 +304,7 @@ def render_3d_scene(scene_with_assets, output_path, filename):
 # ============================================================================ #
 
 
-def _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=None, use_fill_ratio=True):
+def _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=None, use_fill_ratio=True, unit_room_types=None):
     """Generate layout for a single non-bathroom room via ReSpace.
 
     Returns (result_scene, success_bool).
@@ -313,6 +319,7 @@ def _generate_single_room(respace, json_path, room_type, scene, room_output, sty
         pth_viz_output=room_output,
         style_prompt=style_prompt,
         use_fill_ratio=use_fill_ratio,
+        unit_room_types=unit_room_types,
     )
 
     if not is_success:
@@ -360,7 +367,13 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
     print("STAGE 1: Layout Generation")
     print(f"{'='*70}")
 
+    _stage1_start = time.time()
     results = []
+
+    # Build unit-wide room type list (non-bathroom) for cross-room awareness
+    unit_room_types = [rt for _, rt, _ in room_entries if rt != "bathroom"]
+    if len(unit_room_types) > 1:
+        print(f"  Unit room context: {unit_room_types}")
 
     # Separate bathrooms from rooms that need ReSpace
     bathroom_entries = [(jp, rt, sc) for jp, rt, sc in room_entries if rt == "bathroom"]
@@ -415,7 +428,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                     room_output = output_dir / stem
                     room_output.mkdir(parents=True, exist_ok=True)
 
-                    result_scene, ok = _generate_single_room(respace, json_path, rt, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
+                    result_scene, ok = _generate_single_room(respace, json_path, rt, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio, unit_room_types=unit_room_types)
                     if not ok:
                         continue
 
@@ -453,7 +466,7 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
                 room_output = output_dir / stem
                 room_output.mkdir(parents=True, exist_ok=True)
 
-                result_scene, ok = _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio)
+                result_scene, ok = _generate_single_room(respace, json_path, room_type, scene, room_output, style_prompt=style_prompt, use_fill_ratio=use_fill_ratio, unit_room_types=unit_room_types)
                 if not ok:
                     continue
 
@@ -469,7 +482,8 @@ def run_stage1(room_entries, output_dir, model_path, match_room_type, style_prom
             torch.cuda.empty_cache()
             gc.collect()
 
-    print(f"\nStage 1 complete: {len(results)} room(s) generated.")
+    elapsed = time.time() - _stage1_start
+    print(f"\nStage 1 complete: {len(results)} room(s) generated. [{_fmt_time(elapsed)}]")
     return results
 
 
@@ -651,6 +665,8 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic, ori_sampl
         print("STAGE 2: Cross-scene Style-coherent Asset Retrieval")
     print(f"{'='*70}")
 
+    _stage2_start = time.time()
+
     if not stage1_results:
         print("No rooms to process.")
         return []
@@ -710,7 +726,8 @@ def run_stage2(stage1_results, style_prompt, lambda_style, stochastic, ori_sampl
     # Restore default env
     _load_env(ENV_FILE)
 
-    print(f"\nStage 2 complete: {len(results)} room(s) with assets retrieved.")
+    elapsed = time.time() - _stage2_start
+    print(f"\nStage 2 complete: {len(results)} room(s) with assets retrieved. [{_fmt_time(elapsed)}]")
     print(f"Total style embeddings accumulated: {len(unit_style_embeds)}")
     return results
 
@@ -726,6 +743,7 @@ def run_stage3(stage2_results):
     print("STAGE 3: 3D Rendering")
     print(f"{'='*70}")
 
+    _stage3_start = time.time()
     for stem, room_type, scene, room_output, params in stage2_results:
         if not scene.get("bounds_bottom"):
             print(f"  WARNING: Skipping render for {stem} -- no bounds_bottom")
@@ -735,7 +753,8 @@ def run_stage3(stage2_results):
         render_path.mkdir(parents=True, exist_ok=True)
         render_3d_scene(scene, render_path, stem)
 
-    print(f"\nStage 3 complete.")
+    elapsed = time.time() - _stage3_start
+    print(f"\nStage 3 complete. [{_fmt_time(elapsed)}]")
 
 
 # ============================================================================ #
@@ -869,6 +888,7 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
     print(f"UNIT: {source_label}")
     print(f"{'='*70}")
 
+    _pipeline_start = time.time()
     room_entries = order_rooms_living_first(room_entries)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -902,10 +922,12 @@ def run_unit_pipeline(room_entries, output_dir, model_path, match_room_type,
     if do_render:
         run_stage3(stage2_results)
 
+    total_elapsed = time.time() - _pipeline_start
     print(f"\n{'#'*70}")
     print(f"# UNIT COMPLETE: {source_label}")
     print(f"# Output: {output_dir}")
     print(f"# Rooms processed: {len(stage2_results)}")
+    print(f"# Total time: {_fmt_time(total_elapsed)}")
     print(f"{'#'*70}")
 
     for stem, room_type, scene, room_output, params in stage2_results:

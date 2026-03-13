@@ -26,7 +26,7 @@ from src.viz import render_full_scene_and_export_with_gif, create_360_video_full
 from src.vllm_inference import VLLMWrapper
 
 # Model IDs — change these to swap models
-VANILLA_MODEL_ID = "Qwen/Qwen3-4B-Instruct-2507"
+VANILLA_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 ORI_VANILLA_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 SGLLM_MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
 
@@ -35,7 +35,7 @@ def _strip_thinking(text):
 	return re.sub(r"<think>.*?</think>\s*", "", text, flags=re.DOTALL).strip()
 
 class ReSpace:
-	def __init__(self, model_id=SGLLM_MODEL_ID, env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2, include_openings=False, vanilla_model_id=None):
+	def __init__(self, model_id=SGLLM_MODEL_ID, env_file=".env", dataset_room_type="all", use_gpu=True, accelerator=None, n_bon_sgllm=8, n_bon_assets=1, do_prop_sampling_for_prompt=True, do_icl_for_prompt=True, do_class_labels_for_prompt=True, use_vllm=False, do_removal_only=False, k_few_shot_samples=2, include_openings=False, vanilla_model_id=None, skip_vanilla_load=False):
 
 		load_dotenv(env_file)
 
@@ -56,7 +56,7 @@ class ReSpace:
 		self.vanilla_pipeline = None
 		_, self.vanilla_tokenizer, _ = get_model(self.vanilla_model_id, use_gpu, accelerator=None, do_not_load_hf_model=True)
 		self._vanilla_loaded = False
-		if not do_removal_only:
+		if not do_removal_only and not skip_vanilla_load:
 			self._load_vanilla_model()
 
 		# sampling engine
@@ -92,7 +92,7 @@ class ReSpace:
 				model_id=self.vanilla_model_id,
 				tokenizer=self.vanilla_tokenizer,
 				gpu_memory_utilization=0.85,
-				max_model_len=5000,
+				max_model_len=32768,
 			)
 			print("Vanilla LLM: vLLM initialized successfully")
 		else:
@@ -111,6 +111,7 @@ class ReSpace:
 			del self.vanilla_pipeline
 			self.vanilla_pipeline = None
 		gc.collect()
+		torch.cuda.synchronize()
 		torch.cuda.empty_cache()
 		self._vanilla_loaded = False
 		print("Vanilla LLM unloaded.")
@@ -143,6 +144,7 @@ class ReSpace:
 			del self.model
 			self.model = None
 		gc.collect()
+		torch.cuda.synchronize()
 		torch.cuda.empty_cache()
 		self._sgllm_loaded = False
 		print("SG-LLM unloaded.")
@@ -218,16 +220,17 @@ class ReSpace:
 - <scenegraph>: optional JSON of the current scene. "bounds_top" and "bounds_bottom" contain boundary vertices in metric space.
 
 # adding
-- create one <add> command per object. each command adds exactly ONE singular object.
-- WRONG: <add>set of chairs</add>, <add>pair of lamps</add>. RIGHT: <add>chair</add>, <add>floor lamp</add>. never use words like "set", "pair", "group", "collection" in descriptions.
+- create one <add> command per object. each command adds exactly ONE SINGULAR object.
+- NEVER use words or plurals like "set", "chairs", "pair", "group", "collection" in descriptions. Use singular objects only. If you need more than one item, use more add commands.
 - description must be a noun phrase, 1-5 words. the last word is always the main subject.
-- only add style/color/shape words if the user prompt or scenegraph specifies a style. otherwise, keep descriptions short and plain (e.g., "sofa", "nightstand", "bookcase").
-- if adding multiple of the same object type, use the EXACT same description for each. WRONG: "modern chair" + "dark wood chair". RIGHT: "chair" + "chair".
+- descriptions should be concise. use style, material, or shape qualifiers when they are relevant to the user prompt or help distinguish the object. do not over-describe — let the few-shot examples guide your level of detail.
+- if adding multiple of the same object type, use the EXACT same description for each. For example:"<add>modern chair</add>", "<add>modern chair</add>".
 - if a <scenegraph> has existing objects, match their style in your new descriptions.
 - pick ONLY furniture appropriate for the given room type. do not add items that belong in other room types. 
-- the object count in the prompt is a statistical average for that room size, not a target. once all essential furniture for the room type is placed, stop. do not add filler objects just to reach the average.
+- the object count in the prompt is a statistical average for that room size, not a target. once all essential furniture for the room type is placed, STOP. DO NOT add filler objects just to reach the average.
 - small rooms (under 15 sq m): essential furniture only.
-- order your <add> commands so that large anchor furniture comes first (e.g., tables, beds, sofas), then dependent items (e.g., chairs, nightstands), then accessories and lighting last.
+- order your <add> commands so that large anchor furniture comes first (e.g., table, bed, sofa), then dependent items (e.g., chair, nightstand), then accessories and lighting last.
+- diningrooms: dining tables and multipe add commands for dining chairs (do not use "dining chairs", use separate "<add>dining chair</add>" commands with the same description for each chair).
 
 # removing
 - <remove> ONLY when the user EXPLICITLY asks to remove or swap. do not make assumptions about this.
@@ -423,8 +426,8 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 						attention_mask,
 						max_new_tokens=16384,
 						temperature=temp,
-						top_p=0.95,
-						top_k=50,
+						top_p=0.8,
+						top_k=20,
 					)
 					response = _strip_thinking(results[0])
 				else:
@@ -469,7 +472,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 			gc.collect()
 			torch.cuda.empty_cache()
 	
-	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None, style_prompt=None, use_fill_ratio=True, cached_vanilla_commands=None, return_vanilla_commands=False):
+	def generate_full_scene(self, room_type=None, n_objects=None, scene_bounds_only=None, do_rendering_with_object_count=False, pth_viz_output=None, style_prompt=None, use_fill_ratio=True, cached_vanilla_commands=None, return_vanilla_commands=False, unit_room_types=None, vanilla_temp=0.7):
 		
 		self.dataset_stats_for_prompt = self._prepare_dataset_stats_for_object_sampler(room_type)
 		self.floor_object_sampler = FloorObjectSampler(self.dataset_stats_for_prompt.get("floor_area_n_objects"))
@@ -489,7 +492,6 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 				n_objects = max(1, int(n_objects * fill_ratio))
 				print(f"  Non-rectangular room (fill_ratio={fill_ratio:.2f}): adjusted n_objects to {n_objects}")
 		
-		# sample few-shot examples from training set
 		few_shot_samples = None
 		if self.k_few_shot_samples > 0:
 			few_shot_samples = self.floor_object_sampler.sample_few_shot_samples(floor_area, n_objects, k=self.k_few_shot_samples)
@@ -509,7 +511,24 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 		n_vertices = len(scene_bounds_only["bounds_bottom"])
 		shape_hint = "" if n_vertices == 4 else f" the room is non-rectangular ({n_vertices} boundary vertices)."
 
-		prompt = f"create a {room_type if room_type != None else 'room'}. rooms of this size typically have around {n_objects} objects. the room is approximately {room_width:.1f}m x {room_depth:.1f}m ({floor_area:.1f} sq m).{shape_hint}"
+		prompt = f"create a {room_type if room_type != None else 'room'}. rooms of this size typically have around {n_objects} objects, however early stopping is also allowed if you find yourself repeating items. The room is approximately {room_width:.1f}m x {room_depth:.1f}m ({floor_area:.1f} sq m).{shape_hint}"
+		print(f"Initial n_objects: {n_objects}")
+
+		# Unit-aware context: tell the LLM what other rooms exist so it avoids cross-room furniture
+		if unit_room_types and room_type:
+			other_rooms = [rt for rt in unit_room_types if rt != room_type]
+			has_diningroom = any(rt == "diningroom" for rt in unit_room_types)
+			if other_rooms:
+				from collections import Counter
+				counts = Counter(other_rooms)
+				parts = [f"{count}x {rt}" if count > 1 else rt for rt, count in counts.items()]
+				prompt += f" this unit also contains: {', '.join(parts)}. only add furniture appropriate for the {room_type}, not for the other rooms."
+			# Explicit dining furniture guidance based on unit composition
+			if room_type == "livingroom" and has_diningroom:
+				prompt += " do NOT add dining tables or dining chairs — those belong in the separate diningroom."
+			if room_type == "livingroom" and not has_diningroom:
+				prompt += " if the living room is big enough, then you are allowed to make this a living/dining room."
+
 		if style_prompt:
 			prompt += f" style: {style_prompt}."
 
@@ -518,10 +537,10 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 		
 		system_prompt = self._get_system_prompt_zeroshot_handle_user_instr(few_shot_samples=few_shot_samples)
 
-		return self.handle_prompt(prompt, scene_bounds_only, system_prompt=system_prompt, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output, cached_vanilla_commands=cached_vanilla_commands, return_vanilla_commands=return_vanilla_commands)
+		return self.handle_prompt(prompt, scene_bounds_only, system_prompt=system_prompt, do_rendering_with_object_count=do_rendering_with_object_count, pth_viz_output=pth_viz_output, cached_vanilla_commands=cached_vanilla_commands, return_vanilla_commands=return_vanilla_commands, vanilla_temp=vanilla_temp)
 		
 		
-	def handle_prompt(self, prompt, current_scene=None, room_type=None, do_rendering_with_object_count=False, pth_viz_output=None, system_prompt=None, cached_vanilla_commands=None, return_vanilla_commands=False):
+	def handle_prompt(self, prompt, current_scene=None, room_type=None, do_rendering_with_object_count=False, pth_viz_output=None, system_prompt=None, cached_vanilla_commands=None, return_vanilla_commands=False, vanilla_temp=0.7):
 
 		if current_scene == None:
 			current_scene = self._sample_random_bounds(self.dataset_train, room_type)
@@ -546,6 +565,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 		]
 		
 		remaining_attempts = copy.copy(self.max_n_attempts)
+		few_shot_injected = False
 		while True:
 			try:
 				if cached_vanilla_commands is not None:
@@ -580,7 +600,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 					if self.vanilla_vllm_engine is not None:
 						tpl_kwargs = dict(tokenize=False, add_generation_prompt=True)
 						if "Qwen" in self.vanilla_model_id:
-							tpl_kwargs["enable_thinking"] = False
+							tpl_kwargs["enable_thinking"] = True
 						vllm_prompt = self.vanilla_tokenizer.apply_chat_template(messages, **tpl_kwargs)
 						inputs = self.vanilla_tokenizer(vllm_prompt, return_tensors="pt")
 						input_ids = inputs["input_ids"]
@@ -589,13 +609,14 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 							input_ids,
 							attention_mask,
 							max_new_tokens=4096,
-							temperature=0.7,
-							top_p=0.95,
-							top_k=50,
+							temperature=vanilla_temp,
+							top_p=0.8,
+							top_k=20,
+							do_sample=(vanilla_temp != 0.0),
 						)
 						response = _strip_thinking(results[0])
 					else:
-						outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, temperature=0.7)
+						outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, **(dict(do_sample=False) if vanilla_temp == 0.0 else dict(temperature=vanilla_temp)))
 						response = _strip_thinking(outputs[0]["generated_text"][-1]["content"])
 					torch.use_deterministic_algorithms(True)
 
@@ -660,7 +681,7 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 								if self.vanilla_vllm_engine is not None:
 									tpl_kwargs = dict(tokenize=False, add_generation_prompt=True)
 									if "Qwen" in self.vanilla_model_id:
-										tpl_kwargs["enable_thinking"] = False
+										tpl_kwargs["enable_thinking"] = True
 									vllm_prompt = self.vanilla_tokenizer.apply_chat_template(messages, **tpl_kwargs)
 									inputs = self.vanilla_tokenizer(vllm_prompt, return_tensors="pt")
 									input_ids = inputs["input_ids"]
@@ -669,13 +690,14 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 										input_ids,
 										attention_mask,
 										max_new_tokens=4096,
-										temperature=0.7,
-										top_p=0.95,
-										top_k=50,
+										temperature=vanilla_temp,
+										top_p=0.8,
+										top_k=20,
+										do_sample=(vanilla_temp != 0.0),
 									)
 									response = _strip_thinking(results[0])
 								else:
-									outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, temperature=0.7)
+									outputs = self.vanilla_pipeline(messages, max_new_tokens=4096, pad_token_id=self.vanilla_pipeline.tokenizer.eos_token_id, **(dict(do_sample=False) if vanilla_temp == 0.0 else dict(temperature=vanilla_temp)))
 									response = _strip_thinking(outputs[0]["generated_text"][-1]["content"])
 								torch.use_deterministic_algorithms(True)
 
@@ -683,10 +705,27 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 								if replacement_json.get("reasoning"):
 									print(f"  Replacement reasoning: {replacement_json['reasoning']}")
 								add_commands = [c for c in replacement_json.get("commands", []) if c.startswith("<add>")]
+								# Only keep up to n_missing replacements to avoid re-adding already-accepted items
+								add_commands = add_commands[:n_missing]
 								print(f"  Replacements received: {add_commands}")
 
 							add_commands = filtered_add
 							print(f"  Final ({len(add_commands)}): {add_commands}")
+
+						# If vanilla LLM returned 0 commands, retry with few-shot examples
+						if not add_commands and not remove_commands:
+							if not few_shot_injected and self.floor_object_sampler and self.k_few_shot_samples > 0:
+								floor_area = create_floor_plan_polygon(current_scene.get("bounds_bottom")).area
+								n_obj_est = self.floor_object_sampler.sample_obj_count_for_floor_area(floor_area, do_prop_sampling=self.do_prop_sampling_for_prompt)[0]
+								fss = self.floor_object_sampler.sample_few_shot_samples(floor_area, n_obj_est, k=self.k_few_shot_samples)
+								system_prompt = self._get_system_prompt_zeroshot_handle_user_instr(few_shot_samples=fss)
+								messages = [
+									{"role": "system", "content": system_prompt},
+									{"role": "user", "content": query},
+								]
+								few_shot_injected = True
+								print("  Vanilla LLM returned 0 commands -- retrying with few-shot examples")
+							raise ValueError("Vanilla LLM returned 0 commands")
 
 						# Process removes first (uses vanilla LLM)
 						for command in remove_commands:
