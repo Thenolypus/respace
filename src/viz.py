@@ -91,19 +91,56 @@ def load_mesh_with_transform(mesh_path, position=None, rotation=None, scale=None
 			if hasattr(mesh.visual.material, 'alphaMode'):
 				mesh.visual.material.alphaMode = 'BLEND'
 
+	# Check for negative scale components (used for mirroring/flipping assets).
+	# Scene.apply_scale() puts the scale into the scene graph transform but
+	# does NOT fix face winding on the underlying geometries.  This causes
+	# pyrender to render with a negative-determinant model matrix, flipping
+	# normals/winding and making objects appear rotated on the wrong axis.
+	# Fix: for Scene objects with negative scale, bake all transforms directly
+	# into geometry vertices via Trimesh.apply_transform(), which correctly
+	# flips face winding when the determinant is negative.
+	has_negative_scale = scale is not None and any(s < 0 for s in scale)
+
+	if has_negative_scale and isinstance(mesh, trimesh.Scene):
+		# Build the combined Scale-Rotation-Translation matrix
+		srt = np.eye(4)
+		if scale is not None:
+			srt[:3, :3] = np.diag(scale)
+		if rotation is not None:
+			quat_wxyz = [rotation[3], rotation[0], rotation[1], rotation[2]]
+			rot_mat = quaternion_matrix(quat_wxyz)
+			srt = rot_mat @ srt
+		if position is not None:
+			trans = translation_matrix(position)
+			srt = trans @ srt
+
+		# Dump scene to flat Trimesh list (bakes scene graph node transforms
+		# into vertices), then apply the SRT to each geometry.
+		# Trimesh.apply_transform handles face winding for negative determinant.
+		flat_meshes = mesh.dump(concatenate=False)
+		for m in flat_meshes:
+			m.apply_transform(srt)
+
+		result = trimesh.Scene()
+		for i, m in enumerate(flat_meshes):
+			result.add_geometry(m, geom_name=f"geom_{i}")
+		return result
+
+	# Standard path — positive scales (or single Trimesh, which handles
+	# negative scale correctly via Trimesh.apply_transform internally).
 	if scale is not None:
 		mesh.apply_scale(scale)
-	
+
 	if rotation is not None:
 		# Convert [x,y,z,w] to [w,x,y,z] for trimesh
 		quat_wxyz = [rotation[3], rotation[0], rotation[1], rotation[2]]
 		rotation_matrix = quaternion_matrix(quat_wxyz)
 		mesh.apply_transform(rotation_matrix)
-	
+
 	if position is not None:
 		translation = translation_matrix(position)
 		mesh.apply_transform(translation)
-	
+
 	return mesh
 
 def setup_camera(scene, resolution, view_type, use_dynamic_zoom, camera_height, scene_span):
@@ -1480,7 +1517,7 @@ def create_wall_meshes(bounds_bottom, height_m, wall_thickness=0.1, color=[0.85,
 def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 						  resolution=(1536, 1024), camera_height=None,
 						  fps=30, video_duration=6.0, bg_color=None,
-						  room_scenes=None, pre_room_hook=None):
+						  room_scenes=None, pre_room_hook=None, zoom=1.0):
 	"""Create a 360-degree rotating video of an entire apartment unit.
 
 	Loads all rooms from metadata, transforms them back to unit/world space,
@@ -1572,7 +1609,8 @@ def create_360_video_unit(metadata_path, floorplan_dir, unit_id, pth_output,
 
 	if camera_height is None:
 		max_span = max(x_span, z_span)
-		camera_height = max(max_span * 1.2, 8.0)
+		camera_height = max(max_span, 8.0)
+	camera_height /= zoom
 
 	if bg_color is None:
 		bg_color = np.array([240, 240, 240]) / 255.0

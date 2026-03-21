@@ -148,7 +148,7 @@ def main():
 	)
 	parser.add_argument("--unit", required=True,
 						help="Unit subfolder inside input_test/ (e.g. '13feb_settings')")
-	parser.add_argument("--lambda-style", type=float, default=0.2,
+	parser.add_argument("--lambda-style", type=float, default=0.05,
 						help="Weight for style coherence term (default: 0.2)")
 	parser.add_argument("--render", action="store_true",
 						help="Render 3D scenes with retrieved assets")
@@ -270,14 +270,14 @@ def main():
 				room_output = scene_path.parent
 
 				room_results = {
-					"original_sample": result,
+					"cross_scene_style": result,
 					"params": {
 						"mode": "original",
 						"greedy": not args.stochastic,
 						"room_order": room_idx,
 					},
 				}
-				out_file = room_output / "original_retrieval.json"
+				out_file = room_output / "cross_scene_retrieval.json"
 				with open(out_file, "w") as f:
 					json.dump(room_results, f, indent=2)
 				print(f"Saved to {out_file}")
