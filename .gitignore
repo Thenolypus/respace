@@ -23,6 +23,7 @@ data/3D-FRONT-martin-rooms-stage-1
 data/3D-FRONT.zip
 data/3D-FUTURE-assets.old
 data/3D-FRONT
+data/il3d_layout
 viz_openings
 input_test/3d_front
 
@@ -33,6 +34,7 @@ eval/samples
 eval/baselines/ATISS/preprocessing*/
 eval/baselines/ATISS/train*/
 eval/baselines/ATISS/render/
+eval/eval_set
 
 eval/baselines/mi-diff/MiDiffusion/train-*
 eval/baselines/mi-diff/ThreedFront/preprocessing-*

@@ -26,7 +26,7 @@ from src.viz import render_full_scene_and_export_with_gif, create_360_video_full
 from src.vllm_inference import VLLMWrapper
 
 # Model IDs — change these to swap models
-VANILLA_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+VANILLA_MODEL_ID = "Qwen/Qwen3-4B-Instruct-2507"
 ORI_VANILLA_MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 SGLLM_MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
 
@@ -213,47 +213,42 @@ class ReSpace:
 		return query
 	
 	def _get_system_prompt_zeroshot_handle_user_instr(self, few_shot_samples=None):
-		full_prompt = f"""you are an interior design expert. your task is to fulfill the user request about interior design by composing a list of <add> and <remove> commands.
+		full_prompt = f"""you are an interior design expert. given a user prompt, produce a list of <add> commands to furnish a room.
 
 # input
 - <prompt>: the user request.
-- <scenegraph>: optional JSON of the current scene. "bounds_top" and "bounds_bottom" contain boundary vertices in metric space.
+- <scenegraph>: optional JSON of the current scene with boundary vertices in metric space.
 
-# adding
-- create one <add> command per object. each command adds exactly ONE SINGULAR object.
-- NEVER use words or plurals like "set", "chairs", "pair", "group", "collection" in descriptions. Use singular objects only. If you need more than one item, use more add commands.
-- description must be a noun phrase, 1-5 words. the last word is always the main subject.
-- descriptions should be concise. use style, material, or shape qualifiers when they are relevant to the user prompt or help distinguish the object. do not over-describe — let the few-shot examples guide your level of detail.
-- if adding multiple of the same object type, use the EXACT same description for each. For example:"<add>modern chair</add>", "<add>modern chair</add>".
-- if a <scenegraph> has existing objects, match their style in your new descriptions.
-- pick ONLY furniture appropriate for the given room type. do not add items that belong in other room types. 
-- the object count in the prompt is a statistical average for that room size, not a target. once all essential furniture for the room type is placed, STOP. DO NOT add filler objects just to reach the average.
-- small rooms (under 15 sq m): essential furniture only.
-- order your <add> commands so that large anchor furniture comes first (e.g., table, bed, sofa), then dependent items (e.g., chair, nightstand), then accessories and lighting last.
-- diningrooms: dining tables and multipe add commands for dining chairs (do not use "dining chairs", use separate "<add>dining chair</add>" commands with the same description for each chair).
+# bare minimum per room type
+always include at least these essentials. anything beyond them is optional.
+- bedroom: bed, nightstand, lamp, wardrobe.
+- livingroom: sofa, armchair, coffee table, pendant/ceiling lamp, tv stand.
+- diningroom: dining table, one dining chair per seat, pendant/ceiling lamp.
 
-# removing
-- <remove> ONLY when the user EXPLICITLY asks to remove or swap. do not make assumptions about this.
-- you NEVER remove objects to "match style" or because a similar object already exists. a scene can have as many similar objects as the user wants.
-- for swap/replace: use <remove> first, then <add>.
-- if using <remove>, include a "reasoning" key BEFORE "commands" explaining why.
+# rules
+- one <add> command = one singular object. never use plurals like "chairs" or "set".
+- description: noun phrase, 1-5 words, last word is the main subject.
+- if adding multiples of the same type, repeat the EXACT same description per command.
+- if a <scenegraph> has existing objects, match their style.
+- pick ONLY furniture appropriate for the room type.
+- the object count in the prompt is a rough average, not a target. once essentials + a few extras are placed, stop.
+- small rooms (under 15 sq m): essentials only.
+- order: large anchor furniture first (bed, sofa, table), then dependent items (chair, nightstand), then accessories and lighting last.
+- avoid duplicate roles: do not add two different items that serve the same function (e.g. armchair + lounge chair, side table + end table). multiples of the exact same item (e.g. dining chairs) are fine.
 
 # output
 - output a single JSON object as plain text. no markdown, no explanation, no extra text.
-- format: {{"commands": ["<add>...</add>", ...]}}
-- with removals: {{"reasoning": "...", "commands": ["<remove>...</remove>", "<add>...</add>"]}}
-- put all <remove> commands before <add> commands."""
+- format: {{"commands": ["<add>...</add>", ...]}}"""
 		if self.do_class_labels_for_prompt:
-			prompt_postfix_1 = f"""\n# available object classes
-- below is the full list of object classes across ALL room types. not all of them belong in every room.
-- only pick classes that are appropriate for the given room type. ignore classes that belong in other room types.
+			prompt_postfix_1 = f"""\n# SG-LLM recognised furniture labels
+the downstream scene-graph model recognises furniture by the labels below. choose descriptions that match or closely align with these labels so the model can place them correctly.
 {self.dataset_stats_for_prompt.get('unique_object_classes')}
 """
 			full_prompt += prompt_postfix_1
-		
+
 		if self.do_icl_for_prompt and few_shot_samples != None:
-			
-			full_prompt += """\n# few-shot examples for scenes that have a similar size to the requested one (your scene should be different though and stick to the user prompt):\n"""
+
+			full_prompt += """\n# few-shot examples (similar room size — your scene should differ and follow the user prompt):\n"""
 
 			for sample in few_shot_samples:
 				full_prompt += f"\n## example\n"
@@ -625,10 +620,19 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 					if response_json.get("commands") is None:
 						print("ERROR: no commands found in response.")
 					else:
+						# Normalize: wrap bare commands (no <add>/<remove> tag) in <add> tags
+						normalized = []
+						for c in response_json["commands"]:
+							if c.startswith("<add>") or c.startswith("<remove>"):
+								normalized.append(c)
+							else:
+								print(f"  Normalizing untagged command to <add>: {c}")
+								normalized.append(f"<add>{c}</add>")
+						response_json["commands"] = normalized
+
 						# partition: removes first, then adds (preserve LLM's original order within each group)
 						removes = [c for c in response_json["commands"] if c.startswith("<remove>")]
 						adds = [c for c in response_json["commands"] if c.startswith("<add>")]
-						response_json["commands"] = removes + adds
 
 						print("=============================================")
 						if response_json.get("reasoning"):
@@ -668,9 +672,12 @@ only output the JSON (with the removed objects) as a plain string and nothing el
 								# Ask the LLM to replace only the rejected items
 								n_missing = len(rejected)
 								rejected_list = ", ".join(re.search(r'<add>(.*?)</add>', r).group(1) for r in rejected)
+								accepted_list = ", ".join(re.search(r'<add>(.*?)</add>', a).group(1) for a in filtered_add)
 								followup = (
-									f"{rejected_list} were rejected because they don't match any known furniture category."
+									f"{rejected_list} were rejected because they don't match any known furniture category. "
+									f"The accepted items so far are: {accepted_list}. "
 									f"Generate exactly {n_missing} replacement <add> commands that DO match the available object classes AND that would compliment the already added objects. "
+									f"Do not duplicate the role of any accepted item. "
 									f"Same JSON format. Only output the replacements, not the previously accepted ones."
 								)
 								messages.append({"role": "assistant", "content": response})

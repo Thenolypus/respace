@@ -184,7 +184,7 @@ def get_model(model_id, use_gpu, accelerator=None, do_not_load_hf_model=False, u
 	# else:
 	# 	max_seq_length = 3800
 
-	max_seq_length = 4000
+	max_seq_length = 6000
 	# max_seq_length = 2500
 
 	tokenizer.model_max_length = max_seq_length

@@ -15,7 +15,7 @@ from shapely.geometry import Polygon, Point, LineString
 # ---------------------------------------------------------------------------
 # Default fixture definitions (desc, size [w, h, d])
 # ---------------------------------------------------------------------------
-
+# TODO: ADD BACK THE SHOWER FALLBACK BEFORE FINAL COMMIT
 FIXTURES = {
     "sink": {
         "desc": "Modern minimalist ceramic bathroom sink with rectangular base, oval basin, and clean lines",

@@ -67,9 +67,9 @@ ENV_FILE = ".env"
 ENV_FILE_BATHROOM = ".env_heg"
 
 # ReSpace layout generation params
-N_BON_SGLLM = 8
+N_BON_SGLLM = 1
 N_BON_ASSETS = 1
-K_FEW_SHOT_SAMPLES = 2
+K_FEW_SHOT_SAMPLES = 3
 
 # Original ReSpace method params (--ori-method)
 ORI_N_BON_ASSETS = 1
