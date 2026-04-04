@@ -1,0 +1,4482 @@
+{
+  "summary": {
+    "1_7b": {
+      "n_scenes": 81,
+      "dao_mean": 0.3317355831219808,
+      "dao_std": 0.6088385334817945,
+      "wbo_mean": 0.0016686664274420976,
+      "wbo_std": 0.007227907531721438
+    },
+    "4b": {
+      "n_scenes": 81,
+      "dao_mean": 0.25555206249596435,
+      "dao_std": 0.5295794276550156,
+      "wbo_mean": 0.009280864197529104,
+      "wbo_std": 0.08250295256005753
+    },
+    "original": {
+      "n_scenes": 81,
+      "dao_mean": 0.36838306830274375,
+      "dao_std": 0.5682736386826462,
+      "wbo_mean": 0.014598976861519135,
+      "wbo_std": 0.054607749920115196
+    }
+  },
+  "per_scene": [
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.001550999999999985,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0012649999999999875,
+        0.00028599999999999747,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.06800639429117905,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.06800639429117905
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.2318308748140663,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.2318308748140663,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6673560320973014,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.568038055429515,
+        0.0993179766677864
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.01844699999999997,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.01844699999999997,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.2648091004278783,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2648091004278783
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.4542971587472229,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.4542971587472229,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.8603499478128926,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.8603499478128926,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.21386819261967802,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.21386819261967802
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.6763923003720818,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.6763923003720818,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.4866051683069348,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.4866051683069348,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.7347078742669537,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.720986448329529,
+        0.01372142593742474
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.5568115953204079,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.08112002555507937,
+        0.4756915697653285
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.048499886419186775,
+      "wbo": 0.017024000000000046,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.048499886419186775
+      ],
+      "per_window_wbo": [
+        0.017024000000000046
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.030707124096393465,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.030707124096393465
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.39370929957215045,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.39370929957215045
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.4770853942854187,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.4770853942854187,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.2901221773497873,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.2638074471038347,
+        0.026314730245952607
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.019751514364967547,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.019751514364967547
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.9121744337852018,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.9121744337852018
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.938914556298191,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.938914556298191,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6808339629308413,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.5694823632531361,
+        0.11135159967770526
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.16765605655401575,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.16765605655401575
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.04501198062280982,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.04501198062280982
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6876204888768486,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.2961300844977691,
+        0.39149040437907945
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.3511295983133815,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.3511295983133815,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7575818348239346,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7575818348239346,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.012647999999999986,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.012647999999999986,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.276444948175887,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.276444948175887
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.3366347673773185,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.3366347673773185,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6546426679755115,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.6546426679755115,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.040480000000000106,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.040480000000000106,
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.29112903694981357,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.29112903694981357
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.6727778487907359,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.6727778487907359
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.5636028588704207,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.5636028588704207,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "1_7b",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.10452913799383978,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.10452913799383978
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.00828050670168195,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.00828050670168195
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.035674617779905916,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.035674617779905916
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.924351645985766,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7412022321102542,
+        0.1831494138755119
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.004554000000000157,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.004554000000000157,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.667694917054347,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.667694917054347
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.1581379056155416,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.1581379056155416,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.33504266318065,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.33504266318065,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.7778947325701643,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.7778947325701643
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.3063253027521503,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.3063253027521503
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.2198253211261374,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.2198253211261374,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.05845355488921275,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.05845355488921275,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.2053881075023499,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.2053881075023499
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.05879999999999996,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.05879999999999996
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.3903769168616757,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.3903769168616757,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.10097999999999994,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.10097999999999994,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.04948654691606806,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.04948654691606806
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.7611626893408464,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7611626893408464,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.4867387761893007,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.4867387761893007,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.05389999957312805,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.05389999957312805,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.04148864019821314,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.04148864019821314
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.2121311237667753,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.2121311237667753,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.0700757829638428,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        1.0700757829638428
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.23276234164642404,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.23276234164642404
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.1051405434006748,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.1051405434006748
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.7022694479330152,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7022694479330152,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.5951470645295093,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.5776150264077456,
+        0.017532038121763606
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.14251174195284463,
+      "wbo": 0.7471959999998573,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.14251174195284463,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.6466599999999991,
+        0.10053599999985818
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.2905145689315544,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.2905145689315544
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.04148864019821314,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.04148864019821314
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.0715134588585622,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.8883234988791718,
+        0.1831899599793904
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.05705791435880414,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.05705791435880414,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.12363860445660597,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.12363860445660597,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.04148864019821314,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.04148864019821314
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.6548651153129532,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.6413136011735512,
+        0.013551514139402022
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "4b",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7191092294279832,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7191092294279832,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.9847803599268105,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.9847803599268105
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7062640985937204,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.7062640985937204
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.6139834768295708,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.46762237705636084,
+        0.14636109977320994
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.8019644044795341,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.5666835855469459,
+        0.23528081893258823
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.19221474999999993,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.19221474999999993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.8776573294684987,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.8776573294684987
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0002125683263179112,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0002125683263179112
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.7688736788196487,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7688736788196487
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6241518345175465,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6241518345175465
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.7845237820967121,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.7845237820967121,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6140468657834002,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.2551308687248596,
+        0.3589159970585406
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.10416450000000003,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.10416450000000003,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.02262022887121079,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.02262022887121079
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.2767062115069207,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.2767062115069207
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.01764,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.01764
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.8070669828545114,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.8070669828545114,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "earthy_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.6557344567954927,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.5487604567954926,
+        0.1069740000000001
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.07050037499531087,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.07050037499531087
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7898880000132054,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.7898880000132054
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.1305478127494477,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.1305478127494477,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.7175942971140463,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.3515942971140464,
+        0.36599999999999994
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.005719999999999994,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.005719999999999994,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.23696385994491803,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.23696385994491803
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.04966411807176901,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.04966411807176901
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 1.0411799999999996,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0411799999999996
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 2.09770937140947,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        2.09770937140947,
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7421428927154944,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.6078028709071984,
+        0.13434002180829593
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0006509999999999997,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0006509999999999997,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.21158298936411155,
+      "wbo": 0.29969100000000004,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.21158298936411155
+      ],
+      "per_window_wbo": [
+        0.29969100000000004
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.234423,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.234423
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.7625184595774395,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.7351257568458436,
+        0.02739270273159593
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "red_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.552567534818884,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.19004753481888403,
+        0.36251999999999995
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.14631999999999992,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.14631999999999992
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.8343906799025804,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.5581701049744732,
+        0.27622057492810714
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_123",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.9846648418121247,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.4666626939416093,
+        0.5180021478705154
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0071399999999999745,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0071399999999999745,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.29802499999999993,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.29802499999999993
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.6945972544613738,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.6945972544613738
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.15136,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.15136
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.2903217661295174,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.1171511620048404,
+        0.17317060412467697
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_456",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.3866802589240331,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.15115288760156986,
+        0.2355273713224633
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.0,
+      "wbo": 0.0,
+      "n_doors": 5,
+      "n_windows": 4,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "per_window_wbo": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.12401607858552133,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.12401607858552133
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.5546004360155434,
+      "wbo": 0.0,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.5546004360155434
+      ],
+      "per_window_wbo": [
+        0.0
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexApt",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0.128062,
+      "n_doors": 1,
+      "n_windows": 1,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": [
+        0.128062
+      ]
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_3_diningroom",
+      "room_type": "diningroom",
+      "dao": 0.0,
+      "wbo": 0,
+      "n_doors": 1,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "ComplexHouse",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_4_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.21083400000000008,
+      "wbo": 0,
+      "n_doors": 5,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.21083400000000008
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_1_bedroom",
+      "room_type": "bedroom",
+      "dao": 1.673521305438507,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        1.5822696782861245,
+        0.09125162715238241
+      ],
+      "per_window_wbo": []
+    },
+    {
+      "model": "original",
+      "style_seed": "scand_789",
+      "floor": "SimpleApartment",
+      "unit": "unit_1",
+      "room_stem": "unit_1_room_2_livingroom",
+      "room_type": "livingroom",
+      "dao": 0.7410617973921001,
+      "wbo": 0,
+      "n_doors": 2,
+      "n_windows": 0,
+      "per_door_dao": [
+        0.07617887221255432,
+        0.6648829251795458
+      ],
+      "per_window_wbo": []
+    }
+  ]
+}

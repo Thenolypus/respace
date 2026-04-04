@@ -1,0 +1,2310 @@
+{
+  "scene_path": "eval/eval_set/scand_456/1_7b/SimpleApartment/unit_1/unit_1_room_2_livingroom/generated_scene.json",
+  "room_type": "livingroom",
+  "n_objects": 8,
+  "params": {
+    "lambd": 0.5,
+    "sigma": 0.05,
+    "temp": 0.2,
+    "top_k": 20,
+    "top_p": 0.95,
+    "lambda_style": 0.1,
+    "sampling": "greedy"
+  },
+  "objects": [
+    {
+      "obj_idx": 0,
+      "query_description": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests.",
+      "query_prompt": "modern sofa",
+      "query_size": [
+        2.01,
+        0.9,
+        0.85
+      ],
+      "style_bias_active": false,
+      "n_style_embeds": 0,
+      "blend_weights": {
+        "lambda_semantic": 0.5,
+        "lambda_size": 0.5
+      },
+      "n_candidates_after_filtering": 19,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "2403c725-cec6-46ba-8d43-b7b87834a71a",
+          "description": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests.",
+          "asset_size": [
+            2.0125640630722046,
+            0.9034300139707643,
+            0.8505240082740784
+          ],
+          "color": [
+            "grey",
+            "black",
+            "green",
+            "orange",
+            "white"
+          ],
+          "style": [
+            "modern",
+            "contemporary"
+          ],
+          "material": [
+            "fabric",
+            "wood"
+          ],
+          "prob": 0.173889,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 1.0
+        },
+        {
+          "rank": 2,
+          "jid": "951c6806-3556-4116-887d-6d185b3d84b0-(1.14)-(1.0)-(0.92)",
+          "description": "A modern transitional brown leather loveseat with multicolor throw pillows, sleek boxy shape, decorative stud detailing, and wooden legs.",
+          "asset_size": [
+            1.7704880237579346,
+            0.924699931706229,
+            0.9100780785083771
+          ],
+          "color": [
+            "brown",
+            "multicolor"
+          ],
+          "style": [
+            "modern",
+            "transitional"
+          ],
+          "material": [
+            "leather",
+            "fabric"
+          ],
+          "prob": 0.09414,
+          "sem_score": 0.867624,
+          "size_score": 0.88692,
+          "blend_score": 0.877272
+        },
+        {
+          "rank": 3,
+          "jid": "b7f716e2-70f6-4382-bacb-1c1ae7c9c234",
+          "description": "Modern three-seat sofa with a minimalist wooden frame and blue cushioned upholstery.",
+          "asset_size": [
+            1.9907699823379517,
+            0.8804799895551696,
+            0.8547999858856201
+          ],
+          "color": [
+            "Blue",
+            "Brown"
+          ],
+          "style": [
+            "Modern with minimalist elements"
+          ],
+          "material": [
+            "Wood",
+            "Fabric"
+          ],
+          "prob": 0.074636,
+          "sem_score": 0.809536,
+          "size_score": 0.852144,
+          "blend_score": 0.83084
+        },
+        {
+          "rank": 4,
+          "jid": "6b9df021-6ea5-439b-897d-c672b0727ecb",
+          "description": "Versatile contemporary grey three-seat sofa with colorful cushions and metal frame offering modern comfort and aesthetic.",
+          "asset_size": [
+            2.021370053291321,
+            0.8616540281448621,
+            0.8552239537239075
+          ],
+          "color": [
+            "grey",
+            "yellow",
+            "blue",
+            "brown"
+          ],
+          "style": [
+            "contemporary with elements of modern design"
+          ],
+          "material": [
+            "fabric",
+            "metal frame"
+          ],
+          "prob": 0.053218,
+          "sem_score": 0.828715,
+          "size_score": 0.697677,
+          "blend_score": 0.763196
+        },
+        {
+          "rank": 5,
+          "jid": "87d6652f-2222-4926-a3b8-d466ac491695-(0.86)-(1.0)-(0.94)",
+          "description": "Classic-modern three-seat sofa with a grey fabric tufted backrest, dark brown wooden frame, rolled arms, and decorative patterned pillows.",
+          "asset_size": [
+            2.3673059940338135,
+            0.902170053392183,
+            0.9400480389595032
+          ],
+          "color": [
+            "grey",
+            "dark brown"
+          ],
+          "style": [
+            "classic",
+            "modern"
+          ],
+          "material": [
+            "fabric",
+            "wood"
+          ],
+          "prob": 0.051192,
+          "sem_score": 0.813187,
+          "size_score": 0.697676,
+          "blend_score": 0.755432
+        },
+        {
+          "rank": 6,
+          "jid": "6d2e5ee5-252b-4054-99ba-8ce18adc6ea1",
+          "description": "Modern minimalist dark green velvet loveseat sofa with slim armrests, plush cushions, and gold tapered metal legs.",
+          "asset_size": [
+            1.969419002532959,
+            0.8967597763694357,
+            0.870790034532547
+          ],
+          "color": [
+            "Dark Green",
+            "Gold"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Velvet Upholstery",
+            "Metal Legs"
+          ],
+          "prob": 0.049481,
+          "sem_score": 0.82695,
+          "size_score": 0.67032,
+          "blend_score": 0.748635
+        },
+        {
+          "rank": 7,
+          "jid": "5b297cf4-b136-4d5d-8300-ea0afafb5ea9",
+          "description": "Modern minimalist navy blue velvet loveseat with plush cushions and thin gold metal legs.",
+          "asset_size": [
+            1.969419002532959,
+            0.8967597763694357,
+            0.870790034532547
+          ],
+          "color": [
+            "Navy Blue"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Velvet Upholstery",
+            "Metal Legs"
+          ],
+          "prob": 0.048723,
+          "sem_score": 0.820769,
+          "size_score": 0.67032,
+          "blend_score": 0.745545
+        },
+        {
+          "rank": 8,
+          "jid": "1d8597b7-314a-4630-981e-5774da17e202-(0.74)-(1.0)-(0.83)",
+          "description": "A modern gray three-seat fabric sofa with slim metal legs, high armrests, and complementary patterned and accent cushions.",
+          "asset_size": [
+            2.7182579040527344,
+            0.9433710111770779,
+            1.0466540455818176
+          ],
+          "color": [
+            "gray",
+            "multicolored"
+          ],
+          "style": [
+            "modern"
+          ],
+          "material": [
+            "fabric",
+            "metal"
+          ],
+          "prob": 0.047872,
+          "sem_score": 0.813721,
+          "size_score": 0.67032,
+          "blend_score": 0.74202
+        },
+        {
+          "rank": 9,
+          "jid": "7d64c30a-50b4-4de9-ba67-7b874300514e",
+          "description": "A modern minimalist lime green two-seater lounge chair with slim metal legs and clean lines ideal for contemporary interiors.",
+          "asset_size": [
+            1.979420006275177,
+            0.9274400118474713,
+            0.8302900195121765
+          ],
+          "color": [
+            "Lime Green"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Fabric",
+            "Metal"
+          ],
+          "prob": 0.045667,
+          "sem_score": 0.821143,
+          "size_score": 0.644036,
+          "blend_score": 0.73259
+        },
+        {
+          "rank": 10,
+          "jid": "121d6244-5041-4ff5-8e4d-1d46252705f7",
+          "description": "A modern sideboard with a touch of oriental design, featuring dark wooden construction, bronze metal accents, and spacious double cabinets.",
+          "asset_size": [
+            2.0062499046325684,
+            0.9389870453495437,
+            0.8198019862174988
+          ],
+          "color": [
+            "Dark Brown",
+            "Bronze"
+          ],
+          "style": [
+            "Modern",
+            "Oriental"
+          ],
+          "material": [
+            "Wood",
+            "Metal"
+          ],
+          "prob": 0.045435,
+          "sem_score": 0.856612,
+          "size_score": 0.60653,
+          "blend_score": 0.731571
+        }
+      ],
+      "selected_jid": "2403c725-cec6-46ba-8d43-b7b87834a71a",
+      "selected_description": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests."
+    },
+    {
+      "obj_idx": 1,
+      "query_description": "Modern minimalist black metal coffee table with a two-tiered round design, featuring a sleek finish, asymmetrical accent, and conical base.",
+      "query_prompt": "low-profile coffee table",
+      "query_size": [
+        0.88,
+        0.27,
+        0.63
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 1,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 18,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "d7c59b53-313d-43bf-a712-f042efe58d99",
+          "description": "Modern minimalist black metal coffee table with a two-tiered round design, featuring a sleek finish, asymmetrical accent, and conical base.",
+          "asset_size": [
+            0.8794000148773193,
+            0.26986901373202965,
+            0.6291000247001648
+          ],
+          "color": [
+            "black"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "metal"
+          ],
+          "prob": 0.209768,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.985182,
+          "style_score": 0.851821
+        },
+        {
+          "rank": 2,
+          "jid": "bf92a921-f72d-4399-82a3-b63a171f8a88-(1.62)-(1.0)-(1.09)",
+          "description": "Traditional nautical flush mount ceiling lamp with a silver metal finish, glass dome, and decorative rim.",
+          "asset_size": [
+            0.5549980103969574,
+            0.26864049635332776,
+            0.5505029857158661
+          ],
+          "color": [
+            "Silver",
+            "Clear"
+          ],
+          "style": [
+            "Traditional",
+            "Nautical"
+          ],
+          "material": [
+            "Metal",
+            "Glass"
+          ],
+          "prob": 0.095788,
+          "sem_score": 0.876603,
+          "size_score": 0.771052,
+          "blend_score": 0.828409,
+          "style_score": 0.869644
+        },
+        {
+          "rank": 3,
+          "jid": "21e4d467-a268-48d7-8ae7-8d9e7478ee99",
+          "description": "A modern minimalist black coffee table with a rectangular wooden top and thin metal frame, emphasizing sleek and simple aesthetics.",
+          "asset_size": [
+            0.9023920297622681,
+            0.3097170066707591,
+            0.6399849951267242
+          ],
+          "color": [
+            "black"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "metal frame",
+            "wooden top"
+          ],
+          "prob": 0.075866,
+          "sem_score": 0.886843,
+          "size_score": 0.657047,
+          "blend_score": 0.781774,
+          "style_score": 0.870237
+        },
+        {
+          "rank": 4,
+          "jid": "b338f1a0-d6a6-4786-b83b-7272ff085b85-(1.49)-(1.0)-(1.0)",
+          "description": "Modern minimalist ceiling lamp with a cylindrical translucent fabric shade featuring a subtle nature-inspired branch pattern and flush mount design.",
+          "asset_size": [
+            0.6030139923095703,
+            0.29854302894486295,
+            0.6030140221118927
+          ],
+          "color": [
+            "White",
+            "Gray",
+            "Black",
+            "Subtle Red accents"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist",
+            "Nature-inspired"
+          ],
+          "material": [
+            "Fabric",
+            "Metal"
+          ],
+          "prob": 0.071863,
+          "sem_score": 0.875377,
+          "size_score": 0.644037,
+          "blend_score": 0.770933,
+          "style_score": 0.871967
+        },
+        {
+          "rank": 5,
+          "jid": "7fe838b9-c3a8-4f7f-9b08-012f6ba079ac-(0.74)-(1.0)-(1.23)",
+          "description": "A contemporary minimalist coffee table in brown wood with a rectangular shape, flat top, and angled legs.",
+          "asset_size": [
+            1.1837600469589233,
+            0.29108403801755856,
+            0.4686239957809448
+          ],
+          "color": [
+            "Brown"
+          ],
+          "style": [
+            "Contemporary",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood"
+          ],
+          "prob": 0.058958,
+          "sem_score": 0.872054,
+          "size_score": 0.559898,
+          "blend_score": 0.731345,
+          "style_score": 0.869663
+        },
+        {
+          "rank": 6,
+          "jid": "44674565-5d1d-4773-b12a-27f4d366ebf0-(0.52)-(1.0)-(1.12)",
+          "description": "A modern, black metal, low-profile coffee table with a sleek geometric design.",
+          "asset_size": [
+            1.6532939672470093,
+            0.32152402121733914,
+            0.5507919788360596
+          ],
+          "color": [
+            "black"
+          ],
+          "style": [
+            "modern",
+            "futuristic"
+          ],
+          "material": [
+            "metal"
+          ],
+          "prob": 0.054027,
+          "sem_score": 0.848748,
+          "size_score": 0.548812,
+          "blend_score": 0.713878,
+          "style_score": 0.849759
+        },
+        {
+          "rank": 7,
+          "jid": "0e3d3074-b81c-4177-8778-62d2610213d6-(1.73)-(1.0)-(1.16)",
+          "description": "Modern traditional ceiling lamp with square shape, layered design, and decorative accents in glass, metal, and fabric.",
+          "asset_size": [
+            0.5202800035476685,
+            0.2208640318292847,
+            0.5195159912109375
+          ],
+          "color": [
+            "beige",
+            "black",
+            "blue"
+          ],
+          "style": [
+            "modern",
+            "traditional"
+          ],
+          "material": [
+            "glass",
+            "metal",
+            "fabric"
+          ],
+          "prob": 0.049451,
+          "sem_score": 0.874695,
+          "size_score": 0.467666,
+          "blend_score": 0.696176,
+          "style_score": 0.921133
+        },
+        {
+          "rank": 8,
+          "jid": "c671f37a-6907-43f0-a2ab-4f5da0686b3b-(1.47)-(1.0)-(0.98)",
+          "description": "A vintage-inspired flush mount ceiling lamp with an ornate bronze metal trim and amber glass shade.",
+          "asset_size": [
+            0.6133469939231873,
+            0.3222931743366644,
+            0.6144599914550781
+          ],
+          "color": [
+            "bronze",
+            "amber"
+          ],
+          "style": [
+            "traditional",
+            "vintage"
+          ],
+          "material": [
+            "metal",
+            "glass"
+          ],
+          "prob": 0.048507,
+          "sem_score": 0.881121,
+          "size_score": 0.467667,
+          "blend_score": 0.692322,
+          "style_score": 0.853676
+        },
+        {
+          "rank": 9,
+          "jid": "7e7f1f8e-812f-402b-b5fc-406719e9ec43-(2.05)-(1.0)-(1.43)",
+          "description": "Contemporary ceiling lamp with a minimalist design featuring natural wood accents and a frosted glass diffuser.",
+          "asset_size": [
+            0.43960700929164886,
+            0.21005200585354178,
+            0.4396060109138489
+          ],
+          "color": [
+            "Natural wood",
+            "White"
+          ],
+          "style": [
+            "Contemporary",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood",
+            "Glass",
+            "Metal"
+          ],
+          "prob": 0.042369,
+          "sem_score": 0.831856,
+          "size_score": 0.449329,
+          "blend_score": 0.665263,
+          "style_score": 0.887295
+        },
+        {
+          "rank": 10,
+          "jid": "1f135476-aeb4-4065-940a-b1ee24a40dc5",
+          "description": "Plush whale-shaped seating with dark and light gray fabric, ideal for adding a whimsical touch to modern decor.",
+          "asset_size": [
+            0.9144600033760071,
+            0.21961003061676188,
+            0.6622599959373474
+          ],
+          "color": [
+            "Dark gray",
+            "Light gray"
+          ],
+          "style": [
+            "Animal-themed",
+            "modern"
+          ],
+          "material": [
+            "Fabric",
+            "Stuffing"
+          ],
+          "prob": 0.041053,
+          "sem_score": 0.849984,
+          "size_score": 0.423162,
+          "blend_score": 0.658955,
+          "style_score": 0.860394
+        }
+      ],
+      "selected_jid": "d7c59b53-313d-43bf-a712-f042efe58d99",
+      "selected_description": "Modern minimalist black metal coffee table with a two-tiered round design, featuring a sleek finish, asymmetrical accent, and conical base."
+    },
+    {
+      "obj_idx": 2,
+      "query_description": "A Scandinavian-inspired modern corner/side table with a round top, three legs, an interlocking wooden base, and a natural wood finish.",
+      "query_prompt": "scandinavian side table",
+      "query_size": [
+        0.57,
+        0.93,
+        0.57
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 2,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 19,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "63791e3c-0b3a-4f0e-8cc6-b4b06a653f7f",
+          "description": "A Scandinavian-inspired modern corner/side table with a round top, three legs, an interlocking wooden base, and a natural wood finish.",
+          "asset_size": [
+            0.5682219862937927,
+            0.9333579316444229,
+            0.5682219862937927
+          ],
+          "color": [
+            "Natural Wood"
+          ],
+          "style": [
+            "Scandinavian",
+            "Modern"
+          ],
+          "material": [
+            "Wood"
+          ],
+          "prob": 0.08289,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.989505,
+          "style_score": 0.895054
+        },
+        {
+          "rank": 2,
+          "jid": "1e81f176-e7fd-4580-8697-aeff753062fa-(0.83)-(1.0)-(0.83)",
+          "description": "Elegant traditional ceiling lamp with eight lights featuring clear glass shades and crystal bead drapery on a black metal frame.",
+          "asset_size": [
+            0.6828219890594482,
+            0.9237379840024751,
+            0.6829580068588257
+          ],
+          "color": [
+            "black",
+            "clear"
+          ],
+          "style": [
+            "traditional",
+            "elegant"
+          ],
+          "material": [
+            "metal",
+            "glass",
+            "crystal"
+          ],
+          "prob": 0.056112,
+          "sem_score": 0.844834,
+          "size_score": 0.980199,
+          "blend_score": 0.911473,
+          "style_score": 0.902082
+        },
+        {
+          "rank": 3,
+          "jid": "352eb2b1-5fb9-4b3c-8253-ddd5462f7747-(0.35)-(1.0)-(2.94)",
+          "description": "Modern industrial pendant lamp with a linear metal structure, bronze cylindrical lights, and adjustable suspension for distinctive geometric lighting.",
+          "asset_size": [
+            1.6645519733428955,
+            0.9371150211004142,
+            0.19870799779891968
+          ],
+          "color": [
+            "Black",
+            "Bronze"
+          ],
+          "style": [
+            "Modern",
+            "Industrial"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.056103,
+          "sem_score": 0.87605,
+          "size_score": 0.941765,
+          "blend_score": 0.911442,
+          "style_score": 0.934254
+        },
+        {
+          "rank": 4,
+          "jid": "9188a5fc-0d33-4e95-9c23-598c93f8a514-(1.34)-(1.0)-(1.31)",
+          "description": "A modern industrial dining chair with a curved metal backrest and a light wooden seat, featuring a minimalist tubular steel frame.",
+          "asset_size": [
+            0.4200270026922226,
+            0.9353850040934049,
+            0.4257250428199768
+          ],
+          "color": [
+            "Silver",
+            "Light Wood"
+          ],
+          "style": [
+            "Modern",
+            "Industrial"
+          ],
+          "material": [
+            "Metal",
+            "Wood"
+          ],
+          "prob": 0.055863,
+          "sem_score": 0.877683,
+          "size_score": 0.941765,
+          "blend_score": 0.910582,
+          "style_score": 0.918309
+        },
+        {
+          "rank": 5,
+          "jid": "856703e3-4bd6-4623-8555-4364711cba3b",
+          "description": "A minimalist modern square-shaped stool with a natural wood frame, green padded seat, open back, and geometric design.",
+          "asset_size": [
+            0.5620200037956238,
+            0.9336000019466155,
+            0.5620200037956238
+          ],
+          "color": [
+            "Natural Wood",
+            "Green"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood",
+            "Upholstery"
+          ],
+          "prob": 0.054532,
+          "sem_score": 0.857455,
+          "size_score": 0.960789,
+          "blend_score": 0.905761,
+          "style_score": 0.875509
+        },
+        {
+          "rank": 6,
+          "jid": "5004e8f6-326e-4e46-8581-ad88f55c25b4",
+          "description": "A modern geometric white pendant lamp with a faceted design, matte finish, and fabric cord suspension.",
+          "asset_size": [
+            0.5639380216598511,
+            0.9413600119178085,
+            0.5725399851799011
+          ],
+          "color": [
+            "White"
+          ],
+          "style": [
+            "Modern",
+            "Geometric"
+          ],
+          "material": [
+            "Metal",
+            "Fabric Cord"
+          ],
+          "prob": 0.054474,
+          "sem_score": 0.851729,
+          "size_score": 0.960789,
+          "blend_score": 0.905549,
+          "style_score": 0.899157
+        },
+        {
+          "rank": 7,
+          "jid": "f8df44d6-9c0b-4f19-a0fc-4821bb569712-(0.81)-(0.81)-(0.81)",
+          "description": "Modern minimalist potted bamboo plant in a white rectangular ceramic pot for natural aesthetic.",
+          "asset_size": [
+            0.6869800090789795,
+            1.152400021129572,
+            0.6975799798965454
+          ],
+          "color": [
+            "green",
+            "white"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "ceramic",
+            "plastic",
+            "organic (plant)"
+          ],
+          "prob": 0.054293,
+          "sem_score": 0.841205,
+          "size_score": 0.980199,
+          "blend_score": 0.904881,
+          "style_score": 0.852497
+        },
+        {
+          "rank": 8,
+          "jid": "8c832312-91b7-4034-a8a3-72a664fa6bb3-(1.12)-(1.0)-(0.96)",
+          "description": "This traditional dining chair with a dark brown wooden frame and whimsical koala illustration on the backrest features green upholstery and decorative accents.",
+          "asset_size": [
+            0.5205659866333008,
+            0.9308469843883813,
+            0.5927940309047699
+          ],
+          "color": [
+            "dark brown",
+            "green",
+            "multicolor"
+          ],
+          "style": [
+            "traditional",
+            "whimsical"
+          ],
+          "material": [
+            "wood",
+            "fabric"
+          ],
+          "prob": 0.054165,
+          "sem_score": 0.83898,
+          "size_score": 0.980199,
+          "blend_score": 0.90441,
+          "style_score": 0.857791
+        },
+        {
+          "rank": 9,
+          "jid": "af22d4a3-6e34-45d2-afef-c3e9f6838043-(0.67)-(1.0)-(0.67)",
+          "description": "Elegant pendant lamp with a wavy gold frame adorned with delicate white and blue feathers for a bohemian contemporary look.",
+          "asset_size": [
+            0.8321220278739929,
+            0.9205038202920832,
+            0.8326380252838135
+          ],
+          "color": [
+            "gold",
+            "white",
+            "blue"
+          ],
+          "style": [
+            "bohemian",
+            "contemporary"
+          ],
+          "material": [
+            "metal",
+            "feathers"
+          ],
+          "prob": 0.053919,
+          "sem_score": 0.867915,
+          "size_score": 0.941765,
+          "blend_score": 0.903499,
+          "style_score": 0.891435
+        },
+        {
+          "rank": 10,
+          "jid": "b316d986-6683-4d48-9de0-974cf3234841-(0.96)-(1.0)-(0.84)",
+          "description": "A modern, minimalist dining chair with a bronze metal wireframe, curved backrest, thin legs, and gray fabric cushion for comfort.",
+          "asset_size": [
+            0.6031079888343811,
+            0.9271790001920444,
+            0.6556010246276855
+          ],
+          "color": [
+            "Bronze",
+            "Gray"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Metal",
+            "Fabric"
+          ],
+          "prob": 0.052345,
+          "sem_score": 0.890621,
+          "size_score": 0.904837,
+          "blend_score": 0.897575,
+          "style_score": 0.896185
+        }
+      ],
+      "selected_jid": "63791e3c-0b3a-4f0e-8cc6-b4b06a653f7f",
+      "selected_description": "A Scandinavian-inspired modern corner/side table with a round top, three legs, an interlocking wooden base, and a natural wood finish."
+    },
+    {
+      "obj_idx": 3,
+      "query_description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+      "query_prompt": "floor lamp",
+      "query_size": [
+        0.33,
+        1.8,
+        0.33
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 3,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 18,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "0128706c-a595-405b-a9ce-47d89847bf28",
+          "description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+          "asset_size": [
+            0.33142000436782837,
+            1.8003800040285398,
+            0.331059992313385
+          ],
+          "color": [
+            "silver",
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalistic"
+          ],
+          "material": [
+            "metal",
+            "mesh"
+          ],
+          "prob": 0.10149,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.989797,
+          "style_score": 0.897975
+        },
+        {
+          "rank": 2,
+          "jid": "0128706c-a595-405b-a9ce-47d89847bf28-(1.01)-(1.0)-(1.01)",
+          "description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+          "asset_size": [
+            0.33142000436782837,
+            1.8003800040285398,
+            0.331059992313385
+          ],
+          "color": [
+            "silver",
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalistic"
+          ],
+          "material": [
+            "metal",
+            "mesh"
+          ],
+          "prob": 0.10149,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.989797,
+          "style_score": 0.897975
+        },
+        {
+          "rank": 3,
+          "jid": "ee4a3e45-7cc5-476b-aa55-a71726fa7ea0-(1.0)-(1.07)-(1.0)",
+          "description": "Modern cylindrical furniture piece with bronze and black colors, featuring an integrated display and vertical air vents.",
+          "asset_size": [
+            0.3315599858760834,
+            1.6909999973138765,
+            0.33305999636650085
+          ],
+          "color": [
+            "bronze",
+            "black"
+          ],
+          "style": [
+            "modern"
+          ],
+          "material": [
+            "metal",
+            "plastic"
+          ],
+          "prob": 0.078238,
+          "sem_score": 0.909236,
+          "size_score": 0.980198,
+          "blend_score": 0.937757,
+          "style_score": 0.875108
+        },
+        {
+          "rank": 4,
+          "jid": "0128706c-a595-405b-a9ce-47d89847bf28-(1.05)-(1.0)-(1.05)",
+          "description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+          "asset_size": [
+            0.33142000436782837,
+            1.8003800040285398,
+            0.331059992313385
+          ],
+          "color": [
+            "silver",
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalistic"
+          ],
+          "material": [
+            "metal",
+            "mesh"
+          ],
+          "prob": 0.072768,
+          "sem_score": 1.0,
+          "size_score": 0.852144,
+          "blend_score": 0.923262,
+          "style_score": 0.897975
+        },
+        {
+          "rank": 5,
+          "jid": "0128706c-a595-405b-a9ce-47d89847bf28-(0.94)-(1.0)-(0.94)",
+          "description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+          "asset_size": [
+            0.33142000436782837,
+            1.8003800040285398,
+            0.331059992313385
+          ],
+          "color": [
+            "silver",
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalistic"
+          ],
+          "material": [
+            "metal",
+            "mesh"
+          ],
+          "prob": 0.072768,
+          "sem_score": 1.0,
+          "size_score": 0.852144,
+          "blend_score": 0.923262,
+          "style_score": 0.897975
+        },
+        {
+          "rank": 6,
+          "jid": "6f08f24b-b56d-4424-9878-3aaa85d27c76-(0.96)-(1.0)-(1.1)",
+          "description": "A modern floor lamp with slender black and gold metal rods and adjustable heads in a minimalist design.",
+          "asset_size": [
+            0.35471999645233154,
+            1.786169982950014,
+            0.30890999734401703
+          ],
+          "color": [
+            "Black",
+            "Gold"
+          ],
+          "style": [
+            "Modern"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.070851,
+          "sem_score": 0.899413,
+          "size_score": 0.941765,
+          "blend_score": 0.917922,
+          "style_score": 0.893919
+        },
+        {
+          "rank": 7,
+          "jid": "6f08f24b-b56d-4424-9878-3aaa85d27c76-(0.89)-(1.0)-(1.03)",
+          "description": "A modern floor lamp with slender black and gold metal rods and adjustable heads in a minimalist design.",
+          "asset_size": [
+            0.35471999645233154,
+            1.786169982950014,
+            0.30890999734401703
+          ],
+          "color": [
+            "Black",
+            "Gold"
+          ],
+          "style": [
+            "Modern"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.070851,
+          "sem_score": 0.899413,
+          "size_score": 0.941765,
+          "blend_score": 0.917922,
+          "style_score": 0.893919
+        },
+        {
+          "rank": 8,
+          "jid": "6f08f24b-b56d-4424-9878-3aaa85d27c76",
+          "description": "A modern floor lamp with slender black and gold metal rods and adjustable heads in a minimalist design.",
+          "asset_size": [
+            0.35471999645233154,
+            1.786169982950014,
+            0.30890999734401703
+          ],
+          "color": [
+            "Black",
+            "Gold"
+          ],
+          "style": [
+            "Modern"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.055755,
+          "sem_score": 0.899413,
+          "size_score": 0.83527,
+          "blend_score": 0.869999,
+          "style_score": 0.893919
+        },
+        {
+          "rank": 9,
+          "jid": "8b814b90-c4ef-4276-be4b-20ac374a14b6-(0.81)-(1.0)-(0.81)",
+          "description": "An elegant bronze Victorian-style coat stand with curved hooks and a decorative base, perfect for vintage-inspired interiors.",
+          "asset_size": [
+            0.4246319979429245,
+            1.8271155358816031,
+            0.4238170087337494
+          ],
+          "color": [
+            "Bronze"
+          ],
+          "style": [
+            "Victorian",
+            "Vintage"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.046773,
+          "sem_score": 0.857217,
+          "size_score": 0.802518,
+          "blend_score": 0.834866,
+          "style_score": 0.879849
+        },
+        {
+          "rank": 10,
+          "jid": "6f08f24b-b56d-4424-9878-3aaa85d27c76-(1.01)-(1.0)-(1.12)",
+          "description": "A modern floor lamp with slender black and gold metal rods and adjustable heads in a minimalist design.",
+          "asset_size": [
+            0.35471999645233154,
+            1.786169982950014,
+            0.30890999734401703
+          ],
+          "color": [
+            "Black",
+            "Gold"
+          ],
+          "style": [
+            "Modern"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.046624,
+          "sem_score": 0.899413,
+          "size_score": 0.755784,
+          "blend_score": 0.834231,
+          "style_score": 0.893919
+        }
+      ],
+      "selected_jid": "0128706c-a595-405b-a9ce-47d89847bf28",
+      "selected_description": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting."
+    },
+    {
+      "obj_idx": 4,
+      "query_description": "Modern Scandinavian gray armchair with high back, button tufting, straight arms, padded cushion, and wooden legs.",
+      "query_prompt": "scandinavian armchair",
+      "query_size": [
+        0.64,
+        0.79,
+        0.68
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 4,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 19,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "a04ece76-2aac-46b9-9915-9f822867c630",
+          "description": "Modern Scandinavian gray armchair with high back, button tufting, straight arms, padded cushion, and wooden legs.",
+          "asset_size": [
+            0.6424390077590942,
+            0.7856319811637213,
+            0.675536036491394
+          ],
+          "color": [
+            "Gray"
+          ],
+          "style": [
+            "Modern",
+            "Scandinavian"
+          ],
+          "material": [
+            "Fabric",
+            "Wood"
+          ],
+          "prob": 0.090476,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.990057,
+          "style_score": 0.900573
+        },
+        {
+          "rank": 2,
+          "jid": "7ce742aa-d474-42ee-a726-eb88848f4cff",
+          "description": "Modern lounge chair featuring a woven fabric backrest, cushioned leather seat, and sturdy wooden legs with a minimalist and contemporary aesthetic.",
+          "asset_size": [
+            0.6404399871826172,
+            0.7944500070659046,
+            0.679500013589859
+          ],
+          "color": [
+            "black",
+            "dark brown"
+          ],
+          "style": [
+            "modern",
+            "contemporary"
+          ],
+          "material": [
+            "woven fabric",
+            "leather",
+            "wood"
+          ],
+          "prob": 0.0666,
+          "sem_score": 0.870845,
+          "size_score": 1.0,
+          "blend_score": 0.928783,
+          "style_score": 0.869028
+        },
+        {
+          "rank": 3,
+          "jid": "b0972679-bebc-45ab-89e8-f35b006e7010",
+          "description": "Modern mid-century light gray armchair with fabric upholstery, high button-tufted backrest, angled arms, and wooden legs.",
+          "asset_size": [
+            0.6423659920692444,
+            0.78584989340996,
+            0.6757590174674988
+          ],
+          "color": [
+            "light gray"
+          ],
+          "style": [
+            "modern",
+            "mid-century"
+          ],
+          "material": [
+            "fabric upholstery",
+            "wooden legs"
+          ],
+          "prob": 0.065595,
+          "sem_score": 0.871603,
+          "size_score": 1.0,
+          "blend_score": 0.925741,
+          "style_score": 0.8352
+        },
+        {
+          "rank": 4,
+          "jid": "d358cff2-1039-4836-bb26-b74a51ad207a-(1.26)-(1.0)-(1.38)",
+          "description": "A modern, minimalist gray plastic dining chair featuring a sleek, armless design with a curved backrest and simple lines.",
+          "asset_size": [
+            0.49984800815582275,
+            0.7791050242749176,
+            0.4950380325317383
+          ],
+          "color": [
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "plastic"
+          ],
+          "prob": 0.060835,
+          "sem_score": 0.865486,
+          "size_score": 0.960789,
+          "blend_score": 0.910673,
+          "style_score": 0.888493
+        },
+        {
+          "rank": 5,
+          "jid": "10860539-f6a8-4b05-bf53-96d4fee2a520-(1.0)-(0.92)-(1.0)",
+          "description": "Modern front-loading washing machine with metal and plastic build, featuring control knobs and push buttons.",
+          "asset_size": [
+            0.6503199934959412,
+            0.849850024744061,
+            0.6832799911499023
+          ],
+          "color": [
+            "white",
+            "silver"
+          ],
+          "style": [
+            "modern",
+            "functional"
+          ],
+          "material": [
+            "metal",
+            "plastic"
+          ],
+          "prob": 0.059555,
+          "sem_score": 0.850506,
+          "size_score": 0.960789,
+          "blend_score": 0.906421,
+          "style_score": 0.913379
+        },
+        {
+          "rank": 6,
+          "jid": "1ccd78c6-5826-4450-8fa4-e251ee103e53",
+          "description": "A contemporary dark gray leather armchair with a high backrest, tufted upholstery, wide seat, and angulated wooden legs.",
+          "asset_size": [
+            0.6317950189113617,
+            0.7761976977490121,
+            0.6927740275859833
+          ],
+          "color": [
+            "dark gray"
+          ],
+          "style": [
+            "contemporary",
+            "modern"
+          ],
+          "material": [
+            "leather upholstery",
+            "wooden legs"
+          ],
+          "prob": 0.055391,
+          "sem_score": 0.848259,
+          "size_score": 0.941765,
+          "blend_score": 0.891923,
+          "style_score": 0.864123
+        },
+        {
+          "rank": 7,
+          "jid": "67ba2ce8-c6aa-45c2-a522-c615571348cc",
+          "description": "Modern minimalist armchair with a beige fabric upholstery, wooden frame, and clean boxy design with padded seat and rectangular cushion.",
+          "asset_size": [
+            0.6245370209217072,
+            0.796766974091252,
+            0.6742220520973206
+          ],
+          "color": [
+            "beige",
+            "brown"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "fabric",
+            "wood"
+          ],
+          "prob": 0.054758,
+          "sem_score": 0.890231,
+          "size_score": 0.886921,
+          "blend_score": 0.889627,
+          "style_score": 0.89909
+        },
+        {
+          "rank": 8,
+          "jid": "c9c6656d-8a67-436b-83f2-6aa58181521d",
+          "description": "Sleek modern minimalist chair with curved wooden armrests, rectangular white fabric backrest, and solid brown wood seat, ideal for lounging or working.",
+          "asset_size": [
+            0.6417999863624573,
+            0.8042600405242855,
+            0.6687999963760376
+          ],
+          "color": [
+            "brown",
+            "white"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "wood",
+            "fabric"
+          ],
+          "prob": 0.05293,
+          "sem_score": 0.802286,
+          "size_score": 0.960789,
+          "blend_score": 0.882837,
+          "style_score": 0.894528
+        },
+        {
+          "rank": 9,
+          "jid": "d96542a6-0e17-4076-948f-b09f0891ea60",
+          "description": "Modern armchair with high backrest, slim metal legs, and a plush blue accent cushion for stylish comfort.",
+          "asset_size": [
+            0.6523799896240234,
+            0.7946230323606969,
+            0.6964600384235382
+          ],
+          "color": [
+            "Gray",
+            "Blue (cushion)"
+          ],
+          "style": [
+            "Modern with mid-century influences"
+          ],
+          "material": [
+            "Fabric upholstery",
+            "Metal legs"
+          ],
+          "prob": 0.051859,
+          "sem_score": 0.871819,
+          "size_score": 0.904837,
+          "blend_score": 0.878748,
+          "style_score": 0.792528
+        },
+        {
+          "rank": 10,
+          "jid": "2f9faa0f-1e3e-4bdb-a37f-43e669615d8b-(1.01)-(1.0)-(1.21)",
+          "description": "A sleek, modern chair featuring a brown leather seat and slim black metal legs, ideal for contemporary spaces.",
+          "asset_size": [
+            0.6249899864196777,
+            0.8143539838766802,
+            0.5531059801578522
+          ],
+          "color": [
+            "Brown",
+            "Black"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Leather",
+            "Metal"
+          ],
+          "prob": 0.050529,
+          "sem_score": 0.852802,
+          "size_score": 0.886921,
+          "blend_score": 0.873552,
+          "style_score": 0.90677
+        }
+      ],
+      "selected_jid": "a04ece76-2aac-46b9-9915-9f822867c630",
+      "selected_description": "Modern Scandinavian gray armchair with high back, button tufting, straight arms, padded cushion, and wooden legs."
+    },
+    {
+      "obj_idx": 5,
+      "query_description": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish.",
+      "query_prompt": "tv stand",
+      "query_size": [
+        2.2,
+        0.78,
+        0.52
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 5,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 18,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "232df588-db56-4982-a81e-ea9de8aa3606",
+          "description": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish.",
+          "asset_size": [
+            2.200000047683716,
+            0.7799999909118664,
+            0.5191630125045776
+          ],
+          "color": [
+            "Black"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood",
+            "Lacquered Finish"
+          ],
+          "prob": 0.138641,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.989024,
+          "style_score": 0.890241
+        },
+        {
+          "rank": 2,
+          "jid": "0b7c37e1-b98f-4ebe-9d04-ac4e93251e37",
+          "description": "This modern black bar features a rectangular shape with geometric textured front panels, combining sleek design elements with bold aesthetics.",
+          "asset_size": [
+            2.200000047683716,
+            0.7799999909120174,
+            0.5191600024700165
+          ],
+          "color": [
+            "Black"
+          ],
+          "style": [
+            "Modern",
+            "Geometric"
+          ],
+          "material": [
+            "Wood",
+            "Lacquer"
+          ],
+          "prob": 0.09587,
+          "sem_score": 0.838095,
+          "size_score": 1.0,
+          "blend_score": 0.915245,
+          "style_score": 0.881028
+        },
+        {
+          "rank": 3,
+          "jid": "232df588-db56-4982-a81e-ea9de8aa3606-(1.0)-(1.0)-(0.95)",
+          "description": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish.",
+          "asset_size": [
+            2.200000047683716,
+            0.7799999909118664,
+            0.5191630125045776
+          ],
+          "color": [
+            "Black"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood",
+            "Lacquered Finish"
+          ],
+          "prob": 0.095703,
+          "sem_score": 1.0,
+          "size_score": 0.83527,
+          "blend_score": 0.914896,
+          "style_score": 0.890241
+        },
+        {
+          "rank": 4,
+          "jid": "6ead3dc4-3e24-3cb6-a47b-2dbb951fa42a",
+          "description": "Modern minimalist rectangular TV stand with a brown wooden body, black metal legs, and a sleek, continuous handle.",
+          "asset_size": [
+            2.200000047683716,
+            0.7575570319922917,
+            0.5169150233268738
+          ],
+          "color": [
+            "brown",
+            "black"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "wood",
+            "metal"
+          ],
+          "prob": 0.095381,
+          "sem_score": 0.911401,
+          "size_score": 0.923117,
+          "blend_score": 0.914221,
+          "style_score": 0.886885
+        },
+        {
+          "rank": 5,
+          "jid": "11e193ec-f8a7-356a-b077-9a46bd80289c",
+          "description": "Minimalist contemporary TV stand with a walnut finish, three central drawers, and two side cabinets for sleek, functional storage.",
+          "asset_size": [
+            2.200047016143799,
+            0.7699300202632724,
+            0.5023480653762817
+          ],
+          "color": [
+            "Walnut",
+            "Brown"
+          ],
+          "style": [
+            "Contemporary",
+            "Minimalist"
+          ],
+          "material": [
+            "Wood",
+            "Veneer"
+          ],
+          "prob": 0.08849,
+          "sem_score": 0.89776,
+          "size_score": 0.904838,
+          "blend_score": 0.899224,
+          "style_score": 0.880547
+        },
+        {
+          "rank": 6,
+          "jid": "65f5cd27-b64e-43ab-a173-092fb32bbe82",
+          "description": "Sleek modern TV stand in black and dark brown with golden accents and a minimalist design.",
+          "asset_size": [
+            2.200000047683716,
+            0.8010000146479666,
+            0.49730001389980316
+          ],
+          "color": [
+            "black",
+            "dark brown",
+            "gold"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "wood",
+            "metal"
+          ],
+          "prob": 0.079728,
+          "sem_score": 0.909887,
+          "size_score": 0.852144,
+          "blend_score": 0.878371,
+          "style_score": 0.854573
+        },
+        {
+          "rank": 7,
+          "jid": "14a8635b-e6ef-4561-88d9-6c21f09eda27-(0.88)-(1.0)-(1.25)",
+          "description": "Contemporary geometric TV stand with white, black, and wood finish, featuring a striking contrast design and metal legs.",
+          "asset_size": [
+            2.496000051498413,
+            0.7480000002381679,
+            0.3966349959373474
+          ],
+          "color": [
+            "white",
+            "black",
+            "wood finish"
+          ],
+          "style": [
+            "contemporary",
+            "geometric"
+          ],
+          "material": [
+            "wood",
+            "metal"
+          ],
+          "prob": 0.06165,
+          "sem_score": 0.873498,
+          "size_score": 0.771052,
+          "blend_score": 0.826941,
+          "style_score": 0.868935
+        },
+        {
+          "rank": 8,
+          "jid": "967011ed-753f-4eb2-8505-feefe3f33f88-(0.71)-(1.0)-(0.87)",
+          "description": "Modern minimalist TV stand with light wood finish, featuring sliding panel doors and open shelving on a floating design.",
+          "asset_size": [
+            3.0660998821258545,
+            0.7364649951684292,
+            0.5845299959182739
+          ],
+          "color": [
+            "light wood finish"
+          ],
+          "style": [
+            "modern"
+          ],
+          "material": [
+            "wood",
+            "glass"
+          ],
+          "prob": 0.052202,
+          "sem_score": 0.907612,
+          "size_score": 0.657047,
+          "blend_score": 0.793669,
+          "style_score": 0.895727
+        },
+        {
+          "rank": 9,
+          "jid": "967011ed-753f-4eb2-8505-feefe3f33f88-(0.72)-(1.0)-(0.83)",
+          "description": "Modern minimalist TV stand with light wood finish, featuring sliding panel doors and open shelving on a floating design.",
+          "asset_size": [
+            3.0660998821258545,
+            0.7364649951684292,
+            0.5845299959182739
+          ],
+          "color": [
+            "light wood finish"
+          ],
+          "style": [
+            "modern"
+          ],
+          "material": [
+            "wood",
+            "glass"
+          ],
+          "prob": 0.045351,
+          "sem_score": 0.907612,
+          "size_score": 0.594521,
+          "blend_score": 0.765533,
+          "style_score": 0.895727
+        },
+        {
+          "rank": 10,
+          "jid": "d6740fcc-1946-4bff-9efa-677f452e2e53-(1.04)-(1.0)-(1.26)",
+          "description": "Modern rustic dark brown wooden TV stand with open shelf and two drawers, elevated on metal legs.",
+          "asset_size": [
+            2.1110600233078003,
+            0.7509091994318169,
+            0.3813450187444687
+          ],
+          "color": [
+            "dark brown"
+          ],
+          "style": [
+            "modern",
+            "rustic"
+          ],
+          "material": [
+            "wood",
+            "metal"
+          ],
+          "prob": 0.042604,
+          "sem_score": 0.866901,
+          "size_score": 0.606531,
+          "blend_score": 0.753038,
+          "style_score": 0.899937
+        }
+      ],
+      "selected_jid": "232df588-db56-4982-a81e-ea9de8aa3606",
+      "selected_description": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish."
+    },
+    {
+      "obj_idx": 6,
+      "query_description": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic.",
+      "query_prompt": "scandinavian pendant lamp",
+      "query_size": [
+        0.41,
+        1.22,
+        0.41
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 6,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 19,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "0f0f8391-056f-439a-8c68-d1c132cd672b",
+          "description": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic.",
+          "asset_size": [
+            0.40689799189567566,
+            1.2179545190301724,
+            0.4069260060787201
+          ],
+          "color": [
+            "White",
+            "Gray",
+            "Metallic"
+          ],
+          "style": [
+            "Modern",
+            "Scandinavian",
+            "Minimalist"
+          ],
+          "material": [
+            "Metal",
+            "Plastic"
+          ],
+          "prob": 0.096709,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.986443,
+          "style_score": 0.864429
+        },
+        {
+          "rank": 2,
+          "jid": "0f0f8391-056f-439a-8c68-d1c132cd672b-(0.99)-(1.0)-(0.99)",
+          "description": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic.",
+          "asset_size": [
+            0.40689799189567566,
+            1.2179545190301724,
+            0.4069260060787201
+          ],
+          "color": [
+            "White",
+            "Gray",
+            "Metallic"
+          ],
+          "style": [
+            "Modern",
+            "Scandinavian",
+            "Minimalist"
+          ],
+          "material": [
+            "Metal",
+            "Plastic"
+          ],
+          "prob": 0.088542,
+          "sem_score": 1.0,
+          "size_score": 0.960789,
+          "blend_score": 0.968798,
+          "style_score": 0.864429
+        },
+        {
+          "rank": 3,
+          "jid": "9df1ad87-bcd6-4fda-ab1e-cc67eece0880",
+          "description": "Art-deco modern black pendant lamp with gold accents and layered curved petal design.",
+          "asset_size": [
+            0.40673398971557617,
+            1.220815557608148,
+            0.4065070003271103
+          ],
+          "color": [
+            "black",
+            "gold"
+          ],
+          "style": [
+            "modern",
+            "art-deco"
+          ],
+          "material": [
+            "metal",
+            "fabric"
+          ],
+          "prob": 0.074809,
+          "sem_score": 0.895049,
+          "size_score": 1.0,
+          "blend_score": 0.935089,
+          "style_score": 0.823168
+        },
+        {
+          "rank": 4,
+          "jid": "0fa21aa5-d88f-428e-a603-16b1bc04692f-(1.0)-(0.87)-(1.0)",
+          "description": "Ornate classic pedestal with scroll design, intricate carvings, and floral accents in white and beige.",
+          "asset_size": [
+            0.4242199957370758,
+            1.3796900670413184,
+            0.4228599965572357
+          ],
+          "color": [
+            "White",
+            "Beige"
+          ],
+          "style": [
+            "Classic",
+            "Ornate"
+          ],
+          "material": [
+            "Wood",
+            "Stone"
+          ],
+          "prob": 0.060213,
+          "sem_score": 0.893675,
+          "size_score": 0.88692,
+          "blend_score": 0.891679,
+          "style_score": 0.904109
+        },
+        {
+          "rank": 5,
+          "jid": "865d19ac-08f5-4a78-9132-8df8860c86a7-(0.72)-(0.72)-(0.72)",
+          "description": "A modern, floor lamp with a black metal base and a unique top hat design shade combining contemporary and whimsical elements.",
+          "asset_size": [
+            0.5662199854850769,
+            1.6600300273376014,
+            0.5407599806785583
+          ],
+          "color": [
+            "black"
+          ],
+          "style": [
+            "modern",
+            "contemporary"
+          ],
+          "material": [
+            "metal",
+            "fabric"
+          ],
+          "prob": 0.05978,
+          "sem_score": 0.922762,
+          "size_score": 0.852144,
+          "blend_score": 0.890237,
+          "style_score": 0.915292
+        },
+        {
+          "rank": 6,
+          "jid": "5e1becdc-0f4e-4f2a-a8b7-4f8ba0e28f24",
+          "description": "Tall minimalist rectangular end table in beige wood with open shelving and top box storage.",
+          "asset_size": [
+            0.40002599358558655,
+            1.2000000627087797,
+            0.4000260829925537
+          ],
+          "color": [
+            "beige"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "wood"
+          ],
+          "prob": 0.056874,
+          "sem_score": 0.867803,
+          "size_score": 0.88692,
+          "blend_score": 0.880271,
+          "style_score": 0.906451
+        },
+        {
+          "rank": 7,
+          "jid": "27908d6a-1195-4538-98ac-1a072798e58e-(0.29)-(1.0)-(0.28)",
+          "description": "A modern black pendant lamp with spherical bulbs and a sleek, multi-armed design that combines futuristic and minimalist aesthetics.",
+          "asset_size": [
+            1.4022959470748901,
+            1.189843009086072,
+            1.4197350144386292
+          ],
+          "color": [
+            "black"
+          ],
+          "style": [
+            "modern",
+            "contemporary",
+            "futuristic"
+          ],
+          "material": [
+            "metal",
+            "glass"
+          ],
+          "prob": 0.051589,
+          "sem_score": 0.890216,
+          "size_score": 0.81873,
+          "blend_score": 0.860764,
+          "style_score": 0.917386
+        },
+        {
+          "rank": 8,
+          "jid": "43330772-33f1-4e38-993d-3306cb7ff268-(0.23)-(1.0)-(6.38)",
+          "description": "Modern minimalist pendant lamp with geometric hexagonal frames and dangling lightbulbs in a monochrome black and white color scheme.",
+          "asset_size": [
+            1.811161994934082,
+            1.1887409686398995,
+            0.06568700075149536
+          ],
+          "color": [
+            "Black",
+            "White"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist",
+            "Geometric"
+          ],
+          "material": [
+            "Metal",
+            "Plastic"
+          ],
+          "prob": 0.050215,
+          "sem_score": 0.893845,
+          "size_score": 0.802519,
+          "blend_score": 0.855366,
+          "style_score": 0.920024
+        },
+        {
+          "rank": 9,
+          "jid": "4544119b-81f7-423e-a4e6-90dbcd9db806-(0.71)-(0.71)-(0.71)",
+          "description": "Modern minimalist gray metal plant stand with tiered geometric design and open framework.",
+          "asset_size": [
+            0.5468199849128723,
+            1.6855100608841784,
+            0.5709999799728394
+          ],
+          "color": [
+            "gray"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "metal"
+          ],
+          "prob": 0.046442,
+          "sem_score": 0.813049,
+          "size_score": 0.852144,
+          "blend_score": 0.839744,
+          "style_score": 0.904074
+        },
+        {
+          "rank": 10,
+          "jid": "6f6dc04a-1a6c-40aa-a3e6-0f62fa8afb0a-(0.87)-(0.87)-(0.87)",
+          "description": "A rustic-style decorative plant with a braided trunk in a brown, clay, painted pot.",
+          "asset_size": [
+            0.43926000595092773,
+            1.4287200146723755,
+            0.45739999413490295
+          ],
+          "color": [
+            "brown",
+            "green"
+          ],
+          "style": [
+            "rustic"
+          ],
+          "material": [
+            "clay",
+            "wood"
+          ],
+          "prob": 0.044778,
+          "sem_score": 0.895132,
+          "size_score": 0.755784,
+          "blend_score": 0.832446,
+          "style_score": 0.895341
+        }
+      ],
+      "selected_jid": "0f0f8391-056f-439a-8c68-d1c132cd672b",
+      "selected_description": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic."
+    },
+    {
+      "obj_idx": 7,
+      "query_description": "A minimalist Scandinavian light wood stool with a round top and three legs, featuring a smooth finish and simple design.",
+      "query_prompt": "scandinavian stool",
+      "query_size": [
+        0.4,
+        0.45,
+        0.39
+      ],
+      "style_bias_active": true,
+      "n_style_embeds": 7,
+      "blend_weights": {
+        "lambda_semantic": 0.45,
+        "lambda_size": 0.45,
+        "lambda_style": 0.1
+      },
+      "n_candidates_after_filtering": 19,
+      "candidates": [
+        {
+          "rank": 1,
+          "jid": "267d64bb-aa19-48c9-918e-e88b8dc8d2d5",
+          "description": "A minimalist Scandinavian light wood stool with a round top and three legs, featuring a smooth finish and simple design.",
+          "asset_size": [
+            0.39792999625205994,
+            0.4461900232709013,
+            0.39382003247737885
+          ],
+          "color": [
+            "Light Wood"
+          ],
+          "style": [
+            "Minimalist",
+            "Scandinavian"
+          ],
+          "material": [
+            "Wood"
+          ],
+          "prob": 0.071757,
+          "sem_score": 1.0,
+          "size_score": 1.0,
+          "blend_score": 0.988838,
+          "style_score": 0.888378
+        },
+        {
+          "rank": 2,
+          "jid": "f12a2b26-d37a-4f1c-86a0-ed54a95d1294",
+          "description": "A modern Scandinavian light beige wooden nightstand with two drawers, rounded corners, grey knobs, and short legs.",
+          "asset_size": [
+            0.4000200033187866,
+            0.45505000045704946,
+            0.38514000177383423
+          ],
+          "color": [
+            "Light Beige",
+            "Grey"
+          ],
+          "style": [
+            "Modern Scandinavian"
+          ],
+          "material": [
+            "Wood",
+            "Metal"
+          ],
+          "prob": 0.057365,
+          "sem_score": 0.913548,
+          "size_score": 0.980199,
+          "blend_score": 0.944069,
+          "style_score": 0.918828
+        },
+        {
+          "rank": 3,
+          "jid": "81af1feb-181f-4047-9b6a-214757293820-(0.76)-(1.0)-(0.63)",
+          "description": "A modern-classic footstool with curved legs, striped cushion, and a minimalist yet elegant design.",
+          "asset_size": [
+            0.528007984161377,
+            0.4461060086163009,
+            0.6375310122966766
+          ],
+          "color": [
+            "White",
+            "Blue",
+            "Various Stripes"
+          ],
+          "style": [
+            "Modern",
+            "Classic"
+          ],
+          "material": [
+            "Wood",
+            "Fabric"
+          ],
+          "prob": 0.056445,
+          "sem_score": 0.909202,
+          "size_score": 0.980199,
+          "blend_score": 0.940833,
+          "style_score": 0.906032
+        },
+        {
+          "rank": 4,
+          "jid": "5a066efb-314d-3f13-98b4-0fa4ec7c32ad-(0.88)-(1.0)-(0.88)",
+          "description": "Contemporary round footstool with a white base, brown padded top, and a minimalist design.",
+          "asset_size": [
+            0.4534420073032379,
+            0.44566301646063433,
+            0.4532260000705719
+          ],
+          "color": [
+            "White",
+            "Brown"
+          ],
+          "style": [
+            "Contemporary"
+          ],
+          "material": [
+            "Fabric",
+            "Wood"
+          ],
+          "prob": 0.055707,
+          "sem_score": 0.911847,
+          "size_score": 0.980199,
+          "blend_score": 0.938203,
+          "style_score": 0.867831
+        },
+        {
+          "rank": 5,
+          "jid": "c2455922-3285-443f-886c-73a06874423d",
+          "description": "Elegant Art Nouveau pendant lamp with ornate stained glass dome and bronze accents.",
+          "asset_size": [
+            0.39514200389385223,
+            0.453083023284802,
+            0.3949669897556305
+          ],
+          "color": [
+            "Bronze",
+            "White"
+          ],
+          "style": [
+            "Art Nouveau",
+            "Classic"
+          ],
+          "material": [
+            "Metal",
+            "Glass"
+          ],
+          "prob": 0.054939,
+          "sem_score": 0.888898,
+          "size_score": 1.0,
+          "blend_score": 0.935425,
+          "style_score": 0.854212
+        },
+        {
+          "rank": 6,
+          "jid": "9df2949c-074e-4b18-b779-b88a074f9590-(0.78)-(1.0)-(0.78)",
+          "description": "A classic Baroque-style stool with dark brown wood, gold accents, and a cream upholstered seat featuring curved legs and ornate carvings.",
+          "asset_size": [
+            0.5164279937744141,
+            0.45958600992407916,
+            0.5169589817523956
+          ],
+          "color": [
+            "Cream",
+            "Dark Brown",
+            "Gold"
+          ],
+          "style": [
+            "Classic",
+            "Baroque"
+          ],
+          "material": [
+            "Wood",
+            "Fabric",
+            "Gold Accent"
+          ],
+          "prob": 0.052865,
+          "sem_score": 0.910176,
+          "size_score": 0.960789,
+          "blend_score": 0.927728,
+          "style_score": 0.857939
+        },
+        {
+          "rank": 7,
+          "jid": "01ed86b1-ced4-4912-ad00-bc6f577b0d2f-(0.68)-(1.0)-(0.68)",
+          "description": "Vintage rustic ceiling lamp with a wooden octagonal frame, frosted glass panels, and decorative metal accents.",
+          "asset_size": [
+            0.5859320163726807,
+            0.4478920724650379,
+            0.5859339833259583
+          ],
+          "color": [
+            "brown",
+            "clear"
+          ],
+          "style": [
+            "vintage",
+            "rustic"
+          ],
+          "material": [
+            "wood",
+            "glass",
+            "rope"
+          ],
+          "prob": 0.051709,
+          "sem_score": 0.879091,
+          "size_score": 0.980199,
+          "blend_score": 0.923309,
+          "style_score": 0.866286
+        },
+        {
+          "rank": 8,
+          "jid": "55c85908-376a-4857-8c82-829d00c7f309",
+          "description": "A modern minimalist black metal corner table with a round top and three-legged open base.",
+          "asset_size": [
+            0.3986780047416687,
+            0.4500260217848986,
+            0.3986780047416687
+          ],
+          "color": [
+            "Black"
+          ],
+          "style": [
+            "Modern",
+            "Minimalist"
+          ],
+          "material": [
+            "Metal"
+          ],
+          "prob": 0.051463,
+          "sem_score": 0.876471,
+          "size_score": 0.980199,
+          "blend_score": 0.922355,
+          "style_score": 0.868537
+        },
+        {
+          "rank": 9,
+          "jid": "7db43bdc-334f-47b5-b0d5-72592d37b94a",
+          "description": "Minimalist white wooden round end table with a simple design and three cylindrical legs.",
+          "asset_size": [
+            0.38999998569488525,
+            0.453390016834601,
+            0.39000001549720764
+          ],
+          "color": [
+            "White"
+          ],
+          "style": [
+            "Minimalist"
+          ],
+          "material": [
+            "Wood"
+          ],
+          "prob": 0.051329,
+          "sem_score": 0.875652,
+          "size_score": 0.980199,
+          "blend_score": 0.921834,
+          "style_score": 0.867007
+        },
+        {
+          "rank": 10,
+          "jid": "1c03e4fe-4a3d-4a0a-a9d7-a8f807609bf7",
+          "description": "A modern minimalist beige cylindrical stone accent piece with natural patterns and a smooth finish.",
+          "asset_size": [
+            0.40442000329494476,
+            0.45285002846843536,
+            0.40432000160217285
+          ],
+          "color": [
+            "beige"
+          ],
+          "style": [
+            "modern",
+            "minimalist"
+          ],
+          "material": [
+            "stone"
+          ],
+          "prob": 0.050031,
+          "sem_score": 0.864616,
+          "size_score": 0.980199,
+          "blend_score": 0.916711,
+          "style_score": 0.865446
+        }
+      ],
+      "selected_jid": "267d64bb-aa19-48c9-918e-e88b8dc8d2d5",
+      "selected_description": "A minimalist Scandinavian light wood stool with a round top and three legs, featuring a smooth finish and simple design."
+    }
+  ]
+}

@@ -44,6 +44,12 @@ def rotate_scenegraph(sample_scene, angle_radians):
 	if sample_scene.get("bounds_top"):
 		for key in ["bounds_top", "bounds_bottom"]:
 			sample_scene[key] = [rotate_around_y(point, angle_radians) for point in sample_scene[key]]
+	if sample_scene.get("openings"):
+		is_90_or_270 = abs(angle_radians % np.pi) > 0.01
+		for opening in sample_scene["openings"]:
+			opening["pos"] = rotate_around_y(opening["pos"], angle_radians)
+			if is_90_or_270:
+				opening["size"][0], opening["size"][2] = opening["size"][2], opening["size"][0]
 	if sample_scene.get("objects"):
 		for obj in sample_scene.get("objects"):
 			rotate_obj(obj, angle_radians)
@@ -205,13 +211,12 @@ def create_full_scene_from_before_and_added(scene_before, obj_add):
 	scene_after["objects"].append(obj_add)
 	return scene_after
 
-def ensure_order_of_keys_for_sg_input_dict(sg_input, do_keep_jids=False, include_openings=False):
+def ensure_order_of_keys_for_sg_input_dict(sg_input, do_keep_jids=False, include_openings=True):
 	sg_input_ordered = {}
 
 	sg_input_ordered["room_type"] = sg_input.get("room_type")
 	sg_input_ordered["bounds_top"] = sg_input.get("bounds_top")
 	sg_input_ordered["bounds_bottom"] = sg_input.get("bounds_bottom")
-
 	if include_openings and sg_input.get("openings"):
 		sg_input_ordered["openings"] = sg_input.get("openings")
 
@@ -353,7 +358,7 @@ def load_train_val_test_datasets(lambda_instr_exp=None, use_cached_dataset=True,
 
 	return dataset_train, dataset_val, dataset_test
 
-def build_full_instruction_from_prompt(prompt, sg_input, include_openings=False):
+def build_full_instruction_from_prompt(prompt, sg_input, include_openings=True):
 	sg_input_str = json.dumps(ensure_order_of_keys_for_sg_input_dict(json.loads(sg_input), include_openings=include_openings))
 	return f"<instruction>\n\t<add>{prompt}</add>\n</instruction>\n<scenegraph>\n\t{sg_input_str}\n</scenegraph>"
 
@@ -462,17 +467,17 @@ def format_and_tokenize(tokenizer, full_sample_instr, sample_sg_output_full, max
 
 	return tokenized_inputs, length
 
-def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_augm=False, do_full_sg_outputs=False, do_keep_jids=False):
-	while True:
+def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_augm=False, do_full_sg_outputs=False, do_keep_jids=False, max_retries=10):
+	for attempt in range(max_retries):
 		# Create instruction from scene
 		sample = create_instruction_from_scene(orig_sample, all_prompts, all_assets_metadata_simple_descs, do_simple_descs, do_keep_jids=do_keep_jids)
-	
+
 		# Apply data augmentation if enabled
 		if sample.get("split") == "train" and do_augm:
 			sample_sg_input, sample_sg_output_add = do_random_augm_on_sgs(sample)
 		else:
 			sample_sg_input, sample_sg_output_add = sample["sg_input"], sample["sg_output_add"]
-		
+
 		# Prepare the scene output/completion
 		if do_full_sg_outputs:
 			scene = json.loads(sample_sg_input)
@@ -480,7 +485,7 @@ def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, al
 			completion = json.dumps(scene)
 		else:
 			completion = sample_sg_output_add
-		
+
 		# Build the full instruction
 		full_sample_instr = build_full_instruction_from_prompt(sample["prompt"], sample_sg_input)
 
@@ -490,8 +495,10 @@ def process_scene_sample(orig_sample, tokenizer, max_seq_length, all_prompts, al
 		if tok_length <= (max_seq_length - 150):
 			break
 		else:
-			print(f"sample exceeded max length ({tok_length} > {max_seq_length}-150), # of objects: {len(json.loads(sample_sg_input).get('objects'))}, retrying...")
-	
+			print(f"sample exceeded max length ({tok_length} > {max_seq_length}-150), # of objects: {len(json.loads(sample_sg_input).get('objects'))}, retrying ({attempt+1}/{max_retries})...")
+	else:
+		print(f"WARNING: sample still exceeds max length after {max_retries} retries ({tok_length} tokens), will be truncated")
+
 	return full_sample_instr, completion, sample["prompt"], sample
 		
 def format_with_chat_template(tokenizer, prompt, completion=None):
@@ -502,7 +509,7 @@ def format_with_chat_template(tokenizer, prompt, completion=None):
 	if completion is not None:
 		messages.append({"role": "assistant", "content": completion})
 		
-	return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=(True if completion is None else False))
+	return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=(True if completion is None else False), enable_thinking=False)
 
 class SFTSceneDataCollator(DataCollatorForCompletionOnlyLM):
 	def __init__(self, do_augm, response_template, tokenizer, padding_free, max_seq_length, do_simple_descs, do_full_sg_outputs, **kwargs):

@@ -11982,5 +11982,87 @@
             2.28,
             2.91
         ]
+    },
+    "c354ab1c-3aca-453f-992d-01e624bb71a7": {
+        "style": "Modern minimalist",
+        "color": [
+            "Light gray"
+        ],
+        "material": [
+            "Ceramic"
+        ],
+        "characteristics": [
+            "Rectangular shape",
+            "Recessed basin",
+            "Smooth edges",
+            "No decorative accents",
+            "Geometric form"
+        ],
+        "summary": "Modern minimalist ceramic bathroom sink basin with clean rectangular lines, recessed basin, and no decorative elements for functional simplicity",
+        "size": [
+            0.8,
+            0.06,
+            0.8
+        ]
+    },
+    "cd19dccb-9d68-4e82-80b9-34ac49048512": {
+        "style": "Modern minimalist (blends contemporary and minimalism with clean lines, no ornamentation)",
+        "color": "White",
+        "material": "Ceramic",
+        "characteristics": [
+            "Square/rectangular shape",
+            "Flat front",
+            "Integrated basin design",
+            "Smooth surfaces",
+            "No decorative accents"
+        ],
+        "summary": "Modern minimalist white ceramic bathroom sink with square shape, integrated basin, and clean lines for sleek functionality",
+        "size": [
+            0.9,
+            0.14,
+            0.75
+        ]
+    },
+    "e2385e1c-0f5f-45e1-8ae7-adc4b4685b2f": {
+        "style": "Modern minimalist",
+        "color": [
+            "light gray"
+        ],
+        "material": [
+            "acrylic"
+        ],
+        "characteristics": [
+            "rectangular shape",
+            "flat surface with slight slope for drainage",
+            "recessed center for water drainage",
+            "smooth edges"
+        ],
+        "summary": "Modern minimalist bathroom shower tray with rectangular shape, recessed drainage center, and smooth light gray acrylic surface.",
+        "size": [
+            1.4,
+            0.03,
+            0.9
+        ]
+    },
+    "8684359f-3c29-45ea-96c7-7dc436aa4871": {
+        "style": "modern minimalist",
+        "color": [
+            "light gray",
+            "white"
+        ],
+        "material": "acrylic",
+        "characteristics": [
+            "rectangular shape",
+            "flat surface",
+            "central drain hole",
+            "no decorative accents",
+            "minimalist design"
+        ],
+        "summary": "Modern minimalist shower tray with rectangular shape, flat surface, central drain, light gray/white finish for contemporary bathroom functionality",
+        "size": [
+            1.0,
+            0.03,
+            0.8
+        ]
     }
 }

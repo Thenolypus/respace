@@ -9,6 +9,7 @@ Prerequisites:
 Usage:
   python 02_get_description_ollama.py --assets_dir <path_to_organized_assets> --output <path_to_output_json>
   uv run python src/preprocessing/custom/02_get_description_ollama.py --assets_dir /home/seant/MA_Repos/shared_dataset/hegias_assets --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json
+  uv run python 02_get_description_ollama.py --assets_dir /home/seant/MA_Repos/shared_dataset/hegias_assets --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json
 
 Output:
   model_info_custom_assets.json (same format as model_info_3dfuture_assets.json)

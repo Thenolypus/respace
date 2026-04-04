@@ -8,6 +8,7 @@ Prerequisites:
 Usage:
   python 04_get_prompts_ollama.py --input <model_info_custom_assets.json> --output <model_info_custom_assets_prompts.json>
 uv run python src/preprocessing/custom/04_get_prompts_ollama.py --input /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets_prompts.json
+uv run python 04_get_prompts_ollama.py --input /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets_prompts.json
 
 Output:
   model_info_custom_assets_prompts.json (maps asset JID -> list of 10 prompt strings)

@@ -63,7 +63,7 @@ def _fmt_time(seconds):
 # ============================================================================ #
 
 MODEL_ID = "gradient-spaces/respace-sg-llm-1.5b"
-ENV_FILE = ".env"
+ENV_FILE = ".env_heg"
 ENV_FILE_BATHROOM = ".env_heg"
 
 # ReSpace layout generation params
@@ -497,7 +497,7 @@ def _load_env(env_file):
     asset_keys = [
         "PTH_ASSETS_METADATA", "PTH_ASSETS_METADATA_SCALED",
         "PTH_ASSETS_METADATA_SIMPLE_DESCS", "PTH_ASSETS_METADATA_PROMPTS",
-        "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE", "PTH_ASSETS_EMBED_CATEGORY",
+        "PTH_ASSETS_EMBED", "PTH_ASSETS_EMBED_STYLE",
         "PTH_3DFUTURE_ASSETS",
     ]
     for k in asset_keys:
@@ -606,7 +606,6 @@ def _run_retrieval_for_rooms(entries, retrieval, unit_style_embeds, style_prompt
             is_greedy_sampling=not stochastic,
             user_prompt=style_prompt,
             initial_style_embeds=initial_embeds,
-            use_category_only=False,
         )
 
         # Collect only new embeddings from this room

@@ -108,31 +108,6 @@ class AssetRetrievalModule(nn.Module):
 			all_style_embeds = all_style_embeds.to(dvc)
 		self.all_style_embeds_catalog = torch.nn.functional.normalize(all_style_embeds, p=2, dim=1)
 
-		# Load category-only embeddings
-		pth_category_embed = os.getenv("PTH_ASSETS_EMBED_CATEGORY")
-		if pth_category_embed and os.path.exists(pth_category_embed):
-			with open(pth_category_embed, 'rb') as fp:
-				model_info_category_embeds = pickle.load(fp)
-
-			all_category_embeds = np.array(model_info_category_embeds.get("embeds"))
-			all_category_sizes_prod = np.prod(model_info_category_embeds.get("sizes"), axis=1)
-			all_category_jids = np.array(model_info_category_embeds.get("jids"))[all_category_sizes_prod < size_prod_threshold].tolist()
-			all_category_embeds = all_category_embeds[all_category_sizes_prod < size_prod_threshold, :]
-
-			assert all_category_jids == all_jids, "Category and full embedding JIDs must match after filtering"
-
-			all_category_embeds = torch.tensor(all_category_embeds)
-			if self.accelerator:
-				all_category_embeds = all_category_embeds.to(self.accelerator.device)
-			else:
-				all_category_embeds = all_category_embeds.to(dvc)
-			self.all_category_embeds_catalog = torch.nn.functional.normalize(all_category_embeds, p=2, dim=1)
-		else:
-			self.all_category_embeds_catalog = None
-
-		# Load simple descriptions for category stripping
-		self.simple_descs = json.load(open(os.getenv("PTH_ASSETS_METADATA_SIMPLE_DESCS")))
-
 		# Learnable parameters
 		self.lambd = torch.tensor(lambd)
 		self.sigma = torch.tensor(sigma)
@@ -206,15 +181,6 @@ class AssetRetrievalModule(nn.Module):
 
 		# similarities = similarities / 0.000000001
 		# similarities = torch.pow(similarities, 0.5) / 0.1
-
-		return similarities
-
-	def compute_category_semantic_similarities(self, embeds):
-		embeds_norm = torch.nn.functional.normalize(embeds, p=2, dim=1)
-
-		torch.use_deterministic_algorithms(False)
-		torch.backends.cudnn.deterministic = False
-		similarities = torch.matmul(self.all_category_embeds_catalog, embeds_norm.T)
 
 		return similarities
 
@@ -484,16 +450,6 @@ class AssetRetrievalModule(nn.Module):
 	def calculate_size_difference(size1, size2):
 		return np.linalg.norm(np.array(size1) - np.array(size2))
 
-	def strip_desc_to_category(self, obj):
-		"""Strip a full SG-LLM description to just the furniture category."""
-		prompt = obj.get("prompt")
-		if prompt:
-			return prompt
-		desc = obj.get("desc", "")
-		if desc in self.simple_descs:
-			return self.simple_descs[desc]
-		return desc
-
 	def compute_style_similarity(self, selected_style_embeds):
 		"""
 		Cosine similarity of each catalog asset against the last selected
@@ -628,7 +584,6 @@ class AssetRetrievalModule(nn.Module):
 	def sample_all_assets_style_coherent_cross_scene(
 		self, scene, lambda_style=0.2, is_greedy_sampling=True,
 		user_prompt=None, initial_style_embeds=None,
-		use_category_only=False, use_category_full=False,
 	):
 		"""
 		Sample assets with style coherence, accepting cross-scene style context.
@@ -643,10 +598,6 @@ class AssetRetrievalModule(nn.Module):
 			is_greedy_sampling: greedy vs stochastic
 			user_prompt: optional style prompt anchor
 			initial_style_embeds: list[Tensor] style embeddings from prior rooms
-			use_category_only: if True, use stripped category query matched
-				against category-only catalog embeddings (default)
-			use_category_full: if True, use stripped category query matched
-				against full-description catalog embeddings (legacy, noisy)
 
 		Returns:
 			(sampled_scene, selected_style_embeds) -- the scene and the collected
@@ -677,24 +628,13 @@ class AssetRetrievalModule(nn.Module):
 				and (obj_idx > 0 or has_cross_scene_context or user_prompt is not None)
 			)
 
-			# Semantic query: full desc, category-only (matched catalog), or category-full (legacy)
-			has_context = (obj_idx > 0 or has_cross_scene_context or user_prompt is not None)
-			use_category_query = has_context and (use_category_only or use_category_full)
-			if use_category_query:
-				query_desc = self.strip_desc_to_category(obj)
-			else:
-				query_desc = desc
+			query_desc = desc
 
 			# Print diagnostic header
 			if self.do_print:
 				print(f"\n{'='*90}")
 				print(f"OBJECT [{obj_idx}]")
-				if query_desc != desc:
-					print(f"  Original desc: \"{desc}\"")
-					cat_mode = "category-only" if use_category_only else "category-full (legacy)"
-					print(f"  Category query: \"{query_desc}\" [{cat_mode}]")
-				else:
-					print(f"  Semantic query: \"{query_desc}\"")
+				print(f"  Semantic query: \"{query_desc}\"")
 				if use_style_bias:
 					src = []
 					if has_cross_scene_context:
@@ -710,10 +650,7 @@ class AssetRetrievalModule(nn.Module):
 				print(f"{'='*90}")
 
 			query_embeds = self.get_text_embeddings([query_desc])
-			if use_category_only and use_category_query and self.all_category_embeds_catalog is not None:
-				semantic_sims = self.compute_category_semantic_similarities(query_embeds).squeeze(1)
-			else:
-				semantic_sims = self.compute_semantic_similarities(query_embeds).squeeze(1)
+			semantic_sims = self.compute_semantic_similarities(query_embeds).squeeze(1)
 
 			# Size similarity
 			query_size_t = torch.tensor([size])

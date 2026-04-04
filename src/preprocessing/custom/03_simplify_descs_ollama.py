@@ -8,6 +8,7 @@ Prerequisites:
 Usage:
   uv run python 03_simplify_descs_ollama.py --input <model_info_custom_assets.json> --output <model_info_custom_assets_simple_descs.json>
   uv run python src/preprocessing/custom/03_simplify_descs_ollama.py --input /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets_simple_descs.json
+  uv run python 03_simplify_descs_ollama.py --input /home/seant/MA_Repos/shared_dataset/model_info_custom_assets.json --output /home/seant/MA_Repos/shared_dataset/model_info_custom_assets_simple_descs.json
 
 Output:
   model_info_custom_assets_simple_descs.json (maps summary string -> single-word category)

@@ -293,8 +293,6 @@ def main():
 					is_greedy_sampling=not args.stochastic,
 					user_prompt=args.user_prompt,
 					initial_style_embeds=initial_embeds,
-					use_category_only=not args.full_desc and not args.category_full,
-					use_category_full=args.category_full,
 				)
 
 				# Collect only the NEW embeddings from this room (skip the ones we passed in)

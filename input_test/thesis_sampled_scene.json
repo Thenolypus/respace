@@ -1,0 +1,301 @@
+{
+  "room_type": "livingroom",
+  "bounds_top": [
+    [
+      2.42,
+      2.6,
+      -2.09
+    ],
+    [
+      2.42,
+      2.6,
+      2.09
+    ],
+    [
+      -2.42,
+      2.6,
+      2.09
+    ],
+    [
+      -2.42,
+      2.6,
+      -2.09
+    ]
+  ],
+  "bounds_bottom": [
+    [
+      2.42,
+      0.0,
+      -2.09
+    ],
+    [
+      2.42,
+      0.0,
+      2.09
+    ],
+    [
+      -2.42,
+      0.0,
+      2.09
+    ],
+    [
+      -2.42,
+      0.0,
+      -2.09
+    ]
+  ],
+  "objects": [
+    {
+      "desc": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests.",
+      "pos": [
+        0.15,
+        0.0,
+        0.09
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        2.01,
+        0.9,
+        0.85
+      ],
+      "prompt": "modern sofa",
+      "sampled_asset_jid": "2403c725-cec6-46ba-8d43-b7b87834a71a",
+      "sampled_asset_desc": "Modern three-seat sofa with grey fabric, wooden legs, and diverse decorative pillows, blending contemporary style with clean lines and structured armrests.",
+      "sampled_asset_size": [
+        2.0125640630722046,
+        0.9034300139707643,
+        0.8505240082740784
+      ],
+      "uuid": "79215e79-ee0c-404d-84d7-9f971f4f7db5"
+    },
+    {
+      "desc": "Modern minimalist black metal coffee table with a two-tiered round design, featuring a sleek finish, asymmetrical accent, and conical base.",
+      "pos": [
+        1.83,
+        0.0,
+        -0.76
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.88,
+        0.27,
+        0.63
+      ],
+      "prompt": "low-profile coffee table",
+      "sampled_asset_jid": "d7c59b53-313d-43bf-a712-f042efe58d99",
+      "sampled_asset_desc": "Modern minimalist black metal coffee table with a two-tiered round design, featuring a sleek finish, asymmetrical accent, and conical base.",
+      "sampled_asset_size": [
+        0.8794000148773193,
+        0.26986901373202965,
+        0.6291000247001648
+      ],
+      "uuid": "de76c086-111f-4c1b-8253-7dd6afff3922"
+    },
+    {
+      "desc": "A Scandinavian-inspired modern corner/side table with a round top, three legs, an interlocking wooden base, and a natural wood finish.",
+      "pos": [
+        -1.23,
+        0.0,
+        1.52
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.57,
+        0.93,
+        0.57
+      ],
+      "prompt": "scandinavian side table",
+      "sampled_asset_jid": "63791e3c-0b3a-4f0e-8cc6-b4b06a653f7f",
+      "sampled_asset_desc": "A Scandinavian-inspired modern corner/side table with a round top, three legs, an interlocking wooden base, and a natural wood finish.",
+      "sampled_asset_size": [
+        0.5682219862937927,
+        0.9333579316444229,
+        0.5682219862937927
+      ],
+      "uuid": "8ad332b9-03a5-4e86-bc1f-f6471244cf57"
+    },
+    {
+      "desc": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+      "pos": [
+        1.81,
+        0.0,
+        1.06
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.33,
+        1.8,
+        0.33
+      ],
+      "prompt": "floor lamp",
+      "sampled_asset_jid": "0128706c-a595-405b-a9ce-47d89847bf28",
+      "sampled_asset_desc": "A sleek, modern floor lamp featuring a minimalistic design with a metallic cylindrical base and a diffused mesh head for ambient lighting.",
+      "sampled_asset_size": [
+        0.33142000436782837,
+        1.8003800040285398,
+        0.331059992313385
+      ],
+      "uuid": "a546f563-df56-4adc-a22a-3a9c88dbc4dd"
+    },
+    {
+      "desc": "Modern Scandinavian gray armchair with high back, button tufting, straight arms, padded cushion, and wooden legs.",
+      "pos": [
+        -1.29,
+        0.0,
+        -0.44
+      ],
+      "rot": [
+        0.0,
+        0.70711,
+        0.0,
+        0.70711
+      ],
+      "size": [
+        0.64,
+        0.79,
+        0.68
+      ],
+      "prompt": "scandinavian armchair",
+      "sampled_asset_jid": "a04ece76-2aac-46b9-9915-9f822867c630",
+      "sampled_asset_desc": "Modern Scandinavian gray armchair with high back, button tufting, straight arms, padded cushion, and wooden legs.",
+      "sampled_asset_size": [
+        0.6424390077590942,
+        0.7856319811637213,
+        0.675536036491394
+      ],
+      "uuid": "c23a4661-00cc-43ed-b029-2e4073451c2f"
+    },
+    {
+      "desc": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish.",
+      "pos": [
+        0.18,
+        0.0,
+        -1.84
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        2.2,
+        0.78,
+        0.52
+      ],
+      "prompt": "tv stand",
+      "sampled_asset_jid": "232df588-db56-4982-a81e-ea9de8aa3606",
+      "sampled_asset_desc": "Modern minimalist black TV stand with a geometric patterned front, wood construction, and lacquered finish.",
+      "sampled_asset_size": [
+        2.200000047683716,
+        0.7799999909118664,
+        0.5191630125045776
+      ],
+      "uuid": "766d612f-fefd-4a7e-b97f-bc47cf482315"
+    },
+    {
+      "desc": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic.",
+      "pos": [
+        0.06,
+        1.45,
+        0.02
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.41,
+        1.22,
+        0.41
+      ],
+      "prompt": "scandinavian pendant lamp",
+      "sampled_asset_jid": "0f0f8391-056f-439a-8c68-d1c132cd672b",
+      "sampled_asset_desc": "A modern Scandinavian pendant lamp with a radial geometric design, featuring layered white and gray discs for a sculptural and minimalist aesthetic.",
+      "sampled_asset_size": [
+        0.40689799189567566,
+        1.2179545190301724,
+        0.4069260060787201
+      ],
+      "uuid": "bfeae063-49b4-432c-9b17-7aef3f7aba88"
+    },
+    {
+      "desc": "A minimalist Scandinavian light wood stool with a round top and three legs, featuring a smooth finish and simple design.",
+      "pos": [
+        0.18,
+        0.0,
+        -0.63
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "size": [
+        0.4,
+        0.45,
+        0.39
+      ],
+      "prompt": "scandinavian stool",
+      "sampled_asset_jid": "267d64bb-aa19-48c9-918e-e88b8dc8d2d5",
+      "sampled_asset_desc": "A minimalist Scandinavian light wood stool with a round top and three legs, featuring a smooth finish and simple design.",
+      "sampled_asset_size": [
+        0.39792999625205994,
+        0.4461900232709013,
+        0.39382003247737885
+      ],
+      "uuid": "713a62e6-5998-4495-baff-677905ce2783"
+    }
+  ],
+  "openings": [
+    {
+      "type": "door",
+      "pos": [
+        0.79,
+        1.05,
+        -2.2
+      ],
+      "size": [
+        1.99,
+        2.1,
+        0.1
+      ]
+    },
+    {
+      "type": "door",
+      "pos": [
+        1.98,
+        1.05,
+        2.19
+      ],
+      "size": [
+        0.88,
+        2.1,
+        0.18
+      ]
+    }
+  ]
+}
